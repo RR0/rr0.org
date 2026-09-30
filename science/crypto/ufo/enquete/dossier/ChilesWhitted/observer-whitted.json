@@ -72,7 +72,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 0.8637,
                 "heightDeg": 0.4411
@@ -94,7 +94,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.147,
                 "heightDeg": 0.147
@@ -116,7 +116,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.147,
                 "heightDeg": 0.147
@@ -138,7 +138,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.147,
                 "heightDeg": 0.147
@@ -160,7 +160,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.147,
                 "heightDeg": 0.147
@@ -182,7 +182,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.147,
                 "heightDeg": 0.147
@@ -204,7 +204,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.147,
                 "heightDeg": 0.147
@@ -226,7 +226,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.3308
@@ -253,7 +253,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 2.5173,
                 "heightDeg": 0.6432
@@ -275,7 +275,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.2389,
                 "heightDeg": 0.2389
@@ -297,7 +297,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.2389,
                 "heightDeg": 0.2389
@@ -319,7 +319,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.2389,
                 "heightDeg": 0.2389
@@ -341,7 +341,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.2389,
                 "heightDeg": 0.2389
@@ -363,7 +363,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.2389,
                 "heightDeg": 0.2389
@@ -385,7 +385,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.2389,
                 "heightDeg": 0.2389
@@ -407,7 +407,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.4043,
                 "heightDeg": 0.4778
@@ -434,7 +434,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 4.6286,
                 "heightDeg": 1.1945
@@ -456,7 +456,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.4227,
                 "heightDeg": 0.4227
@@ -478,7 +478,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.4227,
                 "heightDeg": 0.4227
@@ -500,7 +500,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.4227,
                 "heightDeg": 0.4227
@@ -522,7 +522,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.4227,
                 "heightDeg": 0.4227
@@ -544,7 +544,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.4227,
                 "heightDeg": 0.4227
@@ -566,7 +566,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.4227,
                 "heightDeg": 0.4227
@@ -588,7 +588,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 1.856,
                 "heightDeg": 0.8821
@@ -615,7 +615,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 8.2008,
                 "heightDeg": 1.4885
@@ -637,7 +637,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.5329,
                 "heightDeg": 0.5329
@@ -659,7 +659,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.5329,
                 "heightDeg": 0.5329
@@ -681,7 +681,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.5329,
                 "heightDeg": 0.5329
@@ -703,7 +703,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.5329,
                 "heightDeg": 0.5329
@@ -725,7 +725,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.5329,
                 "heightDeg": 0.5329
@@ -747,7 +747,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.5329,
                 "heightDeg": 0.5329
@@ -769,7 +769,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 3.2887,
                 "heightDeg": 1.1026
@@ -796,7 +796,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 9.3883,
                 "heightDeg": 1.6906
@@ -818,7 +818,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.6065,
                 "heightDeg": 0.6065
@@ -840,7 +840,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.6065,
                 "heightDeg": 0.6065
@@ -862,7 +862,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.6065,
                 "heightDeg": 0.6065
@@ -884,7 +884,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.6065,
                 "heightDeg": 0.6065
@@ -906,7 +906,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.6065,
                 "heightDeg": 0.6065
@@ -928,7 +928,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.6065,
                 "heightDeg": 0.6065
@@ -950,7 +950,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 3.7661,
                 "heightDeg": 1.268
@@ -977,7 +977,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 4.5919,
                 "heightDeg": 0.827
@@ -999,7 +999,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.294,
                 "heightDeg": 0.294
@@ -1021,7 +1021,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.294,
                 "heightDeg": 0.294
@@ -1043,7 +1043,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.294,
                 "heightDeg": 0.294
@@ -1065,7 +1065,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.294,
                 "heightDeg": 0.294
@@ -1087,7 +1087,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.294,
                 "heightDeg": 0.294
@@ -1109,7 +1109,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.294,
                 "heightDeg": 0.294
@@ -1131,7 +1131,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.6248
@@ -1158,7 +1158,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.3308
@@ -1180,7 +1180,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1202,7 +1202,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1224,7 +1224,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1246,7 +1246,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1268,7 +1268,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1290,7 +1290,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1312,7 +1312,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.7351,
                 "heightDeg": 0.2573
@@ -1339,7 +1339,7 @@
               "transparency": 1,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.3308
@@ -1361,7 +1361,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1383,7 +1383,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1405,7 +1405,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1427,7 +1427,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1449,7 +1449,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1471,7 +1471,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1493,7 +1493,7 @@
               "transparency": 1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.7351,
                 "heightDeg": 0.2573
@@ -1520,7 +1520,7 @@
               "transparency": 1,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.3308
@@ -1542,7 +1542,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 1",
+              "title": {"fr": "Hublot haut 1", "en": "Upper porthole 1", "es": "Portilla superior 1", "it": "Oblò superiore 1"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1564,7 +1564,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 2",
+              "title": {"fr": "Hublot haut 2", "en": "Upper porthole 2", "es": "Portilla superior 2", "it": "Oblò superiore 2"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1586,7 +1586,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot haut 3",
+              "title": {"fr": "Hublot haut 3", "en": "Upper porthole 3", "es": "Portilla superior 3", "it": "Oblò superiore 3"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1608,7 +1608,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 1",
+              "title": {"fr": "Hublot bas 1", "en": "Lower porthole 1", "es": "Portilla inferior 1", "it": "Oblò inferiore 1"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1630,7 +1630,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 2",
+              "title": {"fr": "Hublot bas 2", "en": "Lower porthole 2", "es": "Portilla inferior 2", "it": "Oblò inferiore 2"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1652,7 +1652,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot bas 3",
+              "title": {"fr": "Hublot bas 3", "en": "Lower porthole 3", "es": "Portilla inferior 3", "it": "Oblò inferiore 3"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.1286
@@ -1674,7 +1674,7 @@
               "transparency": 1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.7351,
                 "heightDeg": 0.2573

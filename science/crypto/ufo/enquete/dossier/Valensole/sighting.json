@@ -67,7 +67,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 2.2234,
         "heightDeg": 1.1394
@@ -89,7 +89,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 0.9372,
         "heightDeg": 0.4594
@@ -129,7 +129,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 0.4778,
         "heightDeg": 0.2389
@@ -169,7 +169,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 1.268,
         "heightDeg": 0.2205
@@ -209,7 +209,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 0.9556,
         "heightDeg": 0.2022
@@ -249,7 +249,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 0.4594,
         "heightDeg": 0.2022
@@ -289,7 +289,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 1.2496,
         "heightDeg": 0.2205
@@ -329,7 +329,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 0.9924,
         "heightDeg": 0.2389
@@ -356,7 +356,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 2.9765,
         "heightDeg": 1.5253
@@ -378,7 +378,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 1.2496,
         "heightDeg": 0.6065
@@ -418,7 +418,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 0.5881,
         "heightDeg": 0.3308
@@ -458,7 +458,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 1.6355,
         "heightDeg": 0.3124
@@ -498,7 +498,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 1.2129,
         "heightDeg": 0.2757
@@ -538,7 +538,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 0.5697,
         "heightDeg": 0.2573
@@ -578,7 +578,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 1.6171,
         "heightDeg": 0.294
@@ -618,7 +618,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 1.268,
         "heightDeg": 0.3308
@@ -645,7 +645,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 4.5002,
         "heightDeg": 2.3153
@@ -667,7 +667,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 1.8927,
         "heightDeg": 0.9189
@@ -707,7 +707,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 0.7902,
         "heightDeg": 0.5329
@@ -747,7 +747,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 2.3887,
         "heightDeg": 0.4778
@@ -787,7 +787,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 1.7457,
         "heightDeg": 0.4043
@@ -827,7 +827,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 0.7535,
         "heightDeg": 0.3859
@@ -867,7 +867,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 2.352,
         "heightDeg": 0.4227
@@ -907,7 +907,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 1.8192,
         "heightDeg": 0.5146
@@ -934,7 +934,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 9.224,
         "heightDeg": 4.7571
@@ -956,7 +956,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 3.8762,
         "heightDeg": 1.9111
@@ -996,7 +996,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 1.6171,
         "heightDeg": 1.2864
@@ -1036,7 +1036,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 4.8855,
         "heightDeg": 1.0291
@@ -1076,7 +1076,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 3.4172,
         "heightDeg": 0.6983
@@ -1116,7 +1116,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 1.4334,
         "heightDeg": 0.6248
@@ -1156,7 +1156,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 4.702,
         "heightDeg": 0.8454
@@ -1196,7 +1196,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 3.8028,
         "heightDeg": 1.1945
@@ -1223,7 +1223,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 30.0897,
         "heightDeg": 15.7417
@@ -1245,7 +1245,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 12.8833,
         "heightDeg": 6.3338
@@ -1285,7 +1285,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 6.517,
         "heightDeg": 8.1825
@@ -1325,7 +1325,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 17.1099,
         "heightDeg": 4.2066
@@ -1365,7 +1365,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 10.2639,
         "heightDeg": 0.8454
@@ -1405,7 +1405,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 4.2433,
         "heightDeg": 0.1838
@@ -1445,7 +1445,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 15.0198,
         "heightDeg": 2.205
@@ -1485,7 +1485,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 14.6041,
         "heightDeg": 6.517
@@ -1512,7 +1512,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 30.0897,
         "heightDeg": 15.7417
@@ -1534,7 +1534,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 12.8833,
         "heightDeg": 6.3338
@@ -1574,7 +1574,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 6.517,
         "heightDeg": 8.1825
@@ -1614,7 +1614,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 17.1099,
         "heightDeg": 4.2066
@@ -1654,7 +1654,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 10.2639,
         "heightDeg": 0.8454
@@ -1694,7 +1694,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 4.2433,
         "heightDeg": 0.1838
@@ -1734,7 +1734,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 15.0198,
         "heightDeg": 2.205
@@ -1774,7 +1774,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 14.6041,
         "heightDeg": 6.517
@@ -1801,7 +1801,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 30.0897,
         "heightDeg": 15.7417
@@ -1823,7 +1823,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 12.8833,
         "heightDeg": 6.3338
@@ -1863,7 +1863,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 6.517,
         "heightDeg": 8.1825
@@ -1903,7 +1903,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 17.1099,
         "heightDeg": 4.2066
@@ -1943,7 +1943,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 10.2639,
         "heightDeg": 0.8454
@@ -1983,7 +1983,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 4.2433,
         "heightDeg": 0.1838
@@ -2023,7 +2023,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 15.0198,
         "heightDeg": 2.205
@@ -2063,7 +2063,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 14.6041,
         "heightDeg": 6.517
@@ -2090,7 +2090,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 30.0897,
         "heightDeg": 15.7417
@@ -2112,7 +2112,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 12.8833,
         "heightDeg": 6.3338
@@ -2152,7 +2152,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 6.517,
         "heightDeg": 8.1825
@@ -2192,7 +2192,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 17.1099,
         "heightDeg": 4.2066
@@ -2232,7 +2232,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 10.2639,
         "heightDeg": 0.8454
@@ -2272,7 +2272,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 4.2433,
         "heightDeg": 0.1838
@@ -2312,7 +2312,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 15.0198,
         "heightDeg": 2.205
@@ -2352,7 +2352,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 14.6041,
         "heightDeg": 6.517
@@ -2379,7 +2379,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 30.0897,
         "heightDeg": 15.7417
@@ -2401,7 +2401,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 12.8833,
         "heightDeg": 6.3338
@@ -2441,7 +2441,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 6.4987,
         "heightDeg": 5.8024
@@ -2481,7 +2481,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 17.092,
         "heightDeg": 3.6926
@@ -2521,7 +2521,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 10.2639,
         "heightDeg": 1.9111
@@ -2561,7 +2561,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 4.2433,
         "heightDeg": 1.562
@@ -2601,7 +2601,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 15.0198,
         "heightDeg": 2.6275
@@ -2641,7 +2641,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 14.5861,
         "heightDeg": 4.9222
@@ -2668,7 +2668,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 30.0897,
         "heightDeg": 15.7417
@@ -2690,7 +2690,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 12.8833,
         "heightDeg": 6.3338
@@ -2730,7 +2730,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 6.517,
         "heightDeg": 5.8207
@@ -2770,7 +2770,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 17.1099,
         "heightDeg": 3.711
@@ -2810,7 +2810,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 10.2639,
         "heightDeg": 1.9111
@@ -2850,7 +2850,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 4.2433,
         "heightDeg": 1.562
@@ -2890,7 +2890,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 15.0198,
         "heightDeg": 2.6275
@@ -2930,7 +2930,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 14.6041,
         "heightDeg": 4.9222
@@ -2957,7 +2957,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 17.8998,
         "heightDeg": 9.2605
@@ -2979,7 +2979,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 7.5606,
         "heightDeg": 3.711
@@ -3019,7 +3019,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 7.0664,
         "heightDeg": 0.8454
@@ -3059,7 +3059,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 5.1423,
         "heightDeg": 0.7351
@@ -3099,7 +3099,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 9.9539,
         "heightDeg": 1.8744
@@ -3139,7 +3139,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 5.3624,
         "heightDeg": 3.8028
@@ -3179,7 +3179,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 4.2249,
         "heightDeg": 3.7477
@@ -3219,7 +3219,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 10.2092,
         "heightDeg": 1.7274
@@ -3246,7 +3246,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 8.8222,
         "heightDeg": 4.5553
@@ -3268,7 +3268,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 3.711,
         "heightDeg": 1.8192
@@ -3308,7 +3308,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 4.28,
         "heightDeg": 0.9372
@@ -3348,7 +3348,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 0.8637,
         "heightDeg": 1.5988
@@ -3388,7 +3388,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 4.6103,
         "heightDeg": 0.2022
@@ -3428,7 +3428,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 3.7661,
         "heightDeg": 2.352
@@ -3468,7 +3468,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 0.9189,
         "heightDeg": 2.8847
@@ -3508,7 +3508,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 4.5919,
         "heightDeg": 1.3599
@@ -3535,7 +3535,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 5.1423,
         "heightDeg": 2.6459
@@ -3557,7 +3557,7 @@
        "transparency": 0.45,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 2.1683,
         "heightDeg": 1.0659
@@ -3597,7 +3597,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 2.5908,
         "heightDeg": 0.6248
@@ -3637,7 +3637,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 0.1838,
         "heightDeg": 1.2313
@@ -3677,7 +3677,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 2.5173,
         "heightDeg": 0.1654
@@ -3717,7 +3717,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 2.3887,
         "heightDeg": 1.415
@@ -3757,7 +3757,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 0.2757,
         "heightDeg": 1.9662
@@ -3797,7 +3797,7 @@
        "transparency": 0,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 2.5541,
         "heightDeg": 0.9924
@@ -3824,7 +3824,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 4.2616,
         "heightDeg": 2.1867
@@ -3846,7 +3846,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 1.7825,
         "heightDeg": 0.8821
@@ -3886,7 +3886,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 2.205,
         "heightDeg": 0.4962
@@ -3926,7 +3926,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 0.2573,
         "heightDeg": 1.0659
@@ -3966,7 +3966,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 2.0764,
         "heightDeg": 0.2022
@@ -4006,7 +4006,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 2.0397,
         "heightDeg": 1.1578
@@ -4046,7 +4046,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 0.2022,
         "heightDeg": 1.6722
@@ -4086,7 +4086,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 2.1132,
         "heightDeg": 0.8637
@@ -4113,7 +4113,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Engin",
+       "title": {"fr": "Engin", "en": "Craft", "es": "Nave", "it": "Veicolo"},
        "angular": {
         "widthDeg": 4.2616,
         "heightDeg": 2.1867
@@ -4135,7 +4135,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Coupole transparente",
+       "title": {"fr": "Coupole transparente", "en": "Transparent dome", "es": "Cúpula transparente", "it": "Cupola trasparente"},
        "angular": {
         "widthDeg": 1.7825,
         "heightDeg": 0.8821
@@ -4175,7 +4175,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 1",
+       "title": {"fr": "Pied 1", "en": "Leg 1", "es": "Pata 1", "it": "Zampa 1"},
        "angular": {
         "widthDeg": 2.205,
         "heightDeg": 0.4962
@@ -4215,7 +4215,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 2",
+       "title": {"fr": "Pied 2", "en": "Leg 2", "es": "Pata 2", "it": "Zampa 2"},
        "angular": {
         "widthDeg": 0.2573,
         "heightDeg": 1.0659
@@ -4255,7 +4255,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 3",
+       "title": {"fr": "Pied 3", "en": "Leg 3", "es": "Pata 3", "it": "Zampa 3"},
        "angular": {
         "widthDeg": 2.0764,
         "heightDeg": 0.2022
@@ -4295,7 +4295,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 4",
+       "title": {"fr": "Pied 4", "en": "Leg 4", "es": "Pata 4", "it": "Zampa 4"},
        "angular": {
         "widthDeg": 2.0397,
         "heightDeg": 1.1578
@@ -4335,7 +4335,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 5",
+       "title": {"fr": "Pied 5", "en": "Leg 5", "es": "Pata 5", "it": "Zampa 5"},
        "angular": {
         "widthDeg": 0.2022,
         "heightDeg": 1.6722
@@ -4375,7 +4375,7 @@
        "transparency": 1,
        "haloScale": 0,
        "selected": false,
-       "title": "Pied 6",
+       "title": {"fr": "Pied 6", "en": "Leg 6", "es": "Pata 6", "it": "Zampa 6"},
        "angular": {
         "widthDeg": 2.1132,
         "heightDeg": 0.8637

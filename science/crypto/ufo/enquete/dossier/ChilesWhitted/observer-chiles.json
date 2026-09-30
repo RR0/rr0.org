@@ -72,7 +72,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 0.8637,
                 "heightDeg": 0.2573
@@ -94,7 +94,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.2573
@@ -116,7 +116,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.0919,
                 "heightDeg": 0.2389
@@ -143,7 +143,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 2.5173,
                 "heightDeg": 0.3859
@@ -165,7 +165,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 0.4043,
                 "heightDeg": 0.3859
@@ -187,7 +187,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.2573,
                 "heightDeg": 0.3492
@@ -214,7 +214,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 4.6286,
                 "heightDeg": 0.6983
@@ -236,7 +236,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 1.856,
                 "heightDeg": 0.6983
@@ -258,7 +258,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.4594,
                 "heightDeg": 0.6248
@@ -285,7 +285,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 8.2008,
                 "heightDeg": 0.8821
@@ -307,7 +307,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 3.2887,
                 "heightDeg": 0.8821
@@ -329,7 +329,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.827,
                 "heightDeg": 0.7902
@@ -356,7 +356,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 9.3883,
                 "heightDeg": 0.9924
@@ -378,7 +378,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 3.7661,
                 "heightDeg": 1.0107
@@ -400,7 +400,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.9372,
                 "heightDeg": 0.9005
@@ -427,7 +427,7 @@
               "transparency": 0,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 4.5919,
                 "heightDeg": 0.4778
@@ -449,7 +449,7 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.4962
@@ -471,7 +471,7 @@
               "transparency": 0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.4594,
                 "heightDeg": 0.4227
@@ -498,7 +498,7 @@
               "transparency": 1,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 4.5919,
                 "heightDeg": 0.4778
@@ -520,7 +520,7 @@
               "transparency": 1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.4962
@@ -542,7 +542,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.4594,
                 "heightDeg": 0.4227
@@ -569,7 +569,7 @@
               "transparency": 1,
               "haloScale": 0.8,
               "selected": false,
-              "title": "Fuselage",
+              "title": {"fr": "Fuselage", "en": "Fuselage", "es": "Fuselaje", "it": "Fusoliera"},
               "angular": {
                 "widthDeg": 4.5919,
                 "heightDeg": 0.4778
@@ -591,7 +591,7 @@
               "transparency": 1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière",
+              "title": {"fr": "Flamme arrière", "en": "Rear flame", "es": "Llama trasera", "it": "Fiamma posteriore"},
               "angular": {
                 "widthDeg": 1.8376,
                 "heightDeg": 0.4962
@@ -613,7 +613,7 @@
               "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Pare-brise ?",
+              "title": {"fr": "Pare-brise ?", "en": "Windscreen?", "es": "¿Parabrisas?", "it": "Parabrezza?"},
               "angular": {
                 "widthDeg": 0.4594,
                 "heightDeg": 0.4227

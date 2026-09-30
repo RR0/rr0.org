@@ -74,7 +74,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 19.2244,
                 "heightDeg": 3.8211
@@ -101,7 +101,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 32.0345,
                 "heightDeg": 6.4621
@@ -128,7 +128,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 85.9155,
                 "heightDeg": 20.7572
@@ -155,7 +155,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 85.9155,
                 "heightDeg": 20.7572
@@ -182,7 +182,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 85.9155,
                 "heightDeg": 20.7572
@@ -209,7 +209,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 85.5205,
                 "heightDeg": 20.6149
@@ -236,7 +236,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 30.4665,
                 "heightDeg": 6.1323
@@ -263,7 +263,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 13.4818,
                 "heightDeg": 2.6643
@@ -290,7 +290,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 4.5919,
                 "heightDeg": 0.9005
@@ -317,7 +317,7 @@
               "transparency": 0.7,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 1.3231,
                 "heightDeg": 0.2573

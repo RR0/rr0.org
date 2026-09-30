@@ -71,7 +71,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.1603,
                 "heightDeg": 0.0827
@@ -97,7 +97,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.1603,
                 "heightDeg": 0.0827
@@ -123,7 +123,7 @@
               "transparency": 0,
               "haloScale": 14,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0551,
                 "heightDeg": 0.1098
@@ -150,7 +150,7 @@
               "transparency": 0,
               "haloScale": 10,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0606,
                 "heightDeg": 0.0441
@@ -177,7 +177,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -203,7 +203,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -234,7 +234,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.1924,
                 "heightDeg": 0.0992
@@ -260,7 +260,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.1924,
                 "heightDeg": 0.0992
@@ -286,7 +286,7 @@
               "transparency": 0,
               "haloScale": 14,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0662,
                 "heightDeg": 0.1318
@@ -313,7 +313,7 @@
               "transparency": 0,
               "haloScale": 10,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0728,
                 "heightDeg": 0.0529
@@ -340,7 +340,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -366,7 +366,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -397,7 +397,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.2025,
                 "heightDeg": 0.1045
@@ -423,7 +423,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.2025,
                 "heightDeg": 0.1045
@@ -449,7 +449,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0696,
                 "heightDeg": 0.1387
@@ -475,7 +475,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0766,
                 "heightDeg": 0.0557
@@ -501,7 +501,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -527,7 +527,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -558,7 +558,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.6414,
                 "heightDeg": 0.3308
@@ -584,7 +584,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.6414,
                 "heightDeg": 0.3308
@@ -610,7 +610,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.2205,
                 "heightDeg": 0.4392
@@ -636,7 +636,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.2426,
                 "heightDeg": 0.1764
@@ -662,7 +662,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -688,7 +688,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -719,7 +719,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -745,7 +745,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.1717,
                 "heightDeg": 0.1378
@@ -771,7 +771,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -797,7 +797,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -823,7 +823,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.1057,
                 "heightDeg": 0.3053
@@ -849,7 +849,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.1057,
                 "heightDeg": 0.3053
@@ -880,7 +880,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -906,7 +906,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.1717,
                 "heightDeg": 0.1378
@@ -932,7 +932,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -958,7 +958,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -984,7 +984,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.1057,
                 "heightDeg": 0.3053
@@ -1010,7 +1010,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.1057,
                 "heightDeg": 0.3053
@@ -1041,7 +1041,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.9162,
                 "heightDeg": 0.4726
@@ -1067,7 +1067,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.1995,
                 "heightDeg": 0.1601
@@ -1093,7 +1093,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.9162,
                 "heightDeg": 0.4726
@@ -1119,7 +1119,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.9162,
                 "heightDeg": 0.4726
@@ -1145,7 +1145,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.1228,
                 "heightDeg": 0.3547
@@ -1171,7 +1171,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.1228,
                 "heightDeg": 0.3547
@@ -1202,7 +1202,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 1.6033,
                 "heightDeg": 0.827
@@ -1228,7 +1228,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.3492,
                 "heightDeg": 0.2803
@@ -1254,7 +1254,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 1.6033,
                 "heightDeg": 0.827
@@ -1280,7 +1280,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 1.6033,
                 "heightDeg": 0.827
@@ -1306,7 +1306,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.2149,
                 "heightDeg": 0.6207
@@ -1332,7 +1332,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.2149,
                 "heightDeg": 0.6207
@@ -1363,7 +1363,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 4.2739,
                 "heightDeg": 2.2051
@@ -1389,7 +1389,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.9311,
                 "heightDeg": 0.7473
@@ -1415,7 +1415,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 4.2739,
                 "heightDeg": 2.2051
@@ -1441,7 +1441,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 4.2739,
                 "heightDeg": 2.2051
@@ -1467,7 +1467,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.573,
                 "heightDeg": 1.6551
@@ -1493,7 +1493,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.573,
                 "heightDeg": 1.6551
@@ -1524,7 +1524,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -1550,7 +1550,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.3966,
                 "heightDeg": 1.121
@@ -1576,7 +1576,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 2.205,
                 "heightDeg": 4.3901
@@ -1602,7 +1602,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 2.4255,
                 "heightDeg": 1.7641
@@ -1628,7 +1628,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -1654,7 +1654,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -1685,7 +1685,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -1711,7 +1711,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.3966,
                 "heightDeg": 1.121
@@ -1737,7 +1737,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 2.205,
                 "heightDeg": 4.3901
@@ -1763,7 +1763,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 2.4255,
                 "heightDeg": 1.7641
@@ -1789,7 +1789,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -1815,7 +1815,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -1846,7 +1846,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -1872,7 +1872,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.3966,
                 "heightDeg": 1.121
@@ -1898,7 +1898,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 2.205,
                 "heightDeg": 4.3901
@@ -1924,7 +1924,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 2.4255,
                 "heightDeg": 1.7641
@@ -1950,7 +1950,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -1976,7 +1976,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2007,7 +2007,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -2033,7 +2033,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.3966,
                 "heightDeg": 1.121
@@ -2059,7 +2059,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 2.205,
                 "heightDeg": 4.3901
@@ -2085,7 +2085,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 2.4255,
                 "heightDeg": 1.7641
@@ -2111,7 +2111,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2137,7 +2137,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2168,7 +2168,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -2194,7 +2194,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.3966,
                 "heightDeg": 1.121
@@ -2220,7 +2220,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 2.205,
                 "heightDeg": 4.3901
@@ -2246,7 +2246,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 2.4255,
                 "heightDeg": 1.7641
@@ -2272,7 +2272,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2298,7 +2298,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2329,7 +2329,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 5.729,
                 "heightDeg": 2.9398
@@ -2355,7 +2355,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.2496,
                 "heightDeg": 0.9924
@@ -2381,7 +2381,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 1.9662,
                 "heightDeg": 3.9313
@@ -2407,7 +2407,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 2.1683,
                 "heightDeg": 1.5804
@@ -2433,7 +2433,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2459,7 +2459,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2490,7 +2490,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 5.1606,
                 "heightDeg": 2.6459
@@ -2516,7 +2516,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.121,
                 "heightDeg": 0.9005
@@ -2542,7 +2542,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 1.7641,
                 "heightDeg": 3.5274
@@ -2568,7 +2568,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 1.9478,
                 "heightDeg": 1.415
@@ -2594,7 +2594,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2620,7 +2620,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2651,7 +2651,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 4.7204,
                 "heightDeg": 2.4255
@@ -2677,7 +2677,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 1.0291,
                 "heightDeg": 0.827
@@ -2703,7 +2703,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 1.6171,
                 "heightDeg": 3.252
@@ -2729,7 +2729,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 1.7825,
                 "heightDeg": 1.3048
@@ -2755,7 +2755,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2781,7 +2781,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2812,7 +2812,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 4.3534,
                 "heightDeg": 2.2418
@@ -2838,7 +2838,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.9556,
                 "heightDeg": 0.7535
@@ -2864,7 +2864,7 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 1.4885,
                 "heightDeg": 2.9949
@@ -2890,7 +2890,7 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 1.6355,
                 "heightDeg": 1.1945
@@ -2916,7 +2916,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2942,7 +2942,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -2973,7 +2973,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 3.05,
                 "heightDeg": 1.5804
@@ -2999,7 +2999,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.6616,
                 "heightDeg": 0.5329
@@ -3025,7 +3025,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 1.0475,
                 "heightDeg": 2.0948
@@ -3051,7 +3051,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 1.1578,
                 "heightDeg": 0.8454
@@ -3077,7 +3077,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3103,7 +3103,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3134,7 +3134,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 2.3336,
                 "heightDeg": 1.1945
@@ -3160,7 +3160,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.5146,
                 "heightDeg": 0.4043
@@ -3186,7 +3186,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.8086,
                 "heightDeg": 1.5988
@@ -3212,7 +3212,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.8821,
                 "heightDeg": 0.6432
@@ -3238,7 +3238,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3264,7 +3264,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3295,7 +3295,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.9372,
                 "heightDeg": 0.4778
@@ -3321,7 +3321,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.2022,
                 "heightDeg": 0.1654
@@ -3347,7 +3347,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.3308,
                 "heightDeg": 0.6432
@@ -3373,7 +3373,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.3492,
                 "heightDeg": 0.2573
@@ -3399,7 +3399,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3425,7 +3425,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3456,7 +3456,7 @@
               "transparency": 0.35,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.3492,
                 "heightDeg": 0.1838
@@ -3482,7 +3482,7 @@
               "transparency": 0.35,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.0735,
                 "heightDeg": 0.0551
@@ -3508,7 +3508,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.1103,
                 "heightDeg": 0.2389
@@ -3534,7 +3534,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.0919
@@ -3560,7 +3560,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3586,7 +3586,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3617,7 +3617,7 @@
               "transparency": 0.9,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.0735
@@ -3643,7 +3643,7 @@
               "transparency": 0.9,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.0368,
                 "heightDeg": 0.0184
@@ -3669,7 +3669,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0551,
                 "heightDeg": 0.0919
@@ -3695,7 +3695,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0551,
                 "heightDeg": 0.0368
@@ -3721,7 +3721,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3747,7 +3747,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3778,7 +3778,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.0641,
                 "heightDeg": 0.0331
@@ -3804,7 +3804,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.014,
                 "heightDeg": 0.0112
@@ -3830,7 +3830,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0641,
                 "heightDeg": 0.0331
@@ -3856,7 +3856,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0641,
                 "heightDeg": 0.0331
@@ -3882,7 +3882,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3908,7 +3908,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -3939,7 +3939,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -3965,7 +3965,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.0052,
                 "heightDeg": 0.0042
@@ -3991,7 +3991,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -4017,7 +4017,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -4043,7 +4043,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -4069,7 +4069,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -4100,7 +4100,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Objet",
+              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -4126,7 +4126,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "title": {"fr": "Insigne rouge (taille rapportée, tracé approché)", "en": "Red insignia (reported size, approximate outline)", "es": "Insignia roja (tamaño referido, trazo aproximado)", "it": "Insegna rossa (dimensione riferita, tracciato approssimato)"},
               "angular": {
                 "widthDeg": 0.0052,
                 "heightDeg": 0.0042
@@ -4152,7 +4152,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Flamme",
+              "title": {"fr": "Flamme", "en": "Flame", "es": "Llama", "it": "Fiamma"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -4178,7 +4178,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Base orange de la flamme",
+              "title": {"fr": "Base orange de la flamme", "en": "Orange base of the flame", "es": "Base naranja de la llama", "it": "Base arancione della fiamma"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -4204,7 +4204,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (1)",
+              "title": {"fr": "Silhouette en combinaison blanche (1)", "en": "Silhouette in white coveralls (1)", "es": "Silueta con mono blanco (1)", "it": "Sagoma in tuta bianca (1)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05
@@ -4230,7 +4230,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": "Silhouette en combinaison blanche (2)",
+              "title": {"fr": "Silhouette en combinaison blanche (2)", "en": "Silhouette in white coveralls (2)", "es": "Silueta con mono blanco (2)", "it": "Sagoma in tuta bianca (2)"},
               "angular": {
                 "widthDeg": 0.05,
                 "heightDeg": 0.05

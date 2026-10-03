@@ -1,0 +1,1567 @@
+{
+  "version": 1,
+  "id": "1965-07-01-MasseMaurice-pv-1965-07-02",
+  "time": {
+    "year": 1965,
+    "month": 7,
+    "day": 1,
+    "hour": 5,
+    "minute": 45
+  },
+  "durationSeconds": 120,
+  "utcOffsetHours": 1,
+  "place": [
+    {
+      "value": {
+        "lat": 43.8447,
+        "lng": 5.9632
+      },
+      "basis": "derived",
+      "rationale": "The memorial's own coordinates, at the roadside of the D6A in the lieu-dit L'Olivol, standing in for a landing point nobody publishes: the memorial was put where the public can reach it safely, and Masse's field is set back in private parcels still under lavender, whose growers ask that nobody walk into them. So this is the right lieu-dit and the right road, and some hundreds of metres out. Everything downstream survives that: across the 800 m square around this point no 40 m of ground exceeds 3.1% of slope (1.2% along the walk itself), so the field lies flat wherever in the parcel the true spot is, and 400 m moves every celestial azimuth by under a hundredth of a degree. The observer track and all 140 rows are laid out relative to this point, so they carry its error with them and none of their own."
+    }
+  ],
+  "observer": {
+    "id": "MasseMaurice",
+    "title": "Maurice Masse (procès-verbal du 2 juillet 1965)"
+  },
+  "description": {
+    "fr": "Ce que la gendarmerie de Valensole consigne le 2 juillet 1965 à 20 h, puis lors d'une seconde audition de 23 h 15 à 23 h 30 : un engin « de la grosseur d'une Dauphine », en forme de ballon de rugby, avec une porte à glissière sur le côté et un dessus transparent, et deux passagers. Un individu, d'environ 1 m, de forte corpulence, en combinaison et tête nue, descend de l'engin quelques instants, puis l'engin disparaît subitement « à la vitesse d'un éclair ». Le résumé ne mentionne ni les pieds ni le pivot, ni le tube, ni l'immobilisation, ni un second être hors de l'engin : ils ne sont donc pas figurés. L'engin est un simple ovoïde aux dimensions d'une Dauphine, et l'être, qui est un corps d'enfant de forte corpulence, n'a pour visage que ce que d'autres déclarations de Masse en disent. Le lieu figuré est celui du mémorial, en bordure de la D6A.",
+    "en": "What the Valensole gendarmerie recorded on 2 July 1965 at 8 pm, then at a second hearing from 11:15 to 11:30 pm: a craft \"the size of a Dauphine\", shaped like a rugby ball, with a sliding door on its side and a transparent top, and two passengers. One individual, about 1 m tall, stocky, in a suit and bare-headed, got out of the craft for a few moments, then the craft vanished suddenly \"at the speed of lightning\". The summary mentions neither the legs nor the pivot, nor the tube, nor the immobilisation, nor a second being outside the craft: so they are not drawn. The craft is a plain ovoid of a Dauphine's size, and the being, a stocky child's body, has no face but what Masse's other statements say of it. The place shown is the memorial's, at the edge of the D6A.",
+    "es": "Lo que la gendarmería de Valensole consigna el 2 de julio de 1965 a las 20 h, y luego en una segunda audiencia de 23:15 a 23:30: una nave « del tamaño de un Dauphine », con forma de balón de rugby, con una puerta corredera en el costado y una parte superior transparente, y dos pasajeros. Un individuo, de aproximadamente 1 m, corpulento, con mono y sin nada en la cabeza, baja de la nave unos instantes, y luego la nave desaparece de repente « a la velocidad del rayo ». El resumen no menciona ni las patas ni el pivote, ni el tubo, ni la inmovilización, ni un segundo ser fuera de la nave: por eso no se representan. La nave es un simple ovoide del tamaño de un Dauphine.",
+    "it": "Ciò che la gendarmeria di Valensole registra il 2 luglio 1965 alle 20, poi in una seconda audizione dalle 23:15 alle 23:30: un velivolo « delle dimensioni di una Dauphine », a forma di pallone da rugby, con una porta scorrevole su un lato e una parte superiore trasparente, e due passeggeri. Un individuo, alto circa 1 m, corpulento, in tuta e a capo scoperto, scende dal velivolo per qualche istante, poi il velivolo scompare all'improvviso « alla velocità di un lampo ». Il riassunto non menziona né le gambe né il perno, né il tubo, né l'immobilizzazione, né un secondo essere fuori dal velivolo: non sono quindi raffigurati. Il velivolo è un semplice ovoide delle dimensioni di una Dauphine."
+  },
+  "tags": [
+    "RR3",
+    "landing"
+  ],
+  "sources": [
+    {
+      "type": "article",
+      "title": "Rencontre de Valensole",
+      "url": "https://fr.wikipedia.org/wiki/Rencontre_de_Valensole",
+      "publication": {
+        "publisher": "Wikipédia"
+      }
+    }
+  ],
+  "timeline": {
+    "keyframes": []
+  },
+  "observerTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "pose": {
+          "lat": 43.845508,
+          "lng": 5.9632,
+          "elevationM": 0,
+          "headingDeg": 180,
+          "pitchDeg": 2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 15000,
+        "pose": {
+          "lat": 43.845304,
+          "lng": 5.9632,
+          "elevationM": 0,
+          "headingDeg": 180,
+          "pitchDeg": 2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 30000,
+        "pose": {
+          "lat": 43.845099,
+          "lng": 5.9632,
+          "elevationM": 0,
+          "headingDeg": 180,
+          "pitchDeg": 2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 45000,
+        "pose": {
+          "lat": 43.844895,
+          "lng": 5.9632,
+          "elevationM": 0,
+          "headingDeg": 180,
+          "pitchDeg": 2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 55000,
+        "pose": {
+          "lat": 43.844758,
+          "lng": 5.9632,
+          "elevationM": 0,
+          "headingDeg": 180,
+          "pitchDeg": 2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 120000,
+        "pose": {
+          "lat": 43.844758,
+          "lng": 5.9632,
+          "elevationM": 0,
+          "headingDeg": 180,
+          "pitchDeg": 2,
+          "fovDeg": 60
+        }
+      }
+    ]
+  },
+  "weatherTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "weather": {
+          "cloudLayers": [
+            {
+              "id": "record-low",
+              "type": "unknown",
+              "baseM": 191,
+              "thicknessM": 650,
+              "coverage": 0,
+              "sizeM": 1400,
+              "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.095,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0.020000000000000004,
+              "sizeM": 2200,
+              "density": 0.35
+            }
+          ],
+          "cloudCover": 0.12,
+          "cloudDarkness": 0.3891304347826087,
+          "cloudBaseM": 3500,
+          "highCloudCover": 0.020000000000000004,
+          "lowerCloudCover": 0.095,
+          "relativeHumidity": 0.91,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 232.75,
+          "windSpeed": 0.875,
+          "storm": false
+        }
+      }
+    ]
+  },
+  "decor": [
+    {
+      "id": "clapier",
+      "kind": "mound",
+      "title": {
+        "fr": "Clapier",
+        "en": "Stone heap",
+        "es": "Montón de piedras",
+        "it": "Mucchio di pietre"
+      },
+      "eastM": 0,
+      "northM": 4,
+      "headingDeg": 49,
+      "sizeM": {
+        "widthM": 3,
+        "lengthM": 6,
+        "heightM": 2
+      }
+    },
+    {
+      "id": "tractor",
+      "kind": "vehicle",
+      "title": {
+        "fr": "Tracteur de Maurice Masse",
+        "en": "Maurice Masse's tractor",
+        "es": "El tractor de Maurice Masse",
+        "it": "Il trattore di Maurice Masse"
+      },
+      "eastM": 1.5,
+      "northM": 9,
+      "headingDeg": 49,
+      "lit": false,
+      "sizeM": {
+        "widthM": 1.9,
+        "lengthM": 3.2,
+        "heightM": 2.4
+      }
+    },
+    {
+      "id": "vine-1",
+      "kind": "crop",
+      "title": {
+        "fr": "Vigne longée par le observateur",
+        "en": "The vine the observer walked along",
+        "es": "La viña junto a la que caminó el observador",
+        "it": "La vigna lungo cui camminò l'osservatore"
+      },
+      "eastM": 4.33,
+      "northM": 5.38,
+      "headingDeg": 139,
+      "color": "#3f4a2e",
+      "sizeM": {
+        "widthM": 0.8,
+        "heightM": 1.1
+      }
+    },
+    {
+      "id": "vine-2",
+      "kind": "crop",
+      "title": {
+        "fr": "Vigne longée par le observateur",
+        "en": "The vine the observer walked along",
+        "es": "La viña junto a la que caminó el observador",
+        "it": "La vigna lungo cui camminò l'osservatore"
+      },
+      "eastM": -15.52,
+      "northM": 28.21,
+      "headingDeg": 139,
+      "color": "#3f4a2e",
+      "sizeM": {
+        "widthM": 0.8,
+        "heightM": 1.1
+      }
+    },
+    {
+      "id": "vine-3",
+      "kind": "crop",
+      "title": {
+        "fr": "Vigne longée par le observateur",
+        "en": "The vine the observer walked along",
+        "es": "La viña junto a la que caminó el observador",
+        "it": "La vigna lungo cui camminò l'osservatore"
+      },
+      "eastM": -35.37,
+      "northM": 51.04,
+      "headingDeg": 139,
+      "color": "#3f4a2e",
+      "sizeM": {
+        "widthM": 0.8,
+        "heightM": 1.1
+      }
+    },
+    {
+      "id": "lavender-001",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -14.7,
+      "northM": 16.91,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-002",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -30.18,
+      "northM": -11.39,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-003",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -7.35,
+      "northM": 8.45,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-004",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -45.66,
+      "northM": -39.69,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-005",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -22.83,
+      "northM": -19.85,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-006",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 0,
+      "northM": 0,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-007",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 22.83,
+      "northM": 19.85,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-008",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -38.31,
+      "northM": -48.14,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-009",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -15.48,
+      "northM": -28.3,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-010",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 7.35,
+      "northM": -8.45,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-011",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 30.18,
+      "northM": 11.39,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-012",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -53.79,
+      "northM": -76.44,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-013",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -30.96,
+      "northM": -56.6,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-014",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -8.13,
+      "northM": -36.75,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-015",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 14.7,
+      "northM": -16.91,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-016",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -46.45,
+      "northM": -84.9,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-017",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -23.62,
+      "northM": -65.05,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-018",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -0.79,
+      "northM": -45.2,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-019",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 22.04,
+      "northM": -25.36,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-020",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -61.93,
+      "northM": -113.19,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-021",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -39.1,
+      "northM": -93.35,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-022",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -16.27,
+      "northM": -73.5,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-023",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 6.56,
+      "northM": -53.66,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-024",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 29.39,
+      "northM": -33.81,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-025",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -77.41,
+      "northM": -141.49,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-026",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -54.58,
+      "northM": -121.65,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-027",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -31.75,
+      "northM": -101.8,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-028",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -8.92,
+      "northM": -81.96,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-029",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 13.91,
+      "northM": -62.11,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-030",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 36.74,
+      "northM": -42.26,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-031",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -70.06,
+      "northM": -149.95,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-032",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -47.23,
+      "northM": -130.1,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-033",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -24.4,
+      "northM": -110.25,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-034",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -1.57,
+      "northM": -90.41,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-035",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 21.26,
+      "northM": -70.56,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-036",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 44.09,
+      "northM": -50.72,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-037",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -85.54,
+      "northM": -178.24,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-038",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -62.71,
+      "northM": -158.4,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-039",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -39.88,
+      "northM": -138.55,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-040",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -17.05,
+      "northM": -118.71,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-041",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 5.78,
+      "northM": -98.86,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-042",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 28.61,
+      "northM": -79.02,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-043",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 51.44,
+      "northM": -59.17,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-044",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -78.2,
+      "northM": -186.7,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-045",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -55.37,
+      "northM": -166.85,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-046",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -32.54,
+      "northM": -147.01,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-047",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -9.71,
+      "northM": -127.16,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-048",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 13.12,
+      "northM": -107.31,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-049",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 35.95,
+      "northM": -87.47,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-050",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -70.85,
+      "northM": -195.15,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-051",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -48.02,
+      "northM": -175.3,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-052",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -25.19,
+      "northM": -155.46,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-053",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -2.36,
+      "northM": -135.61,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-054",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 20.47,
+      "northM": -115.77,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-055",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 43.3,
+      "northM": -95.92,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-056",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -63.5,
+      "northM": -203.6,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-057",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -40.67,
+      "northM": -183.76,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-058",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -17.84,
+      "northM": -163.91,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-059",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 4.99,
+      "northM": -144.06,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-060",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 27.82,
+      "northM": -124.22,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-061",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 50.65,
+      "northM": -104.37,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-062",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -33.32,
+      "northM": -192.21,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-063",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -10.49,
+      "northM": -172.36,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-064",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 12.34,
+      "northM": -152.52,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-065",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 35.17,
+      "northM": -132.67,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-066",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 58,
+      "northM": -112.83,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-067",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -25.98,
+      "northM": -200.66,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-068",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": -3.15,
+      "northM": -180.82,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-069",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 19.68,
+      "northM": -160.97,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-070",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 42.51,
+      "northM": -141.12,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-071",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 65.34,
+      "northM": -121.28,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-072",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 4.2,
+      "northM": -189.27,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-073",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 27.03,
+      "northM": -169.42,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-074",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 49.86,
+      "northM": -149.58,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-075",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 72.69,
+      "northM": -129.73,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-076",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 11.55,
+      "northM": -197.72,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-077",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 34.38,
+      "northM": -177.88,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-078",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 57.21,
+      "northM": -158.03,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-079",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 41.73,
+      "northM": -186.33,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-080",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 64.56,
+      "northM": -166.48,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-081",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 49.08,
+      "northM": -194.78,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-082",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 71.91,
+      "northM": -174.94,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-083",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 56.42,
+      "northM": -203.23,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-084",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 79.25,
+      "northM": -183.39,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-085",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 86.6,
+      "northM": -191.84,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    },
+    {
+      "id": "lavender-086",
+      "kind": "crop",
+      "title": {
+        "fr": "Champ de lavande",
+        "en": "Lavender field",
+        "es": "Campo de lavanda",
+        "it": "Campo di lavanda"
+      },
+      "eastM": 93.95,
+      "northM": -200.29,
+      "headingDeg": 49,
+      "color": "#574a6b"
+    }
+  ],
+  "weatherSource": {
+    "id": "era5",
+    "name": "ERA5 (Open-Meteo)",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.845508&longitude=5.9632&start_date=1965-07-01&end_date=1965-07-01&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
+  },
+  "instrument": "eye",
+  "interpretation": {
+    "title": {
+      "fr": "Un engin ovoïde de la taille d'une Dauphine et un individu d'un mètre, trapu, tête nue, qui en descend",
+      "en": "An ovoid craft the size of a Dauphine and one stocky, bare-headed individual, a metre tall, getting out of it",
+      "es": "Una nave ovoide del tamaño de un Dauphine y un individuo de un metro, corpulento y sin nada en la cabeza, que baja de ella",
+      "it": "Un velivolo ovoidale delle dimensioni di una Dauphine e un individuo alto un metro, corpulento e a capo scoperto, che ne scende"
+    },
+    "bodies": [
+      {
+        "id": "craft",
+        "title": {
+          "fr": "L'engin",
+          "en": "The craft",
+          "es": "La nave",
+          "it": "Il velivolo"
+        },
+        "model": {
+          "id": "ellipsoid"
+        },
+        "track": {
+          "value": [
+            {
+              "t": 0,
+              "eastM": 0,
+              "northM": -89.9,
+              "onGround": true,
+              "sizeM": {
+                "widthM": 1.52,
+                "lengthM": 3.95,
+                "heightM": 1.35
+              },
+              "attitude": {
+                "headingDeg": 0
+              },
+              "appearance": {
+                "color": "#b8b3a6",
+                "albedo": 0.35
+              }
+            },
+            {
+              "t": 100000,
+              "present": false
+            }
+          ],
+          "basis": "assumed",
+          "rationale": "The summary gives the craft's size by a comparison (\"la grosseur d'une Dauphine\"), its shape (a rugby ball), a sliding door on its side and a transparent top, and nothing else: no legs, no pivot, no colour. It is therefore drawn as a plain ovoid of a Renault Dauphine's overall dimensions (about 3.95 x 1.52 x 1.35 m), in the neutral matte colour of the later accounts, at the 90 m from which he first saw it. The 3.5 m x 2.5 m, the six legs and the pivot are later statements and are not read back into this one. It vanishes \"subitement\", at the speed of lightning: here after the being has gone back aboard."
+        }
+      },
+      {
+        "id": "etre-1",
+        "title": {
+          "fr": "L'individu",
+          "en": "The individual",
+          "es": "El individuo",
+          "it": "L'individuo"
+        },
+        "model": {
+          "id": "ufoathome-valensole-being"
+        },
+        "track": {
+          "value": [
+            {
+              "t": 0,
+              "present": false
+            },
+            {
+              "t": 60000,
+              "eastM": -1.2,
+              "northM": -88.0,
+              "onGround": true,
+              "sizeM": {
+                "widthM": 0.35,
+                "lengthM": 0.3,
+                "heightM": 1.0
+              },
+              "attitude": {
+                "headingDeg": 0
+              },
+              "appearance": {
+                "color": "#6f7263",
+                "albedo": 0.28
+              },
+              "present": true
+            },
+            {
+              "t": 90000,
+              "present": false
+            }
+          ],
+          "basis": "assumed",
+          "rationale": "\"Un individu, taille 1 m environ, de forte corpulence, vêtu d'une combinaison, tête nue, serait descendu de l'engin quelques instants\": one being, about a metre tall, stocky, in a suit, bare-headed, standing by the craft for a short while. How long, where, and facing which way are not in the summary: it is put beside the craft, on the side he was walking up, for thirty seconds, facing him."
+        }
+      }
+    ]
+  }
+}

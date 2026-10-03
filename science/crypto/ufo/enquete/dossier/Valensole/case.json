@@ -10,8 +10,15 @@
       "type": "event",
       "eventType": "sighting",
       "time": "1965-07-01 05:45",
-      "title": "Maurice Masse",
+      "title": "Maurice Masse (récit détaillé)",
       "url": "sighting.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1965-07-01 05:45",
+      "title": "Maurice Masse (procès-verbal du 2 juillet 1965)",
+      "url": "observer-valensole-pv-1965-07-02.json"
     }
   ]
 }

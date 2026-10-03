@@ -6076,7 +6076,7 @@
      "it": "Essere (1)"
     },
     "model": {
-     "id": "figure"
+     "id": "ufoathome-valensole-being"
     },
     "track": {
      "value": [
@@ -6086,8 +6086,8 @@
        "northM": -88,
        "onGround": true,
        "sizeM": {
-        "widthM": 0.4,
-        "lengthM": 0.28,
+        "widthM": 0.35,
+        "lengthM": 0.3,
         "heightM": 1
        },
        "attitude": {
@@ -6116,7 +6116,7 @@
      "it": "Essere (2)"
     },
     "model": {
-     "id": "figure"
+     "id": "ufoathome-valensole-being"
     },
     "track": {
      "value": [
@@ -6126,8 +6126,8 @@
        "northM": -87.7,
        "onGround": true,
        "sizeM": {
-        "widthM": 0.4,
-        "lengthM": 0.28,
+        "widthM": 0.35,
+        "lengthM": 0.3,
         "heightM": 1.05
        },
        "attitude": {

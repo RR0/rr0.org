@@ -779,5 +779,457 @@
    }
   ]
  },
- "sway": 0
+ "sway": 0,
+ "interpretations": [
+  {
+   "title": {
+    "fr": "Avril 2013 : une maquette d'environ 12 cm sous le fil inférieur de la ligne, qui oscille de 9° entre les deux photographies (aucun fil visible)",
+    "en": "April 2013: a model about 12 cm across under the lower wire of the line, swinging 9° between the two photographs (no thread seen)",
+    "es": "Abril de 2013: una maqueta de unos 12 cm bajo el cable inferior de la línea, que oscila 9° entre las dos fotografías (ningún hilo visible)",
+    "it": "Aprile 2013: un modellino di circa 12 cm sotto il filo inferiore della linea, che oscilla di 9° fra le due fotografie (nessun filo visibile)"
+   },
+   "by": [
+    {
+     "people": "CousynAntoine"
+    },
+    {
+     "people": "LouangeFrancois"
+    },
+    {
+     "people": "QuickGeoff"
+    }
+   ],
+   "time": "2013-04",
+   "bodies": [
+    {
+     "id": "model",
+     "title": {
+      "fr": "La maquette",
+      "en": "The model",
+      "es": "La maqueta",
+      "it": "Il modellino"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "ufoathome-mcminnville-object"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.759,
+       "sizeM": {
+        "widthM": 0.12,
+        "lengthM": 0.12,
+        "heightM": 0.041
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 42000,
+       "eastM": 2.886,
+       "northM": 2.921,
+       "altitudeAboveGroundM": 2.768,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6,
+        "rollDeg": 17
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Juin 2013 : la même maquette au bout d'un fil de 70 cm, mis en évidence sur les deux photographies",
+    "en": "June 2013: the same model at the end of a 70 cm thread, detected on both photographs",
+    "es": "Junio de 2013: la misma maqueta al extremo de un hilo de 70 cm, detectado en las dos fotografías",
+    "it": "Giugno 2013: lo stesso modellino all'estremità di un filo di 70 cm, rilevato su entrambe le fotografie"
+   },
+   "by": [
+    {
+     "people": "CousynAntoine"
+    },
+    {
+     "people": "LouangeFrancois"
+    },
+    {
+     "people": "QuickGeoff"
+    }
+   ],
+   "time": "2013-06",
+   "bodies": [
+    {
+     "id": "model",
+     "title": {
+      "fr": "La maquette",
+      "en": "The model",
+      "es": "La maqueta",
+      "it": "Il modellino"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "ufoathome-mcminnville-object"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.759,
+       "sizeM": {
+        "widthM": 0.12,
+        "lengthM": 0.12,
+        "heightM": 0.041
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 42000,
+       "eastM": 2.886,
+       "northM": 2.921,
+       "altitudeAboveGroundM": 2.768,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6,
+        "rollDeg": 17
+       }
+      }
+     ]
+    },
+    {
+     "id": "thread",
+     "title": {
+      "fr": "Le fil de suspension (mis en évidence)",
+      "en": "The suspension thread (detected)",
+      "es": "El hilo de suspensión (detectado)",
+      "it": "Il filo di sospensione (rilevato)"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.8,
+       "sizeM": {
+        "widthM": 0.0004,
+        "lengthM": 0.0004,
+        "heightM": 0.7
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 0,
+        "rollDeg": 0
+       },
+       "appearance": {
+        "color": "#303030",
+        "albedo": 0.1
+       }
+      },
+      {
+       "t": 38000,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.8,
+       "sizeM": {
+        "widthM": 0.0004,
+        "lengthM": 0.0004,
+        "heightM": 0.7
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 0,
+        "rollDeg": 0
+       }
+      },
+      {
+       "t": 42000,
+       "eastM": 2.857,
+       "northM": 2.875,
+       "altitudeAboveGroundM": 2.804,
+       "sizeM": {
+        "widthM": 0.0004,
+        "lengthM": 0.0004,
+        "heightM": 0.7
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 9,
+        "rollDeg": 0
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
+    "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look",
+    "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto",
+    "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto"
+   },
+   "bodies": [
+    {
+     "id": "object",
+     "title": {
+      "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
+      "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look",
+      "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto",
+      "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "ufoathome-mcminnville-object"
+     },
+     "track": [
+      {
+       "t": 0,
+       "azimuthDeg": 45,
+       "altitudeDeg": 17.74,
+       "distanceM": 10.5,
+       "sizeM": {
+        "widthM": 0.3,
+        "lengthM": 0.3,
+        "heightM": 0.103
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 12000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 42000,
+       "azimuthDeg": 32,
+       "altitudeDeg": 16.28,
+       "distanceM": 11.7,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6,
+        "rollDeg": 17
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect",
+    "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look",
+    "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto",
+    "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto"
+   },
+   "bodies": [
+    {
+     "id": "object",
+     "title": {
+      "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect",
+      "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look",
+      "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto",
+      "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "ufoathome-mcminnville-object"
+     },
+     "track": [
+      {
+       "t": 0,
+       "azimuthDeg": 45,
+       "altitudeDeg": 17.74,
+       "distanceM": 6.3,
+       "sizeM": {
+        "widthM": 0.18,
+        "lengthM": 0.18,
+        "heightM": 0.062
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 12000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 42000,
+       "azimuthDeg": 32,
+       "altitudeDeg": 16.28,
+       "distanceM": 7,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6,
+        "rollDeg": 17
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Rapport Condon : un disque de l'ordre de la dizaine de mètres, ici 12 m à 422 m (Hartmann donne 0,44 km), même largeur angulaire et même aspect",
+    "en": "Condon report: a disc of the order of ten metres, here 12 m at 422 m (Hartmann gives 0.44 km), the same angular width and the same look",
+    "es": "Informe Condon: un disco del orden de diez metros, aquí 12 m a 422 m (Hartmann da 0,44 km), misma anchura angular y mismo aspecto",
+    "it": "Rapporto Condon: un disco dell'ordine di una decina di metri, qui 12 m a 422 m (Hartmann dà 0,44 km), stessa larghezza angolare e stesso aspetto"
+   },
+   "by": [
+    {
+     "people": "HartmannWilliam"
+    }
+   ],
+   "bodies": [
+    {
+     "id": "object",
+     "title": {
+      "fr": "Rapport Condon : un disque de l'ordre de la dizaine de mètres, ici 12 m à 422 m (Hartmann donne 0,44 km), même largeur angulaire et même aspect",
+      "en": "Condon report: a disc of the order of ten metres, here 12 m at 422 m (Hartmann gives 0.44 km), the same angular width and the same look",
+      "es": "Informe Condon: un disco del orden de diez metros, aquí 12 m a 422 m (Hartmann da 0,44 km), misma anchura angular y mismo aspecto",
+      "it": "Rapporto Condon: un disco dell'ordine di una decina di metri, qui 12 m a 422 m (Hartmann dà 0,44 km), stessa larghezza angolare e stesso aspetto"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "ufoathome-mcminnville-object"
+     },
+     "track": [
+      {
+       "t": 0,
+       "azimuthDeg": 45,
+       "altitudeDeg": 17.74,
+       "distanceM": 421.8,
+       "sizeM": {
+        "widthM": 12,
+        "lengthM": 12,
+        "heightM": 4.1
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 12000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": -3.2,
+        "rollDeg": 19
+       }
+      },
+      {
+       "t": 42000,
+       "azimuthDeg": 32,
+       "altitudeDeg": 16.28,
+       "distanceM": 467.7,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6,
+        "rollDeg": 17
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }

@@ -50,18 +50,18 @@
       "ufo-1"
      ],
      "model": {
-      "id": "disc"
+      "id": "ufoathome-mcminnville-object"
      },
      "track": [
       {
        "t": 0,
        "eastM": 2.828,
        "northM": 2.828,
-       "altitudeAboveGroundM": 2.75,
+       "altitudeAboveGroundM": 2.759,
        "sizeM": {
         "widthM": 0.12,
         "lengthM": 0.12,
-        "heightM": 0.05
+        "heightM": 0.041
        },
        "attitude": {
         "headingDeg": 32,
@@ -83,131 +83,10 @@
        "t": 42000,
        "eastM": 2.886,
        "northM": 2.921,
-       "altitudeAboveGroundM": 2.759,
+       "altitudeAboveGroundM": 2.768,
        "attitude": {
         "headingDeg": 32,
         "pitchDeg": 21.6
-       }
-      }
-     ]
-    },
-    {
-     "id": "antenna",
-     "title": {
-      "fr": "La petite « antenne » du dessus",
-      "en": "The small \"antenna\" on top",
-      "es": "La pequeña \"antena\" de arriba",
-      "it": "La piccola \"antenna\" in cima"
-     },
-     "explains": [],
-     "model": {
-      "id": "cylinder"
-     },
-     "track": [
-      {
-       "t": 0,
-       "eastM": 2.828,
-       "northM": 2.828,
-       "altitudeAboveGroundM": 2.8,
-       "sizeM": {
-        "widthM": 0.006,
-        "lengthM": 0.006,
-        "heightM": 0.008
-       },
-       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": -3.2
-       },
-       "appearance": {
-        "color": "#8a8d91",
-        "albedo": 0.3
-       }
-      },
-      {
-       "t": 38000,
-       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": -3.2
-       }
-      },
-      {
-       "t": 42000,
-       "eastM": 2.886,
-       "northM": 2.921,
-       "altitudeAboveGroundM": 2.809,
-       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": 21.6
-       }
-      }
-     ]
-    },
-    {
-     "id": "line-lower",
-     "title": {
-      "fr": "Fil électrique inférieur (3,5 m)",
-      "en": "Lower electric wire (3.5 m)",
-      "es": "Cable eléctrico inferior (3,5 m)",
-      "it": "Filo elettrico inferiore (3,5 m)"
-     },
-     "explains": [],
-     "model": {
-      "id": "cylinder"
-     },
-     "track": [
-      {
-       "t": 0,
-       "eastM": 3.89,
-       "northM": 1.77,
-       "altitudeAboveGroundM": -4,
-       "sizeM": {
-        "widthM": 0.006,
-        "lengthM": 0.006,
-        "heightM": 15
-       },
-       "attitude": {
-        "headingDeg": 45,
-        "pitchDeg": 0,
-        "rollDeg": 90
-       },
-       "appearance": {
-        "color": "#202020",
-        "albedo": 0.05
-       }
-      }
-     ]
-    },
-    {
-     "id": "line-upper",
-     "title": {
-      "fr": "Fil électrique supérieur",
-      "en": "Upper electric wire",
-      "es": "Cable eléctrico superior",
-      "it": "Filo elettrico superiore"
-     },
-     "explains": [],
-     "model": {
-      "id": "cylinder"
-     },
-     "track": [
-      {
-       "t": 0,
-       "eastM": 3.89,
-       "northM": 1.77,
-       "altitudeAboveGroundM": -3.86,
-       "sizeM": {
-        "widthM": 0.006,
-        "lengthM": 0.006,
-        "heightM": 15
-       },
-       "attitude": {
-        "headingDeg": 45,
-        "pitchDeg": 0,
-        "rollDeg": 90
-       },
-       "appearance": {
-        "color": "#202020",
-        "albedo": 0.05
        }
       }
      ]
@@ -249,18 +128,18 @@
       "ufo-1"
      ],
      "model": {
-      "id": "disc"
+      "id": "ufoathome-mcminnville-object"
      },
      "track": [
       {
        "t": 0,
        "eastM": 2.828,
        "northM": 2.828,
-       "altitudeAboveGroundM": 2.75,
+       "altitudeAboveGroundM": 2.759,
        "sizeM": {
         "widthM": 0.12,
         "lengthM": 0.12,
-        "heightM": 0.05
+        "heightM": 0.041
        },
        "attitude": {
         "headingDeg": 32,
@@ -282,58 +161,7 @@
        "t": 42000,
        "eastM": 2.886,
        "northM": 2.921,
-       "altitudeAboveGroundM": 2.759,
-       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": 21.6
-       }
-      }
-     ]
-    },
-    {
-     "id": "antenna",
-     "title": {
-      "fr": "La petite « antenne » du dessus",
-      "en": "The small \"antenna\" on top",
-      "es": "La pequeña \"antena\" de arriba",
-      "it": "La piccola \"antenna\" in cima"
-     },
-     "explains": [],
-     "model": {
-      "id": "cylinder"
-     },
-     "track": [
-      {
-       "t": 0,
-       "eastM": 2.828,
-       "northM": 2.828,
-       "altitudeAboveGroundM": 2.8,
-       "sizeM": {
-        "widthM": 0.006,
-        "lengthM": 0.006,
-        "heightM": 0.008
-       },
-       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": -3.2
-       },
-       "appearance": {
-        "color": "#8a8d91",
-        "albedo": 0.3
-       }
-      },
-      {
-       "t": 38000,
-       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": -3.2
-       }
-      },
-      {
-       "t": 42000,
-       "eastM": 2.886,
-       "northM": 2.921,
-       "altitudeAboveGroundM": 2.809,
+       "altitudeAboveGroundM": 2.768,
        "attitude": {
         "headingDeg": 32,
         "pitchDeg": 21.6
@@ -407,73 +235,201 @@
        }
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "eventType": "interpretation",
+   "sighting": "1950-05-11-TrentPaul",
+   "title": {
+    "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
+    "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look",
+    "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto",
+    "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto"
+   },
+   "bodies": [
     {
-     "id": "line-lower",
+     "id": "object",
      "title": {
-      "fr": "Fil électrique inférieur (3,5 m)",
-      "en": "Lower electric wire (3.5 m)",
-      "es": "Cable eléctrico inferior (3,5 m)",
-      "it": "Filo elettrico inferiore (3,5 m)"
+      "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
+      "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look",
+      "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto",
+      "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto"
      },
-     "explains": [],
+     "explains": [
+      "ufo-1"
+     ],
      "model": {
-      "id": "cylinder"
+      "id": "ufoathome-mcminnville-object"
      },
      "track": [
       {
-       "t": 0,
-       "eastM": 3.89,
-       "northM": 1.77,
-       "altitudeAboveGroundM": -4,
+       "t": 12000,
+       "azimuthDeg": 45,
+       "altitudeDeg": 17.74,
+       "distanceM": 10.5,
        "sizeM": {
-        "widthM": 0.006,
-        "lengthM": 0.006,
-        "heightM": 15
+        "widthM": 0.3,
+        "lengthM": 0.3,
+        "heightM": 0.103
        },
        "attitude": {
-        "headingDeg": 45,
-        "pitchDeg": 0,
-        "rollDeg": 90
+        "headingDeg": 32,
+        "pitchDeg": -3.2
        },
        "appearance": {
-        "color": "#202020",
-        "albedo": 0.05
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
+       "azimuthDeg": 32,
+       "altitudeDeg": 16.28,
+       "distanceM": 11.7,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
        }
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "eventType": "interpretation",
+   "sighting": "1950-05-11-TrentPaul",
+   "title": {
+    "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect",
+    "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look",
+    "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto",
+    "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto"
+   },
+   "bodies": [
     {
-     "id": "line-upper",
+     "id": "object",
      "title": {
-      "fr": "Fil électrique supérieur",
-      "en": "Upper electric wire",
-      "es": "Cable eléctrico superior",
-      "it": "Filo elettrico superiore"
+      "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect",
+      "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look",
+      "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto",
+      "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto"
      },
-     "explains": [],
+     "explains": [
+      "ufo-1"
+     ],
      "model": {
-      "id": "cylinder"
+      "id": "ufoathome-mcminnville-object"
      },
      "track": [
       {
-       "t": 0,
-       "eastM": 3.89,
-       "northM": 1.77,
-       "altitudeAboveGroundM": -3.86,
+       "t": 12000,
+       "azimuthDeg": 45,
+       "altitudeDeg": 17.74,
+       "distanceM": 6.3,
        "sizeM": {
-        "widthM": 0.006,
-        "lengthM": 0.006,
-        "heightM": 15
+        "widthM": 0.18,
+        "lengthM": 0.18,
+        "heightM": 0.062
        },
        "attitude": {
-        "headingDeg": 45,
-        "pitchDeg": 0,
-        "rollDeg": 90
+        "headingDeg": 32,
+        "pitchDeg": -3.2
        },
        "appearance": {
-        "color": "#202020",
-        "albedo": 0.05
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
+       "azimuthDeg": 32,
+       "altitudeDeg": 16.28,
+       "distanceM": 7,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "eventType": "interpretation",
+   "sighting": "1950-05-11-TrentPaul",
+   "title": {
+    "fr": "Pour comparer : un disque de 25 m à 879 m (Hartmann retient 20 à 30 m), même largeur angulaire et même aspect",
+    "en": "For comparison: a 25 m disc at 879 m (Hartmann holds 20 to 30 m), the same angular width and the same look",
+    "es": "Para comparar: un disco de 25 m a 879 m (Hartmann retiene de 20 a 30 m), misma anchura angular y mismo aspecto",
+    "it": "Per confronto: un disco di 25 m a 879 m (Hartmann ritiene da 20 a 30 m), stessa larghezza angolare e stesso aspetto"
+   },
+   "bodies": [
+    {
+     "id": "object",
+     "title": {
+      "fr": "Pour comparer : un disque de 25 m à 879 m (Hartmann retient 20 à 30 m), même largeur angulaire et même aspect",
+      "en": "For comparison: a 25 m disc at 879 m (Hartmann holds 20 to 30 m), the same angular width and the same look",
+      "es": "Para comparar: un disco de 25 m a 879 m (Hartmann retiene de 20 a 30 m), misma anchura angular y mismo aspecto",
+      "it": "Per confronto: un disco di 25 m a 879 m (Hartmann ritiene da 20 a 30 m), stessa larghezza angolare e stesso aspetto"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "ufoathome-mcminnville-object"
+     },
+     "track": [
+      {
+       "t": 12000,
+       "azimuthDeg": 45,
+       "altitudeDeg": 17.74,
+       "distanceM": 878.8,
+       "sizeM": {
+        "widthM": 25,
+        "lengthM": 25,
+        "heightM": 8.542
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
+       "azimuthDeg": 32,
+       "altitudeDeg": 16.28,
+       "distanceM": 974.4,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
        }
       }
      ]

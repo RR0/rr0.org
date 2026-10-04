@@ -112,7 +112,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 58,
-         "altitudeDeg": 19.18
+         "altitudeDeg": 19.24
         },
         "basis": "derived",
         "rationale": "Condon: first seen \"apparently towards the north-east\", coming towards the Trents and \"moving slowly towards the west\". Where and how big it was then is not given: a little to the right of where the first photograph finds it, a little smaller and higher, ASSUMED."
@@ -137,7 +137,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 57.926,
-         "altitudeDeg": 19.464
+         "altitudeDeg": 19.523
         },
         "basis": "assumed",
         "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
@@ -167,7 +167,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 45,
-         "altitudeDeg": 17.68
+         "altitudeDeg": 17.74
         },
         "basis": "derived",
         "rationale": "MM1: where the object lies in plate 23 (3.7 degrees right of the centre, 2.9 above), on the camera's axis: its bearing is the one the wire geometry gives (the lower line 3.5 m up, the model 0.7 m under it, the camera at 1.5 m and 4 m from the line). Its width is the study's c, 1.630 degrees, its height the base's eccentricity e1 = 0.362 times that."
@@ -192,7 +192,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 44.9,
-         "altitudeDeg": 17.995
+         "altitudeDeg": 18.053
         },
         "basis": "assumed",
         "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
@@ -222,7 +222,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 32,
-         "altitudeDeg": 16.23
+         "altitudeDeg": 16.28
         },
         "basis": "derived",
         "rationale": "MM2: where the object lies in plate 24 (2.7 degrees left of the centre, 1.3 above), from the second position, 4.3 m from the line, the model swung 9 degrees away. Its width is c = 1.470 degrees. Its height, 0.4 of that, is ASSUMED: the base is no longer seen (e2 = 0.063), the dome's side is, and the study does not measure its height."
@@ -247,7 +247,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 31.91,
-         "altitudeDeg": 16.542
+         "altitudeDeg": 16.596
         },
         "basis": "assumed",
         "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
@@ -277,7 +277,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 8,
-         "altitudeDeg": 14.23
+         "altitudeDeg": 14.28
         },
         "basis": "derived",
         "rationale": "Condon: after the second photograph it \"accelerated slowly\" and went off \"rapidly towards the west\". How fast is not given: a swing to the left, out of the frame, in two seconds, ASSUMED."
@@ -302,7 +302,7 @@
        "aim": {
         "value": {
          "azimuthDeg": 7.92,
-         "altitudeDeg": 14.506
+         "altitudeDeg": 14.56
         },
         "basis": "assumed",
         "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
@@ -605,6 +605,36 @@
    },
    "model": {
     "id": "kenney-suburban-house"
+   }
+  },
+  {
+   "id": "line",
+   "kind": "wire",
+   "title": {
+    "fr": "Ligne électrique (deux fils superposés, 3,5 m et 3,64 m)",
+    "en": "The electric line (two stacked wires, 3.5 m and 3.64 m)",
+    "es": "La línea eléctrica (dos cables superpuestos, 3,5 m y 3,64 m)",
+    "it": "La linea elettrica (due fili sovrapposti, 3,5 m e 3,64 m)"
+   },
+   "eastM": 3.89,
+   "northM": 1.77,
+   "headingDeg": 135,
+   "sizeM": {
+    "widthM": 1,
+    "lengthM": 15,
+    "heightM": 3.5
+   },
+   "wire": {
+    "strands": [
+     {
+      "heightM": 3.5
+     },
+     {
+      "heightM": 3.64
+     }
+    ],
+    "poles": "end",
+    "diameterM": 0.006
    }
   }
  ],

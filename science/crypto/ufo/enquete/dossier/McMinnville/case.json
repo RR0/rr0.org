@@ -19,11 +19,12 @@
    "type": "event",
    "eventType": "interpretation",
    "sighting": "1950-05-11-TrentPaul",
+   "time": "2013-04",
    "title": {
-    "fr": "Une maquette d'environ 12 cm suspendue à un fil de 70 cm sous la ligne électrique, qui oscille de 9° entre les deux photographies",
-    "en": "A model about 12 cm across, hung on a 70 cm thread under the electric line, swinging 9° between the two photographs",
-    "es": "Una maqueta de unos 12 cm colgada de un hilo de 70 cm bajo la línea eléctrica, que oscila 9° entre las dos fotografías",
-    "it": "Un modellino di circa 12 cm appeso a un filo di 70 cm sotto la linea elettrica, che oscilla di 9° fra le due fotografie"
+    "fr": "Avril 2013 : une maquette d'environ 12 cm sous le fil inférieur de la ligne, qui oscille de 9° entre les deux photographies (aucun fil visible)",
+    "en": "April 2013: a model about 12 cm across under the lower wire of the line, swinging 9° between the two photographs (no thread seen)",
+    "es": "Abril de 2013: una maqueta de unos 12 cm bajo el cable inferior de la línea, que oscila 9° entre las dos fotografías (ningún hilo visible)",
+    "it": "Aprile 2013: un modellino di circa 12 cm sotto il filo inferiore della linea, che oscilla di 9° fra le due fotografie (nessun filo visibile)"
    },
    "by": [
     {
@@ -72,7 +73,14 @@
        }
       },
       {
-       "t": 30000,
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
        "eastM": 2.886,
        "northM": 2.921,
        "altitudeAboveGroundM": 2.759,
@@ -84,12 +92,262 @@
      ]
     },
     {
+     "id": "antenna",
+     "title": {
+      "fr": "La petite « antenne » du dessus",
+      "en": "The small \"antenna\" on top",
+      "es": "La pequeña \"antena\" de arriba",
+      "it": "La piccola \"antenna\" in cima"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.8,
+       "sizeM": {
+        "widthM": 0.006,
+        "lengthM": 0.006,
+        "heightM": 0.008
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
+       "eastM": 2.886,
+       "northM": 2.921,
+       "altitudeAboveGroundM": 2.809,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
+       }
+      }
+     ]
+    },
+    {
+     "id": "line-lower",
+     "title": {
+      "fr": "Fil électrique inférieur (3,5 m)",
+      "en": "Lower electric wire (3.5 m)",
+      "es": "Cable eléctrico inferior (3,5 m)",
+      "it": "Filo elettrico inferiore (3,5 m)"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 3.89,
+       "northM": 1.77,
+       "altitudeAboveGroundM": -4,
+       "sizeM": {
+        "widthM": 0.006,
+        "lengthM": 0.006,
+        "heightM": 15
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": 0,
+        "rollDeg": 90
+       },
+       "appearance": {
+        "color": "#202020",
+        "albedo": 0.05
+       }
+      }
+     ]
+    },
+    {
+     "id": "line-upper",
+     "title": {
+      "fr": "Fil électrique supérieur",
+      "en": "Upper electric wire",
+      "es": "Cable eléctrico superior",
+      "it": "Filo elettrico superiore"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 3.89,
+       "northM": 1.77,
+       "altitudeAboveGroundM": -3.86,
+       "sizeM": {
+        "widthM": 0.006,
+        "lengthM": 0.006,
+        "heightM": 15
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": 0,
+        "rollDeg": 90
+       },
+       "appearance": {
+        "color": "#202020",
+        "albedo": 0.05
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "eventType": "interpretation",
+   "sighting": "1950-05-11-TrentPaul",
+   "time": "2013-06",
+   "title": {
+    "fr": "Juin 2013 : la même maquette au bout d'un fil de 70 cm, mis en évidence sur les deux photographies",
+    "en": "June 2013: the same model at the end of a 70 cm thread, detected on both photographs",
+    "es": "Junio de 2013: la misma maqueta al extremo de un hilo de 70 cm, detectado en las dos fotografías",
+    "it": "Giugno 2013: lo stesso modellino all'estremità di un filo di 70 cm, rilevato su entrambe le fotografie"
+   },
+   "by": [
+    {
+     "people": "CousynAntoine"
+    },
+    {
+     "people": "LouangeFrancois"
+    },
+    {
+     "people": "QuickGeoff"
+    }
+   ],
+   "bodies": [
+    {
+     "id": "model",
+     "title": {
+      "fr": "La maquette",
+      "en": "The model",
+      "es": "La maqueta",
+      "it": "Il modellino"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "disc"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.75,
+       "sizeM": {
+        "widthM": 0.12,
+        "lengthM": 0.12,
+        "heightM": 0.05
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
+       "eastM": 2.886,
+       "northM": 2.921,
+       "altitudeAboveGroundM": 2.759,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
+       }
+      }
+     ]
+    },
+    {
+     "id": "antenna",
+     "title": {
+      "fr": "La petite « antenne » du dessus",
+      "en": "The small \"antenna\" on top",
+      "es": "La pequeña \"antena\" de arriba",
+      "it": "La piccola \"antenna\" in cima"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.8,
+       "sizeM": {
+        "widthM": 0.006,
+        "lengthM": 0.006,
+        "heightM": 0.008
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 38000,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       }
+      },
+      {
+       "t": 42000,
+       "eastM": 2.886,
+       "northM": 2.921,
+       "altitudeAboveGroundM": 2.809,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
+       }
+      }
+     ]
+    },
+    {
      "id": "thread",
      "title": {
-      "fr": "Le fil de suspension (supposé)",
-      "en": "The suspension thread (supposed)",
-      "es": "El hilo de suspensión (supuesto)",
-      "it": "Il filo di sospensione (supposto)"
+      "fr": "Le fil de suspension (mis en évidence)",
+      "en": "The suspension thread (detected)",
+      "es": "El hilo de suspensión (detectado)",
+      "it": "Il filo di sospensione (rilevato)"
      },
      "explains": [],
      "model": {
@@ -117,7 +375,23 @@
        }
       },
       {
-       "t": 30000,
+       "t": 38000,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.8,
+       "sizeM": {
+        "widthM": 0.0004,
+        "lengthM": 0.0004,
+        "heightM": 0.7
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 0,
+        "rollDeg": 0
+       }
+      },
+      {
+       "t": 42000,
        "eastM": 2.857,
        "northM": 2.875,
        "altitudeAboveGroundM": 2.804,
@@ -149,13 +423,13 @@
      "track": [
       {
        "t": 0,
-       "eastM": 2.83,
-       "northM": 2.83,
-       "altitudeAboveGroundM": -3.5,
+       "eastM": 3.89,
+       "northM": 1.77,
+       "altitudeAboveGroundM": -4,
        "sizeM": {
         "widthM": 0.006,
         "lengthM": 0.006,
-        "heightM": 14
+        "heightM": 15
        },
        "attitude": {
         "headingDeg": 45,
@@ -184,13 +458,13 @@
      "track": [
       {
        "t": 0,
-       "eastM": 2.83,
-       "northM": 2.83,
-       "altitudeAboveGroundM": -3.36,
+       "eastM": 3.89,
+       "northM": 1.77,
+       "altitudeAboveGroundM": -3.86,
        "sizeM": {
         "widthM": 0.006,
         "lengthM": 0.006,
-        "heightM": 14
+        "heightM": 15
        },
        "attitude": {
         "headingDeg": 45,

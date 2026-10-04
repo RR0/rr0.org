@@ -14,9 +14,9 @@
   "rationale": "Condon's case 46 gives 19:45 (Evelyn Trent: \"about 8 o'clock less a quarter\"), others 19:30. Read as Pacific STANDARD time the Sun would already be 2.4 degrees below the horizon (sunset 19:27) and the sky of the photographs is in daylight, so the clock the Trents read is taken to be summer time, as the Sun's height in the plates needs."
  },
  "durationSeconds": {
-  "value": 30,
-  "basis": "stated",
-  "rationale": "Trent: both photographs \"within 30 seconds\" (Condon, case 46, from the Telephone Register of 8 June 1950)."
+  "value": 50,
+  "basis": "assumed",
+  "rationale": "Trent: both photographs \"within 30 seconds\" (Condon, case 46, from the Telephone Register of 8 June 1950); the object's coming on before the first and its leaving after the second are the account's, and their lengths are not given."
  },
  "utcOffsetHours": {
   "value": -7,
@@ -111,11 +111,66 @@
       "shape": {
        "aim": {
         "value": {
+         "azimuthDeg": 58,
+         "altitudeDeg": 19.18
+        },
+        "basis": "derived",
+        "rationale": "Condon: first seen \"apparently towards the north-east\", coming towards the Trents and \"moving slowly towards the west\". Where and how big it was then is not given: a little to the right of where the first photograph finds it, a little smaller and higher, ASSUMED."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 1.2,
+        "heightDeg": 0.54
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Objet",
+        "en": "Object",
+        "es": "Objeto",
+        "it": "Oggetto"
+       }
+      }
+     },
+     {
+      "sourceId": "antenna",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 57.926,
+         "altitudeDeg": 19.464
+        },
+        "basis": "assumed",
+        "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.0567,
+        "heightDeg": 0.0368
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Petite antenne",
+        "en": "Small antenna",
+        "es": "Pequeña antena",
+        "it": "Piccola antenna"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 12000,
+    "shapes": [
+     {
+      "sourceId": "ufo-1",
+      "shape": {
+       "aim": {
+        "value": {
          "azimuthDeg": 45,
          "altitudeDeg": 17.68
         },
         "basis": "derived",
-        "rationale": "MM1: the study measures sizes, not where the object lies in the frame, so it is put on the camera's axis horizontally, and at the height the wire geometry gives (the lower line 3.5 m up, the model 0.7 m under it, the camera at 1.5 m and 4 m from the line). Its width is the study's c, 1.630 degrees, its height the base's eccentricity e1 = 0.362 times that."
+        "rationale": "MM1: where the object lies in plate 23 (3.7 degrees right of the centre, 2.9 above), on the camera's axis: its bearing is the one the wire geometry gives (the lower line 3.5 m up, the model 0.7 m under it, the camera at 1.5 m and 4 m from the line). Its width is the study's c, 1.630 degrees, its height the base's eccentricity e1 = 0.362 times that."
        },
        "kind": "oval",
        "angular": {
@@ -130,11 +185,36 @@
         "it": "Oggetto"
        }
       }
+     },
+     {
+      "sourceId": "antenna",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 44.9,
+         "altitudeDeg": 17.995
+        },
+        "basis": "assumed",
+        "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.077,
+        "heightDeg": 0.05
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Petite antenne",
+        "en": "Small antenna",
+        "es": "Pequeña antena",
+        "it": "Piccola antenna"
+       }
+      }
      }
     ]
    },
    {
-    "t": 30000,
+    "t": 42000,
     "shapes": [
      {
       "sourceId": "ufo-1",
@@ -145,7 +225,7 @@
          "altitudeDeg": 16.23
         },
         "basis": "derived",
-        "rationale": "MM2: the same, from the second position, 4.3 m from the line, the model swung 9 degrees away. Its width is c = 1.470 degrees. Its height, 0.4 of that, is ASSUMED: the base is no longer seen (e2 = 0.063), the dome's side is, and the study does not measure its height."
+        "rationale": "MM2: where the object lies in plate 24 (2.7 degrees left of the centre, 1.3 above), from the second position, 4.3 m from the line, the model swung 9 degrees away. Its width is c = 1.470 degrees. Its height, 0.4 of that, is ASSUMED: the base is no longer seen (e2 = 0.063), the dome's side is, and the study does not measure its height."
        },
        "kind": "oval",
        "angular": {
@@ -160,34 +240,247 @@
         "it": "Oggetto"
        }
       }
+     },
+     {
+      "sourceId": "antenna",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 31.91,
+         "altitudeDeg": 16.542
+        },
+        "basis": "assumed",
+        "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.0694,
+        "heightDeg": 0.0451
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Petite antenne",
+        "en": "Small antenna",
+        "es": "Pequeña antena",
+        "it": "Piccola antenna"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 44000,
+    "shapes": [
+     {
+      "sourceId": "ufo-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 8,
+         "altitudeDeg": 14.23
+        },
+        "basis": "derived",
+        "rationale": "Condon: after the second photograph it \"accelerated slowly\" and went off \"rapidly towards the west\". How fast is not given: a swing to the left, out of the frame, in two seconds, ASSUMED."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 1.3,
+        "heightDeg": 0.52
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Objet",
+        "en": "Object",
+        "es": "Objeto",
+        "it": "Oggetto"
+       }
+      }
+     },
+     {
+      "sourceId": "antenna",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 7.92,
+         "altitudeDeg": 14.506
+        },
+        "basis": "assumed",
+        "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.0614,
+        "heightDeg": 0.0399
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Petite antenne",
+        "en": "Small antenna",
+        "es": "Pequeña antena",
+        "it": "Piccola antenna"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 47000,
+    "shapes": [
+     {
+      "sourceId": "ufo-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 300,
+         "altitudeDeg": 8
+        },
+        "basis": "derived",
+        "rationale": "As above: still going west, smaller as it goes. ASSUMED."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.6,
+        "heightDeg": 0.24
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Objet",
+        "en": "Object",
+        "es": "Objeto",
+        "it": "Oggetto"
+       }
+      }
+     },
+     {
+      "sourceId": "antenna",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 299.963,
+         "altitudeDeg": 8.127
+        },
+        "basis": "assumed",
+        "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.0283,
+        "heightDeg": 0.0184
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Petite antenne",
+        "en": "Small antenna",
+        "es": "Pequeña antena",
+        "it": "Piccola antenna"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 50000,
+    "shapes": [
+     {
+      "sourceId": "ufo-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 270,
+         "altitudeDeg": 3
+        },
+        "basis": "derived",
+        "rationale": "\"Fading faintly towards the west\" (Condon, from Mrs Trent): gone, due west, low. ASSUMED."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.3,
+        "heightDeg": 0.12
+       },
+       "color": "#2c2c2e",
+       "transparency": 1,
+       "title": {
+        "fr": "Objet",
+        "en": "Object",
+        "es": "Objeto",
+        "it": "Oggetto"
+       }
+      }
+     },
+     {
+      "sourceId": "antenna",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 269.982,
+         "altitudeDeg": 3.064
+        },
+        "basis": "assumed",
+        "rationale": "Plate 26 (MM1 enlarged): a stub about 22 px wide on the 470 px of the disc, 28 px left of its centre, standing just over its top edge."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 0.0142,
+        "heightDeg": 0.0092
+       },
+       "color": "#2c2c2e",
+       "transparency": 1,
+       "title": {
+        "fr": "Petite antenne",
+        "en": "Small antenna",
+        "es": "Pequeña antena",
+        "it": "Piccola antenna"
+       }
+      }
      }
     ]
    }
   ],
   "order": [
-   "ufo-1"
+   "ufo-1",
+   "antenna"
   ],
   "groups": []
  },
  "milestones": [
   {
    "t": 0,
-   "label": "MM1",
+   "label": "A",
    "note": {
-    "fr": "La première photographie : l'objet vient vers eux.",
-    "en": "The first photograph: the object comes towards them.",
-    "es": "La primera fotografía: el objeto viene hacia ellos.",
-    "it": "La prima fotografia: l'oggetto viene verso di loro."
+    "fr": "Evelyn Trent voit l'objet au nord-est et appelle son mari ; il vient vers eux.",
+    "en": "Evelyn Trent sees the object to the north-east and calls her husband; it comes towards them.",
+    "es": "Evelyn Trent ve el objeto al nordeste y llama a su marido; viene hacia ellos.",
+    "it": "Evelyn Trent vede l'oggetto a nord-est e chiama il marito; viene verso di loro."
    }
   },
   {
-   "t": 30000,
+   "t": 12000,
+   "label": "MM1",
+   "note": {
+    "fr": "La première photographie.",
+    "en": "The first photograph.",
+    "es": "La primera fotografía.",
+    "it": "La prima fotografia."
+   }
+  },
+  {
+   "t": 42000,
    "label": "MM2",
    "note": {
     "fr": "La seconde, après un pas à droite : l'objet a « tourné vers le nord-ouest ».",
     "en": "The second, after a step to his right: the object has \"turned towards the north-west\".",
     "es": "La segunda, tras un paso a la derecha: el objeto ha \"girado hacia el noroeste\".",
     "it": "La seconda, dopo un passo a destra: l'oggetto \"ha girato verso nord-ovest\"."
+   }
+  },
+  {
+   "t": 50000,
+   "label": "B",
+   "note": {
+    "fr": "L'objet s'éloigne rapidement vers l'ouest.",
+    "en": "The object leaves quickly to the west.",
+    "es": "El objeto se aleja rápidamente hacia el oeste.",
+    "it": "L'oggetto si allontana rapidamente verso ovest."
    }
   }
  ],
@@ -201,34 +494,120 @@
      "elevationM": -0.1,
      "fovDeg": 33.4,
      "headingDeg": {
-      "value": 45,
-      "basis": "stated",
-      "rationale": "Condon, case 46: \"apparently towards the north-east\" when first seen, and the first photograph taken as the object came on."
+      "value": 41.3,
+      "basis": "derived",
+      "rationale": "Condon, case 46: \"apparently towards the north-east\"; the heading is the object's bearing less its 3.7 degrees right of the centre in plate 23."
      },
      "pitchDeg": {
-      "value": 12,
+      "value": 14.85,
       "basis": "derived",
-      "rationale": "The study gives the line of sight a rise of about 11.5 degrees; 12 puts both lines inside the 33-degree frame, as they are in the plates."
+      "rationale": "The object is at 17.7 degrees by the wire geometry and 2.9 above the centre in plate 23, 16.2 and 1.3 in plate 24: 14.85 degrees both times, which is how the two plates agree. The study gives a line of sight of about 11.5 degrees."
      }
     }
    },
    {
-    "t": 30000,
+    "t": 38000,
+    "pose": {
+     "lat": 45.1041667,
+     "lng": -123.3305556,
+     "elevationM": -0.1,
+     "fovDeg": 33.4,
+     "headingDeg": 41.3,
+     "pitchDeg": 14.85
+    }
+   },
+   {
+    "t": 42000,
     "pose": {
      "lat": 45.1041593,
      "lng": -123.3305486,
      "elevationM": -0.1,
      "fovDeg": 33.4,
      "headingDeg": {
-      "value": 32,
+      "value": 34.7,
       "basis": "derived",
-      "rationale": "13 degrees from the first (the study: the line of sight turns by 13 degrees between the photographs), to the left while Trent steps right, as he must to keep a thing that has not moved in the frame."
+      "rationale": "The object's bearing from the second position (13 degrees from the first, the study's turn of the line of sight) less its 2.7 degrees left of the centre in plate 24."
      },
-     "pitchDeg": 12
+     "pitchDeg": 14.85
     }
    }
   ]
  },
+ "references": [
+  {
+   "id": "mm1",
+   "kind": "photo",
+   "src": "mcminnville/mm1.jpg",
+   "title": {
+    "fr": "MM1, planche 23 du rapport Condon (annotée à la craie par l'équipe)",
+    "en": "MM1, plate 23 of the Condon report (chalk-marked by the team)",
+    "es": "MM1, lámina 23 del informe Condon (marcada con tiza por el equipo)",
+    "it": "MM1, tavola 23 del rapporto Condon (segnata a gesso dal gruppo)"
+   },
+   "credit": "Condon report, case 46, plate 23 (photograph: UPI)",
+   "creditUrl": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html",
+   "t": 12000,
+   "from": {
+    "lat": 45.1041667,
+    "lng": -123.3305556
+   },
+   "drawing": true,
+   "opacity": 0.5,
+   "registration": {
+    "headingDeg": 41.3,
+    "pitchDeg": 14.85,
+    "fovDeg": 33.4
+   }
+  },
+  {
+   "id": "mm2",
+   "kind": "photo",
+   "src": "mcminnville/mm2.jpg",
+   "title": {
+    "fr": "MM2, planche 24 du rapport Condon (annotée à la craie par l'équipe)",
+    "en": "MM2, plate 24 of the Condon report (chalk-marked by the team)",
+    "es": "MM2, lámina 24 del informe Condon (marcada con tiza por el equipo)",
+    "it": "MM2, tavola 24 del rapporto Condon (segnata a gesso dal gruppo)"
+   },
+   "credit": "Condon report, case 46, plate 24 (photograph: UPI)",
+   "creditUrl": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html",
+   "t": 42000,
+   "from": {
+    "lat": 45.1041593,
+    "lng": -123.3305486
+   },
+   "drawing": true,
+   "opacity": 0.5,
+   "registration": {
+    "headingDeg": 34.7,
+    "pitchDeg": 14.85,
+    "fovDeg": 33.4
+   }
+  }
+ ],
+ "decor": [
+  {
+   "id": "house",
+   "kind": "building",
+   "title": {
+    "fr": "Maison des Trent (avec sa citerne, à gauche des deux photographies)",
+    "en": "The Trents' house (with its tank, at the left of both photographs)",
+    "es": "Casa de los Trent (con su depósito, a la izquierda de las dos fotografías)",
+    "it": "Casa dei Trent (con la sua cisterna, a sinistra nelle due fotografie)"
+   },
+   "eastM": 5.11,
+   "northM": 20.25,
+   "headingDeg": 41.3,
+   "sizeM": {
+    "widthM": 12,
+    "lengthM": 8,
+    "heightM": 8
+   },
+   "model": {
+    "id": "kenney-suburban-house"
+   }
+  }
+ ],
  "weatherTrack": {
   "keyframes": [
    {

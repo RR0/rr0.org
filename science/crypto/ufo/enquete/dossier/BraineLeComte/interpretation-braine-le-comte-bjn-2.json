@@ -35,9 +35,12 @@
    "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
   }
  ],
- "tags": [
-  "interpretation"
- ],
+ "lightPollution": {
+  "value": 20.05,
+  "basis": "derived",
+  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+ },
+ "instrument": "eye",
  "observerTrack": {
   "keyframes": [
    {
@@ -259,6 +262,285 @@
    }
   ]
  },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 0
+     },
+     "basis": "stated",
+     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+    }
+   }
+  ]
+ },
+ "decor": [
+  {
+   "id": "observer-akh",
+   "kind": "observer",
+   "title": {
+    "fr": "AKH, à 3,1 m",
+    "en": "AKH, 3.1 m away",
+    "es": "AKH, a 3,1 m",
+    "it": "AKH, a 3,1 m"
+   },
+   "eastM": 0.0,
+   "northM": -3.1,
+   "headingDeg": 215.0,
+   "sightingUrl": "observer-braine-le-comte-akh.json",
+   "sizeM": {
+    "widthM": 0.5,
+    "lengthM": 0.35,
+    "heightM": 1.7
+   }
+  },
+  {
+   "id": "observer-fwy",
+   "kind": "observer",
+   "title": {
+    "fr": "FWY, à 1,8 m",
+    "en": "FWY, 1.8 m away",
+    "es": "FWY, a 1,8 m",
+    "it": "FWY, a 1,8 m"
+   },
+   "eastM": 0.0,
+   "northM": -1.8,
+   "headingDeg": 337.5,
+   "sightingUrl": "observer-braine-le-comte-fwy.json",
+   "sizeM": {
+    "widthM": 0.5,
+    "lengthM": 0.35,
+    "heightM": 1.75
+   }
+  },
+  {
+   "id": "toit-1",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -38.65,
+   "northM": 10.3,
+   "headingDeg": 14.9,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-2",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -35.07,
+   "northM": 19.24,
+   "headingDeg": 28.8,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-3",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -29.45,
+   "northM": 27.07,
+   "headingDeg": 42.6,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-4",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -22.12,
+   "northM": 33.33,
+   "headingDeg": 56.4,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-5",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -13.51,
+   "northM": 37.65,
+   "headingDeg": 70.3,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-6",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -4.11,
+   "northM": 39.79,
+   "headingDeg": 84.1,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.2
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-7",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 5.53,
+   "northM": 39.62,
+   "headingDeg": 97.9,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.2
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-8",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 14.84,
+   "northM": 37.15,
+   "headingDeg": 111.8,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-9",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 23.29,
+   "northM": 32.52,
+   "headingDeg": 125.6,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  }
+ ],
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [],
+     "cloudCover": 0,
+     "relativeHumidity": 0.82,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windDirectionDeg": 220,
+     "windSpeed": 3.6,
+     "storm": false
+    }
+   }
+  ]
+ },
+ "weatherSource": {
+  "id": "metar-ebcv",
+  "name": "METAR EBCV 112225Z AUTO 22007KT 9999 NCD 13/10 Q1020 (Chièvres, 25 min before)",
+  "url": "http://www.cobeps.org/pdf/BraineLeComte_20150712.pdf"
+ },
+ "tags": [
+  "interpretation"
+ ],
  "timeline": {
   "keyframes": [],
   "order": [],

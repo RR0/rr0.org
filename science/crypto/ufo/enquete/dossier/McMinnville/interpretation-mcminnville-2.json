@@ -34,9 +34,6 @@
    "rationale": "Condon, case 46: 123°19'50\" W, 45°06'15\" N, elevation 210 ft, the farm's own yard, 0.2 mile south of the Salmon River highway (U.S. 99 W)."
   }
  ],
- "tags": [
-  "interpretation"
- ],
  "observerTrack": {
   "keyframes": [
    {
@@ -86,6 +83,157 @@
    }
   ]
  },
+ "references": [
+  {
+   "id": "mm1",
+   "kind": "photo",
+   "src": "mcminnville/mm1.jpg",
+   "title": {
+    "fr": "MM1, planche 23 du rapport Condon (annotée à la craie par l'équipe)",
+    "en": "MM1, plate 23 of the Condon report (chalk-marked by the team)",
+    "es": "MM1, lámina 23 del informe Condon (marcada con tiza por el equipo)",
+    "it": "MM1, tavola 23 del rapporto Condon (segnata a gesso dal gruppo)"
+   },
+   "credit": "Condon report, case 46, plate 23 (photograph: UPI)",
+   "creditUrl": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html",
+   "t": 12000,
+   "from": {
+    "lat": 45.1041667,
+    "lng": -123.3305556
+   },
+   "drawing": true,
+   "opacity": 0.5,
+   "registration": {
+    "headingDeg": 41.3,
+    "pitchDeg": 14.85,
+    "fovDeg": 33.4
+   }
+  },
+  {
+   "id": "mm2",
+   "kind": "photo",
+   "src": "mcminnville/mm2.jpg",
+   "title": {
+    "fr": "MM2, planche 24 du rapport Condon (annotée à la craie par l'équipe)",
+    "en": "MM2, plate 24 of the Condon report (chalk-marked by the team)",
+    "es": "MM2, lámina 24 del informe Condon (marcada con tiza por el equipo)",
+    "it": "MM2, tavola 24 del rapporto Condon (segnata a gesso dal gruppo)"
+   },
+   "credit": "Condon report, case 46, plate 24 (photograph: UPI)",
+   "creditUrl": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html",
+   "t": 42000,
+   "from": {
+    "lat": 45.1041593,
+    "lng": -123.3305486
+   },
+   "drawing": true,
+   "opacity": 0.5,
+   "registration": {
+    "headingDeg": 34.7,
+    "pitchDeg": 14.85,
+    "fovDeg": 33.4
+   }
+  }
+ ],
+ "decor": [
+  {
+   "id": "house",
+   "kind": "building",
+   "title": {
+    "fr": "Maison des Trent (avec sa citerne, à gauche des deux photographies)",
+    "en": "The Trents' house (with its tank, at the left of both photographs)",
+    "es": "Casa de los Trent (con su depósito, a la izquierda de las dos fotografías)",
+    "it": "Casa dei Trent (con la sua cisterna, a sinistra nelle due fotografie)"
+   },
+   "eastM": 5.11,
+   "northM": 20.25,
+   "headingDeg": 41.3,
+   "sizeM": {
+    "widthM": 12,
+    "lengthM": 8,
+    "heightM": 8
+   },
+   "model": {
+    "id": "kenney-suburban-house"
+   }
+  },
+  {
+   "id": "line",
+   "kind": "wire",
+   "title": {
+    "fr": "Ligne électrique (deux fils superposés, 3,5 m et 3,64 m)",
+    "en": "The electric line (two stacked wires, 3.5 m and 3.64 m)",
+    "es": "La línea eléctrica (dos cables superpuestos, 3,5 m y 3,64 m)",
+    "it": "La linea elettrica (due fili sovrapposti, 3,5 m e 3,64 m)"
+   },
+   "eastM": 3.89,
+   "northM": 1.77,
+   "headingDeg": 135,
+   "sizeM": {
+    "widthM": 1,
+    "lengthM": 15,
+    "heightM": 3.5
+   },
+   "wire": {
+    "strands": [
+     {
+      "heightM": 3.5
+     },
+     {
+      "heightM": 3.64
+     }
+    ],
+    "poles": "end",
+    "diameterM": 0.006
+   }
+  }
+ ],
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [
+      {
+       "id": "ceiling",
+       "type": "stratus",
+       "baseM": 1500,
+       "thicknessM": 500,
+       "coverage": 0.4,
+       "sizeM": 2500,
+       "density": 1
+      }
+     ],
+     "cloudCover": 0.4,
+     "cloudDarkness": 0.3,
+     "cloudBaseM": 1500,
+     "highCloudCover": 0,
+     "lowerCloudCover": 0.4,
+     "relativeHumidity": 0.7,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windDirectionDeg": 270,
+     "windSpeed": 1.5,
+     "storm": false
+    }
+   }
+  ]
+ },
+ "weatherSource": {
+  "id": "condon-46",
+  "name": "Condon, case 46: overcast, ceiling about 5,000 ft \"confirmed by the photographs\" (the recording takes 4/10: the prints' shadows need a Sun that shone through, which a full overcast does not allow, and the study itself suspects the cloud changed between the two); light wind noted by earlier investigators (IPACO), its direction not given (west assumed)",
+  "url": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html"
+ },
+ "instrument": "roamer-1-120",
+ "exposureSeconds": 0.02,
+ "iso": {
+  "value": 125,
+  "basis": "assumed",
+  "rationale": "A box camera's black and white roll film of 1950 (Verichrome, ASA 125): the study gives the camera and the 1/50 s, not the film."
+ },
+ "tags": [
+  "interpretation"
+ ],
  "timeline": {
   "keyframes": [],
   "order": [],

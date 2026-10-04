@@ -1,0 +1,320 @@
+{
+ "version": 1,
+ "id": "2015-07-12-BraineLeComte-FWY-interpretation-1",
+ "time": {
+  "value": {
+   "year": 2015,
+   "month": 7,
+   "day": 12,
+   "hour": 0,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+ },
+ "durationSeconds": {
+  "value": 10,
+  "basis": "derived",
+  "rationale": "the recording runs on the investigators' common clock (COBEPS report 20150712BraineleComte, table 2, T0 to T4 = 10 s); his own duration is 5 s, from his turning round (T2, 3 s) to 8 s"
+ },
+ "utcOffsetHours": {
+  "value": 2,
+  "basis": "derived",
+  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+ },
+ "timeZone": "Europe/Brussels",
+ "place": [
+  {
+   "value": {
+    "lat": 50.6,
+    "lng": 4.1,
+    "name": "Braine-le-Comte, Hainaut, Belgium"
+   },
+   "basis": "assumed",
+   "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  }
+ ],
+ "tags": [
+  "interpretation"
+ ],
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 337.5,
+      "basis": "stated",
+      "rationale": "\"FWY vers le NNO\" (§V.1.3)"
+     },
+     "pitchDeg": {
+      "value": 30,
+      "basis": "assumed",
+      "rationale": "looking for shooting stars: no height stated"
+     }
+    }
+   },
+   {
+    "t": 2200,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 337.5,
+     "pitchDeg": 30
+    }
+   },
+   {
+    "t": 3000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 270.0,
+     "pitchDeg": 20.0
+    }
+   },
+   {
+    "t": 3500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 272.39,
+     "pitchDeg": 19.32
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 274.75,
+     "pitchDeg": 18.61
+    }
+   },
+   {
+    "t": 4500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 277.1,
+     "pitchDeg": 17.87
+    }
+   },
+   {
+    "t": 5000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 279.43,
+     "pitchDeg": 17.1
+    }
+   },
+   {
+    "t": 5500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 281.73,
+     "pitchDeg": 16.31
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 284.02,
+     "pitchDeg": 15.49
+    }
+   },
+   {
+    "t": 6500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 286.29,
+     "pitchDeg": 14.65
+    }
+   },
+   {
+    "t": 7000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 288.54,
+     "pitchDeg": 13.79
+    }
+   },
+   {
+    "t": 7500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 290.78,
+     "pitchDeg": 12.9
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 293.0,
+     "pitchDeg": 12.0
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [],
+  "order": [],
+  "groups": []
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
+   "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
+   "es": "Un vuelo rectilíneo y horizontal a 100 m, en el plano ajustado a los tres conjuntos de mediciones (rumbo 8°)",
+   "it": "Un volo rettilineo e orizzontale a 100 m, nel piano adattato ai tre insiemi di misure (rotta 8°)"
+  },
+  "bodies": [
+   {
+    "id": "pan",
+    "explains": [
+     "pan"
+    ],
+    "title": {
+     "fr": "Le phénomène",
+     "en": "The phenomenon",
+     "es": "El fenómeno",
+     "it": "Il fenomeno"
+    },
+    "model": {
+     "id": "ufoathome-braine-le-comte-craft"
+    },
+    "outlineNode": "hull",
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 268.8,
+       "altitudeDeg": 33.09,
+       "distanceM": 183.2,
+       "present": false
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 268.8,
+       "altitudeDeg": 33.09,
+       "distanceM": 183.2,
+       "present": true,
+       "sizeM": {
+        "widthM": 10.5,
+        "lengthM": 5.36,
+        "heightM": 1.3
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#2b2629",
+        "albedo": 0.1
+       }
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 271.5,
+       "altitudeDeg": 33.25,
+       "distanceM": 182.4
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 274.22,
+       "altitudeDeg": 33.36,
+       "distanceM": 181.8
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 276.97,
+       "altitudeDeg": 33.41,
+       "distanceM": 181.6
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 279.73,
+       "altitudeDeg": 33.4,
+       "distanceM": 181.7
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 282.52,
+       "altitudeDeg": 33.33,
+       "distanceM": 182.0
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 285.32,
+       "altitudeDeg": 33.19,
+       "distanceM": 182.7
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 288.13,
+       "altitudeDeg": 32.99,
+       "distanceM": 183.7
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 290.95,
+       "altitudeDeg": 32.72,
+       "distanceM": 185.0
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 293.78,
+       "altitudeDeg": 32.39,
+       "distanceM": 186.7
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 296.6,
+       "altitudeDeg": 31.99,
+       "distanceM": 188.7
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "The measured directions of the three observers (COBEPS report 20150712BraineleComte, table 1) are fitted by one plane through the observer, as the report's stereonet does (its strike here: 7.8 deg, the report's 7.7; dip 33 deg). The phenomenon is laid on the level line where that plane is 100 m up, along each of FWY's own directions brought onto the plane. The height is BJN's own estimate (COBEPS p. 13), and so the distances and the 10.5 m span that follow from it: assumed."
+    }
+   }
+  ]
+ }
+}

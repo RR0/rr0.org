@@ -27,6 +27,78 @@
    "time": "2015-07-12 00:45",
    "title": "FWY",
    "url": "observer-braine-le-comte-fwy.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-07-12-BraineLeComte-AKH",
+   "title": {
+    "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
+    "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
+    "es": "Un vuelo rectilíneo y horizontal a 100 m, en el plano ajustado a los tres conjuntos de mediciones (rumbo 8°)",
+    "it": "Un volo rettilineo e orizzontale a 100 m, nel piano adattato ai tre insiemi di misure (rotta 8°)"
+   },
+   "url": "interpretation-braine-le-comte-akh-1.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-07-12-BraineLeComte-AKH",
+   "title": {
+    "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
+    "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",
+    "es": "Una bandada de 7 aves en V a 40 m, iluminadas desde abajo (hipótesis que el informe no examina)",
+    "it": "Uno stormo di 7 uccelli a V a 40 m, illuminati dal basso (ipotesi che il rapporto non esamina)"
+   },
+   "url": "interpretation-braine-le-comte-akh-2.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-07-12-BraineLeComte-BJN",
+   "title": {
+    "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
+    "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
+    "es": "Un vuelo rectilíneo y horizontal a 100 m, en el plano ajustado a los tres conjuntos de mediciones (rumbo 8°)",
+    "it": "Un volo rettilineo e orizzontale a 100 m, nel piano adattato ai tre insiemi di misure (rotta 8°)"
+   },
+   "url": "interpretation-braine-le-comte-bjn-1.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-07-12-BraineLeComte-BJN",
+   "title": {
+    "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
+    "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",
+    "es": "Una bandada de 7 aves en V a 40 m, iluminadas desde abajo (hipótesis que el informe no examina)",
+    "it": "Uno stormo di 7 uccelli a V a 40 m, illuminati dal basso (ipotesi che il rapporto non esamina)"
+   },
+   "url": "interpretation-braine-le-comte-bjn-2.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-07-12-BraineLeComte-FWY",
+   "title": {
+    "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
+    "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
+    "es": "Un vuelo rectilíneo y horizontal a 100 m, en el plano ajustado a los tres conjuntos de mediciones (rumbo 8°)",
+    "it": "Un volo rettilineo e orizzontale a 100 m, nel piano adattato ai tre insiemi di misure (rotta 8°)"
+   },
+   "url": "interpretation-braine-le-comte-fwy-1.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-07-12-BraineLeComte-FWY",
+   "title": {
+    "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
+    "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",
+    "es": "Una bandada de 7 aves en V a 40 m, iluminadas desde abajo (hipótesis que el informe no examina)",
+    "it": "Uno stormo di 7 uccelli a V a 40 m, illuminati dal basso (ipotesi che il rapporto non esamina)"
+   },
+   "url": "interpretation-braine-le-comte-fwy-2.json"
   }
  ]
 }

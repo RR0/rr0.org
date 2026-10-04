@@ -13,6 +13,24 @@
    "time": "2015-05-31 00:50",
    "title": "T1",
    "url": "observer-silly-le-long.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "interpretationOf": "2015-05-31-SillyLeLong-T1",
+   "time": "2017-02-08",
+   "by": [
+    {
+     "org": "GEIPAN"
+    }
+   ],
+   "title": {
+    "fr": "Méprise avec un avion : le Cirrus SR20 F-HOBS en finale, « effet pivot » (classé A)",
+    "en": "Misidentified aircraft: Cirrus SR20 F-HOBS on final, the \"pivot effect\" (class A)",
+    "es": "Confusión con un avión: el Cirrus SR20 F-HOBS en final, el \"efecto pivote\" (clase A)",
+    "it": "Aereo scambiato per altro: Cirrus SR20 F-HOBS in finale, l'\"effetto perno\" (classe A)"
+   },
+   "url": "interpretation-silly-le-long-1.json"
   }
  ]
 }

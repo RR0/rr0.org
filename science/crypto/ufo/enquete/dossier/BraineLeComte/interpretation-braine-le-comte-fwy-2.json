@@ -1,0 +1,946 @@
+{
+ "version": 1,
+ "id": "2015-07-12-BraineLeComte-FWY-interpretation-2",
+ "time": {
+  "value": {
+   "year": 2015,
+   "month": 7,
+   "day": 12,
+   "hour": 0,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+ },
+ "durationSeconds": {
+  "value": 10,
+  "basis": "derived",
+  "rationale": "the recording runs on the investigators' common clock (COBEPS report 20150712BraineleComte, table 2, T0 to T4 = 10 s); his own duration is 5 s, from his turning round (T2, 3 s) to 8 s"
+ },
+ "utcOffsetHours": {
+  "value": 2,
+  "basis": "derived",
+  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+ },
+ "timeZone": "Europe/Brussels",
+ "place": [
+  {
+   "value": {
+    "lat": 50.6,
+    "lng": 4.1,
+    "name": "Braine-le-Comte, Hainaut, Belgium"
+   },
+   "basis": "assumed",
+   "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  }
+ ],
+ "tags": [
+  "interpretation"
+ ],
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 337.5,
+      "basis": "stated",
+      "rationale": "\"FWY vers le NNO\" (§V.1.3)"
+     },
+     "pitchDeg": {
+      "value": 30,
+      "basis": "assumed",
+      "rationale": "looking for shooting stars: no height stated"
+     }
+    }
+   },
+   {
+    "t": 2200,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 337.5,
+     "pitchDeg": 30
+    }
+   },
+   {
+    "t": 3000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 270.0,
+     "pitchDeg": 20.0
+    }
+   },
+   {
+    "t": 3500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 272.39,
+     "pitchDeg": 19.32
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 274.75,
+     "pitchDeg": 18.61
+    }
+   },
+   {
+    "t": 4500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 277.1,
+     "pitchDeg": 17.87
+    }
+   },
+   {
+    "t": 5000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 279.43,
+     "pitchDeg": 17.1
+    }
+   },
+   {
+    "t": 5500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 281.73,
+     "pitchDeg": 16.31
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 284.02,
+     "pitchDeg": 15.49
+    }
+   },
+   {
+    "t": 6500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 286.29,
+     "pitchDeg": 14.65
+    }
+   },
+   {
+    "t": 7000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 288.54,
+     "pitchDeg": 13.79
+    }
+   },
+   {
+    "t": 7500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 290.78,
+     "pitchDeg": 12.9
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 293.0,
+     "pitchDeg": 12.0
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [],
+  "order": [],
+  "groups": []
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
+   "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",
+   "es": "Una bandada de 7 aves en V a 40 m, iluminadas desde abajo (hipótesis que el informe no examina)",
+   "it": "Uno stormo di 7 uccelli a V a 40 m, illuminati dal basso (ipotesi che il rapporto non esamina)"
+  },
+  "bodies": [
+   {
+    "id": "oiseau-1",
+    "title": {
+     "fr": "Oiseau 1",
+     "en": "Bird 1",
+     "es": "Ave 1",
+     "it": "Uccello 1"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 268.8,
+       "altitudeDeg": 33.09,
+       "distanceM": 73.3,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 268.8,
+       "altitudeDeg": 33.09,
+       "distanceM": 73.3,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 271.5,
+       "altitudeDeg": 33.25,
+       "distanceM": 72.9
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 274.22,
+       "altitudeDeg": 33.36,
+       "distanceM": 72.7
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 276.97,
+       "altitudeDeg": 33.41,
+       "distanceM": 72.6
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 279.73,
+       "altitudeDeg": 33.4,
+       "distanceM": 72.7
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 282.52,
+       "altitudeDeg": 33.33,
+       "distanceM": 72.8
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 285.32,
+       "altitudeDeg": 33.19,
+       "distanceM": 73.1
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 288.13,
+       "altitudeDeg": 32.99,
+       "distanceM": 73.5
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 290.95,
+       "altitudeDeg": 32.72,
+       "distanceM": 74.0
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 293.78,
+       "altitudeDeg": 32.39,
+       "distanceM": 74.7
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 296.6,
+       "altitudeDeg": 31.99,
+       "distanceM": 75.5
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   },
+   {
+    "id": "oiseau-2",
+    "title": {
+     "fr": "Oiseau 2",
+     "en": "Bird 2",
+     "es": "Ave 2",
+     "it": "Uccello 2"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 268.37,
+       "altitudeDeg": 32.76,
+       "distanceM": 74.0,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 268.37,
+       "altitudeDeg": 32.76,
+       "distanceM": 74.0,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 271.03,
+       "altitudeDeg": 32.92,
+       "distanceM": 73.5
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 273.71,
+       "altitudeDeg": 33.04,
+       "distanceM": 73.3
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 276.43,
+       "altitudeDeg": 33.1,
+       "distanceM": 73.2
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 279.16,
+       "altitudeDeg": 33.11,
+       "distanceM": 73.3
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 281.92,
+       "altitudeDeg": 33.05,
+       "distanceM": 73.3
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 284.7,
+       "altitudeDeg": 32.93,
+       "distanceM": 73.6
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 287.48,
+       "altitudeDeg": 32.74,
+       "distanceM": 74.0
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 290.28,
+       "altitudeDeg": 32.49,
+       "distanceM": 74.5
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 293.1,
+       "altitudeDeg": 32.18,
+       "distanceM": 75.1
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 295.91,
+       "altitudeDeg": 31.8,
+       "distanceM": 75.9
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   },
+   {
+    "id": "oiseau-3",
+    "title": {
+     "fr": "Oiseau 3",
+     "en": "Bird 3",
+     "es": "Ave 3",
+     "it": "Uccello 3"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 268.15,
+       "altitudeDeg": 33.35,
+       "distanceM": 72.8,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 268.15,
+       "altitudeDeg": 33.35,
+       "distanceM": 72.8,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 270.87,
+       "altitudeDeg": 33.52,
+       "distanceM": 72.4
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 273.62,
+       "altitudeDeg": 33.65,
+       "distanceM": 72.2
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 276.4,
+       "altitudeDeg": 33.71,
+       "distanceM": 72.0
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 279.19,
+       "altitudeDeg": 33.71,
+       "distanceM": 72.1
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 282.02,
+       "altitudeDeg": 33.65,
+       "distanceM": 72.2
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 284.85,
+       "altitudeDeg": 33.52,
+       "distanceM": 72.5
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 287.7,
+       "altitudeDeg": 33.33,
+       "distanceM": 72.8
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 290.56,
+       "altitudeDeg": 33.06,
+       "distanceM": 73.3
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 293.44,
+       "altitudeDeg": 32.74,
+       "distanceM": 74.0
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 296.3,
+       "altitudeDeg": 32.34,
+       "distanceM": 74.8
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   },
+   {
+    "id": "oiseau-4",
+    "title": {
+     "fr": "Oiseau 4",
+     "en": "Bird 4",
+     "es": "Ave 4",
+     "it": "Uccello 4"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 267.94,
+       "altitudeDeg": 32.43,
+       "distanceM": 74.6,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 267.94,
+       "altitudeDeg": 32.43,
+       "distanceM": 74.6,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 270.57,
+       "altitudeDeg": 32.6,
+       "distanceM": 74.2
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 273.22,
+       "altitudeDeg": 32.73,
+       "distanceM": 73.9
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 275.9,
+       "altitudeDeg": 32.8,
+       "distanceM": 73.8
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 278.6,
+       "altitudeDeg": 32.81,
+       "distanceM": 73.8
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 281.33,
+       "altitudeDeg": 32.77,
+       "distanceM": 73.9
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 284.08,
+       "altitudeDeg": 32.66,
+       "distanceM": 74.1
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 286.85,
+       "altitudeDeg": 32.49,
+       "distanceM": 74.5
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 289.63,
+       "altitudeDeg": 32.26,
+       "distanceM": 74.9
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 292.43,
+       "altitudeDeg": 31.97,
+       "distanceM": 75.6
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 295.22,
+       "altitudeDeg": 31.61,
+       "distanceM": 76.3
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   },
+   {
+    "id": "oiseau-5",
+    "title": {
+     "fr": "Oiseau 5",
+     "en": "Bird 5",
+     "es": "Ave 5",
+     "it": "Uccello 5"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 267.49,
+       "altitudeDeg": 33.6,
+       "distanceM": 72.3,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 267.49,
+       "altitudeDeg": 33.6,
+       "distanceM": 72.3,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 270.23,
+       "altitudeDeg": 33.8,
+       "distanceM": 71.9
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 273.0,
+       "altitudeDeg": 33.94,
+       "distanceM": 71.6
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 275.81,
+       "altitudeDeg": 34.01,
+       "distanceM": 71.5
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 278.64,
+       "altitudeDeg": 34.03,
+       "distanceM": 71.5
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 281.5,
+       "altitudeDeg": 33.98,
+       "distanceM": 71.6
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 284.38,
+       "altitudeDeg": 33.86,
+       "distanceM": 71.8
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 287.27,
+       "altitudeDeg": 33.67,
+       "distanceM": 72.2
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 290.17,
+       "altitudeDeg": 33.41,
+       "distanceM": 72.6
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 293.09,
+       "altitudeDeg": 33.09,
+       "distanceM": 73.3
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 295.99,
+       "altitudeDeg": 32.69,
+       "distanceM": 74.1
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   },
+   {
+    "id": "oiseau-6",
+    "title": {
+     "fr": "Oiseau 6",
+     "en": "Bird 6",
+     "es": "Ave 6",
+     "it": "Uccello 6"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 267.53,
+       "altitudeDeg": 32.11,
+       "distanceM": 75.3,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 267.53,
+       "altitudeDeg": 32.11,
+       "distanceM": 75.3,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 270.12,
+       "altitudeDeg": 32.28,
+       "distanceM": 74.8
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 272.74,
+       "altitudeDeg": 32.42,
+       "distanceM": 74.6
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 275.39,
+       "altitudeDeg": 32.5,
+       "distanceM": 74.4
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 278.06,
+       "altitudeDeg": 32.52,
+       "distanceM": 74.4
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 280.76,
+       "altitudeDeg": 32.49,
+       "distanceM": 74.5
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 283.48,
+       "altitudeDeg": 32.4,
+       "distanceM": 74.7
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 286.22,
+       "altitudeDeg": 32.25,
+       "distanceM": 75.0
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 288.98,
+       "altitudeDeg": 32.03,
+       "distanceM": 75.4
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 291.77,
+       "altitudeDeg": 31.75,
+       "distanceM": 76.0
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 294.55,
+       "altitudeDeg": 31.41,
+       "distanceM": 76.7
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   },
+   {
+    "id": "oiseau-7",
+    "title": {
+     "fr": "Oiseau 7",
+     "en": "Bird 7",
+     "es": "Ave 7",
+     "it": "Uccello 7"
+    },
+    "model": {
+     "id": "ellipsoid"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 266.81,
+       "altitudeDeg": 33.86,
+       "distanceM": 71.8,
+       "present": false,
+       "sizeM": {
+        "widthM": 0.9,
+        "lengthM": 0.5,
+        "heightM": 0.15
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#4a3a2a",
+        "albedo": 0.25
+       }
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 266.81,
+       "altitudeDeg": 33.86,
+       "distanceM": 71.8,
+       "present": true
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 269.58,
+       "altitudeDeg": 34.07,
+       "distanceM": 71.4
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 272.38,
+       "altitudeDeg": 34.23,
+       "distanceM": 71.1
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 275.21,
+       "altitudeDeg": 34.32,
+       "distanceM": 70.9
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 278.07,
+       "altitudeDeg": 34.35,
+       "distanceM": 70.9
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 280.97,
+       "altitudeDeg": 34.31,
+       "distanceM": 71.0
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 283.89,
+       "altitudeDeg": 34.2,
+       "distanceM": 71.2
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 286.82,
+       "altitudeDeg": 34.02,
+       "distanceM": 71.5
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 289.76,
+       "altitudeDeg": 33.77,
+       "distanceM": 72.0
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 292.72,
+       "altitudeDeg": 33.44,
+       "distanceM": 72.6
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 295.67,
+       "altitudeDeg": 33.04,
+       "distanceM": 73.4
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+    }
+   }
+  ]
+ }
+}

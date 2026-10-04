@@ -1,0 +1,227 @@
+{
+ "version": 1,
+ "id": "1950-05-11-TrentPaul-interpretation-2",
+ "time": {
+  "value": {
+   "year": 1950,
+   "month": 5,
+   "day": 11,
+   "hour": 19,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "Condon's case 46 gives 19:45 (Evelyn Trent: \"about 8 o'clock less a quarter\"), others 19:30. Read as Pacific STANDARD time the Sun would already be 2.4 degrees below the horizon (sunset 19:27) and the sky of the photographs is in daylight, so the clock the Trents read is taken to be summer time, as the Sun's height in the plates needs."
+ },
+ "durationSeconds": {
+  "value": 50,
+  "basis": "assumed",
+  "rationale": "Trent: both photographs \"within 30 seconds\" (Condon, case 46, from the Telephone Register of 8 June 1950); the object's coming on before the first and its leaving after the second are the account's, and their lengths are not given."
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "assumed",
+  "rationale": "See the time: daylight time. In standard time (-8) the Sun has set."
+ },
+ "place": [
+  {
+   "value": {
+    "lat": 45.104167,
+    "lng": -123.330556,
+    "name": "Trent farm, Sheridan road, Yamhill County, Oregon, USA"
+   },
+   "basis": "stated",
+   "rationale": "Condon, case 46: 123°19'50\" W, 45°06'15\" N, elevation 210 ft, the farm's own yard, 0.2 mile south of the Salmon River highway (U.S. 99 W)."
+  }
+ ],
+ "tags": [
+  "interpretation"
+ ],
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 45.1041667,
+     "lng": -123.3305556,
+     "elevationM": -0.1,
+     "fovDeg": 33.4,
+     "headingDeg": {
+      "value": 41.3,
+      "basis": "derived",
+      "rationale": "Condon, case 46: \"apparently towards the north-east\"; the heading is the object's bearing less its 3.7 degrees right of the centre in plate 23."
+     },
+     "pitchDeg": {
+      "value": 14.85,
+      "basis": "derived",
+      "rationale": "The object is at 17.7 degrees by the wire geometry and 2.9 above the centre in plate 23, 16.2 and 1.3 in plate 24: 14.85 degrees both times, which is how the two plates agree. The study gives a line of sight of about 11.5 degrees."
+     }
+    }
+   },
+   {
+    "t": 38000,
+    "pose": {
+     "lat": 45.1041667,
+     "lng": -123.3305556,
+     "elevationM": -0.1,
+     "fovDeg": 33.4,
+     "headingDeg": 41.3,
+     "pitchDeg": 14.85
+    }
+   },
+   {
+    "t": 42000,
+    "pose": {
+     "lat": 45.1041593,
+     "lng": -123.3305486,
+     "elevationM": -0.1,
+     "fovDeg": 33.4,
+     "headingDeg": {
+      "value": 34.7,
+      "basis": "derived",
+      "rationale": "The object's bearing from the second position (13 degrees from the first, the study's turn of the line of sight) less its 2.7 degrees left of the centre in plate 24."
+     },
+     "pitchDeg": 14.85
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [],
+  "order": [],
+  "groups": []
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Juin 2013 : la même maquette au bout d'un fil de 70 cm, mis en évidence sur les deux photographies",
+   "en": "June 2013: the same model at the end of a 70 cm thread, detected on both photographs",
+   "es": "Junio de 2013: la misma maqueta al extremo de un hilo de 70 cm, detectado en las dos fotografías",
+   "it": "Giugno 2013: lo stesso modellino all'estremità di un filo di 70 cm, rilevato su entrambe le fotografie"
+  },
+  "bodies": [
+   {
+    "id": "model",
+    "title": {
+     "fr": "La maquette",
+     "en": "The model",
+     "es": "La maqueta",
+     "it": "Il modellino"
+    },
+    "explains": [
+     "ufo-1"
+    ],
+    "model": {
+     "id": "ufoathome-mcminnville-object"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 2.828,
+      "northM": 2.828,
+      "altitudeAboveGroundM": 2.759,
+      "sizeM": {
+       "widthM": 0.12,
+       "lengthM": 0.12,
+       "heightM": 0.041
+      },
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": -3.2,
+       "rollDeg": 19
+      },
+      "appearance": {
+       "color": "#8a8d91",
+       "albedo": 0.3
+      }
+     },
+     {
+      "t": 38000,
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": -3.2,
+       "rollDeg": 19
+      }
+     },
+     {
+      "t": 42000,
+      "eastM": 2.886,
+      "northM": 2.921,
+      "altitudeAboveGroundM": 2.768,
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 21.6,
+       "rollDeg": 17
+      }
+     }
+    ]
+   },
+   {
+    "id": "thread",
+    "title": {
+     "fr": "Le fil de suspension (mis en évidence)",
+     "en": "The suspension thread (detected)",
+     "es": "El hilo de suspensión (detectado)",
+     "it": "Il filo di sospensione (rilevato)"
+    },
+    "explains": [],
+    "model": {
+     "id": "cylinder"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 2.828,
+      "northM": 2.828,
+      "altitudeAboveGroundM": 2.8,
+      "sizeM": {
+       "widthM": 0.0004,
+       "lengthM": 0.0004,
+       "heightM": 0.7
+      },
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 0,
+       "rollDeg": 0
+      },
+      "appearance": {
+       "color": "#303030",
+       "albedo": 0.1
+      }
+     },
+     {
+      "t": 38000,
+      "eastM": 2.828,
+      "northM": 2.828,
+      "altitudeAboveGroundM": 2.8,
+      "sizeM": {
+       "widthM": 0.0004,
+       "lengthM": 0.0004,
+       "heightM": 0.7
+      },
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 0,
+       "rollDeg": 0
+      }
+     },
+     {
+      "t": 42000,
+      "eastM": 2.857,
+      "northM": 2.875,
+      "altitudeAboveGroundM": 2.804,
+      "sizeM": {
+       "widthM": 0.0004,
+       "lengthM": 0.0004,
+       "heightM": 0.7
+      },
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 9,
+       "rollDeg": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

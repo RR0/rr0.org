@@ -1,0 +1,422 @@
+{
+ "version": 1,
+ "id": "2015-07-12-BraineLeComte-BJN-interpretation-1",
+ "time": {
+  "value": {
+   "year": 2015,
+   "month": 7,
+   "day": 12,
+   "hour": 0,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+ },
+ "durationSeconds": {
+  "value": 10,
+  "basis": "stated",
+  "rationale": "\"La scène a duré environ 10 secondes\" (§V.1.2); table 1 says 12 s, table 2 retains 10 s"
+ },
+ "utcOffsetHours": {
+  "value": 2,
+  "basis": "derived",
+  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+ },
+ "timeZone": "Europe/Brussels",
+ "place": [
+  {
+   "value": {
+    "lat": 50.6,
+    "lng": 4.1,
+    "name": "Braine-le-Comte, Hainaut, Belgium"
+   },
+   "basis": "assumed",
+   "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  }
+ ],
+ "tags": [
+  "interpretation"
+ ],
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 45.0,
+      "basis": "stated",
+      "rationale": "\"BJN [regarde] vers le NE\" (§V.1.3)"
+     },
+     "pitchDeg": {
+      "value": 35,
+      "basis": "assumed",
+      "rationale": "looking at the stars, constellations (Cassiopeia, Orion): no height stated"
+     }
+    }
+   },
+   {
+    "t": 1200,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 45.0,
+     "pitchDeg": 35
+    }
+   },
+   {
+    "t": 2000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 217.5,
+     "pitchDeg": 42.0
+    }
+   },
+   {
+    "t": 2500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 223.24,
+     "pitchDeg": 46.49
+    }
+   },
+   {
+    "t": 3000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 229.98,
+     "pitchDeg": 50.65
+    }
+   },
+   {
+    "t": 3500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 237.94,
+     "pitchDeg": 54.34
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 247.33,
+     "pitchDeg": 57.41
+    }
+   },
+   {
+    "t": 4500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 258.18,
+     "pitchDeg": 59.67
+    }
+   },
+   {
+    "t": 5000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 270.22,
+     "pitchDeg": 60.92
+    }
+   },
+   {
+    "t": 5500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 282.79,
+     "pitchDeg": 61.04
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 295.0,
+     "pitchDeg": 60.0
+    }
+   },
+   {
+    "t": 6500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 312.22,
+     "pitchDeg": 58.09
+    }
+   },
+   {
+    "t": 7000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 326.87,
+     "pitchDeg": 54.17
+    }
+   },
+   {
+    "t": 7500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 338.58,
+     "pitchDeg": 48.8
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 347.86,
+     "pitchDeg": 42.49
+    }
+   },
+   {
+    "t": 8500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 355.35,
+     "pitchDeg": 35.57
+    }
+   },
+   {
+    "t": 9000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 1.62,
+     "pitchDeg": 28.27
+    }
+   },
+   {
+    "t": 9500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 7.07,
+     "pitchDeg": 20.71
+    }
+   },
+   {
+    "t": 10000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 12.0,
+     "pitchDeg": 13.0
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [],
+  "order": [],
+  "groups": []
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
+   "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
+   "es": "Un vuelo rectilíneo y horizontal a 100 m, en el plano ajustado a los tres conjuntos de mediciones (rumbo 8°)",
+   "it": "Un volo rettilineo e orizzontale a 100 m, nel piano adattato ai tre insiemi di misure (rotta 8°)"
+  },
+  "bodies": [
+   {
+    "id": "pan",
+    "explains": [
+     "pan"
+    ],
+    "title": {
+     "fr": "Le phénomène",
+     "en": "The phenomenon",
+     "es": "El fenómeno",
+     "it": "Il fenomeno"
+    },
+    "model": {
+     "id": "ufoathome-braine-le-comte-craft"
+    },
+    "outlineNode": "hull",
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 228.96,
+       "altitudeDeg": 23.46,
+       "distanceM": 251.2,
+       "present": false
+      },
+      {
+       "t": 2000,
+       "azimuthDeg": 228.96,
+       "altitudeDeg": 23.46,
+       "distanceM": 251.2,
+       "present": true,
+       "sizeM": {
+        "widthM": 10.5,
+        "lengthM": 5.36,
+        "heightM": 1.3
+       },
+       "attitude": {
+        "headingDeg": 7.8,
+        "pitchDeg": 0
+       },
+       "appearance": {
+        "color": "#2b2629",
+        "albedo": 0.1
+       }
+      },
+      {
+       "t": 2500,
+       "azimuthDeg": 235.29,
+       "altitudeDeg": 25.92,
+       "distanceM": 228.8
+      },
+      {
+       "t": 3000,
+       "azimuthDeg": 242.03,
+       "altitudeDeg": 28.15,
+       "distanceM": 212.0
+      },
+      {
+       "t": 3500,
+       "azimuthDeg": 249.21,
+       "altitudeDeg": 30.08,
+       "distanceM": 199.5
+      },
+      {
+       "t": 4000,
+       "azimuthDeg": 256.79,
+       "altitudeDeg": 31.62,
+       "distanceM": 190.7
+      },
+      {
+       "t": 4500,
+       "azimuthDeg": 264.7,
+       "altitudeDeg": 32.72,
+       "distanceM": 185.0
+      },
+      {
+       "t": 5000,
+       "azimuthDeg": 272.85,
+       "altitudeDeg": 33.31,
+       "distanceM": 182.1
+      },
+      {
+       "t": 5500,
+       "azimuthDeg": 281.08,
+       "altitudeDeg": 33.37,
+       "distanceM": 181.8
+      },
+      {
+       "t": 6000,
+       "azimuthDeg": 289.25,
+       "altitudeDeg": 32.89,
+       "distanceM": 184.2
+      },
+      {
+       "t": 6500,
+       "azimuthDeg": 301.11,
+       "altitudeDeg": 31.22,
+       "distanceM": 192.9
+      },
+      {
+       "t": 7000,
+       "azimuthDeg": 312.47,
+       "altitudeDeg": 28.49,
+       "distanceM": 209.6
+      },
+      {
+       "t": 7500,
+       "azimuthDeg": 323.06,
+       "altitudeDeg": 24.92,
+       "distanceM": 237.3
+      },
+      {
+       "t": 8000,
+       "azimuthDeg": 332.79,
+       "altitudeDeg": 20.75,
+       "distanceM": 282.3
+      },
+      {
+       "t": 8500,
+       "azimuthDeg": 341.69,
+       "altitudeDeg": 16.21,
+       "distanceM": 358.2
+      },
+      {
+       "t": 9000,
+       "azimuthDeg": 349.86,
+       "altitudeDeg": 11.51,
+       "distanceM": 501.3
+      },
+      {
+       "t": 9500,
+       "azimuthDeg": 357.46,
+       "altitudeDeg": 6.77,
+       "distanceM": 847.8
+      },
+      {
+       "t": 10000,
+       "azimuthDeg": 4.65,
+       "altitudeDeg": 2.1,
+       "distanceM": 2729.6
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "The measured directions of the three observers (COBEPS report 20150712BraineleComte, table 1) are fitted by one plane through the observer, as the report's stereonet does (its strike here: 7.8 deg, the report's 7.7; dip 33 deg). The phenomenon is laid on the level line where that plane is 100 m up, along each of BJN's own directions brought onto the plane. The height is BJN's own estimate (COBEPS p. 13), and so the distances and the 10.5 m span that follow from it: assumed."
+    }
+   }
+  ]
+ }
+}

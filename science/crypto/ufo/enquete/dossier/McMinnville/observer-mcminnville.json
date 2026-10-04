@@ -682,5 +682,119 @@
   "value": 125,
   "basis": "assumed",
   "rationale": "A box camera's black and white roll film of 1950 (Verichrome, ASA 125): the study gives the camera and the 1/50 s, not the film."
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Selon Trent : un disque de 20 à 30 pieds (environ 8 m), donc à 268 m pour la largeur mesurée",
+   "en": "As Trent put it: a disc 20 or 30 feet across (about 8 m), so 268 m off for the measured width",
+   "es": "Según Trent: un disco de 20 o 30 pies (unos 8 m), es decir a 268 m para el ancho medido",
+   "it": "Secondo Trent: un disco di 20 o 30 piedi (circa 8 m), dunque a 268 m per la larghezza misurata"
+  },
+  "bodies": [
+   {
+    "id": "disc",
+    "title": {
+     "fr": "Le disque de Trent",
+     "en": "Trent's disc",
+     "es": "El disco de Trent",
+     "it": "Il disco di Trent"
+    },
+    "explains": [
+     "ufo-1"
+    ],
+    "model": {
+     "id": "ufoathome-mcminnville-object"
+    },
+    "track": [
+     {
+      "t": 0,
+      "azimuthDeg": 58,
+      "altitudeDeg": 19.24,
+      "distanceM": 363.8,
+      "sizeM": {
+       "widthM": 7.62,
+       "lengthM": 7.62,
+       "heightM": 2.604
+      },
+      "appearance": {
+       "color": "#8a8d91",
+       "albedo": 0.3
+      },
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": -3.2,
+       "rollDeg": 19
+      }
+     },
+     {
+      "t": 12000,
+      "azimuthDeg": 45,
+      "altitudeDeg": 17.74,
+      "distanceM": 267.8,
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": -3.2,
+       "rollDeg": 19
+      }
+     },
+     {
+      "t": 38000,
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": -3.2,
+       "rollDeg": 19
+      }
+     },
+     {
+      "t": 42000,
+      "azimuthDeg": 32,
+      "altitudeDeg": 16.28,
+      "distanceM": 297,
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 21.6,
+       "rollDeg": 17
+      }
+     },
+     {
+      "t": 44000,
+      "azimuthDeg": 8,
+      "altitudeDeg": 14.28,
+      "distanceM": 335.8,
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 21.6,
+       "rollDeg": 17
+      }
+     },
+     {
+      "t": 47000,
+      "azimuthDeg": 300,
+      "altitudeDeg": 8,
+      "distanceM": 727.7,
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 21.6,
+       "rollDeg": 17
+      }
+     },
+     {
+      "t": 50000,
+      "azimuthDeg": 270,
+      "altitudeDeg": 3,
+      "distanceM": 1455.3,
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 21.6,
+       "rollDeg": 17
+      }
+     },
+     {
+      "t": 50500,
+      "present": false
+     }
+    ]
+   }
+  ]
  }
 }

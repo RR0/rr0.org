@@ -1,0 +1,274 @@
+{
+ "version": 1,
+ "id": "1950-05-11-TrentPaul",
+ "time": {
+  "value": {
+   "year": 1950,
+   "month": 5,
+   "day": 11,
+   "hour": 19,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "Condon's case 46 gives 19:45 (Evelyn Trent: \"about 8 o'clock less a quarter\"), others 19:30. Read as Pacific STANDARD time the Sun would already be 2.4 degrees below the horizon (sunset 19:27) and the sky of the photographs is in daylight, so the clock the Trents read is taken to be summer time, as the Sun's height in the plates needs."
+ },
+ "durationSeconds": {
+  "value": 30,
+  "basis": "stated",
+  "rationale": "Trent: both photographs \"within 30 seconds\" (Condon, case 46, from the Telephone Register of 8 June 1950)."
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "assumed",
+  "rationale": "See the time: daylight time. In standard time (-8) the Sun has set."
+ },
+ "place": [
+  {
+   "value": {
+    "lat": 45.104167,
+    "lng": -123.330556,
+    "name": "Trent farm, Sheridan road, Yamhill County, Oregon, USA"
+   },
+   "basis": "stated",
+   "rationale": "Condon, case 46: 123°19'50\" W, 45°06'15\" N, elevation 210 ft, the farm's own yard, 0.2 mile south of the Salmon River highway (U.S. 99 W)."
+  }
+ ],
+ "observer": {
+  "id": "TrentPaul",
+  "title": "Paul Trent (MM1 and MM2)"
+ },
+ "account": {
+  "observerOccupation": {
+   "fr": "fermier",
+   "en": "farmer",
+   "es": "granjero",
+   "it": "agricoltore"
+  },
+  "observerAgeYears": {
+   "value": 33,
+   "basis": "derived",
+   "rationale": "Born 28 February 1917 (RR0), so 33 on 11 May 1950."
+  },
+  "source": {
+   "value": "press",
+   "basis": "stated",
+   "rationale": "The account comes from the Telephone Register of 8 June 1950 and the interviews Hartmann, Maccabee and others made afterwards."
+  },
+  "followedUp": {
+   "value": true,
+   "basis": "stated",
+   "rationale": "Hartmann (1967), Maccabee (1975 on) and Poher (1977) went back to the Trents, who gave their account again each time."
+  }
+ },
+ "description": {
+  "fr": "Au soir du 11 mai 1950, Evelyn Trent donne à manger aux lapins dans la cour de la ferme quand elle voit un objet au nord-est, qu'elle montre à son mari Paul. Il va chercher l'appareil, un Roamer 1 déjà chargé, prend une première photographie (MM1) de l'objet qui vient vers eux, rembobine, fait un pas vers sa droite quand l'objet « tourne vers le nord-ouest » et prend la seconde (MM2), le tout en 30 secondes environ. L'objet est « argenté, un peu bronze », sans bruit ni fumée ; il se serait éloigné vite vers l'ouest. Ici, ce que montrent les deux clichés : un disque sombre de 1,6° de large, au-dessus de deux fils électriques.",
+  "en": "On the evening of 11 May 1950, Evelyn Trent is feeding the rabbits in the farmyard when she sees an object to the north-east, and calls her husband Paul. He fetches the camera, a Roamer 1 already loaded, takes a first photograph (MM1) of the object coming towards them, winds on, steps to his right as the object \"turns towards the north-west\" and takes the second (MM2), all within about 30 seconds. The object is \"silvery with some bronze\", with no noise or smoke; it is said to have left fast to the west. Here, what the two prints show: a dark disc 1.6° wide, above two electric wires.",
+  "es": "En la tarde del 11 de mayo de 1950, Evelyn Trent da de comer a los conejos en el patio de la granja cuando ve un objeto al nordeste y llama a su marido Paul. Él va a buscar la cámara, una Roamer 1 ya cargada, hace una primera fotografía (MM1) del objeto que viene hacia ellos, rebobina, da un paso a su derecha cuando el objeto \"gira hacia el noroeste\" y hace la segunda (MM2), todo en unos 30 segundos. El objeto es \"plateado con algo de bronce\", sin ruido ni humo; se habría alejado rápido hacia el oeste. Aquí, lo que muestran las dos copias: un disco oscuro de 1,6° de ancho, sobre dos cables eléctricos.",
+  "it": "La sera dell'11 maggio 1950, Evelyn Trent dà da mangiare ai conigli nel cortile della fattoria quando vede un oggetto a nord-est e chiama il marito Paul. Lui va a prendere la macchina fotografica, una Roamer 1 già carica, scatta una prima fotografia (MM1) dell'oggetto che viene verso di loro, riavvolge, fa un passo a destra quando l'oggetto \"gira verso nord-ovest\" e scatta la seconda (MM2), il tutto in circa 30 secondi. L'oggetto è \"argenteo con un po' di bronzo\", senza rumore né fumo; si sarebbe allontanato veloce verso ovest. Qui, ciò che mostrano le due stampe: un disco scuro largo 1,6°, sopra due fili elettrici."
+ },
+ "tags": [
+  "photograph",
+  "aerial observation",
+  "McMinnville",
+  "Condon 46"
+ ],
+ "sources": [
+  {
+   "type": "article",
+   "title": "Retour sur les photos de McMinnville",
+   "authors": [
+    "Antoine Cousyn",
+    "François Louange",
+    "Geoff Quick"
+   ],
+   "url": "https://www.ipaco.fr/RapportMcMinnville.pdf",
+   "publication": {
+    "publisher": "IPACO",
+    "time": "2013-04"
+   },
+   "index": "pp. 3-14"
+  },
+  {
+   "title": "Case 46 - McMinnville (Oregon)",
+   "authors": [
+    "William K. Hartmann"
+   ],
+   "url": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html",
+   "publication": {
+    "publisher": "Scientific Study of Unidentified Flying Objects (Condon Report)",
+    "time": "1969"
+   }
+  }
+ ],
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "ufo-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 45,
+         "altitudeDeg": 17.68
+        },
+        "basis": "derived",
+        "rationale": "MM1: the study measures sizes, not where the object lies in the frame, so it is put on the camera's axis horizontally, and at the height the wire geometry gives (the lower line 3.5 m up, the model 0.7 m under it, the camera at 1.5 m and 4 m from the line). Its width is the study's c, 1.630 degrees, its height the base's eccentricity e1 = 0.362 times that."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 1.63,
+        "heightDeg": 0.59
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Objet",
+        "en": "Object",
+        "es": "Objeto",
+        "it": "Oggetto"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 30000,
+    "shapes": [
+     {
+      "sourceId": "ufo-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 32,
+         "altitudeDeg": 16.23
+        },
+        "basis": "derived",
+        "rationale": "MM2: the same, from the second position, 4.3 m from the line, the model swung 9 degrees away. Its width is c = 1.470 degrees. Its height, 0.4 of that, is ASSUMED: the base is no longer seen (e2 = 0.063), the dome's side is, and the study does not measure its height."
+       },
+       "kind": "oval",
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 0.588
+       },
+       "color": "#2c2c2e",
+       "title": {
+        "fr": "Objet",
+        "en": "Object",
+        "es": "Objeto",
+        "it": "Oggetto"
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "order": [
+   "ufo-1"
+  ],
+  "groups": []
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "MM1",
+   "note": {
+    "fr": "La première photographie : l'objet vient vers eux.",
+    "en": "The first photograph: the object comes towards them.",
+    "es": "La primera fotografía: el objeto viene hacia ellos.",
+    "it": "La prima fotografia: l'oggetto viene verso di loro."
+   }
+  },
+  {
+   "t": 30000,
+   "label": "MM2",
+   "note": {
+    "fr": "La seconde, après un pas à droite : l'objet a « tourné vers le nord-ouest ».",
+    "en": "The second, after a step to his right: the object has \"turned towards the north-west\".",
+    "es": "La segunda, tras un paso a la derecha: el objeto ha \"girado hacia el noroeste\".",
+    "it": "La seconda, dopo un passo a destra: l'oggetto \"ha girato verso nord-ovest\"."
+   }
+  }
+ ],
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 45.1041667,
+     "lng": -123.3305556,
+     "elevationM": -0.1,
+     "fovDeg": 33.4,
+     "headingDeg": {
+      "value": 45,
+      "basis": "stated",
+      "rationale": "Condon, case 46: \"apparently towards the north-east\" when first seen, and the first photograph taken as the object came on."
+     },
+     "pitchDeg": {
+      "value": 12,
+      "basis": "derived",
+      "rationale": "The study gives the line of sight a rise of about 11.5 degrees; 12 puts both lines inside the 33-degree frame, as they are in the plates."
+     }
+    }
+   },
+   {
+    "t": 30000,
+    "pose": {
+     "lat": 45.1041593,
+     "lng": -123.3305486,
+     "elevationM": -0.1,
+     "fovDeg": 33.4,
+     "headingDeg": {
+      "value": 32,
+      "basis": "derived",
+      "rationale": "13 degrees from the first (the study: the line of sight turns by 13 degrees between the photographs), to the left while Trent steps right, as he must to keep a thing that has not moved in the frame."
+     },
+     "pitchDeg": 12
+    }
+   }
+  ]
+ },
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [
+      {
+       "id": "ceiling",
+       "type": "stratus",
+       "baseM": 1500,
+       "thicknessM": 500,
+       "coverage": 0.7,
+       "sizeM": 2500,
+       "density": 1
+      }
+     ],
+     "cloudCover": 0.7,
+     "cloudDarkness": 0.4,
+     "cloudBaseM": 1500,
+     "highCloudCover": 0,
+     "lowerCloudCover": 0.7,
+     "relativeHumidity": 0.7,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windSpeed": 1.5,
+     "storm": false
+    }
+   }
+  ]
+ },
+ "weatherSource": {
+  "id": "condon-46",
+  "name": "Condon, case 46: overcast, ceiling about 5,000 ft \"confirmed by the photographs\"; light wind noted by earlier investigators (IPACO)",
+  "url": "https://rr0.org/time/1/9/6/8/CondonReport/s4/c3/46/case46.html"
+ },
+ "instrument": "roamer-1-120",
+ "exposureSeconds": 0.02,
+ "iso": {
+  "value": 125,
+  "basis": "assumed",
+  "rationale": "A box camera's black and white roll film of 1950 (Verichrome, ASA 125): the study gives the camera and the 1/50 s, not the film."
+ }
+}

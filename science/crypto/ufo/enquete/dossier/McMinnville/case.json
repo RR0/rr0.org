@@ -1,10 +1,210 @@
 {
-  "title": "Les photographies de McMinnville",
-  "time": "1950-05-11",
-  "place": "McMinnville (comté de Yamhill, Oregon, USA)",
-  "classification": {
-    "hynek": "DD"
+ "title": "Les photographies de McMinnville",
+ "time": "1950-05-11",
+ "place": "McMinnville (comté de Yamhill, Oregon, USA)",
+ "classification": {
+  "hynek": "DD"
+ },
+ "image": "/time/1/9/6/8/CondonReport/images/pl26a.jpg",
+ "conclusion": "hoax",
+ "events": [
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "time": "1950-05-11 19:45",
+   "title": "Paul Trent",
+   "url": "observer-mcminnville.json"
   },
-  "image": "/time/1/9/6/8/CondonReport/images/pl26a.jpg",
-  "conclusion": "hoax"
+  {
+   "type": "event",
+   "eventType": "interpretation",
+   "sighting": "1950-05-11-TrentPaul",
+   "title": {
+    "fr": "Une maquette d'environ 12 cm suspendue à un fil de 70 cm sous la ligne électrique, qui oscille de 9° entre les deux photographies",
+    "en": "A model about 12 cm across, hung on a 70 cm thread under the electric line, swinging 9° between the two photographs",
+    "es": "Una maqueta de unos 12 cm colgada de un hilo de 70 cm bajo la línea eléctrica, que oscila 9° entre las dos fotografías",
+    "it": "Un modellino di circa 12 cm appeso a un filo di 70 cm sotto la linea elettrica, che oscilla di 9° fra le due fotografie"
+   },
+   "by": [
+    {
+     "people": "CousynAntoine"
+    },
+    {
+     "people": "LouangeFrancois"
+    },
+    {
+     "people": "QuickGeoff"
+    }
+   ],
+   "bodies": [
+    {
+     "id": "model",
+     "title": {
+      "fr": "La maquette",
+      "en": "The model",
+      "es": "La maqueta",
+      "it": "Il modellino"
+     },
+     "explains": [
+      "ufo-1"
+     ],
+     "model": {
+      "id": "disc"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.75,
+       "sizeM": {
+        "widthM": 0.12,
+        "lengthM": 0.12,
+        "heightM": 0.05
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": -3.2
+       },
+       "appearance": {
+        "color": "#8a8d91",
+        "albedo": 0.3
+       }
+      },
+      {
+       "t": 30000,
+       "eastM": 2.886,
+       "northM": 2.921,
+       "altitudeAboveGroundM": 2.759,
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6
+       }
+      }
+     ]
+    },
+    {
+     "id": "thread",
+     "title": {
+      "fr": "Le fil de suspension (supposé)",
+      "en": "The suspension thread (supposed)",
+      "es": "El hilo de suspensión (supuesto)",
+      "it": "Il filo di sospensione (supposto)"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.828,
+       "northM": 2.828,
+       "altitudeAboveGroundM": 2.8,
+       "sizeM": {
+        "widthM": 0.0004,
+        "lengthM": 0.0004,
+        "heightM": 0.7
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 0,
+        "rollDeg": 0
+       },
+       "appearance": {
+        "color": "#303030",
+        "albedo": 0.1
+       }
+      },
+      {
+       "t": 30000,
+       "eastM": 2.857,
+       "northM": 2.875,
+       "altitudeAboveGroundM": 2.804,
+       "sizeM": {
+        "widthM": 0.0004,
+        "lengthM": 0.0004,
+        "heightM": 0.7
+       },
+       "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 9,
+        "rollDeg": 0
+       }
+      }
+     ]
+    },
+    {
+     "id": "line-lower",
+     "title": {
+      "fr": "Fil électrique inférieur (3,5 m)",
+      "en": "Lower electric wire (3.5 m)",
+      "es": "Cable eléctrico inferior (3,5 m)",
+      "it": "Filo elettrico inferiore (3,5 m)"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.83,
+       "northM": 2.83,
+       "altitudeAboveGroundM": -3.5,
+       "sizeM": {
+        "widthM": 0.006,
+        "lengthM": 0.006,
+        "heightM": 14
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": 0,
+        "rollDeg": 90
+       },
+       "appearance": {
+        "color": "#202020",
+        "albedo": 0.05
+       }
+      }
+     ]
+    },
+    {
+     "id": "line-upper",
+     "title": {
+      "fr": "Fil électrique supérieur",
+      "en": "Upper electric wire",
+      "es": "Cable eléctrico superior",
+      "it": "Filo elettrico superiore"
+     },
+     "explains": [],
+     "model": {
+      "id": "cylinder"
+     },
+     "track": [
+      {
+       "t": 0,
+       "eastM": 2.83,
+       "northM": 2.83,
+       "altitudeAboveGroundM": -3.36,
+       "sizeM": {
+        "widthM": 0.006,
+        "lengthM": 0.006,
+        "heightM": 14
+       },
+       "attitude": {
+        "headingDeg": 45,
+        "pitchDeg": 0,
+        "rollDeg": 90
+       },
+       "appearance": {
+        "color": "#202020",
+        "albedo": 0.05
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }

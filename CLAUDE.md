@@ -195,6 +195,12 @@ tags. It renders "de 1989 à 1994" after "de" and "entre 1989 et 1994" after "en
 relative to the previous one ("la veille", "l'année suivante"), read the rendered page and use `data-context="none"`
 where a relative rendering breaks the sentence.
 
+A time of day right after a date is merged into it, as one `<time>`: `<time>1953-06-22 02:10</time>`, not
+`<time>1953-06-22</time> <time>02:10</time>`, whose second element is read with the context the first leaves, which
+the build can lose (it then stays unresolved, or is read as a year). A day alone before an hour is merged too
+(`<time>30 ~18:00</time>`), and given its month and year (`<time>1888-07-30 ~18:00</time>`) on a year page, where the
+context has no month: a bare "30" is otherwise read as the year 30.
+
 A moment EDTF cannot express stays a `<time>` but with `data-format="none"`, so that it is not interpreted:
 `<time data-format="none">Dans la nuit</time>`, `<time data-format="none">Fin du mois</time>`. Convert it
 instead whenever EDTF can say it: a season is `YYYY-21` (spring) to `YYYY-24` (winter), rendered "automne 1954";

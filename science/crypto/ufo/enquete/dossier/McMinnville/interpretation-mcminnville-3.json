@@ -241,19 +241,19 @@
  },
  "interpretation": {
   "title": {
-   "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
-   "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look",
-   "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto",
-   "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto"
+    "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect, accroché à un fil pour chaque photographie",
+    "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look, hung on a thread for each photograph",
+    "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto, colgado de un hilo para cada fotografía",
+    "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto, appeso a un filo per ogni fotografia"
   },
   "bodies": [
    {
     "id": "object",
     "title": {
-     "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
-     "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look",
-     "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto",
-     "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto"
+      "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect, accroché à un fil pour chaque photographie",
+      "en": "For comparison: a 30 cm hubcap at 10.5 m, the same angular width and the same look, hung on a thread for each photograph",
+      "es": "Para comparar: un tapacubos de 30 cm a 10,5 m, misma anchura angular y mismo aspecto, colgado de un hilo para cada fotografía",
+      "it": "Per confronto: un copricerchio di 30 cm a 10,5 m, stessa larghezza angolare e stesso aspetto, appeso a un filo per ogni fotografia"
     },
     "explains": [
      "ufo-1"
@@ -263,10 +263,16 @@
     },
     "track": [
      {
-      "t": 0,
-      "azimuthDeg": 45,
-      "altitudeDeg": 17.74,
-      "distanceM": 10.5,
+       "t": 11500,
+       "present": true,
+       "eastM": 7.102,
+       "northM": 7.102,
+       "altitudeAboveGroundM": 4.661,
+       "attitude": {
+         "headingDeg": 45,
+         "pitchDeg": -3.2,
+         "rollDeg": 19
+       },
       "sizeM": {
        "widthM": 0.3,
        "lengthM": 0.3,
@@ -275,39 +281,83 @@
       "appearance": {
        "color": "#8a8d91",
        "albedo": 0.3
+      }
+     },
+      {
+        "t": 13000,
+        "present": false
       },
+      {
+        "t": 41500,
+        "present": true,
+        "eastM": 6.498,
+        "northM": 8.7,
+        "altitudeAboveGroundM": 4.727,
+      "attitude": {
+        "headingDeg": 32,
+        "pitchDeg": 21.6,
+        "rollDeg": 17
+      }
+      },
+      {
+        "t": 43000,
+        "present": false
+      }
+    ]
+   },
+    {
+      "id": "object-thread",
+      "title": {
+        "fr": "Son fil de suspension",
+        "en": "Its suspension thread",
+        "es": "Su hilo de suspensión",
+        "it": "Il suo filo di sospensione"
+      },
+      "explains": [],
+      "model": {
+        "id": "cylinder"
+      },
+      "track": [
+        {
+          "t": 11500,
+          "present": true,
+          "eastM": 7.102,
+          "northM": 7.102,
+          "altitudeAboveGroundM": 4.764,
       "attitude": {
        "headingDeg": 45,
-       "pitchDeg": -3.2,
-       "rollDeg": 19
+        "pitchDeg": 0,
+        "rollDeg": 0
+      },
+          "sizeM": {
+            "widthM": 0.004,
+            "lengthM": 0.004,
+            "heightM": 0.7
+          },
+          "appearance": {
+            "color": "#303030",
+            "albedo": 0.1
       }
      },
      {
-      "t": 12000,
-      "attitude": {
-       "headingDeg": 45,
-       "pitchDeg": -3.2,
-       "rollDeg": 19
-      }
+       "t": 13000,
+       "present": false
      },
-     {
-      "t": 38000,
-      "attitude": {
-       "headingDeg": 45,
-       "pitchDeg": -3.2,
-       "rollDeg": 19
-      }
-     },
-     {
-      "t": 42000,
-      "azimuthDeg": 32,
-      "altitudeDeg": 16.28,
-      "distanceM": 11.7,
+        {
+          "t": 41500,
+          "present": true,
+          "eastM": 6.498,
+          "northM": 8.7,
+          "altitudeAboveGroundM": 4.83,
       "attitude": {
        "headingDeg": 32,
-       "pitchDeg": 21.6,
-       "rollDeg": 17
+        "pitchDeg": 0,
+        "rollDeg": 0
       }
+        },
+        {
+          "t": 43000,
+          "present": false
      }
     ]
    }

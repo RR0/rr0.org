@@ -263,7 +263,8 @@
     },
     "track": [
      {
-      "t": 0,
+       "t": 11500,
+       "present": true,
       "eastM": 2.828,
       "northM": 2.828,
       "altitudeAboveGroundM": 2.759,
@@ -283,15 +284,12 @@
       }
      },
      {
-      "t": 38000,
-      "attitude": {
-       "headingDeg": 45,
-       "pitchDeg": -3.2,
-       "rollDeg": 19
-      }
+       "t": 13000,
+       "present": false
      },
      {
-      "t": 42000,
+       "t": 41500,
+       "present": true,
       "eastM": 2.886,
       "northM": 2.921,
       "altitudeAboveGroundM": 2.768,
@@ -300,6 +298,10 @@
        "pitchDeg": 21.6,
        "rollDeg": 17
       }
+     },
+      {
+        "t": 43000,
+        "present": false
      }
     ]
    },
@@ -317,13 +319,14 @@
     },
     "track": [
      {
-      "t": 0,
+       "t": 11500,
+       "present": true,
       "eastM": 2.828,
       "northM": 2.828,
       "altitudeAboveGroundM": 2.8,
       "sizeM": {
-       "widthM": 0.0004,
-       "lengthM": 0.0004,
+        "widthM": 0.004,
+        "lengthM": 0.004,
        "heightM": 0.7
       },
       "attitude": {
@@ -337,29 +340,18 @@
       }
      },
      {
-      "t": 38000,
-      "eastM": 2.828,
-      "northM": 2.828,
-      "altitudeAboveGroundM": 2.8,
-      "sizeM": {
-       "widthM": 0.0004,
-       "lengthM": 0.0004,
-       "heightM": 0.7
-      },
-      "attitude": {
-       "headingDeg": 32,
-       "pitchDeg": 0,
-       "rollDeg": 0
-      }
+       "t": 13000,
+       "present": false
      },
      {
-      "t": 42000,
+       "t": 41500,
+       "present": true,
       "eastM": 2.857,
       "northM": 2.875,
       "altitudeAboveGroundM": 2.804,
       "sizeM": {
-       "widthM": 0.0004,
-       "lengthM": 0.0004,
+        "widthM": 0.004,
+        "lengthM": 0.004,
        "heightM": 0.7
       },
       "attitude": {
@@ -367,6 +359,10 @@
        "pitchDeg": 9,
        "rollDeg": 0
       }
+     },
+      {
+        "t": 43000,
+        "present": false
      }
     ]
    }

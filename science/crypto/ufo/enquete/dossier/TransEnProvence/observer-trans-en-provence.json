@@ -774,21 +774,21 @@
       "id": "cabin",
       "kind": "building",
       "title": {
-        "fr": "Annexe (cabanon de pierre)",
-        "en": "Annex (stone cabin)",
-        "es": "Anexo (cabaña de piedra)",
-        "it": "Annesso (capanno di pietra)"
+        "fr": "Cabanon de pierre",
+        "en": "Stone cabin",
+        "es": "Cabaña de piedra",
+        "it": "Capanno di pietra"
       },
-      "eastM": 15.8,
-      "northM": -10.6,
+      "eastM": 17.3,
+      "northM": -3.5,
       "headingDeg": 20.0,
       "floors": 1,
       "sizeM": {
-        "widthM": 7.0,
+        "widthM": 5.0,
         "lengthM": 3.2,
-        "heightM": 1.3
+        "heightM": 2.4
       },
-      "color": "#b9b3a2"
+      "color": "#9b9484"
     },
     {
       "id": "house",
@@ -873,13 +873,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 26.5,
-      "northM": -14.5,
+      "eastM": 8.3,
+      "northM": -8.5,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.3,
-        "lengthM": 2.3,
-        "heightM": 4.1
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 5.0
       }
     },
     {
@@ -891,13 +891,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 32.9,
-      "northM": -17.7,
+      "eastM": 18.5,
+      "northM": -12.7,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.7,
-        "lengthM": 2.7,
-        "heightM": 4.9
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.2
       }
     },
     {
@@ -909,13 +909,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 39.3,
-      "northM": -19.8,
+      "eastM": 33.4,
+      "northM": -17.5,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.5,
-        "lengthM": 2.5,
-        "heightM": 4.6
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
       }
     },
     {
@@ -927,13 +927,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 50.5,
-      "northM": -24.1,
+      "eastM": 42.6,
+      "northM": -21.3,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.4,
-        "lengthM": 2.4,
-        "heightM": 4.4
+        "widthM": 2.9,
+        "lengthM": 2.9,
+        "heightM": 5.2
       }
     },
     {
@@ -945,12 +945,12 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 60.7,
-      "northM": -28.0,
+      "eastM": 50.9,
+      "northM": -24.7,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.8,
-        "lengthM": 2.8,
+        "widthM": 2.7,
+        "lengthM": 2.7,
         "heightM": 5.0
       }
     },
@@ -963,13 +963,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 70.8,
-      "northM": -31.2,
+      "eastM": 59.3,
+      "northM": -26.6,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.9,
-        "lengthM": 2.9,
-        "heightM": 5.2
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 4.9
       }
     },
     {
@@ -981,13 +981,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -12.5,
-      "northM": 7.1,
+      "eastM": 68.9,
+      "northM": -29.9,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.2,
-        "lengthM": 2.2,
-        "heightM": 4.1
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 4.9
       }
     },
     {
@@ -999,13 +999,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -6.9,
-      "northM": 4.6,
+      "eastM": -11.7,
+      "northM": 4.5,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.4,
-        "lengthM": 2.4,
-        "heightM": 4.4
+        "widthM": 2.2,
+        "lengthM": 2.2,
+        "heightM": 4.0
       }
     },
     {
@@ -1017,13 +1017,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 12.4,
-      "northM": -2.6,
+      "eastM": 9.2,
+      "northM": -2.5,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.3,
-        "lengthM": 2.3,
-        "heightM": 4.2
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.7
       }
     },
     {
@@ -1035,13 +1035,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 32.1,
-      "northM": -9.4,
+      "eastM": 27.7,
+      "northM": -9.7,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.7,
-        "lengthM": 2.7,
-        "heightM": 4.9
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.1
       }
     },
     {
@@ -1053,13 +1053,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 40.6,
-      "northM": -13.6,
+      "eastM": 38.7,
+      "northM": -12.2,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.3,
-        "lengthM": 2.3,
-        "heightM": 4.1
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.7
       }
     },
     {
@@ -1071,13 +1071,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 47.8,
-      "northM": -15.1,
+      "eastM": 46.4,
+      "northM": -16.6,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.2,
-        "lengthM": 2.2,
-        "heightM": 4.1
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.3
       }
     },
     {
@@ -1089,13 +1089,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 58.4,
-      "northM": -19.0,
+      "eastM": 57.1,
+      "northM": -20.5,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.5,
-        "lengthM": 2.5,
-        "heightM": 4.6
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.0
       }
     },
     {
@@ -1107,13 +1107,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 64.6,
-      "northM": -22.7,
+      "eastM": 68.1,
+      "northM": -23.5,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.8,
-        "lengthM": 2.8,
-        "heightM": 5.0
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
       }
     },
     {
@@ -1125,13 +1125,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 72.1,
-      "northM": -25.8,
+      "eastM": -12.7,
+      "northM": 14.1,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.7,
-        "lengthM": 2.7,
-        "heightM": 5.0
+        "widthM": 2.4,
+        "lengthM": 2.4,
+        "heightM": 4.4
       }
     },
     {
@@ -1143,13 +1143,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -11.8,
-      "northM": 13.2,
+      "eastM": -6.5,
+      "northM": 11.8,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.6,
-        "lengthM": 2.6,
-        "heightM": 4.8
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.6
       }
     },
     {
@@ -1161,13 +1161,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -1.0,
-      "northM": 9.8,
+      "eastM": 2.3,
+      "northM": 8.3,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.9,
-        "lengthM": 2.9,
-        "heightM": 5.2
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.1
       }
     },
     {
@@ -1179,13 +1179,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 5.8,
-      "northM": 6.7,
+      "eastM": 12.8,
+      "northM": 5.1,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.7,
-        "lengthM": 2.7,
-        "heightM": 5.0
+        "widthM": 2.4,
+        "lengthM": 2.4,
+        "heightM": 4.3
       }
     },
     {
@@ -1197,8 +1197,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 13.9,
-      "northM": 2.7,
+      "eastM": 29.0,
+      "northM": -2.8,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.3,
@@ -1215,8 +1215,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 24.5,
-      "northM": -0.8,
+      "eastM": 39.6,
+      "northM": -6.3,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.2,
@@ -1233,8 +1233,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 31.8,
-      "northM": -3.5,
+      "eastM": 47.0,
+      "northM": -9.1,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.5,
@@ -1251,8 +1251,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 41.2,
-      "northM": -7.0,
+      "eastM": 56.4,
+      "northM": -12.5,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.6,
@@ -1269,8 +1269,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 50.9,
-      "northM": -9.7,
+      "eastM": 66.0,
+      "northM": -15.3,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.2,
@@ -1287,8 +1287,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 56.5,
-      "northM": -12.8,
+      "eastM": 71.7,
+      "northM": -18.3,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.3,
@@ -1298,42 +1298,6 @@
     },
     {
       "id": "tree-28",
-      "kind": "tree",
-      "title": {
-        "fr": "Arbre",
-        "en": "Tree",
-        "es": "Árbol",
-        "it": "Albero"
-      },
-      "eastM": 66.8,
-      "northM": -15.9,
-      "color": "#6b7549",
-      "sizeM": {
-        "widthM": 2.8,
-        "lengthM": 2.8,
-        "heightM": 5.1
-      }
-    },
-    {
-      "id": "tree-29",
-      "kind": "tree",
-      "title": {
-        "fr": "Arbre",
-        "en": "Tree",
-        "es": "Árbol",
-        "it": "Albero"
-      },
-      "eastM": 76.1,
-      "northM": -19.9,
-      "color": "#6b7549",
-      "sizeM": {
-        "widthM": 2.8,
-        "lengthM": 2.8,
-        "heightM": 5.1
-      }
-    },
-    {
-      "id": "tree-30",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -1351,7 +1315,7 @@
       }
     },
     {
-      "id": "tree-31",
+      "id": "tree-29",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -1369,7 +1333,7 @@
       }
     },
     {
-      "id": "tree-32",
+      "id": "tree-30",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -1387,6 +1351,42 @@
       }
     },
     {
+      "id": "tree-31",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 20.0,
+      "northM": -6.0,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.6
+      }
+    },
+    {
+      "id": "tree-32",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 13.8,
+      "northM": -2.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.0
+      }
+    },
+    {
       "id": "tree-33",
       "kind": "tree",
       "title": {
@@ -1395,13 +1395,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 7.3,
-      "northM": -26.9,
+      "eastM": 5.7,
+      "northM": -26.0,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.6,
-        "lengthM": 2.6,
-        "heightM": 4.7
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 4.9
       }
     },
     {
@@ -1413,13 +1413,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 24.7,
-      "northM": -32.6,
+      "eastM": 19.2,
+      "northM": -31.1,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.3,
-        "lengthM": 2.3,
-        "heightM": 4.2
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 4.9
       }
     },
     {
@@ -1431,13 +1431,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 47.8,
-      "northM": -42.2,
+      "eastM": 46.8,
+      "northM": -41.3,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.5,
-        "lengthM": 2.5,
-        "heightM": 4.5
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.7
       }
     },
     {
@@ -1449,13 +1449,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 57.1,
-      "northM": -46.2,
+      "eastM": 62.3,
+      "northM": -46.3,
       "color": "#6b7549",
       "sizeM": {
-        "widthM": 2.5,
-        "lengthM": 2.5,
-        "heightM": 4.6
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
       }
     },
     {
@@ -1467,13 +1467,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -30.4,
-      "northM": 31.8,
-      "color": "#4b5a33",
+      "eastM": 94.4,
+      "northM": 6.4,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 8.2,
-        "lengthM": 8.2,
-        "heightM": 14.9
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.1
       }
     },
     {
@@ -1485,13 +1485,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 88.9,
-      "northM": 15.7,
+      "eastM": 48.4,
+      "northM": 11.1,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.8,
-        "lengthM": 7.8,
-        "heightM": 14.2
+        "widthM": 5.1,
+        "lengthM": 5.1,
+        "heightM": 9.3
       }
     },
     {
@@ -1503,13 +1503,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 100.1,
-      "northM": -15.2,
-      "color": "#2f4226",
+      "eastM": 89.8,
+      "northM": 55.5,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 5.9,
-        "lengthM": 5.9,
-        "heightM": 10.7
+        "widthM": 6.4,
+        "lengthM": 6.4,
+        "heightM": 11.6
       }
     },
     {
@@ -1521,13 +1521,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 5.4,
-      "northM": 43.2,
-      "color": "#2f4226",
+      "eastM": 36.7,
+      "northM": 67.3,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 7.8,
-        "lengthM": 7.8,
-        "heightM": 14.2
+        "widthM": 5.2,
+        "lengthM": 5.2,
+        "heightM": 9.4
       }
     },
     {
@@ -1539,13 +1539,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 98.6,
-      "northM": 33.3,
+      "eastM": 19.0,
+      "northM": 29.9,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.1,
-        "lengthM": 7.1,
-        "heightM": 13.0
+        "widthM": 6.2,
+        "lengthM": 6.2,
+        "heightM": 11.3
       }
     },
     {
@@ -1557,13 +1557,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 11.3,
-      "northM": 60.6,
-      "color": "#2f4226",
+      "eastM": 77.9,
+      "northM": 51.8,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 6.5,
-        "lengthM": 6.5,
-        "heightM": 11.8
+        "widthM": 7.3,
+        "lengthM": 7.3,
+        "heightM": 13.3
       }
     },
     {
@@ -1575,13 +1575,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 131.3,
-      "northM": 21.4,
+      "eastM": 47.6,
+      "northM": 47.7,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.4,
-        "lengthM": 6.4,
-        "heightM": 11.6
+        "widthM": 7.1,
+        "lengthM": 7.1,
+        "heightM": 12.9
       }
     },
     {
@@ -1593,13 +1593,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -34.0,
-      "northM": 46.0,
-      "color": "#2f4226",
+      "eastM": -0.3,
+      "northM": 50.7,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 5.8,
-        "lengthM": 5.8,
-        "heightM": 10.5
+        "widthM": 7.3,
+        "lengthM": 7.3,
+        "heightM": 13.3
       }
     },
     {
@@ -1611,13 +1611,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 9.6,
-      "northM": 75.0,
+      "eastM": 72.9,
+      "northM": 22.3,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.8,
-        "lengthM": 5.8,
-        "heightM": 10.6
+        "widthM": 5.7,
+        "lengthM": 5.7,
+        "heightM": 10.4
       }
     },
     {
@@ -1629,13 +1629,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -41.4,
-      "northM": 33.9,
+      "eastM": -21.3,
+      "northM": 42.1,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.6,
-        "lengthM": 6.6,
-        "heightM": 12.1
+        "widthM": 7.7,
+        "lengthM": 7.7,
+        "heightM": 14.1
       }
     },
     {
@@ -1647,13 +1647,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 48.0,
-      "northM": 5.6,
+      "eastM": 12.6,
+      "northM": 31.1,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.5,
-        "lengthM": 5.5,
-        "heightM": 9.9
+        "widthM": 5.1,
+        "lengthM": 5.1,
+        "heightM": 9.2
       }
     },
     {
@@ -1665,13 +1665,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 122.3,
-      "northM": -10.8,
+      "eastM": 74.2,
+      "northM": 27.0,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.1,
-        "lengthM": 6.1,
-        "heightM": 11.1
+        "widthM": 5.2,
+        "lengthM": 5.2,
+        "heightM": 9.5
       }
     },
     {
@@ -1683,13 +1683,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 119.4,
-      "northM": -12.8,
+      "eastM": 62.7,
+      "northM": 5.0,
       "color": "#4b5a33",
       "sizeM": {
-        "widthM": 6.7,
-        "lengthM": 6.7,
-        "heightM": 12.3
+        "widthM": 5.7,
+        "lengthM": 5.7,
+        "heightM": 10.4
       }
     },
     {
@@ -1701,13 +1701,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -18.2,
-      "northM": 85.7,
+      "eastM": 56.1,
+      "northM": 22.1,
       "color": "#4b5a33",
       "sizeM": {
-        "widthM": 5.3,
-        "lengthM": 5.3,
-        "heightM": 9.6
+        "widthM": 5.6,
+        "lengthM": 5.6,
+        "heightM": 10.2
       }
     },
     {
@@ -1719,13 +1719,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 62.9,
-      "northM": 10.5,
-      "color": "#4b5a33",
+      "eastM": 119.8,
+      "northM": 12.9,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.7,
-        "lengthM": 6.7,
-        "heightM": 12.2
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.1
       }
     },
     {
@@ -1737,13 +1737,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 137.4,
-      "northM": 39.6,
+      "eastM": 95.6,
+      "northM": -11.5,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.9,
-        "lengthM": 7.9,
-        "heightM": 14.4
+        "widthM": 5.7,
+        "lengthM": 5.7,
+        "heightM": 10.4
       }
     },
     {
@@ -1755,13 +1755,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -4.2,
-      "northM": 77.5,
-      "color": "#2f4226",
+      "eastM": 83.1,
+      "northM": 25.4,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 7.2,
-        "lengthM": 7.2,
-        "heightM": 13.1
+        "widthM": 8.2,
+        "lengthM": 8.2,
+        "heightM": 15.0
       }
     },
     {
@@ -1773,13 +1773,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -26.5,
-      "northM": 92.9,
+      "eastM": 12.3,
+      "northM": 77.6,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.3,
-        "lengthM": 5.3,
-        "heightM": 9.6
+        "widthM": 7.6,
+        "lengthM": 7.6,
+        "heightM": 13.9
       }
     },
     {
@@ -1791,13 +1791,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 38.8,
-      "northM": 3.3,
+      "eastM": -37.2,
+      "northM": 80.3,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.7,
-        "lengthM": 6.7,
-        "heightM": 12.1
+        "widthM": 8.0,
+        "lengthM": 8.0,
+        "heightM": 14.5
       }
     },
     {
@@ -1809,13 +1809,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -33.0,
-      "northM": 89.6,
-      "color": "#4b5a33",
+      "eastM": 41.1,
+      "northM": 9.4,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.7,
-        "lengthM": 5.7,
-        "heightM": 10.5
+        "widthM": 5.0,
+        "lengthM": 5.0,
+        "heightM": 9.1
       }
     },
     {
@@ -1827,13 +1827,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -17.8,
-      "northM": 88.3,
+      "eastM": -8.0,
+      "northM": 57.9,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.5,
-        "lengthM": 5.5,
-        "heightM": 10.0
+        "widthM": 7.7,
+        "lengthM": 7.7,
+        "heightM": 14.0
       }
     },
     {
@@ -1845,13 +1845,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 16.3,
-      "northM": 60.4,
+      "eastM": 80.4,
+      "northM": 5.0,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.4,
-        "lengthM": 5.4,
-        "heightM": 9.8
+        "widthM": 7.9,
+        "lengthM": 7.9,
+        "heightM": 14.3
       }
     },
     {
@@ -1863,13 +1863,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 42.7,
-      "northM": 71.4,
+      "eastM": 16.7,
+      "northM": 23.2,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.7,
-        "lengthM": 7.7,
-        "heightM": 14.0
+        "widthM": 7.2,
+        "lengthM": 7.2,
+        "heightM": 13.1
       }
     },
     {
@@ -1881,13 +1881,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 123.0,
-      "northM": -12.1,
+      "eastM": 49.7,
+      "northM": 8.6,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.7,
-        "lengthM": 7.7,
-        "heightM": 14.0
+        "widthM": 8.1,
+        "lengthM": 8.1,
+        "heightM": 14.8
       }
     },
     {
@@ -1899,13 +1899,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 2.9,
-      "northM": 83.2,
-      "color": "#2f4226",
+      "eastM": 6.2,
+      "northM": 74.8,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 7.8,
-        "lengthM": 7.8,
-        "heightM": 14.2
+        "widthM": 5.7,
+        "lengthM": 5.7,
+        "heightM": 10.3
       }
     },
     {
@@ -1917,13 +1917,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 71.5,
-      "northM": -3.5,
-      "color": "#4b5a33",
+      "eastM": 20.3,
+      "northM": 70.2,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.8,
-        "lengthM": 7.8,
-        "heightM": 14.1
+        "widthM": 8.0,
+        "lengthM": 8.0,
+        "heightM": 14.5
       }
     },
     {
@@ -1935,13 +1935,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 57.8,
-      "northM": 26.4,
+      "eastM": 13.6,
+      "northM": 75.6,
       "color": "#4b5a33",
       "sizeM": {
-        "widthM": 5.3,
-        "lengthM": 5.3,
-        "heightM": 9.6
+        "widthM": 5.2,
+        "lengthM": 5.2,
+        "heightM": 9.5
       }
     },
     {
@@ -1953,13 +1953,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 24.2,
-      "northM": 70.8,
-      "color": "#4b5a33",
+      "eastM": 95.0,
+      "northM": 44.4,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.1,
-        "lengthM": 7.1,
-        "heightM": 13.0
+        "widthM": 6.3,
+        "lengthM": 6.3,
+        "heightM": 11.5
       }
     },
     {
@@ -1971,13 +1971,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -13.1,
-      "northM": 84.1,
-      "color": "#4b5a33",
+      "eastM": 111.9,
+      "northM": -17.5,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.7,
-        "lengthM": 5.7,
-        "heightM": 10.3
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.2
       }
     },
     {
@@ -1989,13 +1989,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 82.6,
-      "northM": 0.0,
+      "eastM": 91.9,
+      "northM": 31.7,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.7,
-        "lengthM": 6.7,
-        "heightM": 12.3
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.1
       }
     },
     {
@@ -2007,13 +2007,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 21.8,
-      "northM": 34.5,
-      "color": "#2f4226",
+      "eastM": 74.3,
+      "northM": 5.5,
+      "color": "#4b5a33",
       "sizeM": {
-        "widthM": 7.6,
-        "lengthM": 7.6,
-        "heightM": 13.8
+        "widthM": 5.6,
+        "lengthM": 5.6,
+        "heightM": 10.1
       }
     },
     {
@@ -2025,13 +2025,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 19.0,
-      "northM": 55.1,
-      "color": "#4b5a33",
+      "eastM": 57.5,
+      "northM": 35.6,
+      "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.6,
-        "lengthM": 6.6,
-        "heightM": 12.1
+        "widthM": 6.1,
+        "lengthM": 6.1,
+        "heightM": 11.1
       }
     },
     {
@@ -2043,13 +2043,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 66.1,
-      "northM": 45.5,
+      "eastM": 46.5,
+      "northM": 57.8,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 7.6,
-        "lengthM": 7.6,
-        "heightM": 13.8
+        "widthM": 7.0,
+        "lengthM": 7.0,
+        "heightM": 12.7
       }
     },
     {
@@ -2061,13 +2061,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 120.1,
-      "northM": -10.9,
+      "eastM": 97.8,
+      "northM": 18.2,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 5.4,
-        "lengthM": 5.4,
-        "heightM": 9.9
+        "widthM": 7.3,
+        "lengthM": 7.3,
+        "heightM": 13.3
       }
     },
     {
@@ -2079,13 +2079,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -64.2,
-      "northM": 32.6,
+      "eastM": 127.4,
+      "northM": -26.7,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.7,
-        "lengthM": 6.7,
-        "heightM": 12.2
+        "widthM": 4.8,
+        "lengthM": 4.8,
+        "heightM": 8.7
       }
     },
     {
@@ -2097,13 +2097,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -66.3,
-      "northM": 36.2,
+      "eastM": 123.9,
+      "northM": -69.5,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.7,
-        "lengthM": 6.7,
-        "heightM": 12.1
+        "widthM": 6.6,
+        "lengthM": 6.6,
+        "heightM": 12.0
       }
     },
     {
@@ -2115,17 +2115,35 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -85.1,
-      "northM": 49.7,
+      "eastM": -94.9,
+      "northM": 16.7,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.9,
-        "lengthM": 6.9,
-        "heightM": 12.6
+        "widthM": 6.6,
+        "lengthM": 6.6,
+        "heightM": 12.0
       }
     },
     {
       "id": "tree-74",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 155.2,
+      "northM": -56.7,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.8,
+        "lengthM": 6.8,
+        "heightM": 12.4
+      }
+    },
+    {
+      "id": "tree-75",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2143,7 +2161,7 @@
       }
     },
     {
-      "id": "tree-75",
+      "id": "tree-76",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2161,7 +2179,7 @@
       }
     },
     {
-      "id": "tree-76",
+      "id": "tree-77",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2179,7 +2197,7 @@
       }
     },
     {
-      "id": "tree-77",
+      "id": "tree-78",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2197,7 +2215,7 @@
       }
     },
     {
-      "id": "tree-78",
+      "id": "tree-79",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2215,7 +2233,7 @@
       }
     },
     {
-      "id": "tree-79",
+      "id": "tree-80",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2233,7 +2251,7 @@
       }
     },
     {
-      "id": "tree-80",
+      "id": "tree-81",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2251,7 +2269,7 @@
       }
     },
     {
-      "id": "tree-81",
+      "id": "tree-82",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2269,7 +2287,7 @@
       }
     },
     {
-      "id": "tree-82",
+      "id": "tree-83",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2287,7 +2305,7 @@
       }
     },
     {
-      "id": "tree-83",
+      "id": "tree-84",
       "kind": "tree",
       "title": {
         "fr": "Arbre",
@@ -2302,24 +2320,6 @@
         "widthM": 5.3,
         "lengthM": 5.3,
         "heightM": 9.7
-      }
-    },
-    {
-      "id": "tree-84",
-      "kind": "tree",
-      "title": {
-        "fr": "Arbre",
-        "en": "Tree",
-        "es": "Árbol",
-        "it": "Albero"
-      },
-      "eastM": -53.3,
-      "northM": 33.8,
-      "color": "#2f4226",
-      "sizeM": {
-        "widthM": 6.1,
-        "lengthM": 6.1,
-        "heightM": 11.2
       }
     },
     {

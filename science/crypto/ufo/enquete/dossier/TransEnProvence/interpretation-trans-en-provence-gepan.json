@@ -761,7 +761,7 @@
       },
       "eastM": 0.5,
       "northM": 1.4,
-      "headingDeg": 110.0,
+      "headingDeg": 20.0,
       "floors": 1,
       "sizeM": {
         "widthM": 1.6,
@@ -774,21 +774,21 @@
       "id": "cabin",
       "kind": "building",
       "title": {
-        "fr": "Cabanon de pierre",
-        "en": "Stone cabin",
-        "es": "Cabaña de piedra",
-        "it": "Capanno di pietra"
+        "fr": "Annexe (cabanon de pierre)",
+        "en": "Annex (stone cabin)",
+        "es": "Anexo (cabaña de piedra)",
+        "it": "Annesso (capanno di pietra)"
       },
-      "eastM": 17.3,
-      "northM": -3.5,
-      "headingDeg": 110.0,
+      "eastM": 15.8,
+      "northM": -10.6,
+      "headingDeg": 20.0,
       "floors": 1,
       "sizeM": {
-        "widthM": 4.0,
+        "widthM": 7.0,
         "lengthM": 3.2,
-        "heightM": 2.4
+        "heightM": 1.3
       },
-      "color": "#9b9484"
+      "color": "#b9b3a2"
     },
     {
       "id": "house",
@@ -801,7 +801,7 @@
       },
       "eastM": -0.1,
       "northM": -19.1,
-      "headingDeg": 110.0,
+      "headingDeg": 20.0,
       "floors": 2,
       "sizeM": {
         "widthM": 11.0,
@@ -809,6 +809,1518 @@
         "heightM": 6.0
       },
       "color": "#d8d0bf"
+    },
+    {
+      "id": "tree-1",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -18.2,
+      "northM": 1.0,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.1
+      }
+    },
+    {
+      "id": "tree-2",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -7.6,
+      "northM": -3.6,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
+      }
+    },
+    {
+      "id": "tree-3",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -0.8,
+      "northM": -4.8,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
+      }
+    },
+    {
+      "id": "tree-4",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 26.5,
+      "northM": -14.5,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.1
+      }
+    },
+    {
+      "id": "tree-5",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 32.9,
+      "northM": -17.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 4.9
+      }
+    },
+    {
+      "id": "tree-6",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 39.3,
+      "northM": -19.8,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.6
+      }
+    },
+    {
+      "id": "tree-7",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 50.5,
+      "northM": -24.1,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.4,
+        "lengthM": 2.4,
+        "heightM": 4.4
+      }
+    },
+    {
+      "id": "tree-8",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 60.7,
+      "northM": -28.0,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.0
+      }
+    },
+    {
+      "id": "tree-9",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 70.8,
+      "northM": -31.2,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.9,
+        "lengthM": 2.9,
+        "heightM": 5.2
+      }
+    },
+    {
+      "id": "tree-10",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -12.5,
+      "northM": 7.1,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.2,
+        "lengthM": 2.2,
+        "heightM": 4.1
+      }
+    },
+    {
+      "id": "tree-11",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -6.9,
+      "northM": 4.6,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.4,
+        "lengthM": 2.4,
+        "heightM": 4.4
+      }
+    },
+    {
+      "id": "tree-12",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 12.4,
+      "northM": -2.6,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
+      }
+    },
+    {
+      "id": "tree-13",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 32.1,
+      "northM": -9.4,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 4.9
+      }
+    },
+    {
+      "id": "tree-14",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 40.6,
+      "northM": -13.6,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.1
+      }
+    },
+    {
+      "id": "tree-15",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 47.8,
+      "northM": -15.1,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.2,
+        "lengthM": 2.2,
+        "heightM": 4.1
+      }
+    },
+    {
+      "id": "tree-16",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 58.4,
+      "northM": -19.0,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.6
+      }
+    },
+    {
+      "id": "tree-17",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 64.6,
+      "northM": -22.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.0
+      }
+    },
+    {
+      "id": "tree-18",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 72.1,
+      "northM": -25.8,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 5.0
+      }
+    },
+    {
+      "id": "tree-19",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -11.8,
+      "northM": 13.2,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.8
+      }
+    },
+    {
+      "id": "tree-20",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -1.0,
+      "northM": 9.8,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.9,
+        "lengthM": 2.9,
+        "heightM": 5.2
+      }
+    },
+    {
+      "id": "tree-21",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 5.8,
+      "northM": 6.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.7,
+        "lengthM": 2.7,
+        "heightM": 5.0
+      }
+    },
+    {
+      "id": "tree-22",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 13.9,
+      "northM": 2.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.1
+      }
+    },
+    {
+      "id": "tree-23",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 24.5,
+      "northM": -0.8,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.2,
+        "lengthM": 2.2,
+        "heightM": 4.0
+      }
+    },
+    {
+      "id": "tree-24",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 31.8,
+      "northM": -3.5,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.5
+      }
+    },
+    {
+      "id": "tree-25",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 41.2,
+      "northM": -7.0,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.8
+      }
+    },
+    {
+      "id": "tree-26",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 50.9,
+      "northM": -9.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.2,
+        "lengthM": 2.2,
+        "heightM": 4.0
+      }
+    },
+    {
+      "id": "tree-27",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 56.5,
+      "northM": -12.8,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.3
+      }
+    },
+    {
+      "id": "tree-28",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 66.8,
+      "northM": -15.9,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.1
+      }
+    },
+    {
+      "id": "tree-29",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 76.1,
+      "northM": -19.9,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.1
+      }
+    },
+    {
+      "id": "tree-30",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 14.5,
+      "northM": -12.7,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.8
+      }
+    },
+    {
+      "id": "tree-31",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 20.0,
+      "northM": -15.2,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.4,
+        "lengthM": 2.4,
+        "heightM": 4.3
+      }
+    },
+    {
+      "id": "tree-32",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 9.2,
+      "northM": -9.9,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.8,
+        "lengthM": 2.8,
+        "heightM": 5.0
+      }
+    },
+    {
+      "id": "tree-33",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 7.3,
+      "northM": -26.9,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.6,
+        "lengthM": 2.6,
+        "heightM": 4.7
+      }
+    },
+    {
+      "id": "tree-34",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 24.7,
+      "northM": -32.6,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.3,
+        "lengthM": 2.3,
+        "heightM": 4.2
+      }
+    },
+    {
+      "id": "tree-35",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 47.8,
+      "northM": -42.2,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.5
+      }
+    },
+    {
+      "id": "tree-36",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 57.1,
+      "northM": -46.2,
+      "color": "#6b7549",
+      "sizeM": {
+        "widthM": 2.5,
+        "lengthM": 2.5,
+        "heightM": 4.6
+      }
+    },
+    {
+      "id": "tree-37",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -30.4,
+      "northM": 31.8,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 8.2,
+        "lengthM": 8.2,
+        "heightM": 14.9
+      }
+    },
+    {
+      "id": "tree-38",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 88.9,
+      "northM": 15.7,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.2
+      }
+    },
+    {
+      "id": "tree-39",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 100.1,
+      "northM": -15.2,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.9,
+        "lengthM": 5.9,
+        "heightM": 10.7
+      }
+    },
+    {
+      "id": "tree-40",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 5.4,
+      "northM": 43.2,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.2
+      }
+    },
+    {
+      "id": "tree-41",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 98.6,
+      "northM": 33.3,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.1,
+        "lengthM": 7.1,
+        "heightM": 13.0
+      }
+    },
+    {
+      "id": "tree-42",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 11.3,
+      "northM": 60.6,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.5,
+        "lengthM": 6.5,
+        "heightM": 11.8
+      }
+    },
+    {
+      "id": "tree-43",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 131.3,
+      "northM": 21.4,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.4,
+        "lengthM": 6.4,
+        "heightM": 11.6
+      }
+    },
+    {
+      "id": "tree-44",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -34.0,
+      "northM": 46.0,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.8,
+        "lengthM": 5.8,
+        "heightM": 10.5
+      }
+    },
+    {
+      "id": "tree-45",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 9.6,
+      "northM": 75.0,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.8,
+        "lengthM": 5.8,
+        "heightM": 10.6
+      }
+    },
+    {
+      "id": "tree-46",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -41.4,
+      "northM": 33.9,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.6,
+        "lengthM": 6.6,
+        "heightM": 12.1
+      }
+    },
+    {
+      "id": "tree-47",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 48.0,
+      "northM": 5.6,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.5,
+        "lengthM": 5.5,
+        "heightM": 9.9
+      }
+    },
+    {
+      "id": "tree-48",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 122.3,
+      "northM": -10.8,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.1,
+        "lengthM": 6.1,
+        "heightM": 11.1
+      }
+    },
+    {
+      "id": "tree-49",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 119.4,
+      "northM": -12.8,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.3
+      }
+    },
+    {
+      "id": "tree-50",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -18.2,
+      "northM": 85.7,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 5.3,
+        "lengthM": 5.3,
+        "heightM": 9.6
+      }
+    },
+    {
+      "id": "tree-51",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 62.9,
+      "northM": 10.5,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.2
+      }
+    },
+    {
+      "id": "tree-52",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 137.4,
+      "northM": 39.6,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.9,
+        "lengthM": 7.9,
+        "heightM": 14.4
+      }
+    },
+    {
+      "id": "tree-53",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -4.2,
+      "northM": 77.5,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.2,
+        "lengthM": 7.2,
+        "heightM": 13.1
+      }
+    },
+    {
+      "id": "tree-54",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -26.5,
+      "northM": 92.9,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.3,
+        "lengthM": 5.3,
+        "heightM": 9.6
+      }
+    },
+    {
+      "id": "tree-55",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 38.8,
+      "northM": 3.3,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.1
+      }
+    },
+    {
+      "id": "tree-56",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -33.0,
+      "northM": 89.6,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 5.7,
+        "lengthM": 5.7,
+        "heightM": 10.5
+      }
+    },
+    {
+      "id": "tree-57",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -17.8,
+      "northM": 88.3,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.5,
+        "lengthM": 5.5,
+        "heightM": 10.0
+      }
+    },
+    {
+      "id": "tree-58",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 16.3,
+      "northM": 60.4,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.4,
+        "lengthM": 5.4,
+        "heightM": 9.8
+      }
+    },
+    {
+      "id": "tree-59",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 42.7,
+      "northM": 71.4,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.7,
+        "lengthM": 7.7,
+        "heightM": 14.0
+      }
+    },
+    {
+      "id": "tree-60",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 123.0,
+      "northM": -12.1,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.7,
+        "lengthM": 7.7,
+        "heightM": 14.0
+      }
+    },
+    {
+      "id": "tree-61",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 2.9,
+      "northM": 83.2,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.2
+      }
+    },
+    {
+      "id": "tree-62",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 71.5,
+      "northM": -3.5,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 7.8,
+        "lengthM": 7.8,
+        "heightM": 14.1
+      }
+    },
+    {
+      "id": "tree-63",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 57.8,
+      "northM": 26.4,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 5.3,
+        "lengthM": 5.3,
+        "heightM": 9.6
+      }
+    },
+    {
+      "id": "tree-64",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 24.2,
+      "northM": 70.8,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 7.1,
+        "lengthM": 7.1,
+        "heightM": 13.0
+      }
+    },
+    {
+      "id": "tree-65",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -13.1,
+      "northM": 84.1,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 5.7,
+        "lengthM": 5.7,
+        "heightM": 10.3
+      }
+    },
+    {
+      "id": "tree-66",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 82.6,
+      "northM": 0.0,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.3
+      }
+    },
+    {
+      "id": "tree-67",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 21.8,
+      "northM": 34.5,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.6,
+        "lengthM": 7.6,
+        "heightM": 13.8
+      }
+    },
+    {
+      "id": "tree-68",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 19.0,
+      "northM": 55.1,
+      "color": "#4b5a33",
+      "sizeM": {
+        "widthM": 6.6,
+        "lengthM": 6.6,
+        "heightM": 12.1
+      }
+    },
+    {
+      "id": "tree-69",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 66.1,
+      "northM": 45.5,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 7.6,
+        "lengthM": 7.6,
+        "heightM": 13.8
+      }
+    },
+    {
+      "id": "tree-70",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 120.1,
+      "northM": -10.9,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.4,
+        "lengthM": 5.4,
+        "heightM": 9.9
+      }
+    },
+    {
+      "id": "tree-71",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -64.2,
+      "northM": 32.6,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.2
+      }
+    },
+    {
+      "id": "tree-72",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -66.3,
+      "northM": 36.2,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.7,
+        "lengthM": 6.7,
+        "heightM": 12.1
+      }
+    },
+    {
+      "id": "tree-73",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -85.1,
+      "northM": 49.7,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.9,
+        "lengthM": 6.9,
+        "heightM": 12.6
+      }
+    },
+    {
+      "id": "tree-74",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -58.4,
+      "northM": 1.7,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.1,
+        "lengthM": 5.1,
+        "heightM": 9.3
+      }
+    },
+    {
+      "id": "tree-75",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -81.2,
+      "northM": 27.0,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.3,
+        "lengthM": 5.3,
+        "heightM": 9.7
+      }
+    },
+    {
+      "id": "tree-76",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 127.7,
+      "northM": -54.5,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.3,
+        "lengthM": 6.3,
+        "heightM": 11.4
+      }
+    },
+    {
+      "id": "tree-77",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -65.4,
+      "northM": 4.3,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.3,
+        "lengthM": 6.3,
+        "heightM": 11.5
+      }
+    },
+    {
+      "id": "tree-78",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 114.1,
+      "northM": -67.1,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.9,
+        "lengthM": 6.9,
+        "heightM": 12.5
+      }
+    },
+    {
+      "id": "tree-79",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -43.2,
+      "northM": 32.4,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.6,
+        "lengthM": 6.6,
+        "heightM": 11.9
+      }
+    },
+    {
+      "id": "tree-80",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -83.0,
+      "northM": 25.2,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 4.6,
+        "lengthM": 4.6,
+        "heightM": 8.4
+      }
+    },
+    {
+      "id": "tree-81",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -55.2,
+      "northM": 18.1,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.5,
+        "lengthM": 6.5,
+        "heightM": 11.8
+      }
+    },
+    {
+      "id": "tree-82",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": 124.7,
+      "northM": -32.2,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.5,
+        "lengthM": 5.5,
+        "heightM": 9.9
+      }
+    },
+    {
+      "id": "tree-83",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -45.4,
+      "northM": 21.6,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 5.3,
+        "lengthM": 5.3,
+        "heightM": 9.7
+      }
+    },
+    {
+      "id": "tree-84",
+      "kind": "tree",
+      "title": {
+        "fr": "Arbre",
+        "en": "Tree",
+        "es": "Árbol",
+        "it": "Albero"
+      },
+      "eastM": -53.3,
+      "northM": 33.8,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.1,
+        "lengthM": 6.1,
+        "heightM": 11.2
+      }
     },
     {
       "id": "conifer-1",

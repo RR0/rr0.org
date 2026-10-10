@@ -27,12 +27,12 @@
   "place": [
     {
       "value": {
-        "lat": 43.49668,
-        "lng": 6.507,
+        "lat": 43.4970959079419,
+        "lng": 6.5060490625373655,
         "name": "Trans-en-Provence, Var, France"
       },
       "basis": "derived",
-      "rationale": "The report gives only \"2 km east of Trans, on the side of a hill overlooking the valley of the Nartuby\", on the north side of the valley, a dirt road beside it, and its figure 1 draws the D47 passing at the foot of the property with the river south of it. The point is on that side of the D47 (Route de la Motte), 1.8 km east-south-east of the village centre, 40 to 70 m north of the road, where the elevation model (Open-Meteo, 90 m grid) climbs 12 to 19 % to the north and hardly at all east-west: the hill to the north that the report describes, with contours that run the way its terraces do. The pump house is put there, so the mark lies about 45 m from it. The real property may be a few hundred metres off: every azimuth of the sky survives that."
+      "rationale": "Not published by the investigators (the report's names and place were fictitious, see its translator's note). The house is placed from the 1:5000 location plan of the report (its figure 1: the D47, the Nartuby, the contour lines at 440 and 460 m, a property beside the road on the slope of the wooded hill) laid over the road of the map, at 43.4969243 N, 6.5060473 E, right beside the Route de la Motte, about 1.9 km east of the village centre; the pump house, where the recording starts, is put 18 m up the slope from it. The elevation model (Open-Meteo, 90 m grid) climbs about 30 % towards the north-north-east there, the hill the report describes, and the terraces run across that slope. A few tens of metres of error would change no azimuth of the sky."
     }
   ],
   "observer": {
@@ -113,10 +113,10 @@
       {
         "t": 0,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.507,
+          "lat": 43.4970959,
+          "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 244.4,
+          "headingDeg": 264.4,
           "pitchDeg": 7.4,
           "fovDeg": 60
         }
@@ -124,10 +124,10 @@
       {
         "t": 1200,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.507,
+          "lat": 43.4970959,
+          "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 244.4,
+          "headingDeg": 264.4,
           "pitchDeg": 7.4,
           "fovDeg": 60
         }
@@ -135,10 +135,10 @@
       {
         "t": 2000,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.507,
+          "lat": 43.4970959,
+          "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 96.9,
+          "headingDeg": 116.9,
           "pitchDeg": 6.1,
           "fovDeg": 60
         }
@@ -146,10 +146,10 @@
       {
         "t": 3000,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.507,
+          "lat": 43.4970959,
+          "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 111.1,
+          "headingDeg": 131.1,
           "pitchDeg": -4.9,
           "fovDeg": 60
         }
@@ -157,10 +157,10 @@
       {
         "t": 4500,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.507,
+          "lat": 43.4970959,
+          "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 111.1,
+          "headingDeg": 131.1,
           "pitchDeg": -4.9,
           "fovDeg": 60
         }
@@ -168,10 +168,10 @@
       {
         "t": 16500,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 122.1,
+          "headingDeg": 142.1,
           "pitchDeg": -7.2,
           "fovDeg": 60
         }
@@ -179,10 +179,10 @@
       {
         "t": 30000,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 122.1,
+          "headingDeg": 142.1,
           "pitchDeg": -7.2,
           "fovDeg": 60
         }
@@ -190,10 +190,10 @@
       {
         "t": 31500,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 122.1,
+          "headingDeg": 142.1,
           "pitchDeg": -2.1,
           "fovDeg": 60
         }
@@ -201,10 +201,10 @@
       {
         "t": 32500,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 122.1,
+          "headingDeg": 142.1,
           "pitchDeg": 3.1,
           "fovDeg": 60
         }
@@ -212,33 +212,33 @@
       {
         "t": 33500,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 100.2,
-          "pitchDeg": 12.6,
+          "headingDeg": 116.6,
+          "pitchDeg": 14.3,
           "fovDeg": 60
         }
       },
       {
         "t": 34600,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 59.2,
-          "pitchDeg": 29.7,
+          "headingDeg": 60.8,
+          "pitchDeg": 31.8,
           "fovDeg": 60
         }
       },
       {
         "t": 40000,
         "pose": {
-          "lat": 43.49668,
-          "lng": 6.5072167,
+          "lat": 43.4970421,
+          "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 59.2,
-          "pitchDeg": 29.7,
+          "headingDeg": 60.8,
+          "pitchDeg": 31.8,
           "fovDeg": 60
         }
       }
@@ -335,13 +335,13 @@
         "it": "Piattaforma di terra"
       },
       "color": "#5c5846",
-      "eastM": 25.5,
-      "northM": -16.4,
-      "headingDeg": 180.0,
+      "eastM": 18.4,
+      "northM": -24.1,
+      "headingDeg": 200.0,
       "sizeM": {
         "widthM": 120.0,
         "lengthM": 16.2,
-        "heightM": 1.2
+        "heightM": 1.45
       }
     },
     {
@@ -353,13 +353,13 @@
         "es": "Bancal (2)",
         "it": "Terrazzamento (2)"
       },
-      "eastM": 25.5,
-      "northM": -4.6,
-      "headingDeg": 180.0,
+      "eastM": 22.1,
+      "northM": -13.8,
+      "headingDeg": 200.0,
       "sizeM": {
         "widthM": 120.0,
-        "lengthM": 7.3,
-        "heightM": 1.5
+        "lengthM": 5.8,
+        "heightM": 1.3
       }
     },
     {
@@ -371,13 +371,13 @@
         "es": "Bancal (3)",
         "it": "Terrazzamento (3)"
       },
-      "eastM": 25.5,
-      "northM": 3.5,
-      "headingDeg": 180.0,
+      "eastM": 24.4,
+      "northM": -7.5,
+      "headingDeg": 200.0,
       "sizeM": {
         "widthM": 120.0,
-        "lengthM": 9.0,
-        "heightM": 0.95
+        "lengthM": 7.5,
+        "heightM": 0.7
       }
     },
     {
@@ -389,13 +389,13 @@
         "es": "Bancal (4)",
         "it": "Terrazzamento (4)"
       },
-      "eastM": 25.5,
-      "northM": 12.3,
-      "headingDeg": 180.0,
+      "eastM": 26.8,
+      "northM": -1.0,
+      "headingDeg": 200.0,
       "sizeM": {
         "widthM": 120.0,
-        "lengthM": 8.5,
-        "heightM": 0.15
+        "lengthM": 6.5,
+        "heightM": 0.1
       }
     },
     {
@@ -407,9 +407,9 @@
         "es": "Caseta de la bomba (en construcción)",
         "it": "Locale della pompa (in costruzione)"
       },
-      "eastM": 0.0,
-      "northM": 1.5,
-      "headingDeg": 90.0,
+      "eastM": 0.5,
+      "northM": 1.4,
+      "headingDeg": 110.0,
       "floors": 1,
       "sizeM": {
         "widthM": 1.6,
@@ -427,9 +427,9 @@
         "es": "Cabaña de piedra",
         "it": "Capanno di pietra"
       },
-      "eastM": 17.5,
-      "northM": 2.6,
-      "headingDeg": 90.0,
+      "eastM": 17.3,
+      "northM": -3.5,
+      "headingDeg": 110.0,
       "floors": 1,
       "sizeM": {
         "widthM": 4.0,
@@ -447,9 +447,9 @@
         "es": "La casa de los Nicolaï",
         "it": "La casa dei Nicolaï"
       },
-      "eastM": 6.4,
-      "northM": -18.0,
-      "headingDeg": 90.0,
+      "eastM": -0.1,
+      "northM": -19.1,
+      "headingDeg": 110.0,
       "floors": 2,
       "sizeM": {
         "widthM": 11.0,
@@ -467,8 +467,8 @@
         "es": "Conífera alta",
         "it": "Grande conifera"
       },
-      "eastM": 64.5,
-      "northM": -3.2,
+      "eastM": 59.5,
+      "northM": -25.1,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 6.0,
@@ -485,8 +485,8 @@
         "es": "Conífera alta",
         "it": "Grande conifera"
       },
-      "eastM": 70.5,
-      "northM": -5.2,
+      "eastM": 64.5,
+      "northM": -29.0,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 6.0,
@@ -743,8 +743,8 @@
           "value": [
             {
               "t": 0,
-              "eastM": 63.1,
-              "northM": -6.3,
+              "eastM": 57.1,
+              "northM": -27.5,
               "altitudeAboveGroundM": 14.0,
               "sizeM": {
                 "widthM": 2.5,
@@ -763,32 +763,32 @@
             },
             {
               "t": 1800,
-              "eastM": 53.4,
-              "northM": -8.6,
+              "eastM": 47.3,
+              "northM": -26.4,
               "altitudeAboveGroundM": 6.0
             },
             {
               "t": 3000,
-              "eastM": 45.5,
-              "northM": -10.5,
+              "eastM": 39.2,
+              "northM": -25.4,
               "onGround": true
             },
             {
               "t": 30000,
-              "eastM": 45.5,
-              "northM": -10.5,
+              "eastM": 39.2,
+              "northM": -25.4,
               "onGround": true
             },
             {
               "t": 31500,
-              "eastM": 45.5,
-              "northM": -10.5,
+              "eastM": 39.2,
+              "northM": -25.4,
               "altitudeAboveGroundM": 4.0
             },
             {
               "t": 32500,
-              "eastM": 45.5,
-              "northM": -10.5,
+              "eastM": 39.2,
+              "northM": -25.4,
               "altitudeAboveGroundM": 7.0,
               "attitude": {
                 "headingDeg": 45,
@@ -798,14 +798,14 @@
             },
             {
               "t": 33500,
-              "eastM": 56.1,
-              "northM": 0.1,
+              "eastM": 49.8,
+              "northM": -14.8,
               "altitudeAboveGroundM": 14.0
             },
             {
               "t": 34600,
-              "eastM": 130.4,
-              "northM": 74.4,
+              "eastM": 124.0,
+              "northM": 59.4,
               "altitudeAboveGroundM": 80.0
             },
             {

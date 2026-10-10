@@ -138,8 +138,52 @@
           "lat": 43.4970959,
           "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 116.9,
-          "pitchDeg": 6.1,
+          "headingDeg": 127.0,
+          "pitchDeg": 0.7,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 2200,
+        "pose": {
+          "lat": 43.4970959,
+          "lng": 6.5060491,
+          "elevationM": 0,
+          "headingDeg": 128.2,
+          "pitchDeg": -0.6,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 2400,
+        "pose": {
+          "lat": 43.4970959,
+          "lng": 6.5060491,
+          "elevationM": 0,
+          "headingDeg": 129.3,
+          "pitchDeg": -2.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 2600,
+        "pose": {
+          "lat": 43.4970959,
+          "lng": 6.5060491,
+          "elevationM": 0,
+          "headingDeg": 130.2,
+          "pitchDeg": -3.3,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 2800,
+        "pose": {
+          "lat": 43.4970959,
+          "lng": 6.5060491,
+          "elevationM": 0,
+          "headingDeg": 130.7,
+          "pitchDeg": -4.2,
           "fovDeg": 60
         }
       },
@@ -149,8 +193,8 @@
           "lat": 43.4970959,
           "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 131.1,
-          "pitchDeg": -4.9,
+          "headingDeg": 131.0,
+          "pitchDeg": -4.7,
           "fovDeg": 60
         }
       },
@@ -188,35 +232,244 @@
         }
       },
       {
-        "t": 31500,
+        "t": 30200,
         "pose": {
           "lat": 43.4970421,
           "lng": 6.5062527,
           "elevationM": 0,
           "headingDeg": 142.1,
-          "pitchDeg": -2.1,
+          "pitchDeg": -7.4,
           "fovDeg": 60
         }
       },
       {
-        "t": 32500,
+        "t": 30400,
         "pose": {
           "lat": 43.4970421,
           "lng": 6.5062527,
           "elevationM": 0,
           "headingDeg": 142.1,
-          "pitchDeg": 3.1,
+          "pitchDeg": -7.4,
           "fovDeg": 60
         }
       },
       {
-        "t": 33500,
+        "t": 30600,
         "pose": {
           "lat": 43.4970421,
           "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 116.6,
-          "pitchDeg": 14.3,
+          "headingDeg": 142.1,
+          "pitchDeg": -7.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 30800,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 142.1,
+          "pitchDeg": -6.6,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 31000,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 142.1,
+          "pitchDeg": -5.7,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 31200,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 142.1,
+          "pitchDeg": -4.5,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 31400,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 142.1,
+          "pitchDeg": -3.0,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 31600,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 142.1,
+          "pitchDeg": -1.4,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 31800,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 141.7,
+          "pitchDeg": 0.4,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 32000,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 140.5,
+          "pitchDeg": 2.4,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 32200,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 137.8,
+          "pitchDeg": 4.9,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 32400,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 133.3,
+          "pitchDeg": 7.8,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 32600,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 126.7,
+          "pitchDeg": 11.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 32800,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 118.1,
+          "pitchDeg": 14.7,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 33000,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 108.2,
+          "pitchDeg": 18.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 33200,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 98.1,
+          "pitchDeg": 20.8,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 33400,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 88.9,
+          "pitchDeg": 22.8,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 33600,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 81.2,
+          "pitchDeg": 24.0,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 33800,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 75.0,
+          "pitchDeg": 24.6,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 34000,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 70.2,
+          "pitchDeg": 25.0,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 34200,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 66.5,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 34400,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 63.7,
+          "pitchDeg": 25.2,
           "fovDeg": 60
         }
       },
@@ -226,8 +479,107 @@
           "lat": 43.4970421,
           "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 60.8,
-          "pitchDeg": 31.8,
+          "headingDeg": 61.4,
+          "pitchDeg": 25.2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 34800,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 59.7,
+          "pitchDeg": 25.2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 35000,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 58.3,
+          "pitchDeg": 25.2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 35200,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 35400,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 35600,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 35800,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 36000,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 36200,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 36400,
+        "pose": {
+          "lat": 43.4970421,
+          "lng": 6.5062527,
+          "elevationM": 0,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
           "fovDeg": 60
         }
       },
@@ -237,8 +589,8 @@
           "lat": 43.4970421,
           "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 60.8,
-          "pitchDeg": 31.8,
+          "headingDeg": 57.1,
+          "pitchDeg": 25.1,
           "fovDeg": 60
         }
       }
@@ -743,8 +1095,8 @@
           "value": [
             {
               "t": 0,
-              "eastM": 57.1,
-              "northM": -27.5,
+              "eastM": 57.15,
+              "northM": -27.48,
               "altitudeAboveGroundM": 14.0,
               "sizeM": {
                 "widthM": 2.5,
@@ -762,51 +1114,740 @@
               }
             },
             {
-              "t": 1800,
-              "eastM": 47.3,
+              "t": 100,
+              "eastM": 56.36,
+              "northM": -27.39,
+              "altitudeAboveGroundM": 13.57
+            },
+            {
+              "t": 200,
+              "eastM": 55.57,
+              "northM": -27.3,
+              "altitudeAboveGroundM": 13.13
+            },
+            {
+              "t": 300,
+              "eastM": 54.73,
+              "northM": -27.2,
+              "altitudeAboveGroundM": 12.66
+            },
+            {
+              "t": 400,
+              "eastM": 53.95,
+              "northM": -27.11,
+              "altitudeAboveGroundM": 12.21
+            },
+            {
+              "t": 500,
+              "eastM": 53.17,
+              "northM": -27.03,
+              "altitudeAboveGroundM": 11.76
+            },
+            {
+              "t": 600,
+              "eastM": 52.34,
+              "northM": -26.93,
+              "altitudeAboveGroundM": 11.26
+            },
+            {
+              "t": 700,
+              "eastM": 51.57,
+              "northM": -26.84,
+              "altitudeAboveGroundM": 10.79
+            },
+            {
+              "t": 800,
+              "eastM": 50.8,
+              "northM": -26.76,
+              "altitudeAboveGroundM": 10.32
+            },
+            {
+              "t": 900,
+              "eastM": 49.99,
+              "northM": -26.66,
+              "altitudeAboveGroundM": 9.8
+            },
+            {
+              "t": 1000,
+              "eastM": 49.23,
+              "northM": -26.58,
+              "altitudeAboveGroundM": 9.31
+            },
+            {
+              "t": 1100,
+              "eastM": 48.48,
+              "northM": -26.49,
+              "altitudeAboveGroundM": 8.81
+            },
+            {
+              "t": 1200,
+              "eastM": 47.68,
               "northM": -26.4,
-              "altitudeAboveGroundM": 6.0
+              "altitudeAboveGroundM": 8.26
+            },
+            {
+              "t": 1300,
+              "eastM": 46.95,
+              "northM": -26.32,
+              "altitudeAboveGroundM": 7.75
+            },
+            {
+              "t": 1400,
+              "eastM": 46.22,
+              "northM": -26.23,
+              "altitudeAboveGroundM": 7.22
+            },
+            {
+              "t": 1500,
+              "eastM": 45.45,
+              "northM": -26.15,
+              "altitudeAboveGroundM": 6.63
+            },
+            {
+              "t": 1600,
+              "eastM": 44.74,
+              "northM": -26.06,
+              "altitudeAboveGroundM": 6.07
+            },
+            {
+              "t": 1700,
+              "eastM": 44.04,
+              "northM": -25.99,
+              "altitudeAboveGroundM": 5.5
+            },
+            {
+              "t": 1800,
+              "eastM": 43.31,
+              "northM": -25.9,
+              "altitudeAboveGroundM": 4.87
+            },
+            {
+              "t": 1900,
+              "eastM": 42.64,
+              "northM": -25.83,
+              "altitudeAboveGroundM": 4.26
+            },
+            {
+              "t": 2000,
+              "eastM": 42.01,
+              "northM": -25.75,
+              "altitudeAboveGroundM": 3.65
+            },
+            {
+              "t": 2100,
+              "eastM": 41.38,
+              "northM": -25.68,
+              "altitudeAboveGroundM": 2.99
+            },
+            {
+              "t": 2200,
+              "eastM": 40.87,
+              "northM": -25.62,
+              "altitudeAboveGroundM": 2.42
+            },
+            {
+              "t": 2300,
+              "eastM": 40.43,
+              "northM": -25.57,
+              "altitudeAboveGroundM": 1.89
+            },
+            {
+              "t": 2400,
+              "eastM": 40.05,
+              "northM": -25.53,
+              "altitudeAboveGroundM": 1.39
+            },
+            {
+              "t": 2500,
+              "eastM": 39.77,
+              "northM": -25.5,
+              "altitudeAboveGroundM": 0.99
+            },
+            {
+              "t": 2600,
+              "eastM": 39.56,
+              "northM": -25.47,
+              "altitudeAboveGroundM": 0.68
+            },
+            {
+              "t": 2700,
+              "eastM": 39.4,
+              "northM": -25.46,
+              "altitudeAboveGroundM": 0.41
+            },
+            {
+              "t": 2800,
+              "eastM": 39.3,
+              "northM": -25.44,
+              "altitudeAboveGroundM": 0.24
+            },
+            {
+              "t": 2900,
+              "eastM": 39.22,
+              "northM": -25.44,
+              "altitudeAboveGroundM": 0.11
             },
             {
               "t": 3000,
-              "eastM": 39.2,
-              "northM": -25.4,
+              "eastM": 39.16,
+              "northM": -25.43,
               "onGround": true
             },
             {
               "t": 30000,
-              "eastM": 39.2,
-              "northM": -25.4,
+              "eastM": 39.16,
+              "northM": -25.43,
               "onGround": true
             },
             {
+              "t": 30100,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.02,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30200,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.02,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30300,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.07,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30400,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.16,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30500,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.3,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30600,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.49,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30700,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 0.72,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30800,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 1.01,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 30900,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 1.35,
+              "attitude": {
+                "headingDeg": 0.0,
+                "pitchDeg": 0,
+                "rollDeg": 0.0
+              }
+            },
+            {
+              "t": 31000,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 1.72,
+              "attitude": {
+                "headingDeg": 0.06,
+                "pitchDeg": 0,
+                "rollDeg": 0.05
+              }
+            },
+            {
+              "t": 31100,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 2.14,
+              "attitude": {
+                "headingDeg": 0.45,
+                "pitchDeg": 0,
+                "rollDeg": 0.4
+              }
+            },
+            {
+              "t": 31200,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 2.58,
+              "attitude": {
+                "headingDeg": 1.38,
+                "pitchDeg": 0,
+                "rollDeg": 1.23
+              }
+            },
+            {
+              "t": 31300,
+              "eastM": 39.16,
+              "northM": -25.43,
+              "altitudeAboveGroundM": 3.03,
+              "attitude": {
+                "headingDeg": 2.98,
+                "pitchDeg": 0,
+                "rollDeg": 2.65
+              }
+            },
+            {
+              "t": 31400,
+              "eastM": 39.17,
+              "northM": -25.42,
+              "altitudeAboveGroundM": 3.5,
+              "attitude": {
+                "headingDeg": 5.3,
+                "pitchDeg": 0,
+                "rollDeg": 4.72
+              }
+            },
+            {
               "t": 31500,
-              "eastM": 39.2,
-              "northM": -25.4,
-              "altitudeAboveGroundM": 4.0
+              "eastM": 39.21,
+              "northM": -25.39,
+              "altitudeAboveGroundM": 3.99,
+              "attitude": {
+                "headingDeg": 8.31,
+                "pitchDeg": 0,
+                "rollDeg": 7.38
+              }
+            },
+            {
+              "t": 31600,
+              "eastM": 39.31,
+              "northM": -25.29,
+              "altitudeAboveGroundM": 4.52,
+              "attitude": {
+                "headingDeg": 11.9,
+                "pitchDeg": 0,
+                "rollDeg": 10.58
+              }
+            },
+            {
+              "t": 31700,
+              "eastM": 39.5,
+              "northM": -25.09,
+              "altitudeAboveGroundM": 5.08,
+              "attitude": {
+                "headingDeg": 15.95,
+                "pitchDeg": 0,
+                "rollDeg": 14.18
+              }
+            },
+            {
+              "t": 31800,
+              "eastM": 39.82,
+              "northM": -24.78,
+              "altitudeAboveGroundM": 5.69,
+              "attitude": {
+                "headingDeg": 20.28,
+                "pitchDeg": 0,
+                "rollDeg": 18.03
+              }
+            },
+            {
+              "t": 31900,
+              "eastM": 40.28,
+              "northM": -24.32,
+              "altitudeAboveGroundM": 6.36,
+              "attitude": {
+                "headingDeg": 24.72,
+                "pitchDeg": 0,
+                "rollDeg": 21.97
+              }
+            },
+            {
+              "t": 32000,
+              "eastM": 40.9,
+              "northM": -23.69,
+              "altitudeAboveGroundM": 7.09,
+              "attitude": {
+                "headingDeg": 29.05,
+                "pitchDeg": 0,
+                "rollDeg": 25.82
+              }
+            },
+            {
+              "t": 32100,
+              "eastM": 41.72,
+              "northM": -22.88,
+              "altitudeAboveGroundM": 7.9,
+              "attitude": {
+                "headingDeg": 33.1,
+                "pitchDeg": 0,
+                "rollDeg": 29.42
+              }
+            },
+            {
+              "t": 32200,
+              "eastM": 42.73,
+              "northM": -21.86,
+              "altitudeAboveGroundM": 8.78,
+              "attitude": {
+                "headingDeg": 36.69,
+                "pitchDeg": 0,
+                "rollDeg": 32.62
+              }
+            },
+            {
+              "t": 32300,
+              "eastM": 43.97,
+              "northM": -20.63,
+              "altitudeAboveGroundM": 9.76,
+              "attitude": {
+                "headingDeg": 39.7,
+                "pitchDeg": 0,
+                "rollDeg": 35.28
+              }
+            },
+            {
+              "t": 32400,
+              "eastM": 45.43,
+              "northM": -19.16,
+              "altitudeAboveGroundM": 10.83,
+              "attitude": {
+                "headingDeg": 42.02,
+                "pitchDeg": 0,
+                "rollDeg": 37.35
+              }
             },
             {
               "t": 32500,
-              "eastM": 39.2,
-              "northM": -25.4,
-              "altitudeAboveGroundM": 7.0,
+              "eastM": 47.14,
+              "northM": -17.45,
+              "altitudeAboveGroundM": 12.0,
               "attitude": {
-                "headingDeg": 45,
+                "headingDeg": 43.62,
                 "pitchDeg": 0,
-                "rollDeg": 40
+                "rollDeg": 38.77
+              }
+            },
+            {
+              "t": 32600,
+              "eastM": 49.09,
+              "northM": -15.5,
+              "altitudeAboveGroundM": 13.3,
+              "attitude": {
+                "headingDeg": 44.55,
+                "pitchDeg": 0,
+                "rollDeg": 39.6
+              }
+            },
+            {
+              "t": 32700,
+              "eastM": 51.3,
+              "northM": -13.29,
+              "altitudeAboveGroundM": 14.72,
+              "attitude": {
+                "headingDeg": 44.94,
+                "pitchDeg": 0,
+                "rollDeg": 39.95
+              }
+            },
+            {
+              "t": 32800,
+              "eastM": 53.76,
+              "northM": -10.83,
+              "altitudeAboveGroundM": 16.29,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 32900,
+              "eastM": 56.48,
+              "northM": -8.11,
+              "altitudeAboveGroundM": 18.02,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33000,
+              "eastM": 59.45,
+              "northM": -5.14,
+              "altitudeAboveGroundM": 19.91,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33100,
+              "eastM": 62.67,
+              "northM": -1.92,
+              "altitudeAboveGroundM": 21.96,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33200,
+              "eastM": 66.13,
+              "northM": 1.54,
+              "altitudeAboveGroundM": 24.16,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33300,
+              "eastM": 69.82,
+              "northM": 5.23,
+              "altitudeAboveGroundM": 26.51,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33400,
+              "eastM": 73.73,
+              "northM": 9.14,
+              "altitudeAboveGroundM": 29.0,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
               }
             },
             {
               "t": 33500,
-              "eastM": 49.8,
-              "northM": -14.8,
-              "altitudeAboveGroundM": 14.0
+              "eastM": 77.85,
+              "northM": 13.26,
+              "altitudeAboveGroundM": 31.62,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33600,
+              "eastM": 82.16,
+              "northM": 17.56,
+              "altitudeAboveGroundM": 34.36,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33700,
+              "eastM": 86.63,
+              "northM": 22.04,
+              "altitudeAboveGroundM": 37.21,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33800,
+              "eastM": 91.25,
+              "northM": 26.66,
+              "altitudeAboveGroundM": 40.15,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 33900,
+              "eastM": 96.0,
+              "northM": 31.4,
+              "altitudeAboveGroundM": 43.17,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34000,
+              "eastM": 100.84,
+              "northM": 36.24,
+              "altitudeAboveGroundM": 46.25,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34100,
+              "eastM": 105.75,
+              "northM": 41.15,
+              "altitudeAboveGroundM": 49.37,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34200,
+              "eastM": 110.69,
+              "northM": 46.1,
+              "altitudeAboveGroundM": 52.52,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34300,
+              "eastM": 115.64,
+              "northM": 51.04,
+              "altitudeAboveGroundM": 55.67,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34400,
+              "eastM": 120.59,
+              "northM": 55.99,
+              "altitudeAboveGroundM": 58.82,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34500,
+              "eastM": 125.54,
+              "northM": 60.94,
+              "altitudeAboveGroundM": 61.97,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
             },
             {
               "t": 34600,
-              "eastM": 124.0,
-              "northM": 59.4,
-              "altitudeAboveGroundM": 80.0
+              "eastM": 130.49,
+              "northM": 65.89,
+              "altitudeAboveGroundM": 65.12,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34700,
+              "eastM": 135.44,
+              "northM": 70.84,
+              "altitudeAboveGroundM": 68.27,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34800,
+              "eastM": 140.39,
+              "northM": 75.79,
+              "altitudeAboveGroundM": 71.42,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 34900,
+              "eastM": 145.34,
+              "northM": 80.74,
+              "altitudeAboveGroundM": 74.57,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
+            },
+            {
+              "t": 35000,
+              "eastM": 150.29,
+              "northM": 85.69,
+              "altitudeAboveGroundM": 77.72,
+              "attitude": {
+                "headingDeg": 45.0,
+                "pitchDeg": 0,
+                "rollDeg": 40.0
+              }
             },
             {
               "t": 35100,

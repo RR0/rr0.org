@@ -335,13 +335,13 @@
         "it": "Piattaforma di terra"
       },
       "color": "#5c5846",
-      "eastM": 35.5,
+      "eastM": 25.5,
       "northM": -16.4,
       "headingDeg": 180.0,
       "sizeM": {
-        "widthM": 84.0,
+        "widthM": 120.0,
         "lengthM": 16.2,
-        "heightM": 1.1
+        "heightM": 1.2
       }
     },
     {
@@ -353,13 +353,13 @@
         "es": "Bancal (2)",
         "it": "Terrazzamento (2)"
       },
-      "eastM": 35.5,
+      "eastM": 25.5,
       "northM": -4.6,
       "headingDeg": 180.0,
       "sizeM": {
-        "widthM": 84.0,
+        "widthM": 120.0,
         "lengthM": 7.3,
-        "heightM": 1.4
+        "heightM": 1.5
       }
     },
     {
@@ -371,13 +371,13 @@
         "es": "Bancal (3)",
         "it": "Terrazzamento (3)"
       },
-      "eastM": 35.5,
+      "eastM": 25.5,
       "northM": 3.5,
       "headingDeg": 180.0,
       "sizeM": {
-        "widthM": 84.0,
+        "widthM": 120.0,
         "lengthM": 9.0,
-        "heightM": 0.9
+        "heightM": 0.95
       }
     },
     {
@@ -389,13 +389,13 @@
         "es": "Bancal (4)",
         "it": "Terrazzamento (4)"
       },
-      "eastM": 35.5,
+      "eastM": 25.5,
       "northM": 12.3,
       "headingDeg": 180.0,
       "sizeM": {
-        "widthM": 84.0,
+        "widthM": 120.0,
         "lengthM": 8.5,
-        "heightM": 0.2
+        "heightM": 0.15
       }
     },
     {

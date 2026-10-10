@@ -115,9 +115,9 @@
         "pose": {
           "lat": 43.4962,
           "lng": 6.5086,
-          "elevationM": 2.8,
+          "elevationM": 3.0,
           "headingDeg": 277.2,
-          "pitchDeg": 8.2,
+          "pitchDeg": 8.0,
           "fovDeg": 60
         }
       },
@@ -126,9 +126,9 @@
         "pose": {
           "lat": 43.4962,
           "lng": 6.5086,
-          "elevationM": 2.8,
+          "elevationM": 3.0,
           "headingDeg": 277.2,
-          "pitchDeg": 8.2,
+          "pitchDeg": 8.0,
           "fovDeg": 60
         }
       },
@@ -137,9 +137,9 @@
         "pose": {
           "lat": 43.4962,
           "lng": 6.5086,
-          "elevationM": 2.8,
+          "elevationM": 3.0,
           "headingDeg": 128.6,
-          "pitchDeg": 6.9,
+          "pitchDeg": 6.7,
           "fovDeg": 60
         }
       },
@@ -148,9 +148,9 @@
         "pose": {
           "lat": 43.4962,
           "lng": 6.5086,
-          "elevationM": 2.8,
+          "elevationM": 3.0,
           "headingDeg": 137.0,
-          "pitchDeg": -4.3,
+          "pitchDeg": -4.6,
           "fovDeg": 60
         }
       },
@@ -159,9 +159,9 @@
         "pose": {
           "lat": 43.4962,
           "lng": 6.5086,
-          "elevationM": 2.8,
+          "elevationM": 3.0,
           "headingDeg": 137.0,
-          "pitchDeg": -4.3,
+          "pitchDeg": -4.6,
           "fovDeg": 60
         }
       },
@@ -170,9 +170,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 146.8,
-          "pitchDeg": -7.6,
+          "pitchDeg": -7.0,
           "fovDeg": 60
         }
       },
@@ -181,9 +181,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 146.8,
-          "pitchDeg": -7.6,
+          "pitchDeg": -7.0,
           "fovDeg": 60
         }
       },
@@ -192,9 +192,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 146.8,
-          "pitchDeg": -1.9,
+          "pitchDeg": -1.3,
           "fovDeg": 60
         }
       },
@@ -203,9 +203,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 146.8,
-          "pitchDeg": 3.8,
+          "pitchDeg": 4.4,
           "fovDeg": 60
         }
       },
@@ -214,9 +214,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 118.2,
-          "pitchDeg": 16.4,
+          "pitchDeg": 16.9,
           "fovDeg": 60
         }
       },
@@ -225,9 +225,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 59.5,
-          "pitchDeg": 32.5,
+          "pitchDeg": 32.6,
           "fovDeg": 60
         }
       },
@@ -236,9 +236,9 @@
         "pose": {
           "lat": 43.4961214,
           "lng": 6.5087877,
-          "elevationM": 3.3,
+          "elevationM": 3.0,
           "headingDeg": 59.5,
-          "pitchDeg": 32.5,
+          "pitchDeg": 32.6,
           "fovDeg": 60
         }
       }
@@ -326,6 +326,60 @@
   },
   "decor": [
     {
+      "id": "level-2",
+      "kind": "terrace",
+      "title": {
+        "fr": "Restanque (2)",
+        "en": "Terrace (2)",
+        "es": "Bancal (2)",
+        "it": "Terrazzamento (2)"
+      },
+      "eastM": 37.9,
+      "northM": -31.0,
+      "headingDeg": 210.0,
+      "sizeM": {
+        "widthM": 44.0,
+        "lengthM": 7.7,
+        "heightM": 2.0
+      }
+    },
+    {
+      "id": "level-3",
+      "kind": "terrace",
+      "title": {
+        "fr": "Restanque (3)",
+        "en": "Terrace (3)",
+        "es": "Bancal (3)",
+        "it": "Terrazzamento (3)"
+      },
+      "eastM": 41.5,
+      "northM": -24.6,
+      "headingDeg": 210.0,
+      "sizeM": {
+        "widthM": 44.0,
+        "lengthM": 7.0,
+        "heightM": 3.0
+      }
+    },
+    {
+      "id": "level-4",
+      "kind": "terrace",
+      "title": {
+        "fr": "Restanque (4)",
+        "en": "Terrace (4)",
+        "es": "Bancal (4)",
+        "it": "Terrazzamento (4)"
+      },
+      "eastM": 45.7,
+      "northM": -17.4,
+      "headingDeg": 210.0,
+      "sizeM": {
+        "widthM": 44.0,
+        "lengthM": 9.5,
+        "heightM": 4.0
+      }
+    },
+    {
       "id": "pump-house",
       "kind": "building",
       "title": {
@@ -341,7 +395,7 @@
       "sizeM": {
         "widthM": 1.6,
         "lengthM": 1.6,
-        "heightM": 1.3
+        "heightM": 4.3
       },
       "color": "#a9a395"
     },
@@ -361,7 +415,7 @@
       "sizeM": {
         "widthM": 4.0,
         "lengthM": 3.2,
-        "heightM": 2.4
+        "heightM": 5.4
       },
       "color": "#9b9484"
     },

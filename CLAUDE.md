@@ -134,6 +134,12 @@ birth: never restate the birth or the death in the HTML. Nor restate the name at
 it, and the generated birth statement already uses the `surname` (nickname, e.g. `"surname": "Tom"`) if present, else
 the name. Start with what follows, e.g. `<p>Ingénieur de formation, il…</p>`.
 
+`people.json` conventions: give `firstNames` + `lastName` (the title is generated from them); `title` is only for forcing
+a title when that generated one is unsatisfactory. Convert the obsolete `birthTime` field into a `birth` event and add
+the `death` event when known (with `place` and `sources`). Put a nickname in `surname` (e.g. `"surname": "Nick"`). Add
+`"writer"` to `occupations` when the person has also authored books. When adding news about a person's death, update
+`people.json` (never restate birth/death in the HTML).
+
 **Placing a paragraph** — a paragraph must be relevant to the title of its section, and ordered chronologically against
 the dates cited before and after it (e.g. "at the end of the 1980s" goes after a paragraph starting in 1984, not
 before). A paragraph fitting no section goes before the first section (right after the generated birth statement on a

@@ -2556,31 +2556,97 @@
         "weather": {
           "cloudLayers": [
             {
-              "id": "station",
+              "id": "record-low",
               "type": "unknown",
-              "baseM": 3000,
-              "thicknessM": 600,
-              "coverage": 0.25,
-              "sizeM": 2000,
+              "baseM": 1225,
+              "thicknessM": 650,
+              "coverage": 0.13,
+              "sizeM": 1400,
               "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.07,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
             }
           ],
-          "cloudCover": 0.25,
-          "cloudBaseM": 3000,
-          "relativeHumidity": 0.3,
+          "cloudCover": 0.17,
+          "cloudDarkness": 0.6124999999999999,
+          "cloudBaseM": 1225,
+          "highCloudCover": 0,
+          "lowerCloudCover": 0.13,
+          "relativeHumidity": 0.49,
           "precipitationType": "none",
           "precipitationIntensity": 0,
-          "windDirectionDeg": 135,
-          "windSpeed": 2,
+          "windDirectionDeg": 345,
+          "windSpeed": 1.14,
+          "storm": false
+        }
+      },
+      {
+        "t": 40000,
+        "weather": {
+          "cloudLayers": [
+            {
+              "id": "record-low",
+              "type": "unknown",
+              "baseM": 1221,
+              "thicknessM": 650,
+              "coverage": 0.13055555555555556,
+              "sizeM": 1400,
+              "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.07166666666666667,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
+            }
+          ],
+          "cloudCover": 0.1708888888888889,
+          "cloudDarkness": 0.6114010989010988,
+          "cloudBaseM": 1221,
+          "highCloudCover": 0,
+          "lowerCloudCover": 0.13055555555555556,
+          "relativeHumidity": 0.49,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 344.5666666666666,
+          "windSpeed": 1.1368888888888888,
           "storm": false
         }
       }
     ]
   },
   "weatherSource": {
-    "id": "station",
-    "name": "Station météorologique à 17 km au sud-ouest : 6,8 °C, humidité 30 %, vent de sud-est 2 m/s, nuages 2/8",
-    "url": "https://rr0.org/time/1/9/9/0/Velasco_TransEnProvence/3.html"
+    "id": "era5",
+    "name": "ERA5 (Open-Meteo)",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.4970959&longitude=6.5060491&start_date=1981-01-08&end_date=1981-01-08&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
   },
   "instrument": "eye",
   "interpretation": {

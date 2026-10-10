@@ -193,7 +193,7 @@
           "lat": 43.4970959,
           "lng": 6.5060491,
           "elevationM": 0,
-          "headingDeg": 131.0,
+          "headingDeg": 131,
           "pitchDeg": -4.9,
           "fovDeg": 60
         }
@@ -304,7 +304,7 @@
           "lng": 6.5062527,
           "elevationM": 0,
           "headingDeg": 142.1,
-          "pitchDeg": -3.0,
+          "pitchDeg": -3,
           "fovDeg": 60
         }
       },
@@ -425,7 +425,7 @@
           "lng": 6.5062527,
           "elevationM": 0,
           "headingDeg": 81.2,
-          "pitchDeg": 24.0,
+          "pitchDeg": 24,
           "fovDeg": 60
         }
       },
@@ -435,7 +435,7 @@
           "lat": 43.4970421,
           "lng": 6.5062527,
           "elevationM": 0,
-          "headingDeg": 75.0,
+          "headingDeg": 75,
           "pitchDeg": 24.6,
           "fovDeg": 60
         }
@@ -447,7 +447,7 @@
           "lng": 6.5062527,
           "elevationM": 0,
           "headingDeg": 70.2,
-          "pitchDeg": 25.0,
+          "pitchDeg": 25,
           "fovDeg": 60
         }
       },
@@ -689,9 +689,9 @@
       "color": "#5c5846",
       "eastM": 18.4,
       "northM": -24.1,
-      "headingDeg": 200.0,
+      "headingDeg": 200,
       "sizeM": {
-        "widthM": 120.0,
+        "widthM": 120,
         "lengthM": 16.2,
         "heightM": 1.45
       }
@@ -707,9 +707,9 @@
       },
       "eastM": 22.1,
       "northM": -13.8,
-      "headingDeg": 200.0,
+      "headingDeg": 200,
       "sizeM": {
-        "widthM": 120.0,
+        "widthM": 120,
         "lengthM": 5.8,
         "heightM": 1.3
       }
@@ -725,9 +725,9 @@
       },
       "eastM": 24.4,
       "northM": -7.5,
-      "headingDeg": 200.0,
+      "headingDeg": 200,
       "sizeM": {
-        "widthM": 120.0,
+        "widthM": 120,
         "lengthM": 7.5,
         "heightM": 0.7
       }
@@ -742,10 +742,10 @@
         "it": "Terrazzamento (4)"
       },
       "eastM": 26.8,
-      "northM": -1.0,
-      "headingDeg": 200.0,
+      "northM": -1,
+      "headingDeg": 200,
       "sizeM": {
-        "widthM": 120.0,
+        "widthM": 120,
         "lengthM": 6.5,
         "heightM": 0.1
       }
@@ -761,7 +761,7 @@
       },
       "eastM": 0.5,
       "northM": 1.4,
-      "headingDeg": 20.0,
+      "headingDeg": 20,
       "floors": 1,
       "sizeM": {
         "widthM": 1.6,
@@ -781,10 +781,10 @@
       },
       "eastM": 17.3,
       "northM": -3.5,
-      "headingDeg": 20.0,
+      "headingDeg": 20,
       "floors": 1,
       "sizeM": {
-        "widthM": 5.0,
+        "widthM": 5,
         "lengthM": 3.2,
         "heightM": 2.4
       },
@@ -801,12 +801,12 @@
       },
       "eastM": -0.1,
       "northM": -19.1,
-      "headingDeg": 20.0,
+      "headingDeg": 20,
       "floors": 2,
       "sizeM": {
-        "widthM": 11.0,
-        "lengthM": 9.0,
-        "heightM": 6.0
+        "widthM": 11,
+        "lengthM": 9,
+        "heightM": 6
       },
       "color": "#d8d0bf"
     },
@@ -820,7 +820,7 @@
         "it": "Albero"
       },
       "eastM": -18.2,
-      "northM": 1.0,
+      "northM": 1,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.8,
@@ -946,12 +946,12 @@
         "it": "Albero"
       },
       "eastM": 60.7,
-      "northM": -28.0,
+      "northM": -28,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.8,
         "lengthM": 2.8,
-        "heightM": 5.0
+        "heightM": 5
       }
     },
     {
@@ -1090,7 +1090,7 @@
         "it": "Albero"
       },
       "eastM": 58.4,
-      "northM": -19.0,
+      "northM": -19,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.5,
@@ -1113,7 +1113,7 @@
       "sizeM": {
         "widthM": 2.8,
         "lengthM": 2.8,
-        "heightM": 5.0
+        "heightM": 5
       }
     },
     {
@@ -1131,7 +1131,7 @@
       "sizeM": {
         "widthM": 2.7,
         "lengthM": 2.7,
-        "heightM": 5.0
+        "heightM": 5
       }
     },
     {
@@ -1161,7 +1161,7 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -1.0,
+      "eastM": -1,
       "northM": 9.8,
       "color": "#6b7549",
       "sizeM": {
@@ -1185,7 +1185,7 @@
       "sizeM": {
         "widthM": 2.7,
         "lengthM": 2.7,
-        "heightM": 5.0
+        "heightM": 5
       }
     },
     {
@@ -1221,7 +1221,7 @@
       "sizeM": {
         "widthM": 2.2,
         "lengthM": 2.2,
-        "heightM": 4.0
+        "heightM": 4
       }
     },
     {
@@ -1252,7 +1252,7 @@
         "it": "Albero"
       },
       "eastM": 41.2,
-      "northM": -7.0,
+      "northM": -7,
       "color": "#6b7549",
       "sizeM": {
         "widthM": 2.6,
@@ -1275,7 +1275,7 @@
       "sizeM": {
         "widthM": 2.2,
         "lengthM": 2.2,
-        "heightM": 4.0
+        "heightM": 4
       }
     },
     {
@@ -1359,7 +1359,7 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 20.0,
+      "eastM": 20,
       "northM": -15.2,
       "color": "#6b7549",
       "sizeM": {
@@ -1383,7 +1383,7 @@
       "sizeM": {
         "widthM": 2.8,
         "lengthM": 2.8,
-        "heightM": 5.0
+        "heightM": 5
       }
     },
     {
@@ -1545,7 +1545,7 @@
       "sizeM": {
         "widthM": 7.1,
         "lengthM": 7.1,
-        "heightM": 13.0
+        "heightM": 13
       }
     },
     {
@@ -1593,8 +1593,8 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -34.0,
-      "northM": 46.0,
+      "eastM": -34,
+      "northM": 46,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 5.8,
@@ -1612,7 +1612,7 @@
         "it": "Albero"
       },
       "eastM": 9.6,
-      "northM": 75.0,
+      "northM": 75,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 5.8,
@@ -1647,7 +1647,7 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 48.0,
+      "eastM": 48,
       "northM": 5.6,
       "color": "#2f4226",
       "sizeM": {
@@ -1809,7 +1809,7 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -33.0,
+      "eastM": -33,
       "northM": 89.6,
       "color": "#4b5a33",
       "sizeM": {
@@ -1833,7 +1833,7 @@
       "sizeM": {
         "widthM": 5.5,
         "lengthM": 5.5,
-        "heightM": 10.0
+        "heightM": 10
       }
     },
     {
@@ -1869,7 +1869,7 @@
       "sizeM": {
         "widthM": 7.7,
         "lengthM": 7.7,
-        "heightM": 14.0
+        "heightM": 14
       }
     },
     {
@@ -1881,13 +1881,13 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 123.0,
+      "eastM": 123,
       "northM": -12.1,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 7.7,
         "lengthM": 7.7,
-        "heightM": 14.0
+        "heightM": 14
       }
     },
     {
@@ -1959,7 +1959,7 @@
       "sizeM": {
         "widthM": 7.1,
         "lengthM": 7.1,
-        "heightM": 13.0
+        "heightM": 13
       }
     },
     {
@@ -1990,7 +1990,7 @@
         "it": "Albero"
       },
       "eastM": 82.6,
-      "northM": 0.0,
+      "northM": 0,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 6.7,
@@ -2025,7 +2025,7 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": 19.0,
+      "eastM": 19,
       "northM": 55.1,
       "color": "#4b5a33",
       "sizeM": {
@@ -2152,7 +2152,7 @@
         "it": "Albero"
       },
       "eastM": -81.2,
-      "northM": 27.0,
+      "northM": 27,
       "color": "#2f4226",
       "sizeM": {
         "widthM": 5.3,
@@ -2241,7 +2241,7 @@
         "es": "Árbol",
         "it": "Albero"
       },
-      "eastM": -83.0,
+      "eastM": -83,
       "northM": 25.2,
       "color": "#2f4226",
       "sizeM": {
@@ -2335,9 +2335,9 @@
       "northM": -25.1,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.0,
-        "lengthM": 6.0,
-        "heightM": 24.0
+        "widthM": 6,
+        "lengthM": 6,
+        "heightM": 24
       }
     },
     {
@@ -2350,12 +2350,12 @@
         "it": "Grande conifera"
       },
       "eastM": 64.5,
-      "northM": -29.0,
+      "northM": -29,
       "color": "#2f4226",
       "sizeM": {
-        "widthM": 6.0,
-        "lengthM": 6.0,
-        "heightM": 24.0
+        "widthM": 6,
+        "lengthM": 6,
+        "heightM": 24
       }
     },
     {
@@ -2367,14 +2367,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": -30.0,
-      "northM": 70.0,
-      "headingDeg": 90.0,
+      "eastM": -30,
+      "northM": 70,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2386,14 +2386,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 0.0,
-      "northM": 82.0,
-      "headingDeg": 90.0,
+      "eastM": 0,
+      "northM": 82,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2405,14 +2405,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 40.0,
-      "northM": 76.0,
-      "headingDeg": 90.0,
+      "eastM": 40,
+      "northM": 76,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2424,14 +2424,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 75.0,
-      "northM": 70.0,
-      "headingDeg": 90.0,
+      "eastM": 75,
+      "northM": 70,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2443,14 +2443,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 110.0,
-      "northM": 62.0,
-      "headingDeg": 90.0,
+      "eastM": 110,
+      "northM": 62,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2462,14 +2462,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": -75.0,
-      "northM": 12.0,
-      "headingDeg": 90.0,
+      "eastM": -75,
+      "northM": 12,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2481,14 +2481,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": -85.0,
-      "northM": -22.0,
-      "headingDeg": 90.0,
+      "eastM": -85,
+      "northM": -22,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2500,14 +2500,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 125.0,
-      "northM": 22.0,
-      "headingDeg": 90.0,
+      "eastM": 125,
+      "northM": 22,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2519,14 +2519,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 135.0,
-      "northM": -12.0,
-      "headingDeg": 90.0,
+      "eastM": 135,
+      "northM": -12,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     },
     {
@@ -2538,14 +2538,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 95.0,
-      "northM": 110.0,
-      "headingDeg": 90.0,
+      "eastM": 95,
+      "northM": 110,
+      "headingDeg": 90,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 12.0,
-        "lengthM": 10.0,
-        "heightM": 9.0
+        "widthM": 12,
+        "lengthM": 10,
+        "heightM": 9
       }
     }
   ],
@@ -2556,31 +2556,97 @@
         "weather": {
           "cloudLayers": [
             {
-              "id": "station",
+              "id": "record-low",
               "type": "unknown",
-              "baseM": 3000,
-              "thicknessM": 600,
-              "coverage": 0.25,
-              "sizeM": 2000,
+              "baseM": 1225,
+              "thicknessM": 650,
+              "coverage": 0.13,
+              "sizeM": 1400,
               "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.07,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
             }
           ],
-          "cloudCover": 0.25,
-          "cloudBaseM": 3000,
-          "relativeHumidity": 0.3,
+          "cloudCover": 0.17,
+          "cloudDarkness": 0.6124999999999999,
+          "cloudBaseM": 1225,
+          "highCloudCover": 0,
+          "lowerCloudCover": 0.13,
+          "relativeHumidity": 0.49,
           "precipitationType": "none",
           "precipitationIntensity": 0,
-          "windDirectionDeg": 135,
-          "windSpeed": 2,
+          "windDirectionDeg": 345,
+          "windSpeed": 1.14,
+          "storm": false
+        }
+      },
+      {
+        "t": 40000,
+        "weather": {
+          "cloudLayers": [
+            {
+              "id": "record-low",
+              "type": "unknown",
+              "baseM": 1221,
+              "thicknessM": 650,
+              "coverage": 0.13055555555555556,
+              "sizeM": 1400,
+              "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.07166666666666667,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
+            }
+          ],
+          "cloudCover": 0.1708888888888889,
+          "cloudDarkness": 0.6114010989010988,
+          "cloudBaseM": 1221,
+          "highCloudCover": 0,
+          "lowerCloudCover": 0.13055555555555556,
+          "relativeHumidity": 0.49,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 344.5666666666666,
+          "windSpeed": 1.1368888888888888,
           "storm": false
         }
       }
     ]
   },
   "weatherSource": {
-    "id": "station",
-    "name": "Station météorologique à 17 km au sud-ouest : 6,8 °C, humidité 30 %, vent de sud-est 2 m/s, nuages 2/8",
-    "url": "https://rr0.org/time/1/9/9/0/Velasco_TransEnProvence/3.html"
+    "id": "era5",
+    "name": "ERA5 (Open-Meteo)",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.4970959&longitude=6.5060491&start_date=1981-01-08&end_date=1981-01-08&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
   },
   "instrument": "eye",
   "interpretation": {
@@ -2772,7 +2838,7 @@
             {
               "t": 2500,
               "eastM": 37.07,
-              "northM": -32.0,
+              "northM": -32,
               "altitudeM": -2.9
             },
             {
@@ -2817,9 +2883,9 @@
               "northM": -32.05,
               "altitudeM": -3.38,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2828,9 +2894,9 @@
               "northM": -32.05,
               "altitudeM": -3.38,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2839,9 +2905,9 @@
               "northM": -32.05,
               "altitudeM": -3.33,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2850,9 +2916,9 @@
               "northM": -32.05,
               "altitudeM": -3.24,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2861,9 +2927,9 @@
               "northM": -32.05,
               "altitudeM": -3.1,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2872,9 +2938,9 @@
               "northM": -32.05,
               "altitudeM": -2.91,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2883,9 +2949,9 @@
               "northM": -32.05,
               "altitudeM": -2.68,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2894,9 +2960,9 @@
               "northM": -32.05,
               "altitudeM": -2.39,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -2905,9 +2971,9 @@
               "northM": -32.05,
               "altitudeM": -2.05,
               "attitude": {
-                "headingDeg": 0.0,
+                "headingDeg": 0,
                 "pitchDeg": 0,
-                "rollDeg": 0.0
+                "rollDeg": 0
               }
             },
             {
@@ -3114,9 +3180,9 @@
               "northM": -17.46,
               "altitudeM": 12.89,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3125,9 +3191,9 @@
               "northM": -14.74,
               "altitudeM": 14.62,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3136,9 +3202,9 @@
               "northM": -11.77,
               "altitudeM": 16.51,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3147,9 +3213,9 @@
               "northM": -8.55,
               "altitudeM": 18.56,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3158,9 +3224,9 @@
               "northM": -5.09,
               "altitudeM": 20.76,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3169,9 +3235,9 @@
               "northM": -1.4,
               "altitudeM": 23.11,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3180,9 +3246,9 @@
               "northM": 2.52,
               "altitudeM": 25.6,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3191,9 +3257,9 @@
               "northM": 6.63,
               "altitudeM": 28.22,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3202,9 +3268,9 @@
               "northM": 10.94,
               "altitudeM": 30.96,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3213,9 +3279,9 @@
               "northM": 15.41,
               "altitudeM": 33.81,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3224,9 +3290,9 @@
               "northM": 20.03,
               "altitudeM": 36.75,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3235,9 +3301,9 @@
               "northM": 24.78,
               "altitudeM": 39.77,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3246,9 +3312,9 @@
               "northM": 29.62,
               "altitudeM": 42.85,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3257,9 +3323,9 @@
               "northM": 34.53,
               "altitudeM": 45.97,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3268,9 +3334,9 @@
               "northM": 39.47,
               "altitudeM": 49.12,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3279,9 +3345,9 @@
               "northM": 44.42,
               "altitudeM": 52.27,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3290,9 +3356,9 @@
               "northM": 49.37,
               "altitudeM": 55.42,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3301,9 +3367,9 @@
               "northM": 54.32,
               "altitudeM": 58.57,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3312,9 +3378,9 @@
               "northM": 59.27,
               "altitudeM": 61.72,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3323,9 +3389,9 @@
               "northM": 64.22,
               "altitudeM": 64.87,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3334,9 +3400,9 @@
               "northM": 69.17,
               "altitudeM": 68.02,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3345,9 +3411,9 @@
               "northM": 74.12,
               "altitudeM": 71.17,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {
@@ -3356,9 +3422,9 @@
               "northM": 79.07,
               "altitudeM": 74.32,
               "attitude": {
-                "headingDeg": 45.0,
+                "headingDeg": 45,
                 "pitchDeg": 0,
-                "rollDeg": 40.0
+                "rollDeg": 40
               }
             },
             {

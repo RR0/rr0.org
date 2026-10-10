@@ -1,10 +1,32 @@
 {
-  "birthTime": "1965-09-19",
+  "title": "Nicholas Pope",
+  "surname": "Nick",
+  "url": "https://www.nickpope.net",
   "occupations": [
     "ufologist",
     "journalist"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1965-09-19",
+      "place": "Londres (Angleterre)"
+    },
+    {
+      "type": "death",
+      "time": "2026-04-06",
+      "place": "Tucson (Arizona)",
+      "sources": [
+        {
+          "url": "https://www.vice.com/en/article/ufo-expert-nick-pope-dies-at-60/"
+        },
+        {
+          "url": "https://bostonglobe.com/2026/04/29/metro/nick-pope-ufo-sleuth-who-chased-truth-dies-60"
+        }
+      ]
+    }
   ]
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>Hors ligne - RR0</title>
+  <link rel="stylesheet" href="/rr0.css">
+  <style>
+    body { max-width: 40em; margin: 2em auto; padding: 0 1em; }
+    li { margin: .3em 0; }
+  </style>
+</head>
+<body>
+<h1>Vous êtes hors ligne</h1>
+<p>Cette page n'a pas encore été consultée, et le réseau ne répond pas. RR0 garde les pages que vous avez lues pour
+  les relire sans connexion.</p>
+<h2>Pages disponibles hors ligne</h2>
+<ul id="pages"><li>Recherche en cours…</li></ul>
+<p><a href="/">Accueil</a></p>
+<script>
+  // Lists what the worker has kept: the page cache is readable from the page itself.
+  const list = document.getElementById("pages")
+  const none = () => { list.innerHTML = "<li>Aucune pour le moment.</li>" }
+  if (!("caches" in window)) {
+    none()
+  } else {
+    caches.open("rr0-pages").then(cache => cache.keys()).then(keys => {
+      const paths = keys.map(key => new URL(key.url).pathname).sort()
+      if (!paths.length) {
+        return none()
+      }
+      list.textContent = ""
+      for (const path of paths) {
+        const item = document.createElement("li")
+        const link = document.createElement("a")
+        link.href = path
+        link.textContent = decodeURIComponent(path)
+        item.append(link)
+        list.append(item)
+      }
+    }).catch(none)
+  }
+</script>
+</body>
+</html>

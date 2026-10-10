@@ -21,3 +21,8 @@
 # a script bytes it will happily render is protecting nothing here.
 /*
   Access-Control-Allow-Origin: *
+
+# The worker script itself must never be served from the HTTP cache, or a fixed worker would reach
+# readers only after the cache's freshness lifetime: the browser re-checks it on every navigation.
+/sw.js
+  Cache-Control: no-cache

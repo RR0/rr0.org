@@ -99,6 +99,9 @@ const copies = copiesArg ? copiesArg : [
   // Netlify reads _headers from the DEPLOYED directory, never from the clone — which is the whole
   // reason it is here rather than in netlify.toml. See the file's own header.
   "_headers",
+  // The worker is served from the root so that its scope is the whole site; offline.html is what it
+  // answers for a page never opened, copied as is (it is not a templated page).
+  "sw.js", "offline.html",
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
   "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css", "math.css",
   // Images must be copied independently of their HTML processing: ImageCommand only

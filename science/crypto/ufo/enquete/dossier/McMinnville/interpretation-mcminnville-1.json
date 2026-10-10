@@ -241,10 +241,10 @@
  },
  "interpretation": {
   "title": {
-    "fr": "Avril 2013 : une maquette d'environ 12 cm sous le fil inférieur de la ligne, décalée de 9° d'une photographie à l'autre (le fil, qu'elle suppose, ne se voit pas sur les clichés)",
-    "en": "April 2013: a model about 12 cm across under the lower wire of the line, offset by 9° from one photograph to the other (the thread it needs does not show on the prints)",
-    "es": "Abril de 2013: una maqueta de unos 12 cm bajo el cable inferior de la línea, desplazada 9° de una fotografía a la otra (el hilo que necesita no se ve en las copias)",
-    "it": "Aprile 2013: un modellino di circa 12 cm sotto il filo inferiore della linea, spostato di 9° da una fotografia all'altra (il filo che richiede non si vede sulle stampe)"
+   "fr": "Avril 2013 : une maquette d'environ 12 cm sous le fil inférieur de la ligne, décalée de 9° d'une photographie à l'autre (le fil, qu'elle suppose, ne se voit pas sur les clichés)",
+   "en": "April 2013: a model about 12 cm across under the lower wire of the line, offset by 9° from one photograph to the other (the thread it needs does not show on the prints)",
+   "es": "Abril de 2013: una maqueta de unos 12 cm bajo el cable inferior de la línea, desplazada 9° de una fotografía a la otra (el hilo que necesita no se ve en las copias)",
+   "it": "Aprile 2013: un modellino di circa 12 cm sotto il filo inferiore della linea, spostato di 9° da una fotografia all'altra (il filo che richiede non si vede sulle stampe)"
   },
   "bodies": [
    {
@@ -263,8 +263,8 @@
     },
     "track": [
      {
-       "t": 11500,
-       "present": true,
+      "t": 11500,
+      "present": true,
       "eastM": 2.828,
       "northM": 2.828,
       "altitudeAboveGroundM": 2.759,
@@ -284,12 +284,12 @@
       }
      },
      {
-       "t": 13000,
-       "present": false
+      "t": 13000,
+      "present": false
      },
      {
-       "t": 41500,
-       "present": true,
+      "t": 41500,
+      "present": true,
       "eastM": 2.886,
       "northM": 2.921,
       "altitudeAboveGroundM": 2.768,
@@ -299,70 +299,70 @@
        "rollDeg": 17
       }
      },
-      {
-        "t": 43000,
-        "present": false
-      }
+     {
+      "t": 43000,
+      "present": false
+     }
     ]
    },
-    {
-      "id": "thread",
-      "title": {
-        "fr": "Le fil de suspension (supposé)",
-        "en": "The suspension thread (required)",
-        "es": "El hilo de suspensión (supuesto)",
-        "it": "Il filo di sospensione (richiesto)"
+   {
+    "id": "thread",
+    "title": {
+     "fr": "Le fil de suspension (supposé)",
+     "en": "The suspension thread (required)",
+     "es": "El hilo de suspensión (supuesto)",
+     "it": "Il filo di sospensione (richiesto)"
+    },
+    "explains": [],
+    "model": {
+     "id": "cylinder"
+    },
+    "track": [
+     {
+      "t": 11500,
+      "present": true,
+      "eastM": 2.828,
+      "northM": 2.828,
+      "altitudeAboveGroundM": 2.8,
+      "sizeM": {
+       "widthM": 0.004,
+       "lengthM": 0.004,
+       "heightM": 0.7
       },
-      "explains": [],
-      "model": {
-        "id": "cylinder"
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 0,
+       "rollDeg": 0
       },
-      "track": [
-        {
-          "t": 11500,
-          "present": true,
-          "eastM": 2.828,
-          "northM": 2.828,
-          "altitudeAboveGroundM": 2.8,
-          "sizeM": {
-            "widthM": 0.004,
-            "lengthM": 0.004,
-            "heightM": 0.7
-          },
-          "attitude": {
-            "headingDeg": 32,
-            "pitchDeg": 0,
-            "rollDeg": 0
-          },
-          "appearance": {
-            "color": "#303030",
-            "albedo": 0.1
-          }
-        },
-        {
-          "t": 13000,
-          "present": false
-        },
-        {
-          "t": 41500,
-          "present": true,
-          "eastM": 2.857,
-          "northM": 2.875,
-          "altitudeAboveGroundM": 2.804,
-          "sizeM": {
-            "widthM": 0.004,
-            "lengthM": 0.004,
-            "heightM": 0.7
-          },
-          "attitude": {
-            "headingDeg": 32,
-            "pitchDeg": 9,
-            "rollDeg": 0
-          }
-        },
-        {
-          "t": 43000,
-          "present": false
+      "appearance": {
+       "color": "#303030",
+       "albedo": 0.1
+      }
+     },
+     {
+      "t": 13000,
+      "present": false
+     },
+     {
+      "t": 41500,
+      "present": true,
+      "eastM": 2.857,
+      "northM": 2.875,
+      "altitudeAboveGroundM": 2.804,
+      "sizeM": {
+       "widthM": 0.004,
+       "lengthM": 0.004,
+       "heightM": 0.7
+      },
+      "attitude": {
+       "headingDeg": 32,
+       "pitchDeg": 9,
+       "rollDeg": 0
+      }
+     },
+     {
+      "t": 43000,
+      "present": false
      }
     ]
    }

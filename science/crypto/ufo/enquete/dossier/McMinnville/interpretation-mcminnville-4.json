@@ -241,19 +241,19 @@
  },
  "interpretation": {
   "title": {
-    "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect, accroché à un fil pour chaque photographie",
-    "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look, hung on a thread for each photograph",
-    "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto, colgado de un hilo para cada fotografía",
-    "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto, appeso a un filo per ogni fotografia"
+   "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect, accroché à un fil pour chaque photographie",
+   "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look, hung on a thread for each photograph",
+   "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto, colgado de un hilo para cada fotografía",
+   "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto, appeso a un filo per ogni fotografia"
   },
   "bodies": [
    {
     "id": "object",
     "title": {
-      "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect, accroché à un fil pour chaque photographie",
-      "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look, hung on a thread for each photograph",
-      "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto, colgado de un hilo para cada fotografía",
-      "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto, appeso a un filo per ogni fotografia"
+     "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect, accroché à un fil pour chaque photographie",
+     "en": "For comparison: an 18 cm car mirror at 6.3 m, the same angular width and the same look, hung on a thread for each photograph",
+     "es": "Para comparar: un retrovisor de coche de 18 cm a 6,3 m, misma anchura angular y mismo aspecto, colgado de un hilo para cada fotografía",
+     "it": "Per confronto: uno specchietto retrovisore di 18 cm a 6,3 m, stessa larghezza angolare e stesso aspetto, appeso a un filo per ogni fotografia"
     },
     "explains": [
      "ufo-1"
@@ -263,16 +263,16 @@
     },
     "track": [
      {
-       "t": 11500,
-       "present": true,
-       "eastM": 4.261,
-       "northM": 4.261,
-       "altitudeAboveGroundM": 3.397,
-       "attitude": {
-         "headingDeg": 45,
-         "pitchDeg": -3.2,
-         "rollDeg": 19
-       },
+      "t": 11500,
+      "present": true,
+      "eastM": 4.261,
+      "northM": 4.261,
+      "altitudeAboveGroundM": 3.397,
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": -3.2,
+       "rollDeg": 19
+      },
       "sizeM": {
        "widthM": 0.18,
        "lengthM": 0.18,
@@ -283,81 +283,81 @@
        "albedo": 0.3
       }
      },
-      {
-        "t": 13000,
-        "present": false
-      },
-      {
-        "t": 41500,
-        "present": true,
-        "eastM": 4.118,
-        "northM": 4.893,
-        "altitudeAboveGroundM": 3.436,
+     {
+      "t": 13000,
+      "present": false
+     },
+     {
+      "t": 41500,
+      "present": true,
+      "eastM": 4.118,
+      "northM": 4.893,
+      "altitudeAboveGroundM": 3.436,
       "attitude": {
-        "headingDeg": 32,
-        "pitchDeg": 21.6,
-        "rollDeg": 17
-      }
-      },
-      {
-        "t": 43000,
-        "present": false
-      }
-    ]
-   },
-    {
-      "id": "object-thread",
-      "title": {
-        "fr": "Son fil de suspension",
-        "en": "Its suspension thread",
-        "es": "Su hilo de suspensión",
-        "it": "Il suo filo di sospensione"
-      },
-      "explains": [],
-      "model": {
-        "id": "cylinder"
-      },
-      "track": [
-        {
-          "t": 11500,
-          "present": true,
-          "eastM": 4.261,
-          "northM": 4.261,
-          "altitudeAboveGroundM": 3.459,
-      "attitude": {
-       "headingDeg": 45,
-        "pitchDeg": 0,
-        "rollDeg": 0
-      },
-          "sizeM": {
-            "widthM": 0.004,
-            "lengthM": 0.004,
-            "heightM": 0.7
-          },
-          "appearance": {
-            "color": "#303030",
-            "albedo": 0.1
+       "headingDeg": 32,
+       "pitchDeg": 21.6,
+       "rollDeg": 17
       }
      },
      {
-       "t": 13000,
-       "present": false
+      "t": 43000,
+      "present": false
+     }
+    ]
+   },
+   {
+    "id": "object-thread",
+    "title": {
+     "fr": "Son fil de suspension",
+     "en": "Its suspension thread",
+     "es": "Su hilo de suspensión",
+     "it": "Il suo filo di sospensione"
+    },
+    "explains": [],
+    "model": {
+     "id": "cylinder"
+    },
+    "track": [
+     {
+      "t": 11500,
+      "present": true,
+      "eastM": 4.261,
+      "northM": 4.261,
+      "altitudeAboveGroundM": 3.459,
+      "attitude": {
+       "headingDeg": 45,
+       "pitchDeg": 0,
+       "rollDeg": 0
+      },
+      "sizeM": {
+       "widthM": 0.004,
+       "lengthM": 0.004,
+       "heightM": 0.7
+      },
+      "appearance": {
+       "color": "#303030",
+       "albedo": 0.1
+      }
      },
-        {
-          "t": 41500,
-          "present": true,
-          "eastM": 4.118,
-          "northM": 4.893,
-          "altitudeAboveGroundM": 3.498,
+     {
+      "t": 13000,
+      "present": false
+     },
+     {
+      "t": 41500,
+      "present": true,
+      "eastM": 4.118,
+      "northM": 4.893,
+      "altitudeAboveGroundM": 3.498,
       "attitude": {
        "headingDeg": 32,
-        "pitchDeg": 0,
-        "rollDeg": 0
+       "pitchDeg": 0,
+       "rollDeg": 0
       }
-        },
-        {
-          "t": 43000,
-          "present": false
+     },
+     {
+      "t": 43000,
+      "present": false
      }
     ]
    }

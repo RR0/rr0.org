@@ -738,14 +738,6 @@
       }
      },
      {
-      "t": 38000,
-      "attitude": {
-       "headingDeg": 45,
-       "pitchDeg": -3.2,
-       "rollDeg": 19
-      }
-     },
-     {
       "t": 42000,
       "azimuthDeg": 32,
       "altitudeDeg": 16.28,

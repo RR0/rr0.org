@@ -1,5 +1,8 @@
 {
-  "title": "Nicholas Pope",
+  "lastName": "Pope",
+  "firstNames": [
+    "Nicholas"
+  ],
   "surname": "Nick",
   "url": "https://www.nickpope.net",
   "occupations": [

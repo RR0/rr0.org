@@ -334,13 +334,14 @@
         "es": "Plataforma de tierra",
         "it": "Piattaforma di terra"
       },
+      "color": "#5c5846",
       "eastM": 34.3,
-      "northM": -16.4,
+      "northM": -16.2,
       "headingDeg": 180.0,
       "sizeM": {
         "widthM": 84.0,
-        "lengthM": 9.2,
-        "heightM": 0.3
+        "lengthM": 9.7,
+        "heightM": 0.6
       }
     },
     {
@@ -353,12 +354,12 @@
         "it": "Terrazzamento (2)"
       },
       "eastM": 34.3,
-      "northM": -7.9,
+      "northM": -7.7,
       "headingDeg": 180.0,
       "sizeM": {
         "widthM": 84.0,
-        "lengthM": 7.8,
-        "heightM": 0.95
+        "lengthM": 7.3,
+        "heightM": 0.65
       }
     },
     {
@@ -371,12 +372,12 @@
         "it": "Terrazzamento (3)"
       },
       "eastM": 34.3,
-      "northM": -0.5,
+      "northM": 0.5,
       "headingDeg": 180.0,
       "sizeM": {
         "widthM": 84.0,
-        "lengthM": 7.0,
-        "heightM": 0.65
+        "lengthM": 9.0,
+        "heightM": 0.15
       }
     },
     {
@@ -389,12 +390,12 @@
         "it": "Terrazzamento (4)"
       },
       "eastM": 34.3,
-      "northM": 7.7,
+      "northM": 9.2,
       "headingDeg": 180.0,
       "sizeM": {
         "widthM": 84.0,
-        "lengthM": 9.5,
-        "heightM": 0.1
+        "lengthM": 8.5,
+        "heightM": 0.0
       }
     },
     {
@@ -502,14 +503,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": -10.4,
-      "northM": 59.1,
-      "headingDeg": 350.0,
+      "eastM": -30.0,
+      "northM": 70.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -521,14 +522,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 23.9,
-      "northM": 65.8,
-      "headingDeg": 20.0,
+      "eastM": 0.0,
+      "northM": 82.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -540,14 +541,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 42.1,
-      "northM": 35.4,
-      "headingDeg": 50.0,
+      "eastM": 40.0,
+      "northM": 76.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -559,14 +560,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 59.1,
-      "northM": 10.4,
-      "headingDeg": 80.0,
+      "eastM": 75.0,
+      "northM": 70.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -578,14 +579,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 70.5,
-      "northM": -25.7,
-      "headingDeg": 110.0,
+      "eastM": 110.0,
+      "northM": 62.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -597,14 +598,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": 57.9,
-      "northM": -68.9,
-      "headingDeg": 140.0,
+      "eastM": -75.0,
+      "northM": 12.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -616,14 +617,14 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": -51.4,
-      "northM": 61.3,
-      "headingDeg": 320.0,
+      "eastM": -85.0,
+      "northM": -22.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     },
     {
@@ -635,14 +636,52 @@
         "es": "Bosque",
         "it": "Bosco"
       },
-      "eastM": -94.0,
-      "northM": 34.2,
-      "headingDeg": 290.0,
+      "eastM": 125.0,
+      "northM": 22.0,
+      "headingDeg": 90.0,
       "color": "#3a4a2c",
       "sizeM": {
-        "widthM": 22.0,
-        "lengthM": 30.0,
-        "heightM": 16.0
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
+      }
+    },
+    {
+      "id": "wood-9",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 135.0,
+      "northM": -12.0,
+      "headingDeg": 90.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
+      }
+    },
+    {
+      "id": "wood-10",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 95.0,
+      "northM": 110.0,
+      "headingDeg": 90.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 12.0,
+        "lengthM": 10.0,
+        "heightM": 9.0
       }
     }
   ],
@@ -713,7 +752,7 @@
                 "heightM": 1.8
               },
               "attitude": {
-                "headingDeg": 45,
+                "headingDeg": 0,
                 "pitchDeg": 0,
                 "rollDeg": 0
               },

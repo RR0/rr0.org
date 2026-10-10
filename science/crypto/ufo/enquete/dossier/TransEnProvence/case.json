@@ -12,6 +12,19 @@
       "time": "1981-01-08 17:00",
       "title": "Renato Nicolaï (déposition du 9 janvier 1981)",
       "url": "observer-trans-en-provence.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1983-03-01",
+      "interpretationOf": "1981-01-08-Trans-en-Provence-Nicolai",
+      "title": {
+        "fr": "Le GEPAN : l'engin sur la trace, contre le mur de 2,5 m, que le témoin ne pouvait pas voir de sa position",
+        "en": "The GEPAN: the craft on the mark, against the 2.5 m wall, which the witness could not see from where he stood",
+        "es": "El GEPAN: el aparato sobre la marca, contra el muro de 2,5 m, que el testigo no podía ver desde su posición",
+        "it": "Il GEPAN: il velivolo sul segno, contro il muro di 2,5 m, che il testimone non poteva vedere dalla sua posizione"
+      },
+      "url": "interpretation-trans-en-provence-gepan.json"
     }
   ]
 }

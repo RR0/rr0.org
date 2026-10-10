@@ -140,6 +140,10 @@ the `death` event when known (with `place` and `sources`). Put a nickname in `su
 `"writer"` to `occupations` when the person has also authored books. When adding news about a person's death, update
 `people.json` (never restate birth/death in the HTML).
 
+**Tags on every touched page** — each time you touch a page (add, fix or move content), also check that its elements carry
+the relevant content tags (`tag-ufology`, `tag-seti`, `tag-astronomy`, `tag-physics`…), several if needed, and add any
+that are missing. New tags are in English like all code, with their labels translated into English and French.
+
 **Placing a paragraph** — a paragraph must be relevant to the title of its section, and ordered chronologically against
 the dates cited before and after it (e.g. "at the end of the 1980s" goes after a paragraph starting in 1984, not
 before). A paragraph fitting no section goes before the first section (right after the generated birth statement on a

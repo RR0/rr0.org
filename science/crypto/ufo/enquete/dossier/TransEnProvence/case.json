@@ -4,5 +4,14 @@
   "classification": {
     "hynek": "CE2"
   },
-  "image": "/science/crypto/ufo/enquete/dossier/TransEnProvence/Trace.jpg"
+  "image": "/science/crypto/ufo/enquete/dossier/TransEnProvence/Trace.jpg",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1981-01-08 17:00",
+      "title": "Renato Nicolaï (déposition du 9 janvier 1981)",
+      "url": "observer-trans-en-provence.json"
+    }
+  ]
 }

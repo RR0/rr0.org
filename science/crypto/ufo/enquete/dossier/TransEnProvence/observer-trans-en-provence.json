@@ -1,0 +1,711 @@
+{
+  "version": 1,
+  "id": "1981-01-08-Trans-en-Provence-Nicolai",
+  "time": {
+    "value": {
+      "year": 1981,
+      "month": 1,
+      "day": 8,
+      "hour": 17,
+      "minute": 0,
+      "second": 0
+    },
+    "basis": "stated",
+    "rationale": "\"Il était environ 17 h, le temps commençait à fraîchir\" (statement of 9 January 1981); the report, before the translation, cites the same hour."
+  },
+  "durationSeconds": {
+    "value": 40,
+    "basis": "derived",
+    "rationale": "GEPAN: \"the global duration of the sighting is between 30 and 40 seconds\", the arrival \"of the order of a few seconds\", the machine on the ground \"for several seconds\" (Note technique 16). Played at 40 s: it is gone at 35 s and the witness's last look follows."
+  },
+  "utcOffsetHours": {
+    "value": 1,
+    "basis": "derived",
+    "rationale": "Central European Time on 8 January 1981 (France had no winter summer time)."
+  },
+  "timeZone": "Europe/Paris",
+  "place": [
+    {
+      "value": {
+        "lat": 43.4962,
+        "lng": 6.5086,
+        "name": "Trans-en-Provence, Var, France"
+      },
+      "basis": "derived",
+      "rationale": "The report gives only \"2 km east of Trans, on the side of a hill overlooking the valley of the Nartuby\", on the north side of the valley, a dirt road beside it, and its figure 1 draws the D47 passing at the foot of the property with the river south of it. The point is the D47's bend (Route de la Motte) 1.9 km east-south-east of the village centre, north of the river, which is where that map's road shape fits; the pump house is put there, so the mark lies about 45 m from it. The real property may be a few hundred metres off: every azimuth of the sky survives that, and the relief is read from the map."
+    }
+  ],
+  "observer": {
+    "id": "Trans-en-Provence-1981-Nicolai",
+    "title": "Renato Nicolaï (déposition du 9 janvier 1981)"
+  },
+  "account": {
+    "observerOccupation": {
+      "fr": "ancien employé de la S.C.N.I., en invalidité (cœur)",
+      "en": "former S.C.N.I. employee, on a disability pension (heart)",
+      "es": "antiguo empleado de la S.C.N.I., con pensión de invalidez (corazón)",
+      "it": "ex dipendente della S.C.N.I., in invalidità (cuore)"
+    },
+    "source": {
+      "value": "on-site",
+      "basis": "stated",
+      "rationale": "Statement to the gendarmerie at the property on 9 January 1981; GEPAN interviewed him there on 17 February 1981."
+    },
+    "followedUp": {
+      "value": true,
+      "basis": "stated",
+      "rationale": "GEPAN's own enquiry on 17 February 1981, a reconstruction on the site, and his wife heard as well."
+    }
+  },
+  "description": {
+    "fr": "Jeudi 8 janvier 1981, vers 17 h, à la nuit tombante. Renato Nicolaï construit l'abri en ciment d'une pompe, derrière sa maison. Un léger sifflement attire son attention : un engin descend, sans tourner, sans flamme, à hauteur d'un gros pin du bord du terrain. Il se rapproche du cabanon de pierre et, d'une trentaine de mètres, le voit posé sur la plate-forme, contre le mur de soutènement : deux assiettes renversées l'une contre l'autre, séparées par une nervure, grises « comme du plomb », d'environ 2,5 m de diamètre et 1,8 m de haut. L'engin repart aussitôt, avec le même sifflement et un peu de poussière : il s'élève verticalement de plusieurs mètres, bascule en montrant son dessous (quatre ouvertures rondes, « comme des seaux de maçon », et deux pieds qui dépassent de 20 cm), puis file vers le nord-est au-dessus de la forêt. L'ensemble a duré 30 à 40 secondes. Le lendemain, la gendarmerie relève sur le sol deux cercles concentriques de 2,20 m et 2,40 m. Le lieu figuré est déduit du rapport (« à 2 km à l'est de Trans, sur le flanc nord de la vallée de la Nartuby ») : la propriété n'est pas publiée.",
+    "en": "On Thursday 8 January 1981, about 5 pm, at dusk. Renato Nicolaï is building the concrete shelter for a pump behind his house. A faint whistling draws his attention: a device is coming down, not spinning, with no flame, at the height of a big pine on the edge of the property. He moves towards the stone cabin and, from about thirty metres, sees it resting on the platform against the retaining wall: two saucers upside down against each other, separated by a ridge, grey \"like lead\", about 2.5 m across and 1.8 m high. It leaves at once, with the same whistling and a little dust: it rises vertically several metres, tilts to show its underside (four round openings, \"like masons' pails\", and two feet standing 20 cm below), then goes off to the north-east over the forest. The whole lasted 30 to 40 seconds. The next day the gendarmerie finds on the ground two concentric circles, 2.20 m and 2.40 m. The place shown is inferred from the report (\"2 km east of Trans, on the north side of the Nartuby valley\"): the property is not published.",
+    "es": "El jueves 8 de enero de 1981, hacia las 17 h, al anochecer. Renato Nicolaï construye el cobertizo de hormigón de una bomba detrás de su casa. Un leve silbido llama su atención: un aparato desciende, sin girar, sin llama, a la altura de un gran pino del borde del terreno. Se acerca a la cabaña de piedra y, desde unos treinta metros, lo ve posado en la plataforma, contra el muro de contención: dos platos invertidos uno contra otro, separados por un reborde, grises « como el plomo », de unos 2,5 m de diámetro y 1,8 m de alto. Despega enseguida, con el mismo silbido y un poco de polvo: se eleva verticalmente varios metros, se inclina mostrando su parte inferior (cuatro aberturas redondas, « como cubos de albañil », y dos patas que sobresalen 20 cm) y se aleja hacia el nordeste sobre el bosque. Todo duró de 30 a 40 segundos. Al día siguiente la gendarmería encuentra en el suelo dos círculos concéntricos de 2,20 m y 2,40 m. El lugar mostrado se deduce del informe (« a 2 km al este de Trans, en la ladera norte del valle del Nartuby »): la propiedad no se publica.",
+    "it": "Giovedì 8 gennaio 1981, verso le 17, al crepuscolo. Renato Nicolaï sta costruendo il riparo in cemento di una pompa dietro casa. Un leggero sibilo attira la sua attenzione: un velivolo scende, senza ruotare, senza fiamma, all'altezza di un grosso pino del bordo del terreno. Si avvicina al capanno di pietra e, da una trentina di metri, lo vede posato sulla piattaforma, contro il muro di sostegno: due piatti rovesciati l'uno contro l'altro, separati da una nervatura, grigi « come il piombo », di circa 2,5 m di diametro e 1,8 m di altezza. Riparte subito, con lo stesso sibilo e un po' di polvere: si alza in verticale di diversi metri, si inclina mostrando il lato inferiore (quattro aperture rotonde, « come secchi da muratore », e due piedi che sporgono di 20 cm), poi fila verso nord-est sopra la foresta. Il tutto è durato da 30 a 40 secondi. Il giorno dopo la gendarmeria trova sul terreno due cerchi concentrici di 2,20 m e 2,40 m. Il luogo mostrato è dedotto dal rapporto (« a 2 km a est di Trans, sul fianco nord della valle della Nartuby »): la proprietà non è pubblicata."
+  },
+  "tags": [
+    "RR2",
+    "landing",
+    "trace",
+    "dusk",
+    "GEPAN 81/01"
+  ],
+  "sources": [
+    {
+      "type": "article",
+      "title": "Report on the Analysis of Anomalous Physical Traces: The 1981 Trans-en-Provence UFO Case",
+      "url": "https://rr0.org/time/1/9/9/0/Velasco_TransEnProvence/",
+      "authors": [
+        "Jean-Jacques Velasco"
+      ],
+      "publication": {
+        "publisher": "Journal of Scientific Exploration",
+        "time": "1990"
+      },
+      "index": "vol. 4, no. 1, pp. 27-48"
+    },
+    {
+      "type": "article",
+      "title": "Enquête 81/01 : analyse d'une trace (Note technique n° 16)",
+      "url": "https://marcogee.free.fr/ovni/sepra/nt16.htm",
+      "publication": {
+        "publisher": "GEPAN, CNES",
+        "time": "1983-03-01"
+      }
+    }
+  ],
+  "timeline": {
+    "keyframes": [
+      {
+        "t": 0,
+        "shapes": []
+      },
+      {
+        "t": 40000,
+        "shapes": []
+      }
+    ],
+    "order": [],
+    "groups": []
+  },
+  "observerTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "pose": {
+          "lat": 43.4962,
+          "lng": 6.5086,
+          "elevationM": 2.8,
+          "headingDeg": 277.2,
+          "pitchDeg": 8.2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 1200,
+        "pose": {
+          "lat": 43.4962,
+          "lng": 6.5086,
+          "elevationM": 2.8,
+          "headingDeg": 277.2,
+          "pitchDeg": 8.2,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 2000,
+        "pose": {
+          "lat": 43.4962,
+          "lng": 6.5086,
+          "elevationM": 2.8,
+          "headingDeg": 128.6,
+          "pitchDeg": 6.9,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 3000,
+        "pose": {
+          "lat": 43.4962,
+          "lng": 6.5086,
+          "elevationM": 2.8,
+          "headingDeg": 137.0,
+          "pitchDeg": -4.3,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 4500,
+        "pose": {
+          "lat": 43.4962,
+          "lng": 6.5086,
+          "elevationM": 2.8,
+          "headingDeg": 137.0,
+          "pitchDeg": -4.3,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 16500,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 146.8,
+          "pitchDeg": -7.6,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 30000,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 146.8,
+          "pitchDeg": -7.6,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 31500,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 146.8,
+          "pitchDeg": -1.9,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 32500,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 146.8,
+          "pitchDeg": 3.8,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 33500,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 118.2,
+          "pitchDeg": 16.4,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 34600,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 59.5,
+          "pitchDeg": 32.5,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 40000,
+        "pose": {
+          "lat": 43.4961214,
+          "lng": 6.5087877,
+          "elevationM": 3.3,
+          "headingDeg": 59.5,
+          "pitchDeg": 32.5,
+          "fovDeg": 60
+        }
+      }
+    ]
+  },
+  "milestones": [
+    {
+      "t": 1200,
+      "label": "A",
+      "note": {
+        "fr": "Un léger sifflement : il se retourne et voit l'engin descendre, à hauteur d'un gros pin.",
+        "en": "A faint whistling: he turns round and sees the device coming down, at the height of a big pine.",
+        "es": "Un leve silbido: se vuelve y ve el aparato descender, a la altura de un gran pino.",
+        "it": "Un leggero sibilo: si volta e vede il velivolo scendere, all'altezza di un grosso pino."
+      }
+    },
+    {
+      "t": 3000,
+      "label": "B",
+      "note": {
+        "fr": "L'engin touche le sol, « comme une pierre », contre le mur de soutènement.",
+        "en": "The device touches the ground, \"like a stone\", against the retaining wall.",
+        "es": "El aparato toca el suelo, « como una piedra », contra el muro de contención.",
+        "it": "Il velivolo tocca il suolo, « come una pietra », contro il muro di sostegno."
+      }
+    },
+    {
+      "t": 16500,
+      "label": "C",
+      "note": {
+        "fr": "Il s'est avancé derrière le mur du cabanon : l'engin est à une trentaine de mètres.",
+        "en": "He has gone up behind the cabin wall: the device is about thirty metres away.",
+        "es": "Ha avanzado tras el muro de la cabaña: el aparato está a unos treinta metros.",
+        "it": "Si è avvicinato dietro il muro del capanno: il velivolo è a una trentina di metri."
+      }
+    },
+    {
+      "t": 30000,
+      "label": "D",
+      "note": {
+        "fr": "Il redécolle d'un coup, sans flamme, avec un peu de poussière.",
+        "en": "It lifts off at once, without flame, raising a little dust.",
+        "es": "Despega de golpe, sin llama, levantando un poco de polvo.",
+        "it": "Decolla di colpo, senza fiamma, sollevando un po' di polvere."
+      }
+    },
+    {
+      "t": 32500,
+      "label": "E",
+      "note": {
+        "fr": "Il bascule : quatre ouvertures rondes et deux pieds sous l'engin.",
+        "en": "It tilts: four round openings and two feet under it.",
+        "es": "Se inclina: cuatro aberturas redondas y dos patas debajo.",
+        "it": "Si inclina: quattro aperture rotonde e due piedi sotto."
+      }
+    }
+  ],
+  "soundTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "sound": {
+          "value": {
+            "kind": "whistle",
+            "volume": 0.2,
+            "pitchHz": 1200
+          },
+          "basis": "stated",
+          "rationale": "\"Un léger bruit, une sorte de petit sifflement\": it is the sound that made him turn; at take-off \"the sounds were of similar amplitude\". Its pitch is assumed; whether it stopped on the ground is not said, so it is held."
+        }
+      },
+      {
+        "t": 35100,
+        "sound": {
+          "value": {
+            "kind": "none",
+            "volume": 0,
+            "pitchHz": 0
+          },
+          "basis": "assumed",
+          "rationale": "Gone from sight; nothing is said of its fading."
+        }
+      }
+    ]
+  },
+  "decor": [
+    {
+      "id": "pump-house",
+      "kind": "building",
+      "title": {
+        "fr": "Abri de la pompe (en construction)",
+        "en": "Pump house (under construction)",
+        "es": "Caseta de la bomba (en construcción)",
+        "it": "Locale della pompa (in costruzione)"
+      },
+      "eastM": 0.7,
+      "northM": 1.3,
+      "headingDeg": 120.0,
+      "floors": 1,
+      "sizeM": {
+        "widthM": 1.6,
+        "lengthM": 1.6,
+        "heightM": 1.3
+      },
+      "color": "#a9a395"
+    },
+    {
+      "id": "cabin",
+      "kind": "building",
+      "title": {
+        "fr": "Cabanon de pierre",
+        "en": "Stone cabin",
+        "es": "Cabaña de piedra",
+        "it": "Capanno di pietra"
+      },
+      "eastM": 16.5,
+      "northM": -6.5,
+      "headingDeg": 120.0,
+      "floors": 1,
+      "sizeM": {
+        "widthM": 4.0,
+        "lengthM": 3.2,
+        "heightM": 2.4
+      },
+      "color": "#9b9484"
+    },
+    {
+      "id": "house",
+      "kind": "building",
+      "title": {
+        "fr": "Maison des Nicolaï",
+        "en": "The Nicolaï house",
+        "es": "La casa de los Nicolaï",
+        "it": "La casa dei Nicolaï"
+      },
+      "eastM": -0.5,
+      "northM": -13.6,
+      "headingDeg": 120.0,
+      "floors": 2,
+      "sizeM": {
+        "widthM": 11.0,
+        "lengthM": 9.0,
+        "heightM": 6.0
+      },
+      "color": "#d8d0bf"
+    },
+    {
+      "id": "conifer-1",
+      "kind": "tree",
+      "title": {
+        "fr": "Grand conifère",
+        "en": "Tall conifer",
+        "es": "Conífera alta",
+        "it": "Grande conifera"
+      },
+      "eastM": 51.1,
+      "northM": -36.7,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.0,
+        "lengthM": 6.0,
+        "heightM": 24.0
+      }
+    },
+    {
+      "id": "conifer-2",
+      "kind": "tree",
+      "title": {
+        "fr": "Grand conifère",
+        "en": "Tall conifer",
+        "es": "Conífera alta",
+        "it": "Grande conifera"
+      },
+      "eastM": 55.3,
+      "northM": -41.5,
+      "color": "#2f4226",
+      "sizeM": {
+        "widthM": 6.0,
+        "lengthM": 6.0,
+        "heightM": 24.0
+      }
+    },
+    {
+      "id": "wood-1",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": -10.4,
+      "northM": 59.1,
+      "headingDeg": 350.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-2",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 23.9,
+      "northM": 65.8,
+      "headingDeg": 20.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-3",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 42.1,
+      "northM": 35.4,
+      "headingDeg": 50.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-4",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 59.1,
+      "northM": 10.4,
+      "headingDeg": 80.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-5",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 70.5,
+      "northM": -25.7,
+      "headingDeg": 110.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-6",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": 57.9,
+      "northM": -68.9,
+      "headingDeg": 140.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-7",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": -51.4,
+      "northM": 61.3,
+      "headingDeg": 320.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    },
+    {
+      "id": "wood-8",
+      "kind": "shrub",
+      "title": {
+        "fr": "Bois",
+        "en": "Wood",
+        "es": "Bosque",
+        "it": "Bosco"
+      },
+      "eastM": -94.0,
+      "northM": 34.2,
+      "headingDeg": 290.0,
+      "color": "#3a4a2c",
+      "sizeM": {
+        "widthM": 22.0,
+        "lengthM": 30.0,
+        "heightM": 16.0
+      }
+    }
+  ],
+  "weatherTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "weather": {
+          "cloudLayers": [
+            {
+              "id": "station",
+              "type": "unknown",
+              "baseM": 3000,
+              "thicknessM": 600,
+              "coverage": 0.25,
+              "sizeM": 2000,
+              "density": 1
+            }
+          ],
+          "cloudCover": 0.25,
+          "cloudBaseM": 3000,
+          "relativeHumidity": 0.3,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 135,
+          "windSpeed": 2,
+          "storm": false
+        }
+      }
+    ]
+  },
+  "weatherSource": {
+    "id": "station",
+    "name": "Station météorologique à 17 km au sud-ouest : 6,8 °C, humidité 30 %, vent de sud-est 2 m/s, nuages 2/8",
+    "url": "https://rr0.org/time/1/9/9/0/Velasco_TransEnProvence/3.html"
+  },
+  "instrument": "eye",
+  "interpretation": {
+    "title": {
+      "fr": "L'engin de deux assiettes renversées, posé 3 s contre le mur puis reparti vers le nord-est",
+      "en": "Two upturned saucers, resting against the wall for 27 s then gone north-east",
+      "es": "Dos platos invertidos, posados contra el muro 27 s y luego idos al nordeste",
+      "it": "Due piatti rovesciati, posati contro il muro per 27 s e poi partiti verso nord-est"
+    },
+    "bodies": [
+      {
+        "id": "craft",
+        "title": {
+          "fr": "L'engin",
+          "en": "The craft",
+          "es": "El aparato",
+          "it": "Il velivolo"
+        },
+        "model": {
+          "id": "ufoathome-trans-en-provence-craft"
+        },
+        "outlineNode": "hull",
+        "track": {
+          "value": [
+            {
+              "t": 0,
+              "eastM": 48.5,
+              "northM": -38.7,
+              "altitudeAboveGroundM": 14.0,
+              "sizeM": {
+                "widthM": 2.5,
+                "lengthM": 2.5,
+                "heightM": 1.8
+              },
+              "attitude": {
+                "headingDeg": 45,
+                "pitchDeg": 0,
+                "rollDeg": 0
+              },
+              "appearance": {
+                "color": "#7d8186",
+                "albedo": 0.3
+              }
+            },
+            {
+              "t": 1800,
+              "eastM": 39.2,
+              "northM": -36.0,
+              "altitudeAboveGroundM": 6.0
+            },
+            {
+              "t": 3000,
+              "eastM": 31.6,
+              "northM": -33.9,
+              "onGround": true
+            },
+            {
+              "t": 30000,
+              "eastM": 31.6,
+              "northM": -33.9,
+              "onGround": true
+            },
+            {
+              "t": 31500,
+              "eastM": 31.6,
+              "northM": -33.9,
+              "altitudeAboveGroundM": 4.0
+            },
+            {
+              "t": 32500,
+              "eastM": 31.6,
+              "northM": -33.9,
+              "altitudeAboveGroundM": 7.0,
+              "attitude": {
+                "headingDeg": 45,
+                "pitchDeg": 0,
+                "rollDeg": 40
+              }
+            },
+            {
+              "t": 33500,
+              "eastM": 42.2,
+              "northM": -23.2,
+              "altitudeAboveGroundM": 14.0
+            },
+            {
+              "t": 34600,
+              "eastM": 116.4,
+              "northM": 51.0,
+              "altitudeAboveGroundM": 80.0
+            },
+            {
+              "t": 35100,
+              "present": false
+            }
+          ],
+          "basis": "derived",
+          "rationale": "The metres are the GEPAN's: 2.5 m across, 1.7 to 1.8 m high (the witness reasoning from the 2.5 m wall behind it; his own first drawing is much flatter and the private group's drawing in between), its ledge, its four pods and its two feet; it comes down \"like a stone\" in a few seconds from the tree gap 22 m from the mark and rests on the mark 27 s; it leaves by rising \"vertically several metres\", tilting, rising on, and goes \"at high speed\" north-east, \"rising in altitude according to its decrease in apparent diameter\". The arrival height (14 m, the big pine's), the speed of the departure and the tilt's side (towards the witness, so that he sees the underside) are ASSUMED; the departure's direction is the statement's \"vers le nord-est\" (the private group has it leave by the gap it came from). The positions come from figure 2 of the report, with its scale given by the 17.5 m between the pump house and the cabin and the 30 m from the cabin to the mark."
+        }
+      }
+    ]
+  }
+}

@@ -12,6 +12,13 @@
       "time": "1967-08-29 10:30",
       "title": "François Delpeuch",
       "url": "sighting.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1967-08-29 10:30",
+      "title": "Anne-Marie Delpeuch",
+      "url": "observer-cussac-anne-marie.json"
     }
   ]
 }

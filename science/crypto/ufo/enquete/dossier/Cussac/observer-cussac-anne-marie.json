@@ -1,0 +1,1726 @@
+{
+ "version": 1,
+ "id": "1967-08-29-DelpeuchAnneMarie",
+ "time": {
+  "year": 1967,
+  "month": 8,
+  "day": 29,
+  "hour": 10,
+  "minute": 30,
+  "raw": "1967-08-29T10:30~"
+ },
+ "durationSeconds": 32,
+ "utcOffsetHours": 1,
+ "timeZone": "Europe/Paris",
+ "place": [
+  {
+   "value": {
+    "lat": 44.981239,
+    "lng": 2.917224
+   },
+   "basis": "derived",
+   "rationale": "Her brother's spot (the dossier's Plan.kml) moved 13 m west along the road: the GEPAN had her place her own point \"dans le champ à 13 m à l'ouest de celui déterminé par son frère, parallèlement à la route\" (annex A8, p. A8.26), the point it then measured her angles from. The spot is the same as the other recording's, 13 m along."
+  }
+ ],
+ "observer": {
+  "id": "DelpeuchAnneMarie",
+  "title": "Anne-Marie Delpeuch"
+ },
+ "account": {
+  "observerAgeYears": 9,
+  "source": "on-site",
+  "followedUp": true
+ },
+ "description": {
+  "fr": "Vue d'Anne-Marie Delpeuch, 9 ans, la sœur de François, qui joue aux cartes avec lui derrière le muret, puis se lève et regarde à son tour. La GÉOMÉTRIE est celle de son propre relevé au théodolite par le GEPAN en avril 1978 (rapport CNES/CT/GEPAN 140, annexe A8), depuis le point qu'elle a elle-même placé à 13 m à l'ouest de celui de son frère, parallèlement à la route : la sphère à 71,5 m (82 m pour lui), de 3 m de diamètre (5 m pour lui), à peu de mètres du même endroit du pré (les trois positions sont « à quelques mètres près au même endroit », écrit le GEPAN), « argent bleuté », aussi lumineuse que le Soleil au sol. Ses propres chronométrages : décollage à 13, 15 et 17 s (15 s retenus), disparition à 25, 31 et 35 s (30,3 s retenus), sifflement de 12 à 18 s, spirale élargie environ trois fois, à 1 Hz, dans le même sens que celle de son frère. Les êtres sont les mêmes que dans l'autre compte rendu, de 1,20 m « d'après ses indications », « noir brillant ». Elle les regarde de plus loin que lui et debout dans le pré, derrière le muret. RECONSTITUÉ : la trajectoire de la montée est celle du compte rendu de François, déplacée sur sa sphère et recalée sur ses durées ; personne n'a relevé la sienne. Elle dira aussi, avant mesure, que la sphère était à 55 m et de 1,5 à 2 m de diamètre : l'enregistrement énonce les valeurs mesurées. Non représentés : les béquilles qu'elle seule voit à terre, le « nez pointu » du dernier être, l'odeur (elle n'en reconnaît aucune au test du GEPAN).",
+  "en": "Anne-Marie Delpeuch's view, aged nine, François's sister, who plays cards with him behind the wall, then stands up and looks in her turn. The GEOMETRY is that of her own theodolite survey by the GEPAN in April 1978 (report CNES/CT/GEPAN 140, annex A8), from the point she herself placed 13 m west of her brother's, along the road: the sphere 71.5 m off (82 m for him), 3 m across (5 m for him), within a few metres of the same place in the meadow (the three positions are \"à quelques mètres près au même endroit\", the GEPAN writes), \"bluish silver\", as bright as the Sun on the ground. Her own timings: lift-off at 13, 15 and 17 s (15 s kept), disappearance at 25, 31 and 35 s (30.3 s kept), whistling from 12 to 18 s, a spiral widening about three times, at 1 Hz, the same way round as her brother's. The beings are the same as in the other account, 1.20 m \"according to her indications\", \"bright black\". She sees them from further off than he does, standing in the meadow behind the wall. RECONSTRUCTED: the path of the climb is the one of François's account, moved onto her sphere and re-timed to her chronometry; nobody surveyed hers. She also said, before it was measured, that the sphere was 55 m off and 1.5 to 2 m across: the recording states the measured values. Not shown: the crutches only she saw on the ground, the last being's \"pointed nose\", the smell (she recognised none in the GEPAN's test).",
+  "es": "Vista de Anne-Marie Delpeuch, 9 años, hermana de François, que juega a las cartas con él tras el muro, luego se levanta y mira a su vez. La GEOMETRÍA es la de su propio levantamiento con teodolito por el GEPAN en abril de 1978 (informe CNES/CT/GEPAN 140, anexo A8), desde el punto que ella misma situó a 13 m al oeste del de su hermano: la esfera a 71,5 m (82 m para él), de 3 m de diámetro (5 m para él), « argénteo azulado ». Sus cronometrajes: despegue a 13, 15 y 17 s, desaparición a 25, 31 y 35 s, silbido de 12 a 18 s. Los seres son los mismos que en el otro relato. RECONSTRUIDO: la trayectoria del ascenso es la del relato de François, trasladada a su esfera y reajustada a sus tiempos.",
+  "it": "Veduta di Anne-Marie Delpeuch, 9 anni, sorella di François, che gioca a carte con lui dietro il muretto, poi si alza e guarda a sua volta. La GEOMETRIA è quella del suo rilievo al teodolite del GEPAN dell'aprile 1978 (rapporto CNES/CT/GEPAN 140, allegato A8), dal punto che lei stessa ha posto a 13 m a ovest di quello del fratello: la sfera a 71,5 m (82 m per lui), di 3 m di diametro (5 m per lui), « argento bluastro ». I suoi cronometraggi: decollo a 13, 15 e 17 s, scomparsa a 25, 31 e 35 s, fischio da 12 a 18 s. Gli esseri sono gli stessi dell'altro racconto. RICOSTRUITO: la traiettoria della salita è quella del racconto di François, spostata sulla sua sfera e riadattata ai suoi tempi."
+ },
+ "tags": [
+  "RR3",
+  "landing",
+  "trace",
+  "entities",
+  "daylight"
+ ],
+ "sources": [
+  {
+   "type": "article",
+   "title": "Des nains habillés de noir plongent dans... une machine éblouissante",
+   "url": "https://rr0.org/time/1/9/6/7/09/DesNainsHabillesDeNoirPlongentDansUneMachineEblouissante_LDLN/index.html",
+   "publication": {
+    "publisher": "Lumières dans la nuit n° 90",
+    "time": "1967-09"
+   },
+   "index": "p. 6"
+  },
+  {
+   "type": "article",
+   "title": "Rencontre \"diabolique\" sur le plateau de Cussac",
+   "authors": [
+    "Mesnard, J.",
+    "Pavy, Claude"
+   ],
+   "publication": {
+    "publisher": "Phénomènes Spatiaux n° 16",
+    "time": "1968-06"
+   },
+   "index": "pp. 27-31"
+  }
+ ],
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": []
+   },
+   {
+    "t": 32000,
+    "shapes": []
+   }
+  ]
+ },
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 44.981239,
+     "lng": 2.917224,
+     "elevationM": 1.2,
+     "headingDeg": 297,
+     "pitchDeg": 2,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 32000,
+    "pose": {
+     "lat": 44.981239,
+     "lng": 2.917224,
+     "elevationM": 1.2,
+     "headingDeg": 297,
+     "pitchDeg": 2,
+     "fovDeg": 60
+    }
+   }
+  ]
+ },
+ "decor": [
+  {
+   "id": "muret",
+   "kind": "mound",
+   "title": {
+    "fr": "Muret de pierres sèches, le long de la D57",
+    "en": "Dry-stone wall along the D57",
+    "es": "Muro de piedra seca a lo largo de la D57",
+    "it": "Muretto a secco lungo la D57"
+   },
+   "eastM": 11.6,
+   "northM": 7.3,
+   "headingDeg": 75,
+   "sizeM": {
+    "widthM": 0.6,
+    "lengthM": 80,
+    "heightM": 1
+   }
+  },
+  {
+   "id": "haie-1",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -61.3,
+   "northM": 45.9,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-2",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -59.5,
+   "northM": 39.2,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-3",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -57.7,
+   "northM": 32.4,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-4",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -55.9,
+   "northM": 25.6,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-5",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -54.1,
+   "northM": 18.9,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-6",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -52.3,
+   "northM": 12.1,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-7",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -50.4,
+   "northM": 5.4,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-8",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -48.6,
+   "northM": -1.4,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-9",
+   "kind": "tree",
+   "title": {
+    "fr": "Haie d'arbres",
+    "en": "Tree hedge",
+    "es": "Seto de árboles",
+    "it": "Siepe alberata"
+   },
+   "eastM": -46.8,
+   "northM": -8.2,
+   "sizeM": {
+    "widthM": 4,
+    "lengthM": 4,
+    "heightM": 2.4
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "francois",
+   "kind": "observer",
+   "title": {
+    "fr": "François Delpeuch (13 ans et demi), 13 m à l'est",
+    "en": "François Delpeuch (13½), 13 m to the east",
+    "es": "François Delpeuch (13 y medio), 13 m al este",
+    "it": "François Delpeuch (13 e mezzo), 13 m a est"
+   },
+   "eastM": 12.6,
+   "northM": 3.4,
+   "headingDeg": 288,
+   "sizeM": {
+    "heightM": 1.55
+   },
+   "model": {
+    "id": "ufoathome-cussac-francois"
+   }
+  },
+  {
+   "id": "tracteur",
+   "kind": "vehicle",
+   "title": {
+    "fr": "M. V. sur son tracteur, dos tourné",
+    "en": "Mr V. on his tractor, back turned",
+    "es": "El Sr. V. en su tractor, de espaldas",
+    "it": "Il signor V. sul suo trattore, di spalle"
+   },
+   "eastM": -134.8,
+   "northM": 106.6,
+   "headingDeg": 320,
+   "lit": false,
+   "sizeM": {
+    "widthM": 1.8,
+    "lengthM": 3.2,
+    "heightM": 2.2
+   }
+  }
+ ],
+ "instrument": "eye",
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "kind": "none",
+     "volume": 0,
+     "pitchHz": 0
+    }
+   },
+   {
+    "t": 15000,
+    "sound": {
+     "kind": "whistle",
+     "volume": 0.45,
+     "pitchHz": 2400
+    }
+   },
+   {
+    "t": 30300,
+    "sound": {
+     "kind": "whistle",
+     "volume": 0.55,
+     "pitchHz": 3200
+    }
+   },
+   {
+    "t": 30600,
+    "sound": {
+     "kind": "none",
+     "volume": 0,
+     "pitchHz": 0
+    }
+   }
+  ]
+ },
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [
+      {
+       "id": "record-low",
+       "type": "unknown",
+       "baseM": 888,
+       "thicknessM": 650,
+       "coverage": 0.04,
+       "sizeM": 1400,
+       "density": 1
+      },
+      {
+       "id": "record-mid",
+       "type": "unknown",
+       "baseM": 3500,
+       "thicknessM": 800,
+       "coverage": 0,
+       "sizeM": 2500,
+       "density": 1
+      },
+      {
+       "id": "record-high",
+       "type": "cirrus",
+       "baseM": 8000,
+       "thicknessM": 400,
+       "coverage": 0.505,
+       "sizeM": 2200,
+       "density": 0.35
+      }
+     ],
+     "cloudCover": 0.52,
+     "cloudDarkness": 0.1440366972477064,
+     "cloudBaseM": 8000,
+     "highCloudCover": 0.505,
+     "lowerCloudCover": 0.04,
+     "relativeHumidity": 0.63,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windDirectionDeg": 238,
+     "windSpeed": 1.71,
+     "storm": false
+    }
+   },
+   {
+    "t": 31000,
+    "weather": {
+     "cloudLayers": [
+      {
+       "id": "record-low",
+       "type": "unknown",
+       "baseM": 889,
+       "thicknessM": 650,
+       "coverage": 0.04056222222222222,
+       "sizeM": 1400,
+       "density": 1
+      },
+      {
+       "id": "record-mid",
+       "type": "unknown",
+       "baseM": 3500,
+       "thicknessM": 800,
+       "coverage": 0,
+       "sizeM": 2500,
+       "density": 1
+      },
+      {
+       "id": "record-high",
+       "type": "cirrus",
+       "baseM": 8000,
+       "thicknessM": 400,
+       "coverage": 0.5078813888888889,
+       "sizeM": 2200,
+       "density": 0.35
+      }
+     ],
+     "cloudCover": 0.5230922222222222,
+     "cloudDarkness": 0.14437527001915018,
+     "cloudBaseM": 8000,
+     "highCloudCover": 0.5078813888888889,
+     "lowerCloudCover": 0.04056222222222222,
+     "relativeHumidity": 0.63,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windDirectionDeg": 237.94377777777777,
+     "windSpeed": 1.7101405555555556,
+     "storm": false
+    }
+   }
+  ]
+ },
+ "weatherSource": {
+  "id": "era5",
+  "name": "ERA5 (Open-Meteo)",
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=44.98127&longitude=2.917384&start_date=1967-08-29&end_date=1967-08-29&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Une sphère de trois mètres posée dans le pré, et quatre êtres qui y plongent",
+   "en": "A three-metre sphere standing in the meadow, and four beings who dive into it",
+   "es": "Una esfera de tres metros posada en el prado, y cuatro seres que se zambullen en ella",
+   "it": "Una sfera di tre metri posata nel prato, e quattro esseri che vi si tuffano dentro"
+  },
+  "bodies": [
+   {
+    "id": "sphere",
+    "title": {
+     "fr": "La sphère",
+     "en": "The sphere",
+     "es": "La esfera",
+     "it": "La sfera"
+    },
+    "explains": [
+     "boule"
+    ],
+    "model": {
+     "id": "sphere"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "azimuthDeg": 297.3,
+       "altitudeDeg": -0.08,
+       "distanceM": 71.5,
+       "onGround": true,
+       "sizeM": {
+        "widthM": 3,
+        "lengthM": 3,
+        "heightM": 3
+       },
+       "appearance": {
+        "color": "#dce3ee",
+        "albedo": 0.85
+       }
+      },
+      {
+       "t": 15000,
+       "azimuthDeg": 297.3,
+       "altitudeDeg": -0.08,
+       "distanceM": 71.5,
+       "onGround": true,
+       "appearance": {
+        "color": "#dce3ee",
+        "albedo": 0.85,
+        "luminanceCdM2": 0
+       }
+      },
+      {
+       "t": 15695,
+       "azimuthDeg": 297.3,
+       "altitudeDeg": 1.93,
+       "distanceM": 71.5,
+       "appearance": {
+        "color": "#ffffff",
+        "albedo": 0.85,
+        "luminanceCdM2": 1000000
+       }
+      },
+      {
+       "t": 16391,
+       "azimuthDeg": 297.31,
+       "altitudeDeg": 3.92,
+       "distanceM": 71.6
+      },
+      {
+       "t": 17086,
+       "azimuthDeg": 297.3,
+       "altitudeDeg": 5.91,
+       "distanceM": 71.8
+      },
+      {
+       "t": 17782,
+       "azimuthDeg": 297.3,
+       "altitudeDeg": 7.88,
+       "distanceM": 72.2
+      },
+      {
+       "t": 18477,
+       "azimuthDeg": 297.3,
+       "altitudeDeg": 9.84,
+       "distanceM": 72.5
+      },
+      {
+       "t": 19173,
+       "azimuthDeg": 300.11,
+       "altitudeDeg": 9.39,
+       "distanceM": 79.1
+      },
+      {
+       "t": 19242,
+       "azimuthDeg": 299.5,
+       "altitudeDeg": 9.42,
+       "distanceM": 79.7
+      },
+      {
+       "t": 19312,
+       "azimuthDeg": 298.85,
+       "altitudeDeg": 9.48,
+       "distanceM": 80.0
+      },
+      {
+       "t": 19381,
+       "azimuthDeg": 298.16,
+       "altitudeDeg": 9.53,
+       "distanceM": 80.4
+      },
+      {
+       "t": 19451,
+       "azimuthDeg": 297.44,
+       "altitudeDeg": 9.6,
+       "distanceM": 80.6
+      },
+      {
+       "t": 19520,
+       "azimuthDeg": 296.68,
+       "altitudeDeg": 9.7,
+       "distanceM": 80.7
+      },
+      {
+       "t": 19590,
+       "azimuthDeg": 295.92,
+       "altitudeDeg": 9.79,
+       "distanceM": 80.7
+      },
+      {
+       "t": 19660,
+       "azimuthDeg": 295.15,
+       "altitudeDeg": 9.91,
+       "distanceM": 80.5
+      },
+      {
+       "t": 19729,
+       "azimuthDeg": 294.4,
+       "altitudeDeg": 10.05,
+       "distanceM": 80.2
+      },
+      {
+       "t": 19799,
+       "azimuthDeg": 293.63,
+       "altitudeDeg": 10.19,
+       "distanceM": 79.8
+      },
+      {
+       "t": 19868,
+       "azimuthDeg": 292.91,
+       "altitudeDeg": 10.37,
+       "distanceM": 79.2
+      },
+      {
+       "t": 19938,
+       "azimuthDeg": 292.23,
+       "altitudeDeg": 10.57,
+       "distanceM": 78.5
+      },
+      {
+       "t": 20007,
+       "azimuthDeg": 291.6,
+       "altitudeDeg": 10.78,
+       "distanceM": 77.7
+      },
+      {
+       "t": 20077,
+       "azimuthDeg": 291.03,
+       "altitudeDeg": 11.01,
+       "distanceM": 76.8
+      },
+      {
+       "t": 20146,
+       "azimuthDeg": 290.55,
+       "altitudeDeg": 11.27,
+       "distanceM": 75.8
+      },
+      {
+       "t": 20216,
+       "azimuthDeg": 290.17,
+       "altitudeDeg": 11.54,
+       "distanceM": 74.7
+      },
+      {
+       "t": 20285,
+       "azimuthDeg": 289.91,
+       "altitudeDeg": 11.84,
+       "distanceM": 73.5
+      },
+      {
+       "t": 20355,
+       "azimuthDeg": 289.77,
+       "altitudeDeg": 12.16,
+       "distanceM": 72.3
+      },
+      {
+       "t": 20425,
+       "azimuthDeg": 289.8,
+       "altitudeDeg": 12.49,
+       "distanceM": 71.0
+      },
+      {
+       "t": 20494,
+       "azimuthDeg": 289.97,
+       "altitudeDeg": 12.84,
+       "distanceM": 69.7
+      },
+      {
+       "t": 20564,
+       "azimuthDeg": 290.33,
+       "altitudeDeg": 13.19,
+       "distanceM": 68.5
+      },
+      {
+       "t": 20633,
+       "azimuthDeg": 290.88,
+       "altitudeDeg": 13.55,
+       "distanceM": 67.3
+      },
+      {
+       "t": 20703,
+       "azimuthDeg": 291.61,
+       "altitudeDeg": 13.9,
+       "distanceM": 66.2
+      },
+      {
+       "t": 20772,
+       "azimuthDeg": 292.53,
+       "altitudeDeg": 14.24,
+       "distanceM": 65.2
+      },
+      {
+       "t": 20842,
+       "azimuthDeg": 293.63,
+       "altitudeDeg": 14.55,
+       "distanceM": 64.4
+      },
+      {
+       "t": 20911,
+       "azimuthDeg": 294.87,
+       "altitudeDeg": 14.81,
+       "distanceM": 63.8
+      },
+      {
+       "t": 20981,
+       "azimuthDeg": 296.25,
+       "altitudeDeg": 15.04,
+       "distanceM": 63.4
+      },
+      {
+       "t": 21050,
+       "azimuthDeg": 297.69,
+       "altitudeDeg": 15.19,
+       "distanceM": 63.2
+      },
+      {
+       "t": 21120,
+       "azimuthDeg": 299.16,
+       "altitudeDeg": 15.28,
+       "distanceM": 63.4
+      },
+      {
+       "t": 21190,
+       "azimuthDeg": 300.61,
+       "altitudeDeg": 15.3,
+       "distanceM": 63.8
+      },
+      {
+       "t": 21259,
+       "azimuthDeg": 301.99,
+       "altitudeDeg": 15.27,
+       "distanceM": 64.5
+      },
+      {
+       "t": 21329,
+       "azimuthDeg": 303.25,
+       "altitudeDeg": 15.17,
+       "distanceM": 65.4
+      },
+      {
+       "t": 21398,
+       "azimuthDeg": 304.34,
+       "altitudeDeg": 15.02,
+       "distanceM": 66.5
+      },
+      {
+       "t": 21468,
+       "azimuthDeg": 305.22,
+       "altitudeDeg": 14.83,
+       "distanceM": 67.9
+      },
+      {
+       "t": 21537,
+       "azimuthDeg": 305.89,
+       "altitudeDeg": 14.61,
+       "distanceM": 69.5
+      },
+      {
+       "t": 21607,
+       "azimuthDeg": 306.32,
+       "altitudeDeg": 14.37,
+       "distanceM": 71.1
+      },
+      {
+       "t": 21676,
+       "azimuthDeg": 306.5,
+       "altitudeDeg": 14.13,
+       "distanceM": 72.9
+      },
+      {
+       "t": 21746,
+       "azimuthDeg": 306.46,
+       "altitudeDeg": 13.89,
+       "distanceM": 74.7
+      },
+      {
+       "t": 21815,
+       "azimuthDeg": 306.19,
+       "altitudeDeg": 13.66,
+       "distanceM": 76.5
+      },
+      {
+       "t": 21885,
+       "azimuthDeg": 305.72,
+       "altitudeDeg": 13.46,
+       "distanceM": 78.3
+      },
+      {
+       "t": 21955,
+       "azimuthDeg": 305.06,
+       "altitudeDeg": 13.27,
+       "distanceM": 79.9
+      },
+      {
+       "t": 22024,
+       "azimuthDeg": 304.21,
+       "altitudeDeg": 13.12,
+       "distanceM": 81.5
+      },
+      {
+       "t": 22094,
+       "azimuthDeg": 303.23,
+       "altitudeDeg": 12.99,
+       "distanceM": 82.8
+      },
+      {
+       "t": 22163,
+       "azimuthDeg": 302.11,
+       "altitudeDeg": 12.9,
+       "distanceM": 84.0
+      },
+      {
+       "t": 22233,
+       "azimuthDeg": 300.87,
+       "altitudeDeg": 12.85,
+       "distanceM": 85.0
+      },
+      {
+       "t": 22302,
+       "azimuthDeg": 299.55,
+       "altitudeDeg": 12.83,
+       "distanceM": 85.7
+      },
+      {
+       "t": 22372,
+       "azimuthDeg": 298.17,
+       "altitudeDeg": 12.85,
+       "distanceM": 86.2
+      },
+      {
+       "t": 22441,
+       "azimuthDeg": 296.75,
+       "altitudeDeg": 12.92,
+       "distanceM": 86.3
+      },
+      {
+       "t": 22511,
+       "azimuthDeg": 295.3,
+       "altitudeDeg": 13.03,
+       "distanceM": 86.2
+      },
+      {
+       "t": 22580,
+       "azimuthDeg": 293.86,
+       "altitudeDeg": 13.19,
+       "distanceM": 85.7
+      },
+      {
+       "t": 22650,
+       "azimuthDeg": 292.44,
+       "altitudeDeg": 13.4,
+       "distanceM": 85.0
+      },
+      {
+       "t": 22720,
+       "azimuthDeg": 291.09,
+       "altitudeDeg": 13.67,
+       "distanceM": 84.0
+      },
+      {
+       "t": 22789,
+       "azimuthDeg": 289.84,
+       "altitudeDeg": 13.98,
+       "distanceM": 82.7
+      },
+      {
+       "t": 22859,
+       "azimuthDeg": 288.7,
+       "altitudeDeg": 14.35,
+       "distanceM": 81.2
+      },
+      {
+       "t": 22928,
+       "azimuthDeg": 287.73,
+       "altitudeDeg": 14.78,
+       "distanceM": 79.3
+      },
+      {
+       "t": 22998,
+       "azimuthDeg": 286.97,
+       "altitudeDeg": 15.29,
+       "distanceM": 77.3
+      },
+      {
+       "t": 23067,
+       "azimuthDeg": 286.44,
+       "altitudeDeg": 15.84,
+       "distanceM": 75.2
+      },
+      {
+       "t": 23137,
+       "azimuthDeg": 286.23,
+       "altitudeDeg": 16.46,
+       "distanceM": 72.9
+      },
+      {
+       "t": 23206,
+       "azimuthDeg": 286.36,
+       "altitudeDeg": 17.12,
+       "distanceM": 70.6
+      },
+      {
+       "t": 23276,
+       "azimuthDeg": 286.87,
+       "altitudeDeg": 17.82,
+       "distanceM": 68.4
+      },
+      {
+       "t": 23345,
+       "azimuthDeg": 287.81,
+       "altitudeDeg": 18.52,
+       "distanceM": 66.3,
+       "appearance": {
+        "color": "#ffffff",
+        "albedo": 0.85,
+        "luminanceCdM2": 100000000
+       }
+      },
+      {
+       "t": 23415,
+       "azimuthDeg": 289.2,
+       "altitudeDeg": 19.22,
+       "distanceM": 64.4
+      },
+      {
+       "t": 23485,
+       "azimuthDeg": 291.03,
+       "altitudeDeg": 19.84,
+       "distanceM": 62.8
+      },
+      {
+       "t": 23554,
+       "azimuthDeg": 293.24,
+       "altitudeDeg": 20.37,
+       "distanceM": 61.7
+      },
+      {
+       "t": 23624,
+       "azimuthDeg": 295.75,
+       "altitudeDeg": 20.73,
+       "distanceM": 61.1
+      },
+      {
+       "t": 23693,
+       "azimuthDeg": 298.41,
+       "altitudeDeg": 20.9,
+       "distanceM": 61.0
+      },
+      {
+       "t": 23763,
+       "azimuthDeg": 301.07,
+       "altitudeDeg": 20.88,
+       "distanceM": 61.4
+      },
+      {
+       "t": 23832,
+       "azimuthDeg": 303.55,
+       "altitudeDeg": 20.64,
+       "distanceM": 62.5
+      },
+      {
+       "t": 23902,
+       "azimuthDeg": 305.7,
+       "altitudeDeg": 20.24,
+       "distanceM": 64.1
+      },
+      {
+       "t": 23971,
+       "azimuthDeg": 307.45,
+       "altitudeDeg": 19.73,
+       "distanceM": 66.1
+      },
+      {
+       "t": 24041,
+       "azimuthDeg": 308.7,
+       "altitudeDeg": 19.14,
+       "distanceM": 68.4
+      },
+      {
+       "t": 24110,
+       "azimuthDeg": 309.44,
+       "altitudeDeg": 18.52,
+       "distanceM": 71.0
+      },
+      {
+       "t": 24180,
+       "azimuthDeg": 309.7,
+       "altitudeDeg": 17.91,
+       "distanceM": 73.8
+      },
+      {
+       "t": 24250,
+       "azimuthDeg": 309.52,
+       "altitudeDeg": 17.34,
+       "distanceM": 76.6
+      },
+      {
+       "t": 24319,
+       "azimuthDeg": 308.92,
+       "altitudeDeg": 16.82,
+       "distanceM": 79.4
+      },
+      {
+       "t": 24389,
+       "azimuthDeg": 307.98,
+       "altitudeDeg": 16.36,
+       "distanceM": 82.0
+      },
+      {
+       "t": 24458,
+       "azimuthDeg": 306.71,
+       "altitudeDeg": 15.98,
+       "distanceM": 84.5
+      },
+      {
+       "t": 24528,
+       "azimuthDeg": 305.21,
+       "altitudeDeg": 15.67,
+       "distanceM": 86.5
+      },
+      {
+       "t": 24597,
+       "azimuthDeg": 303.5,
+       "altitudeDeg": 15.44,
+       "distanceM": 88.3
+      },
+      {
+       "t": 24667,
+       "azimuthDeg": 301.63,
+       "altitudeDeg": 15.29,
+       "distanceM": 89.7
+      },
+      {
+       "t": 24736,
+       "azimuthDeg": 299.62,
+       "altitudeDeg": 15.22,
+       "distanceM": 90.6
+      },
+      {
+       "t": 24806,
+       "azimuthDeg": 297.54,
+       "altitudeDeg": 15.23,
+       "distanceM": 91.1
+      },
+      {
+       "t": 24875,
+       "azimuthDeg": 295.43,
+       "altitudeDeg": 15.33,
+       "distanceM": 91.0
+      },
+      {
+       "t": 24945,
+       "azimuthDeg": 293.33,
+       "altitudeDeg": 15.52,
+       "distanceM": 90.4
+      },
+      {
+       "t": 25015,
+       "azimuthDeg": 291.27,
+       "altitudeDeg": 15.8,
+       "distanceM": 89.4
+      },
+      {
+       "t": 25084,
+       "azimuthDeg": 289.31,
+       "altitudeDeg": 16.17,
+       "distanceM": 87.8
+      },
+      {
+       "t": 25154,
+       "azimuthDeg": 287.51,
+       "altitudeDeg": 16.66,
+       "distanceM": 85.8
+      },
+      {
+       "t": 25223,
+       "azimuthDeg": 285.92,
+       "altitudeDeg": 17.26,
+       "distanceM": 83.4
+      },
+      {
+       "t": 25293,
+       "azimuthDeg": 284.63,
+       "altitudeDeg": 17.98,
+       "distanceM": 80.6
+      },
+      {
+       "t": 25362,
+       "azimuthDeg": 283.71,
+       "altitudeDeg": 18.84,
+       "distanceM": 77.5
+      },
+      {
+       "t": 25432,
+       "azimuthDeg": 283.27,
+       "altitudeDeg": 19.8,
+       "distanceM": 74.2
+      },
+      {
+       "t": 25501,
+       "azimuthDeg": 283.39,
+       "altitudeDeg": 20.88,
+       "distanceM": 71.0
+      },
+      {
+       "t": 25571,
+       "azimuthDeg": 284.23,
+       "altitudeDeg": 22.04,
+       "distanceM": 67.8
+      },
+      {
+       "t": 25640,
+       "azimuthDeg": 285.83,
+       "altitudeDeg": 23.22,
+       "distanceM": 64.8
+      },
+      {
+       "t": 25710,
+       "azimuthDeg": 288.27,
+       "altitudeDeg": 24.33,
+       "distanceM": 62.4
+      },
+      {
+       "t": 25780,
+       "azimuthDeg": 291.45,
+       "altitudeDeg": 25.24,
+       "distanceM": 60.6
+      },
+      {
+       "t": 25849,
+       "azimuthDeg": 295.26,
+       "altitudeDeg": 25.84,
+       "distanceM": 59.6
+      },
+      {
+       "t": 25919,
+       "azimuthDeg": 299.31,
+       "altitudeDeg": 26.0,
+       "distanceM": 59.6
+      },
+      {
+       "t": 25988,
+       "azimuthDeg": 303.27,
+       "altitudeDeg": 25.71,
+       "distanceM": 60.4
+      },
+      {
+       "t": 26058,
+       "azimuthDeg": 306.74,
+       "altitudeDeg": 25.05,
+       "distanceM": 62.2
+      },
+      {
+       "t": 26127,
+       "azimuthDeg": 309.44,
+       "altitudeDeg": 24.11,
+       "distanceM": 64.9
+      },
+      {
+       "t": 26197,
+       "azimuthDeg": 311.31,
+       "altitudeDeg": 23.04,
+       "distanceM": 68.1
+      },
+      {
+       "t": 26266,
+       "azimuthDeg": 312.28,
+       "altitudeDeg": 21.93,
+       "distanceM": 71.7
+      },
+      {
+       "t": 26336,
+       "azimuthDeg": 312.47,
+       "altitudeDeg": 20.88,
+       "distanceM": 75.5
+      },
+      {
+       "t": 26405,
+       "azimuthDeg": 311.96,
+       "altitudeDeg": 19.94,
+       "distanceM": 79.3
+      },
+      {
+       "t": 26475,
+       "azimuthDeg": 310.86,
+       "altitudeDeg": 19.12,
+       "distanceM": 83.0
+      },
+      {
+       "t": 26545,
+       "azimuthDeg": 309.28,
+       "altitudeDeg": 18.44,
+       "distanceM": 86.3
+      },
+      {
+       "t": 26614,
+       "azimuthDeg": 307.32,
+       "altitudeDeg": 17.9,
+       "distanceM": 89.3
+      },
+      {
+       "t": 26684,
+       "azimuthDeg": 305.06,
+       "altitudeDeg": 17.5,
+       "distanceM": 91.8
+      },
+      {
+       "t": 26753,
+       "azimuthDeg": 302.57,
+       "altitudeDeg": 17.22,
+       "distanceM": 93.7
+      },
+      {
+       "t": 26823,
+       "azimuthDeg": 299.94,
+       "altitudeDeg": 17.08,
+       "distanceM": 94.9
+      },
+      {
+       "t": 26892,
+       "azimuthDeg": 297.2,
+       "altitudeDeg": 17.08,
+       "distanceM": 95.3
+      },
+      {
+       "t": 26962,
+       "azimuthDeg": 294.43,
+       "altitudeDeg": 17.22,
+       "distanceM": 95.1
+      },
+      {
+       "t": 27031,
+       "azimuthDeg": 291.7,
+       "altitudeDeg": 17.49,
+       "distanceM": 94.1
+      },
+      {
+       "t": 27101,
+       "azimuthDeg": 289.05,
+       "altitudeDeg": 17.91,
+       "distanceM": 92.4
+      },
+      {
+       "t": 27170,
+       "azimuthDeg": 286.58,
+       "altitudeDeg": 18.5,
+       "distanceM": 90.0
+      },
+      {
+       "t": 27240,
+       "azimuthDeg": 284.39,
+       "altitudeDeg": 19.28,
+       "distanceM": 86.9
+      },
+      {
+       "t": 27310,
+       "azimuthDeg": 282.58,
+       "altitudeDeg": 20.24,
+       "distanceM": 83.3
+      },
+      {
+       "t": 27379,
+       "azimuthDeg": 281.27,
+       "altitudeDeg": 21.41,
+       "distanceM": 79.3
+      },
+      {
+       "t": 27449,
+       "azimuthDeg": 280.64,
+       "altitudeDeg": 22.8,
+       "distanceM": 75.1
+      },
+      {
+       "t": 27518,
+       "azimuthDeg": 280.88,
+       "altitudeDeg": 24.38,
+       "distanceM": 70.8
+      },
+      {
+       "t": 27588,
+       "azimuthDeg": 282.2,
+       "altitudeDeg": 26.11,
+       "distanceM": 66.8
+      },
+      {
+       "t": 27657,
+       "azimuthDeg": 284.8,
+       "altitudeDeg": 27.86,
+       "distanceM": 63.1
+      },
+      {
+       "t": 27727,
+       "azimuthDeg": 288.7,
+       "altitudeDeg": 29.36,
+       "distanceM": 60.5
+      },
+      {
+       "t": 27796,
+       "azimuthDeg": 293.76,
+       "altitudeDeg": 30.4,
+       "distanceM": 58.8
+      },
+      {
+       "t": 27866,
+       "azimuthDeg": 299.35,
+       "altitudeDeg": 30.66,
+       "distanceM": 58.7
+      },
+      {
+       "t": 27935,
+       "azimuthDeg": 304.78,
+       "altitudeDeg": 30.13,
+       "distanceM": 59.9
+      },
+      {
+       "t": 28005,
+       "azimuthDeg": 309.31,
+       "altitudeDeg": 28.95,
+       "distanceM": 62.4
+      },
+      {
+       "t": 28075,
+       "azimuthDeg": 312.54,
+       "altitudeDeg": 27.38,
+       "distanceM": 66.0
+      },
+      {
+       "t": 28144,
+       "azimuthDeg": 314.39,
+       "altitudeDeg": 25.69,
+       "distanceM": 70.3
+      },
+      {
+       "t": 28214,
+       "azimuthDeg": 314.99,
+       "altitudeDeg": 24.08,
+       "distanceM": 75.0
+      },
+      {
+       "t": 28283,
+       "azimuthDeg": 314.52,
+       "altitudeDeg": 22.65,
+       "distanceM": 79.8
+      },
+      {
+       "t": 28353,
+       "azimuthDeg": 313.2,
+       "altitudeDeg": 21.43,
+       "distanceM": 84.5
+      },
+      {
+       "t": 28422,
+       "azimuthDeg": 311.22,
+       "altitudeDeg": 20.44,
+       "distanceM": 88.8
+      },
+      {
+       "t": 28492,
+       "azimuthDeg": 308.76,
+       "altitudeDeg": 19.67,
+       "distanceM": 92.4
+      },
+      {
+       "t": 28561,
+       "azimuthDeg": 305.9,
+       "altitudeDeg": 19.11,
+       "distanceM": 95.5
+      },
+      {
+       "t": 28631,
+       "azimuthDeg": 302.77,
+       "altitudeDeg": 18.76,
+       "distanceM": 97.6
+      },
+      {
+       "t": 28700,
+       "azimuthDeg": 299.47,
+       "altitudeDeg": 18.6,
+       "distanceM": 99.0
+      },
+      {
+       "t": 28770,
+       "azimuthDeg": 296.09,
+       "altitudeDeg": 18.62,
+       "distanceM": 99.2
+      },
+      {
+       "t": 28840,
+       "azimuthDeg": 292.69,
+       "altitudeDeg": 18.84,
+       "distanceM": 98.5
+      },
+      {
+       "t": 28909,
+       "azimuthDeg": 289.38,
+       "altitudeDeg": 19.27,
+       "distanceM": 96.9
+      },
+      {
+       "t": 28979,
+       "azimuthDeg": 286.24,
+       "altitudeDeg": 19.92,
+       "distanceM": 94.1
+      },
+      {
+       "t": 29048,
+       "azimuthDeg": 283.38,
+       "altitudeDeg": 20.83,
+       "distanceM": 90.6
+      },
+      {
+       "t": 29118,
+       "azimuthDeg": 280.98,
+       "altitudeDeg": 22.0,
+       "distanceM": 86.3
+      },
+      {
+       "t": 29187,
+       "azimuthDeg": 279.19,
+       "altitudeDeg": 23.49,
+       "distanceM": 81.6
+      },
+      {
+       "t": 29257,
+       "azimuthDeg": 278.27,
+       "altitudeDeg": 25.31,
+       "distanceM": 76.4
+      },
+      {
+       "t": 29326,
+       "azimuthDeg": 278.54,
+       "altitudeDeg": 27.46,
+       "distanceM": 71.0
+      },
+      {
+       "t": 29396,
+       "azimuthDeg": 280.34,
+       "altitudeDeg": 29.83,
+       "distanceM": 66.1
+      },
+      {
+       "t": 29465,
+       "azimuthDeg": 284.05,
+       "altitudeDeg": 32.18,
+       "distanceM": 62.0
+      },
+      {
+       "t": 29535,
+       "azimuthDeg": 289.69,
+       "altitudeDeg": 34.09,
+       "distanceM": 59.2
+      },
+      {
+       "t": 29605,
+       "azimuthDeg": 296.77,
+       "altitudeDeg": 34.99,
+       "distanceM": 58.1
+      },
+      {
+       "t": 29674,
+       "azimuthDeg": 304.07,
+       "altitudeDeg": 34.58,
+       "distanceM": 58.9
+      },
+      {
+       "t": 29744,
+       "azimuthDeg": 310.23,
+       "altitudeDeg": 33.04,
+       "distanceM": 61.6
+      },
+      {
+       "t": 29813,
+       "azimuthDeg": 314.49,
+       "altitudeDeg": 30.85,
+       "distanceM": 65.8
+      },
+      {
+       "t": 29883,
+       "azimuthDeg": 316.75,
+       "altitudeDeg": 28.5,
+       "distanceM": 70.9
+      },
+      {
+       "t": 29952,
+       "azimuthDeg": 317.26,
+       "altitudeDeg": 26.33,
+       "distanceM": 76.7
+      },
+      {
+       "t": 30022,
+       "azimuthDeg": 316.4,
+       "altitudeDeg": 24.46,
+       "distanceM": 82.4
+      },
+      {
+       "t": 30091,
+       "azimuthDeg": 314.52,
+       "altitudeDeg": 22.93,
+       "distanceM": 87.9
+      },
+      {
+       "t": 30161,
+       "azimuthDeg": 311.87,
+       "altitudeDeg": 21.74,
+       "distanceM": 92.8
+      },
+      {
+       "t": 30230,
+       "azimuthDeg": 308.68,
+       "altitudeDeg": 20.87,
+       "distanceM": 96.9
+      },
+      {
+       "t": 30300,
+       "azimuthDeg": 305.09,
+       "altitudeDeg": 20.27,
+       "distanceM": 100.1,
+       "appearance": {
+        "color": "#ffffff",
+        "albedo": 0.85,
+        "luminanceCdM2": 1600000000
+       }
+      },
+      {
+       "t": 30717,
+       "present": false
+      }
+     ],
+     "basis": "derived",
+     "rationale": "The ground position is the one of her own survey (annex A8: 71.5 m, Ø 3 m, her instrument's azimuth reduced to the true one, 297.3°), 4.5 m from where her brother's puts it, as the GEPAN says (\"à quelques mètres près au même endroit\"). The climb is the path of the other account, moved onto this ground position and re-timed to her chronometry (lift-off 15 s, gone 30.3 s: the means of her three tries). Its shape, its widening (about three times her sphere's diameter, \"sens : même sens de rotation que son frère\") and its rate (1 Hz) are hers; the exact path is ASSUMED."
+    }
+   },
+   {
+    "id": "etre-1",
+    "model": {
+     "id": "figure"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": -60.6,
+      "northM": 23.8,
+      "onGround": true,
+      "sizeM": {
+       "widthM": 0.45,
+       "lengthM": 0.3,
+       "heightM": 1.2
+      },
+      "attitude": {
+       "headingDeg": 315.9
+      },
+      "appearance": {
+       "color": "#101114",
+       "albedo": 0.05
+      }
+     },
+     {
+      "t": 3000,
+      "eastM": -60.6,
+      "northM": 23.8,
+      "onGround": true
+     },
+     {
+      "t": 5000,
+      "eastM": -63.54,
+      "northM": 32.79,
+      "altitudeAboveGroundM": 0
+     },
+     {
+      "t": 5200,
+      "present": false
+     }
+    ]
+   },
+   {
+    "id": "etre-2",
+    "model": {
+     "id": "figure"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": -58.7,
+      "northM": 29.6,
+      "onGround": true,
+      "sizeM": {
+       "widthM": 0.45,
+       "lengthM": 0.3,
+       "heightM": 1.2
+      },
+      "attitude": {
+       "headingDeg": 262.7
+      },
+      "appearance": {
+       "color": "#101114",
+       "albedo": 0.05
+      }
+     },
+     {
+      "t": 6000,
+      "eastM": -58.7,
+      "northM": 29.6,
+      "onGround": true
+     },
+     {
+      "t": 8000,
+      "eastM": -63.54,
+      "northM": 32.79,
+      "altitudeAboveGroundM": 0
+     },
+     {
+      "t": 8200,
+      "present": false
+     }
+    ]
+   },
+   {
+    "id": "etre-3",
+    "model": {
+     "id": "figure"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": -65.1,
+      "northM": 17.7,
+      "onGround": true,
+      "sizeM": {
+       "widthM": 0.45,
+       "lengthM": 0.3,
+       "heightM": 1.2
+      },
+      "attitude": {
+       "headingDeg": 358.5
+      },
+      "appearance": {
+       "color": "#101114",
+       "albedo": 0.05
+      }
+     },
+     {
+      "t": 9000,
+      "eastM": -65.1,
+      "northM": 17.7,
+      "onGround": true
+     },
+     {
+      "t": 11000,
+      "eastM": -63.54,
+      "northM": 32.79,
+      "altitudeAboveGroundM": 0
+     },
+     {
+      "t": 11200,
+      "present": false
+     }
+    ]
+   },
+   {
+    "id": "etre-4",
+    "model": {
+     "id": "figure"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": -54.8,
+      "northM": 34.0,
+      "onGround": true,
+      "sizeM": {
+       "widthM": 0.45,
+       "lengthM": 0.3,
+       "heightM": 1.2
+      },
+      "attitude": {
+       "headingDeg": 243.6
+      },
+      "appearance": {
+       "color": "#101114",
+       "albedo": 0.05
+      }
+     },
+     {
+      "t": 16391,
+      "eastM": -54.8,
+      "northM": 34.0,
+      "onGround": true
+     },
+     {
+      "t": 18477,
+      "eastM": -63.54,
+      "northM": 32.79,
+      "altitudeAboveGroundM": 11.9
+     },
+     {
+      "t": 18755,
+      "present": false
+     }
+    ]
+   }
+  ]
+ }
+}

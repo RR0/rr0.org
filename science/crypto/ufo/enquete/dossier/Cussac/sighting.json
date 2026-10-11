@@ -8992,9 +8992,9 @@
    "eastM": -73.9,
    "northM": 42.5,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9012,9 +9012,9 @@
    "eastM": -72.1,
    "northM": 35.8,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9032,9 +9032,9 @@
    "eastM": -70.3,
    "northM": 29,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9052,9 +9052,9 @@
    "eastM": -68.5,
    "northM": 22.2,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9072,9 +9072,9 @@
    "eastM": -66.7,
    "northM": 15.5,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9092,9 +9092,9 @@
    "eastM": -64.9,
    "northM": 8.7,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9112,9 +9112,9 @@
    "eastM": -63,
    "northM": 2,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9132,9 +9132,9 @@
    "eastM": -61.2,
    "northM": -4.8,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -9152,9 +9152,9 @@
    "eastM": -59.4,
    "northM": -11.6,
    "sizeM": {
-    "widthM": 4,
-    "lengthM": 4,
-    "heightM": 2.4
+    "widthM": 4.5,
+    "lengthM": 4.5,
+    "heightM": 8.5
    },
    "occludesSourceIds": [
     "boule"
@@ -10494,7 +10494,7 @@
    {
     "id": "etre-1",
     "model": {
-     "id": "figure"
+     "id": "ufoathome-cussac-being"
     },
     "track": [
      {
@@ -10536,7 +10536,7 @@
    {
     "id": "etre-2",
     "model": {
-     "id": "figure"
+     "id": "ufoathome-cussac-being"
     },
     "track": [
      {
@@ -10578,7 +10578,7 @@
    {
     "id": "etre-3",
     "model": {
-     "id": "figure"
+     "id": "ufoathome-cussac-being"
     },
     "track": [
      {
@@ -10620,7 +10620,7 @@
    {
     "id": "etre-4",
     "model": {
-     "id": "figure"
+     "id": "ufoathome-cussac-being"
     },
     "track": [
      {

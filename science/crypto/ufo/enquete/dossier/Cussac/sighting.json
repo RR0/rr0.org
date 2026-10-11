@@ -8984,17 +8984,43 @@
    "id": "haie-1",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -73.9,
-   "northM": 42.5,
+   "eastM": -62.7,
+   "northM": 0.5,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 6.1,
+    "lengthM": 6.1,
+    "heightM": 13.0
+   },
+   "model": {
+    "id": "jagobo-tree-maple-a"
+   },
+   "occludesSourceIds": [
+    "boule"
+   ]
+  },
+  {
+   "id": "haie-1b",
+   "kind": "tree",
+   "title": {
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
+   },
+   "eastM": -65.2,
+   "northM": 0.5,
+   "sizeM": {
+    "widthM": 5.5,
+    "lengthM": 5.5,
+    "heightM": 11.7
+   },
+   "model": {
+    "id": "jungle-jim-tree-large-b"
    },
    "occludesSourceIds": [
     "boule"
@@ -9004,17 +9030,20 @@
    "id": "haie-2",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -72.1,
-   "northM": 35.8,
+   "eastM": -64.2,
+   "northM": 6.3,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 5.3,
+    "lengthM": 5.3,
+    "heightM": 20.9
+   },
+   "model": {
+    "id": "jagobo-tree-aspen-a"
    },
    "occludesSourceIds": [
     "boule"
@@ -9024,17 +9053,20 @@
    "id": "haie-3",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -70.3,
-   "northM": 29,
+   "eastM": -65.6,
+   "northM": 11.5,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 6.0,
+    "lengthM": 6.0,
+    "heightM": 6.0
+   },
+   "model": {
+    "id": "jungle-jim-tree-medium-c"
    },
    "occludesSourceIds": [
     "boule"
@@ -9044,17 +9076,20 @@
    "id": "haie-4",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -68.5,
-   "northM": 22.2,
+   "eastM": -68.4,
+   "northM": 22.0,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 3.2,
+    "lengthM": 3.2,
+    "heightM": 5.9
+   },
+   "model": {
+    "id": "jungle-jim-tree-medium-b"
    },
    "occludesSourceIds": [
     "boule"
@@ -9064,17 +9099,20 @@
    "id": "haie-5",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -66.7,
-   "northM": 15.5,
+   "eastM": -71.3,
+   "northM": 32.7,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 6.5,
+    "lengthM": 6.5,
+    "heightM": 10.2
+   },
+   "model": {
+    "id": "jungle-jim-tree-medium-a"
    },
    "occludesSourceIds": [
     "boule"
@@ -9084,17 +9122,20 @@
    "id": "haie-6",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -64.9,
-   "northM": 8.7,
+   "eastM": -73.5,
+   "northM": 41.1,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 6.3,
+    "lengthM": 6.3,
+    "heightM": 11.0
+   },
+   "model": {
+    "id": "jungle-jim-tree-large-b"
    },
    "occludesSourceIds": [
     "boule"
@@ -9104,57 +9145,20 @@
    "id": "haie-7",
    "kind": "tree",
    "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
+    "fr": "Arbre de la haie",
+    "en": "Hedge tree",
+    "es": "Árbol del seto",
+    "it": "Albero della siepe"
    },
-   "eastM": -63,
-   "northM": 2,
+   "eastM": -76.5,
+   "northM": 52.1,
    "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+    "widthM": 4.4,
+    "lengthM": 4.4,
+    "heightM": 10.7
    },
-   "occludesSourceIds": [
-    "boule"
-   ]
-  },
-  {
-   "id": "haie-8",
-   "kind": "tree",
-   "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
-   },
-   "eastM": -61.2,
-   "northM": -4.8,
-   "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
-   },
-   "occludesSourceIds": [
-    "boule"
-   ]
-  },
-  {
-   "id": "haie-9",
-   "kind": "tree",
-   "title": {
-    "fr": "Haie d'arbres",
-    "en": "Tree hedge",
-    "es": "Seto de árboles",
-    "it": "Siepe alberata"
-   },
-   "eastM": -59.4,
-   "northM": -11.6,
-   "sizeM": {
-    "widthM": 4.5,
-    "lengthM": 4.5,
-    "heightM": 8.5
+   "model": {
+    "id": "jungle-jim-tree-medium-a"
    },
    "occludesSourceIds": [
     "boule"

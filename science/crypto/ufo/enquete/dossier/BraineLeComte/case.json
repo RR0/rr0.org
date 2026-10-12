@@ -10,6 +10,7 @@
   {
    "type": "event",
    "eventType": "sighting",
+   "id": "akh",
    "time": "2015-07-12 00:45",
    "title": "AKH",
    "url": "observer-braine-le-comte-akh.json"
@@ -17,6 +18,7 @@
   {
    "type": "event",
    "eventType": "sighting",
+   "id": "bjn",
    "time": "2015-07-12 00:45",
    "title": "BJN",
    "url": "observer-braine-le-comte-bjn.json"
@@ -24,6 +26,7 @@
   {
    "type": "event",
    "eventType": "sighting",
+   "id": "fwy",
    "time": "2015-07-12 00:45",
    "title": "FWY",
    "url": "observer-braine-le-comte-fwy.json"
@@ -31,7 +34,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-07-12-BraineLeComte-AKH",
+   "interpretationOf": "akh",
    "title": {
     "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
     "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
@@ -43,7 +46,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-07-12-BraineLeComte-AKH",
+   "interpretationOf": "akh",
    "title": {
     "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
     "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",
@@ -55,7 +58,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-07-12-BraineLeComte-BJN",
+   "interpretationOf": "bjn",
    "title": {
     "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
     "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
@@ -67,7 +70,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-07-12-BraineLeComte-BJN",
+   "interpretationOf": "bjn",
    "title": {
     "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
     "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",
@@ -79,7 +82,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-07-12-BraineLeComte-FWY",
+   "interpretationOf": "fwy",
    "title": {
     "fr": "Un vol rectiligne et horizontal à 100 m, dans le plan ajusté sur les trois jeux de mesures (cap 8°)",
     "en": "One straight, level flight 100 m up, in the plane fitted to the three sets of measurements (heading 8°)",
@@ -91,7 +94,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-07-12-BraineLeComte-FWY",
+   "interpretationOf": "fwy",
    "title": {
     "fr": "Un vol de 7 oiseaux en V à 40 m, éclairés par en dessous (hypothèse que le rapport n'examine pas)",
     "en": "A flock of 7 birds in a V, 40 m up, lit from below (a hypothesis the report does not examine)",

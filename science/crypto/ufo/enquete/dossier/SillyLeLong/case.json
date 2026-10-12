@@ -10,6 +10,7 @@
   {
    "type": "event",
    "eventType": "sighting",
+   "id": "t1",
    "time": "2015-05-31 00:50",
    "title": "T1",
    "url": "observer-silly-le-long.json"
@@ -17,7 +18,7 @@
   {
    "type": "event",
    "eventType": "sighting",
-   "interpretationOf": "2015-05-31-SillyLeLong-T1",
+   "interpretationOf": "t1",
    "time": "2017-02-08",
    "by": [
     {

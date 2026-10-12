@@ -11,6 +11,7 @@
   {
    "type": "event",
    "eventType": "sighting",
+   "id": "trent",
    "time": "1950-05-11 19:45",
    "title": "Paul Trent",
    "url": "observer-mcminnville.json"
@@ -18,6 +19,7 @@
   {
    "type": "event",
    "eventType": "sighting",
+   "id": "trent-closeup",
    "time": "1950-05-11 19:45",
    "title": "Paul Trent, gros plan",
    "url": "observer-mcminnville-closeup.json"
@@ -26,8 +28,8 @@
    "type": "event",
    "eventType": "sighting",
    "interpretationOf": [
-    "1950-05-11-TrentPaul",
-    "1950-05-11-TrentPaul-closeup"
+    "trent",
+    "trent-closeup"
    ],
    "time": "2013-04",
    "by": [
@@ -53,8 +55,8 @@
    "type": "event",
    "eventType": "sighting",
    "interpretationOf": [
-    "1950-05-11-TrentPaul",
-    "1950-05-11-TrentPaul-closeup"
+    "trent",
+    "trent-closeup"
    ],
    "time": "2013-06",
    "by": [
@@ -80,8 +82,8 @@
    "type": "event",
    "eventType": "sighting",
    "interpretationOf": [
-    "1950-05-11-TrentPaul",
-    "1950-05-11-TrentPaul-closeup"
+    "trent",
+    "trent-closeup"
    ],
    "title": {
     "fr": "Pour comparer : un enjoliveur de 30 cm à 10,5 m, même largeur angulaire et même aspect",
@@ -95,8 +97,8 @@
    "type": "event",
    "eventType": "sighting",
    "interpretationOf": [
-    "1950-05-11-TrentPaul",
-    "1950-05-11-TrentPaul-closeup"
+    "trent",
+    "trent-closeup"
    ],
    "title": {
     "fr": "Pour comparer : un rétroviseur de voiture de 18 cm à 6,3 m, même largeur angulaire et même aspect",
@@ -110,8 +112,8 @@
    "type": "event",
    "eventType": "sighting",
    "interpretationOf": [
-    "1950-05-11-TrentPaul",
-    "1950-05-11-TrentPaul-closeup"
+    "trent",
+    "trent-closeup"
    ],
    "by": [
     {

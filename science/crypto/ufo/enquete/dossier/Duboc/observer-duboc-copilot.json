@@ -7838,7 +7838,8 @@
    ],
    "aircraftSound": "airliner-narrow",
    "occludesSourceIds": [
-    "disc"
+    "lens",
+    "chevron"
    ]
   },
   {
@@ -8119,7 +8120,8 @@
     }
    ],
    "occludesSourceIds": [
-    "disc"
+    "lens",
+    "chevron"
    ]
   }
  ],

@@ -1,0 +1,3266 @@
+{
+ "version": 1,
+ "id": "1994-01-28-DubocJeanCharles",
+ "tags": [
+  "aerial observation",
+  "airline pilot",
+  "radar"
+ ],
+ "time": {
+  "year": 1994,
+  "month": 1,
+  "day": 28,
+  "hour": 13,
+  "minute": 14,
+  "raw": "1994-01-28T13:14"
+ },
+ "utcOffsetHours": {
+  "value": 0,
+  "basis": "stated",
+  "rationale": "the report gives 13:14 GMT (Nice 12:06 GMT, London 14:01 GMT)"
+ },
+ "durationSeconds": {
+  "value": 120.0,
+  "basis": "stated",
+  "rationale": "\"1 ou 2 mn\" in the report he wrote for Weinstein; the SEPRA's calculations use two minutes (11 nautical miles at 330 kt)"
+ },
+ "place": [
+  {
+   "value": {
+    "lat": 48.845,
+    "lng": 3.015,
+    "name": "Near Coulommiers, Seine-et-Marne, France (airway between the VORs BRY and CLM)"
+   },
+   "basis": "stated",
+   "rationale": "\"48°50'7 N / 003°00'9 E\" in both reports, read as degrees and decimal minutes (48.845 N, 3.015 E): where the airliner was"
+  }
+ ],
+ "observer": {
+  "id": "DubocJeanCharles",
+  "title": "Jean-Charles Duboc"
+ },
+ "account": {
+  "observerOccupation": {
+   "fr": "commandant de bord, Air France",
+   "en": "captain, Air France"
+  },
+  "source": "interview",
+  "followedUp": true
+ },
+ "sources": [
+  {
+   "type": "article",
+   "title": "Rapport du pilote Duboc pour Dominique Weinstein, copie au SEPRA",
+   "authors": [
+    "Jean-Charles Duboc"
+   ],
+   "url": "https://rr0.org/science/crypto/ufo/enquete/dossier/Duboc/index.html",
+   "publication": {
+    "publisher": "Velasco 2004"
+   }
+  },
+  {
+   "type": "article",
+   "title": "VOL AF-3532 : Interview avec le commandant de bord Jean-Charles Duboc",
+   "authors": [
+    "Thierry Wathelet"
+   ],
+   "url": "https://www.finart.be/ufocomhq/interview_duboc.htm",
+   "publication": {
+    "publisher": "UFOCom",
+    "time": "1999-11-22"
+   }
+  }
+ ],
+ "description": {
+  "fr": "Vendredi 28 janvier 1994, vers 13 h 14 GMT. L'Airbus A320 d'Air France, vol AF 3532 de Nice à Londres, croise à 11 700 m (FL390) au cap 332 entre les balises BRY et CLM, près de Coulommiers, pilote automatique engagé. Excellente visibilité au-dessus d'une couche d'altocumulus à 10 000 m, -59 °C. Un steward, dans le poste, voit le premier un objet et s'exclame : « Un ballon-sonde ! » La copilote le prend d'abord pour cela aussi. Le commandant est le troisième et le dernier à le voir : il croit à un avion en virage à 45° d'inclinaison, avant qu'il n'ait les ailes à l'horizontale.\n\nIl est alors vers 10 h (à 30° devant la gauche de l'avion). Puis, comme l'avion poursuit sa route, l'objet reste en place et est dépassé : un disque d'un rouge brunâtre, aux bords légèrement flous, sans détails apparents, ni aile, ni gouverne, ni moteur, vu sous plusieurs angles pendant une à deux minutes, d'une taille que la copilote et lui estiment « immense » (200 à 300 m dans le rapport, 1000 m sur 100 d'épaisseur, de la largeur de son pouce à bout de bras, dans l'interview de 1999), à 25 miles nautiques (46 km), vers 10 500 m. Lorsqu'il le laisse sur l'arrière gauche, vers 8 h, il le voit soudain devenir transparent et disparaître, sans bouger.\n\nIci la taille est celle de l'interview de 1999 (1000 m à 46 km, 1,24°) ; le SEPRA la ramène à la moitié de la Lune (0,26°). Les relèvements, 10 h puis 8 h, pour les 11 miles nautiques parcourus, donnent un triangle équilatéral : l'objet immobile serait à 10 miles nautiques de la route, non 25. L'enregistrement garde les angles du pilote et emprunte cette distance seulement pour les situer.",
+  "en": "Friday 28 January 1994, about 13:14 GMT. The Air France Airbus A320, flight AF 3532 from Nice to London, cruises at 11,700 m (FL390) on heading 332 between the beacons BRY and CLM, near Coulommiers, autopilot engaged. Excellent visibility above an altocumulus layer at 10,000 m, -59 C. A steward in the cockpit is the first to see an object and exclaims: \"A weather balloon!\" The co-pilot first takes it for one too. The captain is the third and last to see it: he takes it for an aircraft in a 45-degree bank, before its wings level.\n\nIt is then at about 10 o'clock (30 degrees ahead of the left beam). As the airliner keeps its course the object stays where it is and is overtaken: a reddish-brown disc with slightly blurred edges, no visible detail, no wing, no control surface, no engine, seen from several angles for one to two minutes, of a size both he and the co-pilot call \"immense\" (200 to 300 m in the report, 1000 m by 100 thick, the width of his thumb at arm's length, in the 1999 interview), 25 nautical miles (46 km) away, at about 10,500 m. When he leaves it behind on the left, at about 8 o'clock, he sees it suddenly turn transparent and vanish, without moving.\n\nThe size here is the one from the 1999 interview (1000 m at 46 km, 1.24 degrees); the SEPRA brings it down to half the Moon (0.26). The bearings, 10 o'clock then 8, over the 11 nautical miles flown make an equilateral triangle: a motionless object would be 10 nautical miles off the track, not 25. The recording keeps the pilot's angles and borrows that distance only to place them."
+ },
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 48.759312,
+     "lng": 3.084231,
+     "elevationM": 11700.0,
+     "headingDeg": 272.0,
+     "pitchDeg": -3.18,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 2000,
+    "pose": {
+     "lat": 48.762168,
+     "lng": 3.081928,
+     "elevationM": 11700.0,
+     "headingDeg": 271.58,
+     "pitchDeg": -3.19,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 48.765025,
+     "lng": 3.079624,
+     "elevationM": 11700.0,
+     "headingDeg": 270.74,
+     "pitchDeg": -3.22,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 48.767881,
+     "lng": 3.07732,
+     "elevationM": 11700.0,
+     "headingDeg": 269.89,
+     "pitchDeg": -3.24,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 48.770737,
+     "lng": 3.075016,
+     "elevationM": 11700.0,
+     "headingDeg": 269.02,
+     "pitchDeg": -3.27,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 10000,
+    "pose": {
+     "lat": 48.773593,
+     "lng": 3.072713,
+     "elevationM": 11700.0,
+     "headingDeg": 268.14,
+     "pitchDeg": -3.29,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 12000,
+    "pose": {
+     "lat": 48.77645,
+     "lng": 3.070409,
+     "elevationM": 11700.0,
+     "headingDeg": 267.24,
+     "pitchDeg": -3.32,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 14000,
+    "pose": {
+     "lat": 48.779306,
+     "lng": 3.068105,
+     "elevationM": 11700.0,
+     "headingDeg": 266.34,
+     "pitchDeg": -3.34,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 16000,
+    "pose": {
+     "lat": 48.782162,
+     "lng": 3.065801,
+     "elevationM": 11700.0,
+     "headingDeg": 265.41,
+     "pitchDeg": -3.37,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 18000,
+    "pose": {
+     "lat": 48.785018,
+     "lng": 3.063497,
+     "elevationM": 11700.0,
+     "headingDeg": 264.48,
+     "pitchDeg": -3.39,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 20000,
+    "pose": {
+     "lat": 48.787875,
+     "lng": 3.061194,
+     "elevationM": 11700.0,
+     "headingDeg": 263.53,
+     "pitchDeg": -3.41,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 22000,
+    "pose": {
+     "lat": 48.790731,
+     "lng": 3.05889,
+     "elevationM": 11700.0,
+     "headingDeg": 262.57,
+     "pitchDeg": -3.44,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 24000,
+    "pose": {
+     "lat": 48.793587,
+     "lng": 3.056586,
+     "elevationM": 11700.0,
+     "headingDeg": 261.6,
+     "pitchDeg": -3.46,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 26000,
+    "pose": {
+     "lat": 48.796444,
+     "lng": 3.054282,
+     "elevationM": 11700.0,
+     "headingDeg": 260.61,
+     "pitchDeg": -3.48,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 28000,
+    "pose": {
+     "lat": 48.7993,
+     "lng": 3.051979,
+     "elevationM": 11700.0,
+     "headingDeg": 259.62,
+     "pitchDeg": -3.5,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 30000,
+    "pose": {
+     "lat": 48.802156,
+     "lng": 3.049675,
+     "elevationM": 11700.0,
+     "headingDeg": 258.61,
+     "pitchDeg": -3.52,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 32000,
+    "pose": {
+     "lat": 48.805012,
+     "lng": 3.047371,
+     "elevationM": 11700.0,
+     "headingDeg": 257.59,
+     "pitchDeg": -3.53,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 34000,
+    "pose": {
+     "lat": 48.807869,
+     "lng": 3.045067,
+     "elevationM": 11700.0,
+     "headingDeg": 256.56,
+     "pitchDeg": -3.55,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 36000,
+    "pose": {
+     "lat": 48.810725,
+     "lng": 3.042763,
+     "elevationM": 11700.0,
+     "headingDeg": 255.53,
+     "pitchDeg": -3.57,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 38000,
+    "pose": {
+     "lat": 48.813581,
+     "lng": 3.04046,
+     "elevationM": 11700.0,
+     "headingDeg": 254.48,
+     "pitchDeg": -3.58,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 40000,
+    "pose": {
+     "lat": 48.816437,
+     "lng": 3.038156,
+     "elevationM": 11700.0,
+     "headingDeg": 253.42,
+     "pitchDeg": -3.6,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 42000,
+    "pose": {
+     "lat": 48.819294,
+     "lng": 3.035852,
+     "elevationM": 11700.0,
+     "headingDeg": 252.36,
+     "pitchDeg": -3.61,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 44000,
+    "pose": {
+     "lat": 48.82215,
+     "lng": 3.033548,
+     "elevationM": 11700.0,
+     "headingDeg": 251.29,
+     "pitchDeg": -3.62,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 46000,
+    "pose": {
+     "lat": 48.825006,
+     "lng": 3.031245,
+     "elevationM": 11700.0,
+     "headingDeg": 250.21,
+     "pitchDeg": -3.63,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 48000,
+    "pose": {
+     "lat": 48.827862,
+     "lng": 3.028941,
+     "elevationM": 11700.0,
+     "headingDeg": 249.13,
+     "pitchDeg": -3.64,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 50000,
+    "pose": {
+     "lat": 48.830719,
+     "lng": 3.026637,
+     "elevationM": 11700.0,
+     "headingDeg": 248.04,
+     "pitchDeg": -3.65,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 52000,
+    "pose": {
+     "lat": 48.833575,
+     "lng": 3.024333,
+     "elevationM": 11700.0,
+     "headingDeg": 246.95,
+     "pitchDeg": -3.66,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 54000,
+    "pose": {
+     "lat": 48.836431,
+     "lng": 3.02203,
+     "elevationM": 11700.0,
+     "headingDeg": 245.85,
+     "pitchDeg": -3.66,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 56000,
+    "pose": {
+     "lat": 48.839287,
+     "lng": 3.019726,
+     "elevationM": 11700.0,
+     "headingDeg": 244.75,
+     "pitchDeg": -3.67,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 58000,
+    "pose": {
+     "lat": 48.842144,
+     "lng": 3.017422,
+     "elevationM": 11700.0,
+     "headingDeg": 243.65,
+     "pitchDeg": -3.67,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 60000,
+    "pose": {
+     "lat": 48.845,
+     "lng": 3.015118,
+     "elevationM": 11700.0,
+     "headingDeg": 242.55,
+     "pitchDeg": -3.67,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 62000,
+    "pose": {
+     "lat": 48.847856,
+     "lng": 3.012814,
+     "elevationM": 11700.0,
+     "headingDeg": 241.45,
+     "pitchDeg": -3.67,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 64000,
+    "pose": {
+     "lat": 48.850713,
+     "lng": 3.010511,
+     "elevationM": 11700.0,
+     "headingDeg": 240.35,
+     "pitchDeg": -3.67,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 66000,
+    "pose": {
+     "lat": 48.853569,
+     "lng": 3.008207,
+     "elevationM": 11700.0,
+     "headingDeg": 239.25,
+     "pitchDeg": -3.67,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 68000,
+    "pose": {
+     "lat": 48.856425,
+     "lng": 3.005903,
+     "elevationM": 11700.0,
+     "headingDeg": 238.15,
+     "pitchDeg": -3.66,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 70000,
+    "pose": {
+     "lat": 48.859281,
+     "lng": 3.003599,
+     "elevationM": 11700.0,
+     "headingDeg": 237.05,
+     "pitchDeg": -3.66,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 72000,
+    "pose": {
+     "lat": 48.862138,
+     "lng": 3.001296,
+     "elevationM": 11700.0,
+     "headingDeg": 235.96,
+     "pitchDeg": -3.65,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 74000,
+    "pose": {
+     "lat": 48.864994,
+     "lng": 2.998992,
+     "elevationM": 11700.0,
+     "headingDeg": 234.87,
+     "pitchDeg": -3.64,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 76000,
+    "pose": {
+     "lat": 48.86785,
+     "lng": 2.996688,
+     "elevationM": 11700.0,
+     "headingDeg": 233.79,
+     "pitchDeg": -3.63,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 78000,
+    "pose": {
+     "lat": 48.870706,
+     "lng": 2.994384,
+     "elevationM": 11700.0,
+     "headingDeg": 232.71,
+     "pitchDeg": -3.62,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 80000,
+    "pose": {
+     "lat": 48.873563,
+     "lng": 2.99208,
+     "elevationM": 11700.0,
+     "headingDeg": 231.64,
+     "pitchDeg": -3.61,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 82000,
+    "pose": {
+     "lat": 48.876419,
+     "lng": 2.989777,
+     "elevationM": 11700.0,
+     "headingDeg": 230.58,
+     "pitchDeg": -3.6,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 84000,
+    "pose": {
+     "lat": 48.879275,
+     "lng": 2.987473,
+     "elevationM": 11700.0,
+     "headingDeg": 229.52,
+     "pitchDeg": -3.58,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 86000,
+    "pose": {
+     "lat": 48.882131,
+     "lng": 2.985169,
+     "elevationM": 11700.0,
+     "headingDeg": 228.47,
+     "pitchDeg": -3.57,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 88000,
+    "pose": {
+     "lat": 48.884988,
+     "lng": 2.982865,
+     "elevationM": 11700.0,
+     "headingDeg": 227.44,
+     "pitchDeg": -3.55,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 90000,
+    "pose": {
+     "lat": 48.887844,
+     "lng": 2.980562,
+     "elevationM": 11700.0,
+     "headingDeg": 226.41,
+     "pitchDeg": -3.53,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 92000,
+    "pose": {
+     "lat": 48.8907,
+     "lng": 2.978258,
+     "elevationM": 11700.0,
+     "headingDeg": 225.39,
+     "pitchDeg": -3.52,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 94000,
+    "pose": {
+     "lat": 48.893556,
+     "lng": 2.975954,
+     "elevationM": 11700.0,
+     "headingDeg": 224.38,
+     "pitchDeg": -3.5,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 96000,
+    "pose": {
+     "lat": 48.896413,
+     "lng": 2.97365,
+     "elevationM": 11700.0,
+     "headingDeg": 223.39,
+     "pitchDeg": -3.48,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 98000,
+    "pose": {
+     "lat": 48.899269,
+     "lng": 2.971346,
+     "elevationM": 11700.0,
+     "headingDeg": 222.4,
+     "pitchDeg": -3.46,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 100000,
+    "pose": {
+     "lat": 48.902125,
+     "lng": 2.969043,
+     "elevationM": 11700.0,
+     "headingDeg": 221.43,
+     "pitchDeg": -3.44,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 102000,
+    "pose": {
+     "lat": 48.904982,
+     "lng": 2.966739,
+     "elevationM": 11700.0,
+     "headingDeg": 220.47,
+     "pitchDeg": -3.41,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 104000,
+    "pose": {
+     "lat": 48.907838,
+     "lng": 2.964435,
+     "elevationM": 11700.0,
+     "headingDeg": 219.52,
+     "pitchDeg": -3.39,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 106000,
+    "pose": {
+     "lat": 48.910694,
+     "lng": 2.962131,
+     "elevationM": 11700.0,
+     "headingDeg": 218.59,
+     "pitchDeg": -3.37,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 108000,
+    "pose": {
+     "lat": 48.91355,
+     "lng": 2.959828,
+     "elevationM": 11700.0,
+     "headingDeg": 217.66,
+     "pitchDeg": -3.34,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 110000,
+    "pose": {
+     "lat": 48.916407,
+     "lng": 2.957524,
+     "elevationM": 11700.0,
+     "headingDeg": 216.76,
+     "pitchDeg": -3.32,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 112000,
+    "pose": {
+     "lat": 48.919263,
+     "lng": 2.95522,
+     "elevationM": 11700.0,
+     "headingDeg": 215.86,
+     "pitchDeg": -3.29,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 114000,
+    "pose": {
+     "lat": 48.922119,
+     "lng": 2.952916,
+     "elevationM": 11700.0,
+     "headingDeg": 214.98,
+     "pitchDeg": -3.27,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 116000,
+    "pose": {
+     "lat": 48.924975,
+     "lng": 2.950613,
+     "elevationM": 11700.0,
+     "headingDeg": 214.11,
+     "pitchDeg": -3.24,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 118000,
+    "pose": {
+     "lat": 48.927832,
+     "lng": 2.948309,
+     "elevationM": 11700.0,
+     "headingDeg": 213.26,
+     "pitchDeg": -3.22,
+     "fovDeg": 60
+    }
+   },
+   {
+    "t": 120000,
+    "pose": {
+     "lat": 48.930688,
+     "lng": 2.946005,
+     "elevationM": 11700.0,
+     "headingDeg": 212.42,
+     "pitchDeg": -3.19,
+     "fovDeg": 60
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "order": [
+   "disc"
+  ],
+  "groups": [
+   [
+    "disc"
+   ]
+  ],
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "fr": "disque brun-rouge, bords légèrement flous",
+        "en": "red-brown disc, slightly blurred edges"
+       },
+       "color": "#4a1710",
+       "transparency": 0,
+       "brightness": 0,
+       "blur": 0.15,
+       "haloScale": 0,
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.198
+       },
+       "aim": {
+        "azimuthDeg": 272.0,
+        "altitudeDeg": -3.179
+       },
+       "angle": 0.0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.199
+       },
+       "aim": {
+        "azimuthDeg": 271.585,
+        "altitudeDeg": -3.192
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 2000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.202
+       },
+       "aim": {
+        "azimuthDeg": 271.166,
+        "altitudeDeg": -3.205
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.207
+       },
+       "aim": {
+        "azimuthDeg": 270.744,
+        "altitudeDeg": -3.218
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.213
+       },
+       "aim": {
+        "azimuthDeg": 270.318,
+        "altitudeDeg": -3.231
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.22
+       },
+       "aim": {
+        "azimuthDeg": 269.889,
+        "altitudeDeg": -3.244
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.229
+       },
+       "aim": {
+        "azimuthDeg": 269.457,
+        "altitudeDeg": -3.257
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.239
+       },
+       "aim": {
+        "azimuthDeg": 269.021,
+        "altitudeDeg": -3.27
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.25
+       },
+       "aim": {
+        "azimuthDeg": 268.582,
+        "altitudeDeg": -3.282
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 9000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.261
+       },
+       "aim": {
+        "azimuthDeg": 268.139,
+        "altitudeDeg": -3.295
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.273
+       },
+       "aim": {
+        "azimuthDeg": 267.693,
+        "altitudeDeg": -3.307
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.284
+       },
+       "aim": {
+        "azimuthDeg": 267.244,
+        "altitudeDeg": -3.32
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 12000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.296
+       },
+       "aim": {
+        "azimuthDeg": 266.791,
+        "altitudeDeg": -3.332
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 13000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.307
+       },
+       "aim": {
+        "azimuthDeg": 266.335,
+        "altitudeDeg": -3.344
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 14000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.317
+       },
+       "aim": {
+        "azimuthDeg": 265.876,
+        "altitudeDeg": -3.356
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 15000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.325
+       },
+       "aim": {
+        "azimuthDeg": 265.413,
+        "altitudeDeg": -3.368
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 16000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.333
+       },
+       "aim": {
+        "azimuthDeg": 264.947,
+        "altitudeDeg": -3.38
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 17000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.339
+       },
+       "aim": {
+        "azimuthDeg": 264.478,
+        "altitudeDeg": -3.391
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 18000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.344
+       },
+       "aim": {
+        "azimuthDeg": 264.006,
+        "altitudeDeg": -3.403
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 19000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.346
+       },
+       "aim": {
+        "azimuthDeg": 263.53,
+        "altitudeDeg": -3.414
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 20000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.347
+       },
+       "aim": {
+        "azimuthDeg": 263.052,
+        "altitudeDeg": -3.425
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 21000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.346
+       },
+       "aim": {
+        "azimuthDeg": 262.57,
+        "altitudeDeg": -3.436
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 22000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.344
+       },
+       "aim": {
+        "azimuthDeg": 262.085,
+        "altitudeDeg": -3.447
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 23000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.339
+       },
+       "aim": {
+        "azimuthDeg": 261.597,
+        "altitudeDeg": -3.457
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 24000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.333
+       },
+       "aim": {
+        "azimuthDeg": 261.107,
+        "altitudeDeg": -3.468
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 25000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.325
+       },
+       "aim": {
+        "azimuthDeg": 260.613,
+        "altitudeDeg": -3.478
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 26000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.317
+       },
+       "aim": {
+        "azimuthDeg": 260.116,
+        "altitudeDeg": -3.488
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 27000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.307
+       },
+       "aim": {
+        "azimuthDeg": 259.617,
+        "altitudeDeg": -3.498
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 28000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.296
+       },
+       "aim": {
+        "azimuthDeg": 259.115,
+        "altitudeDeg": -3.507
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 29000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.284
+       },
+       "aim": {
+        "azimuthDeg": 258.61,
+        "altitudeDeg": -3.517
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 30000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.273
+       },
+       "aim": {
+        "azimuthDeg": 258.102,
+        "altitudeDeg": -3.526
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 31000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.261
+       },
+       "aim": {
+        "azimuthDeg": 257.592,
+        "altitudeDeg": -3.535
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 32000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.25
+       },
+       "aim": {
+        "azimuthDeg": 257.079,
+        "altitudeDeg": -3.543
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 33000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.239
+       },
+       "aim": {
+        "azimuthDeg": 256.564,
+        "altitudeDeg": -3.552
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 34000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.229
+       },
+       "aim": {
+        "azimuthDeg": 256.046,
+        "altitudeDeg": -3.56
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 35000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.22
+       },
+       "aim": {
+        "azimuthDeg": 255.526,
+        "altitudeDeg": -3.568
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 36000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.213
+       },
+       "aim": {
+        "azimuthDeg": 255.004,
+        "altitudeDeg": -3.576
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 37000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.207
+       },
+       "aim": {
+        "azimuthDeg": 254.479,
+        "altitudeDeg": -3.583
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 38000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.202
+       },
+       "aim": {
+        "azimuthDeg": 253.953,
+        "altitudeDeg": -3.59
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 39000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.199
+       },
+       "aim": {
+        "azimuthDeg": 253.424,
+        "altitudeDeg": -3.597
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 40000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.198
+       },
+       "aim": {
+        "azimuthDeg": 252.893,
+        "altitudeDeg": -3.603
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 41000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.199
+       },
+       "aim": {
+        "azimuthDeg": 252.361,
+        "altitudeDeg": -3.61
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 42000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.202
+       },
+       "aim": {
+        "azimuthDeg": 251.826,
+        "altitudeDeg": -3.616
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 43000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.207
+       },
+       "aim": {
+        "azimuthDeg": 251.29,
+        "altitudeDeg": -3.621
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 44000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.213
+       },
+       "aim": {
+        "azimuthDeg": 250.753,
+        "altitudeDeg": -3.627
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 45000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.22
+       },
+       "aim": {
+        "azimuthDeg": 250.213,
+        "altitudeDeg": -3.632
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 46000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.229
+       },
+       "aim": {
+        "azimuthDeg": 249.672,
+        "altitudeDeg": -3.637
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 47000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.239
+       },
+       "aim": {
+        "azimuthDeg": 249.13,
+        "altitudeDeg": -3.641
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 48000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.25
+       },
+       "aim": {
+        "azimuthDeg": 248.587,
+        "altitudeDeg": -3.645
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 49000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.261
+       },
+       "aim": {
+        "azimuthDeg": 248.042,
+        "altitudeDeg": -3.649
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 50000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.273
+       },
+       "aim": {
+        "azimuthDeg": 247.496,
+        "altitudeDeg": -3.653
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 51000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.284
+       },
+       "aim": {
+        "azimuthDeg": 246.95,
+        "altitudeDeg": -3.656
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 52000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.296
+       },
+       "aim": {
+        "azimuthDeg": 246.402,
+        "altitudeDeg": -3.659
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 53000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.307
+       },
+       "aim": {
+        "azimuthDeg": 245.853,
+        "altitudeDeg": -3.661
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 54000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.317
+       },
+       "aim": {
+        "azimuthDeg": 245.304,
+        "altitudeDeg": -3.663
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 55000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.325
+       },
+       "aim": {
+        "azimuthDeg": 244.755,
+        "altitudeDeg": -3.665
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 56000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.333
+       },
+       "aim": {
+        "azimuthDeg": 244.204,
+        "altitudeDeg": -3.667
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 57000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.339
+       },
+       "aim": {
+        "azimuthDeg": 243.654,
+        "altitudeDeg": -3.668
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 58000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.344
+       },
+       "aim": {
+        "azimuthDeg": 243.103,
+        "altitudeDeg": -3.669
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 59000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.346
+       },
+       "aim": {
+        "azimuthDeg": 242.551,
+        "altitudeDeg": -3.669
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 60000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.347
+       },
+       "aim": {
+        "azimuthDeg": 242.0,
+        "altitudeDeg": -3.669
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 61000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.346
+       },
+       "aim": {
+        "azimuthDeg": 241.449,
+        "altitudeDeg": -3.669
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 62000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.344
+       },
+       "aim": {
+        "azimuthDeg": 240.897,
+        "altitudeDeg": -3.669
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 63000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.339
+       },
+       "aim": {
+        "azimuthDeg": 240.346,
+        "altitudeDeg": -3.668
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 64000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.333
+       },
+       "aim": {
+        "azimuthDeg": 239.796,
+        "altitudeDeg": -3.667
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 65000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.325
+       },
+       "aim": {
+        "azimuthDeg": 239.245,
+        "altitudeDeg": -3.665
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 66000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.317
+       },
+       "aim": {
+        "azimuthDeg": 238.696,
+        "altitudeDeg": -3.663
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 67000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.307
+       },
+       "aim": {
+        "azimuthDeg": 238.147,
+        "altitudeDeg": -3.661
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 68000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.296
+       },
+       "aim": {
+        "azimuthDeg": 237.598,
+        "altitudeDeg": -3.659
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 69000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.284
+       },
+       "aim": {
+        "azimuthDeg": 237.05,
+        "altitudeDeg": -3.656
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 70000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.273
+       },
+       "aim": {
+        "azimuthDeg": 236.504,
+        "altitudeDeg": -3.653
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 71000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.261
+       },
+       "aim": {
+        "azimuthDeg": 235.958,
+        "altitudeDeg": -3.649
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 72000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.25
+       },
+       "aim": {
+        "azimuthDeg": 235.413,
+        "altitudeDeg": -3.645
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 73000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.239
+       },
+       "aim": {
+        "azimuthDeg": 234.87,
+        "altitudeDeg": -3.641
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 74000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.229
+       },
+       "aim": {
+        "azimuthDeg": 234.328,
+        "altitudeDeg": -3.637
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 75000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.22
+       },
+       "aim": {
+        "azimuthDeg": 233.787,
+        "altitudeDeg": -3.632
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 76000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.213
+       },
+       "aim": {
+        "azimuthDeg": 233.247,
+        "altitudeDeg": -3.627
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 77000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.207
+       },
+       "aim": {
+        "azimuthDeg": 232.71,
+        "altitudeDeg": -3.621
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 78000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.202
+       },
+       "aim": {
+        "azimuthDeg": 232.174,
+        "altitudeDeg": -3.616
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 79000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.199
+       },
+       "aim": {
+        "azimuthDeg": 231.639,
+        "altitudeDeg": -3.61
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 80000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.198
+       },
+       "aim": {
+        "azimuthDeg": 231.107,
+        "altitudeDeg": -3.603
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 81000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.199
+       },
+       "aim": {
+        "azimuthDeg": 230.576,
+        "altitudeDeg": -3.597
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 82000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.202
+       },
+       "aim": {
+        "azimuthDeg": 230.047,
+        "altitudeDeg": -3.59
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 83000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.207
+       },
+       "aim": {
+        "azimuthDeg": 229.521,
+        "altitudeDeg": -3.583
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 84000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.213
+       },
+       "aim": {
+        "azimuthDeg": 228.996,
+        "altitudeDeg": -3.576
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 85000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.22
+       },
+       "aim": {
+        "azimuthDeg": 228.474,
+        "altitudeDeg": -3.568
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 86000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.229
+       },
+       "aim": {
+        "azimuthDeg": 227.954,
+        "altitudeDeg": -3.56
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 87000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.239
+       },
+       "aim": {
+        "azimuthDeg": 227.436,
+        "altitudeDeg": -3.552
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 88000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.25
+       },
+       "aim": {
+        "azimuthDeg": 226.921,
+        "altitudeDeg": -3.543
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 89000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.261
+       },
+       "aim": {
+        "azimuthDeg": 226.408,
+        "altitudeDeg": -3.535
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 90000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.273
+       },
+       "aim": {
+        "azimuthDeg": 225.898,
+        "altitudeDeg": -3.526
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 91000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.284
+       },
+       "aim": {
+        "azimuthDeg": 225.39,
+        "altitudeDeg": -3.517
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 92000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.296
+       },
+       "aim": {
+        "azimuthDeg": 224.885,
+        "altitudeDeg": -3.507
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 93000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.307
+       },
+       "aim": {
+        "azimuthDeg": 224.383,
+        "altitudeDeg": -3.498
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 94000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.317
+       },
+       "aim": {
+        "azimuthDeg": 223.884,
+        "altitudeDeg": -3.488
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 95000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.325
+       },
+       "aim": {
+        "azimuthDeg": 223.387,
+        "altitudeDeg": -3.478
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 96000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.333
+       },
+       "aim": {
+        "azimuthDeg": 222.893,
+        "altitudeDeg": -3.468
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 97000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.339
+       },
+       "aim": {
+        "azimuthDeg": 222.403,
+        "altitudeDeg": -3.457
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 98000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.344
+       },
+       "aim": {
+        "azimuthDeg": 221.915,
+        "altitudeDeg": -3.447
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 99000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.346
+       },
+       "aim": {
+        "azimuthDeg": 221.43,
+        "altitudeDeg": -3.436
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 100000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.347
+       },
+       "aim": {
+        "azimuthDeg": 220.948,
+        "altitudeDeg": -3.425
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 101000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.346
+       },
+       "aim": {
+        "azimuthDeg": 220.47,
+        "altitudeDeg": -3.414
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 102000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.344
+       },
+       "aim": {
+        "azimuthDeg": 219.994,
+        "altitudeDeg": -3.403
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 103000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.339
+       },
+       "aim": {
+        "azimuthDeg": 219.522,
+        "altitudeDeg": -3.391
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 104000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.333
+       },
+       "aim": {
+        "azimuthDeg": 219.053,
+        "altitudeDeg": -3.38
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 105000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.325
+       },
+       "aim": {
+        "azimuthDeg": 218.587,
+        "altitudeDeg": -3.368
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 106000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.317
+       },
+       "aim": {
+        "azimuthDeg": 218.124,
+        "altitudeDeg": -3.356
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 107000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.307
+       },
+       "aim": {
+        "azimuthDeg": 217.665,
+        "altitudeDeg": -3.344
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 108000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.296
+       },
+       "aim": {
+        "azimuthDeg": 217.209,
+        "altitudeDeg": -3.332
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 109000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.284
+       },
+       "aim": {
+        "azimuthDeg": 216.756,
+        "altitudeDeg": -3.32
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 110000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.273
+       },
+       "aim": {
+        "azimuthDeg": 216.307,
+        "altitudeDeg": -3.307
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 111000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.261
+       },
+       "aim": {
+        "azimuthDeg": 215.861,
+        "altitudeDeg": -3.295
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 112000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.25
+       },
+       "aim": {
+        "azimuthDeg": 215.418,
+        "altitudeDeg": -3.282
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 113000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.239
+       },
+       "aim": {
+        "azimuthDeg": 214.979,
+        "altitudeDeg": -3.27
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 114000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.229
+       },
+       "aim": {
+        "azimuthDeg": 214.543,
+        "altitudeDeg": -3.257
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 115000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.22
+       },
+       "aim": {
+        "azimuthDeg": 214.111,
+        "altitudeDeg": -3.244
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 116000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.213
+       },
+       "aim": {
+        "azimuthDeg": 213.682,
+        "altitudeDeg": -3.231
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 117000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.207
+       },
+       "aim": {
+        "azimuthDeg": 213.256,
+        "altitudeDeg": -3.218
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 118000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.202
+       },
+       "aim": {
+        "azimuthDeg": 212.834,
+        "altitudeDeg": -3.205
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 119000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.199
+       },
+       "aim": {
+        "azimuthDeg": 212.415,
+        "altitudeDeg": -3.192
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 120000,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.198
+       },
+       "aim": {
+        "azimuthDeg": 212.0,
+        "altitudeDeg": -3.179
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 121500,
+    "shapes": [
+     {
+      "sourceId": "disc",
+      "shape": {
+       "angular": {
+        "widthDeg": 1.24,
+        "heightDeg": 0.198
+       },
+       "aim": {
+        "azimuthDeg": 212.0,
+        "altitudeDeg": -3.179
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [
+      {
+       "id": "altocumulus",
+       "type": "unknown",
+       "baseM": 9800,
+       "thicknessM": 500,
+       "coverage": 0.85,
+       "sizeM": 3000,
+       "density": 1
+      }
+     ],
+     "cloudCover": 0.85,
+     "lowerCloudCover": 0.85,
+     "highCloudCover": 0,
+     "cloudDarkness": 0.1,
+     "relativeHumidity": 0.5,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "storm": false,
+     "windDirectionDeg": 131,
+     "windSpeed": 52.0
+    }
+   },
+   {
+    "t": 120000,
+    "weather": {
+     "cloudLayers": [
+      {
+       "id": "altocumulus",
+       "type": "unknown",
+       "baseM": 9800,
+       "thicknessM": 500,
+       "coverage": 0.85,
+       "sizeM": 3000,
+       "density": 1
+      }
+     ],
+     "cloudCover": 0.85,
+     "lowerCloudCover": 0.85,
+     "highCloudCover": 0,
+     "cloudDarkness": 0.1,
+     "relativeHumidity": 0.5,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "storm": false,
+     "windDirectionDeg": 131,
+     "windSpeed": 52.0
+    }
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "kind": "none"
+    }
+   }
+  ]
+ },
+ "decor": [
+  {
+   "id": "af3532-cockpit",
+   "kind": "aircraft",
+   "title": {
+    "fr": "Poste de pilotage de l'A320 (siège gauche : le commandant)",
+    "en": "A320 flight deck (left seat: the captain)"
+   },
+   "eastM": 0.57,
+   "northM": 0.11,
+   "headingDeg": 332.0,
+   "sizeM": {
+    "widthM": 3.257,
+    "lengthM": 2.591,
+    "heightM": 2.127
+   },
+   "model": {
+    "id": "davidmarton-a320-cockpit"
+   },
+   "track": [
+    {
+     "t": 0,
+     "eastM": 0.57,
+     "northM": 0.11,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 5000,
+     "eastM": -421.99,
+     "northM": 795.04,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 10000,
+     "eastM": -844.43,
+     "northM": 1589.87,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 15000,
+     "eastM": -1266.83,
+     "northM": 2384.8,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 20000,
+     "eastM": -1689.03,
+     "northM": 3179.74,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 25000,
+     "eastM": -2111.19,
+     "northM": 3974.57,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 30000,
+     "eastM": -2533.15,
+     "northM": 4769.5,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 35000,
+     "eastM": -2955.06,
+     "northM": 5564.44,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 40000,
+     "eastM": -3376.78,
+     "northM": 6359.26,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 45000,
+     "eastM": -3798.46,
+     "northM": 7154.2,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 50000,
+     "eastM": -4219.94,
+     "northM": 7949.14,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 55000,
+     "eastM": -4641.3,
+     "northM": 8743.96,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 60000,
+     "eastM": -5062.61,
+     "northM": 9538.9,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 65000,
+     "eastM": -5483.73,
+     "northM": 10333.83,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 70000,
+     "eastM": -5904.8,
+     "northM": 11128.66,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 75000,
+     "eastM": -6325.68,
+     "northM": 11923.59,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 80000,
+     "eastM": -6746.51,
+     "northM": 12718.53,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 85000,
+     "eastM": -7167.15,
+     "northM": 13513.35,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 90000,
+     "eastM": -7587.67,
+     "northM": 14308.29,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 95000,
+     "eastM": -8008.14,
+     "northM": 15103.23,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 100000,
+     "eastM": -8428.41,
+     "northM": 15898.05,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 105000,
+     "eastM": -8848.64,
+     "northM": 16692.99,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 110000,
+     "eastM": -9268.68,
+     "northM": 17487.92,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 115000,
+     "eastM": -9688.66,
+     "northM": 18282.75,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    },
+    {
+     "t": 120000,
+     "eastM": -10108.46,
+     "northM": 19077.68,
+     "altitudeM": 11701.45,
+     "headingDeg": 332.0
+    }
+   ],
+   "aircraftSound": "airliner-narrow"
+  }
+ ],
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Il le voit le dernier, vers 10 h, et le prend pour un avion en virage à 45°",
+    "en": "He sees it last, at about 10 o'clock, and takes it for an aircraft banking 45 degrees"
+   }
+  },
+  {
+   "t": 60000,
+   "label": "B",
+   "note": {
+    "fr": "Au travers de l'aile, un disque brun-rouge sans détails, vu sous plusieurs angles",
+    "en": "Abeam, a red-brown disc with no detail, seen from several angles"
+   }
+  },
+  {
+   "t": 120000,
+   "label": "C",
+   "note": {
+    "fr": "Sur l'arrière gauche (8 h), il devient transparent et disparaît sans bouger",
+    "en": "Behind on the left (8 o'clock), it turns transparent and vanishes without moving"
+   }
+  }
+ ]
+}

@@ -4,5 +4,22 @@
   "classification": {
     "hynek": "CE1"
   },
-  "image": "/science/crypto/ufo/enquete/dossier/Duboc/radarDubocVelasco.jpg"
+  "image": "/science/crypto/ufo/enquete/dossier/Duboc/radarDubocVelasco.jpg",
+  "place": "Près de Coulommiers (Seine-et-Marne)",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1994-01-28 13:14",
+      "title": "Jean-Charles Duboc, commandant de bord",
+      "url": "observer-duboc.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1994-01-28 13:14",
+      "title": "Valérie Chauffour, copilote",
+      "url": "observer-duboc-copilot.json"
+    }
+  ]
 }

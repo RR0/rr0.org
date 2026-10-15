@@ -3234,7 +3234,10 @@
      "headingDeg": 332.0
     }
    ],
-   "aircraftSound": "airliner-narrow"
+   "aircraftSound": "airliner-narrow",
+   "occludesSourceIds": [
+    "disc"
+   ]
   }
  ],
  "milestones": [

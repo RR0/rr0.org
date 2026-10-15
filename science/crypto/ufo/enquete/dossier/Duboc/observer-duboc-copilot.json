@@ -7836,7 +7836,10 @@
      "headingDeg": 332.0
     }
    ],
-   "aircraftSound": "airliner-narrow"
+   "aircraftSound": "airliner-narrow",
+   "occludesSourceIds": [
+    "disc"
+   ]
   },
   {
    "id": "af3532-captain",
@@ -8114,6 +8117,9 @@
      "altitudeM": 11700.43,
      "headingDeg": 332.0
     }
+   ],
+   "occludesSourceIds": [
+    "disc"
    ]
   }
  ],

@@ -11,15 +11,73 @@
       "type": "event",
       "eventType": "sighting",
       "time": "1994-01-28 13:14",
-      "title": "Jean-Charles Duboc, commandant de bord",
-      "url": "observer-duboc.json"
+      "title": "Jean-Charles Duboc",
+      "url": "observer-duboc.json",
+      "id": "duboc"
     },
     {
       "type": "event",
       "eventType": "sighting",
       "time": "1994-01-28 13:14",
-      "title": "Valérie Chauffour, copilote",
-      "url": "observer-duboc-copilot.json"
+      "title": "Valérie Chauffour",
+      "url": "observer-duboc-copilot.json",
+      "id": "chauffour"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1994-01-28 13:14",
+      "id": "chiefsteward",
+      "title": "Le chef steward",
+      "url": "observer-duboc-steward.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "duboc",
+      "time": "2026-10-16",
+      "by": [
+        {
+          "people": "BeauJerome"
+        }
+      ],
+      "title": {
+        "fr": "Canular : le point d'une lampe du chef steward, sur la vitre, vu par le commandant",
+        "en": "Hoax: the spot of the chief steward's light on the glass, as the captain saw it"
+      },
+      "url": "interpretation-duboc-hoax.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "chauffour",
+      "time": "2026-10-16",
+      "by": [
+        {
+          "people": "BeauJerome"
+        }
+      ],
+      "title": {
+        "fr": "Canular : le point d'une lampe du chef steward, sur la vitre, vu par la copilote",
+        "en": "Hoax: the spot of the chief steward's light on the glass, as the co-pilot saw it"
+      },
+      "url": "interpretation-duboc-copilot-hoax.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "chiefsteward",
+      "time": "2026-10-16",
+      "by": [
+        {
+          "people": "BeauJerome"
+        }
+      ],
+      "title": {
+        "fr": "Canular : le point de sa propre lampe, sur la vitre, vu par le chef steward",
+        "en": "Hoax: the spot of his own light on the glass, as the chief steward saw it"
+      },
+      "url": "interpretation-duboc-steward-hoax.json"
     }
   ]
 }

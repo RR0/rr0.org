@@ -61,8 +61,8 @@
   }
  ],
  "description": {
-  "fr": "Même vol, même minute, vu du siège de droite, par la copilote Valérie Chauffour. Elle prend d'abord l'objet pour un ballon-sonde, comme le steward. Pour elle il ne reste pas en arrière : elle le voit constamment vers 9 h, à gauche, et se déplaçant à la vitesse de l'avion, sur une trajectoire rectiligne parallèle à la sienne, pendant 2 à 5 minutes. Sa forme change : une lentille à contour net, qui se floute, devient une forme de « chevron » (géométrie variable, disque évoluant dans les trois dimensions), puis le contour redevient net à la fin ; sombre, brun, de grande taille. Juste avant la disparition, « une sorte de virage ».\n\nNi taille angulaire ni distance chiffrée dans son rapport (« grande taille », 25 à 50 miles nautiques) : la taille est celle de l'interview du commandant (empruntée), et le moment où l'objet quitte le 10 h pour le 9 h est choisi.",
-  "en": "Same flight, same minute, seen from the right-hand seat by the co-pilot, Valérie Chauffour. She first takes the object for a weather balloon, like the steward. For her it does not fall behind: she sees it constantly at about 9 o'clock, to the left, moving at the airliner's speed on a straight path parallel to its own, for 2 to 5 minutes. Its shape changes: a lens with a sharp outline that blurs becomes a \"chevron\" (variable geometry, a disc evolving in all three dimensions), then the outline is sharp again at the end; dark, brown, large. Just before it disappears, \"a sort of turn\".\n\nNo angular size and no figure for the distance in her report (\"large\", 25 to 50 nautical miles): the size is the one the captain's 1999 interview gives (borrowed), and when the object moves from 10 o'clock to 9 is chosen."
+  "fr": "Même vol, même minute, vu du siège de droite, par la copilote Valérie Chauffour. Elle prend d'abord l'objet pour un ballon-sonde, comme le steward. Pour elle il ne reste pas en arrière : elle le voit constamment vers 9 h, à gauche, et se déplaçant à la vitesse de l'avion, sur une trajectoire rectiligne parallèle à la sienne, pendant 2 à 5 minutes. Sa forme change : une lentille à contour net, qui se floute, devient une forme de « chevron » (géométrie variable, disque évoluant dans les trois dimensions), puis le contour redevient net à la fin ; sombre, brun, de grande taille. Juste avant la disparition, « une sorte de virage ».\n\nNi taille angulaire ni distance chiffrée dans son rapport (« grande taille », 25 à 50 miles nautiques) : la taille est celle de l'interview du commandant, 1000 m à ses 25 miles nautiques à elle (empruntée), et le moment où l'objet quitte le 10 h pour le 9 h est choisi.",
+  "en": "Same flight, same minute, seen from the right-hand seat by the co-pilot, Valérie Chauffour. She first takes the object for a weather balloon, like the steward. For her it does not fall behind: she sees it constantly at about 9 o'clock, to the left, moving at the airliner's speed on a straight path parallel to its own, for 2 to 5 minutes. Its shape changes: a lens with a sharp outline that blurs becomes a \"chevron\" (variable geometry, a disc evolving in all three dimensions), then the outline is sharp again at the end; dark, brown, large. Just before it disappears, \"a sort of turn\".\n\nNo angular size and no figure for the distance in her report (\"large\", 25 to 50 nautical miles): the size is the one the captain's 1999 interview gives, 1000 m at her 25 nautical miles (borrowed), and when the object moves from 10 o'clock to 9 is chosen."
  },
  "instrument": "eye",
  "observerTrack": {
@@ -1093,14 +1093,14 @@
         "fr": "lentille brune",
         "en": "brown lens"
        },
-       "color": "#35231a",
+       "color": "#a8421f",
        "transparency": 0,
        "brightness": 0,
-       "blur": 0.08,
+       "blur": 0.12,
        "haloScale": 0,
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 272.0,
@@ -1117,14 +1117,14 @@
         "fr": "chevron",
         "en": "chevron"
        },
-       "color": "#35231a",
+       "color": "#a8421f",
        "transparency": 1,
        "brightness": 0,
-       "blur": 0.08,
+       "blur": 0.12,
        "haloScale": 0,
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 272.0,
@@ -1161,14 +1161,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 271.902,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1176,14 +1176,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 271.902,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1196,14 +1196,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 271.618,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1211,14 +1211,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 271.618,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1231,14 +1231,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 271.16,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1246,14 +1246,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 271.16,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1266,14 +1266,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 270.542,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1281,14 +1281,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 270.542,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1301,14 +1301,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 269.778,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1316,14 +1316,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 269.778,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1336,14 +1336,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 268.88,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1351,14 +1351,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 268.88,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1371,14 +1371,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 267.862,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1386,14 +1386,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 267.862,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1406,14 +1406,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 266.738,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1421,14 +1421,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 266.738,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1441,14 +1441,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 265.52,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1456,14 +1456,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 265.52,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1476,14 +1476,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 264.222,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1491,14 +1491,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 264.222,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1511,14 +1511,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 262.858,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1526,14 +1526,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 262.858,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1546,14 +1546,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 261.44,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1561,14 +1561,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 261.44,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1581,14 +1581,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 259.982,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1596,14 +1596,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 259.982,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1616,14 +1616,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 258.498,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1631,14 +1631,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 258.498,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1651,14 +1651,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 257.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1666,14 +1666,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 257.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1686,14 +1686,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 255.502,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1701,14 +1701,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 255.502,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1721,14 +1721,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 254.018,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1736,14 +1736,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 254.018,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1756,14 +1756,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 252.56,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1771,14 +1771,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 252.56,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1791,14 +1791,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 251.142,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1806,14 +1806,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 251.142,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1826,14 +1826,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 249.778,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1841,14 +1841,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 249.778,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1861,14 +1861,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 248.48,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1876,14 +1876,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 248.48,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1896,14 +1896,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 247.262,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1911,14 +1911,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 247.262,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1931,14 +1931,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 246.138,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1946,14 +1946,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 246.138,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -1966,14 +1966,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 245.12,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -1981,14 +1981,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 245.12,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2001,14 +2001,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 244.222,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2016,14 +2016,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 244.222,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2036,14 +2036,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 243.458,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2051,14 +2051,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 243.458,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2071,14 +2071,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.84,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2086,14 +2086,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.84,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2106,14 +2106,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.382,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2121,14 +2121,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.382,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2141,14 +2141,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.098,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2156,14 +2156,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.098,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2176,14 +2176,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2191,14 +2191,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2211,14 +2211,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -2226,14 +2226,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -2246,14 +2246,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.081
+       "blur": 0.12
       }
      },
      {
@@ -2261,14 +2261,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.081
+       "blur": 0.12
       }
      }
     ]
@@ -2281,14 +2281,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.083
+       "blur": 0.121
       }
      },
      {
@@ -2296,14 +2296,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.083
+       "blur": 0.121
       }
      }
     ]
@@ -2316,14 +2316,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.085
+       "blur": 0.122
       }
      },
      {
@@ -2331,14 +2331,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.085
+       "blur": 0.122
       }
      }
     ]
@@ -2351,14 +2351,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.088
+       "blur": 0.122
       }
      },
      {
@@ -2366,14 +2366,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.088
+       "blur": 0.122
       }
      }
     ]
@@ -2386,14 +2386,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.092
+       "blur": 0.123
       }
      },
      {
@@ -2401,14 +2401,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.092
+       "blur": 0.123
       }
      }
     ]
@@ -2421,14 +2421,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.096
+       "blur": 0.125
       }
      },
      {
@@ -2436,14 +2436,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.096
+       "blur": 0.125
       }
      }
     ]
@@ -2456,14 +2456,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.101
+       "blur": 0.126
       }
      },
      {
@@ -2471,14 +2471,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.101
+       "blur": 0.126
       }
      }
     ]
@@ -2491,14 +2491,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.106
+       "blur": 0.128
       }
      },
      {
@@ -2506,14 +2506,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.106
+       "blur": 0.128
       }
      }
     ]
@@ -2526,14 +2526,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.112
+       "blur": 0.13
       }
      },
      {
@@ -2541,14 +2541,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.112
+       "blur": 0.13
       }
      }
     ]
@@ -2561,14 +2561,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.118
+       "blur": 0.131
       }
      },
      {
@@ -2576,14 +2576,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.118
+       "blur": 0.131
       }
      }
     ]
@@ -2596,14 +2596,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.125
+       "blur": 0.134
       }
      },
      {
@@ -2611,14 +2611,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.125
+       "blur": 0.134
       }
      }
     ]
@@ -2631,14 +2631,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.133
+       "blur": 0.136
       }
      },
      {
@@ -2646,14 +2646,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.133
+       "blur": 0.136
       }
      }
     ]
@@ -2666,14 +2666,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.141
+       "blur": 0.138
       }
      },
      {
@@ -2681,14 +2681,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.141
+       "blur": 0.138
       }
      }
     ]
@@ -2701,14 +2701,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.149
+       "blur": 0.141
       }
      },
      {
@@ -2716,14 +2716,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.149
+       "blur": 0.141
       }
      }
     ]
@@ -2736,14 +2736,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.158
+       "blur": 0.143
       }
      },
      {
@@ -2751,14 +2751,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.158
+       "blur": 0.143
       }
      }
     ]
@@ -2771,14 +2771,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.167
+       "blur": 0.146
       }
      },
      {
@@ -2786,14 +2786,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.167
+       "blur": 0.146
       }
      }
     ]
@@ -2806,14 +2806,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.177
+       "blur": 0.149
       }
      },
      {
@@ -2821,14 +2821,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.177
+       "blur": 0.149
       }
      }
     ]
@@ -2841,14 +2841,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.187
+       "blur": 0.152
       }
      },
      {
@@ -2856,14 +2856,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.187
+       "blur": 0.152
       }
      }
     ]
@@ -2876,14 +2876,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.197
+       "blur": 0.155
       }
      },
      {
@@ -2891,14 +2891,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.197
+       "blur": 0.155
       }
      }
     ]
@@ -2911,14 +2911,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.207
+       "blur": 0.158
       }
      },
      {
@@ -2926,14 +2926,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.207
+       "blur": 0.158
       }
      }
     ]
@@ -2946,14 +2946,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.218
+       "blur": 0.161
       }
      },
      {
@@ -2961,14 +2961,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.218
+       "blur": 0.161
       }
      }
     ]
@@ -2981,14 +2981,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.229
+       "blur": 0.165
       }
      },
      {
@@ -2996,14 +2996,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.229
+       "blur": 0.165
       }
      }
     ]
@@ -3016,14 +3016,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.24
+       "blur": 0.168
       }
      },
      {
@@ -3031,14 +3031,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.24
+       "blur": 0.168
       }
      }
     ]
@@ -3051,14 +3051,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.252
+       "blur": 0.171
       }
      },
      {
@@ -3066,14 +3066,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.252
+       "blur": 0.171
       }
      }
     ]
@@ -3086,14 +3086,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.263
+       "blur": 0.175
       }
      },
      {
@@ -3101,14 +3101,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.263
+       "blur": 0.175
       }
      }
     ]
@@ -3121,14 +3121,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.274
+       "blur": 0.178
       }
      },
      {
@@ -3136,14 +3136,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.274
+       "blur": 0.178
       }
      }
     ]
@@ -3156,14 +3156,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.286
+       "blur": 0.182
       }
      },
      {
@@ -3171,14 +3171,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.286
+       "blur": 0.182
       }
      }
     ]
@@ -3191,14 +3191,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.297
+       "blur": 0.185
       }
      },
      {
@@ -3206,14 +3206,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.297
+       "blur": 0.185
       }
      }
     ]
@@ -3226,14 +3226,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.308
+       "blur": 0.189
       }
      },
      {
@@ -3241,14 +3241,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.308
+       "blur": 0.189
       }
      }
     ]
@@ -3261,14 +3261,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.007,
-       "blur": 0.32
+       "transparency": 0.0,
+       "blur": 0.192
       }
      },
      {
@@ -3276,14 +3276,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.993,
-       "blur": 0.32
+       "transparency": 1.0,
+       "blur": 0.192
       }
      }
     ]
@@ -3296,14 +3296,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.028,
-       "blur": 0.331
+       "transparency": 0.0,
+       "blur": 0.195
       }
      },
      {
@@ -3311,14 +3311,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.972,
-       "blur": 0.331
+       "transparency": 1.0,
+       "blur": 0.195
       }
      }
     ]
@@ -3331,14 +3331,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.061,
-       "blur": 0.342
+       "transparency": 0.0,
+       "blur": 0.199
       }
      },
      {
@@ -3346,14 +3346,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.939,
-       "blur": 0.342
+       "transparency": 1.0,
+       "blur": 0.199
       }
      }
     ]
@@ -3366,14 +3366,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.104,
-       "blur": 0.353
+       "transparency": 0.0,
+       "blur": 0.202
       }
      },
      {
@@ -3381,14 +3381,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.896,
-       "blur": 0.353
+       "transparency": 1.0,
+       "blur": 0.202
       }
      }
     ]
@@ -3401,14 +3401,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.156,
-       "blur": 0.363
+       "transparency": 0.0,
+       "blur": 0.205
       }
      },
      {
@@ -3416,14 +3416,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.844,
-       "blur": 0.363
+       "transparency": 1.0,
+       "blur": 0.205
       }
      }
     ]
@@ -3436,14 +3436,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.216,
-       "blur": 0.373
+       "transparency": 0.028,
+       "blur": 0.208
       }
      },
      {
@@ -3451,14 +3451,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.784,
-       "blur": 0.373
+       "transparency": 0.972,
+       "blur": 0.208
       }
      }
     ]
@@ -3471,14 +3471,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.282,
-       "blur": 0.383
+       "transparency": 0.104,
+       "blur": 0.211
       }
      },
      {
@@ -3486,14 +3486,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.718,
-       "blur": 0.383
+       "transparency": 0.896,
+       "blur": 0.211
       }
      }
     ]
@@ -3506,14 +3506,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.352,
-       "blur": 0.393
+       "transparency": 0.216,
+       "blur": 0.214
       }
      },
      {
@@ -3521,14 +3521,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.648,
-       "blur": 0.393
+       "transparency": 0.784,
+       "blur": 0.214
       }
      }
     ]
@@ -3541,14 +3541,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.425,
-       "blur": 0.402
+       "transparency": 0.352,
+       "blur": 0.217
       }
      },
      {
@@ -3556,14 +3556,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.575,
-       "blur": 0.402
+       "transparency": 0.648,
+       "blur": 0.217
       }
      }
     ]
@@ -3576,14 +3576,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.5,
-       "blur": 0.411
+       "blur": 0.219
       }
      },
      {
@@ -3591,14 +3591,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.5,
-       "blur": 0.411
+       "blur": 0.219
       }
      }
     ]
@@ -3611,14 +3611,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.575,
-       "blur": 0.419
+       "transparency": 0.648,
+       "blur": 0.222
       }
      },
      {
@@ -3626,14 +3626,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.425,
-       "blur": 0.419
+       "transparency": 0.352,
+       "blur": 0.222
       }
      }
     ]
@@ -3646,14 +3646,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.648,
-       "blur": 0.427
+       "transparency": 0.784,
+       "blur": 0.224
       }
      },
      {
@@ -3661,14 +3661,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.352,
-       "blur": 0.427
+       "transparency": 0.216,
+       "blur": 0.224
       }
      }
     ]
@@ -3681,14 +3681,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.718,
-       "blur": 0.435
+       "transparency": 0.896,
+       "blur": 0.226
       }
      },
      {
@@ -3696,14 +3696,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.282,
-       "blur": 0.435
+       "transparency": 0.104,
+       "blur": 0.226
       }
      }
     ]
@@ -3716,14 +3716,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.784,
-       "blur": 0.442
+       "transparency": 0.972,
+       "blur": 0.229
       }
      },
      {
@@ -3731,14 +3731,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.216,
-       "blur": 0.442
+       "transparency": 0.028,
+       "blur": 0.229
       }
      }
     ]
@@ -3751,14 +3751,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.844,
-       "blur": 0.448
+       "transparency": 1.0,
+       "blur": 0.23
       }
      },
      {
@@ -3766,14 +3766,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.156,
-       "blur": 0.448
+       "transparency": 0.0,
+       "blur": 0.23
       }
      }
     ]
@@ -3786,14 +3786,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.896,
-       "blur": 0.454
+       "transparency": 1.0,
+       "blur": 0.232
       }
      },
      {
@@ -3801,14 +3801,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.104,
-       "blur": 0.454
+       "transparency": 0.0,
+       "blur": 0.232
       }
      }
     ]
@@ -3821,14 +3821,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.939,
-       "blur": 0.459
+       "transparency": 1.0,
+       "blur": 0.234
       }
      },
      {
@@ -3836,14 +3836,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.061,
-       "blur": 0.459
+       "transparency": 0.0,
+       "blur": 0.234
       }
      }
     ]
@@ -3856,14 +3856,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.972,
-       "blur": 0.464
+       "transparency": 1.0,
+       "blur": 0.235
       }
      },
      {
@@ -3871,14 +3871,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.028,
-       "blur": 0.464
+       "transparency": 0.0,
+       "blur": 0.235
       }
      }
     ]
@@ -3891,14 +3891,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.993,
-       "blur": 0.468
+       "transparency": 1.0,
+       "blur": 0.237
       }
      },
      {
@@ -3906,14 +3906,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.007,
-       "blur": 0.468
+       "transparency": 0.0,
+       "blur": 0.237
       }
      }
     ]
@@ -3926,14 +3926,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.472
+       "blur": 0.238
       }
      },
      {
@@ -3941,14 +3941,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.472
+       "blur": 0.238
       }
      }
     ]
@@ -3961,14 +3961,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.475
+       "blur": 0.238
       }
      },
      {
@@ -3976,14 +3976,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.475
+       "blur": 0.238
       }
      }
     ]
@@ -3996,14 +3996,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.477
+       "blur": 0.239
       }
      },
      {
@@ -4011,14 +4011,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.477
+       "blur": 0.239
       }
      }
     ]
@@ -4031,14 +4031,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.479
+       "blur": 0.24
       }
      },
      {
@@ -4046,14 +4046,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.479
+       "blur": 0.24
       }
      }
     ]
@@ -4066,14 +4066,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.48
+       "blur": 0.24
       }
      },
      {
@@ -4081,14 +4081,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.48
+       "blur": 0.24
       }
      }
     ]
@@ -4101,14 +4101,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.48
+       "blur": 0.24
       }
      },
      {
@@ -4116,14 +4116,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.48
+       "blur": 0.24
       }
      }
     ]
@@ -4136,14 +4136,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.48
+       "blur": 0.24
       }
      },
      {
@@ -4151,14 +4151,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.48
+       "blur": 0.24
       }
      }
     ]
@@ -4171,14 +4171,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.479
+       "blur": 0.24
       }
      },
      {
@@ -4186,14 +4186,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.479
+       "blur": 0.24
       }
      }
     ]
@@ -4206,14 +4206,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.477
+       "blur": 0.239
       }
      },
      {
@@ -4221,14 +4221,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.477
+       "blur": 0.239
       }
      }
     ]
@@ -4241,14 +4241,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.475
+       "blur": 0.238
       }
      },
      {
@@ -4256,14 +4256,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.475
+       "blur": 0.238
       }
      }
     ]
@@ -4276,14 +4276,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.472
+       "blur": 0.238
       }
      },
      {
@@ -4291,14 +4291,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.472
+       "blur": 0.238
       }
      }
     ]
@@ -4311,14 +4311,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.468
+       "blur": 0.237
       }
      },
      {
@@ -4326,14 +4326,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.468
+       "blur": 0.237
       }
      }
     ]
@@ -4346,14 +4346,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.464
+       "blur": 0.235
       }
      },
      {
@@ -4361,14 +4361,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.464
+       "blur": 0.235
       }
      }
     ]
@@ -4381,14 +4381,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.459
+       "blur": 0.234
       }
      },
      {
@@ -4396,14 +4396,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.459
+       "blur": 0.234
       }
      }
     ]
@@ -4416,14 +4416,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.454
+       "blur": 0.232
       }
      },
      {
@@ -4431,14 +4431,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.454
+       "blur": 0.232
       }
      }
     ]
@@ -4451,14 +4451,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.448
+       "blur": 0.23
       }
      },
      {
@@ -4466,14 +4466,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.448
+       "blur": 0.23
       }
      }
     ]
@@ -4486,14 +4486,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.442
+       "blur": 0.229
       }
      },
      {
@@ -4501,14 +4501,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.442
+       "blur": 0.229
       }
      }
     ]
@@ -4521,14 +4521,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.435
+       "blur": 0.226
       }
      },
      {
@@ -4536,14 +4536,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.435
+       "blur": 0.226
       }
      }
     ]
@@ -4556,14 +4556,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.427
+       "blur": 0.224
       }
      },
      {
@@ -4571,14 +4571,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.427
+       "blur": 0.224
       }
      }
     ]
@@ -4591,14 +4591,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.419
+       "blur": 0.222
       }
      },
      {
@@ -4606,14 +4606,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.419
+       "blur": 0.222
       }
      }
     ]
@@ -4626,14 +4626,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.411
+       "blur": 0.219
       }
      },
      {
@@ -4641,14 +4641,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.411
+       "blur": 0.219
       }
      }
     ]
@@ -4661,14 +4661,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.402
+       "blur": 0.217
       }
      },
      {
@@ -4676,14 +4676,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.402
+       "blur": 0.217
       }
      }
     ]
@@ -4696,14 +4696,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.393
+       "blur": 0.214
       }
      },
      {
@@ -4711,14 +4711,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.393
+       "blur": 0.214
       }
      }
     ]
@@ -4731,14 +4731,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.383
+       "blur": 0.211
       }
      },
      {
@@ -4746,14 +4746,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.383
+       "blur": 0.211
       }
      }
     ]
@@ -4766,14 +4766,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.373
+       "blur": 0.208
       }
      },
      {
@@ -4781,14 +4781,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.373
+       "blur": 0.208
       }
      }
     ]
@@ -4801,14 +4801,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.363
+       "blur": 0.205
       }
      },
      {
@@ -4816,14 +4816,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.363
+       "blur": 0.205
       }
      }
     ]
@@ -4836,14 +4836,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.353
+       "blur": 0.202
       }
      },
      {
@@ -4851,14 +4851,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.353
+       "blur": 0.202
       }
      }
     ]
@@ -4871,14 +4871,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.342
+       "blur": 0.199
       }
      },
      {
@@ -4886,14 +4886,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.342
+       "blur": 0.199
       }
      }
     ]
@@ -4906,14 +4906,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.331
+       "blur": 0.195
       }
      },
      {
@@ -4921,14 +4921,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.331
+       "blur": 0.195
       }
      }
     ]
@@ -4941,14 +4941,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.32
+       "blur": 0.192
       }
      },
      {
@@ -4956,14 +4956,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.32
+       "blur": 0.192
       }
      }
     ]
@@ -4976,14 +4976,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.308
+       "blur": 0.189
       }
      },
      {
@@ -4991,14 +4991,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.308
+       "blur": 0.189
       }
      }
     ]
@@ -5011,14 +5011,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.297
+       "blur": 0.185
       }
      },
      {
@@ -5026,14 +5026,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.297
+       "blur": 0.185
       }
      }
     ]
@@ -5046,14 +5046,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.286
+       "blur": 0.182
       }
      },
      {
@@ -5061,14 +5061,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.286
+       "blur": 0.182
       }
      }
     ]
@@ -5081,14 +5081,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.274
+       "blur": 0.178
       }
      },
      {
@@ -5096,14 +5096,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.274
+       "blur": 0.178
       }
      }
     ]
@@ -5116,14 +5116,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.263
+       "blur": 0.175
       }
      },
      {
@@ -5131,14 +5131,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.263
+       "blur": 0.175
       }
      }
     ]
@@ -5151,14 +5151,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.252
+       "blur": 0.171
       }
      },
      {
@@ -5166,14 +5166,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.252
+       "blur": 0.171
       }
      }
     ]
@@ -5186,14 +5186,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.24
+       "blur": 0.168
       }
      },
      {
@@ -5201,14 +5201,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.24
+       "blur": 0.168
       }
      }
     ]
@@ -5221,14 +5221,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.229
+       "blur": 0.165
       }
      },
      {
@@ -5236,14 +5236,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.229
+       "blur": 0.165
       }
      }
     ]
@@ -5256,14 +5256,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.218
+       "blur": 0.161
       }
      },
      {
@@ -5271,14 +5271,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.218
+       "blur": 0.161
       }
      }
     ]
@@ -5291,14 +5291,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.207
+       "blur": 0.158
       }
      },
      {
@@ -5306,14 +5306,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.207
+       "blur": 0.158
       }
      }
     ]
@@ -5326,14 +5326,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.197
+       "blur": 0.155
       }
      },
      {
@@ -5341,14 +5341,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.197
+       "blur": 0.155
       }
      }
     ]
@@ -5361,14 +5361,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.187
+       "blur": 0.152
       }
      },
      {
@@ -5376,14 +5376,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.187
+       "blur": 0.152
       }
      }
     ]
@@ -5396,14 +5396,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.177
+       "blur": 0.149
       }
      },
      {
@@ -5411,14 +5411,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.177
+       "blur": 0.149
       }
      }
     ]
@@ -5431,14 +5431,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.167
+       "blur": 0.146
       }
      },
      {
@@ -5446,14 +5446,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.167
+       "blur": 0.146
       }
      }
     ]
@@ -5466,14 +5466,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.158
+       "blur": 0.143
       }
      },
      {
@@ -5481,14 +5481,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.158
+       "blur": 0.143
       }
      }
     ]
@@ -5501,14 +5501,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.149
+       "blur": 0.141
       }
      },
      {
@@ -5516,14 +5516,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.149
+       "blur": 0.141
       }
      }
     ]
@@ -5536,14 +5536,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 1.0,
-       "blur": 0.141
+       "transparency": 0.972,
+       "blur": 0.138
       }
      },
      {
@@ -5551,14 +5551,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.0,
-       "blur": 0.141
+       "transparency": 0.028,
+       "blur": 0.138
       }
      }
     ]
@@ -5571,14 +5571,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 1.0,
-       "blur": 0.133
+       "transparency": 0.896,
+       "blur": 0.136
       }
      },
      {
@@ -5586,14 +5586,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.0,
-       "blur": 0.133
+       "transparency": 0.104,
+       "blur": 0.136
       }
      }
     ]
@@ -5606,14 +5606,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 1.0,
-       "blur": 0.125
+       "transparency": 0.784,
+       "blur": 0.134
       }
      },
      {
@@ -5621,14 +5621,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.0,
-       "blur": 0.125
+       "transparency": 0.216,
+       "blur": 0.134
       }
      }
     ]
@@ -5641,14 +5641,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 1.0,
-       "blur": 0.118
+       "transparency": 0.648,
+       "blur": 0.131
       }
      },
      {
@@ -5656,14 +5656,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.0,
-       "blur": 0.118
+       "transparency": 0.352,
+       "blur": 0.131
       }
      }
     ]
@@ -5676,14 +5676,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 1.0,
-       "blur": 0.112
+       "transparency": 0.5,
+       "blur": 0.13
       }
      },
      {
@@ -5691,14 +5691,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.0,
-       "blur": 0.112
+       "transparency": 0.5,
+       "blur": 0.13
       }
      }
     ]
@@ -5711,14 +5711,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.993,
-       "blur": 0.106
+       "transparency": 0.352,
+       "blur": 0.128
       }
      },
      {
@@ -5726,14 +5726,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.007,
-       "blur": 0.106
+       "transparency": 0.648,
+       "blur": 0.128
       }
      }
     ]
@@ -5746,14 +5746,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.972,
-       "blur": 0.101
+       "transparency": 0.216,
+       "blur": 0.126
       }
      },
      {
@@ -5761,14 +5761,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.028,
-       "blur": 0.101
+       "transparency": 0.784,
+       "blur": 0.126
       }
      }
     ]
@@ -5781,14 +5781,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.939,
-       "blur": 0.096
+       "transparency": 0.104,
+       "blur": 0.125
       }
      },
      {
@@ -5796,14 +5796,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.061,
-       "blur": 0.096
+       "transparency": 0.896,
+       "blur": 0.125
       }
      }
     ]
@@ -5816,14 +5816,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.896,
-       "blur": 0.092
+       "transparency": 0.028,
+       "blur": 0.123
       }
      },
      {
@@ -5831,14 +5831,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.104,
-       "blur": 0.092
+       "transparency": 0.972,
+       "blur": 0.123
       }
      }
     ]
@@ -5851,14 +5851,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.844,
-       "blur": 0.088
+       "transparency": 0.0,
+       "blur": 0.122
       }
      },
      {
@@ -5866,14 +5866,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.156,
-       "blur": 0.088
+       "transparency": 1.0,
+       "blur": 0.122
       }
      }
     ]
@@ -5886,14 +5886,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.784,
-       "blur": 0.085
+       "transparency": 0.0,
+       "blur": 0.122
       }
      },
      {
@@ -5901,14 +5901,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.216,
-       "blur": 0.085
+       "transparency": 1.0,
+       "blur": 0.122
       }
      }
     ]
@@ -5921,14 +5921,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.718,
-       "blur": 0.083
+       "transparency": 0.0,
+       "blur": 0.121
       }
      },
      {
@@ -5936,14 +5936,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.282,
-       "blur": 0.083
+       "transparency": 1.0,
+       "blur": 0.121
       }
      }
     ]
@@ -5956,14 +5956,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.648,
-       "blur": 0.081
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -5971,14 +5971,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.352,
-       "blur": 0.081
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -5991,14 +5991,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.575,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6006,14 +6006,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.425,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6026,14 +6026,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.5,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6041,14 +6041,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.5,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6061,14 +6061,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.425,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6076,14 +6076,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.575,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6096,14 +6096,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.352,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6111,14 +6111,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.648,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6131,14 +6131,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.282,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6146,14 +6146,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.718,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6166,14 +6166,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.216,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6181,14 +6181,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.784,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6201,14 +6201,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.156,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6216,14 +6216,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.844,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6236,14 +6236,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.104,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6251,14 +6251,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.896,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6271,14 +6271,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.061,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6286,14 +6286,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.939,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6306,14 +6306,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.028,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6321,14 +6321,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.972,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6341,14 +6341,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.007,
-       "blur": 0.08
+       "transparency": 0.0,
+       "blur": 0.12
       }
      },
      {
@@ -6356,14 +6356,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
-       "transparency": 0.993,
-       "blur": 0.08
+       "transparency": 1.0,
+       "blur": 0.12
       }
      }
     ]
@@ -6376,14 +6376,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6391,14 +6391,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6411,14 +6411,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6426,14 +6426,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6446,14 +6446,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6461,14 +6461,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6481,14 +6481,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6496,14 +6496,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6516,14 +6516,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6531,14 +6531,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6551,14 +6551,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6566,14 +6566,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6586,14 +6586,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6601,14 +6601,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6621,14 +6621,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6636,14 +6636,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6656,14 +6656,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6671,14 +6671,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6691,14 +6691,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6706,14 +6706,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6726,14 +6726,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6741,14 +6741,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6761,14 +6761,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6776,14 +6776,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6796,14 +6796,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6811,14 +6811,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6831,14 +6831,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6846,14 +6846,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6866,14 +6866,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6881,14 +6881,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6901,14 +6901,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6916,14 +6916,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6936,14 +6936,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6951,14 +6951,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -6971,14 +6971,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -6986,14 +6986,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7006,14 +7006,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7021,14 +7021,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7041,14 +7041,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.603,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7056,14 +7056,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.603,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7076,14 +7076,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 244.25,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7091,14 +7091,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 244.25,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7111,14 +7111,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 246.5,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7126,14 +7126,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 246.5,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7146,14 +7146,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 248.75,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7161,14 +7161,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 248.75,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7181,14 +7181,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 250.397,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7196,14 +7196,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 250.397,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7216,14 +7216,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 251.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7231,14 +7231,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 251.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7251,14 +7251,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 250.397,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7266,14 +7266,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 250.397,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7286,14 +7286,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 248.75,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7301,14 +7301,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 248.75,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7321,14 +7321,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 246.5,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7336,14 +7336,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 246.5,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7356,14 +7356,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 244.25,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7371,14 +7371,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 244.25,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7391,14 +7391,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.603,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7406,14 +7406,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.603,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7426,14 +7426,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 0.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7441,14 +7441,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1.0,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]
@@ -7461,14 +7461,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.24,
-        "heightDeg": 0.248
+        "heightDeg": 0.434
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1,
-       "blur": 0.08
+       "blur": 0.12
       }
      },
      {
@@ -7476,14 +7476,14 @@
       "shape": {
        "angular": {
         "widthDeg": 1.364,
-        "heightDeg": 0.558
+        "heightDeg": 0.93
        },
        "aim": {
         "azimuthDeg": 242.0,
         "altitudeDeg": -1.494
        },
        "transparency": 1,
-       "blur": 0.08
+       "blur": 0.12
       }
      }
     ]

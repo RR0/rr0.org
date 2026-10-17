@@ -20,6 +20,10 @@ export const tagsMessages_fr = {
     physics: "Physique",
     parapsychology: "Parapsychologie",
     spaceflight: "Astronautique",
-    computing: "Informatique"
+    computing: "Informatique",
+    archaeology: "Archéologie",
+    geophysics: "Géophysique",
+    religion: "Religion",
+    hoax: "Canulars"
   }
 }

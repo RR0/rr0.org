@@ -1,0 +1,14 @@
+{
+  "lastName": "Duke",
+  "firstNames": ["Charles", "Moss"],
+  "occupations": ["astronaut", "military"],
+  "countries": ["us"],
+  "gender": "male",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1935-10-03",
+      "place": "Charlotte (Caroline du Nord, USA)"
+    }
+  ]
+}

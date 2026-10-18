@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "La disparition de Frederik Valentich",
+  "speakers": {
+    "ValentichFrederik": {
+      "role": "pilot",
+      "by": {
+        "people": "ValentichFrederik"
+      },
+      "title": "Frederik Valentich"
+    },
+    "melbourne": {
+      "role": "controller",
+      "title": "Melbourne"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/v/ValentichFrederik/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "ValentichFrederik",
+      "text": "<time>19:08:18</time> Melbourne, il vient de plein Est dans ma direction."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "<time>19:08:28</time> Delta Sierra Juliet."
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "<time>19:08:42</time> (Micro du Cessa ouvert durant <time datetime=\"P2S\" class=\"duration\">2 secondes</time>)."
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "<time>19:08:49</time> Ici Delta Sierra Juliet. On dirait qu'il joue avec moi. Il est passé au-dessus de moi 2 ou 3 fois... à des Valentich que je n'ai pas pu calculer."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "<time>19:09:02</time> Roger, Delta Sierra Juliet. Quelle est votre altitude ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "<time>19:09:06</time> Mon altitude est de <span title=\"4500 FOT\">1372 m</span>. 4, 5, 0, 0."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "<time>19:09:11</time> Delta Sierra Juliet, vous confirmez que vous ne pouvez identifier l'avion ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:09:14 Affirmatif."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:09:18 Roger, Delta Sierra Juliet. Restez en standby."
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:09:28 Ici Delta Sierra Juliet. Ce n'est pas un avion. C'est... (le micro reste ouvert encore <time datetime=\"P2S\" class=\"duration\">2 secondes</time>)"
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:09:46 Delta Sierra Juliet, ici Melbourne. Pouvez-vous décrire l'appareil ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:09:52 Ici Delta Sierra Juliet. Sa forme est alongée. (Le micro reste ouvert <time datetime=\"P3S\" class=\"duration\">3 secondes</time>) Impossible d'en voir plus. Il est si rapide. (Le micro reste ouvert <time datetime=\"P3S\" class=\"duration\">3 secondes</time>) Maintenant il est juste devant moi, Melbourne."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:10:07 Roger, Delta Sierra Juliet. Et quelle est la taille de cet... objet ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:10:20 Ici Delta Sierra Juliet. Melbourne, on dirait qu'il vient de s'arrêter. J'évolue en ce moment autour de lui, et cette chose tourne au-dessus de moi. Il a aussi une lumière verte. Il est un peu métallique. Il est brillant."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:10:43 Delta Sierra Juliet ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:10:48 Ici Delta Sierra Juliet. (Le micro reste ouvert <time datetime=\"P3S\" class=\"duration\">3 secondes</time>). Il vient de disparaître."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:10:57 Delta Sierra Juliet ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:11:03 Ici Melbourne. Voudriez-vous voir sur quel genre d'avion je suis tombé ? Est-ce un appareil militaire ?"
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:11:08 Delta Sierra Juliet, vous confirmez que le, euh... que l'avion a disparu ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:11:14 Répétez."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:11:17 Delta Sierra Juliet, l'avion est-il toujours auprès de vous ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:11:23 Ici Delta Sierra Juliet. (Le micro reste ouvert 2 secondes). Il revient maintenant par le Sud-Ouest."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:11:37 Delta Sierra Juliet ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:11:52 Ici Delta Sierra Juliet. Mon moteur a des ratés. Je l'ai calé à 23/24 et la chose est (quinte de toux)..."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:12:04 Roger, Delta Sierra Juliet. Que comptez-vous faire ?"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:12:09 Je compte aller, ah... à King Island, ah... Melbourne, cet avion étrange plane de nouveau au-dessus de moi. (Le micro reste ouvert 2 secondes). Il place et ce n'est pas un avion !"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:12:22 Ici Delta Sierra Juliet..."
+    },
+    {
+      "speaker": "melbourne",
+      "text": "19:12:28 Delta Sierra Juliet, ici Melbourne. (Le micro reste ouvert 17 secondes, laissant passer un fort grincement métallique.)"
+    },
+    {
+      "speaker": "ValentichFrederik",
+      "text": "19:12:49 Ici Delta Sierra Juliet. Melbourne..."
+    }
+  ]
+}

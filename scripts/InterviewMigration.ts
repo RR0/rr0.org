@@ -1,0 +1,190 @@
+/**
+ * Moves the dialogues of an rr0.org page (`<blockquote>` holding `<p class="question">` / `<p class="answer">`) into interview files read by
+ * `<rr0-interview>` (UFO@home's InterviewElement), one file per blockquote, written beside the page.
+ *
+ * What was said is read from the GENERATED page (`out/…`), where the build has already turned people, places, dates and sources into links: those
+ * links become the linked parts of a segment, the rest its text. Who speaks is the name a turn starts with (`<strong>Blackwell</strong> :`), kept
+ * for the turns of the same kind that follow; else the interviewer (`--interviewer`, else the page's first `author`) for a question and
+ * `--interviewee` for an answer.
+ *
+ * Without `--apply` it only says what it would do (and, with `--preview <dir>`, writes the files there). With it, it writes the files and replaces each blockquote of the SOURCE page by the element
+ * (the figures it held put before it), adding the script that defines the element once.
+ *
+ *   npx tsx scripts/InterviewMigration.ts time/2/0/0/6/03/Vallee_SubRosa/index_fr.html --interviewee ValleeJacques [--apply]
+ */
+import { JSDOM } from "jsdom"
+import fs from "node:fs"
+import path from "node:path"
+
+type Part = { text: string } | { text: string, href: string, title?: string }
+
+interface Speaker {
+  role: string
+  by?: { people: string }
+  title?: string
+}
+
+interface Segment {
+  speaker: string
+  text?: string
+  parts?: Part[]
+}
+
+interface Options {
+  apply: boolean
+  /** Where to write the files instead, the page left as it is. */
+  preview?: string
+  interviewer?: string
+  interviewee?: string
+}
+
+export class InterviewMigration {
+  static readonly SCRIPT = `<script src="https://ufoathome.org/lib/rr0-interview.mjs" type="module"></script>`
+  static readonly DIALOGUE = /class="(question|answer)"/
+
+  readonly warnings: string[] = []
+
+  constructor(private readonly page: string, private readonly options: Options) {
+  }
+
+  /** A person's RR0 id from how a page names them: "Ross Coulthart" is CoulthartRoss. */
+  static peopleId(name: string): string {
+    const words = name.trim().split(/\s+/)
+    const last = words.pop() ?? ""
+    return [last, ...words].map(word => word.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z-]/g, "")).join("")
+  }
+
+  /** The parts a paragraph says: its text, and its links as linked parts; a leading `Name :` taken off and returned as who speaks. */
+  private partsOf(p: Element): { name?: string, parts: Part[] } {
+    const parts: Part[] = []
+    const add = (text: string, link?: { href: string, title?: string }): void => {
+      if (text === "") return
+      const last = parts[parts.length - 1]
+      if (!link && last && !("href" in last)) last.text += text
+      else parts.push(link ? { text, ...link } : { text })
+    }
+    let name: string | undefined
+    const first = [...p.childNodes].find(node => node.nodeType !== 3 || node.textContent!.trim() !== "")
+    if (first && first.nodeType === 1 && ["STRONG", "B"].includes((first as Element).tagName)) {
+      const next = first.nextSibling
+      if (next?.nodeType === 3 && /^\s*:/.test(next.textContent!)) {
+        name = first.textContent!.trim()
+        next.textContent = next.textContent!.replace(/^\s*:\s*/, "")
+        first.remove()
+      }
+    }
+    const walk = (node: Node): void => {
+      if (node.nodeType === 3) return add(node.textContent!)
+      if (node.nodeType !== 1) return
+      const element = node as Element
+      if (element.tagName === "BR") return add("\n")
+      if (element.tagName === "A" && element.getAttribute("href")) {
+        const title = element.getAttribute("title") ?? undefined
+        return add(element.textContent!, { href: element.getAttribute("href")!, ...(title ? { title } : {}) })
+      }
+      if (element.classList.contains("note")) this.warnings.push(`a note kept as text: ${element.textContent!.trim().slice(0, 60)}`)
+      for (const child of element.childNodes) walk(child)
+    }
+    for (const child of p.childNodes) walk(child)
+    // The source's own line breaks and indents are not what was said; the spaces around a link are kept, those at the ends of the turn are not.
+    for (const part of parts) part.text = part.text.replace(/[ \t\r\n]+/g, match => match.includes("\n") && !/^[ \t\r\n]+$/.test(match) ? "\n" : " ")
+    if (parts.length) {
+      parts[0].text = parts[0].text.trimStart()
+      parts[parts.length - 1].text = parts[parts.length - 1].text.trimEnd()
+    }
+    return { name, parts: parts.filter(part => part.text !== "") }
+  }
+
+  /** The interview a blockquote holds. */
+  private interviewOf(blockquote: Element, document: Document): Record<string, unknown> {
+    const speakers: Record<string, Speaker> = {}
+    const segments: Segment[] = []
+    const author = document.querySelector('meta[name="author"]')?.getAttribute("content") ?? undefined
+    const interviewer = this.options.interviewer ?? (author ? InterviewMigration.peopleId(author) : undefined)
+    const defaults: Record<string, { id: string, speaker: Speaker }> = {
+      question: { id: "interviewer", speaker: { role: "interviewer", ...(interviewer ? { by: { people: interviewer } } : {}) } },
+      answer: { id: "interviewee", speaker: { role: "interviewee", ...(this.options.interviewee ? { by: { people: this.options.interviewee } } : {}) } }
+    }
+    const named: Record<string, string | undefined> = {}
+    let previous: string | undefined
+    for (const child of blockquote.children) {
+      if (child.tagName !== "P") {
+        this.warnings.push(`a <${child.tagName.toLowerCase()}> in the dialogue, put before it`)
+        continue
+      }
+      const kind = child.classList.contains("question") ? "question" : child.classList.contains("answer") ? "answer" : undefined
+      if (!kind) this.warnings.push(`a paragraph that is neither question nor answer, given to the previous speaker: ${child.textContent!.trim().slice(0, 60)}`)
+      const { name, parts } = this.partsOf(child)
+      let id: string
+      if (kind && name) named[kind] = name
+      const said = kind ? named[kind] : undefined
+      if (said) {
+        id = InterviewMigration.peopleId(said)
+        speakers[id] ??= { role: defaults[kind!].speaker.role, title: said }
+      } else if (kind) {
+        id = defaults[kind].id
+        speakers[id] ??= defaults[kind].speaker
+      } else id = previous ?? defaults.answer.id
+      speakers[id] ??= defaults.answer.speaker
+      previous = id
+      if (parts.length === 0) continue
+      segments.push(parts.length === 1 && !("href" in parts[0]) ? { speaker: id, text: parts[0].text } : { speaker: id, parts })
+    }
+    const lang = document.documentElement.getAttribute("lang") ?? (this.page.includes("_fr.") ? "fr" : undefined)
+    const title = document.querySelector("title")?.textContent?.trim()
+    return {
+      version: 1,
+      ...(lang ? { language: lang } : {}),
+      ...(title ? { title } : {}),
+      speakers,
+      transcription: { method: "manual", note: `Migrated from the dialogue of ${this.page}.` },
+      segments
+    }
+  }
+
+  /** What each blockquote of the page becomes; the source page itself when applied. */
+  run(): void {
+    const generated = fs.readFileSync(path.join("out", this.page), "utf8")
+    const document = new JSDOM(generated).window.document
+    const dialogues = [...document.querySelectorAll("blockquote")].filter(quote => quote.querySelector("p.question, p.answer"))
+    if (dialogues.length === 0) throw new Error(`${this.page}: no dialogue`)
+    const dir = path.dirname(this.page)
+    const base = path.basename(this.page, ".html").replace(/^index/, "")
+    const names = dialogues.map((_, index) => `interview${base}${dialogues.length > 1 ? `-${index + 1}` : ""}.json`)
+    const interviews = dialogues.map(quote => this.interviewOf(quote, document))
+    let source = fs.readFileSync(this.page, "utf8")
+    const quotes = [...source.matchAll(/<blockquote[^>]*>[\s\S]*?<\/blockquote>/g)].filter(match => InterviewMigration.DIALOGUE.test(match[0]))
+    if (quotes.length !== dialogues.length) throw new Error(`${this.page}: ${quotes.length} dialogues in the source, ${dialogues.length} in the generated page`)
+    for (const [index, match] of [...quotes.entries()].reverse()) {
+      const figures = [...match[0].matchAll(/<figure[\s\S]*?<\/figure>/g)].map(figure => figure[0] + "\n")
+      const element = `${figures.join("")}<rr0-interview src="${names[index]}"></rr0-interview>`
+      source = source.slice(0, match.index) + element + source.slice(match.index! + match[0].length)
+    }
+    if (!source.includes(InterviewMigration.SCRIPT)) source = source.replace(/(<rr0-interview )/, `${InterviewMigration.SCRIPT}\n$1`)
+    interviews.forEach((interview, index) => {
+      const segments = interview.segments as Segment[]
+      console.log(`${path.join(dir, names[index])}: ${segments.length} turns, speakers ${Object.keys(interview.speakers as object).join(", ")}`)
+    })
+    for (const warning of new Set(this.warnings)) console.warn(`  ! ${warning}`)
+    if (this.options.preview) {
+      fs.mkdirSync(this.options.preview, { recursive: true })
+      interviews.forEach((interview, index) => fs.writeFileSync(path.join(this.options.preview!, names[index]), JSON.stringify(interview, null, 2) + "\n"))
+    }
+    if (!this.options.apply) return
+    interviews.forEach((interview, index) => fs.writeFileSync(path.join(dir, names[index]), JSON.stringify(interview, null, 2) + "\n"))
+    fs.writeFileSync(this.page, source)
+  }
+
+  static main(args: string[]): void {
+    const value = (flag: string): string | undefined => {
+      const at = args.indexOf(flag)
+      return at < 0 ? undefined : args[at + 1]
+    }
+    const pages = args.filter((arg, index) => !arg.startsWith("--") && !["--interviewer", "--interviewee", "--preview"].includes(args[index - 1]))
+    for (const page of pages) {
+      new InterviewMigration(page, { apply: args.includes("--apply"), interviewer: value("--interviewer"), interviewee: value("--interviewee"), preview: value("--preview") }).run()
+    }
+  }
+}
+
+InterviewMigration.main(process.argv.slice(2))

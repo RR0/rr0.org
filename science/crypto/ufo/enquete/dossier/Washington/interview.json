@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Le carousel de Washington",
+  "speakers": {
+    "washington": {
+      "role": "controller",
+      "title": "Tour de Washington"
+    },
+    "andrews": {
+      "role": "controller",
+      "title": "Andrews"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Washington/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "washington",
+      "text": "Tour de Andrews, voyez-vous ? Avez-vous un avion en vue à l'Ouest-Nord-Ouest ou à l'Est de votre aéroport se déplaçant vers l'Est ?"
+    },
+    {
+      "speaker": "andrews",
+      "text": "Non, mais nous venons juste d'avoir un appel du centre. Nous le recherchons."
+    },
+    {
+      "speaker": "washington",
+      "text": "Nous avons une grande cible qui apparaît sur notre zone. Il vient juste sur le flanc Ouest de notre aéroport - le flanc Nord-Ouest de son eastbound. Il va passer juste à travers la portion Nord de votre terrain en direction de l'Est. Il est à environ un quart de mile de la piste Nord-Ouest - juste au-dessus du côté de votre piste Nord-Ouest maintenant."
+    },
+    {
+      "speaker": "andrews",
+      "text": "Qu'est-ce qui se passe avec votre cible maintenant ?"
+    },
+    {
+      "speaker": "washington",
+      "text": "Elle est toujours en direction de l'Est. Elle est venue directement au-dessus des terrains de Andrews et est maintenant à 5 miles à l'Est."
+    },
+    {
+      "speaker": "andrews",
+      "text": "D'où est-elle venue ?"
+    },
+    {
+      "speaker": "washington",
+      "text": "Nous l'avons repérée à environ 7 miles à l'Est, légèrement Sud-Est, et nous la suivons depuis. Le Centre la suit depuis plus longtemps."
+    },
+    {
+      "speaker": "andrews",
+      "text": "Est-ce qu'elle a une trajectoire erratique ?"
+    },
+    {
+      "speaker": "washington",
+      "text": "Elle maintient une trajectoire droite, en direction de l'Est."
+    },
+    {
+      "speaker": "andrews",
+      "text": "Ici Andrews. Notre repérage radar indique qu'il a eu une grande et grosse cible ici au Nord-Est d'Andrews. Il indique qu'il en a 2 autres plus au Sud du terrain."
+    },
+    {
+      "speaker": "washington",
+      "text": "Oui, eh bien le centre en a environ 4 ou 5 autour de la station de Portée de Andrews. Le Centre travaille sur un avion des lignes nationales - le centre le travaille et le vectorise autour de sa cible. Il est venu autour d'Andrews. Il a vu l'un d'entre eux - ressemblant à un météore. (Garbled).. Went by him.. or something. Il dit qu'il en a un à environ 3 miles de son aile droite à présent. Il y a tellement de cibles autour d'ici qu'il est difficile de dire parce qu'elles ne se déplacent pas très vite."
+    },
+    {
+      "speaker": "andrews",
+      "text": "Et son altitude ?"
+    },
+    {
+      "speaker": "washington",
+      "text": "Eh bien, il doit être au-dessus des 8000 pieds puisque nous ne l'avons plus sur le radar."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les Ummites",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee",
+      "title": "Ummites"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Ummo/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "Allô, monsieur Sesma, nous avons lu votre livre. Nous sommes des extraterrestres."
+    }
+  ]
+}

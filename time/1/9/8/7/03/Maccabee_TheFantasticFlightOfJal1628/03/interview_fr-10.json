@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:35:15 JAL1628, indiquez l'altitude de votre traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:35:20 Euh, oh, euh, euh, même niveau."
+    }
+  ]
+}

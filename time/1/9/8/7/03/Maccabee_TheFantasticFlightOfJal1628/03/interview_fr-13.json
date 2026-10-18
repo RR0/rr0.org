@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:38:55 JAL1628 lourd, monsieur. Est-ce que votre traffic semble rester avec vous ?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:38:57 Euh, [inintelligible] distingué. [Il voulais dire disparu.]"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:01 JAL1628 répétez ?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:39:04 Il a, euh, disparu."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:10 JAL1628 lourd, <em>roger</em>. À votre discrétion continuez directement vers Talkeetna, J125 [à] Anchorage."
+    }
+  ]
+}

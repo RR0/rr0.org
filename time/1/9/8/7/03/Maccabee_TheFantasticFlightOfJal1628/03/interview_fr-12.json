@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:36:37 JAL1628 lourd, monsieur. Je vais vous demander de faire un virage à droite 3 6 0 degrés, un virage de 360 ° et de m'indiquer ce que fait alors votre traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:36:47 Virage à droite 360."
+    }
+  ]
+}

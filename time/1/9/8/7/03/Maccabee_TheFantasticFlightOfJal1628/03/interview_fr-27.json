@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:53:10 JAL1628 lourd, descendez à discrétion du pilote. Maintenez le niveau de vol 2 5 0 (<span title=\"25000 FOT\">7620 m</span>)."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:53:13 JAL1628, euh, à discrétion pilote maintiens, euh, 2 5 0, donc, euh, euh, I je ne peux, je n'ai pu voir, euh, d'OVNI, terminé."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:53:27 JAL1628 lourd, compris. Vous ne voyez plus le traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:53:31 Affirmatif."
+    }
+  ]
+}

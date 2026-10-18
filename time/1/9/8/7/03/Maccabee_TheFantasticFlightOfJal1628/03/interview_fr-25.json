@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "united69": {
+      "role": "crew",
+      "title": "UNITED 69"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "united69",
+      "text": "17:48:16 Pouvez-vous re-situer le traffic s'il-vous-plait ?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:48:19 United 69 lourd, affirmatif. Le, euh, Japan Air est à la position de vos 11 heures et à <span title=\"50 NMI\"></span> [de distance], vers le sud."
+    },
+    {
+      "speaker": "united69",
+      "text": "17:48:28 Euh, <em>roger</em>. Merci."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:48:31 JAL1628 lourd, monsieur, indiquez la position de votre traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:48:34 Euh, maintenant, euh, euh, se déplaçant vers, euh, autour de <span title=\"10 NMI\"></span> maintenant, euh, euh, position des, euh 7, euh, 8 heures, <span title=\"10 NMI\"></span>."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:48:36 JAL1628 lourd, <em>roger</em>."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:41:51 Où est-ce que, euh, est-ce que vous affichez toujours un primaire, euh, à côté de ce vol JAL ?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:41:56 OK. Laissez-moi regarder mon autre..."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:41:59 Si oui, quelle est sa position ?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:42:00 OK. Attendez."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:42:24 On dirait que, euh, il n'y a plus de décalage et donc peut-être qu'il est dans le sillage. Mais je ne peux pas le voir maintenant. Je n'arrive pas à le repérer."
+    }
+  ]
+}

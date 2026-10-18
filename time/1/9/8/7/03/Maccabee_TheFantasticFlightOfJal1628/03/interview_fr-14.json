@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:38:57 Centre d'Anchorage."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:38:58 Ouais, c'est 1-2 à nouveau. Sur un autre équipement ici nous avons confirmé qu'il y a une taille de vol de 2 environ. Un seul retour primaire."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:05 OK. Est-ce qu'il, il le suit ?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:39:07 On dirait bien, oui."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:10 OK. Attendez."
+    }
+  ]
+}

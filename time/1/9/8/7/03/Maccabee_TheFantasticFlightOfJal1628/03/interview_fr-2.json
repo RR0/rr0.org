@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "175:23:35 (au ROCC) Pourriez-vous regarder autour de <span title=\"40 NMI\"></span> au sud de Fort Yukon ? Il devrait y avoir le [JAL1628] là-bas. Pouvez-vous me dire [si] vous voyez [une] cible primaire et sa position ?"
+    }
+  ]
+}

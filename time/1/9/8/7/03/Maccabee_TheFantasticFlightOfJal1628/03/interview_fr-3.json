@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:24:50 JAL1628, avez-vous toujours, euh, un contact visuel avec le, euh, traffic ?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:24:53 Affirmatif. Nous [avons] également <span class=\"source-id\" aria-label=\"Source\" aria-hidden=\"true\">s7<span id=\"s7\" aria-hidden=\"true\" class=\"anchor\"></span><span class=\"source-contents\">Information obtenue d'après l'enregistrement audio et la transcription de l'enregistrement de la conversations entre l'avion et l'AARTCC.</span></span> un contact radar, euh... (inintelligible ; transmission hâchée)."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:25:02 JAL1628 lourd, <em>roger</em>, monsieur. J'ai toujours un écho sur le radar à peu près à <span title=\"5 SMI\">8 km</span> dans la lignée de votre position de 6 heures (i.e., derrière l'avion). Vous confirmez ? <span class=\"note-id\" aria-label=\"Note\">n1<span id=\"n1\" class=\"anchor\" aria-hidden=\"true\"></span><span class=\"note-contents\">C'est probablement une drôle de question à poser puisque l'équipage ne pouvait pas voir derrière l'avion. Cependant, c'est la 1ʳᵉ indication que le radar de Elmendorf aurait pu avoir détecté quelque chose d'autre derrière l'avion.</span></span>"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:25:12 Euh, négatif, euh, 11 heures, euh, <span title=\"8 SMI\">13 km</span>, euh, au même niveau. Terminé."
+    }
+  ]
+}

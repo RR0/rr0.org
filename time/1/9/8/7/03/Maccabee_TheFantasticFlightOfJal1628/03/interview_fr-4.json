@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:25:50 Négatif, ce n'est pas une erreur. Je veux que vous suiviez bien tout ça et si vous captez un [signal de transpondeur], vérifiez que vous n'avez pas d'appareil [militaire] en opération dans la zone."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:25:57 Affirm(atif). Nous n'avons rien ici pour l'instant. Pouvez-vous me donner la position du primaire que vous recevez ?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:26:03 J'ai un primaire à environ <span title=\"50 NMI\"></span> au sud-est. Mais c'est juste devant le (JAL1628) <span class=\"source-id\" aria-label=\"Source\" aria-hidden=\"true\">s11<span id=\"s11\" aria-hidden=\"true\" class=\"anchor\"></span><span class=\"source-contents\">Information obtenue d'après l'enregistrement audio et la transcription de l'enregistrement de la conversations entre l'avion et l'AARTCC.</span></span>."
+    }
+  ]
+}

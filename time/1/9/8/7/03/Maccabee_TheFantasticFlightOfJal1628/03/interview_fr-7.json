@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "17:32:07 JAL1628, euh, demande à descendre."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:32:20 JAL1628 Demande 3 1 0 (i.e., <span title=\"31000 FOT\">9449 m</span>)"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:32:25 JAL1628 lourd, compris. Demande niveau de vol 3 1 0."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:32:34 JAL1628 lourd, vos transmissions sont hâchées. Répétez."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:32:39 Niveau de vol 3 1 0."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:32:41 JAL1628 lourd, descendez à discrétion du pilote. Maintenez le niveau de vol 3 1 0."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:32:45 Nous quittons 3 5 0 pour 3 1 0 [la descente commence]"
+    }
+  ]
+}

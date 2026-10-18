@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:39:10 JAL1628 lourd, <em>roger</em>, à votre discrétion continuez direct vers Talkeetna J125, Anchorage <span class=\"note-id\" aria-label=\"Note\">n5<span id=\"n5\" class=\"anchor\" aria-hidden=\"true\"></span><span class=\"note-contents\">J125 est une route de vol</span></span>."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:39:15 (inintelligible)"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:35 JAL1628 lourd, <em>roger</em> monsieur. Le radar militaire indique qu'ils ont bien une cible primaire qui vous suit en ce moment."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:39:32 Euh, répétez ?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:35 JAl1628 lourd. Le radar militaire informe qu'ils repèrent par intermittence une cible primaire derrière vous dans votre sillage, dans votre sillage je répète."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:39:47 Je pense oui."
+    }
+  ]
+}

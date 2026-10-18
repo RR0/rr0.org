@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:40:26 Jal1628 lourd, monsieur, nous avons des militaires euh, à Eielson, à <span title=\"40 SMI\">64 km</span> de vous. Je peux les faire monter et les faire vérifier le traffic pour vous."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:40:34 <em>Roger</em>."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:40:35 JAL1628, <em>roger</em>. Vous voulez que l'on fasse ça ?"
+    }
+  ]
+}

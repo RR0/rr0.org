@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "17:42:35 Euh, nous avons... Centre d'Anchorage, JAL1628. Nous l'avons en vue à la même position, terminé."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:42:42 JAL1628, compris. En vue, même position."
+    }
+  ]
+}

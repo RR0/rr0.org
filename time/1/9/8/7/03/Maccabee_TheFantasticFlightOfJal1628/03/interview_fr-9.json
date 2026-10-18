@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:34:38 JAL1628 lourd, indiquez la position de votre traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:34:42 Affirmatif. Juste au-dessus de Fairbanks."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:34:52 JAL1628 lourd, compris. Votre traffic est au-dessus de Fairbanks en ce moment."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:34:56 Affirmatif, euh, demandons un cap 2 1 0."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:35:02 JAL1628 lourd, <em>roger</em>. Déviations approuvées comme nécessaires pour le traffic."
+    }
+  ]
+}

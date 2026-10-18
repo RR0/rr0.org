@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:44:07 JAL1628, monsieur, avez-vous toujours le traffic ?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:44:12 Euh, répétez s'il-vous-plait."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:44:13 JAL1628 lourd.. Vous avez toujours le traffic ?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:44:17 Euh, affirmatif, euh, 9 heures"
+    }
+  ]
+}

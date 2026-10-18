@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:39:24 OK. Voulez-vous, avez vous quelqu'un que vous pouvez envoyer là-haut ou voulez-vous faire ça ?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:39:30 Je vais vous dire. On va en parler à l'officier de liaison."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:33 OK. Euh, ça commence à inquiéter Japan Airline 1628, un 747. Il est en train de faire un virage à 360 là et ça le suit toujours..."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:39:46 Où est ce retour [radar] de recherche, juste derrière lui ou quoi ?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:50 Répétez ?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:38:51 Euh, je vais parler à mon autre homme radar ici qui a, il a un autre équipement qui surveille cet appareil."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:39:54 OK."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:39:55 OK. On va appeler le bureau militaire à propos de ça."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "17:23:13 Et maintenant la cible, euh, le traffic s'est éteint. On ne peut plus le voir maintenant."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:23:19 JAL1628 <em>Roger</em>. Et je ne reçois aucune réponse radar."
+    }
+  ]
+}

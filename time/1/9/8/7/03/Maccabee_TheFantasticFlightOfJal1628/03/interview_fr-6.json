@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "17:30:16 (communication très hâchée ; inintelligible)"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:30:20 JAL1628 lourd, on ne vous entend pas bien. Répétez."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:30:23 Demande, euh, déviation, euh, euh, de, eh, objet, euh, demande cap 2 4 0."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:30:52 JAL1628 <em>Roger</em>. Volez cap 2 4 0. JAL1628 lourd, déviations approuvées si nécessaire pour traffic <span class=\"note-id\" aria-label=\"Note\">n2<span id=\"n2\" class=\"anchor\" aria-hidden=\"true\"></span><span class=\"note-contents\">Puisque le contrôleur savait qu'il n'y avait aucun autre appareil connu dans le ciel il n'y avait pas d'objection à ce que le JAL1628 aille où il voulait ailleurs s'il voulait éviter un \"traffic.\"</span></span>"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:30:49 C'est, euh, plutôt grand..."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:30:52 JAL1628 lourd, votre communication reste hâchée. Répétez."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:30:56 C'est, euh, un avion, euh, très gros."
+    }
+  ]
+}

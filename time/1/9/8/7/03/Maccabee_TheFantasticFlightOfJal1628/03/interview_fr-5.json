@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "rocc",
+      "text": "17:26:13 OK. Je l'ai à environ..."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:26:15 <span title=\"8 NMI\"></span> devant le (JAL1628) il a un traffic à la même altitude de (<span title=\"35000 FOT\">10668 m</span>)."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:26:18 OK. Je l'ai à environ ses, euh, oh, ça a l'air à environ, euh, 10 heures à à peu près cette distance, oui."
+    }
+  ]
+}

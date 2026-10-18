@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "united69": {
+      "role": "crew",
+      "title": "UNITED 69"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "united69",
+      "text": "17:50:35 UA69 lourd. Nous avons eu le Japan Airliner en vue. Je ne vois personne autour de lui. Il [désignant le \"vaisseau spatial\"] est à la position de ses 7 heures, hein ?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:50:46 UA69, c'est ce qu'il dit. JAL1628 lourd, indiquez la position de votre traffic actuellement."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:50:52 Euh, maintenant, distinctement [il voulait dire \"s'éteignant\"), mais, euh, euh, vos, je suppose, euh, 12 heures en-dessous vous."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:51:02 JAL1628 lourd, répétez. Vous êtes hâché."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:51:06 Juste devant les..(inintelligible) de <em>United</em>, euh"
+    }
+  ]
+}

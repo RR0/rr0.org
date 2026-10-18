@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Contact radar",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "17:36.12 Euh, Centre d'Anchorage, JAL1628. Demandons à nous diriger vers Talkeetna."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:36:18 JAL1628 lourd, ok pour vol direct vers Talkeetna et en, euh, informez-moi de la position de votre (sic) traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:36:24 Euh, même po... même position."
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Transcript of Radio Communications",
+  "speakers": {
+    "AL": {
+      "role": "crew",
+      "title": "Aurigny Airlines 544"
+    },
+    "JZ": {
+      "role": "controller",
+      "title": "Jersey Control Zone"
+    },
+    "BI": {
+      "role": "crew",
+      "title": "Blue Island Airways 832"
+    },
+    "JG": {
+      "role": "crew",
+      "title": "Jersey 912 Golf"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/0/8/02/ChannelIslands/s2/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "AL",
+      "text": "1409:32 Jersey Zone, A-Line 544."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1409:37 A-Line 544, pass message."
+    },
+    {
+      "speaker": "AL",
+      "text": "1409:40 Do you have any traffic, er, can't really say how far, about my 12 o'clock, er, level?"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1409:50 Er, no, no known traffic at all in your 12 o'clock."
+    },
+    {
+      "speaker": "AL",
+      "text": "1409:54 Roger, I've got a very bright object, er, [unintelligible word], well, as I say it's difficult to say how far, extremely bright yellow, orange object, straight ahead, er, very flat platform, looking at it through binoculars as we speak."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1410:10 A-Line 544, rog, I do have a, er, primary contact now, er, very faint primary contact, just to the left probably to your 11 o'clock this time and a range of, er, about 4 track miles."
+    },
+    {
+      "speaker": "AL",
+      "text": "1410:31 Roger."
+    },
+    {
+      "speaker": "AL",
+      "text": "1411:07 A-Line 544, any more information on that aircraft please?"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1411:11 A-Line 544, er, negative, there's just a primary contact [that/but?] we sometimes get anaprop on the radar. There is something possibly your left, er, 10 o'clock at a range of 3 miles this time."
+    },
+    {
+      "speaker": "AL",
+      "text": "1411:26 I've got a definite contact, my 12 o'clock, very bright yellow object looking like, well, a cigar."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1411:38 A-Line 544, er roger, nothing at all in your 12 o'clock, erm, for the next 40 miles or so."
+    },
+    {
+      "speaker": "AL",
+      "text": "1411:47 Roger 544. Anyone else see that?"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1411:51 There's, er, nothing really in the area - Blue Island 832, er Zone?"
+    },
+    {
+      "speaker": "BI",
+      "text": "1411:57 Er, go ahead, what's the position of, er, the A-Line? ?"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1412:00 Er, that traffic is in your left, just behind 9 o'clock, can you see anything in that direction towards [Ortac/ORTAC] ?"
+    },
+    {
+      "speaker": "BI",
+      "text": "1412:07 I'm having a look, stand by."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1412:28 A-Line 544, er there's still nothing seen, could you confirm this traffic is at a similar level to yourself?"
+    },
+    {
+      "speaker": "AL",
+      "text": "1412:36 Roger 544, just confirming, now all the passengers can see this . . . aircraft, er. I've got the island visual, it's dead ahead, can't say how far, probably 5 miles, but it's staying the same size, er looks to be off the north . . . north-north-west coast of Alderney [break in transmission] over Burhou-ish at the moment, but I can't really tell."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1412:58 A-Line 544, er, roger, we'll try and get hold of Alderney tower, see if they can, er see anything."
+    },
+    {
+      "speaker": "AL",
+      "text": "1413:03 Roger."
+    },
+    {
+      "speaker": "BI",
+      "text": "1413:05 Blue Island 832, I can't see anything in that, er, position."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:09 I think we crossed there, say again."
+    },
+    {
+      "speaker": "BI",
+      "text": "1413:13 It's Blue Island 832, er, I - I have nothing in that, er, position at all I can't see anything."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:16 Blue Island 832, roger, descend Flight Level 40."
+    },
+    {
+      "speaker": "BI",
+      "text": "1413:22 Descending Flight Level 40 Blue Island 832."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:24 Blue Island 832, contact Jersey Approach now, 120 decimal 3."
+    },
+    {
+      "speaker": "BI",
+      "text": "1413:30 Jersey Approach, 120 decimal 3, Blue Island 832."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:33 Jersey [912?] Golf, Zone?"
+    },
+    {
+      "speaker": "JG",
+      "text": "1413:35 Go ahead, Jersey 912 Golf."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:37 Have you been listening in to the conversation with the A-line?"
+    },
+    {
+      "speaker": "JG",
+      "text": "1413:39 Affirm, Jersey 912 Golf."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:41 Roger, that, er, object would be roughly on your course towards ORTAC, probably below, could you advise us if you see anything in the vicinity of Alderney if you look down at all?"
+    },
+    {
+      "speaker": "JG",
+      "text": "1413:53 Er, we'll keep a visual eye out, Jersey 912 Golf."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1413:56 Roger."
+    },
+    {
+      "speaker": "AL",
+      "text": "1413:59 A-Line 544, er Jersey."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1414:02 Pass message."
+    },
+    {
+      "speaker": "AL",
+      "text": "1414:04 Well, looking through binoculars as I am now, er, there's a second one just appeared behind the first one, um, from where I am."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1414:12 A-Line 544, roger, and er, are they still between yourselves and Alderney?"
+    },
+    {
+      "speaker": "AL",
+      "text": "1414:16 Negative, I think over maybe to the west of Alderney."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1414:23 Roger . . . erm, I do have a primary contact, just one . . . blob if you like, er, 8 miles or so to the west of Alderney in the vicinity of the Casquets."
+    },
+    {
+      "speaker": "AL",
+      "text": "1414:36 That would possibly be the second one, furthest out that I can see. The first one is maybe closer, looks like Burhou area or beyond Burhou from me in a straight line."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1414:47 A-line 544 understood, break. Jersey 912 Golf, that would be roughly below your position this time."
+    },
+    {
+      "speaker": "JG",
+      "text": "1414:55 Rog, this is Jersey 912 Golf, still looking, er, I can't see anything."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1414:58 Roger, there is a primary just on your right hand side now, erm, vicinity of the Casquets, about a mile to your right."
+    },
+    {
+      "speaker": "JG",
+      "text": "1415:07 Roger, Jersey 912 Golf, just looking."
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Transcript of Radio Communications",
+  "speakers": {
+    "AL": {
+      "role": "crew",
+      "title": "Aurigny Airlines 544"
+    },
+    "JZ": {
+      "role": "controller",
+      "title": "Jersey Control Zone"
+    },
+    "JG": {
+      "role": "crew",
+      "title": "Jersey 912 Golf"
+    },
+    "GR": {
+      "role": "crew",
+      "title": "Golf Romeo Romeo"
+    },
+    "SL": {
+      "role": "crew",
+      "title": "Sky Elite 597 Papa"
+    },
+    "511": {
+      "role": "crew",
+      "title": "Jersey 511"
+    },
+    "03": {
+      "role": "crew",
+      "title": "03"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/0/8/02/ChannelIslands/s2/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "AL",
+      "text": "1415:13 Yeah, the second one appears to be beyond the first from where I am, in other words towards the south west. Er, it's exactly the same, it's got a gap. It's a cylindrical . . . object, very bright yellow, and there's a gap in light about two thirds of the way along it from, er, left to right as I look at it, and the second one is exactly the same."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1415:33 A-Line 544, roger, would you like descent."
+    },
+    {
+      "speaker": "AL",
+      "text": "1415:36 Please, I better had go down I think."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1415:38 A-Line 544, as you descend towards 2000ft the QNH is 1021"
+    },
+    {
+      "speaker": "AL",
+      "text": "1415:43 Descend 2000 feet, 1021, they're very plain to see from where I am now, without, er, any binoculars."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1415:49 Roger."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1416:31 A-Line 544, er, anything more?"
+    },
+    {
+      "speaker": "AL",
+      "text": "1416:35 Er, certainly two objects now, passengers can both . . . see, or passengers can see two objects. I'm going to be in a straight line with them on, er, sort of final approach into Alderney. Two very bright lights."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1416:47 Roger. Have you any idea of the scale of them?"
+    },
+    {
+      "speaker": "AL",
+      "text": "1416:49 Er, I'd say, from here, difficult to say how far away they are, I'd say the furthest one is 10 miles away, closest one is 4 miles away, 5 miles away, maybe 7, erm, don't know, like - the size of 737, something like that?"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:06 A-Line 544, Roger."
+    },
+    {
+      "speaker": "AL",
+      "text": "1417:09 Both stationary."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:10 Roger. And, er, what sort of level?"
+    },
+    {
+      "speaker": "AL",
+      "text": "1417:14 Low to me now, er, I'd say 2000 feet, 1500."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:19 Roger."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:28 Jersey 912 Golf, anything down your right hand side this time?"
+    },
+    {
+      "speaker": "JG",
+      "text": "1417:32 Er, negative, Jersey 912 Golf."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:35 Jersey 912 Golf, er, roger, contact London now, 132 decimal 3."
+    },
+    {
+      "speaker": "JG",
+      "text": "1417:39 132 decimal 3, Jersey 912 Golf."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:42 Golf Romeo Romeo, Zone."
+    },
+    {
+      "speaker": "GR",
+      "text": "1417:44 Er, Golf Romeo Romeo Golf?"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:46 Er, have you been listening in on the conversation with the A-Line?"
+    },
+    {
+      "speaker": "GR",
+      "text": "1417:49 Affirmative."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1417:51 Do you know that traffic is about 18 miles ahead of you this time, if you could keep me advised if you see any objects on your way towards Alderney."
+    },
+    {
+      "speaker": "GR",
+      "text": "1418:00 Er, Golf Romeo Romeo, will do."
+    },
+    {
+      "speaker": "AL",
+      "text": "1418:02 A-line 544, I've lost the objects now in the haze in descent."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1418:06 A-line 544, that's copied."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1418:35 A-Line 544, we've advised, er, Guernsey and they've advised Alderney about, er, whatever that is. You can call them now on 128 decimal 650."
+    },
+    {
+      "speaker": "AL",
+      "text": "1418:43 Roger, thanks, A-line 544."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1423:55 Sky Elite 597 Papa, when ready descend Flight Level 50."
+    },
+    {
+      "speaker": "SL",
+      "text": "1423:59 When ready descend Flight Level 50, Sky Elite 597 Papa."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1424:03 Sky Elite 597 Papa, er I think this happened before you were on-frequency but some previous traffic into Alderney reported seeing some unidentified objects [laughs at unheard comment] in the sky in the vicinity of Alderny. Could you advise me if you see anything?"
+    },
+    {
+      "speaker": "SL",
+      "text": "1424:20 [unintelligible] Sky Elite 597 Papa."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1424:24 What you're looking for would be cigar-shaped very bright yellow objects emitting light."
+    },
+    {
+      "speaker": "SL",
+      "text": "1424:34 Er, yeah, yeah [laughing] we'll, er, keep a good look-out, Sky Elite 597 Papa."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1424:39 [unintelligible] we had a Trislander into Alderney over a period of about 10,15 minutes, all the passengers saw the objects as well, there were two in the vicinity of Alderney and one at the Casquets."
+    },
+    {
+      "speaker": "SL",
+      "text": "1424:52 [unintelligible] and we are visual with Alderney at the moment, keeping a good look-out, Sky Elite 597 Papa. [unidentified voice: \". . . trying, it's such a laugh!\"]"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1424:59 Thank you."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1427:49 Sky Elite 597 Papa. If you can keep a good look-out, er, on your way down and advise Guernsey if you see anything, 128 decimal 650."
+    },
+    {
+      "speaker": "SL",
+      "text": "1427:57 OK, and Guernsey 128 decimal 650, Sky Elite 597 Papa."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1428:08 Golf Romeo Romeo, Zone."
+    },
+    {
+      "speaker": "GR",
+      "text": "1428:10 Er, Golf Romeo [unintellible]."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1428:13 If you could keep a good look out as you pass down the side of Alderney, er, towards Alderney and the west. We've a cross-reference from some traffic inbound to Jersey from the south which saw the objects from the vicinity of Sark towards Alderney at the same level."
+    },
+    {
+      "speaker": "GR",
+      "text": "1428:28 Er, Golf Romeo, we copied all that, keeping a good look out, certainly."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1428:31 Thank you."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1432:11 Golf Romeo Romeo, you're passing down the east side of Alderney now, er, anything seen at all?"
+    },
+    {
+      "speaker": "GR",
+      "text": "1432:16 Er, Golf Romeo Romeo, to my disappointment, nothing."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1432:21 Golf Romeo Romeo roger maintain altitude 3000 feet continue with Jersey approach 120 decimal 3."
+    },
+    {
+      "speaker": "GR",
+      "text": "1432:28 120 decimal 3 maintaining 3, thank you."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1432:30 Bye bye."
+    },
+    {
+      "speaker": "GR",
+      "text": "1432:31 Bye bye sir."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1436:39 511 Jersey?"
+    },
+    {
+      "speaker": "511",
+      "text": "1436:40 511 go ahead."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1436:41 Er, if you can just bear with me a bit whilst I explain this to you, we had an Aline who landed in Alderney about 20 minutes ago, er, he reported two cigar shaped objects, bright orange, approximately, well, between 5 or 40 and surface level just off the NW corner of Alderney, so if you could keep a look out for anything at all on your way down to Guernsey."
+    },
+    {
+      "speaker": "511",
+      "text": "1437:05 Yeah, will do, sounds very strange, maybe there're UFOs in the area."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1437:10 Yes, maybe indeed, er, the pilot reported it and, er, all the passengers saw it as well. And, er, we had a separate, er, aircraft [unintelligible] just east of Sark who also confirmed it north of his position, so like I say, if you could keep a good look-out and advise us if you spot anything."
+    },
+    {
+      "speaker": "511",
+      "text": "1437:23 Wilco, thank you."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1437:29 [unintelligible] 03, did you copy that?"
+    },
+    {
+      "speaker": "03",
+      "text": "1437:30 [unintelligible] 03, we'll keep an eye out."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1437:31 Roger."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1440:31 Jersey 511, continue again to your approach 128 decimal 650 and if you could advise them if you do spot anything on the way down"
+    },
+    {
+      "speaker": "511",
+      "text": "1440:38 128.650, wilco, Jersey 511, bye - not seen anything yet."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1440:42 Bye bye, cheers."
+    }
+  ]
+}

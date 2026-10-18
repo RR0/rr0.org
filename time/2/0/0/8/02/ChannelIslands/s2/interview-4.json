@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Transcript of Radio Communications",
+  "speakers": {
+    "JA": {
+      "role": "controller",
+      "title": "Jersey Approach Control"
+    },
+    "GC": {
+      "role": "crew",
+      "title": "Golf Charlie Sierra"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/0/8/02/ChannelIslands/s2/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "JA",
+      "text": "1441:46 Golf Charlie Sierra, Approach"
+    },
+    {
+      "speaker": "GC",
+      "text": "1441:50 Approach, Golf Charlie Sierra"
+    },
+    {
+      "speaker": "JA",
+      "text": "1441:52 Golf Charlie Sierra, for your information we've had some reports of some strange objects in the vicinity of Alderney in the past 35 minutes, at the same level as yourself, so if you could keep a good look-out towards Alderney and advise if you see anything."
+    },
+    {
+      "speaker": "GC",
+      "text": "1442:04 Er, wilco, Golf Charlie Sierra."
+    }
+  ]
+}

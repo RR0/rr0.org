@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Transcript of Radio Communications",
+  "speakers": {
+    "BI": {
+      "role": "crew",
+      "title": "Blue Island Airways 832"
+    },
+    "JA": {
+      "role": "controller",
+      "title": "Jersey Approach Control"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/0/8/02/ChannelIslands/s2/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "BI",
+      "text": "1414:43 Jersey, Blue Island 832. Zone asked us to look if we could see an object which is, um, being seen by A-Line at the moment, I've got something about 8 o'clock resembling the description."
+    },
+    {
+      "speaker": "JA",
+      "text": "1414:55 Blue Island 832, roger, what range would you estimate that target?"
+    },
+    {
+      "speaker": "BI",
+      "text": "1414:59 Around about a similar range to Alderney from us now."
+    },
+    {
+      "speaker": "JA",
+      "text": "1415:04 Blue Island 832, and at the same level, or lower or higher?"
+    },
+    {
+      "speaker": "BI",
+      "text": "1415:08 Er, lower, I would suspect about 2000 lower."
+    },
+    {
+      "speaker": "JA",
+      "text": "1415:12 Blue Island 832, roger."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Transcript of Radio Communications",
+  "speakers": {
+    "JZ": {
+      "role": "controller",
+      "title": "Jersey Control Zone"
+    },
+    "PH": {
+      "role": "crew",
+      "title": "Papa Hotel Bravo"
+    },
+    "932": {
+      "role": "crew",
+      "title": "Beauport 932"
+    },
+    "AL": {
+      "role": "crew",
+      "title": "Aurigny Airlines 563"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/0/8/02/ChannelIslands/s2/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "JZ",
+      "text": "1443:18 Papa Hotel Bravo, Jersey Zone?"
+    },
+    {
+      "speaker": "PH",
+      "text": "1443:21 Go ahead."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1443:22 Papa Hotel Bravo, um, approximately 20 minutes ago we had a Trislander landing at, er, Alderney. He reported seeing, er, two, erm, cigar shaped objects apparently off the northwest coast of Alderney. It was confirmed by another aircraft and the passengers on board. I was just wondering if you could see anything from your present position towards Alderney?"
+    },
+    {
+      "speaker": "PH",
+      "text": "1443:46 OK, we're looking."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1443:48 Beauport 932 did you copy that?"
+    },
+    {
+      "speaker": "932",
+      "text": "1443:53 Affirm, 932."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1443:56 Yeah, it was just to the west of, er, Alderney, they were between Flight Level 40 and surface level so I mean if you could, or if you do see anything at all if you could report back?"
+    },
+    {
+      "speaker": "932",
+      "text": "1444:05 Roger"
+    },
+    {
+      "speaker": "JZ",
+      "text": "1446:51 Papa Hotel Bravo, anything seen at all to the east of you?"
+    },
+    {
+      "speaker": "PH",
+      "text": "1446:54 No, had a good look, nothing observed."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1446:59 Papa Hotel Bravo, roger, thanks for that."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1525:01 Hello A-Line 563, Zone."
+    },
+    {
+      "speaker": "AL",
+      "text": "1525:03 Go ahead please."
+    },
+    {
+      "speaker": "JZ",
+      "text": "1525:04 Er, I believe my colleague wants to have a quick, er, word with you, so when you have the chance if you could, um, contact him on 118 decimal 550."
+    },
+    {
+      "speaker": "AL",
+      "text": "1525:13 18 55, coming across now."
+    }
+  ]
+}

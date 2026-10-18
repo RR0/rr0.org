@@ -2,8 +2,8 @@
  * Moves the dialogues of an rr0.org page (`<blockquote>` holding `<p class="question">` / `<p class="answer">`) into interview files read by
  * `<rr0-interview>` (UFO@home's InterviewElement), one file per blockquote, written beside the page.
  *
- * What was said is read from the GENERATED page (`out/…`), where the build has already turned people, places, dates and sources into links: those
- * links become the linked parts of a segment, the rest its text. Who speaks is the name a turn starts with (`<strong>Blackwell</strong> :`), kept
+ * What was said is read from the GENERATED page (`out/…`), where the build has already turned people, places, dates and sources into links, and
+ * kept as the HTML it is: the interview file says who speaks and when, and leaves the rest to HTML. Who speaks is the name a turn starts with (`<strong>Blackwell</strong> :`), kept
  * for the turns of the same kind that follow; else the interviewer (`--interviewer`, else the page's first `author`) for a question and
  * `--interviewee` for an answer.
  *
@@ -16,14 +16,6 @@ import { JSDOM } from "jsdom"
 import fs from "node:fs"
 import path from "node:path"
 
-/** How a stretch is set: in italics (a title, a foreign word), in a language. */
-interface Style {
-  italic?: true
-  lang?: string
-}
-
-type Part = { text: string } & Style & { href?: string, title?: string }
-
 interface Speaker {
   role: string
   by?: { people: string }
@@ -32,8 +24,8 @@ interface Speaker {
 
 interface Segment {
   speaker: string
-  text?: string
-  parts?: Part[]
+  /** What was said, as the HTML the page has it. */
+  text: string
 }
 
 interface Options {
@@ -60,19 +52,8 @@ export class InterviewMigration {
     return [last, ...words].map(word => word.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z-]/g, "")).join("")
   }
 
-  /**
-   * The parts a paragraph says: its text, its links as linked parts, its titles and foreign words (`<i>`, `<em>`, `<cite>`) as parts in italics in
-   * their language; a leading `Name :` taken off and returned as who speaks.
-   */
-  private partsOf(p: Element): { name?: string, parts: Part[] } {
-    const parts: Part[] = []
-    const same = (a: Part, b: Part): boolean => a.href === undefined && b.href === undefined && a.italic === b.italic && a.lang === b.lang
-    const add = (part: Part): void => {
-      if (part.text === "") return
-      const last = parts[parts.length - 1]
-      if (last && same(last, part)) last.text += part.text
-      else parts.push(part)
-    }
+  /** What a paragraph says, as the HTML the generated page has (its links resolved); a leading `Name :` taken off and returned as who speaks. */
+  private saidOf(p: Element): { name?: string, text: string } {
     let name: string | undefined
     const first = [...p.childNodes].find(node => node.nodeType !== 3 || node.textContent!.trim() !== "")
     if (first && first.nodeType === 1 && ["STRONG", "B"].includes((first as Element).tagName)) {
@@ -83,29 +64,10 @@ export class InterviewMigration {
         first.remove()
       }
     }
-    const walk = (node: Node, style: Style): void => {
-      // The source's own line breaks and indents are not what was said.
-      if (node.nodeType === 3) return add({ text: node.textContent!.replace(/\s+/g, " "), ...style })
-      if (node.nodeType !== 1) return
-      const element = node as Element
-      if (element.tagName === "BR") return add({ text: "\n" })
-      const lang = element.getAttribute("lang") ?? style.lang
-      const inner: Style = { ...(style.italic || ["I", "EM", "CITE"].includes(element.tagName) ? { italic: true as const } : {}), ...(lang ? { lang } : {}) }
-      if (element.tagName === "A" && element.getAttribute("href")) {
-        const title = element.getAttribute("title") ?? undefined
-        return add({ text: element.textContent!.replace(/\s+/g, " "), href: element.getAttribute("href")!, ...(title ? { title } : {}), ...inner })
-      }
-      if (element.classList.contains("note")) this.warnings.push(`a note kept as text: ${element.textContent!.trim().slice(0, 60)}`)
-      for (const child of element.childNodes) walk(child, inner)
-    }
-    for (const child of p.childNodes) walk(child, {})
-    // The spaces around a line break are not said, nor those at the ends of the turn.
-    for (const part of parts) part.text = part.text.replace(/ *\n */g, "\n")
-    if (parts.length) {
-      parts[0].text = parts[0].text.trimStart()
-      parts[parts.length - 1].text = parts[parts.length - 1].text.trimEnd()
-    }
-    return { name, parts: parts.filter(part => part.text !== "") }
+    for (const note of p.querySelectorAll(".note")) this.warnings.push(`a note kept in the text: ${note.textContent!.trim().slice(0, 60)}`)
+    // The source's own line breaks and indents are not what was said.
+    const text = p.innerHTML.replace(/\s+/g, " ").replace(/ ?<br ?\/?> ?/g, "<br>").trim()
+    return { name, text }
   }
 
   /** The interview a blockquote holds. */
@@ -127,7 +89,7 @@ export class InterviewMigration {
       }
       const kind = child.classList.contains("question") ? "question" : child.classList.contains("answer") ? "answer" : undefined
       if (!kind) this.warnings.push(`a paragraph that is neither question nor answer, given to the previous speaker: ${child.textContent!.trim().slice(0, 60)}`)
-      const { name, parts } = this.partsOf(child)
+      const { name, text } = this.saidOf(child)
       let id: string
       if (kind && name) named[kind] = name
       const said = kind ? named[kind] : undefined
@@ -140,8 +102,8 @@ export class InterviewMigration {
       } else id = previous ?? defaults.answer.id
       speakers[id] ??= defaults.answer.speaker
       previous = id
-      if (parts.length === 0) continue
-      segments.push(parts.length === 1 && Object.keys(parts[0]).length === 1 ? { speaker: id, text: parts[0].text } : { speaker: id, parts })
+      if (text === "") continue
+      segments.push({ speaker: id, text })
     }
     const lang = document.documentElement.getAttribute("lang") ?? (this.page.includes("_fr.") ? "fr" : undefined)
     const title = document.querySelector("title")?.textContent?.trim()

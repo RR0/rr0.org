@@ -220,8 +220,10 @@ export class InterviewMigration {
   /** Whether a paragraph starts with one of the names in bold, then a colon. */
   private static startsWith(p: Element, names: string[]): boolean {
     const first = [...p.childNodes].find(node => node.nodeType !== 3 || node.textContent!.trim() !== "")
-    return !!first && first.nodeType === 1 && ["STRONG", "B"].includes((first as Element).tagName)
-      && names.includes(first.textContent!.trim()) && /^\s*:/.test(first.nextSibling?.textContent ?? "")
+    // The bold name may be inside a link (`<a><strong>Keyhoe</strong></a> :`).
+    const bold = (node: ChildNode): boolean => node.nodeType === 1 && (["STRONG", "B"].includes((node as Element).tagName)
+      || (node as Element).tagName === "A" && (node as Element).children.length === 1 && ["STRONG", "B"].includes((node as Element).children[0].tagName))
+    return !!first && bold(first) && names.includes(first.textContent!.trim()) && /^\s*:/.test(first.nextSibling?.textContent ?? "")
   }
 
   /** The runs of paragraphs that make a dialogue: from a paragraph starting with a name, through the paragraphs that follow it. */
@@ -238,7 +240,8 @@ export class InterviewMigration {
 
   /** Where each run of paragraphs is in the source page, as matches, the n-th run holding `lengths[n]` paragraphs. */
   private prefixedSource(source: string, prefixes: string[], lengths: number[]): RegExpMatchArray[] {
-    const start = new RegExp(`<p>\\s*<(strong|b)>(${prefixes.join("|")})</(strong|b)>\\s*:`, "g")
+    // The name in bold may be linked, inside or around the bold, and padded with spaces.
+    const start = new RegExp(`<p>\\s*(?:<a[^>]*>)?\\s*<(?:strong|b)>\\s*(?:<a[^>]*>)?\\s*(?:${prefixes.join("|")})\\s*(?:</a>)?\\s*</(?:strong|b)>\\s*(?:</a>)?\\s*:`, "g")
     const matches: RegExpMatchArray[] = []
     let from = 0
     for (const length of lengths) {
@@ -279,7 +282,7 @@ export class InterviewMigration {
     for (const match of quotes) {
       // A blockquote left open before the dialogue would make the match swallow what is around it.
       const count = (pattern: RegExp): number => (match[0].match(pattern) ?? []).length
-      if (count(/<figure[\s>]/g) !== count(/<\/figure>/g) || count(/<section[\s>]/g) !== count(/<\/section>/g) || count(/<blockquote[\s>]/g) !== 1) {
+      if (count(/<figure[\s>]/g) !== count(/<\/figure>/g) || count(/<section[\s>]/g) !== count(/<\/section>/g) || count(/<blockquote[\s>]/g) !== (prefixes ? 0 : 1)) {
         throw new Error(`${this.page}: a dialogue of the source is not a whole blockquote (an unclosed tag around it?)`)
       }
     }

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Le crash de Mantell",
+  "speakers": {
+    "tower": {
+      "role": "controller",
+      "title": "Tour de Godman"
+    },
+    "MantellThomas": {
+      "role": "pilot",
+      "by": {
+        "people": "MantellThomas"
+      },
+      "title": "Thomas Mantell"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Mantell/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "MantellThomas",
+      "text": "Je suis à <span title=\"15000 FOT\">4572 m</span>. J'ai l'objet en vue au-dessus et devant moi, et il semble se déplacer à environ la moitié de ma vitesse ou approximativement 180 miles/h. Je monte jusqu'aux 20000."
+    },
+    {
+      "speaker": "tower",
+      "text": "Pouvez-vous, euh, nous donner une description de l'objet ? A vous."
+    }
+  ]
+}

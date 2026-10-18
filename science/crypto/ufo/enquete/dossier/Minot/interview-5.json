@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation de Minot",
+  "speakers": {
+    "control": {
+      "role": "controller",
+      "title": "Contrôle d'approche de Minot"
+    },
+    "jag31": {
+      "role": "crew",
+      "title": "JAG 31"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Minot/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "control",
+      "text": "Affirmatif. Je me demandais à quel éloignement vous avez vu cet ovni ?"
+    },
+    {
+      "speaker": "jag31",
+      "text": "Il était à environ <span title=\"1 SMI\">2 km</span> au large de notre aile gauche à <span title=\"35 SMI\">56 km</span> quand nous avons commencé in et est resté avec nous jusqu'à 10 environ."
+    },
+    {
+      "speaker": "control",
+      "text": "Je me demande si ça a pu être vos problèmes radio ?"
+    },
+    {
+      "speaker": "jag31",
+      "text": "Je sais pas.... Mais c'est exactement quand ils ont commencé."
+    }
+  ]
+}

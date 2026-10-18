@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation de Minot",
+  "speakers": {
+    "control": {
+      "role": "controller",
+      "title": "Contrôle d'approche de Minot"
+    },
+    "jag31": {
+      "role": "crew",
+      "title": "JAG 31"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Minot/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jag31",
+      "text": "Contrôle d'approche MIB <span class=\"note-id\" aria-label=\"Note\">n1<span id=\"n1\" class=\"anchor\" aria-hidden=\"true\"></span><span class=\"note-contents\">Minot</span></span>, est-ce que JAG 31 a l'autorisation de WT fix au Niveau de Vol 2000 ?"
+    },
+    {
+      "speaker": "control",
+      "text": "JAG 31, <i lang=\"en\">Roger</i>, montez sur une ascension direction 290 et maintenez 5000. Attendez pour une altitude plus élevée. Nous essayons to get it from center now."
+    }
+  ]
+}

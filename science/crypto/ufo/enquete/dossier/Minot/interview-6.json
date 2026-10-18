@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation de Minot",
+  "speakers": {
+    "control": {
+      "role": "controller",
+      "title": "Contrôle d'approche de Minot"
+    },
+    "jag31": {
+      "role": "crew",
+      "title": "JAG 31"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Minot/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "control",
+      "text": "Jag 31 observez-vous d'autres ovni ?"
+    },
+    {
+      "speaker": "jag31",
+      "text": "Négatif sur le <a href=\"../../indice/radar/\">radar</a>. Nous ne voyons rien visuellement."
+    },
+    {
+      "speaker": "control",
+      "text": "JAG 31, demande que quelqu'un rapporte auprès des ops de la base après que vous ayez atterri."
+    }
+  ]
+}

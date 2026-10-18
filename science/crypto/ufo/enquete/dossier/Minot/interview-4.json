@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation de Minot",
+  "speakers": {
+    "control": {
+      "role": "controller",
+      "title": "Contrôle d'approche de Minot"
+    },
+    "jag31": {
+      "role": "crew",
+      "title": "JAG 31"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Minot/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jag31",
+      "text": "Notre ovni était au large de notre bord gauche lorsque nous avons commencé la pénétration."
+    },
+    {
+      "speaker": "control",
+      "text": "<em>Roger</em>, compris que vous avez vu quelque chose sur votre bord gauche."
+    },
+    {
+      "speaker": "jag31",
+      "text": "Nous avons eu un retour <a href=\"../../indice/radar/\">radar</a> à environ 1 miles 1/4, à une position 9 h pendant à peu près le temps où nous avons quitté 200 pour 14..."
+    }
+  ]
+}

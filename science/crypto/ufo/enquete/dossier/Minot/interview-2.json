@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation de Minot",
+  "speakers": {
+    "control": {
+      "role": "controller",
+      "title": "Contrôle d'approche de Minot"
+    },
+    "jag31": {
+      "role": "crew",
+      "title": "JAG 31"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Minot/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "control",
+      "text": "Et JAG 31 sur votre route out to the WT fix demande que vous regardiez vers votre position à 1 h pour les 15 prochains miles et voyez si vous voyez de quelconques lueurs oranges là-bas ?"
+    },
+    {
+      "speaker": "jag31",
+      "text": "<em>Roger, roger</em>, lueurs 31"
+    },
+    {
+      "speaker": "control",
+      "text": "Quelqu'un voit à nouveau des ovnis&nbsp;!"
+    },
+    {
+      "speaker": "jag31",
+      "text": "<em>Roger</em> je vois un........ (Reste de la transmission garbled)"
+    }
+  ]
+}

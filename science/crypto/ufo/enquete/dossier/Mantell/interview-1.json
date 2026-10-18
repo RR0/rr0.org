@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Le crash de Mantell",
+  "speakers": {
+    "tower": {
+      "role": "controller",
+      "title": "Quinton Blackwell (tour de Godman)"
+    },
+    "MantellThomas": {
+      "role": "pilot",
+      "by": {
+        "people": "MantellThomas"
+      },
+      "title": "Thomas Mantell"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Mantell/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "tower",
+      "text": "Tour de Godman appelant le vol de 4 vaisseaux en direction du Nord au-dessus du terrain de Godman. Vous me recevez ? A vous. (Pause) Tour de Godman appelant le vol de 4 vaisseaux en direction du Nord au-dessus du terrain de Godman. Vous me recevez ? A vous."
+    },
+    {
+      "speaker": "MantellThomas",
+      "text": "<em>Roger</em>, tour de Godman. Ici la Garde Nationale 869, chef de vol de la formation. A vous."
+    },
+    {
+      "speaker": "tower",
+      "text": "Garde Nationale 869 depuis la tour de Godman. Nous avons un objet ici au Sud de Godman que nous ne pouvons pas identifier, et nous voudrions savoir si vous avez assez de carburant ; et si vous pourriez donc aller voir pour nous si vous le voulez bien."
+    },
+    {
+      "speaker": "MantellThomas",
+      "text": "<em>Roger</em>, j'ai le carburant et je vais aller regarder pour vous si vous me donner la bonne direction et toute information que vous avez pour localiser l'objet."
+    }
+  ]
+}

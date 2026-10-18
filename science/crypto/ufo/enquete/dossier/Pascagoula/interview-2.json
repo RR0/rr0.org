@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "La rencontre de Pascagoula",
+  "speakers": {
+    "Parker": {
+      "role": "witness",
+      "title": "Calvin Parker"
+    },
+    "HicksonCharlesE": {
+      "role": "witness",
+      "by": {
+        "people": "HicksonCharlesE"
+      },
+      "title": "Charles Hickson"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Pascagoula/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "Parker",
+      "text": "C'est difficile à croire... Oh mon dieu, c'est horrible... Je sais qu'il y a un Dieu dans ce monde..."
+    }
+  ]
+}

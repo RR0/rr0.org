@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation de Minot",
+  "speakers": {
+    "control": {
+      "role": "controller",
+      "title": "Contrôle d'approche de Minot"
+    },
+    "jag31": {
+      "role": "crew",
+      "title": "JAG 31"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Minot/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "control",
+      "text": "31, l'ovni est aussi repéré par le <a href=\"../../indice/radar/\">radar</a> de la météo. Il devrait être à votre position 1 h à <span title=\"3 SMI\">5 km</span> maintenant."
+    },
+    {
+      "speaker": "jag31",
+      "text": "Nous n'avons rien sur notre <a href=\"../../indice/radar/\">radar</a> embarqué et je suis dans une brume assez épaisse en ce moment et incapable de voir plus loin."
+    }
+  ]
+}

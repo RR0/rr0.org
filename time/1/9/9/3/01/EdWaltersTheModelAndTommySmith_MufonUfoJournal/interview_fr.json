@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Ed Walters, la maquette et Tommy Smith",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Mark Curtis"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "Tommy Smith"
+    },
+    "GrayEd": {
+      "role": "interviewer",
+      "title": "Ed Gray"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/3/01/EdWaltersTheModelAndTommySmith_MufonUfoJournal/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "<q>Chris </q>(i.e., Tommy Smith)<q>, est-ce que vous savez... c'est probablement le cliché le plus fameux de tous, celui au-dessus de la route sur Sound Side Drive. Vous savez comment cette image a été faite&nbsp;?</q>"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Oui, Ed a dit qu'il avait eu beaucoup de mal avec celle-là. Il l'a juste fabriquée comme toutes les autres... double exposition."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Savez-vous comment il a illuminé la route&nbsp;?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Illuminé la route&nbsp;? Ok, il faudrait que je revoie la photographie, pour être sûr."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Si je peux vous rafraîchir un peu la mémoire, c'était celle au-dessus de la route de Sound Side Drive, et non seulement il y avait l'objet, mais il y avait une lumière forte qui se réfléchissait en plein milieu de la route."
+    },
+    {
+      "speaker": "GrayEd",
+      "text": "Et on aurait dit que la lumière émanait de l'objet qui était en survol au-dessus de la route."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Non, je ne pense pas que je peux vous aider pour celle-là, c'est sûr."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Savez-vous si Ed a eu de l'aide pour cette photo, ou s'il l'a faite seul&nbsp;?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je ne saurais pas répondre à ça non plus, honnêtement."
+    }
+  ]
+}

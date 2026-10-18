@@ -1,0 +1,309 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Plateau \"Extraterrestres\"",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Christophe Dechavanne"
+    },
+    "Balmer": {
+      "role": "interviewee",
+      "title": "Balmer"
+    },
+    "Allard-Bodson": {
+      "role": "interviewee",
+      "title": "Allard-Bodson"
+    },
+    "ValleeJacques": {
+      "role": "interviewee",
+      "by": {
+        "people": "ValleeJacques"
+      },
+      "title": "Jacques Vallée"
+    },
+    "MarhicRenaud": {
+      "role": "interviewee",
+      "by": {
+        "people": "MarhicRenaud"
+      },
+      "title": "Renaud Marhic"
+    },
+    "BouniasMichel": {
+      "role": "interviewee",
+      "by": {
+        "people": "BouniasMichel"
+      },
+      "title": "Michel C. L. Bounias"
+    },
+    "interviewee": {
+      "role": "guest",
+      "by": {
+        "people": "PetitJeanPierre"
+      },
+      "title": "Jean-Pierre Petit"
+    },
+    "Nicolai": {
+      "role": "interviewee",
+      "title": "Nicolaï"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/9/11/07/CielMonMardi/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Voilà. Jean-François Balmer je vais vous présenter les gens qui sont autour de nous. La 1<sup>ère</sup> chose : est-ce que vous avez déjà été interpellé par le problème des ovnis ?"
+    },
+    {
+      "speaker": "Balmer",
+      "text": "Euh interpellé oui mais je... on... on m'a jamais... ce sont... on m'a jamais appellé, je souhaiterai... C'est... Je trouve que c'est une discussion très intéressante."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Très bien. Je vais vous présenter les gens."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A droite il y a <span title=\"(pseudonyme de Henri-René Guieu), 1926-2000, 73 ans, France, ufologue, écrivain\" class=\"data-resolved people-resolved pseudonym deceased country-fr occupation-ufologist occupation-writer\" translate=\"no\"><a href=\"/people/g/GuieuJimmy/\">Jimmy Guieu<img src=\"/people/g/GuieuJimmy/portrait.jpg\" alt=\"Jimmy Guieu\" class=\"portrait\" width=\"75\"></a></span>. On vous connaît <a href=\"/people/g/GuieuJimmy/\">Jimmy Guieu</a>, vous êtes venu la dernière fois ici parler des petits <a href=\"/science/crypto/ufo/observation/etre/gris/\">Gris</a>. Je voulais avoir des nouvelles, savoir qu'elle était l'évolution des choses. Vous êtes président de l'<a href=\"/org/eu/fr/asso/IMSA.html\">Institut Mondial des Sciences Avancées</a> et vous avez quasiment consacré toute votre vie à la recherche sur les ovnis."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A votre droite il y a Yanou Allard-Bodson. Bonsoir madame. Et vous avez fait une rencontre avec un être que vous qualifiez d'extra-terrestre."
+    },
+    {
+      "speaker": "Allard-Bodson",
+      "text": "Extraterrestre."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et c'était en Afrique."
+    },
+    {
+      "speaker": "Allard-Bodson",
+      "text": "En Afrique."
+    },
+    {
+      "speaker": "Allard-Bodson",
+      "text": "<strong></strong><strong>Dechavanne</strong> : A votre droite il y a <a href=\"/people/v/ValleeJacques/\">Jacques Vallée</a>. <a href=\"/people/v/ValleeJacques/\">Jacques Vallée</a>, vous vivez aux Etats-Unis, à <em>Silicon Valley</em>, justement. Vous êtes auteur du livre <em>Autres dimensions</em>, chez Robert Laffon, et vous êtes informaticien, et vous vous intéressez aux ovnis depuis... longtemps."
+    },
+    {
+      "speaker": "ValleeJacques",
+      "text": "Une trentaine d'années."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Une trentaine d'années ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A votre droite il y a <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Renato Nicolaï</a>. Vous êtes un autre témoin, monsieur. Vous avez vous été témoin en France d'un atterrissage d'ovni. Vous allez nous le raconter d'ici quelques secondes, c'est vous qui allez commencer."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A gauche il y a <a href=\"/people/m/MarhicRenaud/\">Renaud Marhic</a>. Vous êtes membre de <a href=\"/org/eu/fr/asso/SosOvni/\">SOS OVNI</a>, qui est une association qui regroupe donc des témoignages qui peuvent arriver. Enfin vous êtes une des associations qui existent."
+    },
+    {
+      "speaker": "MarhicRenaud",
+      "text": "Une des associations qui existent."
+    },
+    {
+      "speaker": "MarhicRenaud",
+      "text": "Très bien à votre droite il y a <a href=\"/people/b/BouniasMichel/\">Michel Bounias</a>. Bonsoir."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Bonsoir."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous êtes biochimiste, directeur de recherche d'un institut, dont vous ne souhaitez pas qu'on donne le nom."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Non."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous nous direz pourquoi."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Par exemple."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et puis <a href=\"/people/p/PetitJeanPierre/\">Jean-Pierre Petit</a>, qui est à ma gauche, vous êtes directeur de recherche au <a href=\"/org/eu/fr/cnrs/\">CNRS</a>. Je suis très content de vous avoir ce soir. D'abord je suis très content d'avoir des scientifiques sur ce dossier, parce que c'est vrai que vous n'êtes pas très très faciles à obtenir sur un plateau de télévision. C'est vrai qu'à chaque fois que vous ouvrez la bouche sur ce sujet, vous subissez les \"railleries\" je dirais de... un peu de vos confrères. Enfin <a href=\"/people/p/PetitJeanPierre/\">Jean-Pierre Petit</a> je vais quand même signaler que vous êtes auteur d'un bouquin qui s'appelle <em>Voyage aux frontières de la science</em>... Je dis \"bouquin\" mais ça n'en est pas un, puisqu'il est encore à l'état de manuscript, que pour l'instant vous n'avez pas encore réussi à trouver un éditeur capable d'aller jusqu'au bout et de vous publier et de le publier en entier... et que ben voilà moi je lance l'appel... c'est un bouquin de qualité - de qualité - Et si un éditeur est assez courageux pour aller jusqu'au bout... parce que je crois qu'on vous a dit \"D'accord, mais vous enlevez le 1er chapitre\"..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Oui c'est ça. Y'a trop de coupures..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "où vous balancez un petit peu sur les institutions, et bien voilà je suis très content de vous avoir là et en plus vous êtes un épatant dessinateur puisque que vous essayez d'expliquer un petit peu on va dire la <em>cosmic story</em>, l'histoire cosmique, en bande-dessinée pour les enfants."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "La 1<sup>ère</sup> question, ben, c'est à vous que je vais la poser, je vous que vous nous racontiez - c'est pas une question - <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">ce que vous avez vu à Trans-en-Provence</a>, en France, et le phénomène auquel vous avez assisté."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "C'était un moment que j'étais en train de travailler - je bricole un peu hein, je suis à la retraite. Et j'ai vu à 10 m descendre un objet..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mettez le micro bien près de la bouche."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "un objet... qui a fait que après..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Un engin."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "et je me suis approché, je me suis approché à... peut-être 10 m, vers là..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Attendez, y'a un engin qui s'est posé dans votre jardin."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Oui, dans mon jardin, sur le terrain, à côté de la maison, à une cinquantaine de mètres.. Moi je me suis approché à peut-être 10 m par là..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous n'avez pas eu peur ?"
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Euh non, par là... j'étais en train de travailler, j'ai pas fait attention déjà.... J'ai vu ça et je me suis..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "C'était un engin qui ressemblait à quoi, s'il-vous-plait ? (chut s'il-vous-plait)"
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Comment ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "C'était un engin qui ress... qui avait quelle forme ?"
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Bé c'était comme si on veut 2 assiettes l'une sur l'autre, là. Un diamètre là de 3 m ou 2 m 50. Sur 1,50 m de tour par là. J'ai dit 4 hublots et c'était..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "3 ou 4 hublots..."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "...du métal. Si on veut hublots, moi j'ai noté comme des pieds."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous avez vu des personnages ou pas ?"
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Non. Oh non, moi je me suis approché. Quand je me suis approché à une vingtaine de mètres de... J'ai noté qu'il était parti à la vitesse... sans tellement éblouir..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et il a disparu."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "...et il a disparu."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et vous ne l'avez jamais jamais revu."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Pas jusqu'à présent."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Bon. Alors le cas de M. <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Nicolaï</a> est un des seuls cas en France qui a été...."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Je voulais... Je m'excuse - je voulais dire que quand même, avant de parler comme ça, là en disant que j'ai vu, sur le terrain il a laissé des empreintes. Là c'est à ce moment-là que sont intervenus les scientifiques, là. Et c'est pas mon rayon... mais j'ai vu ça. C'est à eux à juger maintenant..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ca a laissé des traces, hein."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Des traces. Des traces."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors moi je voudrais montrer un document qui vient d'Angleterre, des traces tout à fait étonnantes dans un champ, que voilà... Elles sont pour le moins étrange, ces... c'est le moins qu'on puisse dire. <a href=\"/people/p/PetitJeanPierre/\">Jean-Pierre Petit</a>, vous pouvez dire 1 ou 2 mots sur ce genre de traces-là ? Parce que quand on le voit, c'est tellement... c'est tellement énorme..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je voudrais dire quelque chose de très rapide. C'est-à-dire que, il y a un phénomène qui est connu depuis longtemps qui est l'averse du blé qui fait que quand le blé est fortement chargé d'eau, et bien les blés a tendance à s'effondrer un petit peu comme des dominos... mais ça ne donne pas des phénomènes géométriques, c'est-à-dire que là ça n'est pas expliqué. C'est quelque chose de... Ce phénomène ne peut pas expliquer ces photos..."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "(plaisantant) C'est peut-être une nouvelle race de parasites qui pleuvent à verse sous forme géométrique..."
+    },
+    {
+      "speaker": "Balmer",
+      "text": "Et ça peut pas être un engin militaire ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Euh... C'est quelque chose de... c'est pas quelque chose de naturel. Ca peut pas être un phénomène naturel du style météorologique. C'est trop géométrique. Maintenant, ce que c'est, j'en sais rien."
+    },
+    {
+      "speaker": "ValleeJacques",
+      "text": "Il faut dire qu'il existe littéralement des centaines de cas qui ont été répertoriés de tous les coins du monde, d'Australie et des Etats-Unis, qui donnent les mêmes... le même genre de trace. Ce qui est important dans le <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">cas de Trans-en-Provence</a>..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qui a travaillé sur le <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">cas de Trans-en-Provence</a> ? <a href=\"/people/b/BouniasMichel/\">Michel Bounias</a> ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Bien sûr bien sûr. Moi aussi."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous pourriez peut-être nous dire quelque mots s'il-vous-plait sur ce <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">cas de Trans-en-Provence</a> ? Vous attestez qu'il y a eu présence..."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Ben écoutez moi j'ai été embarqué dans cette histoire... je n'avais pas vu d'ovni du tout. Je n'étais pas ufologiste. J'ai été embarqué par le <a href=\"/org/eu/fr/cnes/\">CNES</a> quelques mois auparavant.. des traces biochimiques laissées par le passage éventuel d'un ovni sur des êtres vivants. Je leur ai dit \"oui\", si trace il y a c'est possible, c'est un travail de toxicologie... quelques mois plus tard j'ai interrogé les plantes qui se trouvaient dans le voisinage de l'objet."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "<a href=\"/people/b/BouniasMichel/\"></a>Que vous ont-elles dit ?"
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Eh bien elles m'ont donné plusieurs réponses. Les plantes qui ont été recueillies par exemple par les gendarmes 4 jours après l'événement n'étaient pas modifiées sur le plan de leur aspect, de leur morphologie, mais par contre elles avaient vieilli sur le plan biochimique. Bon ça c'était une 1<sup>ère</sup> constatation."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Et puis il y a eu une autre série de prélévements qui ont été effectués 40 jours après l'observation de M. <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Nicolaï</a>. Et là, s'est confirmé qu'il y avait des perturbations très importantes, des chamboulements de la mécanique de la... de la mécanique biochimique des plantes, et j'ai pu montrer - et mettre en équation le phénomène, d'ailleurs - que les variations observées étaient fonction de l'éloignement de l'objet. C'est-à-dire que je pouvais mettre en évidence une relation entre la position des plantes et la localisation décrite par M. <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Nicolaï</a>. Donc une sorte de quantification."
+    },
+    {
+      "speaker": "BouniasMichel",
+      "text": "Et puis 2 ans après, on a refait des prélèvements au même endroit, les mêmes plantes - on supposait que 2 ans après, avec les pluies, les nouvelles générations de végétaux, etc. l'influence de l'objet devait s'être dissipé - et à ce moment-là on s'est apperçu que les plantes présentaient les variations naturelles normales que l'on est en droit d'attendre de toute végétation qui n'a pas subi de préjudice spécial."
+    }
+  ]
+}

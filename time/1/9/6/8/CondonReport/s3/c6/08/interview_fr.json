@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Objets volants Non Identifiés",
+  "speakers": {
+    "interviewer": {
+      "role": "controller",
+      "title": "Capcom"
+    },
+    "interviewee": {
+      "role": "crew",
+      "title": "Vaisseau spatial (Gemini 7)"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/6/8/CondonReport/s3/c6/08/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "Gemini 7 ici, Houston nous recevez-vous ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Fort et clair. 7, allez-y."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Bogey à 10 heures en haut."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ici Houston. Répétez 7."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Dit que nous avons un bogey à 10 heures en haut."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Roger. Gemini 7, est-ce le booster ou est-ce une véritable observation ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous avons plusieurs, looks like debris up here. Véritable observation."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous avez plus d'informations ? Estimation de distance ou taille ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous avons aussi le booster en vue."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Compris que vous avez le booster en vue, Roger."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ouais, nous avons a very, very many -- look like hundreds of little particles banked on the left out about 3 to 7 miles."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Understand you have many small particles going by on the left. At what distance?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Oh about -- it looks like a path of the vehicle at 90 degrees."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Roger, understand that they are about 3 to 4 miles away."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "They are passed now they are in polar orbit."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Roger, understand they were about 3 or 4 miles away."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "That's what it appeared like. That's roger."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Were these particles in addition to the booster and the bogey at 10 o'clock high?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Roger -- Spacecraft (Lovell) I have the booster on <i>my</i> side, it's a brilliant body in the sun, against a black background with trillions of particles on it."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Roger. What direction is it from you?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "It's about at my 2 o'clock position. (Lovell)"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Does that mean that it's ahead of you?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "It's ahead of us at 2 o'clock, slowly tumbling."
+    }
+  ]
+}

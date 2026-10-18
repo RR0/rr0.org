@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Plateau \"Extraterrestres\"",
+  "speakers": {
+    "Nicolai": {
+      "role": "interviewee",
+      "title": "Nicolaï"
+    },
+    "interviewer": {
+      "role": "host",
+      "title": "Christophe Dechavanne"
+    },
+    "MarhicRenaud": {
+      "role": "interviewee",
+      "by": {
+        "people": "MarhicRenaud"
+      },
+      "title": "Renaud Marhic"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/9/11/07/CielMonMardi/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "[applaudissements] (s'adressant à <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Nicolaï</a>) Alors monsieur, c'est pas pour vous faire des miches, c'est pas pour essayer d'être ficelle, c'est aussi pour montrer combien un <a href=\"/science/crypto/ufo/enquete/indice/temoignage/\">témoignage</a> peut être fragile et combien on peut suggérer éventuellement - et monsieur je ne remets absolument pas en cause..."
+    },
+    {
+      "speaker": "Nicolai",
+      "text": "Vous permettez, après je dirais encore quelques mots."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Je vous en prie. Cà c'est la fragilité du <a href=\"/science/crypto/ufo/enquete/indice/temoignage/\">témoignage</a>. Vous vouliez dire quelque chose ?"
+    },
+    {
+      "speaker": "MarhicRenaud",
+      "text": "Je crois qu'il faut tout de même préciser que parmi tous les <a href=\"/science/crypto/ufo/enquete/indice/temoignage/\">témoignages</a> qu'on peut recueillir dans le cadre d'associations comme <a href=\"/org/eu/fr/asso/SosOvni/\">SOS OVNI</a> par exemple, sur les <a href=\"/science/crypto/ufo/PAN.html\">phénomènes aériens non identifiés</a> il est connu que un certain nombre sont explicables par des phénomènes aéronatiques... donc le fait qu'un tel reportage montre qu'énormément de gens ont vu des choses et l'interprêtent comme un ovni parce que vous vous arrivez avec votre équipe faire un reportage... c'est absolument pas étonnant. Et je ne pense pas, contrairement à ce que ça peut faire croire à un public non averti, que ça vienne vraiment relativiser la valeur d'un <a href=\"/science/crypto/ufo/enquete/indice/temoignage/\">témoignage</a> comme celui de M. <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Renato Nicolaï</a> puisque l'on sait que sur une centaine de <a href=\"/science/crypto/ufo/enquete/indice/temoignage/\">témoignages</a>, environ 99 sont explicables de façon rationnelle."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Très bien. Euh <a href=\"/people/g/GuieuJimmy/\">Jimmy Guieu</a> alors..."
+    }
+  ]
+}

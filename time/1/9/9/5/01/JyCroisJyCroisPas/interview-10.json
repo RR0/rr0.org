@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Kieffer"
+    },
+    "Crolard": {
+      "role": "interviewee",
+      "title": "Crolard"
+    },
+    "RibesJeanClaude": {
+      "role": "interviewee",
+      "by": {
+        "people": "RibesJeanClaude"
+      },
+      "title": "Jean-Claude Ribes"
+    },
+    "Gilot-Petre": {
+      "role": "guest",
+      "title": "Gilot-Pétré"
+    },
+    "interviewee": {
+      "role": "guest",
+      "title": "Lambert"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Alors Jean-Francis Crolard..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "... j'ai 2 témoignages d'astronautes, qui sont quand même des personnes avertis..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors 1 seul..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "RibesJeanClaude",
+      "text": "il y a toujours eu ... phénomènes observés par des gens sérieux..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "RibesJeanClaude",
+      "text": "ce phénomène... ça vaut le coup de faire une étude... Monsieur Petit, vous parlerez à votre tour."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "RibesJeanClaude",
+      "text": "mais peut-être que dans 20 ans..."
+    },
+    {
+      "speaker": "Gilot-Petre",
+      "text": "... le problème c'est qu'on a jamais vu de soucoupe volonte atterrir sur Terre..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "..."
+    },
+    {
+      "speaker": "Gilot-Petre",
+      "text": "... 40000 km/h... 116000 ans pour arriver sur cette planète ... ils arrivent et ils s'en vont tout de suite c'est fabuleux !"
+    }
+  ]
+}

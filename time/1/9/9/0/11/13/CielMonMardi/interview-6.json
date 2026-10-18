@@ -1,0 +1,378 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Plateau \"Soucoupe\"",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Christophe Dechavanne"
+    },
+    "ClerebautLucien": {
+      "role": "interviewee",
+      "by": {
+        "people": "ClerebautLucien"
+      },
+      "title": "Lucien Clerebaut"
+    },
+    "PetitJeanPierre": {
+      "role": "interviewee",
+      "by": {
+        "people": "PetitJeanPierre"
+      },
+      "title": "Jean-Pierre Petit"
+    },
+    "Crolard": {
+      "role": "interviewee",
+      "title": "Crolard"
+    },
+    "Leclerc": {
+      "role": "interviewee",
+      "title": "Leclerc"
+    },
+    "interviewee": {
+      "role": "guest",
+      "by": {
+        "people": "VorilhonClaude"
+      },
+      "title": "Raël"
+    },
+    "X": {
+      "role": "interviewee",
+      "title": "X"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/0/11/13/CielMonMardi/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Alors je voudrais vous montrer quelque chose. C'est un document, filmé, tout à fait étrange... Je crois même que ça doit être une espèce de chose inédite que personne n'a jamais vu. Nous en tous cas, on ne l'avait jamais vu... Ca nous a été envoyé par une main anonyme. Visiblement c'est quelque chose qui vient des Etats-Unis. Ca a été filmé vraiment en amateur, en <em>Super 8</em>. Alors bon, on peut croire à une grosse farce... On peut aussi se demander si c'est pas une \"soucoupe\". Y'a 2 écoles : ou on y croit, ou on n'y croit pas."
+    },
+    {
+      "speaker": "ClerebautLucien",
+      "text": "Monsieur Dechavanne, si vous permettez."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Je vous en prie."
+    },
+    {
+      "speaker": "ClerebautLucien",
+      "text": "Je crois que vous... il est <em>très </em>mauvais de faire croire au public qu'il s'agit d'un problème de <em>croyance</em>. Ca n'est pas un problème de <em>croyance</em>, c'est un problème de <em>connaissance</em>. Et tout document, qu'il soit sur un support film ou photo, est a mettre entre simplement plusieurs paires de guillemets, parce que on fait en technique photographique aujourd'hui ce que l'on veut, et donc une photographie ou un film ne constitue en aucune manière une preuve."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ah mais monsieur je ne dis <em>absolument</em> pas que c'est une preuve. Avec un avion regardez il y a un avion en-dessous... C'est quand même assez étonnant et hop, regardez là, c'est la nuit, forcément. Bon c'est un peu Pacman hein quand même, c'est un peu jeu video, <em>mais</em> c'est un document qui nous a été envoyé anonymement, avec : <q>Je ne veux pas vous dire qui je suis</q>, etc, etc."
+    },
+    {
+      "speaker": "ClerebautLucien",
+      "text": "Un document qui envoyé anonymement, en principe n'a aucune valeur, tout comme un témoin qui dit \"je ne vous dis pas qui je suis\"..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mais monsieur je ne dis pas que ça a de la valeur. Je dis simplement que nous avons regardé ce document. M. Petit que pensez-vous d'un problème comme celui-ci ?"
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Non si vous voulez tout à l'heure, un problème important, je crois qu'il faudrait essayer de le résumer en quelques phrases. La première chose c'est qu'il a été créé en France. Parce que le rôle du SEPRA c'était pas de faire de la recherche scientifique. Donc la recherche scientifique sur les ovnis en France, c'est point zéro total."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Maintenant terminé fini complet."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Non mais, il y a eu des résultats scientifiques par <a href=\"/people/b/BouniasMichel/\">Bounias</a> sur cette affaire de <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Trans-en-Provence</a>. Que j'ai fais, je j'ai fait faire par Lebrun."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mais"
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "... par <a href=\"/people/b/BouniasMichel/\">Bounias</a>..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "<a href=\"/people/b/BouniasMichel/\">Michel Bounias</a> qui est venu sur votre plateau..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Tout à fait."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Le travail de thèse que j'ai fait faire par Lebrun. le premier c'est de terminer ces études expérimentales sur les ondes de choc la 2ᵉ chose c'est faire un contrat pour reconstituer les phénomènes qui ont été constitatés à <a href=\"/science/crypto/ufo/enquete/dossier/TransEnProvence/\" title=\"L'affaire de Trans-en-Provence, Rencontre Rapprochée du 2e type, jeudi 8 janvier 1981 à 17 h\">Trans</a>. Donc traiter des luzernes avec différents effecteurs, et voir... C'est ça poursuivre le dossier ovni et faire des choses concrètes."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Est-ce que les autres pays d'Europe continuent la recherche scientifique à c..."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Ce que je peux vous dire c'est que en Belgique il y a les professeurs Meeseen et Brening qui sont des gens sérieux. En France il n'y a pratiquement personne, les scientifiques tournent le dos au problème. Il faut bien dire aux français que c'est l'indigence totale, et que. Ce qu'il faudrait c'est 2 contrats, 1 pour les simulations de biochimistes."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Regarder regardez la réponse des télespectateurs. Pensez-vous que l'on vous cache des choses sur les ovnis ? Oui 95,5 %, non 4,5 %, enfin ça bouge. Monsieur Crolard."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Oui je voudrais faire 2 remarques. Tout d'abord on nous montre ce document tout à fait étonnant et on nous dit : ça relève de la croyance. Ca rapelle l'histoire du plouc qui sortait de sa cambrousse. Et qui dit : Un animal comme ça ça n'existe pas. Elle était sous ses yeux. Bon là c'est pas une croyance, c'est un objet. On en fait ce qu'on veut. Deuxièmement"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mais vous vous n'avez pas fait de rencontre ?"
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Non seulement mais je vais vous citer le cas de quelqu'un qui a rencontré, mais lui..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "C'est quelqu'un qui est commerçant à Dijon, vous avez son nom et son téléphone. Il a pas voulu être nommé..."
+    },
+    {
+      "speaker": "Leclerc",
+      "text": "Alors on donne pas le nom du commerçant..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Lui les extraterrestres il en a rien à foutre. C'est toujours les gens qui recherchent pas les extraterrestres qui les trouvent et ceux qui les recherchent pas. Et ça c'est passé en août 1960s, il y a 30 ans, en Bretagne, il roulait en camion avec 2 employés, et il a vu 2 personnages de 2 m de haut en scaphandres et casques ils marchaient légèrement au-dessus de la route.. alors ces gens-là ils ont fait demi-tour et ont disparu sur le bas-côté. Et tout d'un coup il a vu devant lui ..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ouais mais c'était les <em>Nuls </em>qui faisaient de la pub pour..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "C'est possible. C'est possible. Mais j'aimerai bien être nuls comme eux. Et alors ces gens-là, ils ont fait demi-tour sur le bas-côté. Faites des petits en route à 60 km/h dans un camion, c'est pas évident. Alors donc..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ca monsieur..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Je sais bien que vous êtes un rapide, mais quand même. Eh bien ils ont disparu sur le bas-côté et Quand ils se sont arrêtés à cet endroit, ils ont vu une soucoupe. Or il y avait un cercle d'herbe calcinée sur la sol. Ce monsieur, il y a son nom, il y a son adresse. Il est commerçant à Dijon. Mais vous pouvez tout comme James Irving, lui téléphoner, lui demander ce qu'il en pense."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Je le ferai dès demain."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Et je voudrais rapidement, très rapidement citer 2 témoignages..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "2 s. Je voudrais passer la parole à <a href=\"/people/v/VorilhonClaude/\">Rael</a>, et je vous repasse la parole. <a href=\"/people/v/VorilhonClaude/\">Rael</a>, je voudrais que vous nous racontiez.. Vous étiez au Puy-de-Dôme, vous vous promeniez..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Tout a fait mais, avant de vous raconter cette histoire que j'ai racontée souvent,"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Belle histoire."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "je voudrais dire que j'ai été entousiasmé par les propos d'Alain Delon que j'avais pas vus, et je trouve que c'est ce ça que nous avons le plus besoin. sur Terre y'a pas beaucoup de choses qui donnent de l'histoire mais quand on regarde l'espace des choses qui donnent un espoir formidable à toute l'humanité, un espoir formidable. Souvent on me dit dans les conférences que je donne : <q>Pourquoi ils n'ont pas contacté un scientifique et qu'on vous a contacté vous ? </q>Mais on l'a fait tout à l'heure mais on s'endor quand ils parlent. C'est pas intéressant. Les gens s'endorment."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ca c'est vous qui le dites.."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ils s'endorment."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Ils rêvent qu'on leur propose des choses concrètes."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Attendez je ne vous ai pas interrompus."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Et je sais qu'on ne me laissera pas parler, comme <em>toujours</em>..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Attendez vous faites partie des gens qu'on invite à la télé et qui disent : <q>Je ne peux pas parler</q>."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous êtes monté dans le vaisseau."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "C'était pas russe."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Avec des gens, qui parlent."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et qui parlent comment ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Qui parlent normal. Français, qui parlent 25 langues... toutes les langues du monde, parce qu'ils ont 25 000 ans d'avance sur nous. on est pas seuls dans l'univers, mais non seulement on est pas... des civilisations plus avancées que les notres."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous êtes en train de vous faire traiter de nain, quand même..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Que les scientifiques qui vivaient à l'époque de Christophe Colomb. Tout évolue. On est pas... on est pas arrivé au sommet de la science, c'est ça qu'il faut comprendre. Alors juste un petit mot... on a vu les livres de tout le monde... je voudrais qu'on voie quand même celui-là (il montre son livre) qui contient le message..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Et c'est pour ça qu'on construit une ambassade"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "M. Clerebaut."
+    },
+    {
+      "speaker": "ClerebautLucien",
+      "text": "Nous avons certainement autant d'espoir que vous. Mais on a certainement beaucoup plus besoin de compréhension. Alors le jour où. appelez-nous, parce que nous on voudrait bien faire la vidange d'huile."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je comprends très bien que l'on parle de vidange d'huile en Belgique car pour les frites c'est nécessaire, mais ceci dit..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Elevons le débat..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Attendez M. Crolard. Vous ne nous avez pas dit si vous avez été recontacté depuis. Parce que vous parlez tous les jours avec des humains"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Le 1er contact a eu lieu en 73, le 2ᵉ en 75, j'ai pris ma voiture j'étais tout seul et je me suis dit : Qu'est-ce que je fais là ? J'ai un tas de travail à mon bureau. Et soudain j'ai vu une lumière clignotante dans le ciel, un flash très violent, un enfin en forme de cloche applatie qui est descendu. Ca ressemblait un peu au film qu'on a vu tout à l'heure -- je dis pas que le film est véridique -- mais ça ressemblait un peu à ça. Un être est sorti."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Comment était-il ? Vert, bleu..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Vous savez faut pas être raciste. Il était avec la peau blanche légèrement olivâtre. Il aurait pu être noir, il aurait pu être bleu, C'est gens là ils regardent votre programme maintenant."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ah mais j'accepte tout le monde..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Mais bien sûr, ils nous observent depuis l'origine de l'humanité."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Donc ils ont la télé."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Pour la simple raison qu'ils ont créé la vie sur Terre. La bible explique ce qu'ils ont fait. La Bible est le plus ancien livre athée du monde. Y'a pas le mot Dieu dans la Bible. Elohim ça veut dire : ceux qui sont venus du ciel. Et évidemment"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ils sont habillés ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ils sont habillés."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Non c'est une secte. J'crois que il faut dire une chose, c'est que <a href=\"/people/v/VorilhonClaude/\">Rael</a> a créé une secte en utilisant le phénomène extraterrestre..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "C'est unique, parce que les sectes sont généralement sur les phénomènes religieux..."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Là c'est le gourou, c'est le gourou..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "C'est vrai que vous êtes accusé... Y'a un petit côté Antoine quand même ..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Pas du tout, pas du tout. Un mouvement totalement athée, et qui travaille actuellement sur la démystification de <em>toutes </em>les religions."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Oui avec la reconfiguration biologique des gens, la géniocratie..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Avec simplement des être venus de l'espace. Nous voyageons, il y a déjà un programme américain pour ça..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous êtes restés combien de temps."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "La 1ʳᵉ fois 6 fois 1 h et la 2ᵉ fois une journée."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "<strong>Dechavanne</strong><strong> </strong>: Alors vous avez dû aller faire vos besoins par exemple."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Bien sûr."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "<strong>Dechavanne</strong><strong> </strong>: Comment sont les cabèches des extraterrestres ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "J'ai bien tout à l'heure que ça vous intéressait beaucoup... Comme tout le monde..."
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "Avant les <a href=\"/people/contactes.html\">contactés</a> ils faisaient des bouquins extraordinaires dans lesquels il y avait des choses intéressantes à lire, alors que maintenant quand on prend les livres de <a href=\"/people/v/VorilhonClaude/\">Rael</a> ça vous tombe des mains, c'est effrayant. Les contactés ne sont plus ce qu'ils étaient, il y a une sorte de dévalorisation des messies..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Vous n'avez pas dû les lire suffisamment"
+    },
+    {
+      "speaker": "PetitJeanPierre",
+      "text": "J'ai lu la géniocratie, ça vous tombe des mains, c'est lugubre..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous avons Marcel Perus, qui est un ingénieur chimiste. sont des scientifiques qui n'ont pas tous des oeillères comme les gens qui souvent s'expriment sur ce plateau."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "<strong>Dechavanne</strong><strong> </strong>: C'est important de voir qu'il y a des gens comme <a href=\"/people/v/VorilhonClaude/\">Rael</a> qui sont allés voyager. Ce sont des exemples uniques puisque vous parlez de choses que vous n'avez jamais touchées (applaudissements). Non mais, c'est vrai, c'est vrai. Alors que lui, lui, il a plus que touché, il est monté dedans !"
+    }
+  ]
+}

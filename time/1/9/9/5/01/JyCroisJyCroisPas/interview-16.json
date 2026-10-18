@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Kieffer"
+    },
+    "Journaliste": {
+      "role": "interviewee",
+      "title": "Journaliste"
+    },
+    "GresleJeanGabriel": {
+      "role": "interviewee",
+      "by": {
+        "people": "GresleJeanGabriel"
+      },
+      "title": "Jean-Gabriel Greslé"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "Journaliste",
+      "text": "on a utilisé des images..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors Jean-Gabriel Greslé ..."
+    },
+    {
+      "speaker": "GresleJeanGabriel",
+      "text": "..."
+    }
+  ]
+}

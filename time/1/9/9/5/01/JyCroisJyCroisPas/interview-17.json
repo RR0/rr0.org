@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Kieffer"
+    },
+    "GresleJeanGabriel": {
+      "role": "interviewee",
+      "by": {
+        "people": "GresleJeanGabriel"
+      },
+      "title": "Jean-Gabriel Greslé"
+    },
+    "LagrangePierre": {
+      "role": "interviewee",
+      "by": {
+        "people": "LagrangePierre"
+      },
+      "title": "Pierre Lagrange"
+    },
+    "Gilot-Petre": {
+      "role": "guest",
+      "title": "Gilot-Pétré"
+    },
+    "Crolard": {
+      "role": "interviewee",
+      "title": "Crolard"
+    },
+    "interviewee": {
+      "role": "guest",
+      "title": "Lambert"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Est-ce que vous croyez à la théorie des corps ?"
+    },
+    {
+      "speaker": "GresleJeanGabriel",
+      "text": "... je vais vous donner une opinion qui n'est pas personnelle..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "...combien de corps ?"
+    },
+    {
+      "speaker": "GresleJeanGabriel",
+      "text": "... il y aurait eu 4 corps et 1 survivant."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "1 survivant ?"
+    },
+    {
+      "speaker": "GresleJeanGabriel",
+      "text": "... il serait peut-être temps d'étudier ..."
+    },
+    {
+      "speaker": "LagrangePierre",
+      "text": "Le problème c'est de quel témoin parlez-vous ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "... par exemple vous M. Rivera vous dites que ce serait des prisonniers japonais ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "..."
+    },
+    {
+      "speaker": "Gilot-Petre",
+      "text": "Les extraterrestres, ont-ils répéré la Terre où l'ont-ils découverte par hasard ?"
+    },
+    {
+      "speaker": "Crolard",
+      "text": "A votre question naïve je vais répondre naïvement. Ils le feraient à condition que nous soyons des terrestres un peu plus extras."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Il a raison, il a raison."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Plateau \"Soucoupe\"",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Christophe Dechavanne"
+    },
+    "ClerebautLucien": {
+      "role": "interviewee",
+      "by": {
+        "people": "ClerebautLucien"
+      },
+      "title": "Lucien Clerebaut"
+    },
+    "interviewee": {
+      "role": "guest",
+      "by": {
+        "people": "VorilhonClaude"
+      },
+      "title": "Raël"
+    },
+    "Crolard": {
+      "role": "interviewee",
+      "title": "Crolard"
+    },
+    "Raynaud": {
+      "role": "interviewee",
+      "title": "Raynaud"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/0/11/13/CielMonMardi/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Oui, oui, nous allons parler de cela immédiatement — je voudrais rassurer immédiatement le propriétaire des pièces d'or... Elles sont en de bonnes mains, elles ne risquent rien, elle ne disparaîtront pas. Je vous présente Michel-Edouard les gens qui sont autour de nous. A votre droite il y a — bonsoir monsieur — Thierry Raynaud. Vous avez été témoin, monsieur, <span class=\"time-resolved\"><a href=\"/time/1/9/9/0/11/05/\"><time datetime=\"1990-11-05\" title=\"lundi 5 novembre 1990\">lundi 5</time></a></span> <span class=\"mois\">novembre</span> dernier, c'était un lundi, vous avez témoin du passage d'un ovni dans le ciel parisien. On va en parler d'ici quelques minutes..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A votre droite il y a <a href=\"/people/c/ClerebautLucien/\">Lucien Clerebaut</a>. Bonsoir monsieur... ou bonsoir Lucien..."
+    },
+    {
+      "speaker": "ClerebautLucien",
+      "text": "Oui."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous êtes responsable de la <a href=\"/org/eu/be/asso/sobeps/\">SOBEPS</a>, c'est-à-dire que c'est la <a href=\"/org/eu/be/asso/sobeps/\">Société Belge d'Etude des Phénomènes Spatiaux</a>, et on peut dire que vous êtes servis car depuis de nombreuses années la Belgique est régulièrement survolée par... on ne sait pas."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A votre gauche il y a <a href=\"/people/p/PerrinDeBrichambautChristian/\">Christian Perrin de Brichambault</a>. Bonsoir monsieur. Vous êtes <em>ancien </em>membre du <a href=\"/org/eu/fr/cnes/gepan/\">GEPAN</a>, qui a été remplacé par le <a href=\"/org/eu/fr/cnes/sepra/\">SEPRA</a> dont on va parler... enfin, je ne sais pas... qui est le <a href=\"/org/eu/fr/cnes/gepan/\">Groupe d'Etudes des Phénomènes Atmosphériques Non-identifiés</a>. Vous êtes donc un ancien membre du <a href=\"/org/eu/fr/cnes/gepan/\">GEPAN</a>. Le <a href=\"/org/eu/fr/cnes/gepan/\">GEPAN</a>, je crois, n'existe plus vraiment, enfin en tous cas officiellement — on va faire comme ça. Et je suis très content que vous soyez là parce qu'à l'époque où le <a href=\"/org/eu/fr/cnes/gepan/\">GEPAN</a> existait on arrivait pas à avoir des gens qui venaient nous en parler."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A votre droite il y <a href=\"/people/p/PetitJeanPierre/\">Jean-Pierre Petit</a>. Bonsoir <a href=\"/people/p/PetitJeanPierre/\">Jean-Pierre Petit</a>, vous êtes chercheur au <a href=\"/org/eu/fr/cnrs/\">CNRS</a>, vous vous êtes à de nombreuses reprises exprimé à ce sujet et vous avez également écrit un bouquin... pas à mettre entre toutes les mains parce que de temps en temps quand même un petit peu ardu et très très spécialisé, qui s'appelle \"Enquêtes sur les Ovnis - Voyage aux frontières de la Science\", avec une préface du célèbre Benveniste, paru chez Albin Michel."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A ma gauche il y a <a href=\"/people/v/VorilhonClaude/\">Rael</a>. Bonsoir <a href=\"/people/v/VorilhonClaude/\">Rael</a>, je suis très content de vous revoir. Ca fait... 2 ans maintenant je crois que nous ne nous étions revus. Vous êtes toujours aussi resplendissant et <a href=\"/people/v/VorilhonClaude/\">Rael</a> vous faites partie des rares personnes qui avez été... on peut dire voyager dans l'espace avec nos amis de là-bas."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Merci oui bonsoir."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Bonsoir <a href=\"/people/v/VorilhonClaude/\">Rael</a>."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A votre droite il y a Jean-Francis Crolard..."
+    },
+    {
+      "speaker": "Crolard",
+      "text": "Bonsoir."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous êtes auteur monsieur de <em>La vie extraterrestre</em>, c'est un bouquin que vous avez dans les mains je crois et qui est paru aux éditions Yva Peyret."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et ma gauche — bonsoir monsieur — il y a <a href=\"/people/p/PellatRene/\">Réné Pellat</a>, vous êtes conseiller scientifique et technique du <a href=\"/org/eu/fr/cnes/\">CNES</a>."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors, la 1<sup>ère</sup> question que je voudrais... Non c'est pas une 1<sup>ère</sup> question, je voudrais que vous nous racontiez ce que vous avez vu <span class=\"time-resolved\"><a href=\"/time/1/9/9/0/11/05/\"><time datetime=\"1990-11-05\">lundi 5 novembre 1990</time></a></span> <span class=\"mois\">novembre</span> au soir."
+    },
+    {
+      "speaker": "Raynaud",
+      "text": "Tout d'abord ce que j'ai vu correspond tout à fait aux images qu'on a pu voir sur TF1 aussi bien lors du journal de <span class=\"time-resolved\"><a href=\"/time/1/9/9/0/11/05/\"><time datetime=\"1990-11-05T20:00\" title=\"lundi 5 novembre 1990 à 20 h\">20 h</time></a></span> le <span class=\"jour\">mardi</span>, et également lors de l'émission 7/7 où <a href=\"/people/d/DelonAlain/\">Alain Delon</a> était l'invité."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pourquoi vous nous parlez d'<a href=\"/people/d/DelonAlain/\">Alain Delon</a> ? Hmm ?"
+    },
+    {
+      "speaker": "Raynaud",
+      "text": "Boh comme ça, parce je crois qu'il a dit des choses asez intéressantes et qui vont un petit peu à l'encontre de tout ce que... de tout qui a été dit jusqu'à présent. Au delà de ça, je tiens à affirmer tout de suite que..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous n'avez rien à affirmer du tout, puisque vous parlez d'<a href=\"/people/d/DelonAlain/\">Alain Delon</a>..."
+    },
+    {
+      "speaker": "Raynaud",
+      "text": "Ben si je vais... Si si je vais essayer..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Excusez-moi, je vous interrompt. Puisque vous parlez d'<a href=\"/people/d/DelonAlain/\">Alain Delon</a>, on va voir tout de suite — vous savez ici il suffit de demander — une réaction assez claire sur la présence d'ovnis.. on va voir tout de suite la réaction d'<a href=\"/people/d/DelonAlain/\">Alain Delon</a> à 7/7 face à Anne Sinclair, qui est une réaction effectivement assez claire sur..."
+    }
+  ]
+}

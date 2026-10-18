@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "Commentatrice": {
+      "role": "interviewee",
+      "title": "Commentatrice"
+    },
+    "Heidberg": {
+      "role": "interviewee",
+      "title": "Heidberg"
+    },
+    "X": {
+      "role": "interviewee",
+      "title": "X"
+    },
+    "BrouwerDe": {
+      "role": "guest",
+      "title": "De Brouwer"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "Commentatrice",
+      "text": "...elle montre une plate-forme... dans la famille Heidberg"
+    },
+    {
+      "speaker": "Heidberg",
+      "text": "..."
+    },
+    {
+      "speaker": "X",
+      "text": "..."
+    },
+    {
+      "speaker": "BrouwerDe",
+      "text": "On a pas déterminé la nature... de ces objets ... pas conventionnels."
+    }
+  ]
+}

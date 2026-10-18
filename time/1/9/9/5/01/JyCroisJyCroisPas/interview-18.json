@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Kieffer"
+    },
+    "X": {
+      "role": "interviewee",
+      "title": "X"
+    },
+    "Journaliste": {
+      "role": "interviewee",
+      "title": "Journaliste"
+    },
+    "interviewee": {
+      "role": "guest",
+      "title": "Lambert"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "On en a parlé parce que je crois que c'est l'observation..."
+    },
+    {
+      "speaker": "X",
+      "text": "L'observation française est intéressante aussi..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Oui. Mais on fait la <a href=\"/science/crypto/ufo/enquete/dossier/VagueBelge/\" title=\"La vague belge, Radar Visuel, novembre 1989\">vague belge</a> d'abord..."
+    },
+    {
+      "speaker": "Journaliste",
+      "text": "..."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "(à Heidmann) A droite, et puis après..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "On regarde."
+    }
+  ]
+}

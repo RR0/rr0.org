@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "interviewer": {
+      "role": "host",
+      "title": "Kieffer"
+    },
+    "Magain": {
+      "role": "interviewee",
+      "title": "Magain"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Alors Pierre Magain."
+    },
+    {
+      "speaker": "Magain",
+      "text": "Alors voilà, il se trouve que le jour où on avait envoyé les F-16, on avait déconnecté les filtres..."
+    }
+  ]
+}

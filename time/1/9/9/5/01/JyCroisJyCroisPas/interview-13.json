@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les ovnis et extraterrestres",
+  "speakers": {
+    "RousselRobert": {
+      "role": "interviewee",
+      "by": {
+        "people": "RousselRobert"
+      },
+      "title": "Robert Roussel"
+    },
+    "Gilot-Petre": {
+      "role": "guest",
+      "title": "Gilot-Pétré"
+    },
+    "interviewer": {
+      "role": "host",
+      "title": "Kieffer"
+    },
+    "Journaliste": {
+      "role": "interviewee",
+      "title": "Journaliste"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/01/JyCroisJyCroisPas/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "RousselRobert",
+      "text": "ils ont bien fait de pas venir... je vais vous dire une chose sur Gilot-Pétré..."
+    },
+    {
+      "speaker": "Gilot-Petre",
+      "text": "Oh je retire rien de ce que j'ai dit."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "est-ce qu'on va le communiquer à la population ou pas ?"
+    },
+    {
+      "speaker": "RousselRobert",
+      "text": "Alors j'ai des éléments là..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Oui ou non ?"
+    },
+    {
+      "speaker": "RousselRobert",
+      "text": "Non absolument pas.."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Donnez-nous 1 seul exemple... inexpliqué ou inexplicable."
+    },
+    {
+      "speaker": "RousselRobert",
+      "text": "Vous savez ce qu'il a fait M. Jean-Claude Ribes ? Il a préfacé le livre..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "On va passer à l'affaire Roswell... c'est un monsieur qui a trouvé dans son champ... il y avait une inversion moléculaire dans les plantes.."
+    },
+    {
+      "speaker": "RousselRobert",
+      "text": "Excusez-moi, c'est le professeur <a href=\"/people/b/BouniasMichel/\">Bounias</a>, ..."
+    },
+    {
+      "speaker": "RousselRobert",
+      "text": "<a href=\"/people/p/PetitJeanPierre/\">Petit</a> : ... je sais pas si on peut changer la question..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Affaire ovni en 47 aux Etats-Unis..."
+    },
+    {
+      "speaker": "Journaliste",
+      "text": "Cette affaire a 47, 48 ans aujourd'hui... une nouvelle version qu'on va voir tout de suite... un orage éclate, l'engin explose littéralement et l'affaire commence le lendemain matin ; on regarde."
+    }
+  ]
+}

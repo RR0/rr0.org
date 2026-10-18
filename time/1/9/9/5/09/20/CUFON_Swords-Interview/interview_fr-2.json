@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Interview de Michael D. Swords",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "CUFON"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "SwordsMichaelD"
+      },
+      "title": "Michael D. Swords"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/9/5/09/20/CUFON_Swords-Interview/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Conseils pour les nouveaux venus ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ce n'est pas facile. Aristote dit à Alexandre le Grand qu'il \"n'y avait pas de voie Royale [facile] pour les Mathématiques\". Cela reste vrai pour les ovnis. Il y a quelques livres essentiels :"
+    }
+  ]
+}

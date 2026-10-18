@@ -52,6 +52,20 @@ export class InterviewMigration {
     return [last, ...words].map(word => word.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z-]/g, "")).join("")
   }
 
+  /**
+   * How a person of RR0 is named, from their `people.json` beside their page: first names (theirs, else those the id ends with) then the last
+   * name as written, accents included (`ValleeJacques` is Jacques Vallée). Undefined when they have no page.
+   */
+  static peopleName(id: string): string | undefined {
+    const file = path.join("people", id[0].toLowerCase(), id, "people.json")
+    if (!fs.existsSync(file)) return undefined
+    const json = JSON.parse(fs.readFileSync(file, "utf8")) as { firstNames?: string[], lastName?: string }
+    const plain = (text: string): string => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z]/g, "")
+    const last = json.lastName ?? id.replace(/([a-z])([A-Z])/g, "$1 $2").split(" ")[0]
+    const firsts = json.firstNames ?? (id.startsWith(plain(last)) ? id.slice(plain(last).length).replace(/([a-z])([A-Z])/g, "$1 $2").split(" ").filter(Boolean) : [])
+    return [...firsts, last].join(" ")
+  }
+
   /** What a paragraph says, as the HTML the generated page has (its links resolved); a leading `Name :` taken off and returned as who speaks. */
   private saidOf(p: Element): { name?: string, text: string } {
     let name: string | undefined
@@ -65,9 +79,18 @@ export class InterviewMigration {
       }
     }
     for (const note of p.querySelectorAll(".note")) this.warnings.push(`a note kept in the text: ${note.textContent!.trim().slice(0, 60)}`)
+    // A quotation in the run of the text is a <q>: a <cite> or an epigraph there is to check by hand.
+    for (const cite of p.querySelectorAll("cite, .exergue")) this.warnings.push(`a <${cite.tagName.toLowerCase()}> to check (a quotation is a <q>): ${cite.textContent!.trim().slice(0, 60)}`)
     // The source's own line breaks and indents are not what was said.
     const text = p.innerHTML.replace(/\s+/g, " ").replace(/ ?<br ?\/?> ?/g, "<br>").trim()
     return { name, text }
+  }
+
+  /** A speaker of a role, who is the person `people` (an RR0 id) when known, named as their page names them. */
+  private static speaker(role: string, people: string | undefined): Speaker {
+    if (!people) return { role }
+    const title = InterviewMigration.peopleName(people)
+    return { role, by: { people }, ...(title ? { title } : {}) }
   }
 
   /** The interview a blockquote holds. */
@@ -77,8 +100,8 @@ export class InterviewMigration {
     const author = document.querySelector('meta[name="author"]')?.getAttribute("content") ?? undefined
     const interviewer = this.options.interviewer ?? (author ? InterviewMigration.peopleId(author) : undefined)
     const defaults: Record<string, { id: string, speaker: Speaker }> = {
-      question: { id: "interviewer", speaker: { role: "interviewer", ...(interviewer ? { by: { people: interviewer } } : {}) } },
-      answer: { id: "interviewee", speaker: { role: "interviewee", ...(this.options.interviewee ? { by: { people: this.options.interviewee } } : {}) } }
+      question: { id: "interviewer", speaker: InterviewMigration.speaker("interviewer", interviewer) },
+      answer: { id: "interviewee", speaker: InterviewMigration.speaker("interviewee", this.options.interviewee) }
     }
     const named: Record<string, string | undefined> = {}
     let previous: string | undefined

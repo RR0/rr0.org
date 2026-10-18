@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Jacques Vallée's final report",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "CoulthartRoss"
+      },
+      "title": "Ross Coulthart"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "ValleeJacques"
+      },
+      "title": "Jacques Vallée"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/2/6/09/15/Coulthart_JacquesValleeFinalReport_NewsNation/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "I'm glad you mentioned your database, because this is a database that you compiled. I think there were 260,000 UAP/UFO sightings that you compiled a history of during your time working with the <abbr title=\"Advanced Aerospace Weapon System Applications Program\">AAWSAP</abbr> program, or the <a href=\"/org/us/company/ba/ass/\"><abbr title=\"Bigelow Aerospace Advanced Space Studies\">BAASS</abbr></a> project with <a href=\"/org/us/company/ba/\">Bigelow Aerospace</a>, and it was a massive database. Where is that database now, the so-called Capella database?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "The project, as you know, the BAASS project was funded according to the proposal that all of us made with Dr. <span title=\"1936-, 90 ans, USA, physicist, astrophysicist, parapsychologist\" class=\"data-resolved people-resolved country-us occupation-physicist occupation-astrophysicist occupation-parapsychologist\" translate=\"no\"><a href=\"/people/p/PuthoffHal/\">Hal Puthoff<img src=\"/people/p/PuthoffHal/portrait.jpg\" alt=\"Hal Puthoff\" class=\"portrait\" width=\"75\"></a></span> and a team of people, Dr. <span title=\"Ireland, USA, biochemist\" class=\"data-resolved people-resolved country-ie country-us occupation-biochemist\" translate=\"no\"><a href=\"/people/k/KelleherColm/\">Colm Kelleher<img src=\"/people/k/KelleherColm/portrait.jpg\" alt=\"Colm Kelleher\" class=\"portrait\" width=\"75\"></a></span>, Dr. <span title=\"USA, ufologist, chemist, physicist\" class=\"data-resolved people-resolved country-us occupation-ufologist occupation-chemist occupation-physicist\" translate=\"no\"><a href=\"/people/d/DavisEric/\">Eric Davis<img src=\"/people/d/DavisEric/portrait.jpg\" alt=\"Eric Davis\" class=\"portrait\" width=\"75\"></a></span>. We proposed a five-year project, because that's really what it takes to take a measure of the whole body of sightings and so on. I was, as the information scientist in the group, responsible for the data warehouse. It's not a database, because you have pilot sightings, you have civilian sightings, you have different kinds of military sightings and so on, and those had different structures and connotations. So the idea was to start — and we started with 14 different databases, all of them quite large. Not so much large in terms of the number of cases: you mentioned 260,000, these days for a computer it's not large, but the data is very large in each case. Sometimes it ties to videos, sometimes it ties to radar, so it's complex."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "So who's got that data now? I presume it's with the Defense Department, because we know <a href=\"/org/us/dod/osd/ousd/is/aaro/\">AARO</a> — just this week, actually, the Pentagon's UFO office has asked for access to <span class=\"peopl\" translate=\"no\">David Marler</span>'s wonderful private database, which he's compiled himself over many, many years. Does the Defense Department actually need access to a private database like David's when it's got your excellent Capella database, that was paid for with public money, and which they don't seem to be releasing right now? I haven't seen anything from your database in the releases that have been released, for example under the <a href=\"/org/us/dod/PURSUE.html\">PURSUE</a> initiative by President <span class=\"peopl\" translate=\"no\">Donald Trump</span>."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "That's correct. I designed the proposal that went along with the database that I turned over to them, which was my work of many, many years, based on the work of correspondents and other researchers in other countries and in the US. And the idea was to convert it to a structure that I designed, that would be sort of a universal structure to which other people could attach their own data. So that was the idea of serving the community, which is what you do in information science. I've done that, as you may know, in my career with medical data at <a href=\"/org/us/university/stanford/\">Stanford</a> Medical School and in many other settings, so I know how to do that."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "The problem is that we don't have a god-given structure. If you asked me — if I was running databases for General Motors and I had a team and we were going to build a database of all the parts in General Motors, it would take a few months or years, but I could go around to all the factories and every part had a number and a composition. We don't have that. We don't know the answer. So the database is an exploratory database, which is more akin to an epidemic database or a medical database, where you don't know what the agent is. So people need to understand that it's not just a catalog of a bunch of bits. It's not a bucket of bits, it's an organized thing."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "There were three phases. We did the first phase, that was to clean up everything, and we had 40 people. People don't know that there were 40 people in BAASS who were hired by Kelleher and by Mr. <span title=\"1945-, 81 ans, USA, businessman\" class=\"data-resolved people-resolved country-us occupation-businessman\" translate=\"no\"><a href=\"/people/b/BigelowRobert/\">Robert Bigelow</a></span> and so on to serve this, and also to redo some of the investigations. These were qualified investigators, and we did that first phase. The second phase was an <abbr title=\"artificial intelligence\">AI</abbr> level that I had designed. You don't need 260,000 cases."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Did you ever get to the stage of using the AI to do the analysis that you wanted to do, or were you shut down?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "The project was shut off after essentially three years — after two and a half years. So we could never get into the design of the first layer of AI that would have reduced the number to about 40,000 cases. We know that in most of those catalogs up to 95% of the data can be explained. Now, it may be difficult to explain it, but with the computer and with AI we can test all the possible explanations. We can do that, that needs to be done. So the number doesn't need to be piled up with more and more data. I had access to a million cases."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Forgive me for interrupting, but I guess the point from what you're saying is that we know that there must be your extensive Capella database somewhere in the bowels of the <a href=\"/org/us/dod/dia/\">Defense Intelligence Agency</a> that funded that project. Why are we not seeing any of that data being released? If the president is serious and open and transparent about what he means, wouldn't it be a good idea to ensure that that database is provided to AARO and everyone else, to make sure that it is used and incorporated into an understanding of the phenomenon?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Listen, I did my job in science and technology the way I know how to do it. I've built many databases for different things, and I delivered it, with directions for those two levels. The ultimate level — and that would have taken us five years — the ultimate level was to crack the secret of the UFO data. What is the structure? We don't have the structure. We don't know what those things do. We know about the light, we know about the traces on the ground, we know something about the weight, we know about the composition. As you know, I'm working with Dr. <span title=\"1961-, 65 ans, United Kingdom, USA, biologist, ufologist\" class=\"data-resolved people-resolved country-uk country-us occupation-biologist occupation-ufologist\" translate=\"no\"><a href=\"/people/n/NolanGarry/\">Garry Nolan</a></span> on composition analysis of many samples. I have samples here from different sightings and crashes around the world. So the idea is, out of the structure, extracting what the invariants of the phenomena are, not just in the US but in France, in Argentina, in Brazil, in Mexico, in all those places. That has not been done, because the subject was cut off after two years."
+    }
+  ]
+}

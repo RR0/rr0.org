@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "A La Roche aussi, on a vu une soucoupe volante",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee"
+    },
+    "interviewer": {
+      "role": "interviewer"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/5/4/10/17/ALaRocheAussi/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "Je ne m'attendais pas à une vision de ce genre et je vous avoue que j'ai été impressionnée à tel point que je suis montée précipitamment, sans réveiller mes enfants qui, eux, dormaient paisiblement et qui, le lendemain, m'ont reprochés de ne pas les avoir avertis lorsque je leur ai fait part de ce que j'avais vu."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "L'engin avançait-il ou restait-il immobile ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Très franchement, j'étais tellement affolée que je n'ai pas regardé longtemps. J'ai eu l'impression toutefois, qu'il se déplaçait très vite et sans bruit. Il était de couleur jaune-vert."
+    }
+  ]
+}

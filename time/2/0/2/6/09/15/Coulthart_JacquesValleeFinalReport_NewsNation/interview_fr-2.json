@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Le rapport final de Jacques Vallée",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "CoulthartRoss"
+      },
+      "title": "Ross Coulthart"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "ValleeJacques"
+      },
+      "title": "Jacques Vallée"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/2/6/09/15/Coulthart_JacquesValleeFinalReport_NewsNation/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Je suis content que vous mentionniez votre base de données, car c'est une base que vous avez compilée. Je crois qu'il y avait 260 000 observations de PAN et d'ovnis dont vous avez compilé l'historique pendant votre travail avec le programme <abbr title=\"Advanced Aerospace Weapon System Applications Program\">AAWSAP</abbr>, ou le projet <a href=\"/org/us/company/ba/ass/\"><abbr title=\"Bigelow Aerospace Advanced Space Studies\">BAASS</abbr></a> avec <a href=\"/org/us/company/ba/\">Bigelow Aerospace</a>, et c'était une base de données massive. Où est cette base aujourd'hui, la fameuse base Capella ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Le projet BAASS, comme vous le savez, a été financé conformément à la proposition que nous avions tous faite avec le Dr <span title=\"1936-, 90 ans, USA, physicien, astrophysicien, parapsychologue\" class=\"data-resolved people-resolved country-us occupation-physicist occupation-astrophysicist occupation-parapsychologist\" translate=\"no\"><a href=\"/people/p/PuthoffHal/\">Hal Puthoff<img src=\"/people/p/PuthoffHal/portrait.jpg\" alt=\"Hal Puthoff\" class=\"portrait\" width=\"75\"></a></span> et une équipe de gens, le Dr <span title=\"Irelande, USA, biochimiste\" class=\"data-resolved people-resolved country-ie country-us occupation-biochemist\" translate=\"no\"><a href=\"/people/k/KelleherColm/\">Colm Kelleher<img src=\"/people/k/KelleherColm/portrait.jpg\" alt=\"Colm Kelleher\" class=\"portrait\" width=\"75\"></a></span>, le Dr <span title=\"USA, ufologue, chimiste, physicien\" class=\"data-resolved people-resolved country-us occupation-ufologist occupation-chemist occupation-physicist\" translate=\"no\"><a href=\"/people/d/DavisEric/\">Eric Davis<img src=\"/people/d/DavisEric/portrait.jpg\" alt=\"Eric Davis\" class=\"portrait\" width=\"75\"></a></span>. Nous avions proposé un projet de cinq ans, parce que c'est vraiment ce qu'il faut pour prendre la mesure de l'ensemble du corpus d'observations. En tant que spécialiste de l'information du groupe, j'étais responsable de l'entrepôt de données. Ce n'est pas une base de données, parce qu'on a des observations de pilotes, des observations de civils, différents types d'observations militaires, et tout cela avait des structures et des connotations différentes. L'idée était donc de commencer — et nous avons commencé avec 14 bases de données différentes, toutes assez volumineuses. Pas tellement en nombre de cas&nbsp;: vous parlez de 260 000, ce n'est pas énorme pour un ordinateur aujourd'hui, mais les données sont très volumineuses dans chaque cas. Parfois c'est lié à des vidéos, parfois à des radars, c'est donc complexe."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors, qui détient ces données maintenant ? Je suppose que c'est le ministère de la Défense, car nous savons que l'<a href=\"/org/us/dod/osd/ousd/is/aaro/\">AARO</a> — cette semaine même, en fait, le bureau ovni du Pentagone a demandé l'accès à la formidable base de données privée de <span class=\"peopl\" translate=\"no\">David Marler</span>, qu'il a compilée lui-même pendant de très nombreuses années. Le ministère de la Défense a-t-il vraiment besoin d'accéder à une base privée comme celle de David alors qu'il dispose de votre excellente base Capella, payée par de l'argent public, et qu'il ne semble pas diffuser aujourd'hui ? Je n'ai rien vu de votre base dans les documents publiés, par exemple au titre de l'initiative <a href=\"/org/us/dod/PURSUE.html\">PURSUE</a> du président <span class=\"peopl\" translate=\"no\">Donald Trump</span>."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "C'est exact. J'ai conçu la proposition qui accompagnait la base que je leur ai remise, qui était le travail de très nombreuses années, fondé sur le travail de correspondants et d'autres chercheurs dans d'autres pays et aux États-Unis. Et l'idée était de la convertir dans une structure que j'avais conçue, une sorte de structure universelle à laquelle d'autres pourraient rattacher leurs propres données. C'était donc l'idée de servir la communauté, ce qu'on fait en science de l'information. Je l'ai fait, comme vous le savez peut-être, dans ma carrière avec les données médicales à la faculté de médecine de <a href=\"/org/us/university/stanford/\">Stanford</a> et dans bien d'autres cadres, je sais donc faire cela."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Le problème, c'est que nous n'avons pas de structure donnée d'avance. Si vous me demandiez — si je dirigeais les bases de données de General Motors, avec une équipe, et que nous allions construire une base de toutes les pièces de General Motors, cela prendrait quelques mois ou quelques années, mais je pourrais faire le tour de toutes les usines et chaque pièce aurait un numéro et une composition. Nous n'avons pas cela. Nous ne connaissons pas la réponse. La base est donc une base exploratoire, plus proche d'une base épidémiologique ou médicale, où l'on ne sait pas quel est l'agent. Il faut donc que les gens comprennent que ce n'est pas un simple catalogue de bits. Ce n'est pas un seau de bits, c'est une chose organisée."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Il y avait trois phases. Nous avons fait la première, qui consistait à tout nettoyer, et nous avions 40 personnes. Les gens ne savent pas qu'il y avait 40 personnes chez BAASS, recrutées par Kelleher et par M. <span title=\"1945-, 81 ans, USA, homme d'affaires\" class=\"data-resolved people-resolved country-us occupation-businessman\" translate=\"no\"><a href=\"/people/b/BigelowRobert/\">Robert Bigelow</a></span>, pour s'en occuper et aussi pour refaire certaines des enquêtes. C'étaient des enquêteurs qualifiés, et nous avons fait cette première phase. La deuxième phase était un niveau d'<abbr title=\"intelligence artificielle\">IA</abbr> que j'avais conçu. On n'a pas besoin de 260 000 cas."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Êtes-vous jamais arrivé au stade d'utiliser l'IA pour faire l'analyse que vous vouliez faire, ou avez-vous été arrêté ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Le projet a été arrêté au bout de trois ans, en fait au bout de deux ans et demi. Nous n'avons donc jamais pu entrer dans la conception de la première couche d'IA, qui aurait ramené le nombre à environ 40 000 cas. Nous savons que dans la plupart de ces catalogues, jusqu'à 95 % des données peuvent être expliquées. Cela peut être difficile à expliquer, mais avec l'ordinateur et l'IA nous pouvons tester toutes les explications possibles. Nous pouvons le faire, et cela doit être fait. Le nombre n'a donc pas besoin d'être gonflé par toujours plus de données. J'avais accès à un million de cas."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pardonnez-moi de vous interrompre, mais je suppose que ce que vous dites signifie que votre vaste base Capella se trouve forcément quelque part dans les entrailles de la <a href=\"/org/us/dod/dia/\">Defense Intelligence Agency</a> qui a financé ce projet. Pourquoi ne voyons-nous rien de ces données être publié ? Si le président est sérieux, ouvert et transparent sur ce qu'il annonce, ne serait-il pas judicieux de veiller à ce que cette base soit fournie à l'AARO et à tous les autres, pour qu'elle soit utilisée et intégrée à une compréhension du phénomène ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Écoutez, j'ai fait mon travail en science et en technologie comme je sais le faire. J'ai construit beaucoup de bases de données pour différentes choses, et je l'ai livrée, avec les indications pour ces deux niveaux. Le niveau ultime — et cela nous aurait pris cinq ans — le niveau ultime était de percer le secret des données ovni. Quelle est la structure ? Nous n'avons pas la structure. Nous ne savons pas ce que ces choses font. Nous connaissons la lumière, nous connaissons les traces au sol, nous savons quelque chose du poids, nous connaissons la composition. Comme vous le savez, je travaille avec le Dr <span title=\"1961-, 65 ans, Royaume-Uni, USA, biologiste, ufologue\" class=\"data-resolved people-resolved country-uk country-us occupation-biologist occupation-ufologist\" translate=\"no\"><a href=\"/people/n/NolanGarry/\">Garry Nolan</a></span> sur l'analyse de composition de nombreux échantillons. J'ai ici des échantillons provenant de différentes observations et de différents crashs dans le monde. L'idée est donc, à partir de la structure, d'extraire quels sont les invariants des phénomènes, non seulement aux États-Unis mais en France, en Argentine, au Brésil, au Mexique, dans tous ces endroits. Cela n'a pas été fait, parce que le sujet a été coupé au bout de deux ans."
+    }
+  ]
+}

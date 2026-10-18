@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Le rapport final de Jacques Vallée",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "CoulthartRoss"
+      },
+      "title": "Ross Coulthart"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "ValleeJacques"
+      },
+      "title": "Jacques Vallée"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/2/6/09/15/Coulthart_JacquesValleeFinalReport_NewsNation/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Il y a une autre mention intrigante dans votre livre, Jacques, et vous ne dites pas quand. Quand vous dites Académie nationale, je suppose que vous voulez dire l'Académie nationale des sciences. Mais au cours d'une conversation en <span class=\"time-resolved\"><a href=\"/time/2/0/2/5/\"><time datetime=\"2025\">2025</time></a></span> sur la conscience et la réalité supérieure, le collègue à qui vous parlez répond, je cite&nbsp;: <q lang=\"en\">The Academy, the National Academy, was told it might be defunded if we breached some areas. This is one of them.</q> En parlant de conscience et de réalité supérieure. Jacques, vous dites qu'elle a été prévenue qu'elle perdrait ses financements si elle entrait dans certains domaines. Qui a lancé cet avertissement ? Le savez-vous ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Si vous vous souvenez, la même chose est arrivée en Russie assez récemment&nbsp;: on leur a dit de rester à l'écart de certains domaines, alors même qu'ils avaient été briefés au niveau d'habilitations élevées. Ce que je comprends, et je l'ai fait confirmer par d'autres membres de l'académie, c'est qu'ils ont eu des conversations à ce niveau, qu'ils ont examiné des données, qu'ils ont eu des témoignages de gens habilités à ces données, et qu'on leur a simplement dit que ce n'était pas à l'académie de se prononcer sur la situation, qu'ils avaient d'autres choses que la nation leur confiait, et que celle-ci n'en faisait pas partie."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Puis-je préciser, Jacques&nbsp;: le sujet interdit était-il les ovnis, ou la conscience ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je sais que c'était les ovnis."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "L'Académie nationale des sciences des États-Unis a donc été prévenue qu'elle perdrait ses financements si elle cherchait à enquêter sur les ovnis."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "C'est ce que m'a dit un membre en règle de l'académie, oui — et ils n'étaient pas nouveaux dans le sujet. C'est quelqu'un que je connais et avec qui je travaille depuis de nombreuses années, et nous nous faisions confiance sur des projets."
+    }
+  ]
+}

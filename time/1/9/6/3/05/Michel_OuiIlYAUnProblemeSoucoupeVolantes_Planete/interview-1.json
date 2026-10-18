@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Oui, il y a un problème soucoupes volantes !",
+  "speakers": {
+    "tower": {
+      "role": "controller",
+      "title": "Tour de contrôle d'Orly"
+    },
+    "pilot": {
+      "role": "pilot",
+      "title": "Pilote du DC 3"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/6/3/05/Michel_OuiIlYAUnProblemeSoucoupeVolantes_Planete/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "pilot",
+      "text": "Je vois une lumière rouge clignotante qui se dirige vers moi apparemment à très grande vitesse, répond le pilote."
+    },
+    {
+      "speaker": "tower",
+      "text": "Quelle position attribuez-vous à cette lumière ?"
+    },
+    {
+      "speaker": "pilot",
+      "text": "La verticale des Mureaux."
+    }
+  ]
+}

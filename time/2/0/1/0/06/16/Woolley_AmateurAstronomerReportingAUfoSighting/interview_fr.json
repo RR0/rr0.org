@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Un astronome amateur signalant une observation d'ovni",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Étudiant"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "John Woolley"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/1/0/06/16/Woolley_AmateurAstronomerReportingAUfoSighting/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Ahhh, vous avez vu ça ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ouais, je l'ai bien vu."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Okaaay. C'était quoi ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je ne sais pas, mais gardons les yeux ouverts. Ils vont peut-être revenir."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "A Report on the Investigation of Magnesium Samples From a UFO Explosion Over the Sea in the Ubatuba Region of Brazil",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "FontesOlavoT"
+      },
+      "title": "Olavo Teixeira Fontès"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "Luisa Maria A. Barbosa"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/5/7/FontesToAPRO/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Did your analysis show the presence of magnesium of unusual purity and absence of any other metallic element."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Yes, I identified on the film all common and uncommon spectrum lines of the element magnesium. There was no other metallic element in the sample, not even the so-called \"trace elements\" usually detected in metallic samples."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Your report suggests that the metal in the sample was absolutely pure in the spectrographic sense, with a percentage of 100. Why did you not state this very interesting conclusion?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Because a pure metal in the spectrographic sense may still contain other possible constituents which could be present in your sample and still escape detection. The method as its limitations. Different compounds or states of combination of the same element, for instance, are not distinguishable by spectrographic analysis. Most of the nonmetallic elements are not detected by it the exceptions are very few. In in this particular case it could be a mixture of the elements found with any of its compounds, or a chemical combination with any of those nonmetallic elements a salt, for ample, despite the fact that the appearance of the sample suggests the element as being in its metallic form."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Will you detail the spectrographic plate for me?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Of course. Here [showing me the film] you can see five spectra. The spectrum corresponding to the sample analyzed is the first one, at the top of the film. It shows a number of spectrum lines with different strengths, but all of them belong to the same element they represent the spectrum of magnesium. The other four spectra were made for comparison purposes. The third is also a magnesium spectrum and corresponds to a chemically pure magnesium salt, CO3Mg. The remaining spectra are iron, Fe, comparison spectra"
+    }
+  ]
+}

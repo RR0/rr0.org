@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Oui, il y a un problème soucoupes volantes !",
+  "speakers": {
+    "tower": {
+      "role": "controller",
+      "title": "Tour de contrôle d'Orly"
+    },
+    "pilot": {
+      "role": "pilot",
+      "title": "Pilote du DC 3"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/6/3/05/Michel_OuiIlYAUnProblemeSoucoupeVolantes_Planete/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "pilot",
+      "text": "Je ne vois plus rien. Avez-vous perdu le contact?"
+    },
+    {
+      "speaker": "tower",
+      "text": "Non, répond la tour de contrôle. <q>L'objet semble être du côté du Bourget.</q>"
+    }
+  ]
+}

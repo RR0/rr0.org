@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Amateur Astronomer Reporting a UFO Sighting",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Student"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "John Woolley"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/1/0/06/16/Woolley_AmateurAstronomerReportingAUfoSighting/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Ahhh, did you see that?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Yeah, I saw that all right."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Okaaay. What was it?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "I don’t know, but let’s keep out eyes open. Maybe they will come back."
+    }
+  ]
+}

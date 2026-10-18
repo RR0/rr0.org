@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Le rapport final de Jacques Vallée",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "CoulthartRoss"
+      },
+      "title": "Ross Coulthart"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "ValleeJacques"
+      },
+      "title": "Jacques Vallée"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/2/0/2/6/09/15/Coulthart_JacquesValleeFinalReport_NewsNation/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Monsieur, j'adore <i lang=\"en\">Forbidden Science 7</i>. C'est un livre très alléchant, vous y laissez beaucoup d'indices. Et l'une des choses que vous dites, c'est que ce n'est qu'autour de <span class=\"time-resolved\"><a href=\"/time/2/0/2/5/\"><time datetime=\"2025\">2025</time></a></span> que des réponses claires ont fini par émerger. Jacques, quelles étaient ces réponses ? Quelles ont été pour vous les réponses claires apparues en 2025 ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "La première réponse claire est venue — le gouvernement américain et d'autres gouvernements dans le monde attendaient cela — et c'était que le sujet était un vrai sujet de recherche, un thème de recherche valide, et que les explications conventionnelles ne fonctionnaient pas. Ce n'est pas exactement la divulgation au sens où les gens l'entendent, elle est peut-être encore à venir, mais c'était au moins une percée nette. Et cela a immédiatement déclenché, en Europe et dans le monde, comme une permission donnée aux scientifiques qui travaillaient sur le sujet de relancer leurs propres organisations."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Je suppose que cela a légitimé pour la première fois l'idée de prendre le sujet des PAN au sérieux."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Oui. Comme vous le savez, la France a de longue date un groupe — deux groupes différents, en fait — qui étudient cela depuis les années <span class=\"time-resolved\"><a href=\"/time/1/9/7/0/\"><time datetime=\"1970\">1970</time></a></span>. À titre officiel, c'était une toute petite cellule qui se contentait de guetter ce qui passait, une sorte de système d'alerte. Mais ils ont accumulé une base de données très intéressante, et j'étais en contact avec eux et j'ai collaboré avec eux. Ce groupe est aujourd'hui rétabli, et on m'a demandé de le rejoindre officiellement. Ce sera donc, pour l'essentiel, un conseil consultatif auprès du gouvernement français, et je le rejoindrai dans deux semaines."
+    }
+  ]
+}

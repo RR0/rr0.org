@@ -11,6 +11,10 @@
  * (the figures it held put before it), adding the script that defines the element once.
  *
  *   npx tsx scripts/InterviewMigration.ts time/2/0/0/6/03/Vallee_SubRosa/index_fr.html --interviewee ValleeJacques [--apply]
+ *
+ * A dialogue written as paragraphs that start with who speaks in bold (`<p><strong>SR</strong>: …`) is read with `--prefixes SR,JV`, the name
+ * that asks then the one that answers: from such a paragraph through the paragraphs that follow it, those without a name staying with the last
+ * speaker.
  */
 import { JSDOM } from "jsdom"
 import fs from "node:fs"
@@ -34,6 +38,11 @@ interface Options {
   preview?: string
   interviewer?: string
   interviewee?: string
+  /**
+   * For a dialogue written as paragraphs that start with who speaks in bold (`<p><strong>SR</strong>: …`) rather than as a blockquote of
+   * questions and answers: the name that asks, then the name that answers.
+   */
+  prefixes?: [string, string]
 }
 
 export class InterviewMigration {
@@ -93,8 +102,8 @@ export class InterviewMigration {
     return { role, by: { people }, ...(title ? { title } : {}) }
   }
 
-  /** The interview a blockquote holds. */
-  private interviewOf(blockquote: Element, document: Document): Record<string, unknown> {
+  /** The interview a dialogue holds: a blockquote's children, or a run of paragraphs. */
+  private interviewOf(children: Element[], document: Document): Record<string, unknown> {
     const speakers: Record<string, Speaker> = {}
     const segments: Segment[] = []
     const author = document.querySelector('meta[name="author"]')?.getAttribute("content") ?? undefined
@@ -105,16 +114,20 @@ export class InterviewMigration {
     }
     const named: Record<string, string | undefined> = {}
     let previous: string | undefined
-    for (const child of blockquote.children) {
+    const prefixes = this.options.prefixes
+    for (const child of children) {
       if (child.tagName !== "P") {
         this.warnings.push(`a <${child.tagName.toLowerCase()}> in the dialogue, put before it`)
         continue
       }
-      const kind = child.classList.contains("question") ? "question" : child.classList.contains("answer") ? "answer" : undefined
-      if (!kind) this.warnings.push(`a paragraph that is neither question nor answer, given to the previous speaker: ${child.textContent!.trim().slice(0, 60)}`)
       const { name, text } = this.saidOf(child)
+      // Who speaks: the paragraph's class, or the name it starts with when the page writes it that way.
+      const kind = prefixes
+        ? (name === prefixes[0] ? "question" : name === prefixes[1] ? "answer" : undefined)
+        : child.classList.contains("question") ? "question" : child.classList.contains("answer") ? "answer" : undefined
+      if (!kind) this.warnings.push(`a paragraph that is neither question nor answer, given to the previous speaker: ${child.textContent!.trim().slice(0, 60)}`)
       let id: string
-      if (kind && name) named[kind] = name
+      if (kind && name && !prefixes) named[kind] = name
       const said = kind ? named[kind] : undefined
       if (said) {
         id = InterviewMigration.peopleId(said)
@@ -140,18 +153,63 @@ export class InterviewMigration {
     }
   }
 
-  /** What each blockquote of the page becomes; the source page itself when applied. */
+  /** Whether a paragraph starts with one of the names in bold, then a colon. */
+  private static startsWith(p: Element, names: string[]): boolean {
+    const first = [...p.childNodes].find(node => node.nodeType !== 3 || node.textContent!.trim() !== "")
+    return !!first && first.nodeType === 1 && ["STRONG", "B"].includes((first as Element).tagName)
+      && names.includes(first.textContent!.trim()) && /^\s*:/.test(first.nextSibling?.textContent ?? "")
+  }
+
+  /** The runs of paragraphs that make a dialogue: from a paragraph starting with a name, through the paragraphs that follow it. */
+  private prefixedRuns(document: Document, prefixes: string[]): Element[][] {
+    const runs: Element[][] = []
+    for (const p of document.querySelectorAll("p")) {
+      if (!InterviewMigration.startsWith(p, prefixes) || runs.some(run => run.includes(p))) continue
+      const run: Element[] = []
+      for (let node: Element | null = p; node?.tagName === "P"; node = node.nextElementSibling) run.push(node)
+      runs.push(run)
+    }
+    return runs
+  }
+
+  /** Where each run of paragraphs is in the source page, as matches, the n-th run holding `lengths[n]` paragraphs. */
+  private prefixedSource(source: string, prefixes: string[], lengths: number[]): RegExpMatchArray[] {
+    const start = new RegExp(`<p>\\s*<(strong|b)>(${prefixes.join("|")})</(strong|b)>\\s*:`, "g")
+    const matches: RegExpMatchArray[] = []
+    let from = 0
+    for (const length of lengths) {
+      start.lastIndex = from
+      const first = start.exec(source)
+      if (!first) break
+      let end = first.index
+      for (let count = 0; count < length; count++) {
+        const paragraph = /^\s*<p[\s>][\s\S]*?<\/p>/.exec(source.slice(end))
+        if (!paragraph) throw new Error(`${this.page}: the source has fewer paragraphs than the generated page`)
+        end += paragraph[0].length
+      }
+      const match = [source.slice(first.index, end)] as RegExpMatchArray
+      match.index = first.index
+      matches.push(match)
+      from = end
+    }
+    return matches
+  }
+
+  /** What each dialogue of the page becomes; the source page itself when applied. */
   run(): void {
     const generated = fs.readFileSync(path.join("out", this.page), "utf8")
     const document = new JSDOM(generated).window.document
-    const dialogues = [...document.querySelectorAll("blockquote")].filter(quote => quote.querySelector("p.question, p.answer"))
+    const prefixes = this.options.prefixes
+    const dialogues = prefixes ? this.prefixedRuns(document, prefixes) : [...document.querySelectorAll("blockquote")]
+      .filter(quote => quote.querySelector("p.question, p.answer")).map(quote => [...quote.children])
     if (dialogues.length === 0) throw new Error(`${this.page}: no dialogue`)
     const dir = path.dirname(this.page)
     const base = path.basename(this.page, ".html").replace(/^index/, "")
     const names = dialogues.map((_, index) => `interview${base}${dialogues.length > 1 ? `-${index + 1}` : ""}.json`)
     const interviews = dialogues.map(quote => this.interviewOf(quote, document))
     let source = fs.readFileSync(this.page, "utf8")
-    const quotes = [...source.matchAll(/<blockquote[^>]*>[\s\S]*?<\/blockquote>/g)].filter(match => InterviewMigration.DIALOGUE.test(match[0]))
+    const quotes = prefixes ? this.prefixedSource(source, prefixes, dialogues.map(run => run.length))
+      : [...source.matchAll(/<blockquote[^>]*>[\s\S]*?<\/blockquote>/g)].filter(match => InterviewMigration.DIALOGUE.test(match[0]))
     if (quotes.length !== dialogues.length) throw new Error(`${this.page}: ${quotes.length} dialogues in the source, ${dialogues.length} in the generated page`)
     for (const [index, match] of [...quotes.entries()].reverse()) {
       const figures = [...match[0].matchAll(/<figure[\s\S]*?<\/figure>/g)].map(figure => figure[0] + "\n")
@@ -178,9 +236,10 @@ export class InterviewMigration {
       const at = args.indexOf(flag)
       return at < 0 ? undefined : args[at + 1]
     }
-    const pages = args.filter((arg, index) => !arg.startsWith("--") && !["--interviewer", "--interviewee", "--preview"].includes(args[index - 1]))
+    const pages = args.filter((arg, index) => !arg.startsWith("--") && !["--interviewer", "--interviewee", "--preview", "--prefixes"].includes(args[index - 1]))
+    const prefixes = value("--prefixes")?.split(",") as [string, string] | undefined
     for (const page of pages) {
-      new InterviewMigration(page, { apply: args.includes("--apply"), interviewer: value("--interviewer"), interviewee: value("--interviewee"), preview: value("--preview") }).run()
+      new InterviewMigration(page, { apply: args.includes("--apply"), interviewer: value("--interviewer"), interviewee: value("--interviewee"), preview: value("--preview"), prefixes }).run()
     }
   }
 }

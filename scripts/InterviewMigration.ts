@@ -53,6 +53,8 @@ interface Options {
    * people answering (a hearing), who an unnamed answer is cannot be told (`--follow-names no`).
    */
   follow?: boolean
+  /** With `prefixes`, a run of paragraphs ends at the first paragraph that does not start with a name (`--named-only`). */
+  namedOnly?: boolean
 }
 
 export class InterviewMigration {
@@ -111,7 +113,7 @@ export class InterviewMigration {
     if (first && isName(first)) {
       const next = first.nextSibling
       // The name may be followed by how they speak, kept: `<b>Barney</b> (yeux fermés) : …`.
-      const after = next?.nodeType === 3 ? /^\s*(\([^)]*\))?\s*[:;]/.exec(next.textContent!) : null
+      const after = next?.nodeType === 3 ? /^\s*(\([^)]*\)|\[[^\]]*\])?\s*[:;]/.exec(next.textContent!) : null
       if (after) {
         name = first.textContent!.trim()
         next!.textContent = (after[1] ? `${after[1]} ` : "") + next!.textContent!.slice(after[0].length).trimStart()
@@ -223,7 +225,8 @@ export class InterviewMigration {
     // The bold name may be inside a link (`<a><strong>Keyhoe</strong></a> :`).
     const bold = (node: ChildNode): boolean => node.nodeType === 1 && (["STRONG", "B"].includes((node as Element).tagName)
       || (node as Element).tagName === "A" && (node as Element).children.length === 1 && ["STRONG", "B"].includes((node as Element).children[0].tagName))
-    return !!first && bold(first) && names.includes(first.textContent!.trim()) && /^\s*:/.test(first.nextSibling?.textContent ?? "")
+    return !!first && bold(first) && names.includes(first.textContent!.trim())
+      && /^\s*(\([^)]*\)|\[[^\]]*\])?\s*:/.test(first.nextSibling?.textContent ?? "")
   }
 
   /** The runs of paragraphs that make a dialogue: from a paragraph starting with a name, through the paragraphs that follow it. */
@@ -232,7 +235,11 @@ export class InterviewMigration {
     for (const p of document.querySelectorAll("p")) {
       if (!InterviewMigration.startsWith(p, prefixes) || runs.some(run => run.includes(p))) continue
       const run: Element[] = []
-      for (let node: Element | null = p; node?.tagName === "P"; node = node.nextElementSibling) run.push(node)
+      for (let node: Element | null = p; node?.tagName === "P"; node = node.nextElementSibling) {
+        // Where every turn is named, a paragraph without a name is no longer the dialogue.
+        if (this.options.namedOnly && !InterviewMigration.startsWith(node, prefixes)) break
+        run.push(node)
+      }
       runs.push(run)
     }
     return runs
@@ -241,7 +248,7 @@ export class InterviewMigration {
   /** Where each run of paragraphs is in the source page, as matches, the n-th run holding `lengths[n]` paragraphs. */
   private prefixedSource(source: string, prefixes: string[], lengths: number[]): RegExpMatchArray[] {
     // The name in bold may be linked, inside or around the bold, and padded with spaces.
-    const start = new RegExp(`<p>\\s*(?:<a[^>]*>)?\\s*<(?:strong|b)>\\s*(?:<a[^>]*>)?\\s*(?:${prefixes.join("|")})\\s*(?:</a>)?\\s*</(?:strong|b)>\\s*(?:</a>)?\\s*:`, "g")
+    const start = new RegExp(`<p>\\s*(?:<a[^>]*>)?\\s*<(?:strong|b)>\\s*(?:<a[^>]*>)?\\s*(?:<(?:em|i)>)?\\s*(?:${prefixes.join("|")})\\s*(?:</(?:em|i)>)?\\s*(?:</a>)?\\s*</(?:strong|b)>\\s*(?:</a>)?\\s*(?:\\([^)<]*\\)|\\[[^\\]<]*\\])?\\s*:`, "g")
     const matches: RegExpMatchArray[] = []
     let from = 0
     for (const length of lengths) {
@@ -319,7 +326,7 @@ export class InterviewMigration {
     const speakers = Object.fromEntries(args.flatMap((arg, index) => arg === "--speaker" ? [args[index + 1].split("=")] : []))
     const prefixes = value("--prefixes")?.split(",") as [string, string] | undefined
     for (const page of pages) {
-      new InterviewMigration(page, { apply: args.includes("--apply"), interviewer: value("--interviewer"), interviewee: value("--interviewee"), preview: value("--preview"), prefixes, speakers, follow: value("--follow-names") !== "no" }).run()
+      new InterviewMigration(page, { apply: args.includes("--apply"), interviewer: value("--interviewer"), interviewee: value("--interviewee"), preview: value("--preview"), prefixes, speakers, follow: value("--follow-names") !== "no", namedOnly: args.includes("--named-only") }).run()
     }
   }
 }

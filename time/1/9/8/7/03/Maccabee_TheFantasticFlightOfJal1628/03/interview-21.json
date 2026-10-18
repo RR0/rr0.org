@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:41:51 Where's that, ah, are you still painting a primary, ah, by that JAL flight?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:41:56 OK. Let me look at my other...."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:41:59 If so, where's the position of it?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:42:00 OK. Standby."
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:42:24 It looks like, ah, offset left and then possibility fell back in trail. However, I can't see him now. I can't pick him out."
+    }
+  ]
+}

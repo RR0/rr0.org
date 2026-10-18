@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "\"Traffic In Front Of Us\"",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:19:49 JAL1628, roger, do you have.., ah, can you identify the aircraft?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:19:58 Ah, we are not sure, but we have traffic in sight now."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:20:04 JAL1628 heavy, Roger. Maintain visual contact with your traffic and, ah, can you say the altitude of the traffic?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:20:14 Uh, almost [at] the same altitude."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:20:21 JAL 1628 Roger. Would you like a higher or lower altitude?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:20:27 Ah, no, negative. JAL1628."
+    }
+  ]
+}

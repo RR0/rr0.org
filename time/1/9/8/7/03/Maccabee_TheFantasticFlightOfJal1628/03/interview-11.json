@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "5:36.12 Ah, Anchorage Center, JAL1628. Request direct to Talkeetna."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:36:18 JAL1628 heavy, cleared direct to Talkeetna and in, ah, advise me of your (sic) position of your traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:36:24 Ah, same po... same position."
+    }
+  ]
+}

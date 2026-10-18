@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "\"Un traffic devant nous\"",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:21:19 JAL1628 lourd, regardez si vous pouvez identifier le type d'appareil, euh, et voyez si vous pouvez dire s'il est militaire ou civil."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:21:35 JAL1628. Nous ne pouvons identifier le type, euh, mais nous pouvons voir, euh, des feux de navigation et euh, des lumières stroboscopiques."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:21:48 <em>Roger</em>, monsieur. Indiquez la couleur des feux stroboscopiques et de balisage."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:21:56 La couleur est, euh, blanche et jaune, je dirais."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:22:03 Blanche et jaune. Merci."
+    }
+  ]
+}

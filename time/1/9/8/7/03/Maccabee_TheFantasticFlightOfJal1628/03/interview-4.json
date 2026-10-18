@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:25:50 Negative, its not erroneous. I want you to keep a good track on there and if you pick up a [transponder signal], verify that you do not have any [military] aircraft operating in that area."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:25:57 That is affirm(ative). We do not have anybody up there right now. Can you give me the position of the primary you're receiving?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:26:03 I'm picking up a primary approximately <span title=\"50 NMI\"></span> southeast. But it's right in front of the (JAL1628) <span class=\"source-id\" aria-label=\"Source\" aria-hidden=\"true\">s11<span id=\"s11\" aria-hidden=\"true\" class=\"anchor\"></span><span class=\"source-contents\">Information obtained from the tape recording and transcript of the tape recording of conversations between the plane and the AARTCC.</span></span>."
+    }
+  ]
+}

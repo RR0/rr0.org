@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "rocc",
+      "text": "17:26:13 OK. I've got him about...."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:26:15 <span title=\"8 NMI\"></span> in front of the (JAL1628) he's got traffic at the same altitude (<span title=\"35000 FOT\">10668 m</span>)."
+    },
+    {
+      "speaker": "rocc",
+      "text": "17:26:18 OK. I've got him about his, ah, oh, it looks like about, ah, 10 o'clock at about that range, yes."
+    }
+  ]
+}

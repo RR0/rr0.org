@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:40:10 JAL1628, Anchorage Center."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:40:12 Go ahead."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:40:13 Roger Sir. Would you like our military to scramble on the traffic?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:40:17 Negative. Negative."
+    }
+  ]
+}

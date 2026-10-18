@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "D'Einstein à la télépathie",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "CollerySolange"
+      },
+      "title": "Solange Collery"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "CostaDeBeauregardOlivier"
+      },
+      "title": "Olivier Costa de Beauregard"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/1/11/02/DEinsteinALaTelepathie_Tonus/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "On parle beaucoup de vous en ce moment. On vous a même décerné le titre injurieux de \"roi des mages\". Pourquoi ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Parce que je propose une interprétation théorique du paradoxe EPR qui n’est pas du goût de certains physiciens français. Ce débat, réactualisé par la présente expérience d'Orsay, est âprement discuté dans la physique mondiale. Il n'y a pas deux théoriciens pour proposer la même interprétation de ce redoutable paradoxe."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qu’est-ce que le paradoxe EPR et l’expérience d’Orsay ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Le paradoxe EPR est le paradoxe d'<span title=\"1879-1955, 76 ans, Allemagne, USA, physicien\" class=\"data-resolved people-resolved deceased country-de country-us occupation-physicist\" translate=\"no\"><a href=\"/people/e/EinsteinAlbert/\">Einstein<img src=\"/people/e/EinsteinAlbert/portrait.jpg\" alt=\"Einstein\" class=\"portrait\" width=\"75\"></a></span>, Podolsky et Rosen. Je vais essayer de l’expliquer en utilisant des images et en vous rappelant toutefois que <q>comparaison n’est pas raison</q>...<br>Supposez que vous agitiez 2 dés dans un cornet et que vous les lanciez sur la table. La surprise avec le phénomène EPR est qu'à chaque expérience, vous obtenez la même face sur chacun des dés. Si l’un montre le 6, l’autre montre le 6. Et si l’un montre le 5, l’autre montre le 5.<br>On dit que les dés sont corrélés. Or le formalisme mathématique montre nécessairement que le coup de hasard intervient lorsque les 2 dés finissent de rouler sur la table et pas lorsqu'ils sont agités dans le cornet. C’est cela le mystère, le \"paradoxe\".<br>Évidemment mon image est une métaphore grossière. La forme de ce jeu de dés en mécanique <a href=\"../../../../../../../../science/discipline/hard/nature/matter/physics/quantum/\">quantique</a>, est la cascade atomique telle que l'expérimente, depuis 3 ans, <span class=\"peopl\" translate=\"no\">Alain Aspect</span> dans le laboratoire d’optique dirigé par <span class=\"peopl\" translate=\"no\">Christian Imbert</span> à <span onclick=\"showMap(event,&quot;Orsay&quot;,true,&quot;place&quot;)\" class=\"plac\" translate=\"no\">Orsay</span>.<br>Des atomes chutent d'un niveau d'énergie supérieur sur un niveau d'énergie inférieur, en passant par un niveau \"virtuel\". Dans cette opération, 2 photons sont émis. Et là, on ne dit pas, quand un dé montre le 6, l’autre montre le 6, mais la même surprise attend l'observateur. On s'aperçoit que toutes les paires de photons sans exception, sont trouvées avoir des polarisations linéaires parallèles entre elles... Jusque là pas de scandale... Mais il y a plus encore : elles sont parallèles soit à l'un soit à l'autre des 2 polariseurs linéaires croisés, dont les \"orientations\" sont à part cela arbitraires !<br>Il y a là un véritable casse-tête théorique et on en discute depuis <span class=\"time-resolved\"><a href=\"/time/1/9/2/7/\"><time datetime=\"1927\">1927</time></a></span>..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Depuis le début de la nouvelle mécanique <a href=\"../../../../../../../../science/discipline/hard/nature/matter/physics/quantum/\">quantique</a> ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Précisément. C'est-à-dire depuis l’époque où se sont illustrés <span class=\"peopl\" translate=\"no\">Louis de Broglie</span>, <span title=\"1902-1984, 82 ans, Royaume-Uni, USA, physicien\" class=\"data-resolved people-resolved deceased country-uk country-us occupation-physicist\" translate=\"no\"><a href=\"/people/d/DiracPaul/\">Dirac<img src=\"/people/d/DiracPaul/portrait.jpg\" alt=\"Dirac\" class=\"portrait\" width=\"75\"></a></span>, <span title=\"1901-1976, 74 ans, Allemagne, physicien\" class=\"data-resolved people-resolved deceased country-de occupation-physicist\" translate=\"no\"><a href=\"/people/h/HeisenbergWerner/\">Heisenberg<img src=\"/people/h/HeisenbergWerner/portrait.jpg\" alt=\"Heisenberg\" class=\"portrait\" width=\"75\"></a></span>, <span title=\"1887-1961, 73 ans, Autriche, physicien\" class=\"data-resolved people-resolved deceased country-at occupation-physicist\" translate=\"no\"><a href=\"/people/s/SchrodingerErwin/\">Schrödinger<img src=\"/people/s/SchrodingerErwin/portrait.jpg\" alt=\"Schrödinger\" class=\"portrait\" width=\"75\"></a></span>.<br>En <span class=\"time-resolved\"><a href=\"/time/1/9/2/7/\"><time datetime=\"1927\">1927</time></a></span>, <span title=\"1879-1955, 76 ans, Allemagne, USA, physicien\" class=\"data-resolved people-resolved deceased country-de country-us occupation-physicist\" translate=\"no\"><a href=\"/people/e/EinsteinAlbert/\">Einstein<img src=\"/people/e/EinsteinAlbert/portrait.jpg\" alt=\"Einstein\" class=\"portrait\" width=\"75\"></a></span> disait trouver cela extrêmement paradoxal : Comment l'information peut-elle se transmettre de l'un des dés à l’autre ? Plus vite que la lumière, semble-t-il. Ce qui alors serait contraire à la théorie de la relativité.<br>C’est <span class=\"time-resolved\"><a href=\"/time/1/9/3/5/\"><time datetime=\"1935\">1935</time></a></span> qu'<span title=\"1879-1955, 76 ans, Allemagne, USA, physicien\" class=\"data-resolved people-resolved deceased country-de country-us occupation-physicist\" translate=\"no\"><a href=\"/people/e/EinsteinAlbert/\">Einstein<img src=\"/people/e/EinsteinAlbert/portrait.jpg\" alt=\"Einstein\" class=\"portrait\" width=\"75\"></a></span>, Podolsky, et Rosen exposeront, dans un article fameux, le paradoxe auquel ils ont laissé leurs initiales.<br>Avec <span title=\"1879-1955, 76 ans, Allemagne, USA, physicien\" class=\"data-resolved people-resolved deceased country-de country-us occupation-physicist\" translate=\"no\"><a href=\"/people/e/EinsteinAlbert/\">Einstein<img src=\"/people/e/EinsteinAlbert/portrait.jpg\" alt=\"Einstein\" class=\"portrait\" width=\"75\"></a></span>, un certain nombre de physiciens importants pensent que le paradoxe EPR entraîne un conflit entre les théories, de la relativité et des quantas. Ce sont d’Espagnat et Schimony, par exemple. Personnellement, je n'en crois rien. Mais il y a là un problème de fond..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Maintenant que le paradoxe EPR est expérimenté, quelles sont les interprétations proposées ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "La majorité des physiciens pense que le résultat imminent de l’expérience d’Aspect va s'avérer conforme à la mécanique <a href=\"../../../../../../../../science/discipline/hard/nature/matter/physics/quantum/\">quantique</a>. Mais sur l'explication, il n’y a pas deux physiciens qui soient d’accord.<br>Pour ma part, dès <span class=\"time-resolved\"><a href=\"/time/1/9/4/7/\"><time datetime=\"1947\">1947</time></a></span> j’ai proposé une explication qui n'était pas du goût de <span class=\"peopl\" translate=\"no\">Louis de Broglie</span>. Je lui disais, on sait bien que tous les phénomènes de la physique fondamentale sont symétriques entre avenir et passé, au niveau élémentaire : ceci est certainement un phénomène élémentaire.<br>De plus entre 2 événements distants L et N il n'y a pas de liaison directe, mais il y a une liaison directe avec le passé C. Par conséquent, je suis parfaitement habilité à penser que l’influence de L à N se propage par un zigzag d’abord vers le passé et puis vers le futur. Je n’ai jamais cessé de soutenir cette thèse et l'ai développée de plus en plus. En <span class=\"time-resolved\"><a href=\"/time/1/9/5/3/\"><time datetime=\"1953\">1953</time></a></span>, j’ai réussi à faire passer une note remarquée par Max Yammers, historien des sciences. Mais c’est <span class=\"time-resolved\"><a href=\"/time/1/9/7/4/\"><time datetime=\"1974\">1974</time></a></span> que j’ai complètement exprimé mes idées. Ceci au <i lang=\"en\">Boston Collegium for the Philosophy of Science</i>. A l'issue d’un échange constructif, un physicien américain m’a dit <q>si vous aviez dit cela, il y a seulement 5 ans, on vous aurait jeté dehors. Aujourd’hui vu la gravité du paradoxe, on vous a écouté attentivement</q>."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Il y a tout de même des tentatives d’explication plus <a href=\"/science/methode/Rationalisme.html\">rationalistes</a> que celle d’un déplacement de l'information vers le passé, puis vers le futur ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Oui et non, le phénomène étant paradoxal, l’explication est forcément paradoxale. Nous sommes 2 seulement à proposer des équations respectant les lois de la relativité : Vigier et moi. Vigier propose un schéma rigoureusement déterministe."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ne propose-t-il pas une interaction directe sur l'espace, l'information se transmettant entre les 2 dés à une vitesse supérieure à celle de la lumière ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ce schéma ne me paraît pas être le bon. Mais la place me manque ici pour entrer dans les détails.<br>Quant aux positions de l’ensemble des physiciens par rapport à ce problème, je pourrais vous la résumer à la manière du physicien suisse Eberhard. Là où nous en sommes maintenant, avec les expériences qui ont été faites, et les théories proposées.<br>Il y a 4 portes de sortie :<ol><li>On calcule parce que cela marche, mais on ne réfléchit pas. C’est la position de la grande majorité des physiciens quantiques opérationnels.</li><li>La mécanique quantique se trompe, et que la corrélation EPR disparaîtrait aux grandes distances&nbsp;: c’était la position de <span title=\"1887-1961, 73 ans, Autriche, physicien\" class=\"data-resolved people-resolved deceased country-at occupation-physicist\" translate=\"no\"><a href=\"/people/s/SchrodingerErwin/\">Schrödinger<img src=\"/people/s/SchrodingerErwin/portrait.jpg\" alt=\"Schrödinger\" class=\"portrait\" width=\"75\"></a></span><span class=\"time-resolved\"><a href=\"/time/1/9/3/5/\"><time datetime=\"1935\">1935</time></a></span>.</li><li>La relativité se trompe, telle est l’idée caressée par d’Espagnat et Schimony.</li><li>Celle que je propose. Il faut changer notre conception de la causalité et accepter le principe d’une causalité rétrograde.</li></ol>"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et par suite donner un label de reconnaissance aux phénomènes de parapsychologie (psychokinèse, télépathie, précognition) ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "A mon avis, nécessairement.<br>Mais cela je l’ai gardé par devers moi pendant très longtemps. Je m’en suis ouvert en privé, pour la 1ʳᵉ fois, à <span onclick=\"showMap(event,&quot;Princeton&quot;,true,&quot;place&quot;)\" class=\"plac\" translate=\"no\">Princeton</span>, <span class=\"time-resolved\"><a href=\"/time/1/9/5/1/\"><time datetime=\"1951\">1951</time></a></span>. Le climat des temps s'y prêtait. Depuis lors j’ai poursuivi mes enquêtes."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mais vous êtes très isolé !"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "C’est faux sur le plan international. Plusieurs grands noms de la physique pensent dans ce sens : un Josephson, un Wigner, un Sudarshan, et d’autres encore... Aux Indes, 90 % des physiciens sont spiritualistes. Ils croient à <i lang=\"en\">mind over matter</i> ce qui ne les empêche pas d’être de très bons physiciens. Aux USA un chercheur connu, physicien d'origine, Helmut Schmidt, expérimente et théorise sur les phénomènes de psychokinèse. En <a href=\"/org/su/index.html\">URSS</a> des recherches sont poursuivies en psychotronique. Et puis si vous lisez les actes du colloque de Cordoue, organisé par France-Culture <span class=\"time-resolved\"><a href=\"/time/1/9/7/9/\"><time datetime=\"1979\">1979</time></a></span>, vous constaterez que je ne suis pas si isolé."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pourquoi parler de phénomènes de rétro-psychokinèse ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Parce que toute expérience de psychokinèse est nécessairement une expérience de rétropsychokinèse.<br>J'ai proposé pour tester ce point, un schéma expérimental apparenté aux corrélations EPR. Peut-être cette expérience sera-t-elle tentée un jour. Pourquoi pas à <span onclick=\"showMap(event,&quot;Toulouse&quot;,true,&quot;place&quot;)\" class=\"plac\" translate=\"no\">Toulouse</span> avec <span class=\"peopl\" translate=\"no\">Yves Lignon</span>, ou aux USA avec Schmidt."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "En vous écoutant évoquer la possibilité du développement des aptitudes parapsychologiques, j’ai envie de vous demander pourquoi vous intéressez vous tant à ces phénomènes ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je vous ai dit en commençant que c’est à partir de symétries internes à la physique que je me suis intéressé à la parapsychologie. Maintenant, il est vrai que je suis un spiritualiste, un catholique romain et que je crois à <i lang=\"en\">mind over matter</i>.<br>De plus le fait que tous les grands mystiques tels Jean Bosco, saint Jean de la Croix, Thérèse d’Avila pour l'Occident, mais aussi les très grands spiritualistes du monde entier, aient eu des pouvoirs paranormaux, me surprend : je voudrais comprendre comment cela s'égrène..."
+    }
+  ]
+}

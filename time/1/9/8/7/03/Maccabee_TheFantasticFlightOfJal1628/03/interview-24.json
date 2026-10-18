@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:46:48 JAL1628 heavy. Maintain flight level three one zero."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:46:54 maintain three one zero."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:46:59 JAL1628, roger. I'm gonna have a United aircraft get close to you and take a look, ah, to see if he can identify your traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:47:06 Thank you."
+    }
+  ]
+}

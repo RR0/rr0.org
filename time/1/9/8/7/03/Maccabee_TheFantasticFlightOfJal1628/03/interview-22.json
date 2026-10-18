@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "5:42:35 Ah, we have...Anchorage Center, JAL1628. We have in sight same position, over."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:42:42 JAL1628, understand. In sight, same position."
+    }
+  ]
+}

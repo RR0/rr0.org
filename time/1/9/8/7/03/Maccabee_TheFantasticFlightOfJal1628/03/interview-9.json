@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:34:38 JAL1628 heavy, say position of your traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:34:42 Affirmative. Just over Fairbanks."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:34:52 JAL1628 heavy, understood. Your traffic is over Fairbanks at this time."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:34:56 Affirmative, ah, requesting heading two one zero."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:35:02 JAL1628 heavy, roger. Deviations approved as necessary for traffic."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "\"Un traffic devant nous\"",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "17:19:32 JAL1628 lourd, <em>roger</em>."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:19:36 Ah, <em>roger</em> et, euh, nous [avons] en vue, euh, 2 traffics (sic), euh, devant nous à environ <span title=\"1 NMI\"></span>."
+    }
+  ]
+}

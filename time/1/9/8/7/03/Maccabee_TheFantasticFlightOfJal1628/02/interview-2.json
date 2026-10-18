@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "\"Traffic In Front Of Us\"",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:19:32 JAL1628 heavy, roger."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:19:36 Ah, roger and, ah, we [have] in sight, ah, two traffic (sic), ah, in front of us <span title=\"1 NMI\"></span>, about about."
+    }
+  ]
+}

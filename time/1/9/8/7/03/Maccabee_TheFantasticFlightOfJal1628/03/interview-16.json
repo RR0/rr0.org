@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:39:24 OK. Do you want to, do you have anybody you can scramble up there or do you want to do that?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:39:30 I'll tell you what. We're going to talk to the liaison officer about that."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:33 OK. Uh, it's starting to concern Japan Airline 1628, a 747. He's making a 360 now and it's still following...."
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:39:46 Where is this search [radar] return at, right behind him or where?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:50 Say again?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:38:51 Ah, I'm gonna talk to my other radar man here has gotta, he's got some other equipment watching this aircraft."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:54 OK."
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:39:55 OK. We're going to call the military desk on this."
+    }
+  ]
+}

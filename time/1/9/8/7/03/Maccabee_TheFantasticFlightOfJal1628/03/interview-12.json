@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:36:37 JAL1628 heavy, sir. I'm gonna request you to make a right turn three six zero degrees, 360 degree turn and advise me what your traffic does then."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:36:47 Right turn 360."
+    }
+  ]
+}

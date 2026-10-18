@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "5:30:16 (very broken communication; unintelligible)"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:30:20 JAL1628 heavy, you're coming in broken. Say again."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:30:23 Request, ah, deviate, ah, ah, from, ah, object, ah, request heading two four zero."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:30:52 JAL1628 Roger. Fly heading two four zero. JAL1628 heavy, deviations approved as necessary for traffic. (Note: since the controller knew that there were no other known aircraft in the sky it was OK for JAL1628 to go anywhere it wanted to avoid \"traffic.\")"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:30:49 It's, ah, quite big..."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:30:52 JAL1628 heavy, you're still broken. Say again."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:30:56 It's, ah, very quite big, ah, plane."
+    }
+  ]
+}

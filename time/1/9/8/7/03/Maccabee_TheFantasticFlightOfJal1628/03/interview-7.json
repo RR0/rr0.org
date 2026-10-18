@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "5:32:07 JAL1628, ah, request descent."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:32:20 JAL1628 Request three one zero. (i.e., <span title=\"31000 FOT\">9449 m</span>)"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:32:25 JAL1628 heavy, understand. Requesting flight level three one zero."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:32:34 JAL1628 heavy, your transmissions are broken. Say again."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:32:39 Flight level three one zero."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:32:41 JAL1628 heavy, descend at pilot discretion. Maintain flight level three one zero."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:32:45 Leaving three five zero to three one zero. (The descent begins)"
+    }
+  ]
+}

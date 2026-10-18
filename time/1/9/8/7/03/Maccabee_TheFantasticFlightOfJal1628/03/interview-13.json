@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:38:55 JAL1628 heavy, sir. Does your traffic appear to be staying with you?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:38:57 Ah, [unintelligible] distinguished. [He meant extinguished.]"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:01 JAL1628 say again?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:39:04 It, ah, disappeared."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:10 JAL1628 heavy, roger. At your discretion proceed directly to Talkeetna, J125 [to] Anchorage."
+    }
+  ]
+}

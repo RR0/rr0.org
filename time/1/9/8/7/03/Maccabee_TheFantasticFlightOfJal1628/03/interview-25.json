@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "united69": {
+      "role": "crew",
+      "title": "UNITED 69"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "united69",
+      "text": "5:48:16 Can you please point the traffic out again please?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:48:19 United 69 heavy, affirmative. The, ah, Japan Air is in your eleven o'clock position and <span title=\"50 NMI\"></span> [away], southbound."
+    },
+    {
+      "speaker": "united69",
+      "text": "5:48:28 Ah, roger. Thank you."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:48:31 JAL1628 heavy, sir, Say the position of your traffic."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:48:34 Ah, now, ah, ah, moving to, ah, around <span title=\"10 NMI\"></span> now, ah, ah, position, ah seven, ah, eight o'clock, <span title=\"10 NMI\"></span>."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:48:36 JAL1628 heavy, roger."
+    }
+  ]
+}

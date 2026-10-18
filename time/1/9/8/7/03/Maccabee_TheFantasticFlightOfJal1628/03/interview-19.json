@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "totem": {
+      "role": "crew",
+      "title": "TOTEM"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "totem",
+      "text": "5:40:44 Anchorage Center, you have TOTEM 71 up here. We might be able to get close to him."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:40:48 JAL1628, you were broken. Say again."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:40:55 Ah, say again?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:40:59 JAL1628 Your transmission was broken, sir. We do have military aircraft in your vicinity that we can, ah, check on the, ah, traffic with you."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:41:07 Ah, JAL1628. No radar traffic above."
+    }
+  ]
+}

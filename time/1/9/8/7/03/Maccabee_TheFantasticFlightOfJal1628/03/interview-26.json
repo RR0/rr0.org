@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "united69": {
+      "role": "crew",
+      "title": "UNITED 69"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "united69",
+      "text": "5:50:35 UA69 heavy. We've got the Japan Airliner in sight. I don't see anybody around him. He's (referring to the \"spaceship\") at his seven o'clock position, huh?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:50:46 UA69, that's what he says. JAL1628 heavy, say the position of your traffic now."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:50:52 Ah, now, distinguishing (he meant to say \"extinguishing\"), but, ah, ah, your, I guess, ah, 12 o'clock below you."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:51:02 JAL1628 heavy, say again. You're broken."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:51:06 Just ahead of United, ah..(unintelligible)"
+    }
+  ]
+}

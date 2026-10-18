@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:53:10 JAL1628 heavy, descend at pilot discretion. Maintain flight level two five zero (<span title=\"25000 FOT\">7620 m</span>)."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:53:13 JAL1628, ah, pilot's discretion maintain, ah, two five zero, so, ah, ah, I cannot, I couldn't see, ah, UFO, over."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:53:27 JAL1628 heavy, understand. You do not see the traffic any longer."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:53:31 Affirmative."
+    }
+  ]
+}

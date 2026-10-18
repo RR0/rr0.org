@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:39:10 JAL1628 heavy, roger, at your discretion proceed direct to Talkeetna J125, Anchorage. (Note: J125 is a flight route.)"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:39:15 (unintelligible)"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:35 JAL1628 heavy, roger sir. The military radar advises they do have a primary target in trail of you at this time."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:39:32 Ah, say again?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:35 JAl1628 heavy. Military radar advises they are picking up intermittent primary target behind you in trail, in trail I say again."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:39:47 I think so."
+    }
+  ]
+}

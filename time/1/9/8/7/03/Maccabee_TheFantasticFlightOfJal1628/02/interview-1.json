@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "\"Traffic In Front Of Us\"",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "5:19:15 Anchorage Center, Japan Air 1628, ah, do you have any traffic, ah, seven (eleven?) o'clock above?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:19:24 JAL1628 heavy, say again..."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:19:28 Do you have any traffic in front of us?"
+    }
+  ]
+}

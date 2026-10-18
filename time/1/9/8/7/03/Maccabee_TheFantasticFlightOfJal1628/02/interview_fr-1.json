@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "\"Un traffic devant nous\"",
+  "speakers": {
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    },
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index_fr.html."
+  },
+  "segments": [
+    {
+      "speaker": "jal1628",
+      "text": "17:19:15 Centre d'Anchorage, Japan Air 1628, euh, avez-vous un traffic à... sept [onze ?] heures au-dessus ?"
+    },
+    {
+      "speaker": "aartcc",
+      "text": "17:19:24 JAL1628 lourd, répétez..."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "17:19:28 Avez-vous un traffic devant nous ?"
+    }
+  ]
+}

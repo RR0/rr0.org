@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "\"Traffic In Front Of Us\"",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/02/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:21:19 JAL1628 heavy, see if you are able to identify the type of aircraft, ah, and see if you can tell whether it's military or civilian."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:21:35 JAL1628. We cannot identify the type, ah, but we can see, ah, navigation lights and ah, strobe lights."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:21:48 Roger, sir. Say the color of the strobe and beacon lights."
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:21:56 The color is, ah, white and yellow, I think."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:22:03 White and yellow. Thank you."
+    }
+  ]
+}

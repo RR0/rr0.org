@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "rocc": {
+      "role": "controller",
+      "title": "ROCC"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:38:57 Anchorage Center."
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:38:58 Ya, this is one dash two again. On some other equipment here we have confirmed there is a flight size of two around. One primary return only."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:05 OK. Where is, is he following him?"
+    },
+    {
+      "speaker": "rocc",
+      "text": "5:39:07 It looks like he is, yes."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:39:10 OK. Standby."
+    }
+  ]
+}

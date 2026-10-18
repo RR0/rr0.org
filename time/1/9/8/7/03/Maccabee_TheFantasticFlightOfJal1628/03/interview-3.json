@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "language": "en",
+  "title": "Radar Contact",
+  "speakers": {
+    "aartcc": {
+      "role": "controller",
+      "title": "AARTCC"
+    },
+    "jal1628": {
+      "role": "crew",
+      "title": "JAL1628"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of time/1/9/8/7/03/Maccabee_TheFantasticFlightOfJal1628/03/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "aartcc",
+      "text": "5:24:50 JAL1628, do you still have, uh, visual contact with the, ah, traffic?"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:24:53 Affirmative. Also, <span class=\"source-id\" aria-label=\"Source\" aria-hidden=\"true\">s7<span id=\"s7\" aria-hidden=\"true\" class=\"anchor\"></span><span class=\"source-contents\">Information obtained from the tape recording and transcript of the tape recording of conversations between the plane and the AARTCC.</span></span> we [have] radar contact, ah... (unintelligible; broken transmission)."
+    },
+    {
+      "speaker": "aartcc",
+      "text": "5:25:02 JAL1628 heavy, roger, sir. I'm picking up a hit on the radar approximately <span title=\"5 SMI\">8 km</span> in trail of your six o'clock position (i.e., behind the plane). Do you concur? <span class=\"note-id\" aria-label=\"Note\">n1<span id=\"n1\" class=\"anchor\" aria-hidden=\"true\"></span><span class=\"note-contents\">This was probably a silly question to ask since the crew could not see behind the plane. However, it is the first indication that the Elmendorf radar may have detected something other than the plane.</span></span>"
+    },
+    {
+      "speaker": "jal1628",
+      "text": "5:25:12 Ah, negative, ah, 11 o'clock, ah, <span title=\"8 SMI\">13 km</span>, ah, same level. Over."
+    }
+  ]
+}

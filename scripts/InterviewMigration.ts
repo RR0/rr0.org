@@ -16,7 +16,13 @@ import { JSDOM } from "jsdom"
 import fs from "node:fs"
 import path from "node:path"
 
-type Part = { text: string } | { text: string, href: string, title?: string }
+/** How a stretch is set: in italics (a title, a foreign word), in a language. */
+interface Style {
+  italic?: true
+  lang?: string
+}
+
+type Part = { text: string } & Style & { href?: string, title?: string }
 
 interface Speaker {
   role: string
@@ -54,14 +60,18 @@ export class InterviewMigration {
     return [last, ...words].map(word => word.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z-]/g, "")).join("")
   }
 
-  /** The parts a paragraph says: its text, and its links as linked parts; a leading `Name :` taken off and returned as who speaks. */
+  /**
+   * The parts a paragraph says: its text, its links as linked parts, its titles and foreign words (`<i>`, `<em>`, `<cite>`) as parts in italics in
+   * their language; a leading `Name :` taken off and returned as who speaks.
+   */
   private partsOf(p: Element): { name?: string, parts: Part[] } {
     const parts: Part[] = []
-    const add = (text: string, link?: { href: string, title?: string }): void => {
-      if (text === "") return
+    const same = (a: Part, b: Part): boolean => a.href === undefined && b.href === undefined && a.italic === b.italic && a.lang === b.lang
+    const add = (part: Part): void => {
+      if (part.text === "") return
       const last = parts[parts.length - 1]
-      if (!link && last && !("href" in last)) last.text += text
-      else parts.push(link ? { text, ...link } : { text })
+      if (last && same(last, part)) last.text += part.text
+      else parts.push(part)
     }
     let name: string | undefined
     const first = [...p.childNodes].find(node => node.nodeType !== 3 || node.textContent!.trim() !== "")
@@ -73,21 +83,24 @@ export class InterviewMigration {
         first.remove()
       }
     }
-    const walk = (node: Node): void => {
-      if (node.nodeType === 3) return add(node.textContent!)
+    const walk = (node: Node, style: Style): void => {
+      // The source's own line breaks and indents are not what was said.
+      if (node.nodeType === 3) return add({ text: node.textContent!.replace(/\s+/g, " "), ...style })
       if (node.nodeType !== 1) return
       const element = node as Element
-      if (element.tagName === "BR") return add("\n")
+      if (element.tagName === "BR") return add({ text: "\n" })
+      const lang = element.getAttribute("lang") ?? style.lang
+      const inner: Style = { ...(style.italic || ["I", "EM", "CITE"].includes(element.tagName) ? { italic: true as const } : {}), ...(lang ? { lang } : {}) }
       if (element.tagName === "A" && element.getAttribute("href")) {
         const title = element.getAttribute("title") ?? undefined
-        return add(element.textContent!, { href: element.getAttribute("href")!, ...(title ? { title } : {}) })
+        return add({ text: element.textContent!.replace(/\s+/g, " "), href: element.getAttribute("href")!, ...(title ? { title } : {}), ...inner })
       }
       if (element.classList.contains("note")) this.warnings.push(`a note kept as text: ${element.textContent!.trim().slice(0, 60)}`)
-      for (const child of element.childNodes) walk(child)
+      for (const child of element.childNodes) walk(child, inner)
     }
-    for (const child of p.childNodes) walk(child)
-    // The source's own line breaks and indents are not what was said; the spaces around a link are kept, those at the ends of the turn are not.
-    for (const part of parts) part.text = part.text.replace(/[ \t\r\n]+/g, match => match.includes("\n") && !/^[ \t\r\n]+$/.test(match) ? "\n" : " ")
+    for (const child of p.childNodes) walk(child, {})
+    // The spaces around a line break are not said, nor those at the ends of the turn.
+    for (const part of parts) part.text = part.text.replace(/ *\n */g, "\n")
     if (parts.length) {
       parts[0].text = parts[0].text.trimStart()
       parts[parts.length - 1].text = parts[parts.length - 1].text.trimEnd()
@@ -128,7 +141,7 @@ export class InterviewMigration {
       speakers[id] ??= defaults.answer.speaker
       previous = id
       if (parts.length === 0) continue
-      segments.push(parts.length === 1 && !("href" in parts[0]) ? { speaker: id, text: parts[0].text } : { speaker: id, parts })
+      segments.push(parts.length === 1 && Object.keys(parts[0]).length === 1 ? { speaker: id, text: parts[0].text } : { speaker: id, parts })
     }
     const lang = document.documentElement.getAttribute("lang") ?? (this.page.includes("_fr.") ? "fr" : undefined)
     const title = document.querySelector("title")?.textContent?.trim()

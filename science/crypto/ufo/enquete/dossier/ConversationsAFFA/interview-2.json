@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Conversations avec AFFA",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "NeashamRobertS"
+      },
+      "title": "Robert S. Neasham"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "AFFA"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/ConversationsAFFA/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Regardons-nous dans la bonne direction ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Oui."
+    }
+  ]
+}

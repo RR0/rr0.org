@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation des Jean",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "JeanNoel"
+      },
+      "title": "Noël Jean"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/j/JeanNoel/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Comment étaient disposées les lumières ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "D'abord, il y avait 1 lumière jaune, une 2ᵉ au-dessus, une 3ᵉ à gauche encore au-dessus, avec une partie métallique entre les 2."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qu'est-ce que ça faisait ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Les lumières s'allumaient et s'éteignaient et ça suivait la voiture."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et vous, qu'est-ce que vous avez fait ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "On s'est arrêtés pour les regarder et, quand on est remontés en voiture, les lumières étaient éteintes sur l'objet."
+    }
+  ]
+}

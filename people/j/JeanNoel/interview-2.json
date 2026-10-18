@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "L'observation des Jean",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "JeanNoel"
+      },
+      "title": "Noël Jean"
+    },
+    "interviewer": {
+      "role": "interviewer"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/j/JeanNoel/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "C'était au milieu des paillots."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Les journaux ont dit que ça mesurait 1,50 m sur 1,50 m."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Non, c'était rectangulaire. A peu près 2,50 m sur 1,50 m. C'était gros comme une cuisinière !"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "A quelle heure ça a disparu ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "On est arrivés à 5 h 30, c'est parti entre <span class=\"time-resolved\"><a href=\"/time/1/9/7/3/12/\"><time datetime=\"1973-12-02T05:50\" title=\"dimanche 2 décembre 1973 à 05:50\">05:50</time></a></span> et <span class=\"time-resolved\"><a href=\"/time/1/9/7/3/12/\"><time datetime=\"1973-12-02T06:05\" title=\"dimanche 2 décembre 1973 à 06:05\">06:05</time></a></span>."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qu'est-ce qui s'est passé quand l'objet a disparu ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "On est partis en regardant toujours la lumière rectangulaire, et elle s'est tournée vers les dunes plus est revenue vers nous. Elle s'est éteinte et alors on a vu un petit ballon bleu-vert au-dessus de l'endroit. Il a diminué et après 6 h on ne voyait plus rien."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Il était gros comment ce ballon ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Comme un ballon de football."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qu'est-ce que vous avez fait quand vous êtes arrivés sur la plage et que vous avez vu le rectangle de lumière ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "J'ai commencé à m'approcher, mais il est devenu de plus en plus brillant. Alors, mon père m'a dit : <q>Laisse tomber, reviens de ce côté.</q>"
+    }
+  ]
+}

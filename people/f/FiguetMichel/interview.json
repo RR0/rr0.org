@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Michel Figuet",
+  "speakers": {
+    "FiguetMichel": {
+      "role": "interviewer",
+      "by": {
+        "people": "FiguetMichel"
+      },
+      "title": "Michel Figuet"
+    },
+    "DG": {
+      "role": "interviewee",
+      "title": "G. D."
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/f/FiguetMichel/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "FiguetMichel",
+      "text": "Je m'intéresse aux phénomènes ovnis et il se trouve que l'un des témoins d'une <a href=\"/science/crypto/ufo/observation/classification/hynek/rr/3/\">RR3</a> se nomme comme vous G.D."
+    },
+    {
+      "speaker": "DG",
+      "text": "<span>Ce n'est pas un homonyme, c'est moi ! Je suis l'auteur de ce <a href=\"/science/crypto/ufo/enquete/dossier/canular/\">canular</a> orchestré avec 2 camarades. Nous nous sommes entourés le corps de bandelettes rouges découpées dans un drapeur de la fête de l'Ollival avec une lampe sur le ventre. Nous connaissons les activités <a href=\"/science/crypto/ufo/\">ufologiques</a> du groupe de croyants aux <a href=\"/science/crypto/ufo/FlyingSaucers.html\">soucoupes volantes</a> et <a href=\"/science/crypto/ufo/analyse/hypotheses/intelligence/HET/\">ET</a>. Nous voulions leur faire une bonne blague et ça a bien marché.</span>"
+    },
+    {
+      "speaker": "FiguetMichel",
+      "text": "Et la chaleur de la table d'orientation ?"
+    },
+    {
+      "speaker": "DG",
+      "text": "Tout simplement la chaleur du soleil emmagasinée pendant la journée."
+    },
+    {
+      "speaker": "FiguetMichel",
+      "text": "Et les 2 véhicules secoués ?"
+    },
+    {
+      "speaker": "DG",
+      "text": "Nous avons secoué les voitures."
+    }
+  ]
+}

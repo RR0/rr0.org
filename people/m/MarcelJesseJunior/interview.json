@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Jesse Marcel, Junior",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "MarcelJesseJunior"
+      },
+      "title": "Jesse Marcel, Junior"
+    },
+    "interviewer": {
+      "role": "interviewer"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/m/MarcelJesseJunior/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "Vous savez, j'aurais pu me donner des coups de pieds un millier de fois pour ne pas l'avoir fait. Papa m'avait dit que c'était quelque chose de classifié et de ne pas en prendre, donc je ne l'ai pas fait. Mais certainement, j'aurais voulu le faire."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Est-ce le docteur Marcel s'est souvenu avoir entendu quelque chose de plus sur l'incident après cela ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "<q>Oui. L'histoire a filtré et nous avons été bombardés de journalistes, etc. Je n'étais pas trop impliqué là-dedans. Ma principale impression fut que les objets métalliques et les bandes venaient d'une sorte de machine et non pas d'un ballon-sonde. On me dit que c'était une sorte d'avion, mais que ce n'était un des types dont nous étions familiers - ça, c'est certain. Papa dit que la vitesse d'impact ne collait avec aucun type d'appareil que nous avions à l'époque. </q>"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Uri Geller",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "GellerUri"
+      },
+      "title": "Uri Geller"
+    },
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Andrija Puharich"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/g/GellerUri/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "J'apprends et j'apprends, mais je ne sais pas qui me donne des leçons."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qu'est-ce que tu apprends ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ca parle... des gens qui viennent de l'espace. Mais il ne faut pas encore que j'en parle."
+    }
+  ]
+}

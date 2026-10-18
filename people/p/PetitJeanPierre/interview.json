@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Jean-Pierre Petit",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "PetitJeanPierre"
+      },
+      "title": "Jean-Pierre Petit"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "G. P."
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/p/PetitJeanPierre/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Il semble que vous soyez en train de monter là-bas un projet de contrat sur cette expérience. Depuis des semaines, tu me tires les vers du nez. Ne serait-il pas Plus simple que je monte à Toulouse et que nous rédigions cela ensemble ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "C'est impossible, l'armée s'y oppose et ne veut pas que tu sois mêlé à ce projet."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mais que vient faire l'armée dans tout cela ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "L'armée fait ce qu'elle veut. Et dans ce cas précis, elle ne veut pas."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Mais qu'allez-vous faire sans moi ? C'est idiot, vous allez vous planter !"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Écoute, si la <a href=\"/org/eu/fr/dn/DRET.html\">DRET</a> a envie de développer ces recherches, elle le fera, avec ou sans toi."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Vous n'avez pas idée des difficultés que vous allez rencontrer."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous saurons nous débrouiller en nous passant éventuellement de tes services. Ou tu acceptes ce simple statut de collaborateur extérieur que le <a href=\"/org/eu/fr/cnes/\">CNES</a> te propose, ou on se passera de toi. Mais tu ne pourras être coresponsable des recherches. C'est un statut que le CNES refuse de te donner."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Dans ces conditions, ma position est trop inconfortable, car ce sont mes idées et mes travaux."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous les développerons sans toi. Tu n'as pas le choix. C'est à prendre ou à laisser."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors, c'est simple : je laisse."
+    }
+  ]
+}

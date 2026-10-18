@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Emmanuel Macron",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Roland Veuilliet"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "MacronEmmanuel"
+      },
+      "title": "Emmanuel Macron"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/m/MacronEmmanuel/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "On en a marre... moi j'ai pas les sous pour... (il montre le costume de Macron)"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Mais j'ai pas de leçons à recevoir... Ecoutez... si vous aimez pas que la France soit bloquée, arrêtez de la bloquer... et maintenant... vous savez... vous savez, la meilleure façon de se payer un costard - vous allez pas me faire peur avec votre tee-shirt - la meilleure façon de se payer un costard c'est de travailler."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et alors ? Depuis l'âge de 16 ans je travaille monsieur ! Depuis l'âge de 16 ans je travaille monsieur !"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "...Là vous voyez je suis allé voir des jeunes qui ont envie de travailler"
+    }
+  ]
+}

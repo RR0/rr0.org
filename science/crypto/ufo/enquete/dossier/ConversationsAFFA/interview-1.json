@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Conversations avec AFFA",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee",
+      "title": "AFFA"
+    },
+    "interviewer": {
+      "role": "interviewer",
+      "by": {
+        "people": "NeashamRobertS"
+      },
+      "title": "Robert S. Neasham"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/ConversationsAFFA/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "Quel type de preuve voulez-vous ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pouvons-nous vous voir, vous ou votre appareil ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Quand voulez-vous le voir ?"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Maintenant."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Allez à la fenêtre."
+    }
+  ]
+}

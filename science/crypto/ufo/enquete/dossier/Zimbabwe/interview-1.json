@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "La rencontre du Zimbabwe",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer"
+    },
+    "Fille1": {
+      "role": "interviewee",
+      "title": "Fille 1"
+    },
+    "Fille2": {
+      "role": "interviewee",
+      "title": "Fille 2"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Zimbabwe/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Comment appellerais-tu ces êtres que tu as vus ?"
+    },
+    {
+      "speaker": "Fille1",
+      "text": "Je les appellerais \"aliens\", je les appellerais extraterrestres."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Quelque chose t'a fait peur, c'est bien ça ! Qu'est-ce qui t'a fait peur ?"
+    },
+    {
+      "speaker": "Fille1",
+      "text": "Oui le bruit qu'on a entendu dans l'air."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Tu as entendu un bruit dans l'air, c'est bien ça ? Ça ressemblait à quoi ? Un rugissement, un bourdonnement, un ronflement, quel était ce genre de bruit ?"
+    },
+    {
+      "speaker": "Fille1",
+      "text": "C'est comme si quelque chose, jouait de la flûte."
+    },
+    {
+      "speaker": "Fille2",
+      "text": "J'ai été effrayée moi-même."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Effrayée parce que tu as vu quelque chose toi-même !"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "Oui, j'ai vu un petit objet survoler, il était assez grand en fait, et il y en avait des petits tout autour."
+    },
+    {
+      "speaker": "Fille2",
+      "text": "On a vu quelque chose argenté, alors on a couru très vite jusqu'à la cabane, et on a vu un truc argenté et un homme debout à côté."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ca faisait quoi quand il te regardait ?"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "J'ai eu peur."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ca faisait peur ? Qu'est-ce qu'il y avait qui faisait peur ?"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "J'ai eu peur parce que je n'ai jamais vu une personne comme ça avant."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Tu as vu les yeux ?"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "Ils étaient comme ça [la petite fille décrit des yeux en amandes allant sur les côtés du front]."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ou était la partie pointue ?"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "<strong>Fille 2</strong> [met le doigt sur le côté du front en disant, là-haut]"
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Que ressentais-tu quand tu regardais ces yeux ?"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "Ca faisait peur."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pourquoi ça faisait peur ?"
+    },
+    {
+      "speaker": "Fille2",
+      "text": "Les yeux étaient malfaisants."
+    }
+  ]
+}

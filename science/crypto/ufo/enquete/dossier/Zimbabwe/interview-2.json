@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "La rencontre du Zimbabwe",
+  "speakers": {
+    "Enfant": {
+      "role": "interviewee",
+      "title": "Enfant"
+    },
+    "MackJohnE": {
+      "role": "interviewer",
+      "by": {
+        "people": "MackJohnE"
+      },
+      "title": "John E. Mack"
+    },
+    "AutreEnfant": {
+      "role": "interviewee",
+      "title": "Autre enfant"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/dossier/Zimbabwe/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "Enfant",
+      "text": "Ils avaient des yeux noirs et des pupilles blanches."
+    },
+    {
+      "speaker": "MackJohnE",
+      "text": "Il était à côté de l'objet argenté ?"
+    },
+    {
+      "speaker": "Enfant",
+      "text": "Non il était dessus."
+    },
+    {
+      "speaker": "MackJohnE",
+      "text": "Il t'a regardé ?"
+    },
+    {
+      "speaker": "Enfant",
+      "text": "Oui il m'a foutu les jetons j'ai arrêté de le regarder."
+    },
+    {
+      "speaker": "MackJohnE",
+      "text": "Il t'a foutu les jetons ?<br>Là sur ton dessin, on le voit debout."
+    },
+    {
+      "speaker": "Enfant",
+      "text": "Oui je l'ai dessiné debout parce que je ne sais pas le dessiner assis (et l'enfant rigole)."
+    },
+    {
+      "speaker": "AutreEnfant",
+      "text": "(au tableau, dessinant ce qu'elle a vu) Je pensais que c'était la fin du monde, peut-être qu'ils venaient nous dire que c'était la fin du monde."
+    }
+  ]
+}

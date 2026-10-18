@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Photographies d'ovnis",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Membre d'équipage"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "Capitaine"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of science/crypto/ufo/enquete/indice/photo/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Capitaine nous sommes maintenant en position, avons été repérés et le terrien nous a maintenant dans son objectif."
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Excellent... Activez le champ de force de floutage des photos."
+    }
+  ]
+}

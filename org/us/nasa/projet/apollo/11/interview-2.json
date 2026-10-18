@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Apollo 11",
+  "speakers": {
+    "apollo11": {
+      "role": "crew",
+      "title": "Apollo 11"
+    },
+    "missionControl": {
+      "role": "controller",
+      "title": "Mission Control"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of org/us/nasa/projet/apollo/11/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "apollo11",
+      "text": "Qu'est-ce que c'était ? Qu'est-ce que c'était, bon sang ! C'est tout ce que je veux savoir. Ces engins (inaudible) sont énormes, je vous dis... Mon Dieu, mais c'est incroyable..."
+    },
+    {
+      "speaker": "missionControl",
+      "text": "Quoi... que se passe-t-il ?"
+    },
+    {
+      "speaker": "apollo11",
+      "text": "Ils sont là, sous la surface."
+    },
+    {
+      "speaker": "missionControl",
+      "text": "Qu'est-ce qui se passe ? <i lang=\"en\">Mission Control</i> appelle Apollo 11."
+    },
+    {
+      "speaker": "apollo11",
+      "text": "Affirmatif, nous sommes ici tous les 3. Et ils sont là depuis pas mal de temps, à en juger par les installations... Je vous dis qu'il y a d'autres vaisseaux spatiaux là-bas. Ils sont alignés de l'autre côté du cratère."
+    }
+  ]
+}

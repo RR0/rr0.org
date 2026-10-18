@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Théorie du complot de l'évolution",
+  "speakers": {
+    "Darrow": {
+      "role": "lawyer",
+      "title": "Clarence Darrow"
+    },
+    "Bryan": {
+      "role": "witness",
+      "title": "William Jennings Bryan"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of croyance/conspirationnisme/enquete/dossier/evolution/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "Darrow",
+      "text": "Je vais vous le lire depuis la <a href=\"/croyance/divin/theisme/mono/livre/bible/\">Bible</a> : <q>Et Le SEIGNEUR Dieu dit au serpent&nbsp;: Puisque tu as fait cela, tu seras maudit entre tout le bétail et entre tous les animaux des champs, tu marcheras sur ton ventre, et tu mangeras de la poussière tous les jours de ta vie.</q> Pensez-vous que c'est la raison pour laquelle le serpent est obligé de ramper sur son ventre ?"
+    },
+    {
+      "speaker": "Bryan",
+      "text": "Je le pense."
+    },
+    {
+      "speaker": "Darrow",
+      "text": "Avez-vous une idée de comment le serpent se déplaçait avant ça ?"
+    },
+    {
+      "speaker": "Bryan",
+      "text": "Non, monsieur."
+    },
+    {
+      "speaker": "Darrow",
+      "text": "Savez-vous s'il marchait sur sa queue ou pas ?"
+    },
+    {
+      "speaker": "Bryan",
+      "text": "Non, monsieur. Je ne peux pas savoir [rires dans le public]."
+    },
+    {
+      "speaker": "Darrow",
+      "text": "Maintenant, vous parlez du nuage qui fut mis dans les cieux après le déluge, l'arc-en-ciel. Croyez-vous à ça ?"
+    },
+    {
+      "speaker": "Bryan",
+      "text": "Lisez-le."
+    },
+    {
+      "speaker": "Darrow",
+      "text": "Très bien, M. Bryan, je vais le lire pour vous."
+    },
+    {
+      "speaker": "Bryan",
+      "text": "Votre Honneur, je pense que je peux abréger ce témoignage. Le seul but de M. Darrow est d'insulter la Bible, mais je vais répondre à sa question. Je vais y répondre d'un coup, et je n'ai aucune objection que ce soit, je veux que le monde sache que cet homme, qui ne croit pas en un Dieu, essaie d'utiliser une cour dans le Tennessee..."
+    },
+    {
+      "speaker": "Darrow",
+      "text": "Objection."
+    },
+    {
+      "speaker": "Bryan",
+      "text": "(...) pour l'insulter, et bien que cela demandera du temps, je veux le prendre."
+    },
+    {
+      "speaker": "Darrow",
+      "text": "Objection. Je vous exempte de vos idées stupides auxquelles aucun chrétien intelligent sur Terre ne croit."
+    }
+  ]
+}

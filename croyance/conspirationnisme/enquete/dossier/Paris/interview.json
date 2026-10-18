@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Les attentats de Paris",
+  "speakers": {
+    "hasna": {
+      "role": "speaker",
+      "title": "Hasna Aït Boulahcen"
+    },
+    "police": {
+      "role": "police",
+      "title": "Policier du Raid"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of croyance/conspirationnisme/enquete/dossier/Paris/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "hasna",
+      "text": "J'ai envie de partir"
+    },
+    {
+      "speaker": "police",
+      "text": "Elle a les deux mains apparentes - fenêtre"
+    },
+    {
+      "speaker": "hasna",
+      "text": "Laissez-moi sortir s’il vous plaît. Laissez-moi sortir au moins... Monsieur, j'ai peur, j'ai peur"
+    },
+    {
+      "speaker": "police",
+      "text": "Lève tes deux mains et tu fermes ta bouche !... Il est où ton copain ?"
+    },
+    {
+      "speaker": "hasna",
+      "text": "C’est pas mon copain !"
+    },
+    {
+      "speaker": "police",
+      "text": "Il est où&nbsp;?"
+    },
+    {
+      "speaker": "hasna",
+      "text": "C’est pas mon copain !..."
+    },
+    {
+      "speaker": "police",
+      "text": "Elle est pas seule, elle est pas seule"
+    },
+    {
+      "speaker": "hasna",
+      "text": "Est-ce que je peux sortir ? Laissez-moi sortir !"
+    },
+    {
+      "speaker": "police",
+      "text": "Elle est pas seule !"
+    }
+  ]
+}

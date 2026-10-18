@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Mort de Coluche",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "title": "Didier Laverge"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of croyance/conspirationnisme/enquete/dossier/Coluche/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Coluche se sentait-il menacé ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "<span class=\"time-resolved\"><a href=\"/time/1/9/8/1/\"><time datetime=\"1981\">1981</time></a></span>, quand il s'était présenté à la présidentielle, il avait reçu une balle par courrier avec un mot <q>La prochaine est pour toi</q>. On n'a jamais su d'où ça venait. Mais en <span class=\"time-resolved\"><a href=\"/time/1/9/8/6/\"><time datetime=\"1986\">1986</time></a></span>, il était heureux, il sortait d'une dure période après son divorce, il préparait un spectacle qui devait s'appeler \"Y en aura pour tout le monde\"."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pouvait-il se représenter à la présidentielle de <span class=\"time-resolved\"><a href=\"/time/1/9/8/8/\"><time datetime=\"1988\">1988</time></a></span> ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je ne crois pas. Il ne m'en parlait pas en tout cas. Il était plus utile en contestant. La preuve avec les Restos du cœur&nbsp;: les gens ne pouvaient plus bouffer, et lui les a nourris. Aucun politique n'a jamais fait ça ! Il voulait s'occuper aussi du chômage."
+    }
+  ]
+}

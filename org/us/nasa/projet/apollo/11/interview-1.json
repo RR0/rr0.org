@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Apollo 11",
+  "speakers": {
+    "collins": {
+      "role": "crew",
+      "by": {
+        "people": "CollinsMichael"
+      },
+      "title": "Michael Collins"
+    },
+    "missionControl": {
+      "role": "controller",
+      "title": "Mission Control"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of org/us/nasa/projet/apollo/11/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "collins",
+      "text": "<i lang=\"en\">Roger</i>. Aucun signe du ML cette fois. J'ai vu un bizarre petit objet blanc dont les coordonnées sont —"
+    },
+    {
+      "speaker": "missionControl",
+      "text": "Allez-y pour les coordonnées sur le petit objet blanc."
+    },
+    {
+      "speaker": "collins",
+      "text": "Easy—Easy E.3, 7.6, mais je (inaudible) juste au sud-ouest d'un cratère. Je pense qu'ils le sauraient s'ils étaient à un endroit pareil. Leur ML serait incliné d'un bon degré. C'est sur le pan sud-ouest d'un cratère plus petit."
+    }
+  ]
+}

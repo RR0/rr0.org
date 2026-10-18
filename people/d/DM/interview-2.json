@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "M. D.",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "DM"
+      },
+      "title": "M. D."
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/d/DM/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Combien de personnes étaient au courant ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Pas plus de 10 ou 15, toutes à un niveau suffisamment élevé pour déterminer quelle sorte de manifestation était justifiée sous le sceau de secret d'Etat."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Quels étaient vos objectifs ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "L'opération était ordonnée autour d'objectifs militaires, scientifiques et politiques. Elle était purement nationale et n'avait aucun prolongement au-delà de nos frontières."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Qu'est-il arrivé à <a href=\"/science/crypto/ufo/observation/temoins.html#FontaineFrank\">Fontaine</a> ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous l'avons endormi et maintenu dans un état de haute suggestibilité."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "La police et la <a href=\"/org/eu/fr/dn/gendarmerie/index.html\">gendarmerie</a> savaient-elles que l'opération était un vaste canular dirigé par une agence ministérielle ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Certainement pas. Leur comportement, dans les conditions du test, était une des choses que nous voulions observer."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Quel était votre propre rôle ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Mon intérêt dans l'affaire est purement personnel. Il n'y a aucun rapport avec ma position dans l'armée de l'air."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Serait-il exact de dire que vous avez délibérément créé un événement ufologique majeur dans le but de déterminer si vous pouviez compter sur les réactions et les qualités d'enquêteurs des forces de police ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ce serait une bonne manière de décrire les choses."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et le <a href=\"/org/eu/fr/cnes/gepan/index.html\">GEPAN</a> ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous avions naturellement les mêmes raisons de découvrir comment les milieux scientifiques réagiraient."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Avez-vous aussi manipulé les médias ? Aviez-vous des objectifs plus vastes ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Je ne peux pas répondre à votre question. Cependant, je peux vous dire que, si l'opération avait été menée à bien, la phase suivante aurait été bien pire."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Pourquoi me dites-vous tout cela ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "J'ai mes raisons."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ne craignez-vous pas que je publie cette interview ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Allez-y. Tout ce que vous publierez sera nié officiellement."
+    }
+  ]
+}

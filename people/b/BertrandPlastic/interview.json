@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Roger Allen François Jouret",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "BertrandPlastic"
+      }
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/b/BertrandPlastic/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "C'est vrai que vous croyez aux soucoupes volantes ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "J'en ai même vu! J'étais au parc du Cinquantenaire à Bruxelles, juste au-dessus du Musée de l'Armée, j'ai vu un objet très brillant..."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Et à l'époque, vous ne preniez rien !"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "(Rire.) A l'époque, j'étais clean à mort ! Et puis, l'objet s'est évanoui d'un coup avec 3 points lumineux à l'arrière."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Ne pensez-vous pas que la soucoupe s'est dirigée vers vous pour vous annoncer votre destin d'élu ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Ça me plaît beaucoup, donc je vous répondrai <q>oui</q>. Vous avez peut-être raison..."
+    }
+  ]
+}

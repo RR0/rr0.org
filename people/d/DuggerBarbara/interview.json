@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Barbara Dugger",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer",
+      "title": "Inez Wilcox"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "DuggerBarbara"
+      },
+      "title": "Barbara Dugger"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/d/DuggerBarbara/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Barbara, dis-moi, est-ce que tu crois qu'il y a de la vie dans l'espace ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Mamie, tu sais que oui."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Je dois te dire quelque chose. Mais tu promets que tu n'en parlera jamais à personne. Tu gardes ça pour toi s'il te plait. Quand tout ça est arrivé, la police militaire est venue nous voir au bureau du Sheriff et a dit que si nous, George et moi, disions un seul mot de l'affaire à qui que ce soit, ils nous tueraient, non seulement nous, mais toute la famille."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "M. D.",
+  "speakers": {
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "DM"
+      },
+      "title": "M. D."
+    },
+    "interviewer": {
+      "role": "interviewer"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/d/DM/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewee",
+      "text": "Je peux deviner de qu'il y a dans votre dossier, vous n'avez pas besoin de me le montrer."
+    },
+    {
+      "speaker": "interviewer",
+      "text": "Alors, me direz-vous la vérité sur la disparition de <a href=\"../witness/index.html\">Frank Fontaine</a> ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "Nous considérons l'opération de Cergy comme un \"exercice de synthèse générale\". Un projet élaboré par un personnage haut placé."
+    }
+  ]
+}

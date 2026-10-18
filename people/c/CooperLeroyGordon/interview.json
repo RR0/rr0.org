@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "language": "fr",
+  "title": "Leroy Gordon Cooper",
+  "speakers": {
+    "interviewer": {
+      "role": "interviewer"
+    },
+    "interviewee": {
+      "role": "interviewee",
+      "by": {
+        "people": "CooperLeroyGordon"
+      },
+      "title": "Leroy Gordon Cooper"
+    }
+  },
+  "transcription": {
+    "method": "manual",
+    "note": "Migrated from the dialogue of people/c/CooperLeroyGordon/index.html."
+  },
+  "segments": [
+    {
+      "speaker": "interviewer",
+      "text": "Et à propos des allégations répétées que les astronautes ont vu des ovnis ?"
+    },
+    {
+      "speaker": "interviewee",
+      "text": "C'en est arrivé à un point où il y a eut des bandes délibérément falsifiées de communications avec les astronautes, où les aspects ovni ont simplement été ajoutés. À ma connaissance, le seul astronaute de missions <a href=\"/org/us/nasa/projet/Mercury/\">Mercury</a>, <a href=\"/org/us/nasa/projet/Gemini/\">Gemini</a>, ou <a href=\"/org/us/nasa/projet/apollo/\">Apollo</a> qui ait jamais vu quelque chose qui ait pu être un ovni a été <span title=\"1942-, 83 ans, USA, pilote, astronaute\" class=\"data-resolved people-resolved country-us occupation-pilot occupation-astronaut\" translate=\"no\"><a href=\"/people/m/MacDivittJames/\">Jim McDivitt<img src=\"/people/m/MacDivittJames/portrait.jpg\" alt=\"Jim McDivitt\" class=\"portrait\" width=\"75\"></a></span>, mais il n'a pas eu suffisamment d'images pour prouver quoi que ce soit de substantiel. C'est le seul cas, en dépit de toutes les histoires que vous entendez."
+    }
+  ]
+}

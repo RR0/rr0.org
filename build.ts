@@ -129,6 +129,8 @@ const copies = copiesArg ? copiesArg : [
   "time/1/9/7/7/Poher_Matrice/app/dist/**/*.*",
   "science/crypto/ufo/*.mjs", "science/crypto/ufo/*.js", "science/crypto/ufo/*.bin", "science/crypto/ufo/*.ogg", "science/crypto/ufo/*.wav", "science/crypto/ufo/enquete/dossier/**/sighting.json",
   "science/crypto/ufo/enquete/dossier/**/observer-*.json", "science/crypto/ufo/enquete/dossier/**/interpretation-*.json","science/crypto/ufo/enquete/dossier/**/case.json",
+  // The interview files <rr0-interview> reads, beside the page that shows them.
+  "**/interview*.json",
   "nav.js", "tag/**/*.mjs"
 ]
 const outDir = "out"

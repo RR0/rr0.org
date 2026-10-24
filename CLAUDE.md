@@ -119,7 +119,8 @@ translated into French in a plain `<q>` (`<q>drone rond argenté</q>`, not `<q l
 original wording staying available in the cited source. This applies to short quoted words and to quoted titles of
 reports or videos alike. Only a page that is itself a transcript or a translated document keeps the original text.
 
-**Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it must always be linked. Do not leave known terms unlinked.
+**Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it must always be linked. Do not leave known terms unlinked. This is not one link per concept and page: every time the
+concept is mentioned again, the link is repeated too (not only its first mention).
 
 **No restating** — what a linked page defines is not redefined in the page that links to it: the reader follows the
 link if interested. E.g. "il relève des rencontres rapprochées du <a href=".../rr/2/">2ᵉ</a> ou du

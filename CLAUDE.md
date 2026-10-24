@@ -181,6 +181,10 @@ Never add a hand-made metric conversion next to it. UN/CEFACT codes handled toda
 pound) are NOT handled yet and render empty: until the converter supports them, keep those values as plain text with
 their conversion. The converter parses the value as an integer and rounds the result to a unit (4 ft → 1 m).
 
+**No date in section titles** — a section title (`<h2>`…`<h6>`) never carries a date ("L'analyse de juin 2026",
+"Les drones de 2022 et 2023"): name its subject ("L'analyse", "Les incursions de drones") and give the date in the
+text of the section.
+
 **Case files** (`science/crypto/ufo/enquete/dossier/<Case>/`) — after a one-sentence `<p class="abstract">` and the
 untitled context paragraphs, the sections are titled without article: `<h2>Observation</h2>` and `<h2>Enquête</h2>`, or
 `<h2>Enquêtes</h2>` when several investigations are its `<h3>` subsections, not "L'observation" / "L'enquête".

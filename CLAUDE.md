@@ -184,6 +184,9 @@ their conversion. The converter parses the value as an integer and rounds the re
 **Case files** (`science/crypto/ufo/enquete/dossier/<Case>/`) — after a one-sentence `<p class="abstract">` and the
 untitled context paragraphs, the sections are titled without article: `<h2>Observation</h2>` and `<h2>Enquête</h2>`, or
 `<h2>Enquêtes</h2>` when several investigations are its `<h3>` subsections, not "L'observation" / "L'enquête".
+A case file always includes the media released for the case, so that readers can judge for themselves: videos
+embedded with the official player (`<iframe>`, e.g. DVIDS `https://www.dvidshub.net/video/embed/<ID>`), photos,
+stills and enhanced images as captioned `<figure>`s with their source; citing them as a source only is not enough.
 
 **Organisation pages** — place an organisation under the one it depends on (e.g. a contractor created for and mainly
 funded by the DoD goes under `org/us/dod/`, not `org/us/`), as a directory with `index.html` + `index.json`
@@ -243,6 +246,10 @@ A moment EDTF cannot express stays a `<time>` but with `data-format="none"`, so 
 instead whenever EDTF can say it: a season is `YYYY-21` (spring) to `YYYY-24` (winter), rendered "automne 1954";
 a day or month needs its year (`<time>1947-09-18</time>`, not `<time>09-18</time>`). A `<time>` only ever holds a
 moment: a name, a place or a title is never one (`<span class="people">`, `<span class="place">`, `<i>`).
+
+A time of day in running text is a `<time>` too, never written out as "21 h" or "21 h 30": `<time>21:00</time>`,
+preferably with its date (`<time>2023-10-12 21:00</time>`), since without a dated context the build cannot resolve it
+(even relatively). Durations ("durant 2 h") are not times of day.
 
 Within a dated context (a day page, or after a full date), the build completes partial values from the previous
 `<time>`: `<time>19</time>` is the 19th of the current month, `<time>21:00</time>` an hour of the current day,

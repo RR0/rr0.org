@@ -75,6 +75,12 @@ figure:hover {
   background-color: rgba(127, 127, 127, 0.1);
 }
 
+figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 figure iframe {
   left: 0;
   top: 0;

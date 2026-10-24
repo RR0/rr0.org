@@ -92,6 +92,10 @@ Prefer the abbreviated form over the full name in running text. If a dedicated p
 <a href="/org/us/ic/fbi"><abbr title="Federal Bureau of Investigation">FBI</abbr></a>
 ```
 
+**A link to a page that explains an acronym stays compact**: its text is the acronym, never the expansion, which
+the linked page gives. `l'<a href="/org/us/UAPDA.html"><abbr title="Unidentified Anomalous Phenomena Disclosure Act">UAPDA</abbr></a>`,
+not `l'<a href="/org/us/UAPDA.html"><i lang="en">Unidentified Anomalous Phenomena Disclosure Act</i></a>`.
+
 **Never write the expansion in the surrounding text when `<abbr title="...">` is already present** — the `title`
 attribute is the expansion. Writing both is redundant and forbidden:
 
@@ -108,8 +112,12 @@ attribute is the expansion. Writing both is redundant and forbidden:
 ```
 
 Never use `<em>` for a foreign term: `<em>` is emphasis, not language. This includes names of organisations, book,
-journal and article titles (`<i lang="en">Congressional Research Service</i>`, `<i lang="en">Forbidden Science</i>`),
-and foreign quotes carry the language too: `<q lang="en">…</q>`.
+journal and article titles (`<i lang="en">Congressional Research Service</i>`, `<i lang="en">Forbidden Science</i>`).
+
+**Quotes are translated** — rr0.org is written for French readers first: a quote from a foreign source is given
+translated into French in a plain `<q>` (`<q>drone rond argenté</q>`, not `<q lang="en">round silver drone</q>`), the
+original wording staying available in the cited source. This applies to short quoted words and to quoted titles of
+reports or videos alike. Only a page that is itself a transcript or a translated document keeps the original text.
 
 **Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it must always be linked. Do not leave known terms unlinked.
 
@@ -158,6 +166,23 @@ of Y <source 2>", not "he wrote *Title One* about X".
 **French typography** — high punctuation is preceded by a non-breaking Unicode space, never a plain space: U+00A0
 (no-break space) before `:`, U+202F (narrow no-break space) before `;`, `?`, `!`. Not in English text nor in source
 citations (`Author: Title`).
+
+**Imperial units** — a value in an Anglo-Saxon unit is written as a schema.org quantity, which the build
+(`UnitReplaceCommand` in `@rr0/cms`) converts to metric for display, the original value staying in the `title`:
+
+```html
+<span itemscope itemtype="https://schema.org/QuantitativeValue"><span itemprop="value">165.9</span> <span
+  itemprop="unitCode" content="SMI">miles</span></span>
+```
+
+Never add a hand-made metric conversion next to it. UN/CEFACT codes handled today: `SMI` (statute mile), `FOT`
+(foot), `HM` (mile per hour), `INH` (inch). Other codes already found in pages (`NMI` nautical mile, `KTS` knot, `LBR`
+pound) are NOT handled yet and render empty: until the converter supports them, keep those values as plain text with
+their conversion. The converter parses the value as an integer and rounds the result to a unit (4 ft → 1 m).
+
+**Case files** (`science/crypto/ufo/enquete/dossier/<Case>/`) — after a one-sentence `<p class="abstract">` and the
+untitled context paragraphs, the sections are titled without article: `<h2>Observation</h2>` and `<h2>Enquête</h2>`, or
+`<h2>Enquêtes</h2>` when several investigations are its `<h3>` subsections, not "L'observation" / "L'enquête".
 
 **Organisation pages** — place an organisation under the one it depends on (e.g. a contractor created for and mainly
 funded by the DoD goes under `org/us/dod/`, not `org/us/`), as a directory with `index.html` + `index.json`

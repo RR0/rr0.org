@@ -1,6 +1,8 @@
 {
-  "birthTime": "1878-12-18",
-  "deathTime": "1953-03-05",
+  "firstNames": [
+    "Joseph"
+  ],
+  "lastName": "Staline",
   "pseudonyms": [
     "Iossif Vissarionovitch Djougachvili"
   ],
@@ -11,5 +13,17 @@
   "countries": [
     "ge",
     "su"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1878-12-18",
+      "place": "Gori (Géorgie)"
+    },
+    {
+      "type": "death",
+      "time": "1953-03-05",
+      "place": "Kountsevo (URSS)"
+    }
   ]
 }

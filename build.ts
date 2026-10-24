@@ -113,7 +113,7 @@ const copies = copiesArg ? copiesArg : [
   "politique/mouvement/ecologie/energie/thermique/nucleaire/fission/centrales.js", "politique/mouvement/ecologie/energie/thermique/nucleaire/fission/centrales.json",
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
   "people/index.js", "people/index.css", "people/witness/index.css",
-  "search/SearchComponent.mjs", "search/index.json", "search/search.css",
+  "search/SearchComponent.mjs", "search/InputSearchComponent.mjs", "search/index.json", "search/search.css",
   "source/index.css", "note/index.css",
   "link.css", "quote.css",
   // EVERY stylesheet, not just the site-wide ones listed above. A page may carry its own —

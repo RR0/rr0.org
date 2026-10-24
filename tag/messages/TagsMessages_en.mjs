@@ -17,6 +17,10 @@ export const tagsMessages_en = {
     archaeology: "Archaeology",
     geophysics: "Geophysics",
     religion: "Religion",
-    hoax: "Hoaxes"
+    hoax: "Hoaxes",
+    nuclear: "Nuclear",
+    politics: "Politics",
+    aviation: "Aviation",
+    paleontology: "Paleontology"
   }
 }

@@ -1,10 +1,41 @@
 {
-  "birthTime": "1923-12-15",
-  "deathTime": "2020-02-08",
   "occupations": [
     "physicist"
   ],
   "countries": [
+    "uk",
     "us"
+  ],
+  "firstNames": [
+    "Freeman",
+    "John"
+  ],
+  "lastName": "Dyson",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1923-12-15",
+      "place": "Crowthorne (Berkshire, Royaume-Uni)",
+      "sources": [
+        {
+          "url": "https://www.ias.edu/press-releases/2020/freeman-j-dyson-1923%E2%80%932020"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Freeman Dyson"
+    },
+    {
+      "type": "death",
+      "time": "2020-02-28",
+      "place": "près de Princeton (New Jersey, États-Unis)",
+      "sources": [
+        {
+          "url": "https://www.ias.edu/press-releases/2020/freeman-j-dyson-1923%E2%80%932020"
+        }
+      ]
+    }
   ]
 }

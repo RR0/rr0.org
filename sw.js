@@ -24,7 +24,7 @@ class RR0Worker {
     "/", "/offline.html", "/manifest.json", "/favicon.ico", "/apple-touch-icon.png", "/nav.js",
     "/rr0.css", "/map.css", "/diagram.css", "/print.css", "/figure.css", "/section.css", "/table.css",
     "/nav.css", "/math.css", "/link.css", "/quote.css", "/footer.css", "/index.css",
-    "/search/SearchComponent.mjs", "/search/search.css", "/search/index.json",
+    "/search/SearchComponent.mjs", "/search/InputSearchComponent.mjs", "/search/search.css", "/search/index.json",
     "/time/DualRangeComponent.mjs", "/tag/TagsComponent.mjs"
   ]
 

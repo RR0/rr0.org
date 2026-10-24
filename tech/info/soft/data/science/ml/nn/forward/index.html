@@ -1,18 +1,18 @@
 <!--#include virtual="/header-start.html" -->
 <title>Propagation avant</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Forward propagation</i>, <span lang="en">feed forward NN</span>.</p>
+<p class="tag-computing"><i lang="en">Forward propagation</i>, <span lang="en">feed forward NN</span>.</p>
 <section>
   <h2>Motivation</h2>
-  <p>Reconnaissance de formes, etc.</p>
+  <p class="tag-computing">Reconnaissance de formes, etc.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>La propagation avant consiste à calculer :</p>
+  <p class="tag-computing">La propagation avant consiste à calculer :</p>
   <ul>
-    <li>pour chaque feature (`j` de 0 à `n` en incluant la feature de biais n° 0)
+    <li class="tag-computing">pour chaque feature (`j` de 0 à `n` en incluant la feature de biais n° 0)
       <ul>
-        <li>sa valeur d'activation `a_j^((i)) = g(z_j^((i)))` où `z_j^((i))` est la somme des nœuds (toujours en
+        <li class="tag-computing">sa valeur d'activation `a_j^((i)) = g(z_j^((i)))` où `z_j^((i))` est la somme des nœuds (toujours en
           commençant par le nœud de biais d'indice 0) de la couche précédente en entrée multipliés par leurs poids
           `Θ_(i,j)^((i))`.</li>
       </ul>
@@ -21,7 +21,7 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i` (i<sup>ème</sup>
+  <p class="tag-computing">Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i` (i<sup>ème</sup>
     sortie) via une <a
       href="/science/discipline/hard/formal/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour
     la <a
@@ -32,88 +32,88 @@
   <h2>Exemples</h2>
   <section>
     <h3>"Et" logique</h3>
-    <p>On définit des paramètres/poids générant la table de vérité du "et" logique :</p>
-    <p>`Θ^((1))=[−30, 20, 20]`</p>
-    <p>ce qui donne :</p>
-    <p>`h_Θ(x)=g(−30 + 20 x_1 + 20 x_2)`</p>
-    <p>et donc :</p>
+    <p class="tag-computing">On définit des paramètres/poids générant la table de vérité du "et" logique :</p>
+    <p class="tag-computing">`Θ^((1))=[−30, 20, 20]`</p>
+    <p class="tag-computing">ce qui donne :</p>
+    <p class="tag-computing">`h_Θ(x)=g(−30 + 20 x_1 + 20 x_2)`</p>
+    <p class="tag-computing">et donc :</p>
     <ul>
-      <li>si `x_1 = 0` et `x_2 = 0` alors `g(-30 + 0 + 0) = g(-30) ~~ 0`</li>
-      <li>si `x_1 = 0` et `x_2 = 1` alors `g(-30 + 0 + 20) = g(-10) ~~ 0`</li>
-      <li>si `x_1 = 1` et `x_2 = 0` alors `g(-30 + 20 + 0) = g(-10) ~~ 0`</li>
-      <li>si `x_1 = 1` et `x_2 = 1` alors `g(-30 + 20 + 20) = g(10) ~~ 1`</li>
+      <li class="tag-computing">si `x_1 = 0` et `x_2 = 0` alors `g(-30 + 0 + 0) = g(-30) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 0` et `x_2 = 1` alors `g(-30 + 0 + 20) = g(-10) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 1` et `x_2 = 0` alors `g(-30 + 20 + 0) = g(-10) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 1` et `x_2 = 1` alors `g(-30 + 20 + 20) = g(10) ~~ 1`</li>
     </ul>
-    <p>(puisque <a
+    <p class="tag-computing">(puisque <a
       href="/science/discipline/hard/formal/math/set/rel/func/sigmoid/logistic">`g`</a> permet de produire des valeurs
       tendant vers 0 ou 1 suivant que x est négatif ou positif)</p>
   </section>
   <section>
     <h3>"Ou" logique</h3>
-    <p>On définit des paramètres/poids générant la table de vérité du "ou" logique :</p>
-    <p>`Θ^((1))=[−10, 20, 20]`</p>
-    <p>ce qui donne :</p>
-    <p>`h_Θ(x)=g(−10 + 20 x_1 + 20 x_2)`</p>
-    <p>et donc :</p>
+    <p class="tag-computing">On définit des paramètres/poids générant la table de vérité du "ou" logique :</p>
+    <p class="tag-computing">`Θ^((1))=[−10, 20, 20]`</p>
+    <p class="tag-computing">ce qui donne :</p>
+    <p class="tag-computing">`h_Θ(x)=g(−10 + 20 x_1 + 20 x_2)`</p>
+    <p class="tag-computing">et donc :</p>
     <ul>
-      <li>si `x_1 = 0` et `x_2 = 0` alors `g(-10 + 0 + 0) = g(-10) ~~ 0`</li>
-      <li>si `x_1 = 0` et `x_2 = 1` alors `g(-10 + 0 + 20) = g(10) ~~ 1`</li>
-      <li>si `x_1 = 1` et `x_2 = 0` alors `g(-10 + 20 + 0) = g(10) ~~ 1`</li>
-      <li>si `x_1 = 1` et `x_2 = 1` alors `g(-10 + 20 + 20) = g(30) ~~ 1`</li>
+      <li class="tag-computing">si `x_1 = 0` et `x_2 = 0` alors `g(-10 + 0 + 0) = g(-10) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 0` et `x_2 = 1` alors `g(-10 + 0 + 20) = g(10) ~~ 1`</li>
+      <li class="tag-computing">si `x_1 = 1` et `x_2 = 0` alors `g(-10 + 20 + 0) = g(10) ~~ 1`</li>
+      <li class="tag-computing">si `x_1 = 1` et `x_2 = 1` alors `g(-10 + 20 + 20) = g(30) ~~ 1`</li>
     </ul>
   </section>
   <section>
     <h3>"Non" logique</h3>
-    <p>On définit des paramètres/poids générant la table de vérité du "non" logique :</p>
-    <p>`Θ^((1))=[10, -20]`</p>
-    <p>ce qui donne :</p>
-    <p>`h_Θ(x)=g(10 - 20 x_1)`</p>
-    <p>et donc :</p>
+    <p class="tag-computing">On définit des paramètres/poids générant la table de vérité du "non" logique :</p>
+    <p class="tag-computing">`Θ^((1))=[10, -20]`</p>
+    <p class="tag-computing">ce qui donne :</p>
+    <p class="tag-computing">`h_Θ(x)=g(10 - 20 x_1)`</p>
+    <p class="tag-computing">et donc :</p>
     <ul>
-      <li>si `x_1 = 0` alors `g(10 - 0) = g(10) ~~ 1`</li>
-      <li>si `x_1 = 1` alors `g(10 - 20) = g(-10) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 0` alors `g(10 - 0) = g(10) ~~ 1`</li>
+      <li class="tag-computing">si `x_1 = 1` alors `g(10 - 20) = g(-10) ~~ 0`</li>
     </ul>
   </section>
   <section>
     <h3>"Nor" logique</h3>
-    <p>On définit des paramètres/poids générant la table de vérité du "ni l'un ni l'autre" (`x_1 = x_2 = 0`) logique
+    <p class="tag-computing">On définit des paramètres/poids générant la table de vérité du "ni l'un ni l'autre" (`x_1 = x_2 = 0`) logique
       :</p>
-    <p>`Θ^((1))=[10, -20, -20]`</p>
-    <p>ce qui donne :</p>
-    <p>`h_Θ(x)=g(10 - 20 x_1 - 20 x_2)`</p>
-    <p>et donc :</p>
+    <p class="tag-computing">`Θ^((1))=[10, -20, -20]`</p>
+    <p class="tag-computing">ce qui donne :</p>
+    <p class="tag-computing">`h_Θ(x)=g(10 - 20 x_1 - 20 x_2)`</p>
+    <p class="tag-computing">et donc :</p>
     <ul>
-      <li>si `x_1 = 0` et `x_2 = 0` alors `g(10 - 0 - 0) = g(10) ~~ 1`</li>
-      <li>si `x_1 = 0` et `x_2 = 1` alors `g(10 - 20 - 0) = g(-10) ~~ 0`</li>
-      <li>si `x_1 = 1` et `x_2 = 0` alors `g(10 - 0 - 20) = g(-10) ~~ 0`</li>
-      <li>si `x_1 = 1` et `x_2 = 1` alors `g(10 - 20 - 20) = g(-30) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 0` et `x_2 = 0` alors `g(10 - 0 - 0) = g(10) ~~ 1`</li>
+      <li class="tag-computing">si `x_1 = 0` et `x_2 = 1` alors `g(10 - 20 - 0) = g(-10) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 1` et `x_2 = 0` alors `g(10 - 0 - 20) = g(-10) ~~ 0`</li>
+      <li class="tag-computing">si `x_1 = 1` et `x_2 = 1` alors `g(10 - 20 - 20) = g(-30) ~~ 0`</li>
     </ul>
   </section>
   <section>
     <h3>Not(Xor)</h3>
-    <p>On réutilise les paramètres/poids des exemples précédents :</p>
+    <p class="tag-computing">On réutilise les paramètres/poids des exemples précédents :</p>
     <ul>
-      <li>1ʳᵉ couche :
+      <li class="tag-computing">1ʳᵉ couche :
         <ul>
-          <li>Le "et" : `Θ^((1))=[−30, 20, 20]`</li>
-          <li>Le "nor" : `Θ^((1))=[10, -20, -20]`</li>
+          <li class="tag-computing">Le "et" : `Θ^((1))=[−30, 20, 20]`</li>
+          <li class="tag-computing">Le "nor" : `Θ^((1))=[10, -20, -20]`</li>
         </ul>
         donnent : `Θ^((1))=[[−30, 20, 20],[10, -20, -20]]`
       </li>
-      <li>2ᵉ couche : Le "ou" : `Θ^((2))=[-10, 20, 20]`</li>
+      <li class="tag-computing">2ᵉ couche : Le "ou" : `Θ^((2))=[-10, 20, 20]`</li>
     </ul>
-    <p>on calcule alors le résultat des couches :</p>
-    <p>`a^((2))=g(Θ^((1)) * x)`</p>
-    <p>`a^((3))=g(Θ^((2)) * a^((2)))`</p>
-    <p>ce qui donne :</p>
-    <p>`h_Θ(x)=a^((3))`</p>
+    <p class="tag-computing">on calcule alors le résultat des couches :</p>
+    <p class="tag-computing">`a^((2))=g(Θ^((1)) * x)`</p>
+    <p class="tag-computing">`a^((3))=g(Θ^((2)) * a^((2)))`</p>
+    <p class="tag-computing">ce qui donne :</p>
+    <p class="tag-computing">`h_Θ(x)=a^((3))`</p>
   </section>
   <section>
     <h3>Bibliothèques</h3>
-    <p>Des exemples de libraries FNN sont :</p>
+    <p class="tag-computing">Des exemples de libraries FNN sont :</p>
     <ul>
-      <li><a href="https://brain.js.org">Brain.js</a> qui supporte aussi les <abbr
+      <li class="tag-computing"><a href="https://brain.js.org">Brain.js</a> qui supporte aussi les <abbr
         title="Recurrent Neural Network">RNN</abbr></li>
-      <li><a href="https://caza.la/synaptic">Synaptic.js</a></li>
+      <li class="tag-computing"><a href="https://caza.la/synaptic">Synaptic.js</a></li>
     </ul>
   </section>
 </section>

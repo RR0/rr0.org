@@ -253,7 +253,9 @@ moment: a name, a place or a title is never one (`<span class="people">`, `<span
 
 A time of day in running text is a `<time>` too, never written out as "21 h" or "21 h 30": `<time>21:00</time>`,
 preferably with its date (`<time>2023-10-12 21:00</time>`), since without a dated context the build cannot resolve it
-(even relatively). Durations ("durant 2 h") are not times of day.
+(even relatively). Durations ("durant 2 h") are not times of day: they are `<time>` durations too, e.g. "après
+<time>P15S</time> d'observation" (rendered "15 secondes"), `<time>P2H</time>`, `<time>PT1H15M</time>`, never "15 s" or
+"15 secondes" as plain text.
 
 Within a dated context (a day page, or after a full date), the build completes partial values from the previous
 `<time>`: `<time>19</time>` is the 19th of the current month, `<time>21:00</time>` an hour of the current day,

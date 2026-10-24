@@ -1,0 +1,21 @@
+{
+  "lastName": "Trump",
+  "firstNames": [
+    "Donald",
+    "John"
+  ],
+  "occupations": [
+    "politician",
+    "leader"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946-06-14",
+      "place": "Queens (New York)"
+    }
+  ]
+}

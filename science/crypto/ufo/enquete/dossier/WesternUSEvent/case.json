@@ -5,5 +5,519 @@
   "classification": {
     "hynek": "CE1"
   },
-  "conclusion": "unknown"
+  "conclusion": "unknown",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w3-1",
+      "time": "2023-10-14 19:00~",
+      "title": "Témoin 3, l'orbe orange (vers 19:00)",
+      "url": "observer-western-us-event-w3-1.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "Leurres infrarouges largués par un avion militaire (hypothèse de l'AARO, modélisée par RR0)",
+        "en": "Infrared decoy flares dispensed by a military aircraft (AARO's hypothesis, modelled by RR0)"
+      },
+      "url": "interpretation-western-us-event-w3-1-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Avion bas (750 m) = orbe orange, et ses leurres",
+        "en": "Low aircraft (750 m) = orange orb, and its flares"
+      },
+      "url": "interpretation-western-us-event-w3-1-flares-aircraft-low.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Avion haut (6 km) = orbe orange, et ses leurres",
+        "en": "High aircraft (6 km) = orange orb, and its flares"
+      },
+      "url": "interpretation-western-us-event-w3-1-flares-aircraft-high.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Prototype discret (750 m) = orbe orange, et ses leurres",
+        "en": "Quiet prototype (750 m) = orange orb, and its flares"
+      },
+      "url": "interpretation-western-us-event-w3-1-flares-quiet-prototype.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w2-1",
+      "time": "2023-10-14 19:00~",
+      "title": "Témoin 2, les orbes (19:00-19:30)",
+      "url": "observer-western-us-event-w2-1.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w2-1",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "Cinq salves de leurres",
+        "en": "Five salvoes of decoy flares"
+      },
+      "url": "interpretation-western-us-event-w2-1-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w2-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Les feux d'obstacle de Black Mountain, à 62 km",
+        "en": "The obstruction lights of Black Mountain, 62 km away"
+      },
+      "url": "interpretation-western-us-event-w2-1-black-mountain.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w5-1",
+      "time": "2023-10-15 18:58~",
+      "title": "Témoin 5, l'orbe sur le pic (18:58)",
+      "url": "observer-western-us-event-w5-1.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Fusée éclairante à 12 km derrière la crête, qui descend et passe derrière",
+        "en": "An illumination flare 12 km behind the ridge, sinking behind it"
+      },
+      "url": "interpretation-western-us-event-w5-1-luu2.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w5-2",
+      "time": "2023-10-15 19:18~",
+      "title": "Témoin 5, l'orbe rouge (19:18)",
+      "url": "observer-western-us-event-w5-2.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-2",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "Salve de leurres à 49 km au nord",
+        "en": "A salvo of flares 49 km north"
+      },
+      "url": "interpretation-western-us-event-w5-2-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w5-3",
+      "time": "2023-10-15 19:37~",
+      "title": "Témoin 5, l'orbe à gauche (19:37)",
+      "url": "observer-western-us-event-w5-3.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-3",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "Deux leurres à la suite, à 37 km au sud-ouest",
+        "en": "Two flares in a row, 37 km south-west"
+      },
+      "url": "interpretation-western-us-event-w5-3-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w5-4",
+      "time": "2023-10-16 04:30~",
+      "title": "Témoin 5, la paire de feux (04:30)",
+      "url": "observer-western-us-event-w5-4.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-4",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Un drone multirotor de 1,2 m, feux allumés puis éteints",
+        "en": "A 1.2 m multirotor drone, its lights on then off"
+      },
+      "url": "interpretation-western-us-event-w5-4-drone.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-4",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Le reflet de deux voyants dans le pare-brise",
+        "en": "Two dashboard lights reflected in the windshield"
+      },
+      "url": "interpretation-western-us-event-w5-4-windshield.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-4",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Un petit véhicule tout-terrain, feux allumés puis éteints",
+        "en": "A small off-road vehicle, its lights on then off"
+      },
+      "url": "interpretation-western-us-event-w5-4-vehicle.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w5-5",
+      "time": "2023-10-16 05:30~",
+      "title": "Témoin 5, la formation de lumières faibles (05:30)",
+      "url": "observer-western-us-event-w5-5.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Le même drone, en vol stationnaire, feux faibles",
+        "en": "The same drone, hovering, its lights dim"
+      },
+      "url": "interpretation-western-us-event-w5-5-drone.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Une nappe de fils de la Vierge, qui dérive au vent",
+        "en": "A sheet of gossamer, drifting with the wind"
+      },
+      "url": "interpretation-western-us-event-w5-5-gossamer.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w1-1",
+      "time": "2023-10-15 18:58~",
+      "title": "Témoin 1, la boule lumineuse (vers 19:00)",
+      "url": "observer-western-us-event-w1-1.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w1-2",
+      "time": "2023-10-15 19:18~",
+      "title": "Témoin 1, l'objet et les trois lumières rouges (vers 19:18)",
+      "url": "observer-western-us-event-w1-2.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w1-3",
+      "time": "2023-10-15 19:37~",
+      "title": "Témoin 1, la boule orange et l'alignement vertical (vers 19:37)",
+      "url": "observer-western-us-event-w1-3.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w1-4",
+      "time": "2023-10-16 04:30~",
+      "title": "Témoin 1, la « voiture » (vers 04:30)",
+      "url": "observer-western-us-event-w1-4.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w1-5",
+      "time": "2023-10-16 05:30~",
+      "title": "Témoin 1, l'objet translucide (vers 05:30)",
+      "url": "observer-western-us-event-w1-5.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w4-1",
+      "time": "2023-10-14 19:00~",
+      "title": "Témoin 4, le premier soir",
+      "url": "observer-western-us-event-w4-1.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "w4-2",
+      "time": "2023-10-15 18:52~",
+      "title": "Témoin 4, le second soir",
+      "url": "observer-western-us-event-w4-2.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Fusée éclairante à 12 km derrière la crête, qui descend et passe derrière",
+        "en": "An illumination flare 12 km behind the ridge, sinking behind it"
+      },
+      "url": "interpretation-western-us-event-w1-1-luu2.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-2",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "La salve de leurres vue par le témoin 5, à 49 km au nord",
+        "en": "The salvo of flares witness 5 saw, 49 km north"
+      },
+      "url": "interpretation-western-us-event-w1-2-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-3",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "Les leurres vus par le témoin 5, à 37 km au sud-ouest",
+        "en": "The flares witness 5 saw, 37 km south-west"
+      },
+      "url": "interpretation-western-us-event-w1-3-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-4",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Le drone que décrit le témoin 5, feux allumés puis éteints",
+        "en": "The drone witness 5 describes, its lights on then off"
+      },
+      "url": "interpretation-western-us-event-w1-4-drone.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Le même drone, feux éteints : on voit à travers son châssis ouvert",
+        "en": "The same drone, lights off: its open frame shows what is behind"
+      },
+      "url": "interpretation-western-us-event-w1-5-drone.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-4",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Le petit véhicule tout-terrain, feux allumés puis éteints",
+        "en": "The small off-road vehicle, its lights on then off"
+      },
+      "url": "interpretation-western-us-event-w1-4-vehicle.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Une nappe de fils de la Vierge, qui dérive au vent",
+        "en": "A sheet of gossamer, drifting with the wind"
+      },
+      "url": "interpretation-western-us-event-w1-5-gossamer.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w4-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Leurres (AARO) et, pour la ligne de neuf, fusées éclairantes larguées en file à 20 km",
+        "en": "Flares (AARO) and, for the line of nine, illumination flares dropped in a row 20 km away"
+      },
+      "url": "interpretation-western-us-event-w4-1-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w4-2",
+      "by": [
+        {
+          "title": "AARO"
+        }
+      ],
+      "time": "2026-06-05",
+      "title": {
+        "fr": "Salve de leurres au sud-est, à 69 km (la file de lumières est le train Starlink 2023-153, dessiné par le ciel)",
+        "en": "A salvo of flares to the south-east, 69 km away (the string of lights is the Starlink 2023-153 train, drawn by the sky)"
+      },
+      "url": "interpretation-western-us-event-w4-2-aaro-flares.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w2-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Triangulation : une seule source pour les témoins 2 et 3, à 9,4 km de haut",
+        "en": "Triangulation: one source for witnesses 2 and 3, 9.4 km up"
+      },
+      "url": "interpretation-western-us-event-w2-1-triangulation.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-10-25",
+      "title": {
+        "fr": "Triangulation : une seule source pour les témoins 2 et 3, à 9,4 km de haut",
+        "en": "Triangulation: one source for witnesses 2 and 3, 9.4 km up"
+      },
+      "url": "interpretation-western-us-event-w3-1-triangulation.json"
+    }
+  ]
 }

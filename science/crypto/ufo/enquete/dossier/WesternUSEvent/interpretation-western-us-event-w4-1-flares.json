@@ -1,0 +1,1416 @@
+{
+ "version": 1,
+ "id": "2023-10-14-WesternUSEvent-W4-1-flares",
+ "description": {
+  "en": "Sometime in October 2023, just after sunset (7PM), I saw a bright ball of light like a shooting star beam across and over a hillside. The light was approximately 1-2k above ground level, was orange/yellow and white in color and appeared for about a second or two. I was approximately less than a quarter of a mile from the hillside, and the ball of light seem very close to me as if it was a shooting star coming towards the hillside, toward and not away from me. The colors of the light went from amber to orange, slightly yellow and white in that order. No other lights were seen, nor did I hear any mechanical buzzing or anything like an aircraft at this time and kept driving. After about 10 minutes I saw with my naked eye multiple singular bright orange lights/orbs of various brightness, size and distance. Using my night vision goggles (NVGs) I saw the same lights in addition to multiple other lights. Some of the lights seen with NVG's were organized in a line of three, evenly spaced and at various altitudes, horizontally just above the skyline. Most of the lights were only visible for approx. 1-2 seconds before disappearing. Later, I observed multiple singular very bright orange lights that appeared to shoot out smaller orange lights as if being hatched from the larger very bright orange light. The hatching occurred multiple times, I lost track after five occurrences. The smaller lights seemed to travel downwards like a falling flare. Soon thereafter I saw nine lights formed a horizontal line just above a ridgeline. The lights were static, not moving, evenly spaced apart and were visible for 30+ seconds. Smaller lights then appeared below and to the left and right of the line of nine lights. These smaller lights seemed to cluster (almost touching) in a combination of three. The lights soon disappeared only to appear again directly behind me. All these observations occurred within a 2-3 hour span, nonstop.",
+  "fr": "Un jour d'octobre 2023, juste après le coucher du soleil (19 h), j'ai vu une boule de lumière brillante, comme une étoile filante, traverser le ciel au-dessus d'une colline. Elle était à environ 300 à 600 m du sol, orange/jaune et blanche, et a duré une seconde ou deux. J'étais à moins de 400 m de la colline, et la boule semblait très proche, comme une étoile filante venant vers la colline, vers moi et non en s'éloignant. Ses couleurs sont passées de l'ambre à l'orange, puis à un peu de jaune et au blanc, dans cet ordre. Aucune autre lumière, aucun bourdonnement mécanique ni bruit d'avion ; j'ai continué à rouler. Une dizaine de minutes plus tard, j'ai vu à l'œil nu plusieurs lumières ou orbes orange isolées, de brillance, taille et distance variées. Aux jumelles de vision nocturne, je voyais les mêmes et bien d'autres ; certaines, en lignes de trois régulièrement espacées à diverses hauteurs, juste au-dessus de la ligne d'horizon. La plupart n'étaient visibles qu'une ou deux secondes. Plus tard, j'ai vu plusieurs lumières orange très brillantes qui semblaient projeter de plus petites lumières orange, comme si elles éclosaient ; j'ai cessé de compter après cinq fois. Les petites semblaient descendre comme une fusée éclairante qui tombe. Peu après, neuf lumières ont formé une ligne horizontale juste au-dessus d'une crête : immobiles, régulièrement espacées, visibles plus de 30 secondes. Puis de plus petites lumières sont apparues dessous, à gauche et à droite, groupées par trois, presque collées. Elles ont vite disparu, pour réapparaître juste derrière moi. Tout cela s'est passé sur deux à trois heures, sans interruption."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 14,
+   "hour": 19,
+   "minute": 0,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the first of the two evenings (\"two days in October 2023\", AARO), taken as 2023-10-14: witness 4's second evening, with its Starlink train to the south-east, is best matched by the 15th; \"just after sunset (7PM)\""
+ },
+ "durationSeconds": {
+  "value": 940,
+  "basis": "assumed",
+  "rationale": "the first quarter-hour of \"a 2-3 hour span\": the ball, then ten minutes later the orange lights, then the nine"
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.60452,
+    "lng": -115.3706,
+    "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 4 was driving \"less than a quarter of a mile from the hillside\": Alamo Road in Desert Valley, where the Desert Range's slope rises 0.8 km to the west (8.8° high); one place among several the account fits"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W4",
+  "title": {
+   "fr": "Témoin 4",
+   "en": "Witness 4"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D082, Narrative Statement 4, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D082_Narrative-4_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.60452,
+     "lng": -115.3706,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 285,
+      "basis": "assumed",
+      "rationale": "driving with the hillside ahead"
+     },
+     "pitchDeg": 8
+    }
+   },
+   {
+    "t": 600000,
+    "pose": {
+     "lat": 36.60452,
+     "lng": -115.3706,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 270,
+     "pitchDeg": 8
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "shooting-ball",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "bright ball of light like a shooting star",
+        "fr": "boule de lumière comme une étoile filante"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 300,
+         "altitudeDeg": 16
+        },
+        "basis": "assumed",
+        "rationale": "\"beam across and over a hillside ... coming towards the hillside\": the hillside is the Desert Range's slope 0.8 km west; where it came from is not given"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.3,
+         "heightDeg": 0.3
+        },
+        "basis": "assumed",
+        "rationale": "no size given"
+       },
+       "color": "#ffb347",
+       "haloScale": 2,
+       "brightness": 0.6,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1500,
+    "shapes": [
+     {
+      "sourceId": "shooting-ball",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 265,
+         "altitudeDeg": 9.5
+        },
+        "basis": "assumed",
+        "rationale": "over the hillside, which is 8.8° high at that bearing"
+       },
+       "color": "#ffffff",
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1600,
+    "shapes": [
+     {
+      "sourceId": "shooting-ball",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 600000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "very bright orange light",
+        "fr": "lumière orange très brillante"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 250,
+         "altitudeDeg": 14
+        },
+        "basis": "assumed",
+        "rationale": "\"multiple singular very bright orange lights\": their bearings and heights are not given"
+       },
+       "angular": {
+        "widthDeg": 0.3,
+        "heightDeg": 0.3
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 601490,
+    "shapes": [
+     {
+      "sourceId": "hatched-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller orange light",
+        "fr": "petite lumière orange"
+       },
+       "aim": {
+        "azimuthDeg": 250,
+        "altitudeDeg": 14
+       },
+       "angular": {
+        "widthDeg": 0.08,
+        "heightDeg": 0.08
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 601500,
+    "shapes": [
+     {
+      "sourceId": "hatched-1",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 603000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-1",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 603500,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-1",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 606000,
+    "shapes": [
+     {
+      "sourceId": "hatched-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 250,
+         "altitudeDeg": 11
+        },
+        "basis": "assumed",
+        "rationale": "\"seemed to travel downwards like a falling flare\": how far is not given"
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 660000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "very bright orange light",
+        "fr": "lumière orange très brillante"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 280,
+         "altitudeDeg": 14
+        },
+        "basis": "assumed",
+        "rationale": "\"multiple singular very bright orange lights\": their bearings and heights are not given"
+       },
+       "angular": {
+        "widthDeg": 0.3,
+        "heightDeg": 0.3
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 661490,
+    "shapes": [
+     {
+      "sourceId": "hatched-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller orange light",
+        "fr": "petite lumière orange"
+       },
+       "aim": {
+        "azimuthDeg": 280,
+        "altitudeDeg": 14
+       },
+       "angular": {
+        "widthDeg": 0.08,
+        "heightDeg": 0.08
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 661500,
+    "shapes": [
+     {
+      "sourceId": "hatched-2",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 663000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-2",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 663500,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-2",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 666000,
+    "shapes": [
+     {
+      "sourceId": "hatched-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 280,
+         "altitudeDeg": 11
+        },
+        "basis": "assumed",
+        "rationale": "\"seemed to travel downwards like a falling flare\": how far is not given"
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 720000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "very bright orange light",
+        "fr": "lumière orange très brillante"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 265,
+         "altitudeDeg": 14
+        },
+        "basis": "assumed",
+        "rationale": "\"multiple singular very bright orange lights\": their bearings and heights are not given"
+       },
+       "angular": {
+        "widthDeg": 0.3,
+        "heightDeg": 0.3
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 721490,
+    "shapes": [
+     {
+      "sourceId": "hatched-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller orange light",
+        "fr": "petite lumière orange"
+       },
+       "aim": {
+        "azimuthDeg": 265,
+        "altitudeDeg": 14
+       },
+       "angular": {
+        "widthDeg": 0.08,
+        "heightDeg": 0.08
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 721500,
+    "shapes": [
+     {
+      "sourceId": "hatched-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 723000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 723500,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-3",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 726000,
+    "shapes": [
+     {
+      "sourceId": "hatched-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 265,
+         "altitudeDeg": 11
+        },
+        "basis": "assumed",
+        "rationale": "\"seemed to travel downwards like a falling flare\": how far is not given"
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 780000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "very bright orange light",
+        "fr": "lumière orange très brillante"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 295,
+         "altitudeDeg": 14
+        },
+        "basis": "assumed",
+        "rationale": "\"multiple singular very bright orange lights\": their bearings and heights are not given"
+       },
+       "angular": {
+        "widthDeg": 0.3,
+        "heightDeg": 0.3
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 781490,
+    "shapes": [
+     {
+      "sourceId": "hatched-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller orange light",
+        "fr": "petite lumière orange"
+       },
+       "aim": {
+        "azimuthDeg": 295,
+        "altitudeDeg": 14
+       },
+       "angular": {
+        "widthDeg": 0.08,
+        "heightDeg": 0.08
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 781500,
+    "shapes": [
+     {
+      "sourceId": "hatched-4",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 783000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-4",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 783500,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-4",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 786000,
+    "shapes": [
+     {
+      "sourceId": "hatched-4",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 295,
+         "altitudeDeg": 11
+        },
+        "basis": "assumed",
+        "rationale": "\"seemed to travel downwards like a falling flare\": how far is not given"
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 840000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-5",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "very bright orange light",
+        "fr": "lumière orange très brillante"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 275,
+         "altitudeDeg": 14
+        },
+        "basis": "assumed",
+        "rationale": "\"multiple singular very bright orange lights\": their bearings and heights are not given"
+       },
+       "angular": {
+        "widthDeg": 0.3,
+        "heightDeg": 0.3
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 841490,
+    "shapes": [
+     {
+      "sourceId": "hatched-5",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller orange light",
+        "fr": "petite lumière orange"
+       },
+       "aim": {
+        "azimuthDeg": 275,
+        "altitudeDeg": 14
+       },
+       "angular": {
+        "widthDeg": 0.08,
+        "heightDeg": 0.08
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 841500,
+    "shapes": [
+     {
+      "sourceId": "hatched-5",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 843000,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-5",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 843500,
+    "shapes": [
+     {
+      "sourceId": "bright-orange-5",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 846000,
+    "shapes": [
+     {
+      "sourceId": "hatched-5",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 275,
+         "altitudeDeg": 11
+        },
+        "basis": "assumed",
+        "rationale": "\"seemed to travel downwards like a falling flare\": how far is not given"
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 900000,
+    "shapes": [
+     {
+      "sourceId": "line-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 266.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 267.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 268.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 269.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-5",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 270.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-6",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 271.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-7",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 272.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-8",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 273.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-9",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the line of nine",
+        "fr": "lumière de la ligne de neuf"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 274.0,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"nine lights formed a horizontal line just above a ridgeline\": the Desert Range's crest, 8.8° high to the west; the spacing is not given"
+       },
+       "angular": {
+        "widthDeg": 0.06,
+        "heightDeg": 0.06
+       },
+       "color": "#ffb066",
+       "haloScale": 1.8,
+       "brightness": 0.35,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 932000,
+    "shapes": [
+     {
+      "sourceId": "line-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-3",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-4",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-5",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-6",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-7",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-8",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "line-9",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 933000,
+    "shapes": [
+     {
+      "sourceId": "line-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-3",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-4",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-5",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-6",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-7",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-8",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "line-9",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Juste après le coucher du soleil : une boule comme une étoile filante, de l'ambre au blanc, au-dessus de la colline, une ou deux secondes, sans bruit.",
+    "en": "Just after sunset: a ball like a shooting star, amber to white, over the hillside, a second or two, no sound."
+   }
+  },
+  {
+   "t": 600000,
+   "label": "B",
+   "note": {
+    "fr": "Dix minutes plus tard : des lumières orange ; de très brillantes « font éclore » de plus petites qui descendent comme une fusée éclairante (cinq fois au moins).",
+    "en": "Ten minutes later: orange lights; very bright ones \"hatch\" smaller ones that go down like a falling flare (five times at least)."
+   }
+  },
+  {
+   "t": 900000,
+   "label": "C",
+   "note": {
+    "fr": "Neuf lumières en ligne horizontale juste au-dessus d'une crête, immobiles, plus de 30 secondes.",
+    "en": "Nine lights in a horizontal line just above a ridgeline, static, for 30+ seconds."
+   }
+  }
+ ],
+ "interpretation": {
+  "title": {
+   "fr": "Leurres (AARO) et, pour la ligne de neuf, fusées éclairantes larguées en file à 20 km",
+   "en": "Flares (AARO) and, for the line of nine, illumination flares dropped in a row 20 km away"
+  },
+  "bodies": [],
+  "flares": [
+   {
+    "id": "aaro-1",
+    "title": {
+     "en": "Infrared decoy flare",
+     "fr": "Leurre infrarouge"
+    },
+    "aircraft": {
+     "t": 600000,
+     "eastM": -22613.4,
+     "northM": -8230.6,
+     "altitudeM": {
+      "value": 6000,
+      "basis": "assumed",
+      "rationale": "AARO: the military aircraft present flew \"too high for standard exhaust to appear as orange orbs\"; no height published, 6 km taken"
+     },
+     "headingDeg": 340,
+     "speedMS": 250,
+     "originElevationM": 1269
+    },
+    "releases": [
+     {
+      "t": 600000,
+      "explains": [
+       "bright-orange-1"
+      ]
+     },
+     {
+      "t": 601500,
+      "explains": [
+       "hatched-1"
+      ]
+     }
+    ],
+    "wind": {
+     "value": {
+      "towardDeg": 97,
+      "speedMS": 7.7
+     },
+     "basis": "derived",
+     "rationale": "wind of 2023-10-15 02:00 UTC at that height (Open-Meteo historical forecast)"
+    }
+   },
+   {
+    "id": "aaro-2",
+    "title": {
+     "en": "Infrared decoy flare",
+     "fr": "Leurre infrarouge"
+    },
+    "aircraft": {
+     "t": 660000,
+     "eastM": -23699.1,
+     "northM": 4178.8,
+     "altitudeM": 6000,
+     "headingDeg": 10,
+     "speedMS": 250,
+     "originElevationM": 1269
+    },
+    "releases": [
+     {
+      "t": 660000,
+      "explains": [
+       "bright-orange-2"
+      ]
+     },
+     {
+      "t": 661500,
+      "explains": [
+       "hatched-2"
+      ]
+     }
+    ],
+    "wind": {
+     "value": {
+      "towardDeg": 97,
+      "speedMS": 7.7
+     },
+     "basis": "derived",
+     "rationale": "wind of 2023-10-15 02:00 UTC at that height (Open-Meteo historical forecast)"
+    }
+   },
+   {
+    "id": "aaro-3",
+    "title": {
+     "en": "Infrared decoy flare",
+     "fr": "Leurre infrarouge"
+    },
+    "aircraft": {
+     "t": 720000,
+     "eastM": -23973.1,
+     "northM": -2097.4,
+     "altitudeM": 6000,
+     "headingDeg": 355,
+     "speedMS": 250,
+     "originElevationM": 1269
+    },
+    "releases": [
+     {
+      "t": 720000,
+      "explains": [
+       "bright-orange-3"
+      ]
+     },
+     {
+      "t": 721500,
+      "explains": [
+       "hatched-3"
+      ]
+     }
+    ],
+    "wind": {
+     "value": {
+      "towardDeg": 97,
+      "speedMS": 7.7
+     },
+     "basis": "derived",
+     "rationale": "wind of 2023-10-15 02:00 UTC at that height (Open-Meteo historical forecast)"
+    }
+   },
+   {
+    "id": "aaro-4",
+    "title": {
+     "en": "Infrared decoy flare",
+     "fr": "Leurre infrarouge"
+    },
+    "aircraft": {
+     "t": 780000,
+     "eastM": -21810.0,
+     "northM": 10170.2,
+     "altitudeM": 6000,
+     "headingDeg": 25,
+     "speedMS": 250,
+     "originElevationM": 1269
+    },
+    "releases": [
+     {
+      "t": 780000,
+      "explains": [
+       "bright-orange-4"
+      ]
+     },
+     {
+      "t": 781500,
+      "explains": [
+       "hatched-4"
+      ]
+     }
+    ],
+    "wind": {
+     "value": {
+      "towardDeg": 97,
+      "speedMS": 7.7
+     },
+     "basis": "derived",
+     "rationale": "wind of 2023-10-15 02:00 UTC at that height (Open-Meteo historical forecast)"
+    }
+   },
+   {
+    "id": "aaro-5",
+    "title": {
+     "en": "Infrared decoy flare",
+     "fr": "Leurre infrarouge"
+    },
+    "aircraft": {
+     "t": 840000,
+     "eastM": -23973.1,
+     "northM": 2097.4,
+     "altitudeM": 6000,
+     "headingDeg": 5,
+     "speedMS": 250,
+     "originElevationM": 1269
+    },
+    "releases": [
+     {
+      "t": 840000,
+      "explains": [
+       "bright-orange-5"
+      ]
+     },
+     {
+      "t": 841500,
+      "explains": [
+       "hatched-5"
+      ]
+     }
+    ],
+    "wind": {
+     "value": {
+      "towardDeg": 97,
+      "speedMS": 7.7
+     },
+     "basis": "derived",
+     "rationale": "wind of 2023-10-15 02:00 UTC at that height (Open-Meteo historical forecast)"
+    }
+   },
+   {
+    "id": "luu2-line",
+    "title": {
+     "en": "LUU-2 parachute illumination flare",
+     "fr": "Fusée éclairante sous parachute LUU-2"
+    },
+    "aircraft": {
+     "t": 870000,
+     "eastM": -19951.3,
+     "northM": -1395.1,
+     "altitudeM": {
+      "value": 3527,
+      "basis": "derived",
+      "rationale": "where a flare must be to show just above the ridge (10°) from 20 km, over the Nevada Test and Training Range to the west"
+     },
+     "headingDeg": {
+      "value": 0,
+      "basis": "assumed",
+      "rationale": "dropping them along a north-south line, across the line of sight, makes them a horizontal row"
+     },
+     "speedMS": 120,
+     "originElevationM": 1269
+    },
+    "releases": [
+     {
+      "t": 870000,
+      "explains": [
+       "line-1"
+      ]
+     },
+     {
+      "t": 873000,
+      "explains": [
+       "line-2"
+      ]
+     },
+     {
+      "t": 876000,
+      "explains": [
+       "line-3"
+      ]
+     },
+     {
+      "t": 879000,
+      "explains": [
+       "line-4"
+      ]
+     },
+     {
+      "t": 882000,
+      "explains": [
+       "line-5"
+      ]
+     },
+     {
+      "t": 885000,
+      "explains": [
+       "line-6"
+      ]
+     },
+     {
+      "t": 888000,
+      "explains": [
+       "line-7"
+      ]
+     },
+     {
+      "t": 891000,
+      "explains": [
+       "line-8"
+      ]
+     },
+     {
+      "t": 894000,
+      "explains": [
+       "line-9"
+      ]
+     }
+    ],
+    "flare": {
+     "massKg": 13.6,
+     "burnedKg": 7,
+     "dragAreaM2": 9,
+     "ejectionMS": 0,
+     "burnS": 300,
+     "luminousIntensityCd": 1800000,
+     "flameSizeM": 2,
+     "color": "#ffc46a"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,251 @@
+{
+ "version": 1,
+ "id": "2023-10-15-WesternUSEvent-W1-1-LUU2",
+ "description": {
+  "en": "It started the first night with other teams reporting weird lights moving along in groups miles away. From my vantage point I could not see them, though in theory should have been able to. Because of my location I did not see anything specific the first night. The second night another team member and I were out working and driving to our destination. As we headed through a valley area we suddenly noticed a large glowing ball to our right 90 degrees from where we were. It looked like it was between us and a hill face, and initially I guessed it was 500 to 600 meters away, though another later day I was able to use a range finder to put the distance to the hillside at about 1100 meters. The ball appeared close to the hill face. It was just a circle of light that looked like a swirly pattern of bright lava. It was bright in the dusk light, the time was just before 7 pm I think. It was not visible up to the moment we first saw it, though the hillside face behind it was visible as we drove for some distance before we saw the object. The object's lighted area was a well defined circle, but had no visible structure at the edges to show what contained the light or why it was where it was. Looking at it through binoculars it almost appeared to have a line or spindle below possibly touching the hillside below. It was not possible to verify for sure because of the distance. There was no observed glow behind or below the object on the hillside or ground. It was only observed for a minute or two before we could no longer see it. It did not fade out, we just could not see it anymore. There was no particular sound heard with it. All seemed quiet and it was pretty remote. I would have guessed the circle to be 20 feet or more in diameter.",
+  "fr": "Tout a commencé le premier soir : d'autres équipes signalaient des lumières étranges qui se déplaçaient en groupes, à des kilomètres. De ma position, je ne pouvais pas les voir, même si j'aurais dû en théorie. Le second soir, un autre membre de l'équipe et moi étions en route vers notre destination. En traversant une vallée, nous avons soudain remarqué une grosse boule lumineuse à 90 degrés sur notre droite. Elle semblait entre nous et le flanc d'une colline ; je l'ai d'abord estimée à 500 ou 600 mètres, mais un autre jour, un télémètre m'a donné environ 1 100 mètres jusqu'au flanc. La boule paraissait près du flanc. C'était juste un cercle de lumière, comme un motif tourbillonnant de lave vive, brillant dans la lumière du crépuscule, juste avant 19 h je crois. Elle n'était pas visible jusqu'au moment où nous l'avons vue, alors que le flanc derrière l'était depuis un moment. Sa partie lumineuse était un cercle bien net, sans structure visible au bord. Aux jumelles, elle semblait presque avoir une ligne ou une tige dessous, touchant peut-être le flanc ; impossible de l'affirmer à cette distance. Aucune lueur sur le flanc ni au sol. Nous ne l'avons vue qu'une minute ou deux, puis plus du tout : elle ne s'est pas estompée, nous ne la voyions plus. Aucun bruit particulier ; tout semblait calme, c'était très isolé. J'aurais estimé le cercle à 20 pieds (6 m) de diamètre ou plus."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 15,
+   "hour": 18,
+   "minute": 58,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening; \"just before 7 pm I think\"; witness 5, in the same vehicle, says 18:58"
+ },
+ "durationSeconds": {
+  "value": 90,
+  "basis": "stated",
+  "rationale": "\"only observed for a minute or two\""
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.71286,
+    "lng": -115.26767,
+    "name": "White Rock Road, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several; witness 1 was in the same vehicle as witness 5 (AARO: USPER5 and USPER6 saw the \"fiery orb\" together)"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W1",
+  "title": {
+   "fr": "Témoin 1",
+   "en": "Witness 1"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D079, Narrative Statement 1, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.71286,
+     "lng": -115.26767,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": {
+      "value": 231,
+      "basis": "derived",
+      "rationale": "\"to our right 90 degrees\": the light at bearing 321 is at 90° to the right of a heading of 231; witness 5, in the same vehicle, has it \"ahead and slightly to our right\""
+     },
+     "pitchDeg": 4
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "glowing-ball",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "large glowing ball",
+        "fr": "grosse boule lumineuse"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 321,
+         "altitudeDeg": 6.1
+        },
+        "basis": "derived",
+        "rationale": "the same light as witness 5's, over the same peak, seen from the same vehicle"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.6,
+         "heightDeg": 0.6
+        },
+        "basis": "derived",
+        "rationale": "\"20 feet or more in diameter\" at the \"500 to 600 meters\" he first guessed: 0.6°"
+       },
+       "color": "#ff6a14",
+       "haloScale": 1.4,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 90000,
+    "shapes": [
+     {
+      "sourceId": "glowing-ball",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 90010,
+    "shapes": [
+     {
+      "sourceId": "glowing-ball",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Juste avant 19 h : à 90° sur la droite, une grosse boule lumineuse, « comme un motif tourbillonnant de lave vive », près du flanc d'une colline.",
+    "en": "Just before 7 pm: 90 degrees to the right, a large glowing ball, \"a swirly pattern of bright lava\", close to a hill face."
+   }
+  },
+  {
+   "t": 90000,
+   "label": "B",
+   "note": {
+    "fr": "Il ne la voit plus : « elle ne s'est pas estompée, nous ne la voyions plus ».",
+    "en": "He can no longer see it: \"It did not fade out, we just could not see it anymore\"."
+   }
+  }
+ ],
+ "interpretation": {
+  "title": {
+   "fr": "Fusée éclairante à 12 km derrière la crête, qui descend et passe derrière",
+   "en": "An illumination flare 12 km behind the ridge, sinking behind it"
+  },
+  "bodies": [],
+  "flares": [
+   {
+    "id": "luu2",
+    "title": {
+     "en": "LUU-2 parachute illumination flare",
+     "fr": "Fusée éclairante sous parachute LUU-2"
+    },
+    "aircraft": {
+     "t": -20000,
+     "eastM": -7551.8,
+     "northM": 9325.8,
+     "altitudeM": {
+      "value": 1284,
+      "basis": "derived",
+      "rationale": "where the flare must be to show just over the peak (6.1°) from 12 km, over the edge of the Nevada Test and Training Range to the north-west"
+     },
+     "headingDeg": 230,
+     "speedMS": 120,
+     "originElevationM": 1554
+    },
+    "releases": [
+     {
+      "t": -20000,
+      "explains": [
+       "glowing-ball"
+      ]
+     }
+    ],
+    "flare": {
+     "massKg": 13.6,
+     "burnedKg": 7,
+     "dragAreaM2": {
+      "value": 9,
+      "basis": "assumed",
+      "rationale": "a 2.8 m parachute; it brings the candle down at about 5 m/s"
+     },
+     "ejectionMS": 0,
+     "burnS": 300,
+     "luminousIntensityCd": {
+      "value": 1800000,
+      "basis": "stated",
+      "rationale": "LUU-2: 1.8 million candela, about 5 minutes of burn (makers' and US Air Force figures)"
+     },
+     "flameSizeM": 2,
+     "color": "#ffc46a"
+    },
+    "wind": {
+     "value": {
+      "towardDeg": 358,
+      "speedMS": 1.05
+     },
+     "basis": "derived",
+     "rationale": "wind of 2023-10-16 02:00 UTC (19:00 PDT on the 15th) at about 700 hPa over the refuge (Open-Meteo historical forecast): nearly calm"
+    }
+   }
+  ]
+ }
+}

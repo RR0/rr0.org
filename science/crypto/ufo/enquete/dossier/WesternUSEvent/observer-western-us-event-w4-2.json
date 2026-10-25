@@ -1,0 +1,1048 @@
+{
+ "version": 1,
+ "id": "2023-10-15-WesternUSEvent-W4-2",
+ "description": {
+  "en": "The next day between 7-9pm I saw the same light phenomenon; however, I also saw what appeared to be chemtrails approx. 10 finger lengths from the highest ridge point. I observed for more than 10 minutes, the chemtrails were white and moved up toward the atmosphere. I did not see any aircraft or lights at or near the chemtrails; I was observing from about 3k above ground level. After 10 minutes, I saw 1 chemtrail disappear and the chemtrail below it made a U turn and headed toward/falling towards the ground very quickly. At this time, I saw a plane in the same direction (southeast) as the chemtrails. In tandem I saw a string of lights that resembled a Starlink deployment. Shortly thereafter, I saw what appeared to be one light source just above the Southeast ridgeline. The lights seemed to produce four smaller lights which traveled downward as the main light source disappeared. Three of the smaller lights seemed to form a horizontal line while the fourth traveled westward and away from the line of three. The four lights were observed for approx. 10 minutes; no other lights were observed thereafter.",
+  "fr": "Le lendemain, entre 19 h et 21 h, j'ai revu le même phénomène lumineux ; mais j'ai aussi vu ce qui ressemblait à des chemtrails, à environ dix largeurs de doigt du point le plus haut de la crête. Je les ai observées plus de dix minutes : elles étaient blanches et montaient vers le ciel. Je n'ai vu ni avion ni lumière près d'elles ; j'observais d'environ 900 m au-dessus du sol. Au bout de dix minutes, l'une a disparu et celle du dessous a fait demi-tour et filé très vite vers le sol. À ce moment, j'ai vu un avion dans la même direction (sud-est). En même temps, j'ai vu une file de lumières qui ressemblait à un déploiement de Starlink. Peu après, une source de lumière est apparue juste au-dessus de la crête sud-est. Elle a semblé produire quatre petites lumières qui descendaient tandis qu'elle disparaissait. Trois d'entre elles ont formé une ligne horizontale, la quatrième est partie vers l'ouest, loin des trois autres. Je les ai observées une dizaine de minutes ; plus rien ensuite."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 15,
+   "hour": 18,
+   "minute": 52,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening; \"The next day between 7-9pm\"; started so that the string of lights falls when Starlink 2023-153 was in the south-east (18:59-19:04)"
+ },
+ "durationSeconds": {
+  "value": 1390,
+  "basis": "assumed",
+  "rationale": "the trails \"for more than 10 minutes\", then the string of lights and the light over the ridge, whose four lights were watched \"for approx. 10 minutes\""
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.62239,
+    "lng": -115.11198,
+    "name": "Mormon Pass, Mormon Well Road, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 4 was \"observing from about 3k above ground level\": Mormon Pass on Mormon Well Road, 2,030 m, about 3,000 ft over the valleys either side; the south-east ridgeline is 4° high there; one place among several the account fits"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W4",
+  "title": {
+   "fr": "Témoin 4",
+   "en": "Witness 4"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D082, Narrative Statement 4, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D082_Narrative-4_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.62239,
+     "lng": -115.11198,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": {
+      "value": 135,
+      "basis": "stated",
+      "rationale": "\"in the same direction (southeast)\""
+     },
+     "pitchDeg": 14
+    }
+   },
+   {
+    "t": 780000,
+    "pose": {
+     "lat": 36.62239,
+     "lng": -115.11198,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 135,
+     "pitchDeg": 8
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "trail-upper",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "white trail (\"chemtrail\")",
+        "fr": "traînée blanche (« chemtrail »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 135,
+         "altitudeDeg": 22
+        },
+        "basis": "assumed",
+        "rationale": "\"approx. 10 finger lengths from the highest ridge point\", \"in the same direction (southeast)\": about 15-20° over the 4° ridge"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.6,
+         "heightDeg": 5
+        },
+        "basis": "assumed",
+        "rationale": "a trail, longer than wide; its size is not given"
+       },
+       "color": "#e8ecf2",
+       "haloScale": 1,
+       "brightness": 0,
+       "blur": 0.7,
+       "transparency": 0.4
+      }
+     },
+     {
+      "sourceId": "trail-lower",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "white trail (\"chemtrail\")",
+        "fr": "traînée blanche (« chemtrail »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 138,
+         "altitudeDeg": 18
+        },
+        "basis": "assumed",
+        "rationale": "\"approx. 10 finger lengths from the highest ridge point\", \"in the same direction (southeast)\": about 15-20° over the 4° ridge"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.6,
+         "heightDeg": 5
+        },
+        "basis": "assumed",
+        "rationale": "a trail, longer than wide; its size is not given"
+       },
+       "color": "#e8ecf2",
+       "haloScale": 1,
+       "brightness": 0,
+       "blur": 0.7,
+       "transparency": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "t": 419990,
+    "shapes": [
+     {
+      "sourceId": "string-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 150.0,
+         "altitudeDeg": 28.0
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 147.5,
+         "altitudeDeg": 29.5
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 145.0,
+         "altitudeDeg": 31.0
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 142.5,
+         "altitudeDeg": 32.5
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-5",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 140.0,
+         "altitudeDeg": 34.0
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-6",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 137.5,
+         "altitudeDeg": 35.5
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-7",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 135.0,
+         "altitudeDeg": 37.0
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-8",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light of the string (\"Starlink deployment\")",
+        "fr": "lumière de la file (« déploiement Starlink »)"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 132.5,
+         "altitudeDeg": 38.5
+        },
+        "basis": "assumed",
+        "rationale": "\"a string of lights that resembled a Starlink deployment\", \"in tandem\" with the plane to the south-east: where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.3,
+       "brightness": 0.2,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 420000,
+    "shapes": [
+     {
+      "sourceId": "string-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-3",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-4",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-5",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-6",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-7",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-8",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 600000,
+    "shapes": [
+     {
+      "sourceId": "trail-upper",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 135,
+        "altitudeDeg": 28
+       }
+      }
+     },
+     {
+      "sourceId": "trail-lower",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 138,
+        "altitudeDeg": 24
+       }
+      }
+     },
+     {
+      "sourceId": "trail-upper",
+      "shape": {
+       "transparency": 0.4
+      }
+     }
+    ]
+   },
+   {
+    "t": 606000,
+    "shapes": [
+     {
+      "sourceId": "trail-upper",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "trail-lower",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 138,
+        "altitudeDeg": 24
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 610000,
+    "shapes": [
+     {
+      "sourceId": "plane",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "plane",
+        "fr": "avion"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 130,
+         "altitudeDeg": 12
+        },
+        "basis": "assumed",
+        "rationale": "\"a plane in the same direction (southeast)\""
+       },
+       "angular": {
+        "widthDeg": 0.03,
+        "heightDeg": 0.03
+       },
+       "color": "#ffffff",
+       "haloScale": 1.5,
+       "brightness": 0.3,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 612000,
+    "shapes": [
+     {
+      "sourceId": "trail-lower",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 139,
+         "altitudeDeg": 6
+        },
+        "basis": "assumed",
+        "rationale": "\"made a U turn and headed toward/falling towards the ground very quickly\""
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 700000,
+    "shapes": [
+     {
+      "sourceId": "plane",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 120,
+        "altitudeDeg": 11
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 701000,
+    "shapes": [
+     {
+      "sourceId": "plane",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 720000,
+    "shapes": [
+     {
+      "sourceId": "string-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 138.0,
+        "altitudeDeg": 36.0
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 135.5,
+        "altitudeDeg": 37.5
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 133.0,
+        "altitudeDeg": 39.0
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 130.5,
+        "altitudeDeg": 40.5
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 128.0,
+        "altitudeDeg": 42.0
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-6",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 125.5,
+        "altitudeDeg": 43.5
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-7",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 123.0,
+        "altitudeDeg": 45.0
+       },
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "string-8",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 120.5,
+        "altitudeDeg": 46.5
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 721000,
+    "shapes": [
+     {
+      "sourceId": "string-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-3",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-4",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-5",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-6",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-7",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "string-8",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 780000,
+    "shapes": [
+     {
+      "sourceId": "ridge-light",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "light source above the ridgeline",
+        "fr": "source de lumière au-dessus de la crête"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 135,
+         "altitudeDeg": 5
+        },
+        "basis": "derived",
+        "rationale": "\"just above the Southeast ridgeline\": the ridge is 4° high to the south-east of Mormon Pass"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.25,
+         "heightDeg": 0.25
+        },
+        "basis": "assumed",
+        "rationale": "no size given"
+       },
+       "color": "#ffb066",
+       "haloScale": 1.6,
+       "brightness": 0.45,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 782990,
+    "shapes": [
+     {
+      "sourceId": "small-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller light",
+        "fr": "petite lumière"
+       },
+       "aim": {
+        "azimuthDeg": 135,
+        "altitudeDeg": 5
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       },
+       "color": "#ffb066",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "small-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller light",
+        "fr": "petite lumière"
+       },
+       "aim": {
+        "azimuthDeg": 135,
+        "altitudeDeg": 5
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       },
+       "color": "#ffb066",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "small-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller light",
+        "fr": "petite lumière"
+       },
+       "aim": {
+        "azimuthDeg": 135,
+        "altitudeDeg": 5
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       },
+       "color": "#ffb066",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "small-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "smaller light",
+        "fr": "petite lumière"
+       },
+       "aim": {
+        "azimuthDeg": 135,
+        "altitudeDeg": 5
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       },
+       "color": "#ffb066",
+       "haloScale": 1.6,
+       "brightness": 0.3,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 783000,
+    "shapes": [
+     {
+      "sourceId": "small-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "small-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "small-3",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "small-4",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 784000,
+    "shapes": [
+     {
+      "sourceId": "ridge-light",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 786000,
+    "shapes": [
+     {
+      "sourceId": "ridge-light",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 810000,
+    "shapes": [
+     {
+      "sourceId": "small-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 133,
+         "altitudeDeg": 4.4
+        },
+        "basis": "assumed",
+        "rationale": "three \"form a horizontal line while the fourth traveled westward\": where, and how fast, is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "small-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 135,
+         "altitudeDeg": 4.4
+        },
+        "basis": "assumed",
+        "rationale": "three \"form a horizontal line while the fourth traveled westward\": where, and how fast, is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "small-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 137,
+         "altitudeDeg": 4.4
+        },
+        "basis": "assumed",
+        "rationale": "three \"form a horizontal line while the fourth traveled westward\": where, and how fast, is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "small-4",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 125,
+         "altitudeDeg": 4.6
+        },
+        "basis": "assumed",
+        "rationale": "three \"form a horizontal line while the fourth traveled westward\": where, and how fast, is not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1380000,
+    "shapes": [
+     {
+      "sourceId": "small-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "small-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "small-3",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "small-4",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1381000,
+    "shapes": [
+     {
+      "sourceId": "small-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "small-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "small-3",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "small-4",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Des « chemtrails » blanches montent au sud-est, à une dizaine de largeurs de doigt au-dessus de la crête ; aucun avion près d'elles.",
+    "en": "White \"chemtrails\" rise to the south-east, about ten finger widths over the ridge; no aircraft near them."
+   }
+  },
+  {
+   "t": 420000,
+   "label": "B",
+   "note": {
+    "fr": "Une file de lumières « comme un déploiement de Starlink », au sud-est.",
+    "en": "A string of lights \"that resembled a Starlink deployment\", to the south-east."
+   }
+  },
+  {
+   "t": 600000,
+   "label": "C",
+   "note": {
+    "fr": "Une traînée disparaît, celle du dessous fait demi-tour et file vers le sol ; un avion au sud-est.",
+    "en": "One trail vanishes, the one below makes a U-turn and falls to the ground; a plane to the south-east."
+   }
+  },
+  {
+   "t": 780000,
+   "label": "D",
+   "note": {
+    "fr": "Une lumière juste au-dessus de la crête sud-est produit quatre petites lumières qui descendent : trois en ligne, la quatrième vers l'ouest.",
+    "en": "A light just above the south-east ridgeline produces four smaller lights going down: three in a line, the fourth westward."
+   }
+  }
+ ]
+}

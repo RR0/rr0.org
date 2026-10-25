@@ -1,0 +1,1767 @@
+{
+ "version": 1,
+ "id": "2023-10-14-WesternUSEvent-W2-1-triangulation",
+ "description": {
+  "en": "In October 2023, my partner and I were tasked to survey an area for individuals launching drones. My partner and I were positioned in a valley, with mountain ranges to the west and east and more distant ranges to the north; we had teams positioned throughout the area as well. The weather was clear; we sat [and] watched the sunset as dusk transitioned into darkness. At approximately 1900 hours, I observed a bright circular orb-like light approximately 35-45 degrees above the northern/northeastern horizon. Originally, the light was not dissimilar to that of a luminescent planet observed in the night sky but grew slowly brighter. The bright orb-like light had a smaller red orb-like light within it. As the bright orb-like light grew larger, it expelled three or four red lights from it. The red lights accelerated instantly and maneuvered with perfect, smooth coordination into a horizontal formation. The red lights were approximately 1/15 the size of the orb-like light. [...] Following the expulsion of the smaller red lights, the bright orb-like light dimmed and faded from sight. From approximately 1900 hours to approximately 1930 hours, I witnessed the process repeat approximately five times across the northern, northeastern, and eastern horizon. Our teams confirmed they observed the same objects. The last grouping of red lights moved in a horizonal pattern to the southern horizon where they remained the rest of the evening. The three red lights were all aligned and remained equally spaced. From approximately 1930 hours until approximately 2300 hours, the red lights hovered above the southern horizon. The red lights sometime dipped below the horizon, out of sight but consistently rose back up. At approximately 2300 hours we departed the area. There were no acoustics, interreference or physiological effects experienced during the incident.",
+  "fr": "En octobre 2023, mon coéquipier et moi étions chargés de surveiller un secteur à la recherche de personnes lançant des drones. Nous étions postés dans une vallée, avec des chaînes de montagnes à l'ouest et à l'est et d'autres plus lointaines au nord ; d'autres équipes étaient postées dans tout le secteur. Le temps était clair ; nous avons regardé le soleil se coucher et le crépuscule passer à l'obscurité. Vers 19 h, j'ai vu une lumière ronde et brillante, semblable à une orbe, à environ 35-45 degrés au-dessus de l'horizon nord/nord-est. Au début, elle ressemblait à une planète lumineuse dans le ciel nocturne, mais elle est devenue lentement plus brillante. Elle contenait une lumière rouge plus petite. En grossissant, elle a expulsé trois ou quatre lumières rouges, qui ont accéléré instantanément et se sont placées, avec une coordination parfaite et fluide, en formation horizontale. Les lumières rouges faisaient environ 1/15 de la taille de l'orbe. [...] Après l'expulsion, l'orbe a pâli et disparu. De 19 h à 19 h 30 environ, j'ai vu la scène se répéter environ cinq fois sur l'horizon nord, nord-est et est. Nos équipes ont confirmé avoir vu les mêmes objets. Le dernier groupe de lumières rouges s'est déplacé horizontalement vers l'horizon sud, où il est resté le reste de la soirée. Les trois lumières rouges étaient alignées et restaient à égale distance. De 19 h 30 à 23 h environ, elles ont plané au-dessus de l'horizon sud ; elles plongeaient parfois sous l'horizon, hors de vue, mais remontaient toujours. Nous sommes partis vers 23 h. Il n'y a eu ni bruit, ni interférence, ni effet physiologique."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 14,
+   "hour": 19,
+   "minute": 0,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the first of the two evenings (\"two days in October 2023\", AARO), taken as 2023-10-14: witness 4's second evening, with its Starlink train to the south-east, is best matched by the 15th"
+ },
+ "durationSeconds": {
+  "value": 1800,
+  "basis": "stated",
+  "rationale": "\"From approximately 1900 hours to approximately 1930 hours\"; the red lights stay over the southern horizon until about 23:00, which the recording does not run to"
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.44565,
+    "lng": -115.35894,
+    "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 2 was \"positioned in a valley, with mountain ranges to the west and east and more distant ranges to the north\": Desert Valley, at its southern mouth, whose horizon to the south is the flat Las Vegas Valley (0.4° high)"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W2",
+  "title": {
+   "fr": "Témoin 2",
+   "en": "Witness 2"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D080, Narrative Statement 2, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D080_Narrative-2_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": {
+      "value": 22,
+      "basis": "derived",
+      "rationale": "towards the first orb"
+     },
+     "pitchDeg": 25
+    }
+   },
+   {
+    "t": 300000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 22,
+     "pitchDeg": 25
+    }
+   },
+   {
+    "t": 360000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 10,
+     "pitchDeg": 22
+    }
+   },
+   {
+    "t": 720000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 45,
+     "pitchDeg": 22
+    }
+   },
+   {
+    "t": 1080000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 65,
+     "pitchDeg": 20
+    }
+   },
+   {
+    "t": 1440000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 90,
+     "pitchDeg": 20
+    }
+   },
+   {
+    "t": 1460000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 90,
+     "pitchDeg": 20
+    }
+   },
+   {
+    "t": 1520000,
+    "pose": {
+     "lat": 36.44565,
+     "lng": -115.35894,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": {
+      "value": 180,
+      "basis": "assumed",
+      "rationale": "the gaze follows the last red lights to the south"
+     },
+     "pitchDeg": 5
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "orb-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "bright orb-like light",
+        "fr": "lumière brillante semblable à une orbe"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 22,
+         "altitudeDeg": 40
+        },
+        "basis": "derived",
+        "rationale": "\"approximately 35-45 degrees above the northern/northeastern horizon\""
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "derived",
+        "rationale": "\"not dissimilar to that of a luminescent planet\": a point"
+       },
+       "color": "#ffe0a8",
+       "haloScale": 1.5,
+       "brightness": 0.3,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "orb-1",
+      "shape": {
+       "angular": {
+        "value": {
+         "widthDeg": 0.5,
+         "heightDeg": 0.5
+        },
+        "basis": "assumed",
+        "rationale": "\"grew slowly brighter ... grew larger\": how large is not said"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 9990,
+    "shapes": [
+     {
+      "sourceId": "red-1-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 22,
+        "altitudeDeg": 40
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-1-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 22,
+        "altitudeDeg": 40
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-1-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 22,
+        "altitudeDeg": 40
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "red-1-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-1-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-1-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "orb-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-1-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 20.5,
+         "altitudeDeg": 40
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-1-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 22.0,
+         "altitudeDeg": 40
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-1-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 23.5,
+         "altitudeDeg": 40
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 15000,
+    "shapes": [
+     {
+      "sourceId": "orb-1",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 20000,
+    "shapes": [
+     {
+      "sourceId": "red-1-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-1-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-1-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 23000,
+    "shapes": [
+     {
+      "sourceId": "red-1-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-1-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-1-3",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 360000,
+    "shapes": [
+     {
+      "sourceId": "orb-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "bright orb-like light",
+        "fr": "lumière brillante semblable à une orbe"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 0,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"across the northern, northeastern, and eastern horizon\": the bearing and height of each repetition are not given"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "derived",
+        "rationale": "\"not dissimilar to that of a luminescent planet\": a point"
+       },
+       "color": "#ffe0a8",
+       "haloScale": 1.5,
+       "brightness": 0.3,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 368000,
+    "shapes": [
+     {
+      "sourceId": "orb-2",
+      "shape": {
+       "angular": {
+        "value": {
+         "widthDeg": 0.5,
+         "heightDeg": 0.5
+        },
+        "basis": "assumed",
+        "rationale": "\"grew slowly brighter ... grew larger\": how large is not said"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 369990,
+    "shapes": [
+     {
+      "sourceId": "red-2-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 0,
+        "altitudeDeg": 35
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-2-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 0,
+        "altitudeDeg": 35
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-2-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 0,
+        "altitudeDeg": 35
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 370000,
+    "shapes": [
+     {
+      "sourceId": "red-2-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-2-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-2-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 371000,
+    "shapes": [
+     {
+      "sourceId": "orb-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-2-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": -1.5,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-2-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 0.0,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-2-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 1.5,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 375000,
+    "shapes": [
+     {
+      "sourceId": "orb-2",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 380000,
+    "shapes": [
+     {
+      "sourceId": "red-2-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-2-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-2-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 383000,
+    "shapes": [
+     {
+      "sourceId": "red-2-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-2-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-2-3",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 720000,
+    "shapes": [
+     {
+      "sourceId": "orb-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "bright orb-like light",
+        "fr": "lumière brillante semblable à une orbe"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 45,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "idem"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "derived",
+        "rationale": "\"not dissimilar to that of a luminescent planet\": a point"
+       },
+       "color": "#ffe0a8",
+       "haloScale": 1.5,
+       "brightness": 0.3,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 728000,
+    "shapes": [
+     {
+      "sourceId": "orb-3",
+      "shape": {
+       "angular": {
+        "value": {
+         "widthDeg": 0.5,
+         "heightDeg": 0.5
+        },
+        "basis": "assumed",
+        "rationale": "\"grew slowly brighter ... grew larger\": how large is not said"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 729990,
+    "shapes": [
+     {
+      "sourceId": "red-3-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 45,
+        "altitudeDeg": 35
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-3-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 45,
+        "altitudeDeg": 35
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-3-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 45,
+        "altitudeDeg": 35
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 730000,
+    "shapes": [
+     {
+      "sourceId": "red-3-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-3-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-3-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 731000,
+    "shapes": [
+     {
+      "sourceId": "orb-3",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-3-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 43.5,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-3-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 45.0,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-3-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 46.5,
+         "altitudeDeg": 35
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 735000,
+    "shapes": [
+     {
+      "sourceId": "orb-3",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 740000,
+    "shapes": [
+     {
+      "sourceId": "red-3-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-3-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-3-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 743000,
+    "shapes": [
+     {
+      "sourceId": "red-3-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-3-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-3-3",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 1080000,
+    "shapes": [
+     {
+      "sourceId": "orb-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "bright orb-like light",
+        "fr": "lumière brillante semblable à une orbe"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 65,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "idem"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "derived",
+        "rationale": "\"not dissimilar to that of a luminescent planet\": a point"
+       },
+       "color": "#ffe0a8",
+       "haloScale": 1.5,
+       "brightness": 0.3,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1088000,
+    "shapes": [
+     {
+      "sourceId": "orb-4",
+      "shape": {
+       "angular": {
+        "value": {
+         "widthDeg": 0.5,
+         "heightDeg": 0.5
+        },
+        "basis": "assumed",
+        "rationale": "\"grew slowly brighter ... grew larger\": how large is not said"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1089990,
+    "shapes": [
+     {
+      "sourceId": "red-4-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 65,
+        "altitudeDeg": 30
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-4-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 65,
+        "altitudeDeg": 30
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-4-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 65,
+        "altitudeDeg": 30
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 1090000,
+    "shapes": [
+     {
+      "sourceId": "red-4-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-4-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-4-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1091000,
+    "shapes": [
+     {
+      "sourceId": "orb-4",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-4-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 63.5,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-4-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 65.0,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-4-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 66.5,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1095000,
+    "shapes": [
+     {
+      "sourceId": "orb-4",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 1100000,
+    "shapes": [
+     {
+      "sourceId": "red-4-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-4-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-4-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1103000,
+    "shapes": [
+     {
+      "sourceId": "red-4-1",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-4-2",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-4-3",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 1440000,
+    "shapes": [
+     {
+      "sourceId": "orb-5",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "bright orb-like light",
+        "fr": "lumière brillante semblable à une orbe"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 90,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "idem"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "derived",
+        "rationale": "\"not dissimilar to that of a luminescent planet\": a point"
+       },
+       "color": "#ffe0a8",
+       "haloScale": 1.5,
+       "brightness": 0.3,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1448000,
+    "shapes": [
+     {
+      "sourceId": "orb-5",
+      "shape": {
+       "angular": {
+        "value": {
+         "widthDeg": 0.5,
+         "heightDeg": 0.5
+        },
+        "basis": "assumed",
+        "rationale": "\"grew slowly brighter ... grew larger\": how large is not said"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1449990,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 90,
+        "altitudeDeg": 30
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 90,
+        "altitudeDeg": 30
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red light",
+        "fr": "lumière rouge"
+       },
+       "aim": {
+        "azimuthDeg": 90,
+        "altitudeDeg": 30
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.033,
+         "heightDeg": 0.033
+        },
+        "basis": "stated",
+        "rationale": "\"approximately 1/15 the size of the orb-like light\""
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.4,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 1450000,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 1451000,
+    "shapes": [
+     {
+      "sourceId": "orb-5",
+      "shape": {
+       "transparency": 0
+      }
+     },
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 88.5,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 90.0,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 91.5,
+         "altitudeDeg": 30
+        },
+        "basis": "assumed",
+        "rationale": "\"accelerated instantly ... into a horizontal formation\": the spacing is not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1455000,
+    "shapes": [
+     {
+      "sourceId": "orb-5",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 1460000,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 88.5,
+        "altitudeDeg": 30
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 90.0,
+        "altitudeDeg": 30
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 91.5,
+        "altitudeDeg": 30
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1520000,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 178.5,
+         "altitudeDeg": 2
+        },
+        "basis": "assumed",
+        "rationale": "\"moved in a horizonal pattern to the southern horizon\": how fast, and how high above it, are not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 180.0,
+         "altitudeDeg": 2
+        },
+        "basis": "assumed",
+        "rationale": "\"moved in a horizonal pattern to the southern horizon\": how fast, and how high above it, are not given"
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 181.5,
+         "altitudeDeg": 2
+        },
+        "basis": "assumed",
+        "rationale": "\"moved in a horizonal pattern to the southern horizon\": how fast, and how high above it, are not given"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1640000,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 178.5,
+        "altitudeDeg": 2
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 180.0,
+        "altitudeDeg": 2
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 181.5,
+        "altitudeDeg": 2
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1655000,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 178.5,
+        "altitudeDeg": -0.5
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 180.0,
+        "altitudeDeg": -0.5
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 181.5,
+        "altitudeDeg": -0.5
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1675000,
+    "shapes": [
+     {
+      "sourceId": "red-5-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 178.5,
+        "altitudeDeg": 2
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 180.0,
+        "altitudeDeg": 2
+       }
+      }
+     },
+     {
+      "sourceId": "red-5-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 181.5,
+        "altitudeDeg": 2
+       }
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "1",
+   "note": {
+    "fr": "Orbe n° 1 au nord-nord-est, vers 19 h : d'abord comme une planète, elle grossit, expulse trois lumières rouges qui se rangent à l'horizontale, puis pâlit et disparaît.",
+    "en": "Orb 1 to the north-north-east, about 19:00: like a planet at first, it grows, expels three red lights that line up horizontally, then dims and fades."
+   }
+  },
+  {
+   "t": 360000,
+   "label": "2",
+   "note": {
+    "fr": "Orbe n° 2 au nord : d'abord comme une planète, elle grossit, expulse trois lumières rouges qui se rangent à l'horizontale, puis pâlit et disparaît.",
+    "en": "Orb 2 to the north: like a planet at first, it grows, expels three red lights that line up horizontally, then dims and fades."
+   }
+  },
+  {
+   "t": 720000,
+   "label": "3",
+   "note": {
+    "fr": "Orbe n° 3 au nord-est : d'abord comme une planète, elle grossit, expulse trois lumières rouges qui se rangent à l'horizontale, puis pâlit et disparaît.",
+    "en": "Orb 3 to the north-east: like a planet at first, it grows, expels three red lights that line up horizontally, then dims and fades."
+   }
+  },
+  {
+   "t": 1080000,
+   "label": "4",
+   "note": {
+    "fr": "Orbe n° 4 à l'est-nord-est : d'abord comme une planète, elle grossit, expulse trois lumières rouges qui se rangent à l'horizontale, puis pâlit et disparaît.",
+    "en": "Orb 4 to the east-north-east: like a planet at first, it grows, expels three red lights that line up horizontally, then dims and fades."
+   }
+  },
+  {
+   "t": 1440000,
+   "label": "5",
+   "note": {
+    "fr": "Orbe n° 5 à l'est : d'abord comme une planète, elle grossit, expulse trois lumières rouges qui se rangent à l'horizontale, puis pâlit et disparaît.",
+    "en": "Orb 5 to the east: like a planet at first, it grows, expels three red lights that line up horizontally, then dims and fades."
+   }
+  },
+  {
+   "t": 1520000,
+   "label": "S",
+   "note": {
+    "fr": "Les dernières lumières rouges arrivent à l'horizon sud, où elles planent jusque vers 23 h, plongeant parfois dessous.",
+    "en": "The last red lights reach the southern horizon, where they hover until about 23:00, sometimes dipping below it."
+   }
+  },
+  {
+   "t": 1655000,
+   "label": "↓",
+   "note": {
+    "fr": "« Les lumières rouges plongeaient parfois sous l'horizon, hors de vue, mais remontaient toujours » (une plongée montrée ; l'instant n'est pas dit).",
+    "en": "\"The red lights sometime dipped below the horizon, out of sight but consistently rose back up\" (one dip shown; when is not said)."
+   }
+  }
+ ],
+ "durationText": "PT30M~",
+ "interpretation": {
+  "title": {
+   "fr": "Triangulation : une seule source pour les témoins 2 et 3, à 9,4 km de haut",
+   "en": "Triangulation: one source for witnesses 2 and 3, 9.4 km up"
+  },
+  "bodies": [
+   {
+    "id": "common-source",
+    "title": {
+     "fr": "source commune",
+     "en": "common source"
+    },
+    "explains": [
+     "orb-1"
+    ],
+    "model": {
+     "id": "sphere"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": {
+       "value": 4878,
+       "basis": "derived",
+       "rationale": "where witness 2's first orb (\"35-45 degrees above the northern/northeastern horizon\", about 19:00) and witness 3's orb (\"looking east\", \"at approximately 45 degrees\", about 19:00) are one and the same: the median of 19004 crossings of their lines of sight within 1.5°, drawn from those margins and with both observers anywhere along the valley's road, give the envelope; the point is where the two lines cross as the recordings state them (1379 m apart). 80% of the crossings between 4.3 and 16.5 km above the valley, 7-26 km from witness 2 and 6-22 km from witness 3"
+      },
+      "northM": 11150,
+      "altitudeM": 9431,
+      "sizeM": {
+       "widthM": 2,
+       "heightM": 2,
+       "lengthM": 2
+      },
+      "present": true,
+      "appearance": {
+       "color": "#ffd9a0",
+       "luminanceCdM2": {
+        "value": 6366,
+        "basis": "assumed",
+        "rationale": "a point of light of 20,000 cd, a flare's (see DecoyFlare.MJU_7): its size and brightness are not what is triangulated"
+       },
+       "haloScale": 1
+      }
+     },
+     {
+      "t": 15000,
+      "eastM": 4878,
+      "northM": 11150,
+      "altitudeM": 9431
+     },
+     {
+      "t": 15001,
+      "present": false
+     }
+    ]
+   }
+  ]
+ }
+}

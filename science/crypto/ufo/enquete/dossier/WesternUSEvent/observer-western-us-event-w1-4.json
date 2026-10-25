@@ -1,0 +1,1155 @@
+{
+ "version": 1,
+ "id": "2023-10-16-WesternUSEvent-W1-4",
+ "description": {
+  "en": "Several hours later we departed from where we were at to drive to another location in preparation for work the next day. It took several hours of driving, and as we were driving hours later still, we observed a car driving ahead of us on the road, we were gaining on the car and as we got closer I noticed it appeared one taillight cover was broken because one taillight was red and one was white. They were also different because one was round and one was square. Another vehicle approached from the opposite direction and as it was about to pass the vehicle in front of us, the car changed direction and moved off the road to the right. The oncoming vehicle continued driving and passed us, almost like it did not even see the vehicle move of the road as it passed. It did not bounce or move with the terrain, but seemed to hover. It did not kick up any dust either. It stopped on the road next to it, and the lights appeared to be in the same position facing us even though we were in a different direction from it. When we stopped the lights turned off and I could see a darker object moving up and toward behind us as it flew away. When we stopped we already had the windows rolled down and I did not notice any sound at any point. It reminded me of a Toyota Prius for some reason. It was hard to identify the exact shape though. The hillside was about 200 meters away, and when it stopped it was less than halfway to the base of the hillside.",
+  "fr": "Quelques heures plus tard, nous sommes partis vers un autre endroit pour le travail du lendemain. Il a fallu plusieurs heures de route, et alors que nous roulions encore, des heures plus tard, nous avons vu une voiture devant nous sur la route. Nous la rattrapions, et en approchant j'ai remarqué qu'un cabochon de feu arrière semblait cassé, car un feu était rouge et l'autre blanc ; ils différaient aussi par la forme, l'un rond, l'autre carré. Un autre véhicule est arrivé en sens inverse et, au moment de croiser la voiture devant nous, celle-ci a changé de direction et quitté la route vers la droite. Le véhicule d'en face a continué et nous a croisés, presque comme s'il n'avait rien vu. La voiture ne rebondissait pas, ne suivait pas le terrain, elle semblait flotter, sans soulever de poussière. Elle s'est arrêtée, et les feux semblaient dans la même position, tournés vers nous, bien que nous soyons dans une autre direction. Quand nous nous sommes arrêtés, les feux se sont éteints et j'ai vu une forme plus sombre monter et partir vers l'arrière de notre véhicule en s'éloignant. Nos vitres étaient déjà baissées et je n'ai remarqué aucun bruit. Elle m'a fait penser à une Toyota Prius, sans que je puisse en distinguer la forme exacte. Le flanc de colline était à environ 200 m, et quand elle s'est arrêtée, elle était à moins de la moitié du chemin jusqu'à son pied."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 16,
+   "hour": 4,
+   "minute": 30,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"as we were driving hours later still\"; witness 5, in the same vehicle, says \"Around 0430\""
+ },
+ "durationSeconds": {
+  "value": 25,
+  "basis": "assumed",
+  "rationale": "the time it takes to catch up, stop and see it go: not given"
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.791768,
+    "lng": -116.01482,
+    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W1",
+  "title": {
+   "fr": "Témoin 1",
+   "en": "Witness 1"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D079, Narrative Statement 1, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.791768,
+     "lng": -116.01482,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 2000,
+    "pose": {
+     "lat": 36.792022,
+     "lng": -116.014775,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 36.792249,
+     "lng": -116.014736,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 36.792449,
+     "lng": -116.0147,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 36.792623,
+     "lng": -116.01467,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 10000,
+    "pose": {
+     "lat": 36.79277,
+     "lng": -116.014644,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 12000,
+    "pose": {
+     "lat": 36.79289,
+     "lng": -116.014623,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 14000,
+    "pose": {
+     "lat": 36.792983,
+     "lng": -116.014607,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 16000,
+    "pose": {
+     "lat": 36.79305,
+     "lng": -116.014595,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 8.0,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 18000,
+    "pose": {
+     "lat": 36.79309,
+     "lng": -116.014588,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 30,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 20000,
+    "pose": {
+     "lat": 36.793104,
+     "lng": -116.014586,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": 50,
+     "pitchDeg": 0
+    }
+   },
+   {
+    "t": 22500,
+    "pose": {
+     "lat": 36.793104,
+     "lng": -116.014586,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": 120,
+     "pitchDeg": 10
+    }
+   },
+   {
+    "t": 24000,
+    "pose": {
+     "lat": 36.793104,
+     "lng": -116.014586,
+     "elevationM": 0,
+     "fovDeg": 70,
+     "headingDeg": {
+      "value": 160,
+      "basis": "assumed",
+      "rationale": "he watches it go \"up and toward behind us\""
+     },
+     "pitchDeg": 20
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "kind": "polygon",
+       "title": {
+        "en": "white, square taillight",
+        "fr": "feu arrière blanc carré"
+       },
+       "points": [
+        {
+         "x": 0,
+         "y": 0
+        },
+        {
+         "x": 1,
+         "y": 0
+        },
+        {
+         "x": 1,
+         "y": 1
+        },
+        {
+         "x": 0,
+         "y": 1
+        }
+       ],
+       "color": "#f2f6ff",
+       "haloScale": 1.5,
+       "brightness": 0.35,
+       "transparency": 0,
+       "aim": {
+        "value": {
+         "azimuthDeg": 8.0,
+         "altitudeDeg": -0.35
+        },
+        "basis": "derived",
+        "rationale": "derived from his account — \"a car driving ahead of us ... we were gaining on the car\", it \"moved off the road to the right\", \"less than halfway to the base of the hillside\" about 200 m away, then \"a darker object moving up and toward behind us\" — on the same drive as witness 5's; its speeds and the height of the lights (witness 5's 2-3 ft) are assumed"
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "red, round taillight",
+        "fr": "feu arrière rouge rond"
+       },
+       "color": "#ff2a14",
+       "haloScale": 1.5,
+       "brightness": 0.35,
+       "transparency": 0,
+       "aim": {
+        "azimuthDeg": 7.62,
+        "altitudeDeg": -0.34
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 1000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.42
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.6,
+        "altitudeDeg": -0.41
+       },
+       "angular": {
+        "widthDeg": 0.05,
+        "heightDeg": 0.05
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 2000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.52
+       },
+       "angular": {
+        "widthDeg": 0.053,
+        "heightDeg": 0.053
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.57,
+        "altitudeDeg": -0.52
+       },
+       "angular": {
+        "widthDeg": 0.053,
+        "heightDeg": 0.053
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.59
+       },
+       "angular": {
+        "widthDeg": 0.056,
+        "heightDeg": 0.056
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.55,
+        "altitudeDeg": -0.59
+       },
+       "angular": {
+        "widthDeg": 0.056,
+        "heightDeg": 0.056
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.67
+       },
+       "angular": {
+        "widthDeg": 0.059,
+        "heightDeg": 0.059
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.53,
+        "altitudeDeg": -0.67
+       },
+       "angular": {
+        "widthDeg": 0.059,
+        "heightDeg": 0.059
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.75
+       },
+       "angular": {
+        "widthDeg": 0.062,
+        "heightDeg": 0.062
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.51,
+        "altitudeDeg": -0.75
+       },
+       "angular": {
+        "widthDeg": 0.062,
+        "heightDeg": 0.062
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.85
+       },
+       "angular": {
+        "widthDeg": 0.064,
+        "heightDeg": 0.064
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.48,
+        "altitudeDeg": -0.84
+       },
+       "angular": {
+        "widthDeg": 0.064,
+        "heightDeg": 0.064
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -0.95
+       },
+       "angular": {
+        "widthDeg": 0.067,
+        "heightDeg": 0.067
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.46,
+        "altitudeDeg": -0.94
+       },
+       "angular": {
+        "widthDeg": 0.067,
+        "heightDeg": 0.067
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -1.04
+       },
+       "angular": {
+        "widthDeg": 0.069,
+        "heightDeg": 0.069
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.45,
+        "altitudeDeg": -1.03
+       },
+       "angular": {
+        "widthDeg": 0.069,
+        "heightDeg": 0.069
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 9000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -1.14
+       },
+       "angular": {
+        "widthDeg": 0.071,
+        "heightDeg": 0.071
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.43,
+        "altitudeDeg": -1.13
+       },
+       "angular": {
+        "widthDeg": 0.071,
+        "heightDeg": 0.071
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -1.19
+       },
+       "angular": {
+        "widthDeg": 0.073,
+        "heightDeg": 0.073
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.41,
+        "altitudeDeg": -1.19
+       },
+       "angular": {
+        "widthDeg": 0.073,
+        "heightDeg": 0.073
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -1.24
+       },
+       "angular": {
+        "widthDeg": 0.074,
+        "heightDeg": 0.074
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.4,
+        "altitudeDeg": -1.23
+       },
+       "angular": {
+        "widthDeg": 0.074,
+        "heightDeg": 0.074
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 12000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.0,
+        "altitudeDeg": -1.28
+       },
+       "angular": {
+        "widthDeg": 0.075,
+        "heightDeg": 0.075
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.4,
+        "altitudeDeg": -1.27
+       },
+       "angular": {
+        "widthDeg": 0.075,
+        "heightDeg": 0.075
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 13000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.81,
+        "altitudeDeg": -1.33
+       },
+       "angular": {
+        "widthDeg": 0.078,
+        "heightDeg": 0.078
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 8.18,
+        "altitudeDeg": -1.31
+       },
+       "angular": {
+        "widthDeg": 0.078,
+        "heightDeg": 0.078
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 14000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 9.67,
+        "altitudeDeg": -1.36
+       },
+       "angular": {
+        "widthDeg": 0.081,
+        "heightDeg": 0.081
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 9.02,
+        "altitudeDeg": -1.34
+       },
+       "angular": {
+        "widthDeg": 0.081,
+        "heightDeg": 0.081
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 15000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 10.56,
+        "altitudeDeg": -1.39
+       },
+       "angular": {
+        "widthDeg": 0.083,
+        "heightDeg": 0.083
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 9.9,
+        "altitudeDeg": -1.38
+       },
+       "angular": {
+        "widthDeg": 0.083,
+        "heightDeg": 0.083
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 16000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 11.48,
+        "altitudeDeg": -1.42
+       },
+       "angular": {
+        "widthDeg": 0.084,
+        "heightDeg": 0.084
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 10.81,
+        "altitudeDeg": -1.41
+       },
+       "angular": {
+        "widthDeg": 0.084,
+        "heightDeg": 0.084
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 17000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 14.65,
+        "altitudeDeg": -1.48
+       },
+       "angular": {
+        "widthDeg": 0.085,
+        "heightDeg": 0.085
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 13.97,
+        "altitudeDeg": -1.48
+       },
+       "angular": {
+        "widthDeg": 0.085,
+        "heightDeg": 0.085
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 18000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 17.81,
+        "altitudeDeg": -1.55
+       },
+       "angular": {
+        "widthDeg": 0.085,
+        "heightDeg": 0.085
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 17.14,
+        "altitudeDeg": -1.54
+       },
+       "angular": {
+        "widthDeg": 0.085,
+        "heightDeg": 0.085
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 19000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 20.87,
+        "altitudeDeg": -1.61
+       },
+       "angular": {
+        "widthDeg": 0.084,
+        "heightDeg": 0.084
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 20.21,
+        "altitudeDeg": -1.6
+       },
+       "angular": {
+        "widthDeg": 0.084,
+        "heightDeg": 0.084
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 20000,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 23.75,
+        "altitudeDeg": -1.64
+       },
+       "angular": {
+        "widthDeg": 0.083,
+        "heightDeg": 0.083
+       }
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 23.11,
+        "altitudeDeg": -1.63
+       },
+       "angular": {
+        "widthDeg": 0.083,
+        "heightDeg": 0.083
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 20490,
+    "shapes": [
+     {
+      "sourceId": "dark-object",
+      "shape": {
+       "kind": "polygon",
+       "title": {
+        "en": "darker object (\"a Toyota Prius\")",
+        "fr": "forme plus sombre (« une Toyota Prius »)"
+       },
+       "points": [
+        {
+         "x": 0,
+         "y": 0.75
+        },
+        {
+         "x": 0.15,
+         "y": 0.35
+        },
+        {
+         "x": 0.45,
+         "y": 0.1
+        },
+        {
+         "x": 0.8,
+         "y": 0.2
+        },
+        {
+         "x": 1,
+         "y": 0.75
+        }
+       ],
+       "color": "#20242a",
+       "haloScale": 0,
+       "brightness": 0,
+       "transparency": 1,
+       "aim": {
+        "azimuthDeg": 23.75,
+        "altitudeDeg": -1.64
+       },
+       "angular": {
+        "widthDeg": 2.48,
+        "heightDeg": 0.8266666666666667
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 20500,
+    "shapes": [
+     {
+      "sourceId": "white-taillight",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "red-taillight",
+      "shape": {
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "dark-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 23.75,
+        "altitudeDeg": -1.64
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 2.48,
+         "heightDeg": 0.8266666666666667
+        },
+        "basis": "assumed",
+        "rationale": "\"It reminded me of a Toyota Prius\": a car's 4.5 m, at its distance"
+       },
+       "transparency": 0.3
+      }
+     }
+    ]
+   },
+   {
+    "t": 22000,
+    "shapes": [
+     {
+      "sourceId": "dark-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 27.33,
+        "altitudeDeg": 2.75
+       },
+       "angular": {
+        "widthDeg": 3.697,
+        "heightDeg": 1.2323333333333333
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 24000,
+    "shapes": [
+     {
+      "sourceId": "dark-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 47.01,
+        "altitudeDeg": 24.62
+       },
+       "angular": {
+        "widthDeg": 9.088,
+        "heightDeg": 3.029333333333333
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 24500,
+    "shapes": [
+     {
+      "sourceId": "dark-object",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Une « voiture » devant eux, qu'ils rattrapent ; un feu arrière rouge et rond, l'autre blanc et carré.",
+    "en": "A \"car\" ahead that they are catching up with; one taillight red and round, the other white and square."
+   }
+  },
+  {
+   "t": 8000,
+   "label": "B",
+   "note": {
+    "fr": "Un véhicule arrive en sens inverse.",
+    "en": "A vehicle comes the other way."
+   }
+  },
+  {
+   "t": 12000,
+   "label": "C",
+   "note": {
+    "fr": "Au moment de le croiser, la « voiture » quitte la route vers la droite, sans rebondir ni soulever de poussière, comme en flottant.",
+    "en": "As it is about to pass it, the \"car\" leaves the road to the right, without bouncing or raising dust, as if hovering."
+   }
+  },
+  {
+   "t": 20000,
+   "label": "D",
+   "note": {
+    "fr": "Ils s'arrêtent ; elle aussi, à moins de mi-chemin du pied de la colline ; les feux semblent tournés vers eux.",
+    "en": "They stop; so does it, less than halfway to the foot of the hill; the lights seem to face them."
+   }
+  },
+  {
+   "t": 20500,
+   "label": "E",
+   "note": {
+    "fr": "Les feux s'éteignent : une forme plus sombre, « comme une Toyota Prius », monte et part vers l'arrière ; aucun bruit, vitres baissées.",
+    "en": "The lights go off: a darker object, \"a Toyota Prius\", goes up and off behind them; no sound, windows down."
+   }
+  }
+ ],
+ "decor": [
+  {
+   "id": "oncoming",
+   "kind": "vehicle",
+   "title": {
+    "fr": "véhicule venant en sens inverse",
+    "en": "vehicle coming the other way"
+   },
+   "eastM": 79.94,
+   "northM": 594.66,
+   "headingDeg": 188.0,
+   "headlights": "dipped",
+   "track": [
+    {
+     "t": 0,
+     "eastM": 107.82,
+     "northM": 792.75,
+     "headingDeg": 188.0
+    },
+    {
+     "t": 8000,
+     "eastM": 79.92,
+     "northM": 594.65,
+     "headingDeg": 188.0
+    },
+    {
+     "t": 20000,
+     "eastM": 38.22,
+     "northM": 297.55,
+     "headingDeg": 188.0
+    },
+    {
+     "t": 26000,
+     "eastM": 17.32,
+     "northM": 149.05,
+     "headingDeg": 188.0
+    },
+    {
+     "t": 40000,
+     "eastM": -31.38,
+     "northM": -197.55,
+     "headingDeg": 188.0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "version": 1,
+ "id": "2023-10-15-WesternUSEvent-W5-1",
+ "description": {
+  "en": "We found our turn off towards [redacted] just before the sign' Wildlife National park\" (?name). The road was unpaved and rough. There were signs saying to not sleep in vehicle when we entered. [...] The sun was setting, but there was still sunlight to see the mountain formations. On this road, ahead and slightly to our right, at 1858, we noticed a large orange light. Upon closer look, the orange light appeared to be placed on something, although nothing could be identified to be holding it up. It seemed to be hovering with zero resistance or movement, or to be suspended just over a distinctive peak in the ridge line. I think the light lasted less than or about a minute, but it was longer than just a flash of light.",
+  "fr": "Nous avons trouvé notre embranchement vers [caviardé] juste avant le panneau « Wildlife National park » (?nom). La route n'était pas goudronnée et en mauvais état. Des panneaux disaient de ne pas dormir dans son véhicule. [...] Le soleil se couchait, mais il restait assez de lumière pour voir les formations montagneuses. Sur cette route, devant nous et légèrement à droite, à 18 h 58, nous avons remarqué une grande lumière orange. En y regardant de plus près, elle semblait posée sur quelque chose, sans qu'on puisse voir ce qui la soutenait. Elle semblait flotter sans aucune résistance ni mouvement, ou être suspendue juste au-dessus d'un pic distinctif de la ligne de crête. Je pense qu'elle a duré moins d'une minute ou environ une minute, mais plus longtemps qu'un simple éclair."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 15,
+   "hour": 18,
+   "minute": 58,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening; \"at 1858\""
+ },
+ "durationSeconds": {
+  "value": 55,
+  "basis": "stated",
+  "rationale": "\"less than or about a minute\""
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.71286,
+    "lng": -115.26767,
+    "name": "White Rock Road, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W5",
+  "title": {
+   "fr": "Témoin 5",
+   "en": "Witness 5"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D083, Narrative Statement 5, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D083_Narrative-5_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.71286,
+     "lng": -115.26767,
+     "elevationM": 0,
+     "fovDeg": 50,
+     "headingDeg": {
+      "value": 300,
+      "basis": "assumed",
+      "rationale": "driving west-north-west on the road, the light \"ahead and slightly to our right\""
+     },
+     "pitchDeg": 4
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "fiery-orb",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "large orange light",
+        "fr": "grande lumière orange"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 321,
+         "altitudeDeg": 6.1
+        },
+        "basis": "derived",
+        "rationale": "\"suspended just over a distinctive peak in the ridge line\": the candidate peak's top is at 5.5°, the light's half-width above it"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.65,
+         "heightDeg": 0.65
+        },
+        "basis": "derived",
+        "rationale": "AARO's summary: estimated by the agents at 500-600 m and the size of a \"small helicopter cockpit\"; witness 1 (the same team): \"20 feet or more\" at 500-600 m, 0.6-0.7°"
+       },
+       "color": "#ff7a1a",
+       "haloScale": 1.6,
+       "brightness": 0.5,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 50000,
+    "shapes": [
+     {
+      "sourceId": "fiery-orb",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 55000,
+    "shapes": [
+     {
+      "sourceId": "fiery-orb",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "18 h 58 : devant et légèrement à droite, une grande lumière orange, comme posée au-dessus d'un pic distinctif de la crête, sans rien qui la soutienne.",
+    "en": "18:58: ahead and slightly right, a large orange light, as if placed just over a distinctive peak of the ridge, with nothing holding it up."
+   }
+  },
+  {
+   "t": 55000,
+   "label": "B",
+   "note": {
+    "fr": "Elle ne se voit plus : « moins d'une minute ou environ une minute, mais plus qu'un simple éclair ».",
+    "en": "It is gone: \"less than or about a minute, but it was longer than just a flash of light\"."
+   }
+  }
+ ]
+}

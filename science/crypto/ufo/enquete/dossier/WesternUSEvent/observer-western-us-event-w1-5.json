@@ -1,0 +1,515 @@
+{
+ "version": 1,
+ "id": "2023-10-16-WesternUSEvent-W1-5",
+ "description": {
+  "en": "We started looking around the area and approximately an hour or two later as we were stopped we observed some dust and thick spider web looking material floating in-front of us. We then saw what looked like the same object floating in a more vertical orientation floating with the dust. It was still at an off angle. I could see where the spots were for the two lights and one being round and the other square. The lights were not on though. The object itself was still hard to define its shape and borders visually. It was in the air about 15-20 feet up and as it floated past I could see a star through the object, as well as the crest of the hill and some vegetation. It was almost like looking at something through water where it was not completely clear.",
+  "fr": "Nous avons commencé à chercher dans le secteur et, une heure ou deux plus tard, alors que nous étions arrêtés, nous avons vu de la poussière et une matière ressemblant à une épaisse toile d'araignée flotter devant nous. Puis nous avons vu ce qui semblait être le même objet, flottant plus à la verticale avec la poussière, toujours en biais. Je voyais l'emplacement des deux feux, l'un rond, l'autre carré, mais ils n'étaient pas allumés. Sa forme et ses contours restaient difficiles à distinguer. Il était à 4,5-6 m de haut, et quand il est passé, j'ai vu à travers une étoile, la crête de la colline et de la végétation, presque comme si l'on regardait à travers de l'eau."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 16,
+   "hour": 5,
+   "minute": 30,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"approximately an hour or two later\"; witness 5 says \"about 0530\""
+ },
+ "durationSeconds": {
+  "value": 15,
+  "basis": "assumed",
+  "rationale": "the time it takes to float past: not given"
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.79328,
+    "lng": -116.014541,
+    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits; back at the place of the pair of lights"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W1",
+  "title": {
+   "fr": "Témoin 1",
+   "en": "Witness 1"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D079, Narrative Statement 1, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.79328,
+     "lng": -116.014541,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": {
+      "value": 42,
+      "basis": "derived",
+      "rationale": "\"in-front of us\""
+     },
+     "pitchDeg": 10
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "kind": "polygon",
+       "title": {
+        "en": "the same object, translucent, upright",
+        "fr": "le même objet, translucide, à la verticale"
+       },
+       "points": [
+        {
+         "x": 0.5,
+         "y": 0
+        },
+        {
+         "x": 1,
+         "y": 0.35
+        },
+        {
+         "x": 0.5,
+         "y": 1
+        },
+        {
+         "x": 0,
+         "y": 0.35
+        }
+       ],
+       "color": "#b9c4cf",
+       "haloScale": 0,
+       "brightness": 0,
+       "blur": 0.6,
+       "aim": {
+        "value": {
+         "azimuthDeg": 19.31,
+         "altitudeDeg": 6.96
+        },
+        "basis": "derived",
+        "rationale": "\"about 15-20 feet up\", \"floating in-front of us\" and \"past\": from left to right here, at about 20 m, which is assumed"
+       },
+       "angular": {
+        "widthDeg": 2.676,
+        "heightDeg": 4.2816
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     },
+     {
+      "sourceId": "dust-and-web",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "dust and thick spider-web looking material",
+        "fr": "poussière et matière comme une épaisse toile d'araignée"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 11.18,
+         "altitudeDeg": 3.43
+        },
+        "basis": "assumed",
+        "rationale": "\"floating in-front of us\": where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 3,
+        "heightDeg": 1.5
+       },
+       "color": "#cfd4da",
+       "haloScale": 1,
+       "brightness": 0,
+       "blur": 0.9,
+       "transparency": 0.7
+      }
+     }
+    ]
+   },
+   {
+    "t": 1000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 22.79,
+        "altitudeDeg": 6.88
+       },
+       "angular": {
+        "widthDeg": 2.639,
+        "heightDeg": 4.2223999999999995
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 2000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 26.16,
+        "altitudeDeg": 6.78
+       },
+       "angular": {
+        "widthDeg": 2.595,
+        "heightDeg": 4.152
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 29.41,
+        "altitudeDeg": 6.66
+       },
+       "angular": {
+        "widthDeg": 2.543,
+        "heightDeg": 4.0688
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 32.51,
+        "altitudeDeg": 6.52
+       },
+       "angular": {
+        "widthDeg": 2.486,
+        "heightDeg": 3.9776000000000007
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 35.47,
+        "altitudeDeg": 6.37
+       },
+       "angular": {
+        "widthDeg": 2.425,
+        "heightDeg": 3.88
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 38.28,
+        "altitudeDeg": 6.21
+       },
+       "angular": {
+        "widthDeg": 2.361,
+        "heightDeg": 3.7776000000000005
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 40.94,
+        "altitudeDeg": 6.05
+       },
+       "angular": {
+        "widthDeg": 2.295,
+        "heightDeg": 3.672
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 43.45,
+        "altitudeDeg": 5.89
+       },
+       "angular": {
+        "widthDeg": 2.228,
+        "heightDeg": 3.5648000000000004
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 9000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 45.81,
+        "altitudeDeg": 5.7
+       },
+       "angular": {
+        "widthDeg": 2.162,
+        "heightDeg": 3.4592
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 48.03,
+        "altitudeDeg": 5.5
+       },
+       "angular": {
+        "widthDeg": 2.096,
+        "heightDeg": 3.3536
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 50.11,
+        "altitudeDeg": 5.31
+       },
+       "angular": {
+        "widthDeg": 2.031,
+        "heightDeg": 3.2496000000000005
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 12000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 52.07,
+        "altitudeDeg": 5.13
+       },
+       "angular": {
+        "widthDeg": 1.968,
+        "heightDeg": 3.1488
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 13000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 53.9,
+        "altitudeDeg": 4.95
+       },
+       "angular": {
+        "widthDeg": 1.907,
+        "heightDeg": 3.0512
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 14000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 55.62,
+        "altitudeDeg": 4.78
+       },
+       "angular": {
+        "widthDeg": 1.847,
+        "heightDeg": 2.9552
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 15000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 57.24,
+        "altitudeDeg": 4.61
+       },
+       "angular": {
+        "widthDeg": 1.79,
+        "heightDeg": 2.8640000000000003
+       },
+       "angle": 0.35,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "dust-and-web",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Arrêtés, ils voient de la poussière et une matière comme une épaisse toile d'araignée flotter devant eux ; puis le même objet, plus vertical, en biais, feux éteints.",
+    "en": "Stopped, they see dust and thick spider-web looking material floating in front; then the same object, more upright, at an angle, its lights off."
+   }
+  },
+  {
+   "t": 7500,
+   "label": "B",
+   "note": {
+    "fr": "À 4,5-6 m de haut, il passe : on voit à travers une étoile, la crête et de la végétation, « comme à travers de l'eau ».",
+    "en": "15-20 ft up, it floats past: a star, the crest and some vegetation show through it, \"like looking at something through water\"."
+   }
+  }
+ ]
+}

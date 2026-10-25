@@ -1,0 +1,3197 @@
+{
+ "version": 1,
+ "id": "2023-10-16-WesternUSEvent-W1-5-drone",
+ "description": {
+  "en": "We started looking around the area and approximately an hour or two later as we were stopped we observed some dust and thick spider web looking material floating in-front of us. We then saw what looked like the same object floating in a more vertical orientation floating with the dust. It was still at an off angle. I could see where the spots were for the two lights and one being round and the other square. The lights were not on though. The object itself was still hard to define its shape and borders visually. It was in the air about 15-20 feet up and as it floated past I could see a star through the object, as well as the crest of the hill and some vegetation. It was almost like looking at something through water where it was not completely clear.",
+  "fr": "Nous avons commencé à chercher dans le secteur et, une heure ou deux plus tard, alors que nous étions arrêtés, nous avons vu de la poussière et une matière ressemblant à une épaisse toile d'araignée flotter devant nous. Puis nous avons vu ce qui semblait être le même objet, flottant plus à la verticale avec la poussière, toujours en biais. Je voyais l'emplacement des deux feux, l'un rond, l'autre carré, mais ils n'étaient pas allumés. Sa forme et ses contours restaient difficiles à distinguer. Il était à 4,5-6 m de haut, et quand il est passé, j'ai vu à travers une étoile, la crête de la colline et de la végétation, presque comme si l'on regardait à travers de l'eau."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 16,
+   "hour": 5,
+   "minute": 30,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"approximately an hour or two later\"; witness 5 says \"about 0530\""
+ },
+ "durationSeconds": {
+  "value": 15,
+  "basis": "assumed",
+  "rationale": "the time it takes to float past: not given"
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.79328,
+    "lng": -116.014541,
+    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits; back at the place of the pair of lights"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W1",
+  "title": {
+   "fr": "Témoin 1",
+   "en": "Witness 1"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D079, Narrative Statement 1, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.79328,
+     "lng": -116.014541,
+     "elevationM": 0,
+     "fovDeg": 55,
+     "headingDeg": {
+      "value": 42,
+      "basis": "derived",
+      "rationale": "\"in-front of us\""
+     },
+     "pitchDeg": 10
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "kind": "polygon",
+       "title": {
+        "en": "the same object, translucent, upright",
+        "fr": "le même objet, translucide, à la verticale"
+       },
+       "points": [
+        {
+         "x": 0.5,
+         "y": 0
+        },
+        {
+         "x": 1,
+         "y": 0.35
+        },
+        {
+         "x": 0.5,
+         "y": 1
+        },
+        {
+         "x": 0,
+         "y": 0.35
+        }
+       ],
+       "color": "#b9c4cf",
+       "haloScale": 0,
+       "brightness": 0,
+       "blur": 0.6,
+       "aim": {
+        "value": {
+         "azimuthDeg": 19.31,
+         "altitudeDeg": 6.96
+        },
+        "basis": "derived",
+        "rationale": "\"about 15-20 feet up\", \"floating in-front of us\" and \"past\": from left to right here, at about 20 m, which is assumed"
+       },
+       "angular": {
+        "widthDeg": 2.676,
+        "heightDeg": 4.2816
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     },
+     {
+      "sourceId": "dust-and-web",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "dust and thick spider-web looking material",
+        "fr": "poussière et matière comme une épaisse toile d'araignée"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 11.18,
+         "altitudeDeg": 3.43
+        },
+        "basis": "assumed",
+        "rationale": "\"floating in-front of us\": where exactly is not given"
+       },
+       "angular": {
+        "widthDeg": 3,
+        "heightDeg": 1.5
+       },
+       "color": "#cfd4da",
+       "haloScale": 1,
+       "brightness": 0,
+       "blur": 0.9,
+       "transparency": 0.7
+      }
+     }
+    ]
+   },
+   {
+    "t": 1000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 22.79,
+        "altitudeDeg": 6.88
+       },
+       "angular": {
+        "widthDeg": 2.639,
+        "heightDeg": 4.2223999999999995
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 2000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 26.16,
+        "altitudeDeg": 6.78
+       },
+       "angular": {
+        "widthDeg": 2.595,
+        "heightDeg": 4.152
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 29.41,
+        "altitudeDeg": 6.66
+       },
+       "angular": {
+        "widthDeg": 2.543,
+        "heightDeg": 4.0688
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 32.51,
+        "altitudeDeg": 6.52
+       },
+       "angular": {
+        "widthDeg": 2.486,
+        "heightDeg": 3.9776000000000007
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 35.47,
+        "altitudeDeg": 6.37
+       },
+       "angular": {
+        "widthDeg": 2.425,
+        "heightDeg": 3.88
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 38.28,
+        "altitudeDeg": 6.21
+       },
+       "angular": {
+        "widthDeg": 2.361,
+        "heightDeg": 3.7776000000000005
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 40.94,
+        "altitudeDeg": 6.05
+       },
+       "angular": {
+        "widthDeg": 2.295,
+        "heightDeg": 3.672
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 43.45,
+        "altitudeDeg": 5.89
+       },
+       "angular": {
+        "widthDeg": 2.228,
+        "heightDeg": 3.5648000000000004
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 9000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 45.81,
+        "altitudeDeg": 5.7
+       },
+       "angular": {
+        "widthDeg": 2.162,
+        "heightDeg": 3.4592
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 48.03,
+        "altitudeDeg": 5.5
+       },
+       "angular": {
+        "widthDeg": 2.096,
+        "heightDeg": 3.3536
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 50.11,
+        "altitudeDeg": 5.31
+       },
+       "angular": {
+        "widthDeg": 2.031,
+        "heightDeg": 3.2496000000000005
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 12000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 52.07,
+        "altitudeDeg": 5.13
+       },
+       "angular": {
+        "widthDeg": 1.968,
+        "heightDeg": 3.1488
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 13000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 53.9,
+        "altitudeDeg": 4.95
+       },
+       "angular": {
+        "widthDeg": 1.907,
+        "heightDeg": 3.0512
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 14000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 55.62,
+        "altitudeDeg": 4.78
+       },
+       "angular": {
+        "widthDeg": 1.847,
+        "heightDeg": 2.9552
+       },
+       "angle": 0.35,
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 15000,
+    "shapes": [
+     {
+      "sourceId": "translucent-object",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 57.24,
+        "altitudeDeg": 4.61
+       },
+       "angular": {
+        "widthDeg": 1.79,
+        "heightDeg": 2.8640000000000003
+       },
+       "angle": 0.35,
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "dust-and-web",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Arrêtés, ils voient de la poussière et une matière comme une épaisse toile d'araignée flotter devant eux ; puis le même objet, plus vertical, en biais, feux éteints.",
+    "en": "Stopped, they see dust and thick spider-web looking material floating in front; then the same object, more upright, at an angle, its lights off."
+   }
+  },
+  {
+   "t": 7500,
+   "label": "B",
+   "note": {
+    "fr": "À 4,5-6 m de haut, il passe : on voit à travers une étoile, la crête et de la végétation, « comme à travers de l'eau ».",
+    "en": "15-20 ft up, it floats past: a star, the crest and some vegetation show through it, \"like looking at something through water\"."
+   }
+  }
+ ],
+ "interpretation": {
+  "title": {
+   "fr": "Le même drone, feux éteints : on voit à travers son châssis ouvert",
+   "en": "The same drone, lights off: its open frame shows what is behind"
+  },
+  "bodies": [
+   {
+    "id": "drone",
+    "title": {
+     "fr": "drone multirotor",
+     "en": "multirotor drone"
+    },
+    "explains": [
+     "translucent-object"
+    ],
+    "model": {
+     "id": "box"
+    },
+    "sound": {
+     "value": {
+      "kind": "unmanned"
+     },
+     "basis": "assumed",
+     "rationale": "a drone's own noise, as the engine's class of unmanned aircraft makes it"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 40.82,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 6.0,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      },
+      "sizeM": {
+       "widthM": 1.2,
+       "lengthM": 1.2,
+       "heightM": 0.35
+      },
+      "present": true,
+      "appearance": {
+       "color": "#2b2d30",
+       "albedo": 0.12
+      }
+     },
+     {
+      "t": 500,
+      "eastM": 41.01,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 6.05,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 1000,
+      "eastM": 41.2,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 6.1,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 1500,
+      "eastM": 41.37,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 6.15,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 2000,
+      "eastM": 41.53,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 6.2,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 2500,
+      "eastM": 41.65,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 6.25,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 3000,
+      "eastM": 41.74,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 6.3,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 3500,
+      "eastM": 41.79,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 6.35,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 4000,
+      "eastM": 41.81,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 6.4,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 4500,
+      "eastM": 41.78,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 6.45,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 5000,
+      "eastM": 41.72,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 6.5,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 5500,
+      "eastM": 41.62,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 6.55,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 6000,
+      "eastM": 41.48,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 6.6,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 6500,
+      "eastM": 41.33,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 6.65,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 7000,
+      "eastM": 41.15,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 6.7,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 7500,
+      "eastM": 40.96,
+      "northM": 24.54,
+      "altitudeAboveGroundM": 6.75,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 8000,
+      "eastM": 40.76,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 6.8,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 8500,
+      "eastM": 40.56,
+      "northM": 24.59,
+      "altitudeAboveGroundM": 6.85,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 9000,
+      "eastM": 40.38,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 6.9,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 9500,
+      "eastM": 40.21,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 6.95,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 10000,
+      "eastM": 40.07,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 7.0,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 10500,
+      "eastM": 39.95,
+      "northM": 24.68,
+      "altitudeAboveGroundM": 7.05,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 11000,
+      "eastM": 39.87,
+      "northM": 24.69,
+      "altitudeAboveGroundM": 7.1,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 11500,
+      "eastM": 39.83,
+      "northM": 24.69,
+      "altitudeAboveGroundM": 7.15,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 12000,
+      "eastM": 39.83,
+      "northM": 24.7,
+      "altitudeAboveGroundM": 7.2,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 12500,
+      "eastM": 39.87,
+      "northM": 24.69,
+      "altitudeAboveGroundM": 7.25,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 13000,
+      "eastM": 39.94,
+      "northM": 24.68,
+      "altitudeAboveGroundM": 7.3,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 13500,
+      "eastM": 40.05,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 7.35,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 14000,
+      "eastM": 40.19,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 7.4,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 14500,
+      "eastM": 40.36,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 7.45,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": 35
+      }
+     },
+     {
+      "t": 15000,
+      "eastM": 40.54,
+      "northM": 24.6,
+      "altitudeAboveGroundM": 7.5,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 15500,
+      "eastM": 40.73,
+      "northM": 24.57,
+      "altitudeAboveGroundM": 7.55,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 16000,
+      "eastM": 40.93,
+      "northM": 24.54,
+      "altitudeAboveGroundM": 7.6,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 16500,
+      "eastM": 41.12,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 7.65,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 17000,
+      "eastM": 41.3,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 7.7,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 17500,
+      "eastM": 41.47,
+      "northM": 24.47,
+      "altitudeAboveGroundM": 7.75,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 18000,
+      "eastM": 41.6,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 7.8,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 18500,
+      "eastM": 41.71,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 7.85,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 19000,
+      "eastM": 41.77,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 7.9,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 19500,
+      "eastM": 41.8,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 7.95,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 20000,
+      "eastM": 41.8,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 8.0,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 20500,
+      "eastM": 41.75,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 8.05,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 21000,
+      "eastM": 41.66,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 8.1,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 21500,
+      "eastM": 41.54,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 8.15,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 22000,
+      "eastM": 41.39,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 8.2,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 22500,
+      "eastM": 41.22,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 8.25,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 23000,
+      "eastM": 41.04,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 8.3,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 23500,
+      "eastM": 40.84,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 8.35,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 24000,
+      "eastM": 40.64,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 8.4,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 24500,
+      "eastM": 40.45,
+      "northM": 24.61,
+      "altitudeAboveGroundM": 8.45,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     },
+     {
+      "t": 25000,
+      "eastM": 40.28,
+      "northM": 24.63,
+      "altitudeAboveGroundM": 8.5,
+      "attitude": {
+       "headingDeg": 8.0,
+       "rollDeg": -35
+      }
+     }
+    ]
+   },
+   {
+    "id": "drone-led-1",
+    "title": {
+     "fr": "feu faible du drone",
+     "en": "drone's faint light"
+    },
+    "explains": [],
+    "model": {
+     "id": "sphere"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 40.33,
+      "northM": 24.63,
+      "altitudeAboveGroundM": 5.81,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": {
+        "value": 100,
+        "basis": "assumed",
+        "rationale": "faint LEDs, half a candela each: \"faint lights in a perfect formation\""
+       }
+      },
+      "sizeM": {
+       "widthM": 0.08,
+       "lengthM": 0.08,
+       "heightM": 0.08
+      },
+      "present": true
+     },
+     {
+      "t": 500,
+      "eastM": 40.53,
+      "northM": 24.6,
+      "altitudeAboveGroundM": 5.86,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1000,
+      "eastM": 40.71,
+      "northM": 24.57,
+      "altitudeAboveGroundM": 5.91,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1500,
+      "eastM": 40.89,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 5.96,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2000,
+      "eastM": 41.04,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 6.01,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2500,
+      "eastM": 41.16,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 6.06,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3000,
+      "eastM": 41.25,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 6.11,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3500,
+      "eastM": 41.3,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 6.16,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4000,
+      "eastM": 41.32,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 6.21,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4500,
+      "eastM": 41.29,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 6.26,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5000,
+      "eastM": 41.23,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 6.31,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5500,
+      "eastM": 41.13,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 6.36,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6000,
+      "eastM": 41.0,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 6.41,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6500,
+      "eastM": 40.84,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 6.46,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7000,
+      "eastM": 40.66,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 6.51,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7500,
+      "eastM": 40.47,
+      "northM": 24.61,
+      "altitudeAboveGroundM": 6.56,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8000,
+      "eastM": 40.27,
+      "northM": 24.63,
+      "altitudeAboveGroundM": 6.61,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8500,
+      "eastM": 40.08,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 6.66,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9000,
+      "eastM": 39.89,
+      "northM": 24.69,
+      "altitudeAboveGroundM": 6.71,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9500,
+      "eastM": 39.72,
+      "northM": 24.71,
+      "altitudeAboveGroundM": 6.76,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10000,
+      "eastM": 39.58,
+      "northM": 24.73,
+      "altitudeAboveGroundM": 6.81,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10500,
+      "eastM": 39.47,
+      "northM": 24.75,
+      "altitudeAboveGroundM": 6.86,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11000,
+      "eastM": 39.39,
+      "northM": 24.76,
+      "altitudeAboveGroundM": 6.91,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11500,
+      "eastM": 39.34,
+      "northM": 24.76,
+      "altitudeAboveGroundM": 6.96,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 12000,
+      "eastM": 39.34,
+      "northM": 24.76,
+      "altitudeAboveGroundM": 7.01,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 12500,
+      "eastM": 39.38,
+      "northM": 24.76,
+      "altitudeAboveGroundM": 7.06,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13000,
+      "eastM": 39.45,
+      "northM": 24.75,
+      "altitudeAboveGroundM": 7.11,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13500,
+      "eastM": 39.56,
+      "northM": 24.73,
+      "altitudeAboveGroundM": 7.16,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14000,
+      "eastM": 39.7,
+      "northM": 24.71,
+      "altitudeAboveGroundM": 7.21,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14500,
+      "eastM": 39.87,
+      "northM": 24.69,
+      "altitudeAboveGroundM": 7.26,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 15000,
+      "eastM": 40.05,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 7.99,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 15500,
+      "eastM": 40.25,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 8.04,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16000,
+      "eastM": 40.44,
+      "northM": 24.61,
+      "altitudeAboveGroundM": 8.09,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16500,
+      "eastM": 40.64,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 8.14,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17000,
+      "eastM": 40.82,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 8.19,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17500,
+      "eastM": 40.98,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 8.24,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18000,
+      "eastM": 41.11,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 8.29,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18500,
+      "eastM": 41.22,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 8.34,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19000,
+      "eastM": 41.29,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 8.39,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19500,
+      "eastM": 41.32,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 8.44,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20000,
+      "eastM": 41.31,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 8.49,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20500,
+      "eastM": 41.26,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 8.54,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21000,
+      "eastM": 41.17,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 8.59,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21500,
+      "eastM": 41.06,
+      "northM": 24.52,
+      "altitudeAboveGroundM": 8.64,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22000,
+      "eastM": 40.91,
+      "northM": 24.54,
+      "altitudeAboveGroundM": 8.69,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22500,
+      "eastM": 40.74,
+      "northM": 24.57,
+      "altitudeAboveGroundM": 8.74,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23000,
+      "eastM": 40.55,
+      "northM": 24.59,
+      "altitudeAboveGroundM": 8.79,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23500,
+      "eastM": 40.35,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 8.84,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24000,
+      "eastM": 40.16,
+      "northM": 24.65,
+      "altitudeAboveGroundM": 8.89,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24500,
+      "eastM": 39.97,
+      "northM": 24.68,
+      "altitudeAboveGroundM": 8.94,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 25000,
+      "eastM": 39.79,
+      "northM": 24.7,
+      "altitudeAboveGroundM": 8.99,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     }
+    ]
+   },
+   {
+    "id": "drone-led-2",
+    "title": {
+     "fr": "feu faible du drone",
+     "en": "drone's faint light"
+    },
+    "explains": [],
+    "model": {
+     "id": "sphere"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 40.65,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 6.04,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": {
+        "value": 100,
+        "basis": "assumed",
+        "rationale": "faint LEDs, half a candela each: \"faint lights in a perfect formation\""
+       }
+      },
+      "sizeM": {
+       "widthM": 0.08,
+       "lengthM": 0.08,
+       "heightM": 0.08
+      },
+      "present": true
+     },
+     {
+      "t": 500,
+      "eastM": 40.85,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 6.09,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1000,
+      "eastM": 41.04,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 6.14,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1500,
+      "eastM": 41.21,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 6.19,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2000,
+      "eastM": 41.36,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 6.24,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2500,
+      "eastM": 41.49,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 6.29,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3000,
+      "eastM": 41.58,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 6.34,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3500,
+      "eastM": 41.63,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 6.39,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4000,
+      "eastM": 41.64,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 6.44,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4500,
+      "eastM": 41.62,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 6.49,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5000,
+      "eastM": 41.55,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 6.54,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5500,
+      "eastM": 41.45,
+      "northM": 24.47,
+      "altitudeAboveGroundM": 6.59,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6000,
+      "eastM": 41.32,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 6.64,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6500,
+      "eastM": 41.16,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 6.69,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7000,
+      "eastM": 40.98,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 6.74,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7500,
+      "eastM": 40.79,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 6.79,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8000,
+      "eastM": 40.6,
+      "northM": 24.59,
+      "altitudeAboveGroundM": 6.84,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8500,
+      "eastM": 40.4,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 6.89,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9000,
+      "eastM": 40.21,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 6.94,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9500,
+      "eastM": 40.05,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 6.99,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10000,
+      "eastM": 39.9,
+      "northM": 24.68,
+      "altitudeAboveGroundM": 7.04,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10500,
+      "eastM": 39.79,
+      "northM": 24.7,
+      "altitudeAboveGroundM": 7.09,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11000,
+      "eastM": 39.71,
+      "northM": 24.71,
+      "altitudeAboveGroundM": 7.14,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11500,
+      "eastM": 39.67,
+      "northM": 24.72,
+      "altitudeAboveGroundM": 7.19,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 12000,
+      "eastM": 39.67,
+      "northM": 24.72,
+      "altitudeAboveGroundM": 7.24,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 12500,
+      "eastM": 39.7,
+      "northM": 24.71,
+      "altitudeAboveGroundM": 7.29,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13000,
+      "eastM": 39.78,
+      "northM": 24.7,
+      "altitudeAboveGroundM": 7.34,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13500,
+      "eastM": 39.89,
+      "northM": 24.69,
+      "altitudeAboveGroundM": 7.39,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14000,
+      "eastM": 40.03,
+      "northM": 24.67,
+      "altitudeAboveGroundM": 7.44,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14500,
+      "eastM": 40.19,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 7.49,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 15000,
+      "eastM": 40.38,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 7.76,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 15500,
+      "eastM": 40.57,
+      "northM": 24.59,
+      "altitudeAboveGroundM": 7.81,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16000,
+      "eastM": 40.77,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 7.86,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16500,
+      "eastM": 40.96,
+      "northM": 24.54,
+      "altitudeAboveGroundM": 7.91,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17000,
+      "eastM": 41.14,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 7.96,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17500,
+      "eastM": 41.3,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 8.01,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18000,
+      "eastM": 41.44,
+      "northM": 24.47,
+      "altitudeAboveGroundM": 8.06,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18500,
+      "eastM": 41.54,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 8.11,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19000,
+      "eastM": 41.61,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 8.16,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19500,
+      "eastM": 41.64,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 8.21,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20000,
+      "eastM": 41.63,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 8.26,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20500,
+      "eastM": 41.58,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 8.31,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21000,
+      "eastM": 41.5,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 8.36,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21500,
+      "eastM": 41.38,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 8.41,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22000,
+      "eastM": 41.23,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 8.46,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22500,
+      "eastM": 41.06,
+      "northM": 24.52,
+      "altitudeAboveGroundM": 8.51,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23000,
+      "eastM": 40.87,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 8.56,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23500,
+      "eastM": 40.68,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 8.61,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24000,
+      "eastM": 40.48,
+      "northM": 24.6,
+      "altitudeAboveGroundM": 8.66,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24500,
+      "eastM": 40.29,
+      "northM": 24.63,
+      "altitudeAboveGroundM": 8.71,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 25000,
+      "eastM": 40.11,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 8.76,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     }
+    ]
+   },
+   {
+    "id": "drone-led-3",
+    "title": {
+     "fr": "feu faible du drone",
+     "en": "drone's faint light"
+    },
+    "explains": [],
+    "model": {
+     "id": "sphere"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 40.98,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 6.26,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": {
+        "value": 100,
+        "basis": "assumed",
+        "rationale": "faint LEDs, half a candela each: \"faint lights in a perfect formation\""
+       }
+      },
+      "sizeM": {
+       "widthM": 0.08,
+       "lengthM": 0.08,
+       "heightM": 0.08
+      },
+      "present": true
+     },
+     {
+      "t": 500,
+      "eastM": 41.17,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 6.31,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1000,
+      "eastM": 41.36,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 6.36,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1500,
+      "eastM": 41.54,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 6.41,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2000,
+      "eastM": 41.69,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 6.46,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2500,
+      "eastM": 41.81,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 6.51,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3000,
+      "eastM": 41.9,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 6.56,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3500,
+      "eastM": 41.95,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 6.61,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4000,
+      "eastM": 41.97,
+      "northM": 24.39,
+      "altitudeAboveGroundM": 6.66,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4500,
+      "eastM": 41.94,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 6.71,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5000,
+      "eastM": 41.88,
+      "northM": 24.41,
+      "altitudeAboveGroundM": 6.76,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5500,
+      "eastM": 41.78,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 6.81,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6000,
+      "eastM": 41.65,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 6.86,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6500,
+      "eastM": 41.49,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 6.91,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7000,
+      "eastM": 41.31,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 6.96,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7500,
+      "eastM": 41.12,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 7.01,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8000,
+      "eastM": 40.92,
+      "northM": 24.54,
+      "altitudeAboveGroundM": 7.06,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8500,
+      "eastM": 40.72,
+      "northM": 24.57,
+      "altitudeAboveGroundM": 7.11,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9000,
+      "eastM": 40.54,
+      "northM": 24.6,
+      "altitudeAboveGroundM": 7.16,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9500,
+      "eastM": 40.37,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 7.21,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10000,
+      "eastM": 40.23,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 7.26,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10500,
+      "eastM": 40.11,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 7.31,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11000,
+      "eastM": 40.04,
+      "northM": 24.67,
+      "altitudeAboveGroundM": 7.36,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11500,
+      "eastM": 39.99,
+      "northM": 24.67,
+      "altitudeAboveGroundM": 7.41,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 12000,
+      "eastM": 39.99,
+      "northM": 24.67,
+      "altitudeAboveGroundM": 7.46,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 12500,
+      "eastM": 40.03,
+      "northM": 24.67,
+      "altitudeAboveGroundM": 7.51,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13000,
+      "eastM": 40.1,
+      "northM": 24.66,
+      "altitudeAboveGroundM": 7.56,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13500,
+      "eastM": 40.21,
+      "northM": 24.64,
+      "altitudeAboveGroundM": 7.61,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14000,
+      "eastM": 40.35,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 7.66,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14500,
+      "eastM": 40.52,
+      "northM": 24.6,
+      "altitudeAboveGroundM": 7.71,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 15000,
+      "eastM": 40.7,
+      "northM": 24.57,
+      "altitudeAboveGroundM": 7.54,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 15500,
+      "eastM": 40.9,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 7.59,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16000,
+      "eastM": 41.09,
+      "northM": 24.52,
+      "altitudeAboveGroundM": 7.64,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16500,
+      "eastM": 41.29,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 7.69,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17000,
+      "eastM": 41.47,
+      "northM": 24.47,
+      "altitudeAboveGroundM": 7.74,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17500,
+      "eastM": 41.63,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 7.79,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18000,
+      "eastM": 41.76,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 7.84,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18500,
+      "eastM": 41.87,
+      "northM": 24.41,
+      "altitudeAboveGroundM": 7.89,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19000,
+      "eastM": 41.94,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 7.94,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19500,
+      "eastM": 41.97,
+      "northM": 24.39,
+      "altitudeAboveGroundM": 7.99,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20000,
+      "eastM": 41.96,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 8.04,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20500,
+      "eastM": 41.91,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 8.09,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21000,
+      "eastM": 41.82,
+      "northM": 24.41,
+      "altitudeAboveGroundM": 8.14,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21500,
+      "eastM": 41.7,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 8.19,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22000,
+      "eastM": 41.56,
+      "northM": 24.45,
+      "altitudeAboveGroundM": 8.24,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22500,
+      "eastM": 41.39,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 8.29,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23000,
+      "eastM": 41.2,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 8.34,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23500,
+      "eastM": 41.0,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 8.39,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24000,
+      "eastM": 40.8,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 8.44,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24500,
+      "eastM": 40.61,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 8.49,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 25000,
+      "eastM": 40.44,
+      "northM": 24.61,
+      "altitudeAboveGroundM": 8.54,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     }
+    ]
+   },
+   {
+    "id": "drone-led-4",
+    "title": {
+     "fr": "feu faible du drone",
+     "en": "drone's faint light"
+    },
+    "explains": [],
+    "model": {
+     "id": "sphere"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": 41.3,
+      "northM": 24.49,
+      "altitudeAboveGroundM": 6.49,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": {
+        "value": 100,
+        "basis": "assumed",
+        "rationale": "faint LEDs, half a candela each: \"faint lights in a perfect formation\""
+       }
+      },
+      "sizeM": {
+       "widthM": 0.08,
+       "lengthM": 0.08,
+       "heightM": 0.08
+      },
+      "present": true
+     },
+     {
+      "t": 500,
+      "eastM": 41.5,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 6.54,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1000,
+      "eastM": 41.69,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 6.59,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 1500,
+      "eastM": 41.86,
+      "northM": 24.41,
+      "altitudeAboveGroundM": 6.64,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2000,
+      "eastM": 42.01,
+      "northM": 24.39,
+      "altitudeAboveGroundM": 6.69,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 2500,
+      "eastM": 42.14,
+      "northM": 24.37,
+      "altitudeAboveGroundM": 6.74,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3000,
+      "eastM": 42.23,
+      "northM": 24.36,
+      "altitudeAboveGroundM": 6.79,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 3500,
+      "eastM": 42.28,
+      "northM": 24.35,
+      "altitudeAboveGroundM": 6.84,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4000,
+      "eastM": 42.29,
+      "northM": 24.35,
+      "altitudeAboveGroundM": 6.89,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 4500,
+      "eastM": 42.27,
+      "northM": 24.35,
+      "altitudeAboveGroundM": 6.94,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5000,
+      "eastM": 42.2,
+      "northM": 24.36,
+      "altitudeAboveGroundM": 6.99,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 5500,
+      "eastM": 42.1,
+      "northM": 24.38,
+      "altitudeAboveGroundM": 7.04,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6000,
+      "eastM": 41.97,
+      "northM": 24.39,
+      "altitudeAboveGroundM": 7.09,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 6500,
+      "eastM": 41.81,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 7.14,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7000,
+      "eastM": 41.63,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 7.19,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 7500,
+      "eastM": 41.44,
+      "northM": 24.47,
+      "altitudeAboveGroundM": 7.24,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8000,
+      "eastM": 41.24,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 7.29,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 8500,
+      "eastM": 41.05,
+      "northM": 24.52,
+      "altitudeAboveGroundM": 7.34,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9000,
+      "eastM": 40.86,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 7.39,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 9500,
+      "eastM": 40.7,
+      "northM": 24.57,
+      "altitudeAboveGroundM": 7.44,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10000,
+      "eastM": 40.55,
+      "northM": 24.59,
+      "altitudeAboveGroundM": 7.49,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 10500,
+      "eastM": 40.44,
+      "northM": 24.61,
+      "altitudeAboveGroundM": 7.54,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11000,
+      "eastM": 40.36,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 7.59,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 11500,
+      "eastM": 40.32,
+      "northM": 24.63,
+      "altitudeAboveGroundM": 7.64,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 12000,
+      "eastM": 40.32,
+      "northM": 24.63,
+      "altitudeAboveGroundM": 7.69,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 12500,
+      "eastM": 40.35,
+      "northM": 24.62,
+      "altitudeAboveGroundM": 7.74,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13000,
+      "eastM": 40.43,
+      "northM": 24.61,
+      "altitudeAboveGroundM": 7.79,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 13500,
+      "eastM": 40.54,
+      "northM": 24.6,
+      "altitudeAboveGroundM": 7.84,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14000,
+      "eastM": 40.68,
+      "northM": 24.58,
+      "altitudeAboveGroundM": 7.89,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 14500,
+      "eastM": 40.84,
+      "northM": 24.55,
+      "altitudeAboveGroundM": 7.94,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 0
+      }
+     },
+     {
+      "t": 15000,
+      "eastM": 41.03,
+      "northM": 24.53,
+      "altitudeAboveGroundM": 7.31,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 15500,
+      "eastM": 41.22,
+      "northM": 24.5,
+      "altitudeAboveGroundM": 7.36,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16000,
+      "eastM": 41.42,
+      "northM": 24.47,
+      "altitudeAboveGroundM": 7.41,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 16500,
+      "eastM": 41.61,
+      "northM": 24.44,
+      "altitudeAboveGroundM": 7.46,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17000,
+      "eastM": 41.79,
+      "northM": 24.42,
+      "altitudeAboveGroundM": 7.51,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 17500,
+      "eastM": 41.95,
+      "northM": 24.4,
+      "altitudeAboveGroundM": 7.56,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18000,
+      "eastM": 42.09,
+      "northM": 24.38,
+      "altitudeAboveGroundM": 7.61,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 18500,
+      "eastM": 42.19,
+      "northM": 24.36,
+      "altitudeAboveGroundM": 7.66,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19000,
+      "eastM": 42.26,
+      "northM": 24.35,
+      "altitudeAboveGroundM": 7.71,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 19500,
+      "eastM": 42.29,
+      "northM": 24.35,
+      "altitudeAboveGroundM": 7.76,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20000,
+      "eastM": 42.28,
+      "northM": 24.35,
+      "altitudeAboveGroundM": 7.81,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 20500,
+      "eastM": 42.23,
+      "northM": 24.36,
+      "altitudeAboveGroundM": 7.86,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21000,
+      "eastM": 42.15,
+      "northM": 24.37,
+      "altitudeAboveGroundM": 7.91,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 21500,
+      "eastM": 42.03,
+      "northM": 24.39,
+      "altitudeAboveGroundM": 7.96,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22000,
+      "eastM": 41.88,
+      "northM": 24.41,
+      "altitudeAboveGroundM": 8.01,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 22500,
+      "eastM": 41.71,
+      "northM": 24.43,
+      "altitudeAboveGroundM": 8.06,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23000,
+      "eastM": 41.52,
+      "northM": 24.46,
+      "altitudeAboveGroundM": 8.11,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 23500,
+      "eastM": 41.33,
+      "northM": 24.48,
+      "altitudeAboveGroundM": 8.16,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24000,
+      "eastM": 41.13,
+      "northM": 24.51,
+      "altitudeAboveGroundM": 8.21,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 24500,
+      "eastM": 40.94,
+      "northM": 24.54,
+      "altitudeAboveGroundM": 8.26,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     },
+     {
+      "t": 25000,
+      "eastM": 40.76,
+      "northM": 24.56,
+      "altitudeAboveGroundM": 8.31,
+      "appearance": {
+       "color": "#ffe9c8",
+       "luminanceCdM2": 100
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

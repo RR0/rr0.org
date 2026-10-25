@@ -1,0 +1,297 @@
+{
+ "version": 1,
+ "id": "2023-10-15-WesternUSEvent-W5-3-AARO-flares",
+ "description": {
+  "en": "We continued to hike west up the road and saw the large orb again, at 1937, but to our left - in front of [redacted]. I don't recall if this had any smaller released, and the large orb lasted about 10 seconds again. There was a similar white flash of light in the sky more southwest.",
+  "fr": "Nous avons continué à monter la route à pied vers l'ouest et avons revu la grande orbe à 19 h 37, mais à notre gauche, devant [caviardé]. Je ne me souviens pas si de plus petites s'en sont détachées ; la grande orbe a de nouveau duré une dizaine de secondes. Il y a eu un éclair blanc semblable dans le ciel, plus au sud-ouest."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 15,
+   "hour": 19,
+   "minute": 37,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening; \"at 1937\""
+ },
+ "durationSeconds": {
+  "value": 12,
+  "basis": "stated",
+  "rationale": "\"lasted about 10 seconds again\""
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.71286,
+    "lng": -115.26767,
+    "name": "White Rock Road, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several; they had walked on a little: the same place is kept"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W5",
+  "title": {
+   "fr": "Témoin 5",
+   "en": "Witness 5"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D083, Narrative Statement 5, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D083_Narrative-5_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.71286,
+     "lng": -115.26767,
+     "elevationM": 0,
+     "fovDeg": 50,
+     "headingDeg": {
+      "value": 250,
+      "basis": "assumed",
+      "rationale": "walking west, \"to our left\""
+     },
+     "pitchDeg": 6
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "big-orb",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "large orb",
+        "fr": "grande orbe"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 220,
+         "altitudeDeg": 9
+        },
+        "basis": "assumed",
+        "rationale": "\"to our left\" while walking west: south-west; its height is not given"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.3,
+         "heightDeg": 0.3
+        },
+        "basis": "assumed",
+        "rationale": "\"the large orb\", as at 19:18"
+       },
+       "color": "#ff2a14",
+       "haloScale": 1.6,
+       "brightness": 0.4,
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "big-orb",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "big-orb",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 11290,
+    "shapes": [
+     {
+      "sourceId": "flash-southwest",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "white flash of light",
+        "fr": "éclair blanc"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 225,
+         "altitudeDeg": 10
+        },
+        "basis": "assumed",
+        "rationale": "\"a similar white flash of light in the sky more southwest\": its height and moment are not given"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 2,
+         "heightDeg": 2
+        },
+        "basis": "assumed",
+        "rationale": "a flash in the sky: no size given"
+       },
+       "color": "#f4f6ff",
+       "haloScale": 3,
+       "brightness": 0.8,
+       "blur": 0.8,
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 11300,
+    "shapes": [
+     {
+      "sourceId": "flash-southwest",
+      "shape": {
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 11500,
+    "shapes": [
+     {
+      "sourceId": "flash-southwest",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "19 h 37 : en montant la route à pied vers l'ouest, la grande orbe à nouveau, mais à gauche.",
+    "en": "19:37: hiking west up the road, the large orb again, but to the left."
+   }
+  },
+  {
+   "t": 11000,
+   "label": "B",
+   "note": {
+    "fr": "Elle a duré une dizaine de secondes ; il ne se souvient pas si de plus petites s'en sont détachées.",
+    "en": "It lasted about ten seconds; he does not recall whether smaller ones were released."
+   }
+  },
+  {
+   "t": 11300,
+   "label": "C",
+   "note": {
+    "fr": "Un éclair blanc semblable, plus au sud-ouest.",
+    "en": "A similar white flash, more south-west."
+   }
+  }
+ ],
+ "interpretation": {
+  "title": {
+   "fr": "Deux leurres à la suite, à 37 km au sud-ouest",
+   "en": "Two flares in a row, 37 km south-west"
+  },
+  "bodies": [],
+  "flares": [
+   {
+    "id": "aaro",
+    "title": {
+     "en": "Infrared decoy flare",
+     "fr": "Leurre infrarouge"
+    },
+    "aircraft": {
+     "t": 0,
+     "eastM": -24350.4,
+     "northM": -29019.7,
+     "altitudeM": {
+      "value": 6000,
+      "basis": "assumed",
+      "rationale": "AARO: the military aircraft present flew \"too high for standard exhaust to appear as orange orbs\"; no height published, 6 km taken"
+     },
+     "headingDeg": 180,
+     "speedMS": 250,
+     "originElevationM": 1554
+    },
+    "releases": [
+     {
+      "t": 0,
+      "explains": [
+       "big-orb"
+      ]
+     },
+     {
+      "t": 5000,
+      "explains": [
+       "big-orb"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1443 @@
+{
+ "version": 1,
+ "id": "2023-10-16-WesternUSEvent-W5-5",
+ "description": {
+  "en": "We returned to our sighting location and maneuvered the vehicle around trying to shine the headlights to stir something. We also looked through NVG and [redacted] looked through the thermal binoculars. [...] It may have been about 0530 when SA [redacted] was using the NVG and said \"I see it!\" and added something about a cobweb that made me notice a cobweb. There was an identical cob web floating nearby, but floating and flowing down towards the earth. The second was moving up, but not with a natural flow. That's when I could see a shape, not perfectly outlined, but faint lights in a perfect formation that moved together. While SA [redacted] was watching it in the NVG at the same time I saw it with my naked eye. It seemed to be moving up and slightly side to side. This gave the perception of trying to evade being noticed, or blend into the stars as it was now more than 20 ft in the air. I could not judge how far away. I tried to look at a reference point to describe it and looked at a bright light in the distance, which cause my eyes to adjust differently and I lost the formation of faint lights. When my eyes readjusted, a few seconds later, I saw the exact formation of faint lights again but at the opposite angle and at the same height and location. I could not see it much longer as the lights grew fainter.",
+  "fr": "Nous sommes revenus sur les lieux et avons manœuvré le véhicule pour balayer avec les phares. Nous avons aussi regardé aux jumelles de vision nocturne, et [caviardé] aux jumelles thermiques. [...] Il était peut-être 5 h 30 quand l'agent [caviardé], aux jumelles de vision nocturne, s'est écrié « Je le vois ! » en parlant d'une toile d'araignée, ce qui me l'a fait remarquer. Une toile identique flottait tout près, mais descendait doucement vers le sol ; la seconde montait, sans suivre un mouvement naturel. C'est alors que j'ai vu une forme, au contour imprécis, mais des lumières faibles en formation parfaite qui bougeaient ensemble ; je la voyais à l'œil nu pendant qu'il la voyait aux jumelles. Elle semblait monter et osciller un peu de côté, comme pour échapper aux regards ou se fondre dans les étoiles ; elle était maintenant à plus de 6 m de haut. Je ne pouvais pas juger sa distance. J'ai regardé une lumière vive au loin pour avoir un repère, mes yeux se sont réadaptés et j'ai perdu la formation. Quelques secondes plus tard, je l'ai revue, exactement la même, mais inclinée dans l'autre sens, à la même hauteur et au même endroit. Je ne l'ai pas vue beaucoup plus longtemps : les lumières pâlissaient."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 16,
+   "hour": 5,
+   "minute": 30,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"It may have been about 0530\""
+ },
+ "durationSeconds": {
+  "value": 25,
+  "basis": "assumed",
+  "rationale": "\"I could not see it much longer as the lights grew fainter\": how long is not given"
+ },
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.79328,
+    "lng": -116.014541,
+    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits; back at the place of the pair of lights"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W5",
+  "title": {
+   "fr": "Témoin 5",
+   "en": "Witness 5"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D083, Narrative Statement 5, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D083_Narrative-5_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.79328,
+     "lng": -116.014541,
+     "elevationM": 0,
+     "fovDeg": 45,
+     "headingDeg": {
+      "value": 59,
+      "basis": "derived",
+      "rationale": "towards the formation"
+     },
+     "pitchDeg": 8
+    }
+   },
+   {
+    "t": 25000,
+    "pose": {
+     "lat": 36.79328,
+     "lng": -116.014541,
+     "elevationM": 0,
+     "fovDeg": 45,
+     "headingDeg": 59,
+     "pitchDeg": 8
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "faint light of the formation",
+        "fr": "lumière faible de la formation"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "assumed",
+        "rationale": "faint points of light: no size given"
+       },
+       "color": "#ffe9c8",
+       "haloScale": 1.4,
+       "brightness": 0.1,
+       "aim": {
+        "value": {
+         "azimuthDeg": 58.59,
+         "altitudeDeg": 3.37
+        },
+        "basis": "derived",
+        "rationale": "\"more than 20 ft in the air\", \"moving up and slightly side to side\", near where the line went (AARO: \"within a few hundred meters\"), canted as AARO's recreation of the drawing; its distance is not judged by the observer and is assumed"
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "faint light of the formation",
+        "fr": "lumière faible de la formation"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "assumed",
+        "rationale": "faint points of light: no size given"
+       },
+       "color": "#ffe9c8",
+       "haloScale": 1.4,
+       "brightness": 0.1,
+       "aim": {
+        "value": {
+         "azimuthDeg": 58.84,
+         "altitudeDeg": 3.62
+        },
+        "basis": "derived",
+        "rationale": "\"more than 20 ft in the air\", \"moving up and slightly side to side\", near where the line went (AARO: \"within a few hundred meters\"), canted as AARO's recreation of the drawing; its distance is not judged by the observer and is assumed"
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "faint light of the formation",
+        "fr": "lumière faible de la formation"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "assumed",
+        "rationale": "faint points of light: no size given"
+       },
+       "color": "#ffe9c8",
+       "haloScale": 1.4,
+       "brightness": 0.1,
+       "aim": {
+        "value": {
+         "azimuthDeg": 59.09,
+         "altitudeDeg": 3.86
+        },
+        "basis": "derived",
+        "rationale": "\"more than 20 ft in the air\", \"moving up and slightly side to side\", near where the line went (AARO: \"within a few hundred meters\"), canted as AARO's recreation of the drawing; its distance is not judged by the observer and is assumed"
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "faint light of the formation",
+        "fr": "lumière faible de la formation"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.05,
+         "heightDeg": 0.05
+        },
+        "basis": "assumed",
+        "rationale": "faint points of light: no size given"
+       },
+       "color": "#ffe9c8",
+       "haloScale": 1.4,
+       "brightness": 0.1,
+       "aim": {
+        "value": {
+         "azimuthDeg": 59.33,
+         "altitudeDeg": 4.1
+        },
+        "basis": "derived",
+        "rationale": "\"more than 20 ft in the air\", \"moving up and slightly side to side\", near where the line went (AARO: \"within a few hundred meters\"), canted as AARO's recreation of the drawing; its distance is not judged by the observer and is assumed"
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "cobweb",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "cobweb floating down",
+        "fr": "toile d'araignée qui descend"
+       },
+       "aim": {
+        "value": {
+         "azimuthDeg": 38.96,
+         "altitudeDeg": 1.47
+        },
+        "basis": "assumed",
+        "rationale": "\"floating and flowing down towards the earth\" nearby: where is not given"
+       },
+       "angular": {
+        "widthDeg": 1.2,
+        "heightDeg": 0.6
+       },
+       "color": "#d8dde4",
+       "haloScale": 1,
+       "brightness": 0,
+       "blur": 0.8,
+       "transparency": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "t": 1000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.89,
+        "altitudeDeg": 3.46
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.13,
+        "altitudeDeg": 3.7
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.38,
+        "altitudeDeg": 3.94
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.62,
+        "altitudeDeg": 4.18
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 2000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.13,
+        "altitudeDeg": 3.55
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.38,
+        "altitudeDeg": 3.79
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.62,
+        "altitudeDeg": 4.03
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.86,
+        "altitudeDeg": 4.26
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.3,
+        "altitudeDeg": 3.65
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.54,
+        "altitudeDeg": 3.88
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.78,
+        "altitudeDeg": 4.12
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 60.02,
+        "altitudeDeg": 4.36
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.35,
+        "altitudeDeg": 3.76
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.59,
+        "altitudeDeg": 4.0
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.83,
+        "altitudeDeg": 4.23
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 60.07,
+        "altitudeDeg": 4.47
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.28,
+        "altitudeDeg": 3.89
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.52,
+        "altitudeDeg": 4.12
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.76,
+        "altitudeDeg": 4.36
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 60.0,
+        "altitudeDeg": 4.59
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.1,
+        "altitudeDeg": 4.03
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.35,
+        "altitudeDeg": 4.27
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.59,
+        "altitudeDeg": 4.5
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.83,
+        "altitudeDeg": 4.74
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.85,
+        "altitudeDeg": 4.18
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.09,
+        "altitudeDeg": 4.42
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.34,
+        "altitudeDeg": 4.66
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.58,
+        "altitudeDeg": 4.89
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.54,
+        "altitudeDeg": 4.35
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.8,
+        "altitudeDeg": 4.59
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.04,
+        "altitudeDeg": 4.82
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.29,
+        "altitudeDeg": 5.06
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 9000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.25,
+        "altitudeDeg": 4.51
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.5,
+        "altitudeDeg": 4.75
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.75,
+        "altitudeDeg": 4.99
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.0,
+        "altitudeDeg": 5.22
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.0,
+        "altitudeDeg": 4.67
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.26,
+        "altitudeDeg": 4.91
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.51,
+        "altitudeDeg": 5.15
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.76,
+        "altitudeDeg": 5.38
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 11000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 57.85,
+        "altitudeDeg": 4.81
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.1,
+        "altitudeDeg": 5.05
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.36,
+        "altitudeDeg": 5.29
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.61,
+        "altitudeDeg": 5.53
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 12000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 57.81,
+        "altitudeDeg": 4.94
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.07,
+        "altitudeDeg": 5.18
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.33,
+        "altitudeDeg": 5.42
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.58,
+        "altitudeDeg": 5.65
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "cobweb",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 38.96,
+        "altitudeDeg": -5.71
+       },
+       "transparency": 0.6
+      }
+     }
+    ]
+   },
+   {
+    "t": 13000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 57.9,
+        "altitudeDeg": 5.05
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.16,
+        "altitudeDeg": 5.29
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.41,
+        "altitudeDeg": 5.52
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.67,
+        "altitudeDeg": 5.76
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "cobweb",
+      "shape": {
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 14000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.1,
+        "altitudeDeg": 5.14
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.35,
+        "altitudeDeg": 5.38
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.61,
+        "altitudeDeg": 5.61
+       },
+       "transparency": 1
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.86,
+        "altitudeDeg": 5.84
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 15000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.37,
+        "altitudeDeg": 6.05
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.63,
+        "altitudeDeg": 5.73
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.88,
+        "altitudeDeg": 5.41
+       },
+       "transparency": 0.15
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.12,
+        "altitudeDeg": 5.1
+       },
+       "transparency": 0.15
+      }
+     }
+    ]
+   },
+   {
+    "t": 16000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.68,
+        "altitudeDeg": 6.11
+       },
+       "transparency": 0.21
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.93,
+        "altitudeDeg": 5.8
+       },
+       "transparency": 0.21
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.18,
+        "altitudeDeg": 5.48
+       },
+       "transparency": 0.21
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.42,
+        "altitudeDeg": 5.17
+       },
+       "transparency": 0.21
+      }
+     }
+    ]
+   },
+   {
+    "t": 17000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.97,
+        "altitudeDeg": 6.18
+       },
+       "transparency": 0.27
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.21,
+        "altitudeDeg": 5.86
+       },
+       "transparency": 0.27
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.46,
+        "altitudeDeg": 5.55
+       },
+       "transparency": 0.27
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.7,
+        "altitudeDeg": 5.24
+       },
+       "transparency": 0.27
+      }
+     }
+    ]
+   },
+   {
+    "t": 18000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.19,
+        "altitudeDeg": 6.26
+       },
+       "transparency": 0.32999999999999996
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.44,
+        "altitudeDeg": 5.94
+       },
+       "transparency": 0.32999999999999996
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.68,
+        "altitudeDeg": 5.63
+       },
+       "transparency": 0.32999999999999996
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.92,
+        "altitudeDeg": 5.32
+       },
+       "transparency": 0.32999999999999996
+      }
+     }
+    ]
+   },
+   {
+    "t": 19000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.32,
+        "altitudeDeg": 6.35
+       },
+       "transparency": 0.39
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.57,
+        "altitudeDeg": 6.04
+       },
+       "transparency": 0.39
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.81,
+        "altitudeDeg": 5.72
+       },
+       "transparency": 0.39
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 60.04,
+        "altitudeDeg": 5.42
+       },
+       "transparency": 0.39
+      }
+     }
+    ]
+   },
+   {
+    "t": 20000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.34,
+        "altitudeDeg": 6.47
+       },
+       "transparency": 0.44999999999999996
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.58,
+        "altitudeDeg": 6.15
+       },
+       "transparency": 0.44999999999999996
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.82,
+        "altitudeDeg": 5.84
+       },
+       "transparency": 0.44999999999999996
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 60.06,
+        "altitudeDeg": 5.53
+       },
+       "transparency": 0.44999999999999996
+      }
+     }
+    ]
+   },
+   {
+    "t": 21000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.24,
+        "altitudeDeg": 6.6
+       },
+       "transparency": 0.51
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.48,
+        "altitudeDeg": 6.29
+       },
+       "transparency": 0.51
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.72,
+        "altitudeDeg": 5.97
+       },
+       "transparency": 0.51
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.96,
+        "altitudeDeg": 5.66
+       },
+       "transparency": 0.51
+      }
+     }
+    ]
+   },
+   {
+    "t": 22000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.04,
+        "altitudeDeg": 6.76
+       },
+       "transparency": 0.57
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.28,
+        "altitudeDeg": 6.44
+       },
+       "transparency": 0.57
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.52,
+        "altitudeDeg": 6.13
+       },
+       "transparency": 0.57
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.77,
+        "altitudeDeg": 5.81
+       },
+       "transparency": 0.57
+      }
+     }
+    ]
+   },
+   {
+    "t": 23000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.76,
+        "altitudeDeg": 6.93
+       },
+       "transparency": 0.63
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.01,
+        "altitudeDeg": 6.61
+       },
+       "transparency": 0.63
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.26,
+        "altitudeDeg": 6.29
+       },
+       "transparency": 0.63
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.5,
+        "altitudeDeg": 5.98
+       },
+       "transparency": 0.63
+      }
+     }
+    ]
+   },
+   {
+    "t": 24000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.45,
+        "altitudeDeg": 7.11
+       },
+       "transparency": 0.6900000000000001
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.71,
+        "altitudeDeg": 6.79
+       },
+       "transparency": 0.6900000000000001
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.96,
+        "altitudeDeg": 6.47
+       },
+       "transparency": 0.6900000000000001
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 59.2,
+        "altitudeDeg": 6.15
+       },
+       "transparency": 0.6900000000000001
+      }
+     }
+    ]
+   },
+   {
+    "t": 25000,
+    "shapes": [
+     {
+      "sourceId": "light-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.17,
+        "altitudeDeg": 7.29
+       },
+       "transparency": 0.75
+      }
+     },
+     {
+      "sourceId": "light-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.42,
+        "altitudeDeg": 6.96
+       },
+       "transparency": 0.75
+      }
+     },
+     {
+      "sourceId": "light-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.67,
+        "altitudeDeg": 6.64
+       },
+       "transparency": 0.75
+      }
+     },
+     {
+      "sourceId": "light-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 58.92,
+        "altitudeDeg": 6.32
+       },
+       "transparency": 0.75
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "no sound stated by the observer"
+    }
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Vers 5 h 30 : « Je le vois ! » — une toile d'araignée descend doucement, une autre monte ; une formation de lumières faibles, à plus de 6 m, monte et oscille.",
+    "en": "About 05:30: \"I see it!\" — one cobweb drifts down, another goes up; a formation of faint lights, over 20 ft up, rising and swaying."
+   }
+  },
+  {
+   "t": 12000,
+   "label": "B",
+   "note": {
+    "fr": "Il regarde une lumière vive au loin pour se repérer : ses yeux se réadaptent, il perd la formation.",
+    "en": "He looks at a bright light in the distance for reference: his eyes readjust and he loses it."
+   }
+  },
+  {
+   "t": 15000,
+   "label": "C",
+   "note": {
+    "fr": "Il la revoit : la même formation, inclinée dans l'autre sens, à la même hauteur et au même endroit ; elle pâlit.",
+    "en": "He sees it again: the same formation, at the opposite angle, same height and place; it grows fainter."
+   }
+  }
+ ]
+}

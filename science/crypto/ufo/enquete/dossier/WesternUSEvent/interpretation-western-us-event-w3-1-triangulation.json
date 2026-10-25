@@ -1,0 +1,610 @@
+{
+ "version": 1,
+ "id": "2023-10-14-WesternUSEvent-W3-1-triangulation",
+ "description": {
+  "en": "In mid-Oct 2023, I was with agents from our office at our work location. [...] at approximately 1900, roughly dusk with a clear sky, I was looking east when I saw a large orange orb in the sky seemingly coming in my direction. I recall my partner asking, \"are you seeing this?\" I couldn't tell how large the orb was because I could not determine how far away it was. I recall that it was alternating between clear and orange with maybe two or three seconds in each colored cycle. When it was orange, the outline was well defined, but when it was clear, it did not seem to disappear as I vaguely recall still being able to see an outline of the orb although it was clear. In terms of speed, I'd estimate the orb moved approximately 20 degrees in the sky in about three to five seconds. When the orb was at approximately 45 degrees (halfway between the horizon and directly overhead), it expelled three smaller red orbs. The expulsion appeared to be mechanical. The red orbs then moved to the south in a straight line spaced about one second apart, also at 45 degrees (from directly overhead to the horizon) until I could no longer see them. I did not pay attention to what the orange orb was doing after it released the red orbs. However, I don't recall seeing it any longer. I do not recall any sound associated with what I saw. Also, there were no exhaust trails coming from either the orange or the red orbs. [...] the red orbs were a lot smaller than the orange orb. Comparatively, I'd say the red orbs were like grapes being expelled from a basketball. The time frame for this explanation was maybe 30-45 seconds.",
+  "fr": "À la mi-octobre 2023, j'étais avec des agents de notre bureau sur notre lieu de travail. [...] vers 19 h, à peu près au crépuscule, par ciel clair, je regardais vers l'est quand j'ai vu dans le ciel une grande orbe orange qui semblait venir vers moi. Je me souviens que mon coéquipier m'a demandé : « Tu vois ça ? » Je ne pouvais pas dire quelle taille elle avait, faute de pouvoir dire à quelle distance elle était. Je me souviens qu'elle alternait entre transparente et orange, peut-être deux ou trois secondes dans chaque couleur. Orange, son contour était bien net ; transparente, elle ne semblait pas disparaître, car je crois me souvenir d'en voir encore vaguement le contour. Pour la vitesse, j'estime qu'elle a parcouru environ 20 degrés dans le ciel en trois à cinq secondes. Quand elle était à environ 45 degrés (à mi-chemin entre l'horizon et le zénith), elle a expulsé trois orbes rouges plus petites. L'expulsion paraissait mécanique. Les orbes rouges sont ensuite parties vers le sud en ligne droite, à environ une seconde d'intervalle, elles aussi à 45 degrés, jusqu'à ce que je ne les voie plus. Je n'ai pas fait attention à ce que faisait l'orbe orange après avoir libéré les rouges, mais je ne me souviens pas de l'avoir encore vue. Je ne me souviens d'aucun bruit. Il n'y avait pas non plus de traînée derrière l'orbe orange ni derrière les rouges. [...] les orbes rouges étaient bien plus petites que l'orange : je dirais comme des grains de raisin expulsés d'un ballon de basket. Tout cela a peut-être duré 30 à 45 secondes."
+ },
+ "time": {
+  "value": {
+   "year": 2023,
+   "month": 10,
+   "day": 14,
+   "hour": 19,
+   "minute": 0,
+   "second": 0
+  },
+  "basis": "assumed",
+  "rationale": "\"mid-Oct 2023 ... at approximately 1900, roughly dusk\": the day is not given (\"two days in October 2023\", AARO). Taken as the first of the two evenings, 2023-10-14: witness 1 says other teams reported lights on the first night, and witness 4's second evening, with its Starlink train to the south-east, is best matched by the 15th"
+ },
+ "durationSeconds": {
+  "value": 38,
+  "basis": "assumed",
+  "rationale": "\"maybe 30-45 seconds\": the middle of it"
+ },
+ "durationText": "PT30S/PT45S",
+ "utcOffsetHours": {
+  "value": -7,
+  "basis": "derived",
+  "rationale": "Pacific Daylight Time in October 2023"
+ },
+ "timeZone": "America/Los_Angeles",
+ "place": [
+  {
+   "value": {
+    "lat": 36.55071,
+    "lng": -115.39745,
+    "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada"
+   },
+   "basis": "assumed",
+   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas, whose Desert Valley (ranges to the west and east, more distant ranges to the north, a dirt road north from US-95) is the valley of witness 2, who saw the same orbs to the north, north-east and east and the last red ones going south"
+  }
+ ],
+ "observer": {
+  "id": "WesternUSEvent-W3",
+  "title": {
+   "fr": "Témoin 3",
+   "en": "Witness 3"
+  }
+ },
+ "account": {
+  "observerOccupation": {
+   "en": "federal law enforcement special agent",
+   "fr": "agent spécial d'un service fédéral de police"
+  },
+  "source": {
+   "value": "letter",
+   "basis": "stated",
+   "rationale": "a free-form written narrative requested by AARO, about two and a half years later"
+  }
+ },
+ "tags": [
+  "aerial observation"
+ ],
+ "sources": [
+  {
+   "title": "DOW-UAP-D081, Narrative Statement 3, Western United States Event",
+   "url": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D081_Narrative-3_Western-US-Event.pdf",
+   "publication": {
+    "publisher": "AARO",
+    "time": "2026-06-02"
+   }
+  }
+ ],
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 36.55071,
+     "lng": -115.39745,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 95,
+      "basis": "stated",
+      "rationale": "\"I was looking east\""
+     },
+     "pitchDeg": {
+      "value": 28,
+      "basis": "assumed",
+      "rationale": "a look raised towards the orb"
+     }
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 36.55071,
+     "lng": -115.39745,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 100,
+     "pitchDeg": 30
+    }
+   },
+   {
+    "t": 26000,
+    "pose": {
+     "lat": 36.55071,
+     "lng": -115.39745,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 150,
+      "basis": "assumed",
+      "rationale": "the gaze follows the red orbs south \"until I could no longer see them\""
+     },
+     "pitchDeg": 28
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "keyframes": [
+   {
+    "t": 0,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 90,
+         "altitudeDeg": 25
+        },
+        "basis": "derived",
+        "rationale": "\"looking east\"; it then \"moved approximately 20 degrees in the sky\" to reach \"approximately 45 degrees\", so it started near 25"
+       },
+       "transparency": 0,
+       "kind": "oval",
+       "title": {
+        "en": "large orange orb",
+        "fr": "grande orbe orange"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 1.0,
+         "heightDeg": 1.0
+        },
+        "basis": "assumed",
+        "rationale": "\"I couldn't tell how large the orb was\": no size stated; a degree (two full Moons) for something called large"
+       },
+       "color": "#ff8a1f",
+       "haloScale": 1.4,
+       "brightness": 0.3,
+       "blur": 0.2
+      }
+     }
+    ]
+   },
+   {
+    "t": 2400,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 91,
+        "altitudeDeg": 37
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 2600,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 91.2,
+        "altitudeDeg": 38
+       },
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 92,
+         "altitudeDeg": 45
+        },
+        "basis": "stated",
+        "rationale": "\"When the orb was at approximately 45 degrees (halfway between the horizon and directly overhead), it expelled three smaller red orbs\""
+       },
+       "transparency": 0.85
+      }
+     }
+    ]
+   },
+   {
+    "t": 4200,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 92,
+        "altitudeDeg": 45
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 4490,
+    "shapes": [
+     {
+      "sourceId": "red-orb-1",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "small red orb",
+        "fr": "petite orbe rouge"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.1,
+         "heightDeg": 0.1
+        },
+        "basis": "derived",
+        "rationale": "\"like grapes being expelled from a basketball\": a grape is about a tenth of a basketball, a tenth of the orange orb"
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.45,
+       "transparency": 1,
+       "aim": {
+        "azimuthDeg": 92,
+        "altitudeDeg": 45
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 92.5,
+        "altitudeDeg": 45
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 92,
+        "altitudeDeg": 45
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 5490,
+    "shapes": [
+     {
+      "sourceId": "red-orb-2",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "small red orb",
+        "fr": "petite orbe rouge"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.1,
+         "heightDeg": 0.1
+        },
+        "basis": "derived",
+        "rationale": "\"like grapes being expelled from a basketball\": a grape is about a tenth of a basketball, a tenth of the orange orb"
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.45,
+       "transparency": 1,
+       "aim": {
+        "azimuthDeg": 92,
+        "altitudeDeg": 45
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 92.5,
+        "altitudeDeg": 45
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 6490,
+    "shapes": [
+     {
+      "sourceId": "red-orb-3",
+      "shape": {
+       "kind": "oval",
+       "title": {
+        "en": "small red orb",
+        "fr": "petite orbe rouge"
+       },
+       "angular": {
+        "value": {
+         "widthDeg": 0.1,
+         "heightDeg": 0.1
+        },
+        "basis": "derived",
+        "rationale": "\"like grapes being expelled from a basketball\": a grape is about a tenth of a basketball, a tenth of the orange orb"
+       },
+       "color": "#ff2a14",
+       "haloScale": 2.5,
+       "brightness": 0.45,
+       "transparency": 1,
+       "aim": {
+        "azimuthDeg": 92,
+        "altitudeDeg": 45
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 92.5,
+        "altitudeDeg": 45
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 7500,
+    "shapes": [
+     {
+      "sourceId": "orange-orb",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 92,
+         "altitudeDeg": 45
+        },
+        "basis": "assumed",
+        "rationale": "\"I did not pay attention to what the orange orb was doing after it released the red orbs. However, I don't recall seeing it any longer\""
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 16500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-1",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 150,
+         "altitudeDeg": 42
+        },
+        "basis": "assumed",
+        "rationale": "\"moved to the south in a straight line ... also at 45 degrees\": the bearing reached and the pace are not stated"
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 17500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-2",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 150,
+         "altitudeDeg": 42
+        },
+        "basis": "assumed",
+        "rationale": "\"moved to the south in a straight line ... also at 45 degrees\": the bearing reached and the pace are not stated"
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 18500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-3",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 150,
+         "altitudeDeg": 42
+        },
+        "basis": "assumed",
+        "rationale": "\"moved to the south in a straight line ... also at 45 degrees\": the bearing reached and the pace are not stated"
+       },
+       "transparency": 0
+      }
+     }
+    ]
+   },
+   {
+    "t": 28500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 178,
+        "altitudeDeg": 36
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 29500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 178,
+        "altitudeDeg": 36
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   },
+   {
+    "t": 30500,
+    "shapes": [
+     {
+      "sourceId": "red-orb-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 178,
+        "altitudeDeg": 36
+       },
+       "transparency": 1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "Il regarde à l'est et voit une grande orbe orange qui semble venir vers lui ; son coéquipier : « Tu vois ça ? »",
+    "en": "He is looking east and sees a large orange orb seemingly coming his way; his partner: \"are you seeing this?\""
+   }
+  },
+  {
+   "t": 4500,
+   "label": "B",
+   "note": {
+    "fr": "À environ 45°, l'orbe expulse trois orbes rouges plus petites, d'une manière qui paraît mécanique.",
+    "en": "At about 45 degrees the orb expels three smaller red orbs; the expulsion appears mechanical."
+   }
+  },
+  {
+   "t": 7500,
+   "label": "C",
+   "note": {
+    "fr": "Il ne voit plus l'orbe orange ; les rouges partent vers le sud en ligne droite, à une seconde d'intervalle.",
+    "en": "He no longer sees the orange orb; the red ones go south in a straight line, a second apart."
+   }
+  },
+  {
+   "t": 28500,
+   "label": "D",
+   "note": {
+    "fr": "Il ne voit plus les orbes rouges. Aucun bruit, aucune traînée.",
+    "en": "He can no longer see the red orbs. No sound, no trail."
+   }
+  }
+ ],
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 100
+     },
+     "basis": "stated",
+     "rationale": "\"I do not recall any sound associated with what I saw\""
+    }
+   }
+  ]
+ },
+ "interpretation": {
+  "title": {
+   "fr": "Triangulation : une seule source pour les témoins 2 et 3, à 9,4 km de haut",
+   "en": "Triangulation: one source for witnesses 2 and 3, 9.4 km up"
+  },
+  "bodies": [
+   {
+    "id": "common-source",
+    "title": {
+     "fr": "source commune",
+     "en": "common source"
+    },
+    "explains": [
+     "orange-orb"
+    ],
+    "model": {
+     "id": "sphere"
+    },
+    "track": [
+     {
+      "t": 0,
+      "eastM": {
+       "value": 8312,
+       "basis": "derived",
+       "rationale": "where witness 2's first orb (\"35-45 degrees above the northern/northeastern horizon\", about 19:00) and witness 3's orb (\"looking east\", \"at approximately 45 degrees\", about 19:00) are one and the same: the median of 19004 crossings of their lines of sight within 1.5°, drawn from those margins and with both observers anywhere along the valley's road, give the envelope; the point is where the two lines cross as the recordings state them (1379 m apart). 80% of the crossings between 4.3 and 16.5 km above the valley, 7-26 km from witness 2 and 6-22 km from witness 3"
+      },
+      "northM": -532,
+      "altitudeM": 9251,
+      "sizeM": {
+       "widthM": 2,
+       "heightM": 2,
+       "lengthM": 2
+      },
+      "present": true,
+      "appearance": {
+       "color": "#ffd9a0",
+       "luminanceCdM2": {
+        "value": 6366,
+        "basis": "assumed",
+        "rationale": "a point of light of 20,000 cd, a flare's (see DecoyFlare.MJU_7): its size and brightness are not what is triangulated"
+       },
+       "haloScale": 1
+      }
+     },
+     {
+      "t": 7500,
+      "eastM": 8312,
+      "northM": -532,
+      "altitudeM": 9251
+     },
+     {
+      "t": 7501,
+      "present": false
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -36,6 +36,8 @@ interface State {
 }
 
 const lang = detectLang()
+/** The directory of the matrix to read (`?matrix=…`), e.g. RR0's extension of it; Poher's own by default. */
+const matrixDir = new URLSearchParams(location.search).get('matrix') ?? REPO
 
 const state: State = {
   lang,
@@ -46,8 +48,8 @@ const state: State = {
   answers: new Set(),
   index: 0,
   tab: 'explanations',
-  matrixURL: `${REPO}matrix.json`,
-  labelsURL: `${REPO}Matrix_${lang}.json`,
+  matrixURL: `${matrixDir}matrix.json`,
+  labelsURL: `${matrixDir}Matrix_${lang}.json`,
   matrixFile: null,
   labelsFile: null
 }

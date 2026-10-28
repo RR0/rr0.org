@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/javarome/project/@rr0/rr0.org diff --name-only HEAD)",
+      "Bash(git -C /Users/javarome/project/@rr0/rr0.org diff --name-only --cached)",
+      "Bash(git -C /Users/javarome/project/@rr0/rr0.org status --short)",
+      "Bash(git -C /Users/javarome/project/@rr0/rr0.org log --oneline origin/master..HEAD)",
+      "Bash(git *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

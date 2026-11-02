@@ -21,7 +21,7 @@ class RR0Worker {
 
   /** The trunk: what a page needs to look like itself, and the search. Best effort, file by file. */
   static PRECACHE = [
-    "/", "/offline.html", "/manifest.json", "/favicon.ico", "/apple-touch-icon.png", "/apple-touch-icon_400x400.png",
+    "/", "/offline.html", "/manifest.json", "/favicon.ico", "/apple-touch-icon.png", "/images/rr0-logo-512.jpg",
     "/nav.js",
     "/rr0.css", "/map.css", "/diagram.css", "/print.css", "/figure.css", "/section.css", "/table.css",
     "/nav.css", "/math.css", "/link.css", "/quote.css", "/footer.css", "/index.css",
@@ -38,8 +38,8 @@ class RR0Worker {
   /** What to show offline for a page that was never opened. */
   static OFFLINE = "/offline.html"
 
-  /** The icon the launch screen shows; in the trunk, so that it is there at once. */
-  static LAUNCH_ICON = "/apple-touch-icon_400x400.png"
+  /** The logo the launch screen shows (RR0-Logo.png made 512 px wide); in the trunk, so that it is there at once. */
+  static LAUNCH_LOGO = "/images/rr0-logo-512.jpg"
 
   /**
    * What an installed app shows the moment it is opened, before the page it opens on: without it, the phone
@@ -54,17 +54,17 @@ class RR0Worker {
   <meta content="initial-scale=1, width=device-width" name="viewport">
   <title>RR0</title>
   <style>
-    html { background: white; color: #069 }
-    body { margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem }
-    img { width: 6rem; height: 6rem; border-radius: 22% }
+    /* The logo's own ground and letters, so that it does not sit in a box. */
+    html { background: #ecedf1; color: #2b3a74 }
+    body { margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem }
+    img { width: min(80vw, 24rem); height: auto }
     .spinner { width: 2rem; height: 2rem; border: 3px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: turn 1s linear infinite }
     @keyframes turn { to { transform: rotate(1turn) } }
-    @media (prefers-color-scheme: dark) { html { background: black; color: #6af } }
     @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 4s } }
   </style>
 </head>
 <body>
-<img alt="" src="${RR0Worker.LAUNCH_ICON}">
+<img alt="RR0" src="${RR0Worker.LAUNCH_LOGO}">
 <div aria-label="Chargement" class="spinner" role="progressbar"></div>
 <script>
   const url = new URL(location.href)

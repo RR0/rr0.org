@@ -47,7 +47,8 @@ class RR0Worker {
    * here, with its style inline, so that it needs nothing from the network; it then goes on to the page, and
    * the browser keeps it on screen until that page can be drawn.
    */
-  static LAUNCH_PAGE = `<!DOCTYPE html>
+  static launchPage(logo) {
+    return `<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -64,15 +65,37 @@ class RR0Worker {
   </style>
 </head>
 <body>
-<img alt="RR0" src="${RR0Worker.LAUNCH_LOGO}">
+<img alt="RR0" id="logo" src="${logo}">
 <div aria-label="Chargement" class="spinner" role="progressbar"></div>
 <script>
   const url = new URL(location.href)
   url.searchParams.delete("source")
-  location.replace(url.pathname + url.search + url.hash)
+  // Gone on only once the logo is on screen: going at once, the phone left this page before drawing it.
+  const go = () => location.replace(url.pathname + url.search + url.hash)
+  document.getElementById("logo").decode().then(go, go)
 </script>
 </body>
 </html>`
+  }
+
+  /**
+   * The launch screen, its logo written into it from the cache, where the installation put it: asked to
+   * the network, it came too late to be seen.
+   */
+  async launch() {
+    const cached = await (await caches.open(RR0Worker.ASSETS)).match(RR0Worker.LAUNCH_LOGO)
+    const logo = cached ? await RR0Worker.dataUrl(cached) : RR0Worker.LAUNCH_LOGO
+    return new Response(RR0Worker.launchPage(logo), {headers: {"Content-Type": "text/html; charset=utf-8"}})
+  }
+
+  static async dataUrl(response) {
+    const bytes = new Uint8Array(await response.arrayBuffer())
+    let binary = ""
+    for (let i = 0; i < bytes.length; i += 0x8000) {
+      binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000))
+    }
+    return `data:${response.headers.get("content-type") ?? "image/png"};base64,${btoa(binary)}`
+  }
 
   /** How long a cached copy waits for a slow network before it is served instead. */
   static PATIENCE_MS = 5000
@@ -138,7 +161,7 @@ class RR0Worker {
     if (request.mode === "navigate") {
       // The manifest's start and shortcut URLs carry source=pwa: the app is being opened.
       if (url.searchParams.get("source") === "pwa") {
-        return Promise.resolve(new Response(RR0Worker.LAUNCH_PAGE, {headers: {"Content-Type": "text/html; charset=utf-8"}}))
+        return this.launch()
       }
       return this.navigation(event, url)
     }

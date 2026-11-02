@@ -120,6 +120,8 @@ if (appMode("standalone") || appMode("fullscreen") || appMode("minimal-ui") || n
         }
         update()
         navigation.addEventListener("currententrychange", update)
+        // A page restored by going back comes as it was left, when there was nowhere forward to go.
+        addEventListener("pageshow", update)
       }
     })
   }

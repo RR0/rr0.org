@@ -73,8 +73,9 @@ class RR0Worker {
 <script>
   const url = new URL(location.href)
   url.searchParams.delete("source")
-  // Gone on only once the logo is on screen: going at once, the phone left this page before drawing it.
-  const go = () => location.replace(url.pathname + url.search + url.hash)
+  // Gone on only once the logo is on screen: going at once, the phone left this page before drawing it. Decoded
+  // is not drawn yet, and WebKit stops drawing a page as soon as it leaves it: let two frames show the logo first.
+  const go = () => requestAnimationFrame(() => requestAnimationFrame(() => location.replace(url.pathname + url.search + url.hash)))
   document.getElementById("logo").decode().then(go, go)
 </script>
 </body>

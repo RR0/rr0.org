@@ -236,7 +236,7 @@ nav > ul {
 .loading-bar.arriving {
   animation: none;
   transform: scaleX(.9);
-  transition: transform .2s ease-out, opacity .3s ease-in .2s;
+  transition: transform .3s ease-out, opacity .4s ease-in .3s;
 }
 
 .loading-bar.arriving.done {
@@ -246,7 +246,7 @@ nav > ul {
 
 @keyframes loading-bar {
   from {
-    transform: scaleX(0);
+    transform: scaleX(.2);
   }
   to {
     transform: scaleX(.95);

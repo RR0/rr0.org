@@ -38,7 +38,8 @@ if ("serviceWorker" in navigator) {
 
 // Installed as an app, the site has no browser bar, hence no sign that a clicked link is loading, and on a phone
 // (iOS above all) no back and forward buttons either: provide them. In a browser tab, the browser does it, so nothing
-// is added there; nor are the buttons where the app window has its own (display-mode: minimal-ui).
+// is added there; nor are the buttons where the app window has its own (display-mode: minimal-ui), except on iOS
+// (navigator.standalone), whose home-screen apps show no button at all, whatever display mode they report.
 const appMode = mode => matchMedia(`(display-mode: ${mode})`).matches
 if (appMode("standalone") || appMode("fullscreen") || appMode("minimal-ui") || navigator.standalone) {
   const bar = document.createElement("div")
@@ -83,14 +84,14 @@ if (appMode("standalone") || appMode("fullscreen") || appMode("minimal-ui") || n
     arriving.className = "loading-bar arriving"
     arriving.setAttribute("aria-hidden", "true")
     document.documentElement.append(arriving)
-    addEventListener("DOMContentLoaded", () => {
+    // Completed once the page has been drawn with it: done before the first frame, there would be nothing to see.
+    addEventListener("load", () => requestAnimationFrame(() => requestAnimationFrame(() => {
       arriving.classList.add("done")
-      arriving.addEventListener("transitionend", () => arriving.remove(), {once: true})
-      setTimeout(() => arriving.remove(), 1000)
-    })
+      setTimeout(() => arriving.remove(), 1500)
+    })))
   }
 
-  if (!appMode("minimal-ui")) {
+  if (!appMode("minimal-ui") || navigator.standalone) {
     addEventListener("DOMContentLoaded", () => {
       const list = document.querySelector("#main-nav > ul")
       if (!list) {

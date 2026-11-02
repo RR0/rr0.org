@@ -36,9 +36,11 @@ if ("serviceWorker" in navigator) {
   })
 }
 
-// Installed as an app, the site has no browser bar, hence no sign that a clicked link is loading: show one. In a
-// browser tab, the browser's own indicator does it, so nothing is added there.
-if (matchMedia("(display-mode: standalone), (display-mode: minimal-ui), (display-mode: fullscreen)").matches) {
+// Installed as an app, the site has no browser bar, hence no sign that a clicked link is loading, and on a phone
+// (iOS above all) no back and forward buttons either: provide them. In a browser tab, the browser does it, so nothing
+// is added there; nor are the buttons where the app window has its own (display-mode: minimal-ui).
+const appMode = mode => matchMedia(`(display-mode: ${mode})`).matches
+if (appMode("standalone") || appMode("fullscreen") || appMode("minimal-ui") || navigator.standalone) {
   const bar = document.createElement("div")
   bar.className = "loading-bar"
   bar.setAttribute("aria-hidden", "true")
@@ -46,9 +48,12 @@ if (matchMedia("(display-mode: standalone), (display-mode: minimal-ui), (display
   const hide = () => {
     clearTimeout(giveUp)
     bar.remove()
+    sessionStorage.removeItem("rr0-loading")
   }
   const show = () => {
-    document.body.append(bar)
+    document.documentElement.append(bar)
+    // The next page completes the bar: a page that comes quickly still shows that it came.
+    sessionStorage.setItem("rr0-loading", String(Date.now()))
     giveUp = setTimeout(hide, 20000)  // A navigation the browser dropped (a download, a 204) never unloads the page.
   }
   if ("navigation" in window) {
@@ -69,5 +74,52 @@ if (matchMedia("(display-mode: standalone), (display-mode: minimal-ui), (display
     })
   }
   // Back from the back/forward cache, the page comes as it was left: with its bar.
-  addEventListener("pageshow", hide)
+  addEventListener("pageshow", event => event.persisted && hide())
+
+  const leftAt = Number(sessionStorage.getItem("rr0-loading"))
+  if (leftAt && Date.now() - leftAt < 20000) {
+    sessionStorage.removeItem("rr0-loading")
+    const arriving = document.createElement("div")
+    arriving.className = "loading-bar arriving"
+    arriving.setAttribute("aria-hidden", "true")
+    document.documentElement.append(arriving)
+    addEventListener("DOMContentLoaded", () => {
+      arriving.classList.add("done")
+      arriving.addEventListener("transitionend", () => arriving.remove(), {once: true})
+      setTimeout(() => arriving.remove(), 1000)
+    })
+  }
+
+  if (!appMode("minimal-ui")) {
+    addEventListener("DOMContentLoaded", () => {
+      const list = document.querySelector("#main-nav > ul")
+      if (!list) {
+        return
+      }
+      const item = document.createElement("li")
+      item.className = "history"
+      const button = (label, symbol, go) => {
+        const element = document.createElement("button")
+        element.type = "button"
+        element.title = label
+        element.setAttribute("aria-label", label)
+        element.textContent = symbol
+        element.addEventListener("click", go)
+        return element
+      }
+      const back = button("Page précédente", "‹", () => history.back())
+      const forward = button("Page suivante", "›", () => history.forward())
+      item.append(back, forward)
+      list.prepend(item)
+      // Where the browser says whether there is somewhere to go, a button that would do nothing is shown disabled.
+      if ("navigation" in window && "canGoBack" in navigation) {
+        const update = () => {
+          back.disabled = !navigation.canGoBack
+          forward.disabled = !navigation.canGoForward
+        }
+        update()
+        navigation.addEventListener("currententrychange", update)
+      }
+    })
+  }
 }

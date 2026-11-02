@@ -232,6 +232,18 @@ nav > ul {
   animation: loading-bar 8s cubic-bezier(.1, .7, .3, 1) forwards;
 }
 
+/* On the page that was loading: the bar completes, then fades. */
+.loading-bar.arriving {
+  animation: none;
+  transform: scaleX(.9);
+  transition: transform .2s ease-out, opacity .3s ease-in .2s;
+}
+
+.loading-bar.arriving.done {
+  transform: scaleX(1);
+  opacity: 0;
+}
+
 @keyframes loading-bar {
   from {
     transform: scaleX(0);
@@ -251,5 +263,34 @@ nav > ul {
   .loading-bar {
     animation: none;
     transform: scaleX(.5);
+  }
+}
+
+/* Back and forward buttons of the installed app (nav.js), which has no browser bar to offer them. */
+#main-nav .history {
+  white-space: nowrap;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#main-nav .history button {
+  appearance: none;
+  border: none;
+  background: none;
+  color: #069;
+  font-size: 1.6em;
+  line-height: 1;
+  padding: 0 .3em;
+  cursor: pointer;
+}
+
+#main-nav .history button:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+@media (prefers-color-scheme: dark) {
+  #main-nav .history button {
+    color: #6af;
   }
 }

@@ -21,7 +21,8 @@ class RR0Worker {
 
   /** The trunk: what a page needs to look like itself, and the search. Best effort, file by file. */
   static PRECACHE = [
-    "/", "/offline.html", "/manifest.json", "/favicon.ico", "/apple-touch-icon.png", "/nav.js",
+    "/", "/offline.html", "/manifest.json", "/favicon.ico", "/apple-touch-icon.png", "/apple-touch-icon_400x400.png",
+    "/nav.js",
     "/rr0.css", "/map.css", "/diagram.css", "/print.css", "/figure.css", "/section.css", "/table.css",
     "/nav.css", "/math.css", "/link.css", "/quote.css", "/footer.css", "/index.css",
     "/search/SearchComponent.mjs", "/search/InputSearchComponent.mjs", "/search/search.css", "/search/index.json",
@@ -36,6 +37,42 @@ class RR0Worker {
 
   /** What to show offline for a page that was never opened. */
   static OFFLINE = "/offline.html"
+
+  /** The icon the launch screen shows; in the trunk, so that it is there at once. */
+  static LAUNCH_ICON = "/apple-touch-icon_400x400.png"
+
+  /**
+   * What an installed app shows the moment it is opened, before the page it opens on: without it, the phone
+   * shows a blank screen while that page and its style sheets arrive (2 to 3 s on an iPhone). It is written
+   * here, with its style inline, so that it needs nothing from the network; it then goes on to the page, and
+   * the browser keeps it on screen until that page can be drawn.
+   */
+  static LAUNCH_PAGE = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <title>RR0</title>
+  <style>
+    html { background: white; color: #069 }
+    body { margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem }
+    img { width: 6rem; height: 6rem; border-radius: 22% }
+    .spinner { width: 2rem; height: 2rem; border: 3px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: turn 1s linear infinite }
+    @keyframes turn { to { transform: rotate(1turn) } }
+    @media (prefers-color-scheme: dark) { html { background: black; color: #6af } }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 4s } }
+  </style>
+</head>
+<body>
+<img alt="" src="${RR0Worker.LAUNCH_ICON}">
+<div aria-label="Chargement" class="spinner" role="progressbar"></div>
+<script>
+  const url = new URL(location.href)
+  url.searchParams.delete("source")
+  location.replace(url.pathname + url.search + url.hash)
+</script>
+</body>
+</html>`
 
   /** How long a cached copy waits for a slow network before it is served instead. */
   static PATIENCE_MS = 5000
@@ -99,6 +136,10 @@ class RR0Worker {
       return undefined
     }
     if (request.mode === "navigate") {
+      // The manifest's start and shortcut URLs carry source=pwa: the app is being opened.
+      if (url.searchParams.get("source") === "pwa") {
+        return Promise.resolve(new Response(RR0Worker.LAUNCH_PAGE, {headers: {"Content-Type": "text/html; charset=utf-8"}}))
+      }
       return this.navigation(event, url)
     }
     return this.networkFirst(event, fetch(request), request, RR0Worker.ASSETS, RR0Worker.MAX_ASSETS)

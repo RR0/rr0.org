@@ -29,6 +29,9 @@ class RR0Worker {
     "/time/DualRangeComponent.mjs", "/tag/TagsComponent.mjs"
   ]
 
+  /** What the installation itself fetches: the launch screen's logo and the page shown offline. */
+  static CORE = ["/offline.html", "/images/rr0-logo-512.jpg"]
+
   /** Pages (HTML documents), kept by origin and path. */
   static PAGES = "rr0-pages"
 
@@ -125,11 +128,30 @@ class RR0Worker {
     return response.ok && response.status === 200 && response.type === "basic" && !response.redirected
   }
 
+  /**
+   * Only what the launch screen and an unvisited page need offline: a few dozen KB. The rest of the
+   * trunk comes afterwards (completeTrunk). Fetching it all here kept an iPhone on the old worker: an
+   * installation of several MB is cut short each time the app is closed, and never ends.
+   */
   async install() {
+    await this.precache(RR0Worker.CORE, true)
+  }
+
+  /** The rest of the trunk, once per worker's life, while the reader browses; what it already holds is skipped. */
+  completeTrunk() {
+    this.trunk ??= this.precache(RR0Worker.PRECACHE, false).catch(() => undefined)
+    return this.trunk
+  }
+
+  /** Individually: one missing file must not keep the worker from installing. */
+  async precache(paths, refresh) {
     const cache = await caches.open(RR0Worker.ASSETS)
-    // Individually: one missing file must not keep the worker from installing.
-    await Promise.allSettled(RR0Worker.PRECACHE.map(async path => {
-      const response = await fetch(new Request(new URL(path, self.location.origin).href, {cache: "reload"}))
+    await Promise.allSettled(paths.map(async path => {
+      if (!refresh && await cache.match(path)) {
+        return
+      }
+      // "no-cache" revalidates what the browser holds instead of downloading it again.
+      const response = await fetch(new Request(new URL(path, self.location.origin).href, {cache: refresh ? "reload" : "no-cache"}))
       if (RR0Worker.storable(response)) {
         await cache.put(path, response)
       }
@@ -298,6 +320,9 @@ self.addEventListener("message", event => {
   }
 })
 self.addEventListener("fetch", event => {
+  if (event.request.mode === "navigate") {
+    event.waitUntil(worker.completeTrunk())
+  }
   const response = worker.respond(event)
   if (response) {
     event.respondWith(response)

@@ -163,6 +163,10 @@ where the person's contribution was significant; if none exists, omit the recipr
 real documentary gap, propose creating the appropriate page. A backlink is also unnecessary when the target already
 documents the relationship or when the original link is merely navigational or classificatory rather than factual.
 
+**Place references** — wrap geographical place names in `<span class="place">...</span>`, including
+countries, cities and regions. Preserve an existing internal link inside the span when one exists. Use an
+unambiguous place name for geocoding; source titles and quotations retain their original wording.
+
 **People references** — always reference a person with `<span class="people">First Last</span>` rather than a manual
 link to their biography. The people replacer resolves the biography directory automatically. When the visible text does
 not match the canonical name used by the directory, provide that name in `title`:

@@ -50,6 +50,12 @@ class RR0Worker {
 
   static MAX_KEPT_AT_ONCE = 300
 
+  /** How many writes into a cache between two trims: a cache may overflow its cap by this much. */
+  static TRIM_EVERY = 25
+
+  /** Writes per cache since the worker started, to trim every TRIM_EVERY of them. */
+  writes = {}
+
   /** Documents and media: big, rarely re-read, and often served in ranges. */
   static SKIPPED = /\.(pdf|zip|mp3|mp4|ogg|wav|webm|mov|avi|doc|docx|ppt|pptx|xls|xlsx|epub|bin|gz)$/i
 
@@ -71,6 +77,10 @@ class RR0Worker {
   }
 
   async activate() {
+    // The page request leaves while the worker is still starting, instead of waiting for it.
+    if (self.registration.navigationPreload) {
+      await self.registration.navigationPreload.enable()
+    }
     for (const name of await caches.keys()) {
       if (name.startsWith("rr0-") && name !== RR0Worker.PAGES && name !== RR0Worker.ASSETS) {
         await caches.delete(name)
@@ -91,14 +101,15 @@ class RR0Worker {
     if (request.mode === "navigate") {
       return this.navigation(event, url)
     }
-    return this.networkFirst(event, request, request, RR0Worker.ASSETS, RR0Worker.MAX_ASSETS)
+    return this.networkFirst(event, fetch(request), request, RR0Worker.ASSETS, RR0Worker.MAX_ASSETS)
   }
 
   /** A page is kept under its path alone: `/search?q=…` and `/page.html#part` are the same document. */
   async navigation(event, url) {
     const key = new Request(url.origin + url.pathname)
     try {
-      return await this.networkFirst(event, event.request, key, RR0Worker.PAGES, RR0Worker.MAX_PAGES)
+      const source = Promise.resolve(event.preloadResponse).then(preloaded => preloaded ?? fetch(event.request))
+      return await this.networkFirst(event, source, key, RR0Worker.PAGES, RR0Worker.MAX_PAGES)
     } catch (offline) {
       const cached = await (await caches.open(RR0Worker.PAGES)).match(key)
       return cached ?? (await (await caches.open(RR0Worker.ASSETS)).match(RR0Worker.OFFLINE)) ?? Response.error()
@@ -123,7 +134,7 @@ class RR0Worker {
         const response = await fetch(url.href)
         if (RR0Worker.storable(response) && await this.small(response)) {
           await cache.put(url.href, response)
-          await this.trim(cache, RR0Worker.MAX_ASSETS)
+          await this.trimSometimes(cache, RR0Worker.ASSETS, RR0Worker.MAX_ASSETS)
         }
       } catch (offline) {
         // Gone while it was being kept: nothing to do, it is only a head start.
@@ -137,7 +148,7 @@ class RR0Worker {
         if (RR0Worker.storable(response)) {
           const pages = await caches.open(RR0Worker.PAGES)
           await pages.put(document.origin + document.pathname, response)
-          await this.trim(pages, RR0Worker.MAX_PAGES)
+          await this.trimSometimes(pages, RR0Worker.PAGES, RR0Worker.MAX_PAGES)
         }
       } catch (offline) {
         // As above.
@@ -157,23 +168,45 @@ class RR0Worker {
     }
   }
 
-  async networkFirst(event, request, key, cacheName, maxEntries) {
-    const cache = await caches.open(cacheName)
-    const cached = await cache.match(key)
-    const network = fetch(request).then(async response => {
-      if (RR0Worker.storable(response) && await this.small(response)) {
-        await cache.put(key, response.clone())
-        await this.trim(cache, maxEntries)
-      }
+  /**
+   * The network's response is handed to the page as soon as its headers arrive, so that the page streams in
+   * as it would without a worker; keeping a copy happens afterwards, off the page's path. Reading the cache
+   * before the network answers, or keeping the copy before answering, held every page until it was entirely
+   * downloaded and written, and queued the style sheets behind one another (1 to 2 s per click once the
+   * caches had filled).
+   *
+   * @param source The network response, already requested (a navigation preload, or a fetch).
+   */
+  networkFirst(event, source, key, cacheName, maxEntries) {
+    let copy
+    const network = source.then(response => {
+      copy = RR0Worker.storable(response) ? response.clone() : undefined
       return response
     })
-    if (!cached) {
-      return network
-    }
-    event.waitUntil(network.catch(() => undefined))
-    const patience = new Promise(resolve => setTimeout(() => resolve(cached), RR0Worker.PATIENCE_MS))
-    const answer = network.then(response => response.status >= 500 ? cached : response, () => cached)
+    event.waitUntil(network.then(() => copy && this.store(cacheName, key, copy, maxEntries)).catch(() => undefined))
+    const cached = async () => (await caches.open(cacheName)).match(key)
+    const answer = network.then(
+      async response => response.status >= 500 ? (await cached()) ?? response : response,
+      async error => (await cached()) ?? Promise.reject(error)
+    )
+    const patience = new Promise(resolve => setTimeout(() => cached().then(found => found && resolve(found)), RR0Worker.PATIENCE_MS))
     return Promise.race([answer, patience])
+  }
+
+  async store(cacheName, key, response, maxEntries) {
+    if (await this.small(response)) {
+      const cache = await caches.open(cacheName)
+      await cache.put(key, response)
+      await this.trimSometimes(cache, cacheName, maxEntries)
+    }
+  }
+
+  /** Listing a cache of thousands of entries is costly: it is trimmed every few writes, not after each one. */
+  async trimSometimes(cache, cacheName, maxEntries) {
+    this.writes[cacheName] = (this.writes[cacheName] ?? 0) + 1
+    if (this.writes[cacheName] % RR0Worker.TRIM_EVERY === 1) {
+      await this.trim(cache, maxEntries)
+    }
   }
 
   /** A compressed answer carries no content-length, so its size is read off the body rather than assumed. */

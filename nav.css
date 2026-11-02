@@ -217,3 +217,39 @@ nav > ul {
     border-color: rgb(80, 80, 80);
   }
 }
+
+/* Loading indicator of the installed app (nav.js): it can't know the progress, so it slows down as it goes. */
+.loading-bar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #069;
+  transform-origin: left;
+  pointer-events: none;
+  animation: loading-bar 8s cubic-bezier(.1, .7, .3, 1) forwards;
+}
+
+@keyframes loading-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(.95);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .loading-bar {
+    background: #6af;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-bar {
+    animation: none;
+    transform: scaleX(.5);
+  }
+}

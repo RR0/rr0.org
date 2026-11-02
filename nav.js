@@ -35,3 +35,39 @@ if ("serviceWorker" in navigator) {
     }).catch(() => {})
   })
 }
+
+// Installed as an app, the site has no browser bar, hence no sign that a clicked link is loading: show one. In a
+// browser tab, the browser's own indicator does it, so nothing is added there.
+if (matchMedia("(display-mode: standalone), (display-mode: minimal-ui), (display-mode: fullscreen)").matches) {
+  const bar = document.createElement("div")
+  bar.className = "loading-bar"
+  bar.setAttribute("aria-hidden", "true")
+  let giveUp
+  const hide = () => {
+    clearTimeout(giveUp)
+    bar.remove()
+  }
+  const show = () => {
+    document.body.append(bar)
+    giveUp = setTimeout(hide, 20000)  // A navigation the browser dropped (a download, a 204) never unloads the page.
+  }
+  if ("navigation" in window) {
+    navigation.addEventListener("navigate", event => {
+      if (!event.destination.sameDocument && !event.downloadRequest && event.navigationType !== "reload") {
+        show()
+      }
+    })
+  } else {
+    addEventListener("click", event => {
+      const link = event.target.closest?.("a[href]")
+      const url = link && new URL(link.href, location.href)
+      if (url && !event.defaultPrevented && event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey
+        && !event.altKey && !link.target && !link.hasAttribute("download") && url.protocol.startsWith("http")
+        && !(url.pathname === location.pathname && url.search === location.search && url.hash)) {
+        show()
+      }
+    })
+  }
+  // Back from the back/forward cache, the page comes as it was left: with its bar.
+  addEventListener("pageshow", hide)
+}

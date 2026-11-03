@@ -1,28 +1,23 @@
 {
- "version": 1,
+ "version": 2,
  "id": "1967-08-29-DelpeuchAnneMarie",
  "image": "https://ufoathome.org/demo-data/share/cussac-anne-marie.jpg",
- "time": {
-  "year": 1967,
-  "month": 8,
-  "day": 29,
-  "hour": 10,
-  "minute": 30,
-  "raw": "1967-08-29T10:30~"
- },
+ "time": "1967-08-29T10:30~",
  "durationSeconds": 32,
  "utcOffsetHours": 1,
  "timeZone": "Europe/Paris",
- "place": [
-  {
-   "value": {
-    "lat": 44.981239,
-    "lng": 2.917224
-   },
-   "basis": "derived",
-   "rationale": "Her brother's spot (the dossier's Plan.kml) moved 13 m west along the road: the GEPAN had her place her own point \"dans le champ à 13 m à l'ouest de celui déterminé par son frère, parallèlement à la route\" (annex A8, p. A8.26), the point it then measured her angles from. The spot is the same as the other recording's, 13 m along."
-  }
- ],
+ "place": {
+  "value": {
+   "locations": [
+    {
+     "lat": 44.981239,
+     "lng": 2.917224
+    }
+   ]
+  },
+  "basis": "derived",
+  "rationale": "Her brother's spot (the dossier's Plan.kml) moved 13 m west along the road: the GEPAN had her place her own point \"dans le champ à 13 m à l'ouest de celui déterminé par son frère, parallèlement à la route\" (annex A8, p. A8.26), the point it then measured her angles from. The spot is the same as the other recording's, 13 m along."
+ },
  "observer": {
   "id": "DelpeuchAnneMarie",
   "title": "Anne-Marie Delpeuch"
@@ -1727,5 +1722,37 @@
     ]
    }
   ]
+ },
+ "frozen": {
+  "relief": {
+   "src": "observer-cussac-anne-marie.relief.zip",
+   "takenOn": "2026-10-20",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-cussac-anne-marie.imagery.zip",
+   "takenOn": "2026-10-20",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-cussac-anne-marie.roads.json",
+   "takenOn": "2026-10-20",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "water": {
+   "src": "observer-cussac-anne-marie.water.json",
+   "takenOn": "2026-10-20",
+   "attribution": "Water © IGN, BD TOPO (Licence Ouverte 2.0)"
+  },
+  "railways": {
+   "src": "observer-cussac-anne-marie.railways.json",
+   "takenOn": "2026-10-20",
+   "attribution": "Railways © OpenStreetMap contributors, as surveyed today"
+  },
+  "map": {
+   "src": "observer-cussac-anne-marie.map.zip",
+   "takenOn": "2026-10-20",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  }
  }
 }

@@ -1,26 +1,21 @@
 {
- "version":1,
+ "version":2,
  "id":"2015-05-31-SillyLeLong-T1-temoins",
  "image":"https://ufoathome.org/demo-data/share/silly-le-long-temoins.jpg",
  "summaryTime":56,
- "time":{
-  "year":2015,
-  "month":5,
-  "day":31,
-  "hour":0,
-  "minute":50,
-  "second":34
- },
+ "time":"2015-05-31T00:50:34",
  "durationSeconds":212,
  "utcOffsetHours":2,
  "timeZone":"Europe/Paris",
- "place":[
-  {
-   "lat":49.1055258,
-   "lng":2.7537538,
-   "name":"RN2, Le Plessis-Belleville / Silly-le-Long, Oise, France"
-  }
- ],
+ "place":{
+  "name": "RN2, Le Plessis-Belleville / Silly-le-Long, Oise, France",
+  "locations": [
+   {
+    "lat": 49.1055258,
+    "lng": 2.7537538
+   }
+  ]
+ },
  "observer":{
   "id":"SillyLeLong-2015-T1-temoins",
   "title":{

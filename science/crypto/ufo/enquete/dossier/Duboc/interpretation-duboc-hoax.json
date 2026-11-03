@@ -1,14 +1,7 @@
 {
- "version": 1,
+ "version": 2,
  "id": "1994-01-28-DubocJeanCharles-hoax",
- "time": {
-  "year": 1994,
-  "month": 1,
-  "day": 28,
-  "hour": 13,
-  "minute": 14,
-  "raw": "1994-01-28T13:14"
- },
+ "time": "1994-01-28T13:14",
  "utcOffsetHours": {
   "value": 0,
   "basis": "stated",
@@ -19,17 +12,19 @@
   "basis": "stated",
   "rationale": "\"1 ou 2 mn\" in the report he wrote for Weinstein; the SEPRA's calculations use two minutes (11 nautical miles at 330 kt)"
  },
- "place": [
-  {
-   "value": {
-    "lat": 48.845,
-    "lng": 3.015,
-    "name": "Near Coulommiers, Seine-et-Marne, France (airway between the VORs BRY and CLM)"
-   },
-   "basis": "stated",
-   "rationale": "\"48°50'7 N / 003°00'9 E\" in both reports, read as degrees and decimal minutes (48.845 N, 3.015 E): where the airliner was"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Near Coulommiers, Seine-et-Marne, France (airway between the VORs BRY and CLM)",
+   "locations": [
+    {
+     "lat": 48.845,
+     "lng": 3.015
+    }
+   ]
+  },
+  "basis": "stated",
+  "rationale": "\"48°50'7 N / 003°00'9 E\" in both reports, read as degrees and decimal minutes (48.845 N, 3.015 E): where the airliner was"
+ },
  "instrument": "eye",
  "observerTrack": {
   "keyframes": [

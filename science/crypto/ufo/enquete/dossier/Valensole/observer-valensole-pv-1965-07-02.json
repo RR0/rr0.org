@@ -1,26 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "1965-07-01-MasseMaurice-pv-1965-07-02",
   "image": "https://ufoathome.org/demo-data/share/valensole-pv-1965-07-02.jpg",
-  "time": {
-    "year": 1965,
-    "month": 7,
-    "day": 1,
-    "hour": 5,
-    "minute": 45
-  },
+  "time": "1965-07-01T05:45",
   "durationSeconds": 66,
   "utcOffsetHours": 1,
-  "place": [
-    {
-      "value": {
-        "lat": 43.8447,
-        "lng": 5.9632
-      },
-      "basis": "derived",
-      "rationale": "The memorial's own coordinates, at the roadside of the D6A in the lieu-dit L'Olivol, standing in for a landing point nobody publishes: the memorial was put where the public can reach it safely, and Masse's field is set back in private parcels still under lavender, whose growers ask that nobody walk into them. So this is the right lieu-dit and the right road, and some hundreds of metres out. Everything downstream survives that: across the 800 m square around this point no 40 m of ground exceeds 3.1% of slope (1.2% along the walk itself), so the field lies flat wherever in the parcel the true spot is, and 400 m moves every celestial azimuth by under a hundredth of a degree. The observer track and all 140 rows are laid out relative to this point, so they carry its error with them and none of their own."
-    }
-  ],
+  "place": {
+    "value": {
+      "locations": [
+        {
+          "lat": 43.8447,
+          "lng": 5.9632
+        }
+      ]
+    },
+    "basis": "derived",
+    "rationale": "The memorial's own coordinates, at the roadside of the D6A in the lieu-dit L'Olivol, standing in for a landing point nobody publishes: the memorial was put where the public can reach it safely, and Masse's field is set back in private parcels still under lavender, whose growers ask that nobody walk into them. So this is the right lieu-dit and the right road, and some hundreds of metres out. Everything downstream survives that: across the 800 m square around this point no 40 m of ground exceeds 3.1% of slope (1.2% along the walk itself), so the field lies flat wherever in the parcel the true spot is, and 400 m moves every celestial azimuth by under a hundredth of a degree. The observer track and all 140 rows are laid out relative to this point, so they carry its error with them and none of their own."
+  },
   "observer": {
     "id": "MasseMaurice",
     "title": "Maurice Masse (procès-verbal du 2 juillet 1965)"

@@ -1,22 +1,19 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "1964-04-24-ZamoraLonnie",
   "image": "https://ufoathome.org/demo-data/share/socorro.jpg",
-  "time": {
-    "year": 1964,
-    "month": 4,
-    "day": 24,
-    "hour": 17,
-    "minute": 50
-  },
+  "summaryTime": 87,
+  "time": "1964-04-24T17:50",
   "durationSeconds": 120,
   "utcOffsetHours": -7,
-  "place": [
-    {
-      "lat": 34.050918,
-      "lng": -106.891693
-    }
-  ],
+  "place": {
+    "locations": [
+      {
+        "lat": 34.050918,
+        "lng": -106.891693
+      }
+    ]
+  },
   "observer": {
     "id": "ZamoraLonnie",
     "title": "Lonnie Zamora"
@@ -5481,6 +5478,38 @@
       ],
       "basis": "assumed",
       "rationale": "Byrnes (FBI) found three burned patches of grass clumps inside the four imprints and one outside, still smouldering when the officers arrived, and Zamora saw \"the brush was burning in several places\" once the craft had gone. Where each patch lay is not recorded, so they are spread inside and outside the imprints by hand; that they caught during the take-off rather than the landing is assumed too."
+    }
+  },
+  "frozen": {
+    "relief": {
+      "src": "observer-socorro.relief.zip",
+      "takenOn": "2026-10-20",
+      "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+    },
+    "imagery": {
+      "src": "observer-socorro.imagery.zip",
+      "takenOn": "2026-10-20",
+      "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+    },
+    "roads": {
+      "src": "observer-socorro.roads.json",
+      "takenOn": "2026-10-20",
+      "attribution": "Roads © OpenStreetMap contributors, as surveyed today"
+    },
+    "water": {
+      "src": "observer-socorro.water.json",
+      "takenOn": "2026-10-20",
+      "attribution": "Water © OpenStreetMap contributors"
+    },
+    "railways": {
+      "src": "observer-socorro.railways.json",
+      "takenOn": "2026-10-20",
+      "attribution": "Railways © OpenStreetMap contributors, as surveyed today"
+    },
+    "map": {
+      "src": "observer-socorro.map.zip",
+      "takenOn": "2026-10-20",
+      "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
     }
   }
 }

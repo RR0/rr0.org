@@ -1,15 +1,8 @@
 {
- "version": 1,
+ "version": 2,
  "id": "2015-07-12-BraineLeComte-BJN-interpretation-2",
  "time": {
-  "value": {
-   "year": 2015,
-   "month": 7,
-   "day": 12,
-   "hour": 0,
-   "minute": 45,
-   "second": 0
-  },
+  "value": "2015-07-12T00:45:00",
   "basis": "derived",
   "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
  },
@@ -24,17 +17,19 @@
   "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
  },
  "timeZone": "Europe/Brussels",
- "place": [
-  {
-   "value": {
-    "lat": 50.6,
-    "lng": 4.1,
-    "name": "Braine-le-Comte, Hainaut, Belgium"
-   },
-   "basis": "assumed",
-   "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Braine-le-Comte, Hainaut, Belgium",
+   "locations": [
+    {
+     "lat": 50.6,
+     "lng": 4.1
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+ },
  "lightPollution": {
   "value": 20.05,
   "basis": "derived",

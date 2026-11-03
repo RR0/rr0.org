@@ -1624,5 +1624,37 @@
         }
       }
     ]
+  },
+  "frozen": {
+    "relief": {
+      "src": "observer-valensole-pv-1965-07-02.relief.zip",
+      "takenOn": "2026-10-20",
+      "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+    },
+    "imagery": {
+      "src": "observer-valensole-pv-1965-07-02.imagery.zip",
+      "takenOn": "2026-10-20",
+      "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+    },
+    "roads": {
+      "src": "observer-valensole-pv-1965-07-02.roads.json",
+      "takenOn": "2026-10-20",
+      "attribution": "Roads © IGN, BD TOPO (Licence Ouverte 2.0), as drawn today"
+    },
+    "water": {
+      "src": "observer-valensole-pv-1965-07-02.water.json",
+      "takenOn": "2026-10-20",
+      "attribution": "Water © IGN, BD TOPO (Licence Ouverte 2.0)"
+    },
+    "railways": {
+      "src": "observer-valensole-pv-1965-07-02.railways.json",
+      "takenOn": "2026-10-20",
+      "attribution": "Railways © OpenStreetMap contributors, as surveyed today"
+    },
+    "map": {
+      "src": "observer-valensole-pv-1965-07-02.map.zip",
+      "takenOn": "2026-10-20",
+      "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+    }
   }
 }

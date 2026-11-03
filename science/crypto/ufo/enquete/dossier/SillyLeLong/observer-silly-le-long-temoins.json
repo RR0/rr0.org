@@ -13410,7 +13410,7 @@
   },
   {
    "type":"event",
-   "eventType":"look",
+   "eventType":"appearance",
    "who":"phenomenon",
    "t":0,
    "until":83800,
@@ -13505,7 +13505,7 @@
   },
   {
    "type":"event",
-   "eventType":"look",
+   "eventType":"appearance",
    "who":"phenomenon",
    "t":83800,
    "until":211300,

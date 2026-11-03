@@ -54,43 +54,8 @@
       }
     ]
   },
-  "observerTrack": {
-    "keyframes": [
-      {
-        "t": 0,
-        "pose": {
-          "lat": 43.845508,
-          "lng": 5.9632,
-          "elevationM": 0,
-          "headingDeg": 180,
-          "pitchDeg": 2,
-          "fovDeg": 60
-        }
-      },
-      {
-        "t": 20000,
-        "pose": {
-          "lat": 43.84523940495868,
-          "lng": 5.9632,
-          "elevationM": 0,
-          "headingDeg": 180,
-          "pitchDeg": 2,
-          "fovDeg": 60
-        }
-      },
-      {
-        "t": 66000,
-        "pose": {
-          "lat": 43.84523940495868,
-          "lng": 5.9632,
-          "elevationM": 0,
-          "headingDeg": 180,
-          "pitchDeg": 2,
-          "fovDeg": 60
-        }
-      }
-    ]
-  },
+  "events": [{"type": "event", "eventType": "look", "t": 0, "params": {"headingDeg": {"value": 180, "basis": "assumed", "rationale": "Towards the craft, which is due south of him the whole time"}, "pitchDeg": 2, "fovDeg": 60}}, {"type": "event", "eventType": "walk", "t": 0, "until": 20000, "params": {"from": {"value": {"lat": 43.845508, "lng": 5.9632}, "basis": "derived", "rationale": "Behind the rabbit hutch, the craft some 90 m away"}, "to": {"value": {"lat": 43.84523940495868, "lng": 5.9632}, "basis": "stated", "rationale": "\"Il voit l'engin de 60 m environ\" (PV n° 445): where he stopped"}}}],
+  "observerTrack": {"keyframes": []},
   "weatherTrack": {
     "keyframes": [
       {

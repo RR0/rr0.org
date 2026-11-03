@@ -4395,7 +4395,7 @@
   ],
   "groups": []
  },
- "events": [{"type": "event", "eventType": "look", "t": 0, "params": {"headingDeg": {"value": 180, "basis": "assumed", "rationale": "Towards the craft, which is due south of him the whole time"}, "pitchDeg": 2, "fovDeg": 60}}, {"type": "event", "eventType": "walk", "t": 0, "until": 55000, "params": {"from": {"value": {"lat": 43.845508, "lng": 5.9632}, "basis": "derived", "rationale": "Behind the rabbit hutch, the craft some 90 m away"}, "to": {"value": {"lat": 43.844758, "lng": 5.9632}, "basis": "stated", "rationale": "He came along the vine to within 6 m of it, where he was held motionless"}}}, {"type": "event", "eventType": "follow", "t": 250000, "until": 262500, "params": {"target": {"value": "craft", "basis": "stated", "rationale": "He followed it with his eyes as it left (account of 18 August 1965)"}}}],
+ "events": [{"type": "event", "eventType": "look", "t": 0, "params": {"headingDeg": {"value": 180, "basis": "assumed", "rationale": "Towards the craft, which is due south of him the whole time"}, "pitchDeg": 2, "fovDeg": 60}}, {"type": "event", "eventType": "motion", "who": "craft", "t": 246000, "until": 248000, "params": {"motion": "pivot-retract", "to": {"value": 1, "basis": "stated", "rationale": "\"Le tube central rentre dans l'engin\" (account of 18 August 1965)"}}}, {"type": "event", "eventType": "spin", "who": "craft", "t": 248000, "until": 262000, "params": {"motion": "legs-turn", "turnsPerS": {"value": 0.5, "basis": "assumed", "rationale": "\"Ses 6 pieds se mettent à tourner\"; how fast, nobody said"}}}, {"type": "event", "eventType": "rise", "who": "craft", "t": 250000, "until": 254000, "params": {"distanceM": 0.79, "angleDeg": {"value": 0, "basis": "stated", "rationale": "\"Il s'élève\": straight up, before it goes off at a slant"}, "stops": true}}, {"type": "event", "eventType": "rise", "who": "craft", "t": 256000, "until": 262000, "params": {"distanceM": 37.89, "angleDeg": {"value": 51, "basis": "stated", "rationale": "\"Il part en oblique\"; how steep, from where he followed it to"}, "headingDeg": 267.6, "stops": false}}, {"type": "event", "eventType": "vanish", "who": "craft", "t": 262500}, {"type": "event", "eventType": "motion", "who": "etre-1", "t": 46000, "until": 48000, "params": {"motion": "crouch", "to": {"value": 0, "basis": "stated", "rationale": "\"Ils étaient accroupis\", then stood up as he came near (account of 18 August 1965); when, from his account's order"}}}, {"type": "event", "eventType": "motion", "who": "etre-2", "t": 46000, "until": 48000, "params": {"motion": "crouch", "to": {"value": 0, "basis": "stated", "rationale": "\"Ils étaient accroupis\", then stood up as he came near (account of 18 August 1965); when, from his account's order"}}}, {"type": "event", "eventType": "turn", "who": "etre-2", "t": 48000, "until": 50000, "params": {"headingDeg": {"value": 0, "basis": "assumed", "rationale": "Turned towards him, as the other was"}}}, {"type": "event", "eventType": "vanish", "who": "etre-1", "t": 60000}, {"type": "event", "eventType": "vanish", "who": "etre-2", "t": 60000}, {"type": "event", "eventType": "walk", "t": 0, "until": 55000, "params": {"from": {"value": {"lat": 43.845508, "lng": 5.9632}, "basis": "derived", "rationale": "Behind the rabbit hutch, the craft some 90 m away"}, "to": {"value": {"lat": 43.844758, "lng": 5.9632}, "basis": "stated", "rationale": "He came along the vine to within 6 m of it, where he was held motionless"}}}, {"type": "event", "eventType": "follow", "t": 250000, "until": 262500, "params": {"target": {"value": "craft", "basis": "stated", "rationale": "He followed it with his eyes as it left (account of 18 August 1965)"}}}],
  "observerTrack": {"keyframes": []},
  "weatherTrack": {
   "keyframes": [
@@ -5833,65 +5833,6 @@
         "color": "#b8b3a6",
         "albedo": 0.35
        }
-      },
-      {
-       "t": 246000,
-       "motions": {
-        "pivot-retract": 0
-       }
-      },
-      {
-       "t": 248000,
-       "motions": {
-        "pivot-retract": 1,
-        "legs-turn": 0
-       }
-      },
-      {
-       "t": 250000,
-       "eastM": 0,
-       "northM": -89.9,
-       "onGround": true,
-       "motions": {
-        "legs-turn": 1
-       }
-      },
-      {
-       "t": 254000,
-       "azimuthDeg": 179.99,
-       "altitudeDeg": 3.52,
-       "distanceM": 6.5
-      },
-      {
-       "t": 256000,
-       "azimuthDeg": 179.99,
-       "altitudeDeg": 3.5,
-       "distanceM": 6.5
-      },
-      {
-       "t": 258000,
-       "azimuthDeg": 230.35,
-       "altitudeDeg": 22.09,
-       "distanceM": 11.1
-      },
-      {
-       "t": 260000,
-       "azimuthDeg": 248.5,
-       "altitudeDeg": 32.83,
-       "distanceM": 22.6
-      },
-      {
-       "t": 262000,
-       "azimuthDeg": 255.3,
-       "altitudeDeg": 38.61,
-       "distanceM": 38.9,
-       "motions": {
-        "legs-turn": 7
-       }
-      },
-      {
-       "t": 262500,
-       "present": false
       }
      ],
      "basis": "derived",
@@ -5917,9 +5858,9 @@
        "northM": -88,
        "onGround": true,
        "sizeM": {
-        "widthM": 0.45,
-        "lengthM": 0.35,
-        "heightM": 0.55
+        "widthM": 0.34,
+        "lengthM": 0.27,
+        "heightM": 0.95
        },
        "attitude": {
         "headingDeg": 0
@@ -5927,39 +5868,10 @@
        "appearance": {
         "color": "#6f7263",
         "albedo": 0.28
-       }
-      },
-      {
-       "t": 46000,
-       "eastM": -1.2,
-       "northM": -88,
-       "onGround": true,
-       "sizeM": {
-        "widthM": 0.45,
-        "lengthM": 0.35,
-        "heightM": 0.55
        },
-       "attitude": {
-        "headingDeg": 0
+       "motions": {
+        "crouch": 1
        }
-      },
-      {
-       "t": 48000,
-       "eastM": -1.2,
-       "northM": -88,
-       "onGround": true,
-       "sizeM": {
-        "widthM": 0.34,
-        "lengthM": 0.27,
-        "heightM": 0.95
-       },
-       "attitude": {
-        "headingDeg": 0
-       }
-      },
-      {
-       "t": 60000,
-       "present": false
       }
      ],
      "basis": "assumed",
@@ -5985,9 +5897,9 @@
        "northM": -87.7,
        "onGround": true,
        "sizeM": {
-        "widthM": 0.45,
-        "lengthM": 0.35,
-        "heightM": 0.55
+        "widthM": 0.34,
+        "lengthM": 0.27,
+        "heightM": 0.95
        },
        "attitude": {
         "headingDeg": 180
@@ -5995,48 +5907,10 @@
        "appearance": {
         "color": "#6f7263",
         "albedo": 0.28
-       }
-      },
-      {
-       "t": 46000,
-       "eastM": 1.1,
-       "northM": -87.7,
-       "onGround": true,
-       "sizeM": {
-        "widthM": 0.45,
-        "lengthM": 0.35,
-        "heightM": 0.55
        },
-       "attitude": {
-        "headingDeg": 180
+       "motions": {
+        "crouch": 1
        }
-      },
-      {
-       "t": 48000,
-       "eastM": 1.1,
-       "northM": -87.7,
-       "onGround": true,
-       "sizeM": {
-        "widthM": 0.34,
-        "lengthM": 0.27,
-        "heightM": 0.95
-       },
-       "attitude": {
-        "headingDeg": 180
-       }
-      },
-      {
-       "t": 50000,
-       "eastM": 1.1,
-       "northM": -87.7,
-       "onGround": true,
-       "attitude": {
-        "headingDeg": 0
-       }
-      },
-      {
-       "t": 60000,
-       "present": false
       }
      ],
      "basis": "assumed",

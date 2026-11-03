@@ -54,7 +54,7 @@
       }
     ]
   },
-  "events": [{"type": "event", "eventType": "look", "t": 0, "params": {"headingDeg": {"value": 180, "basis": "assumed", "rationale": "Towards the craft, which is due south of him the whole time"}, "pitchDeg": 2, "fovDeg": 60}}, {"type": "event", "eventType": "walk", "t": 0, "until": 20000, "params": {"from": {"value": {"lat": 43.845508, "lng": 5.9632}, "basis": "derived", "rationale": "Behind the rabbit hutch, the craft some 90 m away"}, "to": {"value": {"lat": 43.84523940495868, "lng": 5.9632}, "basis": "stated", "rationale": "\"Il voit l'engin de 60 m environ\" (PV n° 445): where he stopped"}}}],
+  "events": [{"type": "event", "eventType": "look", "t": 0, "params": {"headingDeg": {"value": 180, "basis": "assumed", "rationale": "Towards the craft, which is due south of him the whole time"}, "pitchDeg": 2, "fovDeg": 60}}, {"type": "event", "eventType": "spin", "who": "craft", "t": 61000, "until": 63800, "params": {"motion": "legs-turn", "turnsPerS": {"value": 0.5, "basis": "assumed", "rationale": "The six legs turned as it left (PV n° 445); how fast, nobody said"}}}, {"type": "event", "eventType": "rise", "who": "craft", "t": 61000, "until": 63800, "params": {"distanceM": 11.77, "angleDeg": {"value": 53.6, "basis": "stated", "rationale": "\"L'engin part en oblique\" (PV n° 445); how steep, from where it was lost"}, "headingDeg": 251.6, "stops": false}}, {"type": "event", "eventType": "vanish", "who": "craft", "t": 64000}, {"type": "event", "eventType": "ride", "who": "passager", "t": 0, "until": 64000, "params": {"in": "craft", "aboveM": 1.68}}, {"type": "event", "eventType": "walk", "t": 0, "until": 20000, "params": {"from": {"value": {"lat": 43.845508, "lng": 5.9632}, "basis": "derived", "rationale": "Behind the rabbit hutch, the craft some 90 m away"}, "to": {"value": {"lat": 43.84523940495868, "lng": 5.9632}, "basis": "stated", "rationale": "\"Il voit l'engin de 60 m environ\" (PV n° 445): where he stopped"}}}],
   "observerTrack": {"keyframes": []},
   "weatherTrack": {
     "keyframes": [
@@ -1447,37 +1447,6 @@
               "motions": {
                 "legs-turn": 0
               }
-            },
-            {
-              "t": 61000,
-              "eastM": 0,
-              "northM": -89.9,
-              "onGround": true,
-              "motions": {
-                "legs-turn": 0
-              }
-            },
-            {
-              "t": 62500,
-              "eastM": -4.0,
-              "northM": -91.4,
-              "altitudeAboveGroundM": 3.0,
-              "motions": {
-                "legs-turn": 0.75
-              }
-            },
-            {
-              "t": 63800,
-              "eastM": -9.0,
-              "northM": -92.9,
-              "altitudeAboveGroundM": 7.0,
-              "motions": {
-                "legs-turn": 1.4
-              }
-            },
-            {
-              "t": 64000,
-              "present": false
             }
           ],
           "basis": "derived",
@@ -1560,28 +1529,6 @@
                 "color": "#6f7263",
                 "albedo": 0.28
               }
-            },
-            {
-              "t": 61000,
-              "eastM": 0,
-              "northM": -89.9,
-              "altitudeAboveGroundM": 1.68
-            },
-            {
-              "t": 62500,
-              "eastM": -4.0,
-              "northM": -91.4,
-              "altitudeAboveGroundM": 4.68
-            },
-            {
-              "t": 63800,
-              "eastM": -9.0,
-              "northM": -92.9,
-              "altitudeAboveGroundM": 8.68
-            },
-            {
-              "t": 64000,
-              "present": false
             }
           ],
           "basis": "assumed",

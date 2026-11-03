@@ -12,8 +12,26 @@
    "eventType": "sighting",
    "id": "t1",
    "time": "2015-05-31 00:50",
-   "title": "T1",
+   "title": {
+    "fr": "T1, à la vitesse de la simulation du GEIPAN (138 km/h au début)",
+    "en": "T1, at the speed of the GEIPAN's simulation (138 km/h at first)",
+    "es": "T1, a la velocidad de la simulación del GEIPAN (138 km/h al principio)",
+    "it": "T1, alla velocità della simulazione del GEIPAN (138 km/h all'inizio)"
+   },
    "url": "observer-silly-le-long.json"
+  },
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "id": "t1-temoins",
+   "time": "2015-05-31 00:50",
+   "title": {
+    "fr": "T1, à la vitesse que donnent les témoins (106 km/h au début)",
+    "en": "T1, at the speed the witnesses give (106 km/h at first)",
+    "es": "T1, a la velocidad que dan los testigos (106 km/h al principio)",
+    "it": "T1, alla velocità indicata dai testimoni (106 km/h all'inizio)"
+   },
+   "url": "observer-silly-le-long-temoins.json"
   },
   {
    "type": "event",

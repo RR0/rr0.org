@@ -195,8 +195,8 @@ stills and enhanced images as captioned `<figure>`s with their source; citing th
 **Organisation pages** — place an organisation under the one it depends on (e.g. a contractor created for and mainly
 funded by the DoD goes under `org/us/dod/`, not `org/us/`), as a directory with `index.html` + `index.json`
 (`{"type": "org", "title": "<acronym>"}`), the page starting with `<!--#include virtual="/header.html" -->`.
-A member known to have left the organisation stays in its list of members, struck through with `<del>`:
-`<li><del><span class="people">Baptiste Friscourt</span></del></li>`.
+A member known to have left the organisation stays in its list of members, struck through with `<del>` whose `title` says why (when and what for, as the bio or the page tells it):
+`<li><del title="Quitte UAP Check en janvier 2024 pour divergence d'opinion"><span class="people">Baptiste Friscourt</span></del></li>`.
 
 **Encoding** — every file is UTF-8, without BOM. A file found in Latin-1, Windows-1252 or any other encoding is
 converted (decode Windows-1252 for Latin-1 files: it is a superset, and old pages use its `’ “ ” … –`), and any charset

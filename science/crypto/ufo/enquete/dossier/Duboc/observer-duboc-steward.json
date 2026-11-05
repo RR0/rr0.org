@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "id": "1994-01-28-ChiefSteward",
  "image": "https://ufoathome.org/demo-data/share/duboc-steward.jpg",
  "tags": [
@@ -738,11 +738,7 @@
   "order": [
    "disc"
   ],
-  "groups": [
-   [
-    "disc"
-   ]
-  ],
+  "groups": [],
   "keyframes": [
    {
     "t": 0,

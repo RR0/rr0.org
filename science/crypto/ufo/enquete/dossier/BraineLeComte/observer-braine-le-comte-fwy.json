@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "id": "2015-07-12-BraineLeComte-FWY",
  "image": "https://ufoathome.org/demo-data/share/braine-le-comte-fwy.jpg",
  "summaryTime": 2.85,
@@ -256,14 +256,17 @@
    "feu-5"
   ],
   "groups": [
-   [
-    "pan",
-    "feu-1",
-    "feu-2",
-    "feu-3",
-    "feu-4",
-    "feu-5"
-   ]
+   {
+    "id": "group-1",
+    "members": [
+     "pan",
+     "feu-1",
+     "feu-2",
+     "feu-3",
+     "feu-4",
+     "feu-5"
+    ]
+   }
   ],
   "keyframes": [
    {

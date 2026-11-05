@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "id": "1994-01-28-ChauffourValerie",
  "image": "https://ufoathome.org/demo-data/share/duboc-copilot.jpg",
  "tags": [
@@ -1072,10 +1072,13 @@
    "chevron"
   ],
   "groups": [
-   [
-    "lens",
-    "chevron"
-   ]
+   {
+    "id": "group-1",
+    "members": [
+     "lens",
+     "chevron"
+    ]
+   }
   ],
   "keyframes": [
    {

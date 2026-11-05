@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "id": "2015-07-12-BraineLeComte-AKH",
  "image": "https://ufoathome.org/demo-data/share/braine-le-comte-akh.jpg",
  "summaryTime": 6.18,
@@ -357,20 +357,23 @@
    "feu-11"
   ],
   "groups": [
-   [
-    "pan",
-    "feu-1",
-    "feu-2",
-    "feu-3",
-    "feu-4",
-    "feu-5",
-    "feu-6",
-    "feu-7",
-    "feu-8",
-    "feu-9",
-    "feu-10",
-    "feu-11"
-   ]
+   {
+    "id": "group-1",
+    "members": [
+     "pan",
+     "feu-1",
+     "feu-2",
+     "feu-3",
+     "feu-4",
+     "feu-5",
+     "feu-6",
+     "feu-7",
+     "feu-8",
+     "feu-9",
+     "feu-10",
+     "feu-11"
+    ]
+   }
   ],
   "keyframes": [
    {

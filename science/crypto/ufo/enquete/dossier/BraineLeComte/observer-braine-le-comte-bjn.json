@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "id": "2015-07-12-BraineLeComte-BJN",
  "image": "https://ufoathome.org/demo-data/share/braine-le-comte-bjn.jpg",
  "summaryTime": 1.85,
@@ -311,11 +311,7 @@
   "order": [
    "pan"
   ],
-  "groups": [
-   [
-    "pan"
-   ]
-  ],
+  "groups": [],
   "keyframes": [
    {
     "t": 1850,

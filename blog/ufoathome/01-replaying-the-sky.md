@@ -86,14 +86,14 @@ A reconstruction is only as good as what it is made of, so nothing in it is hidd
 ![The player with chips under the picture: summary, observer, position, time, weather and assessment values of the Silly-le-Long recording](img/chips.png)
 *Each chip is a statement of the recording: the witness’ position, heading and speed, the time, the weather, and the assessments of the case on several scales (Hynek, Poher, Ballester-Guasp).*
 
-Many of those values were not given by the witness: they were looked up, estimated or assumed. The format [records which is which](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274), with its source.
+Many of those values were not given by the witness: they were looked up, estimated or assumed. The format [records which is which](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274), with its source.
 
 ## Two uses
 
 UFO@home is meant for two kinds of people.
 
 - **Witnesses** can [describe their own sighting](https://ufoathome.org/edit/): draw what they saw, record how it moved, say when and where, and the sky of that moment appears behind it. Correct it until it matches. What you get is a file that is yours: there is no account and nothing is uploaded.
-- **Investigators and authors** can put a reconstruction in an article, a case file or a report, with [two lines of HTML](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f), on their own site and under their own name. UFO@home is [free software](https://github.com/RR0/UfoAtHome) under the MIT license: use it, change it, redistribute it, fork it.
+- **Investigators and authors** can put a reconstruction in an article, a case file or a report, [with two lines of HTML](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f), on their own site and under their own name. UFO@home is [free software](https://github.com/RR0/UfoAtHome) under the MIT license: use it, change it, redistribute it, fork it.
 
 The [demos](https://ufoathome.org/demos/) currently hold 41 reconstructions, from classic cases (Chiles & Whitted, Socorro, Valensole, McMinnville, Trans-en-Provence) to what the sky alone can show: a re-entry, a Starlink train, a nova, a halo photographed with a phone.
 

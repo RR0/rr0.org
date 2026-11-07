@@ -13,7 +13,7 @@ series: "UFO@home (3/5)"
 *Providers, assets, and why UFO@home is a web page*
 
 ![A case file of the RR0 encyclopaedia about Cussac: its list of sources, then the reconstruction embedded below it, a photograph of the place laid over the computed scene](img3/rr0org.png)
-*The [Cussac](https://rr0.org/science/crypto/ufo/enquete/dossier/Cussac/) case file on rr0.org: an encyclopaedia page, written in French, with the reconstruction embedded in it like a video.*
+*The [Cussac](https://rr0.org/science/crypto/ufo/enquete/dossier/Cussac/) case file on rr0.org: an encyclopedia page, written in French, with the reconstruction embedded in it like a video.*
 
 [UFO@home](https://ufoathome.org/) is a tool that [replays a UFO sighting](https://medium.com/@rr0/replaying-the-sky-of-a-ufo-sighting-d51db4e2742c) against the real sky of its date and place, from [what its reconstruction states](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274). This article is about how it is built, without going into the code: what lets it be used anywhere, take in new data, and still play the same in twenty years.
 
@@ -21,7 +21,7 @@ That last point is not abstract. The first UFO@home was a Java applet, in 2003. 
 
 ## Why the web
 
-A reconstruction has to be **seen** to be discussed: in an investigator’s report, a forum thread, an encyclopaedia page, an e-mail. The one medium that goes everywhere is a web page, and the one thing every page can hold is an HTML element. So UFO@home is a set of elements, and putting a reconstruction in a page takes two lines:
+A reconstruction has to be **seen** to be discussed: in an investigator’s report, a forum thread, an encyclopedia page, an e-mail. The one medium that goes everywhere is a web page, and the one thing every page can hold is an HTML element. So UFO@home is a set of elements, and putting a reconstruction in a page takes two lines:
 
 ```html
 <script type="module" src="https://ufoathome.org/lib/rr0-sighting.mjs"></script>
@@ -53,14 +53,14 @@ The second is that **a second source can be added without touching the rest**. T
 - the relief from the French IGN’s LiDAR HD and RGE ALTI in France, and from AWS Terrain Tiles elsewhere;
 - the aerial imagery from the IGN, [EOX Sentinel-2 cloudless](https://s2maps.eu/) or Esri World Imagery;
 - the buildings from the IGN’s LiDAR and topographic database, or from OpenStreetMap;
-- the place names from Nominatim, the air traffic from [adsb.lol](https://adsb.lol/), the night sky’s brightness from the World Atlas of artificial sky brightness.
+- the place names from [Nominatim](https://nominatim.org/), the air traffic from [adsb.lol](https://adsb.lol/), the night sky’s brightness from the World Atlas of artificial sky brightness.
 
 Some registries have a single entry, on purpose: the seam is in place before it is needed. The [assessment methods](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274) are a registry too, and so is the [language model that can draft a recording](https://medium.com/@rr0/ai-writes-the-account-never-the-sky-9e435229eb92).
 
 A few rules go with them, which the site states for every source:
 
 - **a source is read only when it is needed**: services are called only for a recording that needs them, and never for a date before their record begins;
-- **measured beats modelled, and modelled beats assumed**: a brightness is a published observation when one exists, and a formula fills in only what nobody measured;
+- **measured beats modeled, and modeled beats assumed**: a brightness is a published observation when one exists, and a formula fills in only what nobody measured;
 - **the limits are stated**: before 1940 for the weather, before 1957 for satellites, before February 2021 for individual satellite passes.
 
 ## Assets: what may disappear is hosted
@@ -68,7 +68,7 @@ A few rules go with them, which the site states for every source:
 Some data cannot be fetched live from a browser, or could be taken down by whoever publishes it. That data is copied once, reduced, credited, and served by the project itself as **assets**:
 
 - the star catalogue ([HYG](https://github.com/astronexus/HYG-Database)), comets propagated from JPL Horizons, novae from the AAVSO’s light curves, the Moon’s relief from NASA’s LOLA;
-- satellites from CelesTrak’s catalogue, and an archive of their orbital elements;
+- satellites from [CelesTrak’](https://celestrak.org/)s catalogue, and an archive of their orbital elements;
 - atmospheric re-entries from The Aerospace Corporation’s CORDS, fireballs from the [Global Meteor Network](https://globalmeteornetwork.org/);
 - **54 3D models** (aircraft, trees, vehicles, buildings, streetlights, people), all under CC0 or CC BY, each with its author and licence.
 

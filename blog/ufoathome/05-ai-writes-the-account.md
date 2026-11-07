@@ -25,8 +25,8 @@ But that would be an **illustration**. Whether the Moon was really up, where the
 
 A UFO@home recording splits the work the other way:
 
-- **what an AI may write is only the account**: a date, a place, directions and apparent sizes over time, each value marked as stated, derived or assumed (see [the model](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274));
-- **the sky, the weather on record, the ground, the optics** of the eye or the camera are computed from that account by the same engine for every case, tested, and public (see [how it is built](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f)).
+- **what an AI may write is only the account**: a date, a place, directions and apparent sizes over time, each value marked as stated, derived or assumed (see [the model](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274));
+- **the sky, the weather on record, the ground, the optics** of the eye or the camera are computed from that account by the same engine for every case, tested, and public (see [how it is built](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f)).
 
 The format’s limits are part of the point. It has no field for a real size or a distance, so an assistant cannot slip a conclusion in among the facts. And what it writes is a short file that anyone can read, replay, correct, and show the witness.
 
@@ -74,7 +74,7 @@ This is where the format pays off. Because every value carries its basis, a draf
 
 ## Privacy, again
 
-An account is personal data. Before handing documents to an online assistant, what identifies the witness has to be removed, unless they agreed to it, and what the service keeps has to be checked. UFO@home itself keeps nothing: no account, no server storing anything, and a key that never leaves the author’s browser (see the [privacy](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274) part of the model, and what [interviews take out](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea)).
+An account is personal data. Before handing documents to an online assistant, what identifies the witness has to be removed, unless they agreed to it, and what the service keeps has to be checked. UFO@home itself keeps nothing: no account, no server storing anything, and a key that never leaves the author’s browser (see the [privacy](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274) part of the model, and what [interviews take out](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea)).
 
 ## Conclusion
 
@@ -86,4 +86,4 @@ AI has a place in UFO@home, and a bounded one:
 - it is **optional**: the editor, a text editor or a database produce the same file;
 - what it writes is **checked**: played, read for its assumptions, corrected, and shown to the witness.
 
-Everything described here is free software, and the [demos](https://ufoathome.org/demos/) are the best place to start.
+Everything it describes is free software, and the [demos](https://ufoathome.org/demos/) are the best place to start.

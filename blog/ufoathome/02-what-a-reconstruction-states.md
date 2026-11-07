@@ -27,7 +27,7 @@ UFO@home knows three kinds of events:
 
 - **observations**: the account of one witness, which is what gets replayed;
 - **interpretations** (or readings): an explanation of an observation, a kite, a planet, an aircraft, a hoax;
-- **interviews**: a conversation held with a witness, which fixes [what they said when asked](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea).
+- **interviews**: a conversation held with a witness, which fixes [what they said when asked](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea).
 
 ![The case editor of Socorro: its title, date and identifier, then its events in the order of time: an observation of Lonnie Zamora and two readings of it](img2/case-editor.png)
 *The Socorro case (1964): one observation, and two readings of it. Each event is a file of its own, and the readings name the observation they interpret.*

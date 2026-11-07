@@ -40,10 +40,7 @@ Most UFO literature speaks of **witnesses** and **testimonies**. UFO@home speaks
 
 This is not only vocabulary. **Each observer has a recording of their own.** Two people a hundred metres apart did not see the same thing, and when their accounts disagree, the disagreement has to be kept, not averaged. A case with three observers is three recordings, and the player switches from one to the other.
 
-An observer may be named, given as initials, or left anonymous. What matters to the reconstruction is where they stood, how they moved and where they looked, along with what is known of them and of how their account was obtained:
-
-![The observer group of the editor: identity, profile (age, birth date, occupation) and testimony (how the account was obtained, its source, whether it was followed up)](img2/witness.png)
-*What is known of the observer, and of how their account was obtained (here, a questionnaire, with its source): what assessments will later need.*
+An observer may be named, given as initials, or left anonymous. What matters to the reconstruction is where they stood, how they moved and where they looked, along with what is known of them (age, occupation) and of how their account was obtained (on site, by phone, by questionnaire, in the press…, with its source and whether it was followed up), which assessments will later need.
 
 An observer's movement is a **track** of poses over time (position, heading, tilt, field of view) or, more simply, a list of **events** they went through: they drove along a road at given speeds, looked in the mirror, turned their head to follow something. The player works the poses out of them.
 

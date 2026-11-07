@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url)
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "/Users/javarome/project/@javarome/thesteps2/node_modules/playwright")
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
-const UFO = "https://ufoathome.org"
+const UFO = process.env.SITE || "https://ufoathome.org"
 const edit = file => `${UFO}/edit/index.html?file=/demo-data/${file}.json`
 const play = (file, extra = "") => `${UFO}/play/index.html?file=${encodeURIComponent("/demo-data/" + file + ".json")}${extra}`
 

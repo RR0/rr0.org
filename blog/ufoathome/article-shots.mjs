@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url)
 const { chromium } = require("/Users/javarome/project/@javarome/thesteps2/node_modules/playwright")
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
-const SITE = "https://ufoathome.org"
+const SITE = process.env.SITE || "https://ufoathome.org"
 
 const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent("/demo-data/" + file + ".json")}${extra}`
 

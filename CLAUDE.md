@@ -154,6 +154,11 @@ chronology). Each time you touch a page (add, fix or move content), also check t
 the relevant content tags (`tag-ufology`, `tag-seti`, `tag-astronomy`, `tag-physics`…), several if needed, and add any
 that are missing. New tags are in English like all code, with their labels translated into English and French.
 
+**No orphan pages** — a page must never be an orphan: every page you create (month, people, org, place, case file…) must be
+linked from its parent/index page in the same change (e.g. a new month `time/2/0/2/6/11/` gets its
+`<li><time>2026-11</time>` in the year page `time/2/0/2/6/index.html`, which is a hand-written list). Rebuild and
+deploy that parent page together with the new one.
+
 **Placing a paragraph** — a paragraph must be relevant to the title of its section, and ordered chronologically against
 the dates cited before and after it (e.g. "at the end of the 1980s" goes after a paragraph starting in 1984, not
 before). A paragraph fitting no section goes before the first section (right after the generated birth statement on a

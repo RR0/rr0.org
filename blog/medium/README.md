@@ -12,6 +12,16 @@ format JSON de Medium (`<article>?format=json`) dans un navigateur, Medium refus
 
 ## Articles
 
+### 2026 (anglais, série UFO@home)
+
+Publiés le 2026-11-07, réimportés depuis le flux RSS dans [../ufoathome](../ufoathome) (images locales, pas celles de Medium) :
+
+- [Replaying the sky of a UFO sighting](../ufoathome/01-replaying-the-sky.md)
+- [What a UFO reconstruction states, and on what](../ufoathome/02-what-a-reconstruction-states.md)
+- [Built to outlast its sources](../ufoathome/03-built-to-outlast-its-sources.md)
+- [What the witness said, and where it shows](../ufoathome/04-what-the-witness-said.md)
+- [AI writes the account, never the sky](../ufoathome/05-ai-writes-the-account.md)
+
 ### 2024 (anglais, bases de données)
 
 - [Database: from text to structure](2024-09-25-database-from-text-to-structure.md), 2024-09-25

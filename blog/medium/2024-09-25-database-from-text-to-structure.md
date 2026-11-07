@@ -55,13 +55,26 @@ No, it didn’t. Structured data was *added* to RR0, aside of the existing web 
 Also, the format of this structure was selected to be convenient: [JSON](https://en.wikipedia.org/wiki/JSON) is a kind of **semi-structured** format, conforming to a flexible, possibly dynamic schema. For instance, Adamski’s data would contain:
 
 ```
-{  "type": "people",  "occupations": ["contactee", "farmer"],  "countries": ["pl", "us"],  "birthTime": "1891-04-17",  "birthPlace": "Bydgoszcz (Poland)",  "deathTime": "1965-04-23",  "deathPlace": "Silver Springs (Maryland)"}
+{
+  "type": "people",
+  "occupations": ["contactee", "farmer"],
+  "countries": ["pl", "us"],
+  "birthTime": "1891-04-17",
+  "birthPlace": "Bydgoszcz (Poland)",
+  "deathTime": "1965-04-23",
+  "deathPlace": "Silver Springs (Maryland)"
+}
 ```
 
 Those data allow to search people by occupation, country, etc. This also allows (depending on your JSON schema or the lack of it) to **omit** data when it’s not available, thus solving the unused space problem:
 
 ```
-{  "type": "people",  "occupations": ["physician"],  "countries": ["us"],  "birthTime": "1940"}
+{
+  "type": "people",
+  "occupations": ["physician"],
+  "countries": ["us"],
+  "birthTime": "1940"
+}
 ```
 
 ![Using a JSON Schema, values of fields can be checked and editing tools can provide completion hints](https://cdn-images-1.medium.com/max/384/1*ne1cEZYZ6AOGm-AzyadESA.png)

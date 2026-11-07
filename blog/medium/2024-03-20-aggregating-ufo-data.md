@@ -46,19 +46,54 @@ Even before the “business” heterogeneity due to the differences of structure
 At the end of the day, a UFO cases datasource can be described as something that provides fetched data given some search criteria (a time frame and possibly a location, typically).
 
 ```
-/** * A source for cases. * * @param S The source case type. */interface CaseSource<S> {  /**   * The datasource authors to mention as a source.   */  authors: string[]  /**   * The datasource name to mention as a source.   */  copyright: string  /**   * Get cases matching a context, in the datasource native format.   *   * @param context   */  fetch (context: RR0SsgContext): Promise<S[]>}
+/**
+ * A source for cases.
+ *
+ * @param S The source case type.
+ */
+interface CaseSource<S> {
+  /**
+   * The datasource authors to mention as a source.
+   */
+  authors: string[]
+
+  /**
+   * The datasource name to mention as a source.
+   */
+  copyright: string
+
+  /**
+   * Get cases matching a context, in the datasource native format.
+   *
+   * @param context
+   */
+  fetch (context: RR0SsgContext): Promise<S[]>
+}
 ```
 
 For instance:
 
 ```
-class FuforaDatasource implements CaseSource<FuforaCaseSummary> {  readonly authors = ["FUFORA"]  readonly copyright = "Observational database"  async fetch(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {    // Issue a web request to gather the cases matching the context  }}
+class FuforaDatasource implements CaseSource<FuforaCaseSummary> {
+  readonly authors = ["FUFORA"]
+  readonly copyright = "Observational database"
+
+  async fetch(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
+    // Issue a web request to gather the cases matching the context
+  }
+}
 ```
 
 And you can then use it like:
 
 ```
-context = new RR0SsgContext()context.time.setYear(1970)context.time.setMonth(11)datasource = new FuforaDatasource()fuforaCasesForNovember1970 = await datasource.fetch(context)
+context = new RR0SsgContext()
+context.time.setYear(1970)
+context.time.setMonth(11)
+
+datasource = new FuforaDatasource()
+
+fuforaCasesForNovember1970 = await datasource.fetch(context)
 ```
 
 ### Fetch time
@@ -89,25 +124,54 @@ So you have to implement a policy in such cases. Like, either:
 So a case mapper could be defined as below:
 
 ```
-/** * Maps a case type to another type. *  * @param C The context type to use. * @param S The source case type (FuforaCaseSummary for instance). * @param T The target case type (RR0CaseSummary for instance). */interface CaseMapper<C, S, T> {  /**   * Transform a native case into a target format.   *   * @param context   * @param sourceCase the native source case.   * @param sourceTime The date of source case publication.   * @return the case in normalized format   */  map(context: C, sourceCase: S, sourceTime: Date): T}
+/**
+ * Maps a case type to another type.
+ * 
+ * @param C The context type to use.
+ * @param S The source case type (FuforaCaseSummary for instance).
+ * @param T The target case type (RR0CaseSummary for instance).
+ */
+interface CaseMapper<C, S, T> {
+  /**
+   * Transform a native case into a target format.
+   *
+   * @param context
+   * @param sourceCase the native source case.
+   * @param sourceTime The date of source case publication.
+   * @return the case in normalized format
+   */
+  map(context: C, sourceCase: S, sourceTime: Date): T
+}
 ```
 
 For instance:
 
 ```
-class FuforaCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, FuforaCaseSummary, RR0CaseSummary> {  map(context: HtmlRR0SsgContext, sourceCase: FuforaCaseSummary, sourceTime: Date): RR0CaseSummary {    // Create a RR0CaseSummary from the FuforaCaseSummary  }}
+class FuforaCaseRR0Mapper 
+implements CaseMapper<HtmlRR0SsgContext, FuforaCaseSummary, RR0CaseSummary> {
+
+  map(context: HtmlRR0SsgContext, sourceCase: FuforaCaseSummary, sourceTime: Date): RR0CaseSummary {
+    // Create a RR0CaseSummary from the FuforaCaseSummary
+  }
+}
 ```
 
 And you can then use it like:
 
 ```
-fuforaRR0Mapper = new FuforaCaseRR0Mapper()rr0CasesForNovember1970 = fuforaCasesForNovember1970  .map(fuforaCase => fuforaRR0Mapper.map(context, fuforaCase, fetchDate))
+fuforaRR0Mapper = new FuforaCaseRR0Mapper()
+
+rr0CasesForNovember1970 = fuforaCasesForNovember1970
+  .map(fuforaCase => fuforaRR0Mapper.map(context, fuforaCase, fetchDate))
 ```
 
 Note that a mapper can also be used to convert data to some storage format, like:
 
 ```
-csvMapper = new CsvMapper()csvLines = fuforaCasesForNovember1970  .map(fuforaCase => csvMapper.map(context, fuforaCase, fetchDate))
+csvMapper = new CsvMapper()
+
+csvLines = fuforaCasesForNovember1970
+  .map(fuforaCase => csvMapper.map(context, fuforaCase, fetchDate))
 ```
 
 In any case, each mapper implementation will have to handle the challenges described above. A more detailed list follows below.
@@ -226,7 +290,31 @@ Once you have detected cases to merge, you have to decide what/how to merge. We 
 Anyways, the code to merge will be common for any database, since after mapping it became a matter of merging apples with apples, i.e. fetched+mapped target cases with existing target cases:
 
 ```
-existingCases = this.rr0Datasource.fetch(context)casesToAdd: RR0CaseSummary[] = []for (const mapping of mappings) {  datasource = mapping.datasource  mapper = mapping.mapper  sourceCases = await datasource.fetch(context)  fetchTime = new Date()  casesToMerge = sourceCases    .map(sourceCase => mapper.map(context, sourceCase, fetchTime))  toAddFromThisSource: RR0CaseSummary[] = []  for (const caseToMerge of casesToMerge) {    foundExisting = existingCases.find(       existingCase => existingCase.time.equals(caseToMerge.time)                    && existingCase.place?.name === caseToMerge.place?.name)    if (foundExisting) {      // Case is already known, either skip or merge it    } else {      casesToAdd.push(caseToMerge)    }  }  casesToAdd.concat(toAddFromThisSource)}allCases = existingCases.concat(casesToAdd)  .sort() // Keep the new cases list orderedrender(allCases)
+existingCases = this.rr0Datasource.fetch(context)
+casesToAdd: RR0CaseSummary[] = []
+for (const mapping of mappings) {
+  datasource = mapping.datasource
+  mapper = mapping.mapper
+  sourceCases = await datasource.fetch(context)
+  fetchTime = new Date()
+  casesToMerge = sourceCases
+    .map(sourceCase => mapper.map(context, sourceCase, fetchTime))
+  toAddFromThisSource: RR0CaseSummary[] = []
+  for (const caseToMerge of casesToMerge) {
+    foundExisting = existingCases.find( 
+      existingCase => existingCase.time.equals(caseToMerge.time) 
+                   && existingCase.place?.name === caseToMerge.place?.name)
+    if (foundExisting) {
+      // Case is already known, either skip or merge it
+    } else {
+      casesToAdd.push(caseToMerge)
+    }
+  }
+  casesToAdd.concat(toAddFromThisSource)
+}
+allCases = existingCases.concat(casesToAdd)
+  .sort() // Keep the new cases list ordered
+render(allCases)
 ```
 
 ## Conclusions

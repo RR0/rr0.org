@@ -83,6 +83,7 @@ The point is not to decide in the witness’s place, nor to dismiss them. It is 
 
 A reconstruction is only as good as what it is made of, so nothing in it is hidden. Under the picture, every value the recording states is shown, from the place and time zone to the cloud base and the assessments of the case:
 
+![The player with chips under the picture: summary, observer, position, time, weather and assessment values of the Silly-le-Long recording](img/chips.png)
 *Each chip is a statement of the recording: the observer’s position, heading and speed, the time, the weather, and the assessments of the case on several scales (Hynek, Poher, Ballester-Guasp).*
 
 Many of those values were not given by the witness: they were looked up, estimated or assumed. The format records which is which, with its source, as we will see in the next article.

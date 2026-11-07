@@ -17,7 +17,7 @@ series: "UFO@home (1/5)"
 
 For 25+ years now, I’ve been maintaining the [RR0](https://rr0.org/) website, which collects UFO cases along with whatever can be found about them: testimonies, investigations, documents and the analyses that were made of them. In previous articles I discussed how [UFO data is aggregated](https://medium.com/@rr0/aggregating-ufo-data-1fece059fcb0) and why [so many UFO databases](https://medium.com/@rr0/why-so-many-databases-185b60a9cae7) keep being created. This one is about another project of mine, older than all of those articles and just rewritten from scratch: [UFO@home](https://ufoathome.org/).
 
-UFO@home lets an witness **draw** what they saw, **record** how it moved, and **replay** it against the sky, weather and place of the observation. Not an artist’s impression: a reconstruction anyone can check.
+UFO@home lets a witness **draw** what they saw, **record** how it moved, and **replay** it against the sky, weather and place of the observation. Not an artist’s impression: a reconstruction anyone can check.
 
 ## The problem
 
@@ -55,7 +55,7 @@ The first principle is to reproduce **what can be checked** about the place and 
 - **The ground**: real relief and aerial imagery, roads, buildings, trees, streetlights, vehicles and other witnesses.
 - **The instrument**: an eye is not a camera lens, and an Instamatic is not a phone. The device decides what could be recorded at all.
 
-Every source is **named** where its data is used and can be swapped for another one, so that what the scene claims can be checked.
+Every source is **named** where its data is used and can be [swapped for another one](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f), so that what the scene claims can be checked.
 
 A computed scene can still be wrong in ways nobody notices. This is why a **photograph of the place** can be laid over the render: aligned on a few landmarks, it shows what the relief does not know, and gives back the heading the witness actually faced as a measurement.
 
@@ -86,14 +86,14 @@ A reconstruction is only as good as what it is made of, so nothing in it is hidd
 ![The player with chips under the picture: summary, observer, position, time, weather and assessment values of the Silly-le-Long recording](img/chips.png)
 *Each chip is a statement of the recording: the witness’ position, heading and speed, the time, the weather, and the assessments of the case on several scales (Hynek, Poher, Ballester-Guasp).*
 
-Many of those values were not given by the witness: they were looked up, estimated or assumed. The format records which is which, with its source, as we will see in the next article.
+Many of those values were not given by the witness: they were looked up, estimated or assumed. The format [records which is which](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274), with its source.
 
 ## Two uses
 
 UFO@home is meant for two kinds of people.
 
 - **Witnesses** can [describe their own sighting](https://ufoathome.org/edit/): draw what they saw, record how it moved, say when and where, and the sky of that moment appears behind it. Correct it until it matches. What you get is a file that is yours: there is no account and nothing is uploaded.
-- **Investigators and authors** can put a reconstruction in an article, a case file or a report, with two lines of HTML, on their own site and under their own name. UFO@home is [free software](https://github.com/RR0/UfoAtHome) under the MIT license: use it, change it, redistribute it, fork it.
+- **Investigators and authors** can put a reconstruction in an article, a case file or a report, with [two lines of HTML](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f), on their own site and under their own name. UFO@home is [free software](https://github.com/RR0/UfoAtHome) under the MIT license: use it, change it, redistribute it, fork it.
 
 The [demos](https://ufoathome.org/demos/) currently hold 41 reconstructions, from classic cases (Chiles & Whitted, Socorro, Valensole, McMinnville, Trans-en-Provence) to what the sky alone can show: a re-entry, a Starlink train, a nova, a halo photographed with a phone.
 
@@ -105,5 +105,3 @@ UFO@home tries to move the UFO debate from the witness’s credibility to what c
 - **record angles, not sizes**: store what the witness could actually perceive, and let distances come back only as inequalities;
 - **test every interpretation**, the witness’s as well as the others, in the same scene, instead of ruling by conviction;
 - **share**: a free, embeddable tool and an open file format, so that anyone can check, correct or contest a reconstruction.
-
-The next articles will describe how it is designed: first [the **model** behind a reconstruction](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274) (cases and observations, decor and phenomena, sources and approximations, assessments, privacy), then [its **architecture**](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f) (assets and providers, the web and offline use), the example of [how an **interview** can be integrated into a case](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea), and finally [how **AI** can help write a recording](https://medium.com/@rr0/ai-writes-the-account-never-the-sky-9e435229eb92), without being required.

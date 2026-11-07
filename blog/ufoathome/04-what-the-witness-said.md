@@ -15,7 +15,7 @@ series: "UFO@home (4/5)"
 ![A turn of the Saint-Lô interview, at 23:57.5, where the witness says it took 500 milliseconds to reach the zenith circle, linked to "Moment B · At the zenith when he fixes it, with its wide shape"](img4/interview-linked-turn.png)
 *Saint-Lô (France), interview of 13 October 2026: the witness’s words about the first half second, and the moment of the observation they are about.*
 
-In the previous articles of this series I presented [UFO@home](https://ufoathome.org/), a tool that replays a UFO sighting against the real sky of its date and place (why), the model a reconstruction is made of, and how it is built. This one is about a part of an investigation that usually stays in the investigator’s drawers: **the interview**.
+[UFO@home](https://ufoathome.org/) is a tool that [replays a UFO sighting](https://medium.com/@rr0/replaying-the-sky-of-a-ufo-sighting-d51db4e2742c) against the real sky of its date and place. This article is about a part of an investigation that usually stays in the investigator’s drawers: **the interview**.
 
 ## Why keep the interview
 
@@ -23,7 +23,7 @@ An investigator rarely stops at a witness’s first account. They go back to the
 
 Yet what usually reaches the reader is the conclusion: “the witness estimated the duration at four seconds”. Not the question that was asked, not the answer as it was given, not what it corrected. As I wrote in an [older article](https://medium.com/@rr0/enqu%C3%AAtes-mal-enlev%C3%A9es-e27f6a5ad26), an investigation can only be reviewed if its raw data is shared. An interview is raw data.
 
-So in UFO@home, an interview is an **event of the case**, next to the observations and their interpretations (see the model). What the case keeps of it is what it established, a short description, and, when there is one, its **transcript**: who said what, and when. The transcript is what a reader can check the description against.
+So in UFO@home, an interview is an **event of the case**, next to the observations and their interpretations (see [the model](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274)). What the case keeps of it is what it established, a short description, and, when there is one, its **transcript**: who said what, and when. The transcript is what a reader can check the description against.
 
 The example used throughout this article is the [Saint-Lô](https://ufoathome.org/play/?file=%2Fdemo-data%2Fcase-saint-lo.json) case: a moonless night of August 2026 in Normandy, where a witness, Q. B., saw a translucent white shape cross the whole sky in a few seconds. Q. B. first answered questions in writing on a mailing list, then I held a video interview of about an hour and a half with them, on 13 October 2026.
 
@@ -52,7 +52,7 @@ The same pair exists outside the editor. A page can show an interview with the \
 
 ## The interview as a source of the observation
 
-There is a third link, maybe the most important one. An interview is not only *about* the observation: it is a **source** of its data. In UFO@home every value of a recording can say what it stands on (see the model): stated by the witness, measured, derived or assumed, with its reasoning. In the Saint-Lô recording, many values give the call as their source, quoting the witness’s own words:
+There is a third link, maybe the most important one. An interview is not only *about* the observation: it is a **source** of its data. In UFO@home every value of a recording can say what it stands on (see [its basis](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274)): stated by the witness, measured, derived or assumed, with its reasoning. In the Saint-Lô recording, many values give the call as their source, quoting the witness’s own words:
 
 ![The basis window of the heading of the witness's gaze: basis "stated", and the rationale "call of 2026-10-13: 'je regardais [...] est, sud-est, mais légèrement' (the written reply said west-south-west; his friend was the one looking west)"](img4/value-from-interview.png)
 *The heading the witness was looking towards, as given in the interview, and why it differs from the written reply.*
@@ -96,5 +96,3 @@ An interview in UFO@home is not an appendix to an investigation, it is part of i
 - it is a **source** of the observation’s values, which quote it, and it can correct what was written before;
 - what is **taken out** keeps its place and its reason, down to a few words in an answer;
 - each speaker’s **approval** is stated, so that a draft reads as a draft.
-
-The last article of this series will be about the part everybody asks about: how **AI** can help turn an account into a recording (AI, optional).

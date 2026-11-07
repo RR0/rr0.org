@@ -15,7 +15,7 @@ series: "UFO@home (3/5)"
 ![A case file of the RR0 encyclopaedia about Cussac: its list of sources, then the reconstruction embedded below it, a photograph of the place laid over the computed scene](img3/rr0org.png)
 *The [Cussac](https://rr0.org/science/crypto/ufo/enquete/dossier/Cussac/) case file on rr0.org: an encyclopaedia page, written in French, with the reconstruction embedded in it like a video.*
 
-In the previous articles I introduced [UFO@home](https://ufoathome.org/), a tool that replays a UFO sighting against the real sky of its date and place (why), and the model a reconstruction is made of. This one is about how it is built, without going into the code: what lets it be used anywhere, take in new data, and still play the same in twenty years.
+[UFO@home](https://ufoathome.org/) is a tool that [replays a UFO sighting](https://medium.com/@rr0/replaying-the-sky-of-a-ufo-sighting-d51db4e2742c) against the real sky of its date and place, from [what its reconstruction states](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274). This article is about how it is built, without going into the code: what lets it be used anywhere, take in new data, and still play the same in twenty years.
 
 That last point is not abstract. The first UFO@home was a Java applet, in 2003. Applets died with the browser plug-ins that ran them, and took the tool with them. A reconstruction that is meant to be checked years later cannot rest on a technology somebody else can retire, nor on a service that can close.
 
@@ -55,7 +55,7 @@ The second is that **a second source can be added without touching the rest**. T
 - the buildings from the IGN’s LiDAR and topographic database, or from OpenStreetMap;
 - the place names from Nominatim, the air traffic from [adsb.lol](https://adsb.lol/), the night sky’s brightness from the World Atlas of artificial sky brightness.
 
-Some registries have a single entry, on purpose: the seam is in place before it is needed. The assessment methods of the previous article are a registry too, and so is the language model that can draft a recording, which will be the subject of the next article.
+Some registries have a single entry, on purpose: the seam is in place before it is needed. The [assessment methods](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274) are a registry too, and so is the [language model that can draft a recording](https://medium.com/@rr0/ai-writes-the-account-never-the-sky-9e435229eb92).
 
 A few rules go with them, which the site states for every source:
 
@@ -108,5 +108,3 @@ UFO@home is built so that a reconstruction outlives both the tool’s own histor
 - **frozen annexes**: a recording can carry what its sources answered, and play the same years later;
 - **versions**: of the format, read forward and refused when too new, and of the player, which can be pinned;
 - **offline**: installable, and usable in the field.
-
-The last article of this series will be about the part everybody asks about first: how **AI** can help write a recording from an account, why it is never required, and why it is not asked to build the scene itself.

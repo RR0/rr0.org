@@ -15,7 +15,7 @@ series: "UFO@home (2/5)"
 ![The candidate explanations of the Silly-le-Long account: the witness's own reading compatible at 0 σ, the GEIPAN's aircraft only by invoking contested biases at 1.3 σ, the planets and stars incompatible even at the bounds](img2/candidates.png)
 *Silly-le-Long, 31 May 2015: every candidate of that sky held against the account, within what is known of witnesses’ errors. “A cost is not a probability: it says which biases have to be invoked, and how far.”*
 
-In [the previous article](https://medium.com/@rr0/replaying-the-sky-of-a-ufo-sighting-d51db4e2742c), I introduced [UFO@home](https://ufoathome.org/), a free tool that replays a UFO sighting against the real sky, weather and place of the observation, so that every interpretation, the witness’s as well as the others, can be tested in the same scene.
+[UFO@home](https://ufoathome.org/) is a free tool that [replays a UFO sighting](https://medium.com/@rr0/replaying-the-sky-of-a-ufo-sighting-d51db4e2742c) against the real sky, weather and place of the observation, so that every interpretation, the witness’s as well as the others, can be tested in the same scene.
 
 A scene is only as good as what it is made of. This article is about **what a reconstruction is made of**: the concepts it is split into, what each of them states, and on what grounds. No code here: this is about the domain, and about a few choices that may matter to anyone collecting UFO data, whatever their tool.
 
@@ -27,7 +27,7 @@ UFO@home knows three kinds of events:
 
 - **observations**: the account of one witness, which is what gets replayed;
 - **interpretations** (or readings): an explanation of an observation, a kite, a planet, an aircraft, a hoax;
-- **interviews**: a conversation held with a witness, which fixes what they said when asked.
+- **interviews**: a conversation held with a witness, which fixes [what they said when asked](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea).
 
 ![The case editor of Socorro: its title, date and identifier, then its events in the order of time: an observation of Lonnie Zamora and two readings of it](img2/case-editor.png)
 *The Socorro case (1964): one observation, and two readings of it. Each event is a file of its own, and the readings name the observation they interpret.*
@@ -71,7 +71,7 @@ The witness’s own reading lives in their recording. **Someone else’s reading
 
 ## Decor, and the sky’s own events
 
-Around the witness there is a **decor**: buildings, trees, streetlights, vehicles, other people. A decor object outlasts the observation, and is placed from where it stood, at the height it stood. A lot of it can be fetched from open data, which raises a question the editor does not let slip:
+Around the witness there is a **decor**: buildings, trees, streetlights, vehicles, other people. A decor object outlasts the observation, and is placed from where it stood, at the height it stood. A lot of it can be [fetched from open data](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f), which raises a question the editor does not let slip:
 
 ![The decor group for Silly-le-Long: an aircraft placed in metres from the witness, with its 3D model, and a warning that the scenery comes from surveys of 2026, after the observation of 2015](img2/decor.png)
 *Scenery fetched from a 2026 survey for a 2015 observation: “it is not what stood there then. Keep it as a landmark, or delete it.”*
@@ -90,7 +90,7 @@ This may be the most important part of the model. **Any value of a recording can
 ![The basis window of a value of the Silly-le-Long recording: "How this value was obtained", basis derived, and its rationale: the GEIPAN simulation's displayed speeds, the reconstitution's speed times its correction factor](img2/basis.png)
 *The van’s speeds are not what the driver said: they are derived from the GEIPAN’s own simulation, and the rationale says how, with a page reference.*
 
-The list of assumed values is the list of what to go back to the witness or the file for. And a basis expires: when someone types over an assumed value, it no longer claims to be a guess.
+The list of assumed values is the list of what to [go back to the witness](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea) or the file for. And a basis expires: when someone types over an assumed value, it no longer claims to be a guess.
 
 ## Approximations, allowed and said
 
@@ -139,5 +139,3 @@ The model of UFO@home tries to make a reconstruction **say what it claims, and o
 - the **known errors** of witnesses are part of the model, with the status of their evidence, and they bound which candidates are reachable;
 - **assessments** are delegated to the published methods, each saying where its answers come from;
 - **privacy** is a property of the files, not a promise of a server, since there is none.
-
-The next article will describe how the tool is built to grow: its **assets and providers**, which let anyone add a data source, a model or a catalogue, and why it is a web tool that also works offline.

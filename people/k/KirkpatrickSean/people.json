@@ -1,14 +1,21 @@
 {
+  "lastName": "Kirkpatrick",
+  "firstNames": [
+    "Sean",
+    "Michael"
+  ],
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
   ],
+  "gender": "male",
   "events": [
     {
       "type": "birth",
-      "time": "1975-09-09"
+      "time": "1975-09-09",
+      "place": "Columbus (Géorgie)"
     }
   ]
 }

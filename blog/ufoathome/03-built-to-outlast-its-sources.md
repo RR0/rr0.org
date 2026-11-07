@@ -3,7 +3,7 @@ title: "Built to outlast its sources"
 subtitle: "Providers, assets, and why UFO@home is a web page"
 lang: en
 status: draft
-series: "UFO@home (3/4)"
+series: "UFO@home (3/5)"
 ---
 
 # Built to outlast its sources
@@ -107,4 +107,14 @@ UFO@home is built so that a reconstruction outlives both the tool's own history 
 - **versions**: of the format, read forward and refused when too new, and of the player, which can be pinned;
 - **offline**: installable, and usable in the field.
 
-The last article of this series will be about the part everybody asks about first: how **AI** can help write a recording from an account, why it is never required, and why it is not asked to build the scene itself.
+The next article is about [interviews](URL_OF_ARTICLE_4): how what a witness said when asked is kept, linked to the moments of the observation, and redacted. The last one is about the part everybody asks about first: how [AI](URL_OF_ARTICLE_5) can help write a recording from an account, why it is never required, and why it is not asked to build the scene itself.
+
+---
+
+*The UFO@home series:*
+
+1. [Replaying the sky of a UFO sighting](URL_OF_ARTICLE_1): why, and the approach
+2. [What a UFO reconstruction states, and on what](URL_OF_ARTICLE_2): the model
+3. [Built to outlast its sources](URL_OF_ARTICLE_3): providers, assets, the web and offline use
+4. [What the witness said, and where it shows](URL_OF_ARTICLE_4): interviews
+5. [AI writes the account, never the sky](URL_OF_ARTICLE_5): AI, and why it is optional

@@ -3,7 +3,7 @@ title: "What a UFO reconstruction states, and on what"
 subtitle: "The model behind UFO@home"
 lang: en
 status: draft
-series: "UFO@home (2/4)"
+series: "UFO@home (2/5)"
 ---
 
 # What a UFO reconstruction states, and on what
@@ -25,7 +25,7 @@ UFO@home knows three kinds of events:
 
 - **observations**: the account of one witness, which is what gets replayed;
 - **interpretations** (or readings): an explanation of an observation, a kite, a planet, an aircraft, a hoax;
-- **interviews**: a conversation held with a witness, which fixes what they said when asked.
+- **interviews**: a conversation held with a witness, which fixes what they said when asked (they have [an article of their own](URL_OF_ARTICLE_4)).
 
 ![The case editor of Socorro: its title, date and identifier, then its events in the order of time: an observation of Lonnie Zamora and two readings of it](img2/case-editor.png)
 *The Socorro case (1964): one observation, and two readings of it. Each event is a file of its own, and the readings name the observation they interpret.*
@@ -138,4 +138,14 @@ The model of UFO@home tries to make a reconstruction **say what it claims, and o
 - **assessments** are delegated to the published methods, each saying where its answers come from;
 - **privacy** is a property of the files, not a promise of a server, since there is none.
 
-The next article will describe how the tool is built to grow: its **assets and providers**, which let anyone add a data source, a model or a catalogue, and why it is a web tool that also works offline.
+The [next article](URL_OF_ARTICLE_3) will describe how the tool is built to grow: its **assets and providers**, which let anyone add a data source, a model or a catalogue, and why it is a web tool that also works offline.
+
+---
+
+*The UFO@home series:*
+
+1. [Replaying the sky of a UFO sighting](URL_OF_ARTICLE_1): why, and the approach
+2. [What a UFO reconstruction states, and on what](URL_OF_ARTICLE_2): the model
+3. [Built to outlast its sources](URL_OF_ARTICLE_3): providers, assets, the web and offline use
+4. [What the witness said, and where it shows](URL_OF_ARTICLE_4): interviews
+5. [AI writes the account, never the sky](URL_OF_ARTICLE_5): AI, and why it is optional

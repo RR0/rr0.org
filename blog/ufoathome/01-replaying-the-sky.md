@@ -3,7 +3,7 @@ title: "Replaying the sky of a UFO sighting"
 subtitle: "Testing every interpretation against what can be checked"
 lang: en
 status: draft
-series: "UFO@home (1/4)"
+series: "UFO@home (1/5)"
 ---
 
 # Replaying the sky of a UFO sighting
@@ -84,7 +84,7 @@ A reconstruction is only as good as what it is made of, so nothing in it is hidd
 ![The player with chips under the picture: summary, observer, position, time, weather and assessment values of the Silly-le-Long recording](img/chips.png)
 *Each chip is a statement of the recording: the witness's position, heading and speed, the time, the weather, and the assessments of the case on several scales (Hynek, Poher, Ballester-Guasp).*
 
-Many of those values were not given by the witness: they were looked up, estimated or assumed. The format records which is which, with its source, as we will see in the next article.
+Many of those values were not given by the witness: they were looked up, estimated or assumed. The format records which is which, with its source, as we will see in [the next article](URL_OF_ARTICLE_2).
 
 ## Two uses
 
@@ -104,4 +104,14 @@ UFO@home tries to move the UFO debate from the witness's credibility to what can
 - **test every interpretation**, the witness's as well as the others, in the same scene, instead of ruling by conviction;
 - **share**: a free, embeddable tool and an open file format, so that anyone can check, correct or contest a reconstruction.
 
-The next articles will describe how it is designed: first the **model** behind a reconstruction (cases and observations, decor and phenomena, sources and approximations, assessments, privacy), then its **architecture** (assets and providers, the web and offline use), and finally how **AI** can help write a recording, without being required.
+The next articles will describe how it is designed: first the [model](URL_OF_ARTICLE_2) behind a reconstruction (cases and observations, decor and phenomena, sources and approximations, assessments, privacy), then its [architecture](URL_OF_ARTICLE_3) (assets and providers, the web and offline use), then how [interviews](URL_OF_ARTICLE_4) are kept and linked to the observation, and finally how [AI](URL_OF_ARTICLE_5) can help write a recording, without being required.
+
+---
+
+*The UFO@home series:*
+
+1. [Replaying the sky of a UFO sighting](URL_OF_ARTICLE_1): why, and the approach
+2. [What a UFO reconstruction states, and on what](URL_OF_ARTICLE_2): the model
+3. [Built to outlast its sources](URL_OF_ARTICLE_3): providers, assets, the web and offline use
+4. [What the witness said, and where it shows](URL_OF_ARTICLE_4): interviews
+5. [AI writes the account, never the sky](URL_OF_ARTICLE_5): AI, and why it is optional

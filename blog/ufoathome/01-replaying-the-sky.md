@@ -15,7 +15,7 @@ series: "UFO@home (1/4)"
 
 For 25+ years now, I've been maintaining the [RR0](https://rr0.org) website, which collects UFO cases along with whatever can be found about them: testimonies, investigations, documents and the analyses that were made of them. In previous articles I discussed how [UFO data is aggregated](https://medium.com/@rr0/aggregating-ufo-data-1fece059fcb0) and why [so many UFO databases](https://medium.com/@rr0/why-so-many-databases-185b60a9cae7) keep being created. This one is about another project of mine, older than all of those articles and just rewritten from scratch: [UFO@home](https://ufoathome.org).
 
-UFO@home lets an observer **draw** what they saw, **record** how it moved, and **replay** it against the sky, weather and place of the observation. Not an artist's impression: a reconstruction anyone can check.
+UFO@home lets a witness **draw** what they saw, **record** how it moved, and **replay** it against the sky, weather and place of the observation. Not an artist's impression: a reconstruction anyone can check.
 
 ## The problem
 
@@ -46,7 +46,7 @@ The applet then slept for many years. In 2026, UFO@home was rewritten from scrat
 
 The first principle is to reproduce **what can be checked** about the place and the moment, as faithfully as it can be reproduced. The witness provides the phenomenon; nothing else is left to memory.
 
-- **The sky**: the Sun, the Moon and its phase, the planets, the stars, the Milky Way, placed by ephemeris for that instant and that place, and drawn only as far as the observer's eye could see them.
+- **The sky**: the Sun, the Moon and its phase, the planets, the stars, the Milky Way, placed by ephemeris for that instant and that place, and drawn only as far as the witness's eye could see them.
 - **What else was up there**: comets, novae, meteor showers, satellites, re-entries and real air traffic, each drawn only if it could have been visible from there, then.
 - **The weather that day**, from an hourly worldwide reanalysis going back to 1940: cloud layers, rain, snow, storms and wind.
 - **Atmospheric optics**: haloes, sundogs, pillars, rainbows, computed from the refraction of ice and water rather than stored.
@@ -68,7 +68,7 @@ Nobody perceives metres. A witness perceives an **angle**: the thing covered a t
 
 So a UFO@home recording stores how big the phenomenon **looked**, in degrees, and no real size or distance anywhere. Metres come back in one case only: when the phenomenon was seen to pass in front of or behind something whose position is known. That is an inequality, and the tool reports it as one, including, most of the time, "unknown".
 
-For the same reason, the phenomenon is drawn as a **flat shape on the observer's field of view**, not as a solid body placed in space. Assuming a craft at a distance is already an interpretation, and it quietly rules out the explanations that matter most: a halo, a planet, a satellite, an aircraft's landing light. And since two people a hundred metres apart did not see the same thing, a case with several witnesses is **several recordings**, one per observer.
+For the same reason, the phenomenon is drawn as a **flat shape on the witness's field of view**, not as a solid body placed in space. Assuming a craft at a distance is already an interpretation, and it quietly rules out the explanations that matter most: a halo, a planet, a satellite, an aircraft's landing light. And since two people a hundred metres apart did not see the same thing, a case with several witnesses is **several recordings**, one per witness.
 
 Then interpretations can be tested, **all of them**, in the same scene. Here is the same second of the Silly-le-Long drive, replayed with the reading of the [GEIPAN](https://rr0.org/org/eu/fr/cnes/geipan/), the French official UFO office, which identified a light aircraft on final approach:
 
@@ -82,7 +82,7 @@ The point is not to decide in the witness's place, nor to dismiss them. It is to
 A reconstruction is only as good as what it is made of, so nothing in it is hidden. Under the picture, every value the recording states is shown, from the place and time zone to the cloud base and the assessments of the case:
 
 ![The player with chips under the picture: summary, observer, position, time, weather and assessment values of the Silly-le-Long recording](img/chips.png)
-*Each chip is a statement of the recording: the observer's position, heading and speed, the time, the weather, and the assessments of the case on several scales (Hynek, Poher, Ballester-Guasp).*
+*Each chip is a statement of the recording: the witness's position, heading and speed, the time, the weather, and the assessments of the case on several scales (Hynek, Poher, Ballester-Guasp).*
 
 Many of those values were not given by the witness: they were looked up, estimated or assumed. The format records which is which, with its source, as we will see in the next article.
 
@@ -90,7 +90,7 @@ Many of those values were not given by the witness: they were looked up, estimat
 
 UFO@home is meant for two kinds of people.
 
-- **Observers** can [describe their own sighting](https://ufoathome.org/edit/): draw what they saw, record how it moved, say when and where, and the sky of that moment appears behind it. Correct it until it matches. What you get is a file that is yours: there is no account and nothing is uploaded.
+- **Witnesses** can [describe their own sighting](https://ufoathome.org/edit/): draw what they saw, record how it moved, say when and where, and the sky of that moment appears behind it. Correct it until it matches. What you get is a file that is yours: there is no account and nothing is uploaded.
 - **Investigators and authors** can put a reconstruction in an article, a case file or a report, with two lines of HTML, on their own site and under their own name. UFO@home is [free software](https://github.com/RR0/UfoAtHome) under the MIT license: use it, change it, redistribute it, fork it.
 
 The [demos](https://ufoathome.org/demos/) currently hold 41 reconstructions, from classic cases (Chiles & Whitted, Socorro, Valensole, McMinnville, Trans-en-Provence) to what the sky alone can show: a re-entry, a Starlink train, a nova, a halo photographed with a phone.
@@ -100,7 +100,7 @@ The [demos](https://ufoathome.org/demos/) currently hold 41 reconstructions, fro
 UFO@home tries to move the UFO debate from the witness's credibility to what can be checked:
 
 - **contextualise**: reproduce the sky, the weather, the ground and the instrument of that place and moment, with every source named;
-- **record angles, not sizes**: store what the observer could actually perceive, and let distances come back only as inequalities;
+- **record angles, not sizes**: store what the witness could actually perceive, and let distances come back only as inequalities;
 - **test every interpretation**, the witness's as well as the others, in the same scene, instead of ruling by conviction;
 - **share**: a free, embeddable tool and an open file format, so that anyone can check, correct or contest a reconstruction.
 

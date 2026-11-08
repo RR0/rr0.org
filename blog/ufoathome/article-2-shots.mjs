@@ -85,8 +85,19 @@ const SHOTS = [
         if (found) break
       }
       const pill = page.locator("rr0-input-basis[data-shot]").first()
+      // Centred at the last moment, what a group draws late having moved it: the window then opens under its field, with the field in view.
+      await pill.evaluate(p => p.scrollIntoView({ block: "center" }))
+      await page.waitForTimeout(800)
       await pill.locator("[role=button]").first().click()
       await page.waitForTimeout(1000)
+      // A select's open list is drawn by the system, out of the page's reach: the capture shows its values as a list that stays open.
+      await page.evaluate(() => {
+        const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
+        const select = deep(document, e => e.matches(".basis-window:popover-open select"))[0]
+        select.size = select.options.length
+        select.style.cssText = "height: auto; background-image: none; padding: 4px; overflow: hidden"
+      })
+      await page.waitForTimeout(500)
       const boxes = await page.evaluate(() => {
         const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
         const r = e => { const b = e.getBoundingClientRect(); return { x: b.x, y: b.y, r: b.right, b: b.bottom } }
@@ -94,8 +105,9 @@ const SHOTS = [
         const open = deep(document, e => { try { return e.matches(":popover-open") } catch { return false } })
         return [r(pill.parentElement), ...open.map(r)]
       })
-      const x = Math.min(...boxes.map(b => b.x)) - 12, y = Math.min(...boxes.map(b => b.y)) - 12
-      const r = Math.max(...boxes.map(b => b.r)) + 12, b = Math.max(...boxes.map(b => b.b)) + 12
+      // The field's row above the window, with the two rows before it for context.
+      const x = Math.min(...boxes.map(b => b.x)) - 12, y = Math.min(...boxes.map(b => b.y)) - 122
+      const r = Math.max(...boxes.map(b => b.r)) + 24, b = Math.max(...boxes.map(b => b.b)) + 8
       // In the window as it stands: a full page capture resizes it, and the window opened then leaves its anchor.
       return { clip: { x, y, width: r - x, height: b - y }, inView: true }
     }
@@ -113,10 +125,11 @@ const SHOTS = [
   },
 ]
 
+// The installed Chrome, not Playwright's old Chromium (124), which knows no anchor positioning: a window anchored to its field would be centred.
 // In English for good, native fields too (a number's decimal comma, a date's "jj/mm/aaaa"): on macOS these follow the system's language,
 // which only arguments Playwright refuses can override, hence a launcher.
 const launcher = join(tmpdir(), "chromium-en.sh")
-writeFileSync(launcher, `#!/bin/sh\nexec "${chromium.executablePath()}" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
+writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
 const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
 const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1700 }, deviceScaleFactor: 1.5 })
 try {

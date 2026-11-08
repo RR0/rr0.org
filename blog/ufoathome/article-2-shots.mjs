@@ -2,7 +2,8 @@
 //   node article-2-shots.mjs <outDir> [name ...]
 // Runs a headed Chromium (WebGL), so outside a sandbox.
 import { createRequire } from "node:module"
-import { mkdirSync } from "node:fs"
+import { mkdirSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
 import { join } from "node:path"
 
 const require = createRequire(import.meta.url)
@@ -88,14 +89,15 @@ const SHOTS = [
       await page.waitForTimeout(1000)
       const boxes = await page.evaluate(() => {
         const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
-        const r = e => { const b = e.getBoundingClientRect(); return { x: b.x + scrollX, y: b.y + scrollY, r: b.right + scrollX, b: b.bottom + scrollY } }
+        const r = e => { const b = e.getBoundingClientRect(); return { x: b.x, y: b.y, r: b.right, b: b.bottom } }
         const pill = document.querySelector("rr0-input-basis[data-shot]") || deep(document, e => e.matches("rr0-input-basis[data-shot]"))[0]
         const open = deep(document, e => { try { return e.matches(":popover-open") } catch { return false } })
         return [r(pill.parentElement), ...open.map(r)]
       })
       const x = Math.min(...boxes.map(b => b.x)) - 12, y = Math.min(...boxes.map(b => b.y)) - 12
       const r = Math.max(...boxes.map(b => b.r)) + 12, b = Math.max(...boxes.map(b => b.b)) + 12
-      return { clip: { x, y, width: r - x, height: b - y } }
+      // In the window as it stands: a full page capture resizes it, and the window opened then leaves its anchor.
+      return { clip: { x, y, width: r - x, height: b - y }, inView: true }
     }
   },
   {
@@ -111,7 +113,11 @@ const SHOTS = [
   },
 ]
 
-const browser = await chromium.launch({ headless: false, args: ["--lang=en-US"] })
+// In English for good, native fields too (a number's decimal comma, a date's "jj/mm/aaaa"): on macOS these follow the system's language,
+// which only arguments Playwright refuses can override, hence a launcher.
+const launcher = join(tmpdir(), "chromium-en.sh")
+writeFileSync(launcher, `#!/bin/sh\nexec "${chromium.executablePath()}" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
+const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
 const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1700 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {
@@ -133,7 +139,7 @@ try {
       const done = await shot.take(page)
       const path = join(outDir, shot.name + ".png")
       if (done.locator) await done.locator.screenshot({ path })
-      else await page.screenshot({ path, clip: done.clip, fullPage: true })
+      else await page.screenshot({ path, clip: done.clip, fullPage: !done.inView })
       console.log(shot.name, problems.length ? "ERRORS " + problems.join(" | ") : "ok")
     } catch (e) {
       console.log(shot.name, "FAILED", e.message.split("\n")[0])

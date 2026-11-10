@@ -30,14 +30,22 @@ A reconstruction has to be **seen** to be discussed: in an investigator’s repo
 
 That is how the case files of [RR0](https://rr0.org/) show theirs: a static site, with nothing to build and no framework. The recording stays at its author’s address, on their host, under their name, and a link to the player opens it in the reader’s language (English, French, Spanish or Italian today).
 
-The elements are **Web Components**, the browser’s own standard for custom elements, not the components of a framework. This has consequences worth spelling out:
+The elements are [Web Components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components), the browser’s own standard for custom elements, not the components of a framework. This has consequences worth spelling out:
 
 - **they work in any page**: a static site, WordPress, a React or Vue application, a wiki, a hand-written HTML file;
 - **there is nothing to build**: no bundler, no compilation step, no configuration;
-- **there is nothing to keep up with**: no framework version to match, so nobody’s next major release can make them obsolete;
-- **their insides are their own**: each keeps its markup and styles in a shadow root, so the host page’s CSS cannot break them, and they cannot break the page.
+- **there is nothing to keep up with**: [no framework](https://medium.com/@javarome/design-noframework-bbc00a02d9b3) version to match, so nobody’s next major release can make them obsolete;
+- **their insides are their own**: each keeps its markup and styles in a [shadow root](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot), so the host page’s CSS cannot break them, and they cannot break the page.
 
-There are five of them: the **scene** (the phenomenon in the real sky, weather and ground), the **sighting** (the scene plus who saw it, the metadata and the sharing), the **sighting editor**, the **case editor**, and a **date input** that knows about imprecise dates. Each composes the one below it, so a page only ever writes one tag. The heavy parts that a page may never use, such as the editor of 3D bodies or the code that reads photographs, are only downloaded when they are first needed.
+There are five of them:
+
+- the **scene** (the phenomenon in the real sky, weather and ground),
+- the **sighting** (the scene plus who saw it, the metadata and the sharing),
+- the **sighting editor**,
+- the **case editor**, and
+- a **date input** that knows about imprecise dates.
+
+Each composes the one below it, so a page only ever writes one tag. The heavy parts that a page may never use, such as the editor of 3D bodies or the code that reads photographs, are only downloaded when they are first needed.
 
 And nothing has to depend on ufoathome.org. The components are [published on npm](https://www.npmjs.com/package/@rr0/ufoathome) under the MIT license; anyone can copy the built files onto their own server and point the script there. A finished recording does not even need the third-party services to play: without them, the scene falls back to a plain horizon.
 
@@ -68,7 +76,7 @@ A few rules go with them, which the site states for every source:
 Some data cannot be fetched live from a browser, or could be taken down by whoever publishes it. That data is copied once, reduced, credited, and served by the project itself as **assets**:
 
 - the star catalogue ([HYG](https://github.com/astronexus/HYG-Database)), comets propagated from JPL Horizons, novae from the AAVSO’s light curves, the Moon’s relief from NASA’s LOLA;
-- satellites from [CelesTrak’](https://celestrak.org/)s catalogue, and an archive of their orbital elements;
+- satellites from [CelesTrak](https://celestrak.org/)’s catalogue, and an archive of their orbital elements;
 - atmospheric re-entries from The Aerospace Corporation’s CORDS, fireballs from the [Global Meteor Network](https://globalmeteornetwork.org/);
 - **54 3D models** (aircraft, trees, vehicles, buildings, streetlights, people), all under CC0 or CC BY, each with its author and licence.
 

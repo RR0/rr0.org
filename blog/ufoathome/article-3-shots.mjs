@@ -2,7 +2,8 @@
 //   node article-3-shots.mjs <outDir> [name ...]
 // Runs a headed Chromium (WebGL), so outside a sandbox.
 import { createRequire } from "node:module"
-import { mkdirSync } from "node:fs"
+import { mkdirSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
 import { join } from "node:path"
 
 const require = createRequire(import.meta.url)
@@ -134,8 +135,8 @@ const SHOTS = [
       await page.waitForTimeout(1500)
       await page.evaluate(({ DEEP }) => {
         eval(DEEP + "window.__deep = deep")
-        const freeze = window.__deep(document, e => e.id === "freeze")[0]
-        if (freeze && !freeze.checked) freeze.click()
+        const pin = window.__deep(document, e => e.id === "pin")[0]
+        if (pin && !pin.checked) pin.click()
         // The code tab rather than the link, when there is one.
         const code = window.__deep(document, e => (e.tagName === "BUTTON" || e.getAttribute("role") === "tab") && /^(Embed|Code)/i.test(e.textContent.trim()) && e.getBoundingClientRect().width > 0)[0]
         code?.click()
@@ -146,7 +147,11 @@ const SHOTS = [
   },
 ]
 
-const browser = await chromium.launch({ headless: false, args: ["--lang=en-US"] })
+// The installed Chrome, not Playwright's old Chromium (124), which knows no anchor positioning; native fields in English too (see
+// article-2-shots.mjs).
+const launcher = join(tmpdir(), "chrome-en.sh")
+writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
+const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
 const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1500 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {

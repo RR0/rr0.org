@@ -128,7 +128,7 @@ const SHOTS = [
     }
   },
   {
-    name: "share", url: play("case-silly-le-long", "&t=25"), async take(page) {
+    name: "share", url: play("case-cussac"), async take(page) {
       await startPlayer(page)
       await page.evaluate(({ DEEP }) => {
         eval(DEEP + "window.__deep = deep")

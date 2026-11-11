@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-14-WesternUSEvent-W2-1",
  "description": {
   "en": "In October 2023, my partner and I were tasked to survey an area for individuals launching drones. My partner and I were positioned in a valley, with mountain ranges to the west and east and more distant ranges to the north; we had teams positioned throughout the area as well. The weather was clear; we sat [and] watched the sunset as dusk transitioned into darkness. At approximately 1900 hours, I observed a bright circular orb-like light approximately 35-45 degrees above the northern/northeastern horizon. Originally, the light was not dissimilar to that of a luminescent planet observed in the night sky but grew slowly brighter. The bright orb-like light had a smaller red orb-like light within it. As the bright orb-like light grew larger, it expelled three or four red lights from it. The red lights accelerated instantly and maneuvered with perfect, smooth coordination into a horizontal formation. The red lights were approximately 1/15 the size of the orb-like light. [...] Following the expulsion of the smaller red lights, the bright orb-like light dimmed and faded from sight. From approximately 1900 hours to approximately 1930 hours, I witnessed the process repeat approximately five times across the northern, northeastern, and eastern horizon. Our teams confirmed they observed the same objects. The last grouping of red lights moved in a horizonal pattern to the southern horizon where they remained the rest of the evening. The three red lights were all aligned and remained equally spaced. From approximately 1930 hours until approximately 2300 hours, the red lights hovered above the southern horizon. The red lights sometime dipped below the horizon, out of sight but consistently rose back up. At approximately 2300 hours we departed the area. There were no acoustics, interreference or physiological effects experienced during the incident.",
   "fr": "En octobre 2023, mon coéquipier et moi étions chargés de surveiller un secteur à la recherche de personnes lançant des drones. Nous étions postés dans une vallée, avec des chaînes de montagnes à l'ouest et à l'est et d'autres plus lointaines au nord ; d'autres équipes étaient postées dans tout le secteur. Le temps était clair ; nous avons regardé le soleil se coucher et le crépuscule passer à l'obscurité. Vers 19 h, j'ai vu une lumière ronde et brillante, semblable à une orbe, à environ 35-45 degrés au-dessus de l'horizon nord/nord-est. Au début, elle ressemblait à une planète lumineuse dans le ciel nocturne, mais elle est devenue lentement plus brillante. Elle contenait une lumière rouge plus petite. En grossissant, elle a expulsé trois ou quatre lumières rouges, qui ont accéléré instantanément et se sont placées, avec une coordination parfaite et fluide, en formation horizontale. Les lumières rouges faisaient environ 1/15 de la taille de l'orbe. [...] Après l'expulsion, l'orbe a pâli et disparu. De 19 h à 19 h 30 environ, j'ai vu la scène se répéter environ cinq fois sur l'horizon nord, nord-est et est. Nos équipes ont confirmé avoir vu les mêmes objets. Le dernier groupe de lumières rouges s'est déplacé horizontalement vers l'horizon sud, où il est resté le reste de la soirée. Les trois lumières rouges étaient alignées et restaient à égale distance. De 19 h 30 à 23 h environ, elles ont plané au-dessus de l'horizon sud ; elles plongeaient parfois sous l'horizon, hors de vue, mais remontaient toujours. Nous sommes partis vers 23 h. Il n'y a eu ni bruit, ni interférence, ni effet physiologique."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 14,
-   "hour": 19,
-   "minute": 0,
-   "second": 0
-  },
+  "value": "2023-10-14T19:00:00",
   "basis": "assumed",
   "rationale": "the first of the two evenings (\"two days in October 2023\", AARO), taken as 2023-10-14: witness 4's second evening, with its Starlink train to the south-east, is best matched by the 15th"
  },
@@ -28,17 +21,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.44565,
-    "lng": -115.35894,
-    "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 2 was \"positioned in a valley, with mountain ranges to the west and east and more distant ranges to the north\": Desert Valley, at its southern mouth, whose horizon to the south is the flat Las Vegas Valley (0.4° high)"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada",
+   "locations": [
+    {
+     "lat": 36.44565,
+     "lng": -115.35894
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 2 was \"positioned in a valley, with mountain ranges to the west and east and more distant ranges to the north\": Desert Valley, at its southern mouth, whose horizon to the south is the flat Las Vegas Valley (0.4° high)"
+ },
  "observer": {
   "id": "WesternUSEvent-W2",
   "title": {
@@ -1706,5 +1701,37 @@
   }
  ],
  "durationText": "PT30M~",
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w2-1.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w2-1.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w2-1.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w2-1.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w2-1.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "water": {
+   "src": "observer-western-us-event-w2-1.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "map": {
+   "src": "observer-western-us-event-w2-1.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w2-1.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  }
+ }
 }

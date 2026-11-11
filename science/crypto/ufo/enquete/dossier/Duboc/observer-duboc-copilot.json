@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "id": "1994-01-28-ChauffourValerie",
  "image": "https://ufoathome.org/demo-data/share/duboc-copilot.jpg",
  "tags": [
@@ -8505,7 +8505,7 @@
    }
   }
  ],
- "frozen": {
+ "snapshots": {
   "relief": {
    "src": "observer-duboc-copilot.relief.zip",
    "takenOn": "2026-10-20",

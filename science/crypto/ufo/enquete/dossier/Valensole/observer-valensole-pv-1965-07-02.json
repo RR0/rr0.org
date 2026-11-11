@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "1965-07-01-MasseMaurice-pv-1965-07-02",
   "image": "https://ufoathome.org/demo-data/share/valensole-pv-1965-07-02.jpg",
   "time": "1965-07-01T05:45",
@@ -1537,7 +1537,7 @@
       }
     ]
   },
-  "frozen": {
+  "snapshots": {
     "relief": {
       "src": "observer-valensole-pv-1965-07-02.relief.zip",
       "takenOn": "2026-10-20",

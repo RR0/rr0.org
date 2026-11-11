@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "id": "2015-05-31-SillyLeLong-T1-interpretation-1",
  "time": "2015-05-31T00:50:34",
  "durationSeconds": 204,
@@ -2713,7 +2713,7 @@
    }
   }
  ],
- "frozen": {
+ "snapshots": {
   "decor": {
    "src": "interpretation-silly-le-long-1.decor.json",
    "takenOn": "2026-10-20",

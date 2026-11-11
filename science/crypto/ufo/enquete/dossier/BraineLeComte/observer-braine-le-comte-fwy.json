@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "id": "2015-07-12-BraineLeComte-FWY",
  "image": "https://ufoathome.org/demo-data/share/braine-le-comte-fwy.jpg",
  "summaryTime": 2.85,
@@ -2257,7 +2257,7 @@
   "name": "METAR EBCV 112225Z AUTO 22007KT 9999 NCD 13/10 Q1020 (Chièvres, 25 min before)",
   "url": "http://www.cobeps.org/pdf/BraineLeComte_20150712.pdf"
  },
- "frozen": {
+ "snapshots": {
   "relief": {
    "src": "observer-braine-le-comte-bjn.relief.zip",
    "takenOn": "2026-10-20",

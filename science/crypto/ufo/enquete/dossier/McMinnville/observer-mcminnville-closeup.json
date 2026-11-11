@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "id": "1950-05-11-TrentPaul-closeup",
  "image": "https://ufoathome.org/demo-data/share/mcminnville-closeup.jpg",
  "time": {
@@ -768,7 +768,7 @@
   ]
  },
  "sway": 0,
- "frozen": {
+ "snapshots": {
   "relief": {
    "src": "observer-mcminnville-closeup.relief.zip",
    "takenOn": "2026-10-20",

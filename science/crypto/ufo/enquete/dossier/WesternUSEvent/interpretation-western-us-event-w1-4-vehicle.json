@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-16-WesternUSEvent-W1-4-vehicle",
  "description": {
   "en": "Several hours later we departed from where we were at to drive to another location in preparation for work the next day. It took several hours of driving, and as we were driving hours later still, we observed a car driving ahead of us on the road, we were gaining on the car and as we got closer I noticed it appeared one taillight cover was broken because one taillight was red and one was white. They were also different because one was round and one was square. Another vehicle approached from the opposite direction and as it was about to pass the vehicle in front of us, the car changed direction and moved off the road to the right. The oncoming vehicle continued driving and passed us, almost like it did not even see the vehicle move of the road as it passed. It did not bounce or move with the terrain, but seemed to hover. It did not kick up any dust either. It stopped on the road next to it, and the lights appeared to be in the same position facing us even though we were in a different direction from it. When we stopped the lights turned off and I could see a darker object moving up and toward behind us as it flew away. When we stopped we already had the windows rolled down and I did not notice any sound at any point. It reminded me of a Toyota Prius for some reason. It was hard to identify the exact shape though. The hillside was about 200 meters away, and when it stopped it was less than halfway to the base of the hillside.",
   "fr": "Quelques heures plus tard, nous sommes partis vers un autre endroit pour le travail du lendemain. Il a fallu plusieurs heures de route, et alors que nous roulions encore, des heures plus tard, nous avons vu une voiture devant nous sur la route. Nous la rattrapions, et en approchant j'ai remarqué qu'un cabochon de feu arrière semblait cassé, car un feu était rouge et l'autre blanc ; ils différaient aussi par la forme, l'un rond, l'autre carré. Un autre véhicule est arrivé en sens inverse et, au moment de croiser la voiture devant nous, celle-ci a changé de direction et quitté la route vers la droite. Le véhicule d'en face a continué et nous a croisés, presque comme s'il n'avait rien vu. La voiture ne rebondissait pas, ne suivait pas le terrain, elle semblait flotter, sans soulever de poussière. Elle s'est arrêtée, et les feux semblaient dans la même position, tournés vers nous, bien que nous soyons dans une autre direction. Quand nous nous sommes arrêtés, les feux se sont éteints et j'ai vu une forme plus sombre monter et partir vers l'arrière de notre véhicule en s'éloignant. Nos vitres étaient déjà baissées et je n'ai remarqué aucun bruit. Elle m'a fait penser à une Toyota Prius, sans que je puisse en distinguer la forme exacte. Le flanc de colline était à environ 200 m, et quand elle s'est arrêtée, elle était à moins de la moitié du chemin jusqu'à son pied."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 16,
-   "hour": 4,
-   "minute": 30,
-   "second": 0
-  },
+  "value": "2023-10-16T04:30:00",
   "basis": "assumed",
   "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"as we were driving hours later still\"; witness 5, in the same vehicle, says \"Around 0430\""
  },
@@ -28,17 +21,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.791768,
-    "lng": -116.01482,
-    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada",
+   "locations": [
+    {
+     "lat": 36.791768,
+     "lng": -116.01482
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits"
+ },
  "observer": {
   "id": "WesternUSEvent-W1",
   "title": {
@@ -3041,5 +3036,37 @@
    }
   ]
  },
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-4.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-4.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w5-4.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w5-4.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w5-4.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "water": {
+   "src": "observer-western-us-event-w5-4.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w1-4.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "map": {
+   "src": "observer-western-us-event-w5-4.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  }
+ }
 }

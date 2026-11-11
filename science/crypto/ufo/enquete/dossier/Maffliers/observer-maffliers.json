@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "id": "2012-06-29-Maffliers",
  "image": "https://ufoathome.org/demo-data/share/maffliers.jpg",
  "summaryTime": 18.86,
@@ -1394,7 +1394,7 @@
    }
   }
  ],
- "frozen": {
+ "snapshots": {
   "relief": {
    "src": "observer-maffliers.relief.zip",
    "takenOn": "2026-10-20",

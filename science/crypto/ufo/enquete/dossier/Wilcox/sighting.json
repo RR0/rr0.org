@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "1964-04-24-WilcoxGary",
   "image": "https://ufoathome.org/demo-data/share/wilcox.jpg",
   "summaryTime": 7115,
@@ -755,7 +755,7 @@
       }
     ]
   },
-  "frozen": {
+  "snapshots": {
     "relief": {
       "src": "observer-wilcox.relief.zip",
       "takenOn": "2026-10-20",

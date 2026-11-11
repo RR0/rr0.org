@@ -1,5 +1,5 @@
 {
- "version":3,
+ "version":4,
  "id":"2015-05-31-SillyLeLong-T1",
  "image":"https://ufoathome.org/demo-data/share/silly-le-long.jpg",
  "summaryTime":56,
@@ -467,7 +467,7 @@
    }
   ]
  },
- "frozen":{
+ "snapshots":{
   "relief":{
    "src":"observer-silly-le-long.relief.zip",
    "takenOn":"2026-10-20",

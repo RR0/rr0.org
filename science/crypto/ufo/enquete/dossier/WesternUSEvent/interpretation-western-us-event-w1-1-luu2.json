@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-15-WesternUSEvent-W1-1-LUU2",
  "description": {
   "en": "It started the first night with other teams reporting weird lights moving along in groups miles away. From my vantage point I could not see them, though in theory should have been able to. Because of my location I did not see anything specific the first night. The second night another team member and I were out working and driving to our destination. As we headed through a valley area we suddenly noticed a large glowing ball to our right 90 degrees from where we were. It looked like it was between us and a hill face, and initially I guessed it was 500 to 600 meters away, though another later day I was able to use a range finder to put the distance to the hillside at about 1100 meters. The ball appeared close to the hill face. It was just a circle of light that looked like a swirly pattern of bright lava. It was bright in the dusk light, the time was just before 7 pm I think. It was not visible up to the moment we first saw it, though the hillside face behind it was visible as we drove for some distance before we saw the object. The object's lighted area was a well defined circle, but had no visible structure at the edges to show what contained the light or why it was where it was. Looking at it through binoculars it almost appeared to have a line or spindle below possibly touching the hillside below. It was not possible to verify for sure because of the distance. There was no observed glow behind or below the object on the hillside or ground. It was only observed for a minute or two before we could no longer see it. It did not fade out, we just could not see it anymore. There was no particular sound heard with it. All seemed quiet and it was pretty remote. I would have guessed the circle to be 20 feet or more in diameter.",
   "fr": "Tout a commencé le premier soir : d'autres équipes signalaient des lumières étranges qui se déplaçaient en groupes, à des kilomètres. De ma position, je ne pouvais pas les voir, même si j'aurais dû en théorie. Le second soir, un autre membre de l'équipe et moi étions en route vers notre destination. En traversant une vallée, nous avons soudain remarqué une grosse boule lumineuse à 90 degrés sur notre droite. Elle semblait entre nous et le flanc d'une colline ; je l'ai d'abord estimée à 500 ou 600 mètres, mais un autre jour, un télémètre m'a donné environ 1 100 mètres jusqu'au flanc. La boule paraissait près du flanc. C'était juste un cercle de lumière, comme un motif tourbillonnant de lave vive, brillant dans la lumière du crépuscule, juste avant 19 h je crois. Elle n'était pas visible jusqu'au moment où nous l'avons vue, alors que le flanc derrière l'était depuis un moment. Sa partie lumineuse était un cercle bien net, sans structure visible au bord. Aux jumelles, elle semblait presque avoir une ligne ou une tige dessous, touchant peut-être le flanc ; impossible de l'affirmer à cette distance. Aucune lueur sur le flanc ni au sol. Nous ne l'avons vue qu'une minute ou deux, puis plus du tout : elle ne s'est pas estompée, nous ne la voyions plus. Aucun bruit particulier ; tout semblait calme, c'était très isolé. J'aurais estimé le cercle à 20 pieds (6 m) de diamètre ou plus."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 15,
-   "hour": 18,
-   "minute": 58,
-   "second": 0
-  },
+  "value": "2023-10-15T18:58:00",
   "basis": "assumed",
   "rationale": "the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening; \"just before 7 pm I think\"; witness 5, in the same vehicle, says 18:58"
  },
@@ -28,17 +21,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.71286,
-    "lng": -115.26767,
-    "name": "White Rock Road, Desert National Wildlife Refuge, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several; witness 1 was in the same vehicle as witness 5 (AARO: USPER5 and USPER6 saw the \"fiery orb\" together)"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "White Rock Road, Desert National Wildlife Refuge, Nevada",
+   "locations": [
+    {
+     "lat": 36.71286,
+     "lng": -115.26767
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several; witness 1 was in the same vehicle as witness 5 (AARO: USPER5 and USPER6 saw the \"fiery orb\" together)"
+ },
  "observer": {
   "id": "WesternUSEvent-W1",
   "title": {
@@ -248,5 +243,37 @@
    }
   ]
  },
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-1.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-1.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w5-1.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w5-1.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "water": {
+   "src": "observer-western-us-event-w5-1.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w5-2.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "map": {
+   "src": "observer-western-us-event-w5-1.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w5-1.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  }
+ }
 }

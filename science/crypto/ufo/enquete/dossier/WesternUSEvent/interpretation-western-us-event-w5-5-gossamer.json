@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-16-WesternUSEvent-W5-5-gossamer",
  "description": {
   "en": "We returned to our sighting location and maneuvered the vehicle around trying to shine the headlights to stir something. We also looked through NVG and [redacted] looked through the thermal binoculars. [...] It may have been about 0530 when SA [redacted] was using the NVG and said \"I see it!\" and added something about a cobweb that made me notice a cobweb. There was an identical cob web floating nearby, but floating and flowing down towards the earth. The second was moving up, but not with a natural flow. That's when I could see a shape, not perfectly outlined, but faint lights in a perfect formation that moved together. While SA [redacted] was watching it in the NVG at the same time I saw it with my naked eye. It seemed to be moving up and slightly side to side. This gave the perception of trying to evade being noticed, or blend into the stars as it was now more than 20 ft in the air. I could not judge how far away. I tried to look at a reference point to describe it and looked at a bright light in the distance, which cause my eyes to adjust differently and I lost the formation of faint lights. When my eyes readjusted, a few seconds later, I saw the exact formation of faint lights again but at the opposite angle and at the same height and location. I could not see it much longer as the lights grew fainter.",
   "fr": "Nous sommes revenus sur les lieux et avons manœuvré le véhicule pour balayer avec les phares. Nous avons aussi regardé aux jumelles de vision nocturne, et [caviardé] aux jumelles thermiques. [...] Il était peut-être 5 h 30 quand l'agent [caviardé], aux jumelles de vision nocturne, s'est écrié « Je le vois ! » en parlant d'une toile d'araignée, ce qui me l'a fait remarquer. Une toile identique flottait tout près, mais descendait doucement vers le sol ; la seconde montait, sans suivre un mouvement naturel. C'est alors que j'ai vu une forme, au contour imprécis, mais des lumières faibles en formation parfaite qui bougeaient ensemble ; je la voyais à l'œil nu pendant qu'il la voyait aux jumelles. Elle semblait monter et osciller un peu de côté, comme pour échapper aux regards ou se fondre dans les étoiles ; elle était maintenant à plus de 6 m de haut. Je ne pouvais pas juger sa distance. J'ai regardé une lumière vive au loin pour avoir un repère, mes yeux se sont réadaptés et j'ai perdu la formation. Quelques secondes plus tard, je l'ai revue, exactement la même, mais inclinée dans l'autre sens, à la même hauteur et au même endroit. Je ne l'ai pas vue beaucoup plus longtemps : les lumières pâlissaient."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 16,
-   "hour": 5,
-   "minute": 30,
-   "second": 0
-  },
+  "value": "2023-10-16T05:30:00",
   "basis": "assumed",
   "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"It may have been about 0530\""
  },
@@ -28,17 +21,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.79328,
-    "lng": -116.014541,
-    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits; back at the place of the pair of lights"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada",
+   "locations": [
+    {
+     "lat": 36.79328,
+     "lng": -116.014541
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits; back at the place of the pair of lights"
+ },
  "observer": {
   "id": "WesternUSEvent-W5",
   "title": {
@@ -4110,5 +4105,37 @@
    }
   ]
  },
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w5-5.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w5-5.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w5-5.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w5-5.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "water": {
+   "src": "observer-western-us-event-w5-5.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "map": {
+   "src": "observer-western-us-event-w5-5.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w1-5.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w1-5.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  }
+ }
 }

@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-15-WesternUSEvent-W1-3-AARO-flares",
  "description": {
   "en": "About twenty minutes later the experience repeated except this time the orange ball appeared to the front and slightly to the left this time. This time however, the red lights appeared to leave in a different pattern as one flew straight out, one appeared to fly up horizontally and another flew down horizontally, appearing to fly away in a vertical alignment of three lights. A flash accompanied this event as well and all three sightings appeared to be similar though at different distances.",
   "fr": "Une vingtaine de minutes plus tard, la scène s'est répétée, mais cette fois la boule orange est apparue devant nous et un peu à gauche. Les lumières rouges sont parties autrement : l'une droit devant, une autre vers le haut et une autre vers le bas, s'éloignant en un alignement vertical de trois lumières. Un éclair a aussi accompagné cet événement ; les trois observations se ressemblaient, à des distances différentes."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 15,
-   "hour": 19,
-   "minute": 37,
-   "second": 0
-  },
+  "value": "2023-10-15T19:37:00",
   "basis": "assumed",
   "rationale": "the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening; \"About twenty minutes later\"; witness 5 says 19:37"
  },
@@ -28,17 +21,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.71286,
-    "lng": -115.26767,
-    "name": "White Rock Road, Desert National Wildlife Refuge, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several; witness 1 was in the same vehicle as witness 5 (AARO: USPER5 and USPER6 saw the \"fiery orb\" together); they had walked on a little: the same place is kept"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "White Rock Road, Desert National Wildlife Refuge, Nevada",
+   "locations": [
+    {
+     "lat": 36.71286,
+     "lng": -115.26767
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; witness 5 turned off a highway towards a \"Wildlife National park (?name)\" onto a rough unpaved road, and saw the light \"ahead and slightly to our right\" over \"a distinctive peak in the ridge line\", which AARO measured at about 1,050 m. White Rock Road in the refuge, driven west, has a peak on the skyline 1,090 m away ahead and to the right (bearing 321, 5.5° high), found by a search of the 10 m USGS relief for summits standing out 0.9 to 1.3 km from the refuge's tracks; one candidate among several; witness 1 was in the same vehicle as witness 5 (AARO: USPER5 and USPER6 saw the \"fiery orb\" together); they had walked on a little: the same place is kept"
+ },
  "observer": {
   "id": "WesternUSEvent-W1",
   "title": {
@@ -429,5 +424,37 @@
    }
   ]
  },
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-3.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-3.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w5-1.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w5-1.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "water": {
+   "src": "observer-western-us-event-w5-1.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w5-2.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "map": {
+   "src": "observer-western-us-event-w5-1.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w5-1.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  }
+ }
 }

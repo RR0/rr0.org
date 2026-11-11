@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-16-WesternUSEvent-W5-4-vehicle",
  "description": {
   "en": "We made it to our vehicle around 0130. We made our way down the mountain and got turned around in the wildlife area on our way out. We made it back to Highway [redacted] about 0330 and to the gate about 0415. We were driving around [redacted] lake, headed towards [redacted] base. Around 0430, I notice two lights in the distance about 2-3ft above the ground. The lights stayed on the far side of the road, but directly over the pavement. One was white and square, the second was round and red. The red light was diagonally to the left above the white lite. I watched it and wondered if someone decided to take a bike ride. Another vehicle started approaching from the opposite traffic side as we were approaching the red and white light pair. I started to notice the pair drifting into the sand, off the side of the road. [...] We were quickly approaching the lights and started to slow down, maybe 100 ft or so in front of us. The lights made it hard to see what would have been displaying the lights themselves. It appeared that the lights may have been directly facing us. As we were slowing our vehicle, and the opposite traffic vehicle quickly approached, the red and white light pair hovered, with zero resistance, or change in height, over the bushes to the right at about 15-20 mph. The light pair stopped just as we stopped our vehicle and I pulled out the Night Vision Goggles (NVGs) to take a look. I saw the light pair for a split second in the NVGs before the lights turned off and I saw a very thin line remain, maybe 4 ft wide, horizontal to the earth. It began moving at the same speed, 15-20 mph, and I could not see it for more than a second or two before I lost track of it. It also seemed to move up in height with this movement, but remained a flat line.",
   "fr": "Nous avons regagné le véhicule vers 1 h 30, sommes descendus de la montagne et nous sommes perdus dans la réserve en repartant. Nous avons rejoint la route [caviardé] vers 3 h 30 et la porte vers 4 h 15. Nous contournions le lac [caviardé], en direction de la base [caviardé]. Vers 4 h 30, je remarque deux lumières au loin, à 60-90 cm du sol. Elles restaient du côté opposé de la route, mais juste au-dessus de la chaussée. L'une était blanche et carrée, l'autre ronde et rouge ; la rouge était en diagonale, à gauche au-dessus de la blanche. Je me suis demandé si quelqu'un faisait du vélo. Un autre véhicule a commencé à arriver en sens inverse pendant que nous approchions. J'ai remarqué que la paire dérivait vers le sable, hors de la route. [...] Nous approchions vite et avons commencé à ralentir, à 30 m environ. Les lumières empêchaient de voir ce qui les portait ; elles semblaient tournées vers nous. Pendant que nous ralentissions et que l'autre véhicule arrivait vite, la paire a plané, sans résistance ni changement de hauteur, au-dessus des buissons à droite, à 25-30 km/h. Elle s'est arrêtée juste quand nous nous sommes arrêtés, et j'ai pris les jumelles de vision nocturne. J'ai vu la paire une fraction de seconde avant que les feux s'éteignent ; il est resté une ligne très fine, d'environ 1,2 m, horizontale. Elle s'est mise à bouger à la même vitesse, et je ne l'ai pas vue plus d'une ou deux secondes avant de la perdre. Elle semblait aussi monter en se déplaçant, tout en restant une ligne plate."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 16,
-   "hour": 4,
-   "minute": 30,
-   "second": 0
-  },
+  "value": "2023-10-16T04:30:00",
   "basis": "assumed",
   "rationale": "the early hours after the second evening (the second of the two evenings (witness 1: \"The second night\"), taken as 2023-10-15: the one evening of October 2023 with a freshly launched Starlink train to the south-east between 7 and 9 pm, as witness 4 saw on his second evening): 2023-10-16; \"Around 0430\""
  },
@@ -28,17 +21,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.791768,
-    "lng": -116.01482,
-    "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Mercury Highway by Frenchman Flat, Nevada National Security Site, Nevada",
+   "locations": [
+    {
+     "lat": 36.791768,
+     "lng": -116.01482
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas; before dawn they were \"driving around [redacted] lake, headed towards [redacted] base\", a quarter of an hour after \"the gate\", on \"a road in a restricted zone\" (AARO): the Mercury Highway northbound past the dry lake of Frenchman Flat, inside the Nevada National Security Site, 15 minutes from its gate at Mercury; one road among those the account fits"
+ },
  "observer": {
   "id": "WesternUSEvent-W5",
   "title": {
@@ -3034,5 +3029,37 @@
    }
   ]
  },
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w5-4.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w5-4.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w5-4.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w5-4.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w5-4.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "water": {
+   "src": "observer-western-us-event-w5-4.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "map": {
+   "src": "observer-western-us-event-w5-4.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w1-4.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  }
+ }
 }

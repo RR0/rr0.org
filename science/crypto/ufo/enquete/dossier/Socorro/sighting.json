@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "1964-04-24-ZamoraLonnie",
   "image": "https://ufoathome.org/demo-data/share/socorro.jpg",
   "summaryTime": 87,
@@ -5480,7 +5480,7 @@
       "rationale": "Byrnes (FBI) found three burned patches of grass clumps inside the four imprints and one outside, still smouldering when the officers arrived, and Zamora saw \"the brush was burning in several places\" once the craft had gone. Where each patch lay is not recorded, so they are spread inside and outside the imprints by hand; that they caught during the take-off rather than the landing is assumed too."
     }
   },
-  "frozen": {
+  "snapshots": {
     "relief": {
       "src": "observer-socorro.relief.zip",
       "takenOn": "2026-10-20",

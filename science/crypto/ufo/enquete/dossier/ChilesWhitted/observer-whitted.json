@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "1948-07-24-WhittedJohn",
   "image": "https://ufoathome.org/demo-data/share/whitted.jpg",
   "time": "1948-07-24T02:45:03",
@@ -2001,7 +2001,7 @@
       }
     ]
   },
-  "frozen": {
+  "snapshots": {
     "relief": {
       "src": "observer-whitted.relief.zip",
       "takenOn": "2026-10-20",

@@ -1,19 +1,12 @@
 {
- "version": 1,
+ "version": 4,
  "id": "2023-10-14-WesternUSEvent-W3-1",
  "description": {
   "en": "In mid-Oct 2023, I was with agents from our office at our work location. [...] at approximately 1900, roughly dusk with a clear sky, I was looking east when I saw a large orange orb in the sky seemingly coming in my direction. I recall my partner asking, \"are you seeing this?\" I couldn't tell how large the orb was because I could not determine how far away it was. I recall that it was alternating between clear and orange with maybe two or three seconds in each colored cycle. When it was orange, the outline was well defined, but when it was clear, it did not seem to disappear as I vaguely recall still being able to see an outline of the orb although it was clear. In terms of speed, I'd estimate the orb moved approximately 20 degrees in the sky in about three to five seconds. When the orb was at approximately 45 degrees (halfway between the horizon and directly overhead), it expelled three smaller red orbs. The expulsion appeared to be mechanical. The red orbs then moved to the south in a straight line spaced about one second apart, also at 45 degrees (from directly overhead to the horizon) until I could no longer see them. I did not pay attention to what the orange orb was doing after it released the red orbs. However, I don't recall seeing it any longer. I do not recall any sound associated with what I saw. Also, there were no exhaust trails coming from either the orange or the red orbs. [...] the red orbs were a lot smaller than the orange orb. Comparatively, I'd say the red orbs were like grapes being expelled from a basketball. The time frame for this explanation was maybe 30-45 seconds.",
   "fr": "À la mi-octobre 2023, j'étais avec des agents de notre bureau sur notre lieu de travail. [...] vers 19 h, à peu près au crépuscule, par ciel clair, je regardais vers l'est quand j'ai vu dans le ciel une grande orbe orange qui semblait venir vers moi. Je me souviens que mon coéquipier m'a demandé : « Tu vois ça ? » Je ne pouvais pas dire quelle taille elle avait, faute de pouvoir dire à quelle distance elle était. Je me souviens qu'elle alternait entre transparente et orange, peut-être deux ou trois secondes dans chaque couleur. Orange, son contour était bien net ; transparente, elle ne semblait pas disparaître, car je crois me souvenir d'en voir encore vaguement le contour. Pour la vitesse, j'estime qu'elle a parcouru environ 20 degrés dans le ciel en trois à cinq secondes. Quand elle était à environ 45 degrés (à mi-chemin entre l'horizon et le zénith), elle a expulsé trois orbes rouges plus petites. L'expulsion paraissait mécanique. Les orbes rouges sont ensuite parties vers le sud en ligne droite, à environ une seconde d'intervalle, elles aussi à 45 degrés, jusqu'à ce que je ne les voie plus. Je n'ai pas fait attention à ce que faisait l'orbe orange après avoir libéré les rouges, mais je ne me souviens pas de l'avoir encore vue. Je ne me souviens d'aucun bruit. Il n'y avait pas non plus de traînée derrière l'orbe orange ni derrière les rouges. [...] les orbes rouges étaient bien plus petites que l'orange : je dirais comme des grains de raisin expulsés d'un ballon de basket. Tout cela a peut-être duré 30 à 45 secondes."
  },
  "time": {
-  "value": {
-   "year": 2023,
-   "month": 10,
-   "day": 14,
-   "hour": 19,
-   "minute": 0,
-   "second": 0
-  },
+  "value": "2023-10-14T19:00:00",
   "basis": "assumed",
   "rationale": "\"mid-Oct 2023 ... at approximately 1900, roughly dusk\": the day is not given (\"two days in October 2023\", AARO). Taken as the first of the two evenings, 2023-10-14: witness 1 says other teams reported lights on the first night, and witness 4's second evening, with its Starlink train to the south-east, is best matched by the 15th"
  },
@@ -29,17 +22,19 @@
   "rationale": "Pacific Daylight Time in October 2023"
  },
  "timeZone": "America/Los_Angeles",
- "place": [
-  {
-   "value": {
-    "lat": 36.55071,
-    "lng": -115.39745,
-    "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada"
-   },
-   "basis": "assumed",
-   "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas, whose Desert Valley (ranges to the west and east, more distant ranges to the north, a dirt road north from US-95) is the valley of witness 2, who saw the same orbs to the north, north-east and east and the last red ones going south"
-  }
- ],
+ "place": {
+  "value": {
+   "name": "Alamo Road, Desert Valley, Desert National Wildlife Refuge, Nevada",
+   "locations": [
+    {
+     "lat": 36.55071,
+     "lng": -115.39745
+    }
+   ]
+  },
+  "basis": "assumed",
+  "rationale": "the place is withheld (\"a sensitive national security site in the western United States\"). Working hypothesis of RR0: the Nevada National Security Site, over which drones were detected on three days in October 2023 (Wall Street Journal), and the Desert National Wildlife Refuge north of Las Vegas, whose Desert Valley (ranges to the west and east, more distant ranges to the north, a dirt road north from US-95) is the valley of witness 2, who saw the same orbs to the north, north-east and east and the last red ones going south"
+ },
  "observer": {
   "id": "WesternUSEvent-W3",
   "title": {
@@ -549,5 +544,37 @@
    }
   ]
  },
- "image": "https://ufoathome.org/demo-data/share/western-us-event-w3-1.jpg"
+ "image": "https://ufoathome.org/demo-data/share/western-us-event-w3-1.jpg",
+ "snapshots": {
+  "relief": {
+   "src": "observer-western-us-event-w3-1.relief.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Relief © IGN, LiDAR HD and RGE ALTI (Licence Ouverte 2.0) in France; © AWS Open Data (SRTM, ETOPO1) elsewhere"
+  },
+  "imagery": {
+   "src": "observer-western-us-event-w3-1.imagery.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  },
+  "roads": {
+   "src": "observer-western-us-event-w3-1.roads.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Roads © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "water": {
+   "src": "observer-western-us-event-w3-1.water.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Water © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere"
+  },
+  "railways": {
+   "src": "observer-western-us-event-w3-1.railways.json",
+   "takenOn": "2026-10-25",
+   "attribution": "Railways © IGN, BD TOPO, in France; © OpenStreetMap contributors elsewhere, as drawn today"
+  },
+  "map": {
+   "src": "observer-western-us-event-w3-1.map.zip",
+   "takenOn": "2026-10-25",
+   "attribution": "Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+  }
+ }
 }

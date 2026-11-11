@@ -35,17 +35,16 @@ The elements are [Web Components](https://developer.mozilla.org/en-US/docs/Web/A
 - **they work in any page**: a static site, WordPress, a React or Vue application, a wiki, a hand-written HTML file;
 - **there is nothing to build**: no bundler, no compilation step, no configuration;
 - **there is nothing to keep up with**: [no framework](https://medium.com/@javarome/design-noframework-bbc00a02d9b3) version to match, so nobody’s next major release can make them obsolete;
-- **their insides are their own**: each keeps its markup and styles in a [shadow root](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot), so the host page’s CSS cannot break them, and they cannot break the page.
+- **their insides are their own**: each keeps its markup and styles in a [shadow root](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot), so the host page’s CSS cannot break them, and they cannot break the page. The interview is the exception, on purpose: it draws in the page, so that the page’s own styles reach its text and links.
 
-There are five of them:
+There are six of them, three to show and three to edit:
 
 - the **scene** (the phenomenon in the real sky, weather and ground),
 - the **sighting** (the scene plus who saw it, the metadata and the sharing),
-- the **sighting editor**,
-- the **case editor**, and
-- a **date input** that knows about imprecise dates.
+- the **interview** (a transcript read as a dialogue, whose passages lead to the moments of the observation they tell of),
+- the **sighting editor**, the **case editor** and the **interview editor**.
 
-Each composes the one below it, so a page only ever writes one tag. The heavy parts that a page may never use, such as the editor of 3D bodies or the code that reads photographs, are only downloaded when they are first needed.
+A page only ever writes one tag: the sighting holds its scene, the case editor its sightings and interviews. The fields they are made of, such as a date input that knows about imprecise dates, are elements too, but a page has no need of them. The heavy parts that a page may never use, such as the editor of 3D bodies or the code that reads photographs, are only downloaded when they are first needed.
 
 And nothing has to depend on ufoathome.org. The components are [published on npm](https://www.npmjs.com/package/@rr0/ufoathome) under the MIT license; anyone can copy the built files onto their own server and point the script there. A finished recording does not even need the third-party services to play: without them, the scene falls back to a plain horizon.
 

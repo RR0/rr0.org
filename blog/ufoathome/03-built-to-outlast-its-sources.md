@@ -46,7 +46,7 @@ There are six of them, three to show and three to edit:
 
 A page only ever writes one tag: the sighting holds its scene, the case editor its sightings and interviews. The fields they are made of, such as a date input that knows about imprecise dates, are elements too, but a page has no need of them. The heavy parts that a page may never use, such as the editor of 3D bodies or the code that reads photographs, are only downloaded when they are first needed.
 
-And nothing has to depend on ufoathome.org. The components are [published on npm](https://www.npmjs.com/package/@rr0/ufoathome) under the MIT license; anyone can copy the built files onto their own server and point the script there. A finished recording does not even need the third-party services to play: without them, the scene falls back to a plain horizon.
+And nothing has to depend on [ufoathome.org](https://ufoathome.org/). The components are [published on npm](https://www.npmjs.com/package/@rr0/ufoathome) under the [MIT license](https://opensource.org/license/mit); anyone can copy the built files onto their own server and point the script there. A finished recording does not even need the third-party services to play: without them, the scene falls back to a plain horizon.
 
 ## Providers: every source is a choice
 
@@ -81,27 +81,27 @@ Some data cannot be fetched live from a browser, or could be taken down by whoev
 
 The models are a good example of why. The catalogues that can be read from a browser hold test objects and props; the free kits that do contain a car, an airframe or a lamp post mostly live on third-party mirrors whose permanence and licence vary. A recording names a model by an identifier, and an identifier a catalogue does not know falls back to a plain shape rather than an error.
 
-## Frozen data: a recording that plays the same in twenty years
+## Snapshots: a recording that plays the same in twenty years
 
-Providers answer today. But the imagery of a place changes, a service closes, a reanalysis is revised. So a recording can **freeze** what each source answered, in annexes kept beside its file: the relief, the photograph of the ground, the roads, water and railways, the winds aloft, the map, the weather, the place, the night sky’s brightness.
+Providers answer today. But the imagery of a place changes, a service closes, a reanalysis is revised. So a recording can keep a **snapshot** of what each source answered, in annexes kept beside its file: the relief, the photograph of the ground, the roads, water and railways, the winds aloft, the map, the weather, the place, the night sky’s brightness.
 
 ![The Files group of the editor for Silly-le-Long, on the annex "Photograph of the ground": its address, a Save button, and "taken on 2026-10-20 · Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community", with a Refresh button](img3/files.png)
 *One of the annexes of the Silly-le-Long recording: the aerial imagery, taken on a given day, with its credit, and a button to take it again.*
 
-A frozen recording plays without asking any third party for anything, and it plays the same, years later, as on the day it was published.
+A recording with its snapshots plays without asking any third party for anything, and it plays the same, years later, as on the day it was published.
 
 ## Versions, of the format and of the player
 
 The file format has a **version** of its own, distinct from the tool’s: it only changes the day a field changes its meaning or its shape. Each version has its published schema, a file of an older version is converted as it is read, and a file of a version newer than the player is refused with a message, rather than played as something it does not say.
 
-The player follows each release by default, so a page embedding a reconstruction gets every fix. An author who wants to keep exactly the rendering they checked can **freeze the version**: the script then comes from the package as published on npm, served by [jsDelivr](https://www.jsdelivr.com/), which keeps every version.
+The player follows each release by default, so a page embedding a reconstruction gets every fix. An author who wants to keep exactly the rendering they checked can **pin the version**: the script then comes from the package as published on npm, served by [jsDelivr](https://www.jsdelivr.com/), which keeps every version.
 
-![The share dialog of the player: Link or Embed, what to share and where it opens, options (start time, summary chips, map, moments, comparison), the two lines of code pointing at a pinned version on jsDelivr, and a checked "Freeze version" box](img3/share.png)
-*The share dialog, with “Freeze version” ticked: the embed code now points at one published version of the player.*
+![The share dialog of the player: Link or Embed, what to share and where it opens, options (start time, summary chips, map, moments, comparison), the two lines of code pointing at a pinned version on jsDelivr, and a checked "Pin version" box](img3/share.png)
+*The share dialog, with “Pin version” ticked: the embed code now points at one published version of the player.*
 
 ## Offline
 
-Finally, ufoathome.org is an **installable web application** (a PWA): from the browser’s install button on a computer, or “Add to Home Screen” on a phone, it gets its own window and icon. Online, nothing changes: the network is always asked first, so the current version is what is read. Offline, the player, and every page, recording, model and map tile already opened, stay on the device: enough to replay an account in the field, on the very spot, with no signal. What needs a network, such as the weather of a new recording, simply waits for one.
+Finally, ufoathome.org is an **installable web application** (a [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)): from the browser’s install button on a computer, or “Add to Home Screen” on a phone, it gets its own window and icon. Online, nothing changes: the network is always asked first, so the current version is what is read. Offline, the player, and every page, recording, model and map tile already opened, stay on the device: enough to replay an account in the field, on the very spot, with no signal. What needs a network, such as the weather of a new recording, simply waits for one.
 
 No account, no server storing anything, no cookie: the only output of the tool is the file its author chooses to save.
 
@@ -112,6 +112,6 @@ UFO@home is built so that a reconstruction outlives both the tool’s own histor
 - **web standards only**: elements any page can hold, with nothing to build and no framework to follow;
 - **providers**: every source is a visible, credited choice, and a new one can be added without touching the rest;
 - **assets**: what may disappear is copied, credited and hosted;
-- **frozen annexes**: a recording can carry what its sources answered, and play the same years later;
+- **snapshots**: a recording can carry what its sources answered, and play the same years later;
 - **versions**: of the format, read forward and refused when too new, and of the player, which can be pinned;
 - **offline**: installable, and usable in the field.

@@ -12,7 +12,9 @@ const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
 const UFO = process.env.SITE || "https://ufoathome.org"
 const edit = file => `${UFO}/edit/index.html?file=/demo-data/${file}.json`
-const play = (file, extra = "") => `${UFO}/play/index.html?file=${encodeURIComponent("/demo-data/" + file + ".json")}${extra}`
+// The recordings' own address: ufoathome.org's, even when the player is a local build (DATA), so that no shot shows localhost.
+const DATA = process.env.DATA ?? ""
+const play = (file, extra = "") => `${UFO}/play/index.html?file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}${extra}`
 
 /** Runs in the page: every element matching `f`, through shadow roots. */
 const DEEP = "const deep = (root, f, acc = []) => { root.querySelectorAll('*').forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc };"

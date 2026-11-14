@@ -21,12 +21,14 @@ That last point is not abstract. The first UFO@home was a Java applet, in 2003. 
 
 ## Why the web
 
-A reconstruction has to be **seen** to be discussed: in an investigator’s report, a forum thread, an encyclopedia page, an e-mail. The one medium that goes everywhere is a web page, and the one thing every page can hold is an HTML element. So UFO@home is a set of elements, and putting a reconstruction in a page takes two lines:
+A reconstruction has to be **seen** to be discussed: in an investigator’s report, a forum thread, an encyclopedia page, an e-mail. The one medium that goes everywhere is a web page, and the one thing every page can hold is an HTML element. So UFO@home is a set of elements, and putting a reconstruction in a page takes two lines. For example, the Cussac reconstruction shown at the top of this article:
 
 ```html
 <script type="module" src="https://ufoathome.org/lib/rr0-sighting.mjs"></script>
-<rr0-sighting src="https://example.org/my-case.json"></rr0-sighting>
+<rr0-sighting src="https://ufoathome.org/demo-data/case-cussac.json"></rr0-sighting>
 ```
+
+Paste them into any HTML page and the plateau of Cussac appears, with the sphere leaving it. For your own case, src is the address of its file.
 
 That is how the case files of [RR0](https://rr0.org/) show theirs: a static site, with nothing to build and no framework. The recording stays at its author’s address, on their host, under their name, and a link to the player opens it in the reader’s language (English, French, Spanish or Italian today).
 

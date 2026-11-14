@@ -28,7 +28,7 @@ A UFO@home recording splits the work the other way:
 - **what an AI may write is only the account**: a date, a place, directions and apparent sizes over time, each value marked as stated, derived or assumed (see [the model](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274));
 - **the sky, the weather on record, the ground, the optics** of the eye or the camera are computed from that account by the same engine for every case, tested, and public (see [how it is built](https://medium.com/@rr0/built-to-outlast-its-sources-1700b329eb5f)).
 
-The format’s limits are part of the point. It has no field for a real size or a distance, so an assistant cannot slip a conclusion in among the facts. And what it writes is a short file that anyone can read, replay, correct, and show the witness.
+The [format’s](https://ufoathome.org/docs/format) limits are part of the point. It has no field for a real size or a distance, so an assistant cannot slip a conclusion in among the facts. And what it writes is a short file that anyone can read, replay, correct, and show the witness.
 
 ## Three ways to write a recording, one result
 
@@ -36,22 +36,22 @@ A recording can be made in three ways, and all three give the same thing: a JSON
 
 1. **In the editor**, by hand: draw what was seen, say when and where, record how it moved. This is the ordinary way, and nothing in it needs AI.
 2. **With an AI assistant**, from a case file.
-3. **By hand or by program**, from a text editor or an existing database: the format is documented field by field, with its schema.
+3. **By hand or by program**, from a text editor or an existing database: [the format is documented](https://ufoathome.org/docs/format) field by field, with its schema.
 
 AI is one way among three, never a requirement: the player reads a file however it was made.
 
 ## From a case file, with an assistant
 
-When a case already has its documents (a report, a questionnaire, a statement, sketches, photographs of the place, a map), the quickest way is often to hand them to an AI assistant that can read PDFs and images and run a little code, point it at the documentation, and have it write the file. It reads the account, measures the drawings, computes directions from the map, and writes what it found in the format.
+When a case already has its documents (a report, a questionnaire, a statement, sketches, photographs of the place, a map), the quickest way is often to hand them to an AI assistant that can read PDFs and images and run a little code, point it at the documentation, and have it write the file. It reads the account, measures the drawings, computes directions from the map, and writes what it found in the [format](https://ufoathome.org/docs/format).
 
-The assistant knows nothing about the case but what it is given, and nothing about the format but what the documentation says. So it has to be asked for the discipline an investigator would keep:
+The assistant knows nothing about the case but what it is given, and nothing about the [format](https://ufoathome.org/docs/format) but what the documentation says. So it has to be asked for the discipline an investigator would keep:
 
 ![The "Create an observation" page, section "With an AI assistant, from the case file", and the prompt it suggests: state only what the documents support, mark what was worked out or chosen, angles only, one recording per witness, models from the catalogue, a summary, and the contradictions and questions to put back to the witness](img5/create-with-ai.png)
-*What to ask of an assistant: the same rules a careful investigator follows, written as a prompt.*
+*What to ask of an assistant: the same rules a careful investigator follows, [written as a prompt](https://ufoathome.org/docs/create/index_fr.html#2-with-an-ai-assistant-from-the-case-file).*
 
 Two lines of that prompt matter most. **“State only what the documents support”**, with every value worked out marked as derived, with its working, and every value chosen marked as assumed. And **“list the contradictions between the documents, and the questions to put back to the witness or the investigator”**: an assistant is good at noticing that a report says north-east and a sketch says east, and it should say so rather than pick one.
 
-The same instructions are packaged as a **skill** for Claude: the method, the format’s rules, the schema, an example and a validator that needs only Python, so that only the documents have to be handed over.
+The same instructions are packaged [as a **skill**](https://ufoathome.org/skill/ufoathome-recording.zip) for Claude: the method, [the format](https://ufoathome.org/docs/format)’s rules, the schema, an example and a validator that needs only Python, so that only the documents have to be handed over.
 
 Does it work? On a case of the GEIPAN, the French official UFO office, an assistant given only the public file and the documentation produced a recording whose phenomenon matched the one made by hand **to within a tenth of a degree**.
 
@@ -70,7 +70,7 @@ An assistant can be wrong with confidence. The file is only as good as the docum
 - **finish in the editor** what is easier with a mouse than with a sentence: moving a building by a few metres, nudging a direction until it sits on a photograph;
 - **show it to the witness**: the only test that counts is whether they recognise what they saw.
 
-This is where the format pays off. Because every value carries its basis, a draft cannot hide what it guessed. And because the scene is computed, not drawn, a wrong date or a wrong heading shows at once as a wrong sky.
+This is where [the format](https://ufoathome.org/docs/format) pays off. Because every value carries its basis, a draft cannot hide what it guessed. And because the scene is computed, not drawn, a wrong date or a wrong heading shows at once as a wrong sky.
 
 ## Privacy, again
 
@@ -81,7 +81,7 @@ An account is personal data. Before handing documents to an online assistant, wh
 AI has a place in UFO@home, and a bounded one:
 
 - it may write **the account**, from documents or from the witness’s words, never the sky, the weather or the ground, which are computed;
-- the format leaves it **no room for a conclusion**: angles only, and every value marked as stated, derived or assumed;
+- [the format](https://ufoathome.org/docs/format) leaves it **no room for a conclusion**: angles only, and every value marked as stated, derived or assumed;
 - it is asked to **list contradictions and questions**, not to settle them;
 - it is **optional**: the editor, a text editor or a database produce the same file;
 - what it writes is **checked**: played, read for its assumptions, corrected, and shown to the witness.

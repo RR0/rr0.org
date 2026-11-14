@@ -25,7 +25,7 @@ const DEEP = () => {
 async function open(page, kind, group) {
   await page.evaluate(DEEP)
   await page.evaluate(async ({ kind, group }) => {
-    const card = window.__deep(document, e => e.matches(`li.event-card[data-kind=${kind}]`))[0]
+    const card = window.__deep(document, e => e.matches(`.event-card[data-kind=${kind}]`))[0]
     card?.querySelector(".event-open")?.click()
     await new Promise(r => setTimeout(r, 3500))
     if (!group) return

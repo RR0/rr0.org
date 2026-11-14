@@ -19,7 +19,7 @@ const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent("
 const clickTab = (page, id) => page.evaluate(async (id) => {
   const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
   if (!window.__opened) {
-    const card = deep(document, e => e.matches("li.event-card[data-kind=observation]"))[0]
+    const card = deep(document, e => e.matches(".event-card[data-kind=observation]"))[0]
     card?.querySelector(".event-open")?.click()
     window.__opened = true
     await new Promise(r => setTimeout(r, 3000))
@@ -44,7 +44,21 @@ const SHOTS = [
   },
   { name: "witness", url: edit("case-silly-le-long"), take: group("group-observer") },
   { name: "timeline", url: edit("case-socorro"), take: group("group-temporal") },
-  { name: "phenomenon", url: edit("case-valensole"), take: group("group-shape") },
+  {
+    // Down to the legs' turning rate, whose "assumed" mark the caption points at: the group is taller than the window, so the page is.
+    name: "phenomenon", url: edit("case-valensole"), async take(page) {
+      await page.setViewportSize({ width: 1200, height: 2600 })
+      await clickTab(page, "group-shape")
+      await page.waitForTimeout(2000)
+      const panel = page.locator("#group-shape:visible").first()
+      await panel.scrollIntoViewIfNeeded()
+      await page.waitForTimeout(500)
+      const top = await panel.boundingBox()
+      const rate = page.getByText("Turns a second", { exact: false }).first()
+      const row = await rate.evaluate(e => { const r = (e.closest("label, .field, div") ?? e).getBoundingClientRect(); return { y: r.y, b: r.bottom } })
+      return { clip: { x: top.x, y: top.y, width: top.width, height: row.b - top.y + 16 }, inView: true }
+    }
+  },
   { name: "phenomenon-2d", url: edit("case-socorro"), take: group("group-shape") },
   ...["silly-le-long", "socorro", "chiles-whitted"].map(c => ({
     name: `candidates-${c}`, url: edit(`case-${c}`), async take(page) {
@@ -114,13 +128,18 @@ const SHOTS = [
   },
   {
     name: "compare", url: play("case-mcminnville", "&t=2"), player: true, async take(page) {
-      await page.locator("rr0-sighting #interpretation").selectOption({ index: 2 })
-      await page.waitForTimeout(3000)
-      await page.locator("rr0-sighting #compare-account").click()
+      // A case is read in <rr0-case>: the 2013 study is one of its readings, opened from its history in a player of its own.
+      await page.locator("rr0-case .event[data-kind=reading]").filter({ hasText: "2013" }).first().locator("button.event-open").click()
+      await page.waitForTimeout(5000)
+      const player = page.locator("rr0-sighting").last()
+      await player.scrollIntoViewIfNeeded()
+      await player.locator("#compare-account").click()
       await page.waitForTimeout(4000)
+      // No focus ring left on the button the click went through.
+      await page.evaluate(() => { let e = document.activeElement; while (e?.shadowRoot?.activeElement) e = e.shadowRoot.activeElement; e?.blur?.() })
       await page.mouse.move(2, 2)
       await page.waitForTimeout(1500)
-      return { locator: page.locator("rr0-sighting").first() }
+      return { locator: player }
     }
   },
 ]

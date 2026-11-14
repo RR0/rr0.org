@@ -2,8 +2,9 @@
 //   SITE=http://localhost:3002 node article-4-shots.mjs <outDir> [name ...]
 // Runs a headed Chromium (WebGL), so outside a sandbox.
 import { createRequire } from "node:module"
-import { mkdirSync } from "node:fs"
+import { mkdirSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
+import { tmpdir } from "node:os"
 
 const require = createRequire(import.meta.url)
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "/Users/javarome/project/@javarome/thesteps2/node_modules/playwright")
@@ -24,7 +25,7 @@ const DEEP = () => {
 async function open(page, kind, group) {
   await page.evaluate(DEEP)
   await page.evaluate(async ({ kind, group }) => {
-    const card = window.__deep(document, e => e.matches(`li.event-card[data-kind=${kind}]`))[0]
+    const card = window.__deep(document, e => e.matches(`.event-card[data-kind=${kind}]`))[0]
     card?.querySelector(".event-open")?.click()
     await new Promise(r => setTimeout(r, 3500))
     if (!group) return
@@ -86,6 +87,8 @@ const SHOTS = [
       // Its reason is a tooltip: the pointer over the bar shows it.
       const bar = await page.evaluate(() => {
         const b = window.__deep(document, e => e.matches(".turn .said .bar") && /Il n'y en a pas/.test(e.closest(".turn").textContent))[0]
+        // Focused as well as pointed at: its reason shows on either, and focus does not depend on where the pointer lands.
+        b.focus()
         const r = b.getBoundingClientRect()
         return { x: r.x + r.width / 2, y: r.y + r.height / 2 }
       })
@@ -117,14 +120,14 @@ const SHOTS = [
       })
       await page.mouse.move(2, 2)
       await page.waitForTimeout(1500)
-      return clip(page, `e => e.id === "cited"`, 12, { below: 586 })
+      return clip(page, `e => e.id === "cited"`, 12, { below: 608 })
     }
   },
   {
     // The other way: under a moment of the observation, the passages of the interview that tell of it.
     name: "moment-passages", async take(page) {
       await open(page, "observation", "group-temporal")
-      return clip(page, `e => e.matches(".moment-passages")`, 12, { above: 150, below: 20 })
+      return clip(page, `e => e.matches(".moment-passages")`, 12, { above: 175, below: 20 })
     }
   },
   {
@@ -134,7 +137,17 @@ const SHOTS = [
       const found = await page.evaluate(async () => {
         const pill = window.__deep(document, e => e.tagName === "RR0-INPUT-BASIS" && /2026-10-13/.test(e.entry?.rationale ?? "") && e.getBoundingClientRect().width > 0)[0]
         if (!pill) return false
-        pill.scrollIntoView({ block: "center" })
+        // High in the window, so that its own window opens under it and leaves the field and its name in view.
+        pill.scrollIntoView({ block: "start" })
+        // Then down a little, so that the field's name above it is in view too: whichever box scrolls it, the page or a panel.
+        let box = pill
+        while (box) {
+          const parent = box.parentElement ?? box.getRootNode()?.host
+          if (parent && parent.scrollHeight > parent.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(parent).overflowY)) { parent.scrollTop -= 160; break }
+          box = parent
+        }
+        if (!box) window.scrollBy(0, -160)
+        await new Promise(r => setTimeout(r, 400))
         pill.setAttribute("data-shot", "")
         // The note above the events ends right where the window opens, cut off by the frame: it says nothing this picture shows.
         for (const note of window.__deep(document, e => e.children.length === 0 && /poses are worked out from these events/.test(e.textContent))) note.style.visibility = "hidden"
@@ -144,19 +157,28 @@ const SHOTS = [
       })
       if (!found) throw new Error("no value cites the call")
       const boxes = await page.evaluate(() => {
-        const r = e => { const b = e.getBoundingClientRect(); return { x: b.x + scrollX, y: b.y + scrollY, r: b.right + scrollX, b: b.bottom + scrollY } }
+        // In the window's own coordinates: a full page capture resizes the window, and the window anchored to its field moves with it.
+        const r = e => { const b = e.getBoundingClientRect(); return { x: b.x, y: b.y, r: b.right, b: b.bottom } }
         const pill = window.__deep(document, e => e.matches("rr0-input-basis[data-shot]"))[0]
         const open = window.__deep(document, e => { try { return e.matches(":popover-open") } catch { return false } })
-        return [r(pill.closest("label, .field, .parameter-row") ?? pill), ...open.map(r)]
+        // The field the value is in, with its name, beside its pill: the row the pill heads.
+        const row = pill.closest("label, .field, .parameter-row, .event-param") ?? pill
+        const field = row.parentElement?.querySelector("input, select") ?? row
+        return [r(row), r(field), r(pill), ...open.map(r)]
       })
       // From the top of the window (boxes[1]): the label's box above it reaches into the paragraph before the list.
-      const x = Math.min(...boxes.map(b => b.x)) - 12, y = (boxes[1] ?? boxes[0]).y - 6
-      return { x, y, width: Math.max(...boxes.map(b => b.r)) + 12 - x, height: Math.max(...boxes.map(b => b.b)) + 12 - y }
+      // From the field's name, above its pill, to the bottom of the window, which ends the picture.
+      const x = Math.max(0, Math.min(...boxes.map(b => b.x)) - 12), y = Math.max(0, Math.min(...boxes.map(b => b.y)) - 40)
+      return { x, y, width: Math.max(...boxes.map(b => b.r)) + 12 - x, height: Math.max(...boxes.map(b => b.b)) + 1 - y, viewport: true }
     }
   },
 ]
 
-const browser = await chromium.launch({ headless: false, args: ["--lang=en-US"] })
+// The installed Chrome, not Playwright's old Chromium (124), which knows no anchor positioning; native fields in English too (see
+// article-2-shots.mjs).
+const launcher = join(tmpdir(), "chrome-en.sh")
+writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
+const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
 const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1500 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {

@@ -71,21 +71,12 @@ Proposé :
 > - the **interview** (a transcript read as a dialogue, whose passages lead to the moments of the observation they tell of),
 > - the **sighting editor**, the **case editor** and the **interview editor**.
 
-### L'exemple des deux lignes : un dossier se lit avec `<rr0-case>`
+### L'exemple des deux lignes : garder `<rr0-sighting>`
 
-`<rr0-sighting>` lit encore un case.json, mais c'est l'ancienne façon ; le lecteur de dossier montre en plus son historique et ses deux
-témoins. Vérifié sur ufoathome.org en production depuis une autre page : il affiche « La rencontre de Cussac », l'historique avec les
-observations de François et Anne-Marie Delpeuch, et la scène.
-
-Proposé :
-
-> ```html
-> <script type="module" src="https://ufoathome.org/lib/rr0-sighting.mjs"></script>
-> <rr0-case src="https://ufoathome.org/demo-data/case-cussac.json"></rr0-case>
-> ```
->
-> Paste them into any HTML page and the case of Cussac appears: its two witnesses, and the plateau with the sphere leaving it. For your
-> own case, `src` is the address of its file; for a single observation, `<rr0-sighting>` plays its recording alone.
+`<rr0-case>` lit un dossier avec son historique (vérifié sur ufoathome.org depuis une autre page). Mais la boîte de partage, y compris
+ouverte depuis un dossier, écrit encore `<rr0-sighting src="…case-cussac.json">`, et la capture `share.png` le montre. Pour que
+l'exemple et la capture disent la même chose, l'exemple actuel (Cussac, `<rr0-sighting>`) est à garder tel quel. Le partage d'un dossier
+en `<rr0-case>` est une évolution d'UfoAtHome à décider ; l'exemple suivrait alors.
 
 Note : le titre du dossier de Cussac est en français seulement (« La rencontre de Cussac »), y compris sur une page anglaise.
 
@@ -177,6 +168,30 @@ française, dans un article anglais. Proposé : `https://ufoathome.org/docs/crea
 
 ## Captures
 
-Les captures datent du 2026-11-07. Depuis, l'éditeur de dossier (une seule ligne de temps, les lectures sous leur observation, les
-cartes en phrases) et la barre du lecteur ont changé. À refaire au moins : `img2/case-editor.png` (éditeur de dossier de Socorro) et
-`img4/*` si la mise en page de l'interview a changé. Article 1 et article 3 (`share.png`, refaite le 2026-11-11) : à jour.
+Toutes refaites le 2026-11-14 avec le Chrome installé, en anglais. À remplacer sur Medium, chacune à la place de celle du même nom :
+
+- article 1 : `img/silly-account.png`, `img/silly-geipan.png`, `img/cussac-photo.png`, `img/chips.png` (`img/applet-2005.png` est la
+  maquette de 2005, inchangée) ;
+- article 2 : `img2/candidates.png`, `img2/case-editor.png`, `img2/phenomenon-2d.png`, `img2/phenomenon.png`, `img2/compare.png`,
+  `img2/decor.png`, `img2/basis.png`, `img2/timeline.png` ;
+- article 3 : `img3/rr0org.png`, `img3/files.png`, `img3/share.png` ;
+- article 4 : les sept `img4/*.png` ;
+- article 5 : `img5/drafting-panel.png`, `img5/create-with-ai.png`.
+
+Les défauts d'interface vus sur ces captures sont corrigés dans UfoAtHome (a6a817c9, ad0ae960, 3b3e79f8, NON déployés) : noms et titres
+coupés, liste « Matrix » coupée, champ d'adresse d'une annexe coupé, description d'un moment trop courte, texte indicatif de « Workspace
+ID » coupé, et les formes que les démos appelaient « Object » (McMinnville, Socorro, Wilcox, tests d'instruments), renommées
+« Phenomenon » dans les quatre langues. Les captures qui en dépendent viennent donc du build local, avec les enregistrements chargés
+depuis ufoathome.org (aucune adresse localhost n'y paraît).
+
+Restent visibles, à trancher :
+
+- les nombres s'écrivent avec une virgule (« 3,49 ») : Chrome sur macOS suit la région du système (France), que ni la langue du
+  navigateur ni la page ne changent. Pour des points, il faudrait passer la région du Mac en États-Unis le temps des captures ;
+- `silly-geipan.png` montre presque les mêmes feux que `silly-account.png` : une lecture est maintenant jouée dans sa configuration la
+  plus favorable, et l'avion du GEIPAN y reproduit les feux du récit. La légende de l'article 1 (« Switching readings is one menu in
+  the player ») est aussi dépassée : une lecture s'ouvre maintenant depuis l'historique du dossier, dans un lecteur à elle ;
+- `interview-summary.png` : le champ « Interviewer » montre l'identifiant `BeauJerome`, pas un nom ;
+- `phenomenon.png` : le titre de la lecture de Valensole, une longue phrase, dépasse la largeur de la ligne ;
+- `value-from-interview.png` : « What it rests on » dit « Nothing named », alors que la valeur vient de l'appel ; la source (le passage
+  de l'interview) n'est pas encore écrite dans l'enregistrement de Saint-Lô.

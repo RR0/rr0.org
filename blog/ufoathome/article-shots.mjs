@@ -1,8 +1,9 @@
 // Screenshots for the Medium article on UFO@home, taken on the live ufoathome.org player, in English.
 //   node article-shots.mjs <outDir> [name ...]
 import { createRequire } from "node:module"
-import { mkdirSync } from "node:fs"
+import { mkdirSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
+import { tmpdir } from "node:os"
 
 const require = createRequire(import.meta.url)
 const { chromium } = require("/Users/javarome/project/@javarome/thesteps2/node_modules/playwright")
@@ -14,8 +15,8 @@ const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent("
 
 /** name, url, what to do before the shot, how long to let it play, what to frame. */
 const SHOTS = [
-  { name: "silly-account", url: play("case-silly-le-long", "&t=25"), wait: 6000, pause: true, frame: "canvas" },
-  { name: "silly-geipan", url: play("case-silly-le-long", "&t=25"), interpretation: 1, wait: 6000, pause: true, frame: "canvas" },
+  { name: "silly-account", url: play("case-silly-le-long", "&t=25"), wait: 7000, seek: 25, noclick: true, frame: "canvas" },
+  { name: "silly-geipan", url: play("case-silly-le-long", "&t=25"), interpretation: 1, wait: 7000, seek: 25, noclick: true, frame: "canvas" },
   { name: "silly-geipan-ui", url: play("case-silly-le-long"), interpretation: 1, wait: 9000, frame: "sighting" },
   { name: "mcminnville-study", url: play("case-mcminnville", "&labels=0"), interpretation: 1, wait: 9000, frame: "canvas" },
   { name: "reentry", url: play("sky-test-reentry", "&labels=0"), wait: 12000, frame: "canvas" },
@@ -29,7 +30,11 @@ const SHOTS = [
   { name: "editor", url: "/edit/index.html?file=/demo-data/case-socorro.json", wait: 9000, frame: "page" },
 ]
 
-const browser = await chromium.launch({ headless: false, args: ["--lang=en-US"] })
+// The installed Chrome, not Playwright's old Chromium (124), which knows no anchor positioning; native fields in English too (see
+// article-2-shots.mjs).
+const launcher = join(tmpdir(), "chrome-en.sh")
+writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
+const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
 const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1000 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {
@@ -41,19 +46,35 @@ try {
       await page.goto(SITE + shot.url, { waitUntil: "load" })
       await page.addStyleTag({ content: "header, .site-header, .site-nav { position: static !important }" })
       await page.waitForTimeout(4000)
-      const canvas = page.locator("rr0-sighting canvas:visible").first()
-      if (shot.frame !== "page") {
+      let sighting = page.locator("rr0-sighting").first()
+      let canvas = page.locator("rr0-sighting canvas:visible").first()
+      if (shot.frame !== "page" && shot.noclick) await canvas.scrollIntoViewIfNeeded()
+      else if (shot.frame !== "page") {
         await canvas.scrollIntoViewIfNeeded()
         const box = await canvas.boundingBox()
         if (box) await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2)
       }
       if (shot.interpretation !== undefined) {
-        await page.locator("rr0-sighting #interpretation").selectOption({ index: shot.interpretation })
+        // A case is read in <rr0-case>: a reading is one of its events, opened from its history, not picked in the player's menu.
+        const readings = page.locator("rr0-case li.event[data-kind=reading]")
+        if (await readings.count() > 0) {
+          await readings.nth(shot.interpretation - 1).locator("button.event-open").click()
+          await page.waitForTimeout(3000)
+          // Opened below the observation, in a player of its own: the last one.
+          sighting = page.locator("rr0-sighting").last()
+          canvas = sighting.locator("canvas:visible").first()
+          await canvas.scrollIntoViewIfNeeded()
+        } else await page.locator("rr0-sighting #interpretation").selectOption({ index: shot.interpretation })
       }
       if (shot.observer !== undefined) {
         await page.locator("rr0-sighting #observer").selectOption({ index: shot.observer })
       }
       await page.waitForTimeout(shot.wait)
+      // The same second for every shot of a case, whatever opening a reading or the player's intro did to the time.
+      if (shot.seek !== undefined) {
+        await sighting.evaluate((element, seconds) => element.seekTo(seconds), shot.seek)
+        await page.waitForTimeout(1200)
+      }
       if (shot.pause && shot.frame !== "page") {
         const box = await canvas.boundingBox()
         if (box) await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2)
@@ -63,7 +84,7 @@ try {
       await page.waitForTimeout(1500)
       const path = join(outDir, shot.name + ".png")
       if (shot.frame === "canvas") await canvas.screenshot({ path })
-      else if (shot.frame === "sighting") await page.locator("rr0-sighting").first().screenshot({ path })
+      else if (shot.frame === "sighting") await sighting.screenshot({ path })
       else await page.screenshot({ path })
       console.log(shot.name, problems.length ? "ERRORS " + problems.join(" | ") : "ok")
     } catch (e) {

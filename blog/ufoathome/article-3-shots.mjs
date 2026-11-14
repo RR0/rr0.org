@@ -11,7 +11,7 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "/Users/javarome/p
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
 const UFO = process.env.SITE || "https://ufoathome.org"
-const edit = file => `${UFO}/edit/index.html?file=/demo-data/${file}.json`
+const edit = file => `${UFO}/edit/index.html?file=${encodeURIComponent((process.env.DATA ?? "") + "/demo-data/" + file + ".json")}`
 // The recordings' own address: ufoathome.org's, even when the player is a local build (DATA), so that no shot shows localhost.
 const DATA = process.env.DATA ?? ""
 const play = (file, extra = "") => `${UFO}/play/index.html?file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}${extra}`
@@ -25,7 +25,7 @@ async function openGroup(page, id) {
     eval(DEEP + "window.__deep = deep")
     const deep = window.__deep
     if (!window.__opened) {
-      deep(document, e => e.matches("li.event-card[data-kind=observation]"))[0]?.querySelector(".event-open")?.click()
+      deep(document, e => e.matches(".event-card[data-kind=observation]"))[0]?.querySelector(".event-open")?.click()
       window.__opened = true
       await new Promise(r => setTimeout(r, 3000))
     }

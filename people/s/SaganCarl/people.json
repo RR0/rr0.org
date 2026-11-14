@@ -1,10 +1,25 @@
 {
-  "birthTime": "1934-11-09",
-  "deathTime": "1996-12-20",
+  "lastName": "Sagan",
+  "firstNames": [
+    "Carl",
+    "Edward"
+  ],
   "occupations": [
     "astronomer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1934-11-09",
+      "place": "Brooklyn (New York)"
+    },
+    {
+      "type": "death",
+      "time": "1996-12-20",
+      "place": "Seattle (Washington)"
+    }
   ]
 }

@@ -132,7 +132,8 @@ const SHOTS = [
       await startPlayer(page)
       await page.evaluate(({ DEEP }) => {
         eval(DEEP + "window.__deep = deep")
-        window.__deep(document, e => e.id === "share-button")[0]?.click()
+        // The case's own button: a case is shared as a case (<rr0-case>), an observation from its player.
+        window.__deep(document, e => e.id === "share" && e.closest?.(".case-actions"))[0]?.click()
       }, { DEEP })
       await page.waitForTimeout(1500)
       await page.evaluate(({ DEEP }) => {

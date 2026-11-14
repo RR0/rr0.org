@@ -71,12 +71,22 @@ Proposé :
 > - the **interview** (a transcript read as a dialogue, whose passages lead to the moments of the observation they tell of),
 > - the **sighting editor**, the **case editor** and the **interview editor**.
 
-### L'exemple des deux lignes : garder `<rr0-sighting>`
+### L'exemple des deux lignes : un dossier se partage en `<rr0-case>` (80b7fc0f)
 
-`<rr0-case>` lit un dossier avec son historique (vérifié sur ufoathome.org depuis une autre page). Mais la boîte de partage, y compris
-ouverte depuis un dossier, écrit encore `<rr0-sighting src="…case-cussac.json">`, et la capture `share.png` le montre. Pour que
-l'exemple et la capture disent la même chose, l'exemple actuel (Cussac, `<rr0-sighting>`) est à garder tel quel. Le partage d'un dossier
-en `<rr0-case>` est une évolution d'UfoAtHome à décider ; l'exemple suivrait alors.
+Partager un dossier et partager une observation sont maintenant deux choses : le lecteur de dossier a son propre bouton de partage
+(lien vers le lecteur sur le case.json, code `<rr0-case>`), et le lecteur d'une observation, dans un dossier, ne partage plus que
+l'observation qu'il montre. La capture `share.png` montre le partage du dossier de Cussac. Proposé, pour l'exemple :
+
+> ```html
+> <script type="module" src="https://ufoathome.org/lib/rr0-sighting.mjs"></script>
+> <rr0-case src="https://ufoathome.org/demo-data/case-cussac.json"></rr0-case>
+> ```
+>
+> Paste them into any HTML page and the case of Cussac appears: its two witnesses, and the plateau with the sphere leaving it. For your
+> own case, `src` is the address of its file; for a single observation, `<rr0-sighting>` plays its recording alone.
+
+Attention : tant qu'UfoAtHome n'est pas déployé, la boîte de partage en ligne écrit encore `<rr0-sighting>` ; l'exemple ci-dessus
+fonctionne déjà (le lecteur de dossier est en ligne depuis 0.177).
 
 Note : le titre du dossier de Cussac est en français seulement (« La rencontre de Cussac »), y compris sur une page anglaise.
 
@@ -186,12 +196,13 @@ depuis ufoathome.org (aucune adresse localhost n'y paraît).
 
 Restent visibles, à trancher :
 
-- les nombres s'écrivent avec une virgule (« 3,49 ») : Chrome sur macOS suit la région du système (France), que ni la langue du
-  navigateur ni la page ne changent. Pour des points, il faudrait passer la région du Mac en États-Unis le temps des captures ;
+- les nombres s'écrivent avec une virgule (« 3,49 ») : ni la langue du navigateur, ni un profil Chrome vierge réglé en anglais, ni
+  l'attribut `lang` n'y changent rien. Le profil Chrome du compte RR0 serait en anglais, mais macOS refuse l'accès à ses fichiers ;
 - `silly-geipan.png` montre presque les mêmes feux que `silly-account.png` : une lecture est maintenant jouée dans sa configuration la
   plus favorable, et l'avion du GEIPAN y reproduit les feux du récit. La légende de l'article 1 (« Switching readings is one menu in
-  the player ») est aussi dépassée : une lecture s'ouvre maintenant depuis l'historique du dossier, dans un lecteur à elle ;
-- `interview-summary.png` : le champ « Interviewer » montre l'identifiant `BeauJerome`, pas un nom ;
-- `phenomenon.png` : le titre de la lecture de Valensole, une longue phrase, dépasse la largeur de la ligne ;
-- `value-from-interview.png` : « What it rests on » dit « Nothing named », alors que la valeur vient de l'appel ; la source (le passage
-  de l'interview) n'est pas encore écrite dans l'enregistrement de Saint-Lô.
+  the player ») reste juste quand l'historique du dossier est masqué ;
+- `interview-summary.png` : le champ « Interviewer » montre l'identifiant `BeauJerome` (laissé ainsi pour l'instant) ;
+- `phenomenon.png` : le titre de la lecture de Valensole dépasse la largeur de la ligne (laissé ainsi pour l'instant) ;
+- `value-from-interview.png` : la valeur nomme maintenant le passage de l'appel (8d9545f8 : cap, direction de départ, durée), et la
+  fenêtre l'affiche (« What the witness said », « The case's interview », le passage). Le passage, une longue citation, est coupé dans
+  sa liste.

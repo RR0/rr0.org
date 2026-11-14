@@ -197,7 +197,7 @@ depuis ufoathome.org (aucune adresse localhost n'y paraît).
 Restent visibles, à trancher :
 
 - les nombres s'écrivent avec une virgule (« 3,49 ») : ni la langue du navigateur, ni un profil Chrome vierge réglé en anglais, ni
-  l'attribut `lang` n'y changent rien. Le profil Chrome du compte RR0 serait en anglais, mais macOS refuse l'accès à ses fichiers ;
+  l'attribut `lang` n'y changent rien : gardées telles quelles (décidé le 2026-11-14) ;
 - `silly-geipan.png` montre presque les mêmes feux que `silly-account.png` : une lecture est maintenant jouée dans sa configuration la
   plus favorable, et l'avion du GEIPAN y reproduit les feux du récit. La légende de l'article 1 (« Switching readings is one menu in
   the player ») reste juste quand l'historique du dossier est masqué ;

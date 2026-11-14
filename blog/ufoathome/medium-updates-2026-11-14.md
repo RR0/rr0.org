@@ -3,11 +3,43 @@
 Comparaison des cinq articles en ligne (re-synchronisés le 2026-11-14) avec UfoAtHome 0.177.2 (publié et déployé). Chaque point indique le passage
 actuel, ce qui a changé dans le logiciel (avec le commit), et un texte proposé, en anglais, à coller sur Medium.
 
+## Ne pas mettre en cause le GEIPAN
+
+Relevé des mentions du GEIPAN (et du GEPAN) dans les cinq articles en ligne. Les mentions neutres ou favorables restent : l'article 1
+présente sa lecture de Silly-le-Long comme une lecture parmi d'autres, la légende de Cussac cite le relevé au théodolite du GEPAN,
+l'article 2 tire les vitesses du fourgon de sa simulation et cite les notes techniques du GEPAN parmi les études des erreurs de
+témoins, l'article 5 cite un cas du GEIPAN comme test réussi. Trois passages le mettent en cause, ou le laissent entendre :
+
+1. **Article 1, la phrase qui suit la lecture du GEIPAN.** Actuel : « Some hypotheses fit what was really overhead. Some are ruled out
+   by the sky itself. And some, like this one, fit in part and leave a gap with what the driver described, which then has somewhere
+   visible to live. » Le « like this one » désigne la lecture du GEIPAN comme incomplète. Proposé :
+
+   > Some hypotheses fit what was really overhead. Some are ruled out by the sky itself. And some fit in part, and leave a gap with
+   > what was described, which then has somewhere visible to live.
+
+2. **Article 1, la légende de la capture.** Actuel : « a Cirrus SR20 on final approach, whose “pivot effect” would keep it pinned to
+   one spot as both close in ». Le conditionnel met en doute l'explication. Proposé : « a Cirrus SR20 on final approach, which the
+   “pivot effect” keeps at one spot of the windscreen as both close in. » La nouvelle capture montre d'ailleurs l'avion reproduire les
+   feux du récit.
+
+3. **Article 2, la capture d'ouverture.** Elle classe la lecture du GEIPAN « Only by invoking contested biases » (1,3 σ) sous celle du
+   témoin (0 σ), et la description de l'image le répète. Proposé : la remplacer par le même panneau pour Chiles et Whitted
+   (`img2/candidates-chiles-whitted.png`, aucune lecture d'un organisme), avec pour légende :
+
+   > Chiles and Whitted, 24 July 1948: every candidate of that sky held against the account, within what is known of witnesses'
+   > errors. "A cost is not a probability: it says which biases have to be invoked, and how far."
+
+   Sur cette capture, toutes les candidates sont « Incompatible even at the bounds », de Vénus (2,4 σ) à Saturne : elle montre le
+   classement par coût, mais plus les trois verdicts possibles, que le texte de l'article décrit de toute façon.
+
+Dans ce fichier, la proposition sur les fondements ne nomme plus le GEIPAN.
+
 ## Article 2, What a UFO reconstruction states, and on what
 
 ### Les fondements sont six, plus quatre (7d3639d7)
 
-Les deux ajouts viennent de la relecture d'A. Cousyn (GEIPAN) : *established* et *fitted*. Les bornes de la liste changent.
+Les deux ajouts viennent de la relecture d'A. Cousyn : *established* et *fitted*. Les bornes de la liste changent. Le texte proposé ne
+nomme ni lui ni le GEIPAN (voir « Ne pas mettre en cause le GEIPAN » plus bas).
 
 Passage actuel : « **Any value of a recording can carry its basis**, among four: » puis la liste measured, stated, derived, assumed.
 
@@ -22,7 +54,7 @@ Proposé :
 > - **assumed**: chosen so that the reconstruction has a value at all, on nothing the witness said;
 > - **fitted**: moved, within what is known, to see whether a hypothesis can be made to fit.
 >
-> The two ends were asked for by the GEIPAN's reviewer of the tool. What is established is the one thing a reconstruction can fairly be
+> The two ends were asked for in a review of the tool by an experienced investigator. What is established is the one thing a reconstruction can fairly be
 > judged against, since it owes nothing to either. What is fitted is a knob: the more of them a reading turns, the easier a likeness is
 > to obtain, and the less that likeness proves. Nothing is ever tested against a fitted value.
 

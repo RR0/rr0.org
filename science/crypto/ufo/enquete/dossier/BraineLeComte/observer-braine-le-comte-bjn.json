@@ -6,17 +6,26 @@
  "time": {
   "value": "2015-07-12T00:45:00",
   "basis": "derived",
-  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+  "rationale": {
+   "en": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)",
+   "fr": "le rapport donne de 0 h 30 à 1 h ; le milieu est retenu, et c'est le moment où le ciel du rapport lui-même (Arcturus à l'azimut 260, hauteur 33) est juste au degré près (22 h 45 UTC)"
+  }
  },
  "durationSeconds": {
   "value": 10,
   "basis": "stated",
-  "rationale": "\"La scène a duré environ 10 secondes\" (§V.1.2); table 1 says 12 s, table 2 retains 10 s"
+  "rationale": {
+   "en": "\"La scène a duré environ 10 secondes\" (§V.1.2); table 1 says 12 s, table 2 retains 10 s",
+   "fr": "« La scène a duré environ 10 secondes » (§V.1.2) ; le tableau 1 dit 12 s, le tableau 2 retient 10 s"
+  }
  },
  "utcOffsetHours": {
   "value": 2,
   "basis": "derived",
-  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+  "rationale": {
+   "en": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00",
+   "fr": "heure d'été d'Europe centrale le 12 juillet 2015 ; le rapport donne 22 h 30 à 23 h UTC pour 0 h 30 à 1 h"
+  }
  },
  "timeZone": "Europe/Brussels",
  "place": {
@@ -30,7 +39,10 @@
    ]
   },
   "basis": "assumed",
-  "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  "rationale": {
+   "en": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway",
+   "fr": "le rapport masque l'adresse et ne donne le lieu qu'au dixième de degré (50,6 N, 4,1 E, 89 m), un jardin d'un quartier résidentiel près de la ligne de chemin de fer Mons-Bruxelles"
+  }
  },
  "observer": {
   "id": "BraineLeComte-2015-BJN",
@@ -46,12 +58,18 @@
   "source": {
    "value": "interview",
    "basis": "stated",
-   "rationale": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)"
+   "rationale": {
+    "en": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)",
+    "fr": "entretien cognitif le 23 janvier 2016, six mois après (de même pour BJN et FWY ; AKH a aussi rempli un formulaire le 13 juillet 2015)"
+   }
   },
   "followedUp": {
    "value": true,
    "basis": "stated",
-   "rationale": "reconstruction on site, questions by e-mail in April 2016"
+   "rationale": {
+    "en": "reconstruction on site, questions by e-mail in April 2016",
+    "fr": "reconstitution sur place, questions par courriel en avril 2016"
+   }
   }
  },
  "description": {
@@ -83,7 +101,10 @@
  "lightPollution": {
   "value": 20.05,
   "basis": "derived",
-  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+  "rationale": {
+   "en": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights",
+   "fr": "Atlas mondial de la luminosité artificielle du ciel nocturne (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM de la case à 50,6 N, 4,1 E (50,604, 4,104) : 0,86 mcd/m² artificiels, 20,05 mag/arcsec² au zénith. Le rapport dit que la Voie lactée était « particulièrement visible » et qu'il y avait quelques lampadaires et les lumières de la maison"
+  }
  },
  "instrument": "eye",
  "observerTrack": {
@@ -98,12 +119,18 @@
      "headingDeg": {
       "value": 45.0,
       "basis": "stated",
-      "rationale": "\"BJN [regarde] vers le NE\" (§V.1.3)"
+      "rationale": {
+       "en": "\"BJN [regarde] vers le NE\" (§V.1.3)",
+       "fr": "« BJN [regarde] vers le NE » (§V.1.3)"
+      }
      },
      "pitchDeg": {
       "value": 35,
       "basis": "assumed",
-      "rationale": "looking at the stars, constellations (Cassiopeia, Orion): no height stated"
+      "rationale": {
+       "en": "looking at the stars, constellations (Cassiopeia, Orion): no height stated",
+       "fr": "il regardait les étoiles, les constellations (Cassiopée, Orion) : aucune hauteur n'est dite"
+      }
      }
     }
    },
@@ -325,7 +352,10 @@
          "altitudeDeg": 42.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où BJN le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 0.76,
        "transparency": 1,
@@ -659,7 +689,10 @@
        "color": {
         "value": "#2b2629",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: surface \"Grey brown\" RGB 43 38 41; \"métal sombre\", \"plus clair que noir\""
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: surface \"Grey brown\" RGB 43 38 41; \"métal sombre\", \"plus clair que noir\"",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : surface « Grey brown » RVB 43 38 41 ; « métal sombre », « plus clair que noir »"
+        }
        },
        "title": {
         "fr": "Boomerang (ou cerf-volant, deltaplane)",
@@ -691,7 +724,10 @@
          "altitudeDeg": 42.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où BJN le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 0.76,
        "transparency": 0,
@@ -855,7 +891,10 @@
          "altitudeDeg": 60.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: BJN's \"au plus proche\", azimuth 295, elevation 60; COBEPS report 20150712BraineleComte, table 2 puts it at 6 s, half way through the time left after T1"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: BJN's \"au plus proche\", azimuth 295, elevation 60; COBEPS report 20150712BraineleComte, table 2 puts it at 6 s, half way through the time left after T1",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : le « au plus proche » de BJN, azimut 295, hauteur 60 ; le tableau 2 du même rapport le place à 6 s, à mi-chemin du temps restant après T1"
+        }
        },
        "angle": 1.7682,
        "transparency": 0,
@@ -1019,7 +1058,10 @@
          "altitudeDeg": 13.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où BJN le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 2.5848,
        "transparency": 0,
@@ -1043,7 +1085,10 @@
          "altitudeDeg": 8.374
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où BJN le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 2.5848,
        "transparency": 1,
@@ -1110,7 +1155,10 @@
       "pitchHz": 0
      },
      "basis": "stated",
-     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+     "rationale": {
+      "en": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by",
+      "fr": "« Pas le moindre bruit » (tous les trois) ; BJN entendait le chat passer"
+     }
     }
    }
   ]

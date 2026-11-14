@@ -6,17 +6,26 @@
  "time": {
   "value": "2015-07-12T00:45:00",
   "basis": "derived",
-  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+  "rationale": {
+   "en": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)",
+   "fr": "le rapport donne de 0 h 30 à 1 h ; le milieu est retenu, et c'est le moment où le ciel du rapport lui-même (Arcturus à l'azimut 260, hauteur 33) est juste au degré près (22 h 45 UTC)"
+  }
  },
  "durationSeconds": {
   "value": 10,
   "basis": "derived",
-  "rationale": "the recording runs on the investigators' common clock (COBEPS report 20150712BraineleComte, table 2, T0 to T4 = 10 s); his own duration is 5 s, from his turning round (T2, 3 s) to 8 s"
+  "rationale": {
+   "en": "the recording runs on the investigators' common clock (COBEPS report 20150712BraineleComte, table 2, T0 to T4 = 10 s); his own duration is 5 s, from his turning round (T2, 3 s) to 8 s",
+   "fr": "l'enregistrement suit l'horloge commune des enquêteurs (rapport COBEPS 20150712BraineleComte, tableau 2, T0 à T4 = 10 s) ; sa propre durée est de 5 s, du moment où il se retourne (T2, 3 s) jusqu'à 8 s"
+  }
  },
  "utcOffsetHours": {
   "value": 2,
   "basis": "derived",
-  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+  "rationale": {
+   "en": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00",
+   "fr": "heure d'été d'Europe centrale le 12 juillet 2015 ; le rapport donne 22 h 30 à 23 h UTC pour 0 h 30 à 1 h"
+  }
  },
  "timeZone": "Europe/Brussels",
  "place": {
@@ -30,7 +39,10 @@
    ]
   },
   "basis": "assumed",
-  "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  "rationale": {
+   "en": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway",
+   "fr": "le rapport masque l'adresse et ne donne le lieu qu'au dixième de degré (50,6 N, 4,1 E, 89 m), un jardin d'un quartier résidentiel près de la ligne de chemin de fer Mons-Bruxelles"
+  }
  },
  "observer": {
   "id": "BraineLeComte-2015-FWY",
@@ -46,17 +58,26 @@
   "source": {
    "value": "interview",
    "basis": "stated",
-   "rationale": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)"
+   "rationale": {
+    "en": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)",
+    "fr": "entretien cognitif le 23 janvier 2016, six mois après (de même pour BJN et FWY ; AKH a aussi rempli un formulaire le 13 juillet 2015)"
+   }
   },
   "followedUp": {
    "value": true,
    "basis": "stated",
-   "rationale": "reconstruction on site, questions by e-mail in April 2016"
+   "rationale": {
+    "en": "reconstruction on site, questions by e-mail in April 2016",
+    "fr": "reconstitution sur place, questions par courriel en avril 2016"
+   }
   },
   "observerAgeYears": {
    "value": 17,
    "basis": "stated",
-   "rationale": "17 at the time"
+   "rationale": {
+    "en": "17 at the time",
+    "fr": "17 ans à l'époque"
+   }
   }
  },
  "description": {
@@ -88,7 +109,10 @@
  "lightPollution": {
   "value": 20.05,
   "basis": "derived",
-  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+  "rationale": {
+   "en": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights",
+   "fr": "Atlas mondial de la luminosité artificielle du ciel nocturne (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM de la case à 50,6 N, 4,1 E (50,604, 4,104) : 0,86 mcd/m² artificiels, 20,05 mag/arcsec² au zénith. Le rapport dit que la Voie lactée était « particulièrement visible » et qu'il y avait quelques lampadaires et les lumières de la maison"
+  }
  },
  "instrument": "eye",
  "observerTrack": {
@@ -103,12 +127,18 @@
      "headingDeg": {
       "value": 337.5,
       "basis": "stated",
-      "rationale": "\"FWY vers le NNO\" (§V.1.3)"
+      "rationale": {
+       "en": "\"FWY vers le NNO\" (§V.1.3)",
+       "fr": "« FWY vers le NNO » (§V.1.3)"
+      }
      },
      "pitchDeg": {
       "value": 30,
       "basis": "assumed",
-      "rationale": "looking for shooting stars: no height stated"
+      "rationale": {
+       "en": "looking for shooting stars: no height stated",
+       "fr": "il cherchait des étoiles filantes : aucune hauteur n'est dite"
+      }
      }
     }
    },
@@ -281,7 +311,10 @@
          "altitudeDeg": 20.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où FWY le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 1.8649,
        "transparency": 1,
@@ -615,7 +648,10 @@
        "color": {
         "value": "#05060a",
         "basis": "stated",
-        "rationale": "\"une forme un peu plus noire que le ciel\""
+        "rationale": {
+         "en": "\"une forme un peu plus noire que le ciel\"",
+         "fr": "« une forme un peu plus noire que le ciel »"
+        }
        },
        "title": {
         "fr": "Forme un peu plus noire que le ciel",
@@ -649,7 +685,10 @@
        "color": {
         "value": "#eb3b1c",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Traffic orange » RVB 235 59 28"
+        }
        },
        "haloScale": 0.6,
        "brightness": 0,
@@ -684,7 +723,10 @@
        "color": {
         "value": "#eb3b1c",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Traffic orange » RVB 235 59 28"
+        }
        },
        "haloScale": 0.6,
        "brightness": 0,
@@ -719,7 +761,10 @@
        "color": {
         "value": "#eb3b1c",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Traffic orange » RVB 235 59 28"
+        }
        },
        "haloScale": 0.6,
        "brightness": 0,
@@ -754,7 +799,10 @@
        "color": {
         "value": "#eb3b1c",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Traffic orange » RVB 235 59 28"
+        }
        },
        "haloScale": 0.6,
        "brightness": 0,
@@ -789,7 +837,10 @@
        "color": {
         "value": "#eb3b1c",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Traffic orange » RVB 235 59 28"
+        }
        },
        "haloScale": 0.6,
        "brightness": 0,
@@ -822,7 +873,10 @@
          "altitudeDeg": 20.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où FWY le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 1.8649,
        "transparency": 0,
@@ -1726,7 +1780,10 @@
          "altitudeDeg": 12.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: FWY's end, azimuth 293, elevation 12; 5 s after he turned round, his own duration"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: FWY's end, azimuth 293, elevation 12; 5 s after he turned round, his own duration",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : la fin pour FWY, azimut 293, hauteur 12 ; 5 s après qu'il s'est retourné, sa propre durée"
+        }
        },
        "angle": 1.9648,
        "transparency": 0,
@@ -1820,7 +1877,10 @@
          "altitudeDeg": 11.892
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où FWY le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 1.9648,
        "transparency": 1,
@@ -1947,7 +2007,10 @@
       "pitchHz": 0
      },
      "basis": "stated",
-     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+     "rationale": {
+      "en": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by",
+      "fr": "« Pas le moindre bruit » (tous les trois) ; BJN entendait le chat passer"
+     }
     }
    }
   ]

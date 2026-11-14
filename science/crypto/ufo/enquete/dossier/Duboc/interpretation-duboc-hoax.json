@@ -26,6 +26,9 @@
   "rationale": "\"48°50'7 N / 003°00'9 E\" in both reports, read as degrees and decimal minutes (48.845 N, 3.015 E): where the airliner was"
  },
  "instrument": "eye",
+ "vehicle": {
+  "kind": "airliner-narrow"
+ },
  "observerTrack": {
   "keyframes": [
    {
@@ -963,7 +966,6 @@
      "headingDeg": 332.0
     }
    ],
-   "aircraftSound": "airliner-narrow",
    "occludesSourceIds": [
     "disc"
    ]

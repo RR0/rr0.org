@@ -6,17 +6,26 @@
  "time": {
   "value": "2015-07-12T00:45:00",
   "basis": "derived",
-  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+  "rationale": {
+   "en": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)",
+   "fr": "le rapport donne de 0 h 30 à 1 h ; le milieu est retenu, et c'est le moment où le ciel du rapport lui-même (Arcturus à l'azimut 260, hauteur 33) est juste au degré près (22 h 45 UTC)"
+  }
  },
  "durationSeconds": {
   "value": 10,
   "basis": "stated",
-  "rationale": "\"Notre observation a duré entre 5 et 10 secondes\" (written account); COBEPS report 20150712BraineleComte, table 2: T4 at 10 s"
+  "rationale": {
+   "en": "\"Notre observation a duré entre 5 et 10 secondes\" (written account); COBEPS report 20150712BraineleComte, table 2: T4 at 10 s",
+   "fr": "« Notre observation a duré entre 5 et 10 secondes » (récit écrit) ; rapport COBEPS 20150712BraineleComte, tableau 2 : T4 à 10 s"
+  }
  },
  "utcOffsetHours": {
   "value": 2,
   "basis": "derived",
-  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+  "rationale": {
+   "en": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00",
+   "fr": "heure d'été d'Europe centrale le 12 juillet 2015 ; le rapport donne 22 h 30 à 23 h UTC pour 0 h 30 à 1 h"
+  }
  },
  "timeZone": "Europe/Brussels",
  "place": {
@@ -30,7 +39,10 @@
    ]
   },
   "basis": "assumed",
-  "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  "rationale": {
+   "en": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway",
+   "fr": "le rapport masque l'adresse et ne donne le lieu qu'au dixième de degré (50,6 N, 4,1 E, 89 m), un jardin d'un quartier résidentiel près de la ligne de chemin de fer Mons-Bruxelles"
+  }
  },
  "observer": {
   "id": "BraineLeComte-2015-AKH",
@@ -46,17 +58,26 @@
   "source": {
    "value": "interview",
    "basis": "stated",
-   "rationale": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)"
+   "rationale": {
+    "en": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)",
+    "fr": "entretien cognitif le 23 janvier 2016, six mois après (de même pour BJN et FWY ; AKH a aussi rempli un formulaire le 13 juillet 2015)"
+   }
   },
   "followedUp": {
    "value": true,
    "basis": "stated",
-   "rationale": "reconstruction on site, questions by e-mail in April 2016"
+   "rationale": {
+    "en": "reconstruction on site, questions by e-mail in April 2016",
+    "fr": "reconstitution sur place, questions par courriel en avril 2016"
+   }
   },
   "observerAgeYears": {
    "value": 40,
    "basis": "stated",
-   "rationale": "about 40 (\"± 40 ans\")"
+   "rationale": {
+    "en": "about 40 (\"± 40 ans\")",
+    "fr": "environ 40 ans (« ± 40 ans »)"
+   }
   }
  },
  "description": {
@@ -88,7 +109,10 @@
  "lightPollution": {
   "value": 20.05,
   "basis": "derived",
-  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+  "rationale": {
+   "en": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights",
+   "fr": "Atlas mondial de la luminosité artificielle du ciel nocturne (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM de la case à 50,6 N, 4,1 E (50,604, 4,104) : 0,86 mcd/m² artificiels, 20,05 mag/arcsec² au zénith. Le rapport dit que la Voie lactée était « particulièrement visible » et qu'il y avait quelques lampadaires et les lumières de la maison"
+  }
  },
  "instrument": "eye",
  "observerTrack": {
@@ -103,7 +127,10 @@
      "headingDeg": {
       "value": 215,
       "basis": "stated",
-      "rationale": "\"AKH regarde vers le SO\": he faces where he first sees it (table 1, azimuth 215)"
+      "rationale": {
+       "en": "\"AKH regarde vers le SO\": he faces where he first sees it (table 1, azimuth 215)",
+       "fr": "« AKH regarde vers le SO » : il fait face à l'endroit où il le voit d'abord (tableau 1, azimut 215)"
+      }
      },
      "pitchDeg": 10.0
     }
@@ -388,13 +415,19 @@
          "altitudeDeg": 10.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where AKH puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where AKH puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où AKH le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 0.9987,
        "transparency": {
         "value": 0.55,
         "basis": "assumed",
-        "rationale": "\"se détachait faiblement\", \"à peine perceptible\": a faint patch against the stars; how faint is not stated"
+        "rationale": {
+         "en": "\"se détachait faiblement\", \"à peine perceptible\": a faint patch against the stars; how faint is not stated",
+         "fr": "« se détachait faiblement », « à peine perceptible » : une tache faible sur fond d'étoiles ; à quel point n'est pas dit"
+        }
        },
        "angular": {
         "widthDeg": 1.5,
@@ -726,7 +759,10 @@
        "color": {
         "value": "#bdbaab",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: surface \"Pebble grey\" RGB 189 186 171; the written account says a faint grey-orange glow, like a cloud lit by street lamps"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: surface \"Pebble grey\" RGB 189 186 171; the written account says a faint grey-orange glow, like a cloud lit by street lamps",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : surface « Pebble grey » RVB 189 186 171 ; le récit écrit parle d'une faible lueur gris orangé, comme un nuage éclairé par des lampadaires"
+        }
        },
        "title": {
         "fr": "Forme de boomerang, faiblement lumineuse",
@@ -760,7 +796,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -795,7 +834,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -830,7 +872,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -865,7 +910,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -900,7 +948,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -935,7 +986,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -970,7 +1024,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -1005,7 +1062,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -1040,7 +1100,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -1075,7 +1138,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -1110,7 +1176,10 @@
        "color": {
         "value": "#a3171a",
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: lights \"Signal red\" RGB 163 23 26",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : feux « Signal red » RVB 163 23 26"
+        }
        },
        "haloScale": 1.6,
        "brightness": 0.4,
@@ -3927,7 +3996,10 @@
          "altitudeDeg": 31.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: AKH's red lights seen at the rear at azimuth 320, elevation 31; the time is derived, the report assuming a constant angular speed (§V.4.1)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: AKH's red lights seen at the rear at azimuth 320, elevation 31; the time is derived, the report assuming a constant angular speed (§V.4.1)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : les feux rouges d'AKH vus à l'arrière à l'azimut 320, hauteur 31 ; l'instant est déduit, le rapport supposant une vitesse angulaire constante (§V.4.1)"
+        }
        },
        "angle": 1.9576,
        "transparency": 0.55,
@@ -4627,7 +4699,10 @@
          "altitudeDeg": 13.0
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: AKH's end, azimuth 321-322, elevation 13, after 10 s"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: AKH's end, azimuth 321-322, elevation 13, after 10 s",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : la fin pour AKH, azimut 321-322, hauteur 13, au bout de 10 s"
+        }
        },
        "angle": 3.0671,
        "transparency": 0.55,
@@ -4805,7 +4880,10 @@
          "altitudeDeg": 9.544
         },
         "basis": "stated",
-        "rationale": "COBEPS report 20150712BraineleComte, table 1: where AKH puts it at this moment (azimuth, elevation)"
+        "rationale": {
+         "en": "COBEPS report 20150712BraineleComte, table 1: where AKH puts it at this moment (azimuth, elevation)",
+         "fr": "rapport COBEPS 20150712BraineleComte, tableau 1 : où AKH le place à cet instant (azimut, hauteur)"
+        }
        },
        "angle": 3.0671,
        "transparency": 1,
@@ -5016,7 +5094,10 @@
       "pitchHz": 0
      },
      "basis": "stated",
-     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+     "rationale": {
+      "en": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by",
+      "fr": "« Pas le moindre bruit » (tous les trois) ; BJN entendait le chat passer"
+     }
     }
    }
   ]

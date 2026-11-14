@@ -59,6 +59,9 @@
   "en": "The chief steward, in the cockpit, standing behind Captain Duboc (perhaps where the observer's seat is, but nothing says he was seated), is the first to see the object and to exclaim: \"A weather balloon!\" That is all that is known of him, through the two pilots' accounts: no bearing, no size, no shape that is his. So that his view can be played, the object is placed as the pilots say: at 10 o'clock, then at 9 as for the co-pilot, in the shape of the captain's disc. He stands with his back to the rear bulkhead, where the observer's seat is folded away, right behind the captain, and sees him from behind, the left window beyond his shoulder."
  },
  "instrument": "eye",
+ "vehicle": {
+  "kind": "airliner-narrow"
+ },
  "observerTrack": {
   "keyframes": [
    {
@@ -3193,7 +3196,6 @@
      "headingDeg": 332.0
     }
    ],
-   "aircraftSound": "airliner-narrow",
    "occludesSourceIds": [
     "disc"
    ]

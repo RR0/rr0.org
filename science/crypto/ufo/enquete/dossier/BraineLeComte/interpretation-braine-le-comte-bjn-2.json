@@ -4,17 +4,26 @@
  "time": {
   "value": "2015-07-12T00:45:00",
   "basis": "derived",
-  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+  "rationale": {
+   "en": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)",
+   "fr": "le rapport donne de 0 h 30 à 1 h ; le milieu est retenu, et c'est le moment où le ciel du rapport lui-même (Arcturus à l'azimut 260, hauteur 33) est juste au degré près (22 h 45 UTC)"
+  }
  },
  "durationSeconds": {
   "value": 10,
   "basis": "stated",
-  "rationale": "\"La scène a duré environ 10 secondes\" (§V.1.2); table 1 says 12 s, table 2 retains 10 s"
+  "rationale": {
+   "en": "\"La scène a duré environ 10 secondes\" (§V.1.2); table 1 says 12 s, table 2 retains 10 s",
+   "fr": "« La scène a duré environ 10 secondes » (§V.1.2) ; le tableau 1 dit 12 s, le tableau 2 retient 10 s"
+  }
  },
  "utcOffsetHours": {
   "value": 2,
   "basis": "derived",
-  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+  "rationale": {
+   "en": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00",
+   "fr": "heure d'été d'Europe centrale le 12 juillet 2015 ; le rapport donne 22 h 30 à 23 h UTC pour 0 h 30 à 1 h"
+  }
  },
  "timeZone": "Europe/Brussels",
  "place": {
@@ -28,12 +37,18 @@
    ]
   },
   "basis": "assumed",
-  "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  "rationale": {
+   "en": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway",
+   "fr": "le rapport masque l'adresse et ne donne le lieu qu'au dixième de degré (50,6 N, 4,1 E, 89 m), un jardin d'un quartier résidentiel près de la ligne de chemin de fer Mons-Bruxelles"
+  }
  },
  "lightPollution": {
   "value": 20.05,
   "basis": "derived",
-  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+  "rationale": {
+   "en": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights",
+   "fr": "Atlas mondial de la luminosité artificielle du ciel nocturne (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM de la case à 50,6 N, 4,1 E (50,604, 4,104) : 0,86 mcd/m² artificiels, 20,05 mag/arcsec² au zénith. Le rapport dit que la Voie lactée était « particulièrement visible » et qu'il y avait quelques lampadaires et les lumières de la maison"
+  }
  },
  "instrument": "eye",
  "observerTrack": {
@@ -48,12 +63,18 @@
      "headingDeg": {
       "value": 45.0,
       "basis": "stated",
-      "rationale": "\"BJN [regarde] vers le NE\" (§V.1.3)"
+      "rationale": {
+       "en": "\"BJN [regarde] vers le NE\" (§V.1.3)",
+       "fr": "« BJN [regarde] vers le NE » (§V.1.3)"
+      }
      },
      "pitchDeg": {
       "value": 35,
       "basis": "assumed",
-      "rationale": "looking at the stars, constellations (Cassiopeia, Orion): no height stated"
+      "rationale": {
+       "en": "looking at the stars, constellations (Cassiopeia, Orion): no height stated",
+       "fr": "il regardait les étoiles, les constellations (Cassiopée, Orion) : aucune hauteur n'est dite"
+      }
      }
     }
    },
@@ -268,7 +289,10 @@
       "pitchHz": 0
      },
      "basis": "stated",
-     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+     "rationale": {
+      "en": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by",
+      "fr": "« Pas le moindre bruit » (tous les trois) ; BJN entendait le chat passer"
+     }
     }
    }
   ]
@@ -687,7 +711,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    },
    {
@@ -828,7 +855,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    },
    {
@@ -969,7 +999,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    },
    {
@@ -1110,7 +1143,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    },
    {
@@ -1251,7 +1287,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    },
    {
@@ -1392,7 +1431,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    },
    {
@@ -1533,7 +1575,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis."
+     "rationale": {
+      "en": "A flock of 7 birds in a V 4.2 m across, flying the same straight level flight as the fitted one (see that interpretation) but 40 m up: the speed it needs there is about 80 km/h, a goose's or a duck's, where at 100 m it would be 200 km/h. Each bird 0.9 m across (a duck's wings) and lit from below, dark. None of it is stated by the report, which does not examine this hypothesis.",
+      "fr": "Un vol de 7 oiseaux en V de 4,2 m de large, suivant le même vol rectiligne et horizontal que celui ajusté (voir cette lecture) mais à 40 m de haut : la vitesse nécessaire y est d'environ 80 km/h, celle d'une oie ou d'un canard, quand elle serait de 200 km/h à 100 m. Chaque oiseau fait 0,9 m d'envergure (les ailes d'un canard), éclairé par en dessous, sombre. Rien de cela n'est dit par le rapport, qui n'examine pas cette hypothèse."
+     }
     }
    }
   ]

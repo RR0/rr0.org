@@ -26,6 +26,9 @@
   "rationale": "\"48°50'7 N / 003°00'9 E\" in her report, read as degrees and decimal minutes"
  },
  "instrument": "eye",
+ "vehicle": {
+  "kind": "airliner-narrow"
+ },
  "observerTrack": {
   "keyframes": [
    {
@@ -1377,7 +1380,6 @@
      "headingDeg": 332.0
     }
    ],
-   "aircraftSound": "airliner-narrow",
    "occludesSourceIds": [
     "lens",
     "chevron"

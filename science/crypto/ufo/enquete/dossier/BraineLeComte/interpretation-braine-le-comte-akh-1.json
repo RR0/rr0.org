@@ -4,17 +4,26 @@
  "time": {
   "value": "2015-07-12T00:45:00",
   "basis": "derived",
-  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+  "rationale": {
+   "en": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)",
+   "fr": "le rapport donne de 0 h 30 à 1 h ; le milieu est retenu, et c'est le moment où le ciel du rapport lui-même (Arcturus à l'azimut 260, hauteur 33) est juste au degré près (22 h 45 UTC)"
+  }
  },
  "durationSeconds": {
   "value": 10,
   "basis": "stated",
-  "rationale": "\"Notre observation a duré entre 5 et 10 secondes\" (written account); COBEPS report 20150712BraineleComte, table 2: T4 at 10 s"
+  "rationale": {
+   "en": "\"Notre observation a duré entre 5 et 10 secondes\" (written account); COBEPS report 20150712BraineleComte, table 2: T4 at 10 s",
+   "fr": "« Notre observation a duré entre 5 et 10 secondes » (récit écrit) ; rapport COBEPS 20150712BraineleComte, tableau 2 : T4 à 10 s"
+  }
  },
  "utcOffsetHours": {
   "value": 2,
   "basis": "derived",
-  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+  "rationale": {
+   "en": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00",
+   "fr": "heure d'été d'Europe centrale le 12 juillet 2015 ; le rapport donne 22 h 30 à 23 h UTC pour 0 h 30 à 1 h"
+  }
  },
  "timeZone": "Europe/Brussels",
  "place": {
@@ -28,12 +37,18 @@
    ]
   },
   "basis": "assumed",
-  "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  "rationale": {
+   "en": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway",
+   "fr": "le rapport masque l'adresse et ne donne le lieu qu'au dixième de degré (50,6 N, 4,1 E, 89 m), un jardin d'un quartier résidentiel près de la ligne de chemin de fer Mons-Bruxelles"
+  }
  },
  "lightPollution": {
   "value": 20.05,
   "basis": "derived",
-  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+  "rationale": {
+   "en": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights",
+   "fr": "Atlas mondial de la luminosité artificielle du ciel nocturne (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM de la case à 50,6 N, 4,1 E (50,604, 4,104) : 0,86 mcd/m² artificiels, 20,05 mag/arcsec² au zénith. Le rapport dit que la Voie lactée était « particulièrement visible » et qu'il y avait quelques lampadaires et les lumières de la maison"
+  }
  },
  "instrument": "eye",
  "observerTrack": {
@@ -48,7 +63,10 @@
      "headingDeg": {
       "value": 215,
       "basis": "stated",
-      "rationale": "\"AKH regarde vers le SO\": he faces where he first sees it (table 1, azimuth 215)"
+      "rationale": {
+       "en": "\"AKH regarde vers le SO\": he faces where he first sees it (table 1, azimuth 215)",
+       "fr": "« AKH regarde vers le SO » : il fait face à l'endroit où il le voit d'abord (tableau 1, azimut 215)"
+      }
      },
      "pitchDeg": 10.0
     }
@@ -297,7 +315,10 @@
       "pitchHz": 0
      },
      "basis": "stated",
-     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+     "rationale": {
+      "en": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by",
+      "fr": "« Pas le moindre bruit » (tous les trois) ; BJN entendait le chat passer"
+     }
     }
    }
   ]
@@ -842,7 +863,10 @@
       }
      ],
      "basis": "assumed",
-     "rationale": "The measured directions of the three observers (COBEPS report 20150712BraineleComte, table 1) are fitted by one plane through the observer, as the report's stereonet does (its strike here: 7.8 deg, the report's 7.7; dip 33 deg). The phenomenon is laid on the level line where that plane is 100 m up, along each of AKH's own directions brought onto the plane. The height is BJN's own estimate (COBEPS p. 13), and so the distances and the 10.5 m span that follow from it: assumed."
+     "rationale": {
+      "en": "The measured directions of the three observers (COBEPS report 20150712BraineleComte, table 1) are fitted by one plane through the observer, as the report's stereonet does (its strike here: 7.8 deg, the report's 7.7; dip 33 deg). The phenomenon is laid on the level line where that plane is 100 m up, along each of AKH's own directions brought onto the plane. The height is BJN's own estimate (COBEPS p. 13), and so the distances and the 10.5 m span that follow from it: assumed.",
+      "fr": "Les directions mesurées des trois témoins (rapport COBEPS 20150712BraineleComte, tableau 1) sont ajustées par un même plan passant par le témoin, comme le fait le stéréogramme du rapport (sa direction ici : 7,8°, 7,7° dans le rapport ; pendage 33°). Le phénomène est placé sur l'horizontale où ce plan est à 100 m de haut, le long de chacune des directions d'AKH ramenées sur le plan. La hauteur est l'estimation de BJN lui-même (COBEPS p. 13), et donc aussi les distances et l'envergure de 10,5 m qui en découlent : supposées."
+     }
     }
    }
   ]

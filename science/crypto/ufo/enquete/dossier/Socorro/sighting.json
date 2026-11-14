@@ -69,7 +69,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.1603,
                 "heightDeg": 0.0827
@@ -232,7 +232,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.1924,
                 "heightDeg": 0.0992
@@ -395,7 +395,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.2025,
                 "heightDeg": 0.1045
@@ -556,7 +556,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.6414,
                 "heightDeg": 0.3308
@@ -717,7 +717,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -878,7 +878,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.7886,
                 "heightDeg": 0.4067
@@ -1039,7 +1039,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.9162,
                 "heightDeg": 0.4726
@@ -1200,7 +1200,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 1.6033,
                 "heightDeg": 0.827
@@ -1361,7 +1361,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 4.2739,
                 "heightDeg": 2.2051
@@ -1522,7 +1522,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -1683,7 +1683,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -1844,7 +1844,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -2005,7 +2005,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -2166,7 +2166,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 6.4071,
                 "heightDeg": 3.3071
@@ -2327,7 +2327,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 5.729,
                 "heightDeg": 2.9398
@@ -2488,7 +2488,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 5.1606,
                 "heightDeg": 2.6459
@@ -2649,7 +2649,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 4.7204,
                 "heightDeg": 2.4255
@@ -2810,7 +2810,7 @@
               "transparency": 0,
               "haloScale": 0.2,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 4.3534,
                 "heightDeg": 2.2418
@@ -2971,7 +2971,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 3.05,
                 "heightDeg": 1.5804
@@ -3132,7 +3132,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 2.3336,
                 "heightDeg": 1.1945
@@ -3293,7 +3293,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.9372,
                 "heightDeg": 0.4778
@@ -3454,7 +3454,7 @@
               "transparency": 0.35,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.3492,
                 "heightDeg": 0.1838
@@ -3615,7 +3615,7 @@
               "transparency": 0.9,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.1286,
                 "heightDeg": 0.0735
@@ -3776,7 +3776,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.0641,
                 "heightDeg": 0.0331
@@ -3937,7 +3937,7 @@
               "transparency": 0,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123
@@ -4098,7 +4098,7 @@
               "transparency": 1,
               "haloScale": 0,
               "selected": false,
-              "title": {"fr": "Objet", "en": "Object", "es": "Objeto", "it": "Oggetto"},
+              "title": {"fr": "Phénomène", "en": "Phenomenon", "es": "Fenómeno", "it": "Fenomeno"},
               "angular": {
                 "widthDeg": 0.0239,
                 "heightDeg": 0.0123

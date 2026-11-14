@@ -61,6 +61,9 @@
   "en": "Same flight, same minute, seen from the right-hand seat by the co-pilot, Valérie Chauffour. She first takes the object for a weather balloon, like the steward. For her it does not fall behind: she sees it constantly at about 9 o'clock, to the left, moving at the airliner's speed on a straight path parallel to its own, for 2 to 5 minutes. Its shape changes: a lens with a sharp outline that blurs becomes a \"chevron\" (variable geometry, a disc evolving in all three dimensions), then the outline is sharp again at the end; dark, brown, large. Just before it disappears, \"a sort of turn\".\n\nNo angular size and no figure for the distance in her report (\"large\", 25 to 50 nautical miles): the size is the one the captain's 1999 interview gives, 1000 m at her 25 nautical miles (borrowed), and when the object moves from 10 o'clock to 9 is chosen."
  },
  "instrument": "eye",
+ "vehicle": {
+  "kind": "airliner-narrow"
+ },
  "observerTrack": {
   "keyframes": [
    {
@@ -7835,7 +7838,6 @@
      "headingDeg": 332.0
     }
    ],
-   "aircraftSound": "airliner-narrow",
    "occludesSourceIds": [
     "lens",
     "chevron"

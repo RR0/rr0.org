@@ -2,7 +2,8 @@
 //   SITE=http://localhost:3002 node article-4-shots.mjs <outDir> [name ...]
 // Runs a headed Chromium (WebGL), so outside a sandbox.
 import { createRequire } from "node:module"
-import { mkdirSync } from "node:fs"
+import { mkdirSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
 import { join } from "node:path"
 
 const require = createRequire(import.meta.url)
@@ -87,7 +88,10 @@ const SHOTS = [
   },
 ]
 
-const browser = await chromium.launch({ headless: false, args: ["--lang=en-US"] })
+// The installed Chrome, not Playwright's old Chromium (124); native fields in English too (see article-2-shots.mjs).
+const launcher = join(tmpdir(), "chrome-en.sh")
+writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
+const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
 const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1500 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {

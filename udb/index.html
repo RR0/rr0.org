@@ -164,9 +164,55 @@
       logs.innerHTML = msg
     }
 
-    function submitIt () {
+    /**
+     * Links a record's year, month and day to the most precise time page that exists, as the site build does
+     * (a day without a page links to its month, a month without one to its year). The existing pages are read
+     * from the search index, which the site's search widget loads anyway.
+     */
+    const timePages = fetch('/search/index.json')
+      .then(response => response.json())
+      .then(index => new Set(index.pages.map(page => page.url).filter(url => url.startsWith('time/'))))
+      .catch(() => new Set())
+
+    function timeDir (year, month, day) {
+      const pad = n => String(n).padStart(2, '0')
+      let dir = 'time/' + String(year).padStart(4, '0').split('').join('/')
+      if (month) {
+        dir += '/' + pad(month)
+        if (day) {
+          dir += '/' + pad(day)
+        }
+      }
+      return dir
+    }
+
+    function timeUrl (pages, year, month, day) {
+      const candidates = [timeDir(year, month, day), timeDir(year, month), timeDir(year)]
+      const existing = candidates.find(dir => pages.has(dir + '/index.html'))
+      return '/' + (existing || candidates[candidates.length - 1]) + '/'
+    }
+
+    function timeCell (pages, record, p) {
+      const value = record[p]
+      const year = record.year
+      if (!year || !value || (p === 'day' && !record.month)) {
+        return value
+      }
+      const number = v => parseInt(String(v).replace(/\D/g, ''), 10) || undefined  // "~7" (approximate) is 7
+      const month = p === 'year' ? undefined : number(record.month)
+      const day = p === 'day' ? number(value) : undefined
+      if ((p === 'month' && !month) || (p === 'day' && !day)) {
+        return value
+      }
+      const pad = n => String(n).padStart(2, '0')
+      const datetime = [String(year).padStart(4, '0'), month && pad(month), day && pad(day)].filter(Boolean).join('-')
+      return `<a href="${timeUrl(pages, year, month, day)}"><time datetime="${datetime}">${value}</time></a>`
+    }
+
+    async function submitIt () {
       const logger = udbController.logger
       logger.onLog(onLog)
+      const pages = await timePages
 
       udbController.search(criteria.value).then(records => {
         if (records.length > 0) {
@@ -187,10 +233,7 @@
             const tr = document.createElement('tr')
             for (const p in record) {
               const td = document.createElement('td')
-              let value = record[p]
-              if (p === 'year') {
-                value = `<a href="${udbController.timeLink(value)}">${value}</a>`
-              }
+              const value = p === 'year' || p === 'month' || p === 'day' ? timeCell(pages, record, p) : record[p]
               td.innerHTML = value
               tr.appendChild(td)
             }

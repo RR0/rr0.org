@@ -99,5 +99,6 @@ td, th {
 
   th {
     background-color: #2f2f2f;
+    color: #ccc; /* #666 of the light mode would be 2.5:1 on this background */
   }
 }

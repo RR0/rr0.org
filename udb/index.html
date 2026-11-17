@@ -209,6 +209,27 @@
       return `<a href="${timeUrl(pages, year, month, day)}"><time datetime="${datetime}">${value}</time></a>`
     }
 
+    /**
+     * A place as the site build renders a <span class="place">: a "plac" span showing the place on the site's map.
+     * The location is mapped at the record's coordinates when it has some, as its name alone is often ambiguous.
+     */
+    function placeCell (record, p) {
+      const value = record[p]
+      if (!value) {
+        return value
+      }
+      const hasCoordinates = record.latitude !== '' && record.longitude !== '' && record.latitude !== undefined
+      const query = p === 'location' && hasCoordinates
+        ? `${record.latitude},${record.longitude}`
+        : [value, record.country].filter(Boolean).join(', ')
+      const span = document.createElement('span')
+      span.className = 'plac'
+      span.translate = false
+      span.textContent = value
+      span.addEventListener('click', event => showMap(event, query))
+      return span
+    }
+
     async function submitIt () {
       const logger = udbController.logger
       logger.onLog(onLog)
@@ -233,13 +254,17 @@
             const tr = document.createElement('tr')
             for (const p in record) {
               const td = document.createElement('td')
-              const value = p === 'year' || p === 'month' || p === 'day' ? timeCell(pages, record, p) : record[p]
-              td.innerHTML = value
+              if (p === 'location' || p === 'stateOrProvince') {
+                td.append(placeCell(record, p) ?? '')
+              } else {
+                td.innerHTML = p === 'year' || p === 'month' || p === 'day' ? timeCell(pages, record, p) : record[p]
+              }
               tr.appendChild(td)
             }
             tbody.appendChild(tr)
           }
           result.replaceChildren(table)
+          mapToggle.style.display = 'inline-block'
         } else {
           result.innerText = 'No result'
         }

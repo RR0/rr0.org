@@ -37,6 +37,33 @@ th, td {
   width: auto !important;
 }
 
+/* The results scroll in their own box, both ways: the header sticks to the top of that box (not to the page
+   header, as table.css assumes), and the first column sticks to its left. */
+#matchResult {
+  display: block;
+  max-height: calc(100vh - 8rem);
+  overflow: auto;
+
+  table {
+    width: max-content;
+  }
+
+  thead th {
+    top: 0;
+  }
+
+  th:first-child, td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    background-color: var(--header-background-color);
+  }
+
+  thead th:first-child {
+    z-index: 11;
+  }
+}
+
 .log {
   height: 3em;
   overflow: auto;

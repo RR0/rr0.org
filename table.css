@@ -99,6 +99,6 @@ td, th {
 
   th {
     background-color: #2f2f2f;
-    color: #ccc; /* #666 of the light mode would be 2.5:1 on this background */
+    color: #999; /* 4.7:1 on this background (#666 would be 2.3:1), yet dimmer than the #c8c8c8 cells text */
   }
 }

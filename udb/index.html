@@ -254,7 +254,7 @@
             const tr = document.createElement('tr')
             for (const p in record) {
               const td = document.createElement('td')
-              if (p === 'location' || p === 'stateOrProvince') {
+              if (p === 'location') {
                 td.append(placeCell(record, p) ?? '')
               } else {
                 td.innerHTML = p === 'year' || p === 'month' || p === 'day' ? timeCell(pages, record, p) : record[p]

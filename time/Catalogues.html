@@ -14,6 +14,17 @@
 </form>
 <style>th, td {
   vertical-align: top
+}
+
+/* The catalogue name stays visible when scrolling the table to the right. */
+.scrollable thead tr:first-child th:first-child, .scrollable tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}
+
+.scrollable tbody td:first-child {
+  background-color: var(--background-color);
 }</style>
 <div class="scrollable">
   <table>

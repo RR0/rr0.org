@@ -77,6 +77,23 @@ table.no-border {
   width: 200%;
 }
 
+/* A table in a .scrollable box scrolls in that box, both ways, not in the page: its header sticks to the top of the
+   box rather than below the page header, and as a whole thead so that a header of several rows stays stacked. */
+.scrollable {
+  max-height: calc(100vh - 8rem);
+
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    th {
+      position: static;
+      top: 0; /* For a th made sticky again to stay on the left */
+    }
+  }
+}
+
 td, th {
   width: auto;
   padding: .4em .7em;

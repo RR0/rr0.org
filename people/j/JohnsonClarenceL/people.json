@@ -1,0 +1,37 @@
+{
+  "lastName": "Johnson",
+  "firstNames": [
+    "Clarence",
+    "L."
+  ],
+  "surname": "Kelly",
+  "occupations": [
+    "engineer"
+  ],
+  "countries": [
+    "us"
+  ],
+  "gender": "male",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1910-02-27",
+      "place": "Ishpeming (Michigan)",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kelly_Johnson_(engineer)"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1990-12-21",
+      "place": "Burbank (Californie)",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kelly_Johnson_(engineer)"
+        }
+      ]
+    }
+  ]
+}

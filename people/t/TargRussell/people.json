@@ -1,15 +1,29 @@
 {
+  "lastName": "Targ",
+  "firstNames": [
+    "Russell"
+  ],
   "occupations": [
-    "physicist"
+    "physicist",
+    "parapsychologist",
+    "writer"
   ],
   "countries": [
     "us"
   ],
+  "gender": "male",
   "events": [
     {
       "type": "birth",
       "time": "1934-04-11",
-      "place": "Chicago (USA)"
+      "place": "Chicago (Illinois)"
+    },
+    {
+      "type": "death",
+      "time": "2026-11-16",
+      "notes": [
+        "après une brève maladie"
+      ]
     }
   ]
 }

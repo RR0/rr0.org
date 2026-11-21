@@ -968,6 +968,16 @@ a:hover {
   display: none;
 }
 
+.tags-filtered {
+  font-style: italic;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.tags-filtered:hover {
+  opacity: 1;
+}
+
 li.visible {
   display: list-item;
 }

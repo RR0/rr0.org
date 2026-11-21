@@ -78,6 +78,7 @@ template.innerHTML = `<style>${style}</style>${html}`
 
 const STORAGE_KEY = "rr0-tags-disabled"
 const CONTENT_TAG_SELECTOR = ".contents [class*='tag-']"
+const PLACEHOLDER_CLASS = "tags-filtered"
 
 /**
  * Lets readers filter page content by tag: every element under `.contents` carrying one or more
@@ -165,6 +166,7 @@ export class TagsComponent extends HTMLElement {
     loadTagsMessages(navigator.languages).then(messages => {
       this.#messages = messages
       this.#applyLabels()
+      this.#applyVisibility()
     })
   }
 
@@ -205,6 +207,40 @@ export class TagsComponent extends HTMLElement {
       const tags = TagsComponent.#tagsOf(el)
       const hidden = tags.every(tag => this.#disabled.has(tag))
       el.classList.toggle("hidden", hidden)
+    }
+    this.#applyPlaceholders()
+  }
+
+  /**
+   * Shows a "filtered content" placeholder where each run of consecutive hidden siblings used to be, so that a
+   * section whose content is entirely filtered out doesn't look empty or broken. Its tooltip names the filtered tags,
+   * and clicking it reveals that run only, without changing the stored selection.
+   */
+  #applyPlaceholders() {
+    for (const placeholder of document.querySelectorAll(`.contents .${PLACEHOLDER_CLASS}`)) {
+      placeholder.remove()
+    }
+    const isHidden = el => el?.classList.contains("hidden") && TagsComponent.#tagsOf(el).length > 0
+    for (const el of document.querySelectorAll(CONTENT_TAG_SELECTOR)) {
+      if (!isHidden(el) || isHidden(el.previousElementSibling) || isHidden(el.parentElement?.closest(".hidden"))) {
+        continue  // Not hidden, not the start of a run, or already inside a hidden ancestor.
+      }
+      const run = []
+      for (let sibling = el; isHidden(sibling); sibling = sibling.nextElementSibling) {
+        run.push(sibling)
+      }
+      const tags = [...new Set(run.flatMap(hiddenEl => TagsComponent.#tagsOf(hiddenEl)))]
+      const labels = tags.map(tag => this.#messages.tags[tag] ?? TagsComponent.#humanize(tag)).join(", ")
+      const inList = ["UL", "OL"].includes(el.parentElement?.tagName)
+      const placeholder = document.createElement(inList ? "li" : "p")
+      placeholder.className = PLACEHOLDER_CLASS
+      placeholder.textContent = `${this.#messages.filtered} (${labels})`
+      placeholder.title = this.#messages.reveal
+      placeholder.onclick = () => {
+        run.forEach(hiddenEl => hiddenEl.classList.remove("hidden"))
+        placeholder.remove()
+      }
+      el.before(placeholder)
     }
   }
 

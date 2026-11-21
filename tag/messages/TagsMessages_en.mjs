@@ -1,6 +1,8 @@
 /** @type {import("./TagsMessages_fr.mjs").TagsMessages} */
 export const tagsMessages_en = {
   toggle: "Topics",
+  filtered: "Filtered content",
+  reveal: "Click to show",
   tags: {
     ufology: "Ufology",
     astrophysics: "Astrophysics",

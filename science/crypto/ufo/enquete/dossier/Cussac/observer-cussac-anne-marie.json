@@ -548,385 +548,577 @@
        "t": 16391,
        "azimuthDeg": 297.31,
        "altitudeDeg": 3.92,
-       "distanceM": 71.6
+       "distanceM": 71.6,
+       "appearance": {
+        "luminanceCdM2": 1520000
+       }
       },
       {
        "t": 17086,
        "azimuthDeg": 297.3,
        "altitudeDeg": 5.91,
-       "distanceM": 71.8
+       "distanceM": 71.8,
+       "appearance": {
+        "luminanceCdM2": 2310000
+       }
       },
       {
        "t": 17782,
        "azimuthDeg": 297.3,
        "altitudeDeg": 7.88,
-       "distanceM": 72.2
+       "distanceM": 72.2,
+       "appearance": {
+        "luminanceCdM2": 3510000
+       }
       },
       {
        "t": 18477,
        "azimuthDeg": 297.3,
        "altitudeDeg": 9.84,
-       "distanceM": 72.5
+       "distanceM": 72.5,
+       "appearance": {
+        "luminanceCdM2": 5340000
+       }
       },
       {
        "t": 19173,
        "azimuthDeg": 300.11,
        "altitudeDeg": 9.39,
-       "distanceM": 79.1
+       "distanceM": 79.1,
+       "appearance": {
+        "luminanceCdM2": 8110000
+       }
       },
       {
        "t": 19242,
        "azimuthDeg": 299.5,
        "altitudeDeg": 9.42,
-       "distanceM": 79.7
+       "distanceM": 79.7,
+       "appearance": {
+        "luminanceCdM2": 8460000
+       }
       },
       {
        "t": 19312,
        "azimuthDeg": 298.85,
        "altitudeDeg": 9.48,
-       "distanceM": 80.0
+       "distanceM": 80.0,
+       "appearance": {
+        "luminanceCdM2": 8820000
+       }
       },
       {
        "t": 19381,
        "azimuthDeg": 298.16,
        "altitudeDeg": 9.53,
-       "distanceM": 80.4
+       "distanceM": 80.4,
+       "appearance": {
+        "luminanceCdM2": 9200000
+       }
       },
       {
        "t": 19451,
        "azimuthDeg": 297.44,
        "altitudeDeg": 9.6,
-       "distanceM": 80.6
+       "distanceM": 80.6,
+       "appearance": {
+        "luminanceCdM2": 9590000
+       }
       },
       {
        "t": 19520,
        "azimuthDeg": 296.68,
        "altitudeDeg": 9.7,
-       "distanceM": 80.7
+       "distanceM": 80.7,
+       "appearance": {
+        "luminanceCdM2": 10000000
+       }
       },
       {
        "t": 19590,
        "azimuthDeg": 295.92,
        "altitudeDeg": 9.79,
-       "distanceM": 80.7
+       "distanceM": 80.7,
+       "appearance": {
+        "luminanceCdM2": 10400000
+       }
       },
       {
        "t": 19660,
        "azimuthDeg": 295.15,
        "altitudeDeg": 9.91,
-       "distanceM": 80.5
+       "distanceM": 80.5,
+       "appearance": {
+        "luminanceCdM2": 10900000
+       }
       },
       {
        "t": 19729,
        "azimuthDeg": 294.4,
        "altitudeDeg": 10.05,
-       "distanceM": 80.2
+       "distanceM": 80.2,
+       "appearance": {
+        "luminanceCdM2": 11300000
+       }
       },
       {
        "t": 19799,
        "azimuthDeg": 293.63,
        "altitudeDeg": 10.19,
-       "distanceM": 79.8
+       "distanceM": 79.8,
+       "appearance": {
+        "luminanceCdM2": 11800000
+       }
       },
       {
        "t": 19868,
        "azimuthDeg": 292.91,
        "altitudeDeg": 10.37,
-       "distanceM": 79.2
+       "distanceM": 79.2,
+       "appearance": {
+        "luminanceCdM2": 12300000
+       }
       },
       {
        "t": 19938,
        "azimuthDeg": 292.23,
        "altitudeDeg": 10.57,
-       "distanceM": 78.5
+       "distanceM": 78.5,
+       "appearance": {
+        "luminanceCdM2": 12900000
+       }
       },
       {
        "t": 20007,
        "azimuthDeg": 291.6,
        "altitudeDeg": 10.78,
-       "distanceM": 77.7
+       "distanceM": 77.7,
+       "appearance": {
+        "luminanceCdM2": 13400000
+       }
       },
       {
        "t": 20077,
        "azimuthDeg": 291.03,
        "altitudeDeg": 11.01,
-       "distanceM": 76.8
+       "distanceM": 76.8,
+       "appearance": {
+        "luminanceCdM2": 14000000
+       }
       },
       {
        "t": 20146,
        "azimuthDeg": 290.55,
        "altitudeDeg": 11.27,
-       "distanceM": 75.8
+       "distanceM": 75.8,
+       "appearance": {
+        "luminanceCdM2": 14600000
+       }
       },
       {
        "t": 20216,
        "azimuthDeg": 290.17,
        "altitudeDeg": 11.54,
-       "distanceM": 74.7
+       "distanceM": 74.7,
+       "appearance": {
+        "luminanceCdM2": 15200000
+       }
       },
       {
        "t": 20285,
        "azimuthDeg": 289.91,
        "altitudeDeg": 11.84,
-       "distanceM": 73.5
+       "distanceM": 73.5,
+       "appearance": {
+        "luminanceCdM2": 15800000
+       }
       },
       {
        "t": 20355,
        "azimuthDeg": 289.77,
        "altitudeDeg": 12.16,
-       "distanceM": 72.3
+       "distanceM": 72.3,
+       "appearance": {
+        "luminanceCdM2": 16500000
+       }
       },
       {
        "t": 20425,
        "azimuthDeg": 289.8,
        "altitudeDeg": 12.49,
-       "distanceM": 71.0
+       "distanceM": 71.0,
+       "appearance": {
+        "luminanceCdM2": 17200000
+       }
       },
       {
        "t": 20494,
        "azimuthDeg": 289.97,
        "altitudeDeg": 12.84,
-       "distanceM": 69.7
+       "distanceM": 69.7,
+       "appearance": {
+        "luminanceCdM2": 18000000
+       }
       },
       {
        "t": 20564,
        "azimuthDeg": 290.33,
        "altitudeDeg": 13.19,
-       "distanceM": 68.5
+       "distanceM": 68.5,
+       "appearance": {
+        "luminanceCdM2": 18700000
+       }
       },
       {
        "t": 20633,
        "azimuthDeg": 290.88,
        "altitudeDeg": 13.55,
-       "distanceM": 67.3
+       "distanceM": 67.3,
+       "appearance": {
+        "luminanceCdM2": 19500000
+       }
       },
       {
        "t": 20703,
        "azimuthDeg": 291.61,
        "altitudeDeg": 13.9,
-       "distanceM": 66.2
+       "distanceM": 66.2,
+       "appearance": {
+        "luminanceCdM2": 20400000
+       }
       },
       {
        "t": 20772,
        "azimuthDeg": 292.53,
        "altitudeDeg": 14.24,
-       "distanceM": 65.2
+       "distanceM": 65.2,
+       "appearance": {
+        "luminanceCdM2": 21200000
+       }
       },
       {
        "t": 20842,
        "azimuthDeg": 293.63,
        "altitudeDeg": 14.55,
-       "distanceM": 64.4
+       "distanceM": 64.4,
+       "appearance": {
+        "luminanceCdM2": 22200000
+       }
       },
       {
        "t": 20911,
        "azimuthDeg": 294.87,
        "altitudeDeg": 14.81,
-       "distanceM": 63.8
+       "distanceM": 63.8,
+       "appearance": {
+        "luminanceCdM2": 23100000
+       }
       },
       {
        "t": 20981,
        "azimuthDeg": 296.25,
        "altitudeDeg": 15.04,
-       "distanceM": 63.4
+       "distanceM": 63.4,
+       "appearance": {
+        "luminanceCdM2": 24100000
+       }
       },
       {
        "t": 21050,
        "azimuthDeg": 297.69,
        "altitudeDeg": 15.19,
-       "distanceM": 63.2
+       "distanceM": 63.2,
+       "appearance": {
+        "luminanceCdM2": 25100000
+       }
       },
       {
        "t": 21120,
        "azimuthDeg": 299.16,
        "altitudeDeg": 15.28,
-       "distanceM": 63.4
+       "distanceM": 63.4,
+       "appearance": {
+        "luminanceCdM2": 26200000
+       }
       },
       {
        "t": 21190,
        "azimuthDeg": 300.61,
        "altitudeDeg": 15.3,
-       "distanceM": 63.8
+       "distanceM": 63.8,
+       "appearance": {
+        "luminanceCdM2": 27300000
+       }
       },
       {
        "t": 21259,
        "azimuthDeg": 301.99,
        "altitudeDeg": 15.27,
-       "distanceM": 64.5
+       "distanceM": 64.5,
+       "appearance": {
+        "luminanceCdM2": 28500000
+       }
       },
       {
        "t": 21329,
        "azimuthDeg": 303.25,
        "altitudeDeg": 15.17,
-       "distanceM": 65.4
+       "distanceM": 65.4,
+       "appearance": {
+        "luminanceCdM2": 29700000
+       }
       },
       {
        "t": 21398,
        "azimuthDeg": 304.34,
        "altitudeDeg": 15.02,
-       "distanceM": 66.5
+       "distanceM": 66.5,
+       "appearance": {
+        "luminanceCdM2": 31000000
+       }
       },
       {
        "t": 21468,
        "azimuthDeg": 305.22,
        "altitudeDeg": 14.83,
-       "distanceM": 67.9
+       "distanceM": 67.9,
+       "appearance": {
+        "luminanceCdM2": 32300000
+       }
       },
       {
        "t": 21537,
        "azimuthDeg": 305.89,
        "altitudeDeg": 14.61,
-       "distanceM": 69.5
+       "distanceM": 69.5,
+       "appearance": {
+        "luminanceCdM2": 33700000
+       }
       },
       {
        "t": 21607,
        "azimuthDeg": 306.32,
        "altitudeDeg": 14.37,
-       "distanceM": 71.1
+       "distanceM": 71.1,
+       "appearance": {
+        "luminanceCdM2": 35100000
+       }
       },
       {
        "t": 21676,
        "azimuthDeg": 306.5,
        "altitudeDeg": 14.13,
-       "distanceM": 72.9
+       "distanceM": 72.9,
+       "appearance": {
+        "luminanceCdM2": 36600000
+       }
       },
       {
        "t": 21746,
        "azimuthDeg": 306.46,
        "altitudeDeg": 13.89,
-       "distanceM": 74.7
+       "distanceM": 74.7,
+       "appearance": {
+        "luminanceCdM2": 38200000
+       }
       },
       {
        "t": 21815,
        "azimuthDeg": 306.19,
        "altitudeDeg": 13.66,
-       "distanceM": 76.5
+       "distanceM": 76.5,
+       "appearance": {
+        "luminanceCdM2": 39800000
+       }
       },
       {
        "t": 21885,
        "azimuthDeg": 305.72,
        "altitudeDeg": 13.46,
-       "distanceM": 78.3
+       "distanceM": 78.3,
+       "appearance": {
+        "luminanceCdM2": 41500000
+       }
       },
       {
        "t": 21955,
        "azimuthDeg": 305.06,
        "altitudeDeg": 13.27,
-       "distanceM": 79.9
+       "distanceM": 79.9,
+       "appearance": {
+        "luminanceCdM2": 43300000
+       }
       },
       {
        "t": 22024,
        "azimuthDeg": 304.21,
        "altitudeDeg": 13.12,
-       "distanceM": 81.5
+       "distanceM": 81.5,
+       "appearance": {
+        "luminanceCdM2": 45100000
+       }
       },
       {
        "t": 22094,
        "azimuthDeg": 303.23,
        "altitudeDeg": 12.99,
-       "distanceM": 82.8
+       "distanceM": 82.8,
+       "appearance": {
+        "luminanceCdM2": 47100000
+       }
       },
       {
        "t": 22163,
        "azimuthDeg": 302.11,
        "altitudeDeg": 12.9,
-       "distanceM": 84.0
+       "distanceM": 84.0,
+       "appearance": {
+        "luminanceCdM2": 49100000
+       }
       },
       {
        "t": 22233,
        "azimuthDeg": 300.87,
        "altitudeDeg": 12.85,
-       "distanceM": 85.0
+       "distanceM": 85.0,
+       "appearance": {
+        "luminanceCdM2": 51200000
+       }
       },
       {
        "t": 22302,
        "azimuthDeg": 299.55,
        "altitudeDeg": 12.83,
-       "distanceM": 85.7
+       "distanceM": 85.7,
+       "appearance": {
+        "luminanceCdM2": 53400000
+       }
       },
       {
        "t": 22372,
        "azimuthDeg": 298.17,
        "altitudeDeg": 12.85,
-       "distanceM": 86.2
+       "distanceM": 86.2,
+       "appearance": {
+        "luminanceCdM2": 55700000
+       }
       },
       {
        "t": 22441,
        "azimuthDeg": 296.75,
        "altitudeDeg": 12.92,
-       "distanceM": 86.3
+       "distanceM": 86.3,
+       "appearance": {
+        "luminanceCdM2": 58000000
+       }
       },
       {
        "t": 22511,
        "azimuthDeg": 295.3,
        "altitudeDeg": 13.03,
-       "distanceM": 86.2
+       "distanceM": 86.2,
+       "appearance": {
+        "luminanceCdM2": 60500000
+       }
       },
       {
        "t": 22580,
        "azimuthDeg": 293.86,
        "altitudeDeg": 13.19,
-       "distanceM": 85.7
+       "distanceM": 85.7,
+       "appearance": {
+        "luminanceCdM2": 63100000
+       }
       },
       {
        "t": 22650,
        "azimuthDeg": 292.44,
        "altitudeDeg": 13.4,
-       "distanceM": 85.0
+       "distanceM": 85.0,
+       "appearance": {
+        "luminanceCdM2": 65800000
+       }
       },
       {
        "t": 22720,
        "azimuthDeg": 291.09,
        "altitudeDeg": 13.67,
-       "distanceM": 84.0
+       "distanceM": 84.0,
+       "appearance": {
+        "luminanceCdM2": 68600000
+       }
       },
       {
        "t": 22789,
        "azimuthDeg": 289.84,
        "altitudeDeg": 13.98,
-       "distanceM": 82.7
+       "distanceM": 82.7,
+       "appearance": {
+        "luminanceCdM2": 71600000
+       }
       },
       {
        "t": 22859,
        "azimuthDeg": 288.7,
        "altitudeDeg": 14.35,
-       "distanceM": 81.2
+       "distanceM": 81.2,
+       "appearance": {
+        "luminanceCdM2": 74600000
+       }
       },
       {
        "t": 22928,
        "azimuthDeg": 287.73,
        "altitudeDeg": 14.78,
-       "distanceM": 79.3
+       "distanceM": 79.3,
+       "appearance": {
+        "luminanceCdM2": 77800000
+       }
       },
       {
        "t": 22998,
        "azimuthDeg": 286.97,
        "altitudeDeg": 15.29,
-       "distanceM": 77.3
+       "distanceM": 77.3,
+       "appearance": {
+        "luminanceCdM2": 81100000
+       }
       },
       {
        "t": 23067,
        "azimuthDeg": 286.44,
        "altitudeDeg": 15.84,
-       "distanceM": 75.2
+       "distanceM": 75.2,
+       "appearance": {
+        "luminanceCdM2": 84600000
+       }
       },
       {
        "t": 23137,
        "azimuthDeg": 286.23,
        "altitudeDeg": 16.46,
-       "distanceM": 72.9
+       "distanceM": 72.9,
+       "appearance": {
+        "luminanceCdM2": 88200000
+       }
       },
       {
        "t": 23206,
        "azimuthDeg": 286.36,
        "altitudeDeg": 17.12,
-       "distanceM": 70.6
+       "distanceM": 70.6,
+       "appearance": {
+        "luminanceCdM2": 92000000
+       }
       },
       {
        "t": 23276,
        "azimuthDeg": 286.87,
        "altitudeDeg": 17.82,
-       "distanceM": 68.4
+       "distanceM": 68.4,
+       "appearance": {
+        "luminanceCdM2": 95900000
+       }
       },
       {
        "t": 23345,
@@ -943,595 +1135,892 @@
        "t": 23415,
        "azimuthDeg": 289.2,
        "altitudeDeg": 19.22,
-       "distanceM": 64.4
+       "distanceM": 64.4,
+       "appearance": {
+        "luminanceCdM2": 103000000
+       }
       },
       {
        "t": 23485,
        "azimuthDeg": 291.03,
        "altitudeDeg": 19.84,
-       "distanceM": 62.8
+       "distanceM": 62.8,
+       "appearance": {
+        "luminanceCdM2": 106000000
+       }
       },
       {
        "t": 23554,
        "azimuthDeg": 293.24,
        "altitudeDeg": 20.37,
-       "distanceM": 61.7
+       "distanceM": 61.7,
+       "appearance": {
+        "luminanceCdM2": 109000000
+       }
       },
       {
        "t": 23624,
        "azimuthDeg": 295.75,
        "altitudeDeg": 20.73,
-       "distanceM": 61.1
+       "distanceM": 61.1,
+       "appearance": {
+        "luminanceCdM2": 112000000
+       }
       },
       {
        "t": 23693,
        "azimuthDeg": 298.41,
        "altitudeDeg": 20.9,
-       "distanceM": 61.0
+       "distanceM": 61.0,
+       "appearance": {
+        "luminanceCdM2": 115000000
+       }
       },
       {
        "t": 23763,
        "azimuthDeg": 301.07,
        "altitudeDeg": 20.88,
-       "distanceM": 61.4
+       "distanceM": 61.4,
+       "appearance": {
+        "luminanceCdM2": 118000000
+       }
       },
       {
        "t": 23832,
        "azimuthDeg": 303.55,
        "altitudeDeg": 20.64,
-       "distanceM": 62.5
+       "distanceM": 62.5,
+       "appearance": {
+        "luminanceCdM2": 121000000
+       }
       },
       {
        "t": 23902,
        "azimuthDeg": 305.7,
        "altitudeDeg": 20.24,
-       "distanceM": 64.1
+       "distanceM": 64.1,
+       "appearance": {
+        "luminanceCdM2": 125000000
+       }
       },
       {
        "t": 23971,
        "azimuthDeg": 307.45,
        "altitudeDeg": 19.73,
-       "distanceM": 66.1
+       "distanceM": 66.1,
+       "appearance": {
+        "luminanceCdM2": 128000000
+       }
       },
       {
        "t": 24041,
        "azimuthDeg": 308.7,
        "altitudeDeg": 19.14,
-       "distanceM": 68.4
+       "distanceM": 68.4,
+       "appearance": {
+        "luminanceCdM2": 132000000
+       }
       },
       {
        "t": 24110,
        "azimuthDeg": 309.44,
        "altitudeDeg": 18.52,
-       "distanceM": 71.0
+       "distanceM": 71.0,
+       "appearance": {
+        "luminanceCdM2": 136000000
+       }
       },
       {
        "t": 24180,
        "azimuthDeg": 309.7,
        "altitudeDeg": 17.91,
-       "distanceM": 73.8
+       "distanceM": 73.8,
+       "appearance": {
+        "luminanceCdM2": 139000000
+       }
       },
       {
        "t": 24250,
        "azimuthDeg": 309.52,
        "altitudeDeg": 17.34,
-       "distanceM": 76.6
+       "distanceM": 76.6,
+       "appearance": {
+        "luminanceCdM2": 143000000
+       }
       },
       {
        "t": 24319,
        "azimuthDeg": 308.92,
        "altitudeDeg": 16.82,
-       "distanceM": 79.4
+       "distanceM": 79.4,
+       "appearance": {
+        "luminanceCdM2": 147000000
+       }
       },
       {
        "t": 24389,
        "azimuthDeg": 307.98,
        "altitudeDeg": 16.36,
-       "distanceM": 82.0
+       "distanceM": 82.0,
+       "appearance": {
+        "luminanceCdM2": 152000000
+       }
       },
       {
        "t": 24458,
        "azimuthDeg": 306.71,
        "altitudeDeg": 15.98,
-       "distanceM": 84.5
+       "distanceM": 84.5,
+       "appearance": {
+        "luminanceCdM2": 156000000
+       }
       },
       {
        "t": 24528,
        "azimuthDeg": 305.21,
        "altitudeDeg": 15.67,
-       "distanceM": 86.5
+       "distanceM": 86.5,
+       "appearance": {
+        "luminanceCdM2": 160000000
+       }
       },
       {
        "t": 24597,
        "azimuthDeg": 303.5,
        "altitudeDeg": 15.44,
-       "distanceM": 88.3
+       "distanceM": 88.3,
+       "appearance": {
+        "luminanceCdM2": 165000000
+       }
       },
       {
        "t": 24667,
        "azimuthDeg": 301.63,
        "altitudeDeg": 15.29,
-       "distanceM": 89.7
+       "distanceM": 89.7,
+       "appearance": {
+        "luminanceCdM2": 169000000
+       }
       },
       {
        "t": 24736,
        "azimuthDeg": 299.62,
        "altitudeDeg": 15.22,
-       "distanceM": 90.6
+       "distanceM": 90.6,
+       "appearance": {
+        "luminanceCdM2": 174000000
+       }
       },
       {
        "t": 24806,
        "azimuthDeg": 297.54,
        "altitudeDeg": 15.23,
-       "distanceM": 91.1
+       "distanceM": 91.1,
+       "appearance": {
+        "luminanceCdM2": 179000000
+       }
       },
       {
        "t": 24875,
        "azimuthDeg": 295.43,
        "altitudeDeg": 15.33,
-       "distanceM": 91.0
+       "distanceM": 91.0,
+       "appearance": {
+        "luminanceCdM2": 184000000
+       }
       },
       {
        "t": 24945,
        "azimuthDeg": 293.33,
        "altitudeDeg": 15.52,
-       "distanceM": 90.4
+       "distanceM": 90.4,
+       "appearance": {
+        "luminanceCdM2": 189000000
+       }
       },
       {
        "t": 25015,
        "azimuthDeg": 291.27,
        "altitudeDeg": 15.8,
-       "distanceM": 89.4
+       "distanceM": 89.4,
+       "appearance": {
+        "luminanceCdM2": 195000000
+       }
       },
       {
        "t": 25084,
        "azimuthDeg": 289.31,
        "altitudeDeg": 16.17,
-       "distanceM": 87.8
+       "distanceM": 87.8,
+       "appearance": {
+        "luminanceCdM2": 200000000
+       }
       },
       {
        "t": 25154,
        "azimuthDeg": 287.51,
        "altitudeDeg": 16.66,
-       "distanceM": 85.8
+       "distanceM": 85.8,
+       "appearance": {
+        "luminanceCdM2": 206000000
+       }
       },
       {
        "t": 25223,
        "azimuthDeg": 285.92,
        "altitudeDeg": 17.26,
-       "distanceM": 83.4
+       "distanceM": 83.4,
+       "appearance": {
+        "luminanceCdM2": 211000000
+       }
       },
       {
        "t": 25293,
        "azimuthDeg": 284.63,
        "altitudeDeg": 17.98,
-       "distanceM": 80.6
+       "distanceM": 80.6,
+       "appearance": {
+        "luminanceCdM2": 217000000
+       }
       },
       {
        "t": 25362,
        "azimuthDeg": 283.71,
        "altitudeDeg": 18.84,
-       "distanceM": 77.5
+       "distanceM": 77.5,
+       "appearance": {
+        "luminanceCdM2": 223000000
+       }
       },
       {
        "t": 25432,
        "azimuthDeg": 283.27,
        "altitudeDeg": 19.8,
-       "distanceM": 74.2
+       "distanceM": 74.2,
+       "appearance": {
+        "luminanceCdM2": 230000000
+       }
       },
       {
        "t": 25501,
        "azimuthDeg": 283.39,
        "altitudeDeg": 20.88,
-       "distanceM": 71.0
+       "distanceM": 71.0,
+       "appearance": {
+        "luminanceCdM2": 236000000
+       }
       },
       {
        "t": 25571,
        "azimuthDeg": 284.23,
        "altitudeDeg": 22.04,
-       "distanceM": 67.8
+       "distanceM": 67.8,
+       "appearance": {
+        "luminanceCdM2": 243000000
+       }
       },
       {
        "t": 25640,
        "azimuthDeg": 285.83,
        "altitudeDeg": 23.22,
-       "distanceM": 64.8
+       "distanceM": 64.8,
+       "appearance": {
+        "luminanceCdM2": 250000000
+       }
       },
       {
        "t": 25710,
        "azimuthDeg": 288.27,
        "altitudeDeg": 24.33,
-       "distanceM": 62.4
+       "distanceM": 62.4,
+       "appearance": {
+        "luminanceCdM2": 257000000
+       }
       },
       {
        "t": 25780,
        "azimuthDeg": 291.45,
        "altitudeDeg": 25.24,
-       "distanceM": 60.6
+       "distanceM": 60.6,
+       "appearance": {
+        "luminanceCdM2": 264000000
+       }
       },
       {
        "t": 25849,
        "azimuthDeg": 295.26,
        "altitudeDeg": 25.84,
-       "distanceM": 59.6
+       "distanceM": 59.6,
+       "appearance": {
+        "luminanceCdM2": 271000000
+       }
       },
       {
        "t": 25919,
        "azimuthDeg": 299.31,
        "altitudeDeg": 26.0,
-       "distanceM": 59.6
+       "distanceM": 59.6,
+       "appearance": {
+        "luminanceCdM2": 279000000
+       }
       },
       {
        "t": 25988,
        "azimuthDeg": 303.27,
        "altitudeDeg": 25.71,
-       "distanceM": 60.4
+       "distanceM": 60.4,
+       "appearance": {
+        "luminanceCdM2": 287000000
+       }
       },
       {
        "t": 26058,
        "azimuthDeg": 306.74,
        "altitudeDeg": 25.05,
-       "distanceM": 62.2
+       "distanceM": 62.2,
+       "appearance": {
+        "luminanceCdM2": 295000000
+       }
       },
       {
        "t": 26127,
        "azimuthDeg": 309.44,
        "altitudeDeg": 24.11,
-       "distanceM": 64.9
+       "distanceM": 64.9,
+       "appearance": {
+        "luminanceCdM2": 303000000
+       }
       },
       {
        "t": 26197,
        "azimuthDeg": 311.31,
        "altitudeDeg": 23.04,
-       "distanceM": 68.1
+       "distanceM": 68.1,
+       "appearance": {
+        "luminanceCdM2": 312000000
+       }
       },
       {
        "t": 26266,
        "azimuthDeg": 312.28,
        "altitudeDeg": 21.93,
-       "distanceM": 71.7
+       "distanceM": 71.7,
+       "appearance": {
+        "luminanceCdM2": 320000000
+       }
       },
       {
        "t": 26336,
        "azimuthDeg": 312.47,
        "altitudeDeg": 20.88,
-       "distanceM": 75.5
+       "distanceM": 75.5,
+       "appearance": {
+        "luminanceCdM2": 329000000
+       }
       },
       {
        "t": 26405,
        "azimuthDeg": 311.96,
        "altitudeDeg": 19.94,
-       "distanceM": 79.3
+       "distanceM": 79.3,
+       "appearance": {
+        "luminanceCdM2": 339000000
+       }
       },
       {
        "t": 26475,
        "azimuthDeg": 310.86,
        "altitudeDeg": 19.12,
-       "distanceM": 83.0
+       "distanceM": 83.0,
+       "appearance": {
+        "luminanceCdM2": 348000000
+       }
       },
       {
        "t": 26545,
        "azimuthDeg": 309.28,
        "altitudeDeg": 18.44,
-       "distanceM": 86.3
+       "distanceM": 86.3,
+       "appearance": {
+        "luminanceCdM2": 358000000
+       }
       },
       {
        "t": 26614,
        "azimuthDeg": 307.32,
        "altitudeDeg": 17.9,
-       "distanceM": 89.3
+       "distanceM": 89.3,
+       "appearance": {
+        "luminanceCdM2": 368000000
+       }
       },
       {
        "t": 26684,
        "azimuthDeg": 305.06,
        "altitudeDeg": 17.5,
-       "distanceM": 91.8
+       "distanceM": 91.8,
+       "appearance": {
+        "luminanceCdM2": 379000000
+       }
       },
       {
        "t": 26753,
        "azimuthDeg": 302.57,
        "altitudeDeg": 17.22,
-       "distanceM": 93.7
+       "distanceM": 93.7,
+       "appearance": {
+        "luminanceCdM2": 389000000
+       }
       },
       {
        "t": 26823,
        "azimuthDeg": 299.94,
        "altitudeDeg": 17.08,
-       "distanceM": 94.9
+       "distanceM": 94.9,
+       "appearance": {
+        "luminanceCdM2": 400000000
+       }
       },
       {
        "t": 26892,
        "azimuthDeg": 297.2,
        "altitudeDeg": 17.08,
-       "distanceM": 95.3
+       "distanceM": 95.3,
+       "appearance": {
+        "luminanceCdM2": 411000000
+       }
       },
       {
        "t": 26962,
        "azimuthDeg": 294.43,
        "altitudeDeg": 17.22,
-       "distanceM": 95.1
+       "distanceM": 95.1,
+       "appearance": {
+        "luminanceCdM2": 423000000
+       }
       },
       {
        "t": 27031,
        "azimuthDeg": 291.7,
        "altitudeDeg": 17.49,
-       "distanceM": 94.1
+       "distanceM": 94.1,
+       "appearance": {
+        "luminanceCdM2": 435000000
+       }
       },
       {
        "t": 27101,
        "azimuthDeg": 289.05,
        "altitudeDeg": 17.91,
-       "distanceM": 92.4
+       "distanceM": 92.4,
+       "appearance": {
+        "luminanceCdM2": 447000000
+       }
       },
       {
        "t": 27170,
        "azimuthDeg": 286.58,
        "altitudeDeg": 18.5,
-       "distanceM": 90.0
+       "distanceM": 90.0,
+       "appearance": {
+        "luminanceCdM2": 459000000
+       }
       },
       {
        "t": 27240,
        "azimuthDeg": 284.39,
        "altitudeDeg": 19.28,
-       "distanceM": 86.9
+       "distanceM": 86.9,
+       "appearance": {
+        "luminanceCdM2": 472000000
+       }
       },
       {
        "t": 27310,
        "azimuthDeg": 282.58,
        "altitudeDeg": 20.24,
-       "distanceM": 83.3
+       "distanceM": 83.3,
+       "appearance": {
+        "luminanceCdM2": 486000000
+       }
       },
       {
        "t": 27379,
        "azimuthDeg": 281.27,
        "altitudeDeg": 21.41,
-       "distanceM": 79.3
+       "distanceM": 79.3,
+       "appearance": {
+        "luminanceCdM2": 499000000
+       }
       },
       {
        "t": 27449,
        "azimuthDeg": 280.64,
        "altitudeDeg": 22.8,
-       "distanceM": 75.1
+       "distanceM": 75.1,
+       "appearance": {
+        "luminanceCdM2": 513000000
+       }
       },
       {
        "t": 27518,
        "azimuthDeg": 280.88,
        "altitudeDeg": 24.38,
-       "distanceM": 70.8
+       "distanceM": 70.8,
+       "appearance": {
+        "luminanceCdM2": 528000000
+       }
       },
       {
        "t": 27588,
        "azimuthDeg": 282.2,
        "altitudeDeg": 26.11,
-       "distanceM": 66.8
+       "distanceM": 66.8,
+       "appearance": {
+        "luminanceCdM2": 543000000
+       }
       },
       {
        "t": 27657,
        "azimuthDeg": 284.8,
        "altitudeDeg": 27.86,
-       "distanceM": 63.1
+       "distanceM": 63.1,
+       "appearance": {
+        "luminanceCdM2": 558000000
+       }
       },
       {
        "t": 27727,
        "azimuthDeg": 288.7,
        "altitudeDeg": 29.36,
-       "distanceM": 60.5
+       "distanceM": 60.5,
+       "appearance": {
+        "luminanceCdM2": 574000000
+       }
       },
       {
        "t": 27796,
        "azimuthDeg": 293.76,
        "altitudeDeg": 30.4,
-       "distanceM": 58.8
+       "distanceM": 58.8,
+       "appearance": {
+        "luminanceCdM2": 590000000
+       }
       },
       {
        "t": 27866,
        "azimuthDeg": 299.35,
        "altitudeDeg": 30.66,
-       "distanceM": 58.7
+       "distanceM": 58.7,
+       "appearance": {
+        "luminanceCdM2": 606000000
+       }
       },
       {
        "t": 27935,
        "azimuthDeg": 304.78,
        "altitudeDeg": 30.13,
-       "distanceM": 59.9
+       "distanceM": 59.9,
+       "appearance": {
+        "luminanceCdM2": 623000000
+       }
       },
       {
        "t": 28005,
        "azimuthDeg": 309.31,
        "altitudeDeg": 28.95,
-       "distanceM": 62.4
+       "distanceM": 62.4,
+       "appearance": {
+        "luminanceCdM2": 641000000
+       }
       },
       {
        "t": 28075,
        "azimuthDeg": 312.54,
        "altitudeDeg": 27.38,
-       "distanceM": 66.0
+       "distanceM": 66.0,
+       "appearance": {
+        "luminanceCdM2": 659000000
+       }
       },
       {
        "t": 28144,
        "azimuthDeg": 314.39,
        "altitudeDeg": 25.69,
-       "distanceM": 70.3
+       "distanceM": 70.3,
+       "appearance": {
+        "luminanceCdM2": 677000000
+       }
       },
       {
        "t": 28214,
        "azimuthDeg": 314.99,
        "altitudeDeg": 24.08,
-       "distanceM": 75.0
+       "distanceM": 75.0,
+       "appearance": {
+        "luminanceCdM2": 697000000
+       }
       },
       {
        "t": 28283,
        "azimuthDeg": 314.52,
        "altitudeDeg": 22.65,
-       "distanceM": 79.8
+       "distanceM": 79.8,
+       "appearance": {
+        "luminanceCdM2": 716000000
+       }
       },
       {
        "t": 28353,
        "azimuthDeg": 313.2,
        "altitudeDeg": 21.43,
-       "distanceM": 84.5
+       "distanceM": 84.5,
+       "appearance": {
+        "luminanceCdM2": 736000000
+       }
       },
       {
        "t": 28422,
        "azimuthDeg": 311.22,
        "altitudeDeg": 20.44,
-       "distanceM": 88.8
+       "distanceM": 88.8,
+       "appearance": {
+        "luminanceCdM2": 757000000
+       }
       },
       {
        "t": 28492,
        "azimuthDeg": 308.76,
        "altitudeDeg": 19.67,
-       "distanceM": 92.4
+       "distanceM": 92.4,
+       "appearance": {
+        "luminanceCdM2": 778000000
+       }
       },
       {
        "t": 28561,
        "azimuthDeg": 305.9,
        "altitudeDeg": 19.11,
-       "distanceM": 95.5
+       "distanceM": 95.5,
+       "appearance": {
+        "luminanceCdM2": 800000000
+       }
       },
       {
        "t": 28631,
        "azimuthDeg": 302.77,
        "altitudeDeg": 18.76,
-       "distanceM": 97.6
+       "distanceM": 97.6,
+       "appearance": {
+        "luminanceCdM2": 823000000
+       }
       },
       {
        "t": 28700,
        "azimuthDeg": 299.47,
        "altitudeDeg": 18.6,
-       "distanceM": 99.0
+       "distanceM": 99.0,
+       "appearance": {
+        "luminanceCdM2": 845000000
+       }
       },
       {
        "t": 28770,
        "azimuthDeg": 296.09,
        "altitudeDeg": 18.62,
-       "distanceM": 99.2
+       "distanceM": 99.2,
+       "appearance": {
+        "luminanceCdM2": 869000000
+       }
       },
       {
        "t": 28840,
        "azimuthDeg": 292.69,
        "altitudeDeg": 18.84,
-       "distanceM": 98.5
+       "distanceM": 98.5,
+       "appearance": {
+        "luminanceCdM2": 894000000
+       }
       },
       {
        "t": 28909,
        "azimuthDeg": 289.38,
        "altitudeDeg": 19.27,
-       "distanceM": 96.9
+       "distanceM": 96.9,
+       "appearance": {
+        "luminanceCdM2": 919000000
+       }
       },
       {
        "t": 28979,
        "azimuthDeg": 286.24,
        "altitudeDeg": 19.92,
-       "distanceM": 94.1
+       "distanceM": 94.1,
+       "appearance": {
+        "luminanceCdM2": 945000000
+       }
       },
       {
        "t": 29048,
        "azimuthDeg": 283.38,
        "altitudeDeg": 20.83,
-       "distanceM": 90.6
+       "distanceM": 90.6,
+       "appearance": {
+        "luminanceCdM2": 971000000
+       }
       },
       {
        "t": 29118,
        "azimuthDeg": 280.98,
        "altitudeDeg": 22.0,
-       "distanceM": 86.3
+       "distanceM": 86.3,
+       "appearance": {
+        "luminanceCdM2": 999000000
+       }
       },
       {
        "t": 29187,
        "azimuthDeg": 279.19,
        "altitudeDeg": 23.49,
-       "distanceM": 81.6
+       "distanceM": 81.6,
+       "appearance": {
+        "luminanceCdM2": 1030000000
+       }
       },
       {
        "t": 29257,
        "azimuthDeg": 278.27,
        "altitudeDeg": 25.31,
-       "distanceM": 76.4
+       "distanceM": 76.4,
+       "appearance": {
+        "luminanceCdM2": 1060000000
+       }
       },
       {
        "t": 29326,
        "azimuthDeg": 278.54,
        "altitudeDeg": 27.46,
-       "distanceM": 71.0
+       "distanceM": 71.0,
+       "appearance": {
+        "luminanceCdM2": 1090000000
+       }
       },
       {
        "t": 29396,
        "azimuthDeg": 280.34,
        "altitudeDeg": 29.83,
-       "distanceM": 66.1
+       "distanceM": 66.1,
+       "appearance": {
+        "luminanceCdM2": 1120000000
+       }
       },
       {
        "t": 29465,
        "azimuthDeg": 284.05,
        "altitudeDeg": 32.18,
-       "distanceM": 62.0
+       "distanceM": 62.0,
+       "appearance": {
+        "luminanceCdM2": 1150000000
+       }
       },
       {
        "t": 29535,
        "azimuthDeg": 289.69,
        "altitudeDeg": 34.09,
-       "distanceM": 59.2
+       "distanceM": 59.2,
+       "appearance": {
+        "luminanceCdM2": 1180000000
+       }
       },
       {
        "t": 29605,
        "azimuthDeg": 296.77,
        "altitudeDeg": 34.99,
-       "distanceM": 58.1
+       "distanceM": 58.1,
+       "appearance": {
+        "luminanceCdM2": 1210000000
+       }
       },
       {
        "t": 29674,
        "azimuthDeg": 304.07,
        "altitudeDeg": 34.58,
-       "distanceM": 58.9
+       "distanceM": 58.9,
+       "appearance": {
+        "luminanceCdM2": 1250000000
+       }
       },
       {
        "t": 29744,
        "azimuthDeg": 310.23,
        "altitudeDeg": 33.04,
-       "distanceM": 61.6
+       "distanceM": 61.6,
+       "appearance": {
+        "luminanceCdM2": 1280000000
+       }
       },
       {
        "t": 29813,
        "azimuthDeg": 314.49,
        "altitudeDeg": 30.85,
-       "distanceM": 65.8
+       "distanceM": 65.8,
+       "appearance": {
+        "luminanceCdM2": 1320000000
+       }
       },
       {
        "t": 29883,
        "azimuthDeg": 316.75,
        "altitudeDeg": 28.5,
-       "distanceM": 70.9
+       "distanceM": 70.9,
+       "appearance": {
+        "luminanceCdM2": 1350000000
+       }
       },
       {
        "t": 29952,
        "azimuthDeg": 317.26,
        "altitudeDeg": 26.33,
-       "distanceM": 76.7
+       "distanceM": 76.7,
+       "appearance": {
+        "luminanceCdM2": 1390000000
+       }
       },
       {
        "t": 30022,
        "azimuthDeg": 316.4,
        "altitudeDeg": 24.46,
-       "distanceM": 82.4
+       "distanceM": 82.4,
+       "appearance": {
+        "luminanceCdM2": 1430000000
+       }
       },
       {
        "t": 30091,
        "azimuthDeg": 314.52,
        "altitudeDeg": 22.93,
-       "distanceM": 87.9
+       "distanceM": 87.9,
+       "appearance": {
+        "luminanceCdM2": 1470000000
+       }
       },
       {
        "t": 30161,
        "azimuthDeg": 311.87,
        "altitudeDeg": 21.74,
-       "distanceM": 92.8
+       "distanceM": 92.8,
+       "appearance": {
+        "luminanceCdM2": 1510000000
+       }
       },
       {
        "t": 30230,
        "azimuthDeg": 308.68,
        "altitudeDeg": 20.87,
-       "distanceM": 96.9
+       "distanceM": 96.9,
+       "appearance": {
+        "luminanceCdM2": 1560000000
+       }
       },
       {
        "t": 30300,

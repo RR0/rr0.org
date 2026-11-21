@@ -163,10 +163,51 @@ export class UpdatesSection {
     return "/" + (path.basename(file) === "index.html" ? path.dirname(file) + "/" : file)
   }
 
+  /**
+   * How the site refers to a page anywhere else, so that the build renders it as it does everywhere: a person is a
+   * people span, a chronology page a date, anything else a link titled as the page.
+   */
+  protected reference(file: string): string {
+    const time = /^time\/(\d)\/(\d)\/(\d)\/(\d)(?:\/(\d\d))?(?:\/(\d\d))?\/index\.html$/.exec(file)
+    if (time) {
+      const value = [time.slice(1, 5).join(""), time[5], time[6]].filter(Boolean).join("-")
+      return `<time data-context="none">${value}</time>`
+    }
+    const peopleFile = path.join(path.dirname(file), "people.json")
+    // A person the build knows (it has data) is a people span; without data the build cannot resolve one.
+    if (/^people\/[a-z]\/[^/]+\/index\.html$/.test(file) && existsSync(peopleFile)) {
+      let name: string | undefined
+      let lastName: string | undefined
+      try {
+        const people = JSON.parse(readFileSync(peopleFile, "utf-8"))
+        lastName = people.lastName
+        name = [people.firstNames?.join(" "), people.lastName].filter(Boolean).join(" ") || undefined
+      } catch {
+        // Not readable: the page's title then.
+      }
+      name ??= this.title(file)
+      lastName ??= name.split(" ").pop()
+      // The build finds a person by its directory, "LastFirst" ("McMoneagleJo"): when the full name does not lead
+      // there, the title gives the name that does ("Jo McMoneagle"), as pages write it.
+      const dir = path.basename(path.dirname(file))
+      const lastKey = lastName?.replace(/[^\p{L}\d]/gu, "")
+      let title = ""
+      if (lastKey && dir.startsWith(lastKey)) {
+        const key = `${dir.substring(lastKey.length)} ${lastName}`
+        const nameKey = name.split(" ")
+        if (key !== `${nameKey[0]} ${lastName}` || nameKey.length > 2) {
+          title = ` title="${key}"`
+        }
+      }
+      return `<span class="people"${title}>${name}</span>`
+    }
+    return `<a href="${this.url(file)}">${this.title(file)}</a>`
+  }
+
   protected render(byDay: Map<string, string[]>): string {
     const max = this.options.maxPerDay ?? 30
     const items = [...byDay].map(([day, files]) => {
-      const links = files.slice(0, max).map(file => `<a href="${this.url(file)}">${this.title(file)}</a>`)
+      const links = files.slice(0, max).map(file => this.reference(file))
       const more = files.length > max ? ` et ${files.length - max} autres pages` : ""
       return `    <li><time data-context="none">${day}</time>&nbsp;: ${links.join(", ")}${more}.</li>`
     })

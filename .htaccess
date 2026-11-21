@@ -964,3 +964,17 @@ RewriteCond %{HTTP_REFERER} !^https://vraiufo.com$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.fr/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.fr$      [NC]
 RewriteRule .*\.(jpg|jpeg|jpe|gif|bmp|png)$ https://rr0.org/Referencement.html [R,NC]
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc1_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc1.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc2_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc2.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc3_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc3.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc4_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc4.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc5_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc5.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc6_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc6.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc7_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc7.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc8_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc8.html
+Redirect /science/crypto/ufo/enquete/dossier/MJDocs/MJDoc9_en.html https://rr0.org/science/crypto/ufo/enquete/dossier/MJDocs/MJDoc9.html
+Redirect /time/0/6/3/4/07/13/DoctrinaJacobi/index_en.html https://rr0.org/time/0/6/3/4/07/13/DoctrinaJacobi/
+Redirect /time/0/6/4/0/ChronicaMinor/index_en.html https://rr0.org/time/0/6/4/0/ChronicaMinor/
+Redirect /time/1/6/9/8/Huygens_Cosmotheoros/index_en.html https://rr0.org/time/1/6/9/8/Huygens_Cosmotheoros/
+Redirect /time/1/9/1/5/HammurabiCode/index_en.html https://rr0.org/time/1/9/1/5/HammurabiCode/
+Redirect /time/2/0/0/5/05/27/PeruvianAirForceConcealsUfoInformation/index_en.html https://rr0.org/time/2/0/0/5/05/27/PeruvianAirForceConcealsUfoInformation/

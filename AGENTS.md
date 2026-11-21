@@ -213,13 +213,12 @@ Never modify the original to reflect new information. If a clarification or upda
   services
 - **`@rr0/data`** — Data factories: `PeopleFactory`, `CaseFactory`, `EventDataFactory`, `AllDataService`
 - **`ssg-api`** — Core SSG framework providing `SsgContext`, `FileContents`, SSI replace commands
-- **`@javarome/testscript`** — Test runner; tests use `describe`/`test`/`expect` from this package (not Jest, despite
-  `jest.config.ts` being present)
+- **`vitest`** — Test runner (`npm test`); `*.test.ts` files import `describe`/`test`/`expect` from `vitest`
 - **`tsx`** — Runs TypeScript files directly (build, import scripts)
 
 ### Testing
 
-Test utility `test/RR0TestUtil.ts` provides `rr0TestUtil.newHtmlContext(filePath, htmlString)` to create a full
+Test utility `test/RR0TestUtil.ts` (an extension of `CMSTestUtil` from `@rr0/cms/test`, rooted at the repository) provides `rr0TestUtil.newHtmlContext(filePath, htmlString)` to create a full
 `HtmlRR0Context` for unit tests. Test files sit next to the code they test (`*.test.ts` / `*.test.js`).
 
 To run a specific test, update the `test-one` script path in `package.json`, then run `npm run test-one`.

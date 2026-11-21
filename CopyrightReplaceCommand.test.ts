@@ -1,7 +1,7 @@
 import { rr0DefaultCopyright } from "./RR0DefaultCopyright.js"
 import { rr0TestUtil } from "./test/RR0TestUtil.js"
 import { SsiEchoVarReplaceCommand } from "ssg-api"
-import { describe, expect, test } from "@javarome/testscript"
+import { describe, expect, test } from "vitest"
 
 describe("CopyrightReplaceCommand", () => {
 
@@ -12,7 +12,7 @@ describe("CopyrightReplaceCommand", () => {
     context.file.meta.copyright = undefined
     await command.execute(context)
     expect(context.file.meta.copyright).toBeUndefined()
-    expect(context.file.contents).toBe(`This is published by <!--#echo var="copyright" -->!`)
+    expect(context.file.contents).toBe(`<html><head></head><body>This is published by <!--#echo var="copyright" -->!</body></html>`)
   })
 
   test("default copyright with handler", async () => {
@@ -22,7 +22,7 @@ describe("CopyrightReplaceCommand", () => {
     context.file.meta.copyright = undefined
     await command.execute(context)
     expect(context.file.meta.copyright).toBeUndefined()
-    expect(context.file.contents).toBe(`This is published by <a href="/GFDL.html">RR0</a>!`)
+    expect(context.file.contents).toBe(`<html><head></head><body>This is published by <a href="/GFDL.html">RR0</a>!</body></html>`)
   })
 
   test("copyright with default handler", async () => {
@@ -32,6 +32,6 @@ describe("CopyrightReplaceCommand", () => {
     context.file.meta.copyright = "Some editor"
     await command.execute(context)
     expect(context.file.meta.copyright).toBe("Some editor")
-    expect(context.file.contents).toBe("This is published by Some editor!")
+    expect(context.file.contents).toBe("<html><head></head><body>This is published by Some editor!</body></html>")
   })
 })

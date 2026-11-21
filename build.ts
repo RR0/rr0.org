@@ -178,7 +178,7 @@ const directoryPages = [
   "people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"
 ]
 getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileName, directoryOptions}) => {
-  // The home page's first section: what changed since the live site was published.
+  // The home page's first section: the pages changed on the last days.
   const updatesFragment = "updates.html"
   if (args.updates === "false") {
     console.log("UpdatesSection: skipped (--updates false), home page updates left as they were")

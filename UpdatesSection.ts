@@ -1,15 +1,6 @@
 import { execFileSync } from "node:child_process"
-import { existsSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs"
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from "node:fs"
 import path from "node:path"
-
-/**
- * One page that changed since the last publication.
- */
-interface PageUpdate {
-  file: string
-  isNew: boolean
-  mtimeMs: number
-}
 
 export interface UpdatesSectionOptions {
   /**
@@ -26,126 +17,78 @@ export interface UpdatesSectionOptions {
    * The pages whose output must be regenerated when the fragment changes (the home page).
    */
   includers: string[]
-  netlifySiteId?: string
-  netlifyToken?: string
   /**
-   * How many pages each list shows at most.
+   * How many days of updates are shown.
    */
-  maxPerList?: number
+  days?: number
+  /**
+   * How many pages a day shows at most.
+   */
+  maxPerDay?: number
 }
 
 /**
- * Labels of the home page sections, by top-level directory.
- */
-const sectionLabels: Record<string, string> = {
-  time: "Chronologie",
-  croyance: "Croyance",
-  place: "Lieux",
-  org: "Organisations",
-  people: "Personnes",
-  politique: "Politique",
-  science: "Science",
-  tech: "Technique",
-  book: "Livres",
-  droit: "Droit",
-  udb: "Base de données"
-}
-
-/**
- * Writes the "Mises à jour" section of the home page: the pages added or modified since the site was last
- * published (the live Netlify deploy), linked.
+ * Writes the "Mises à jour" section of the home page: for each of the last days the site's pages changed, the
+ * pages changed that day, linked.
  *
- * A page counts when git sees it changed since that publication (committed after it, or not committed yet) AND its
- * file was modified after it: a page published before being committed is not new to the readers.
+ * The days come from git (the date of each commit touching a page), plus today for the pages changed but not
+ * committed yet, which a build is about to publish.
  */
 export class UpdatesSection {
 
   constructor(protected options: UpdatesSectionOptions) {
   }
 
-  async write(): Promise<void> {
-    const options = this.options
-    const publishedAt = await this.lastPublication()
-    if (!publishedAt) {
-      if (!existsSync(options.fragmentFile)) {
-        this.save("")
-      }
-      console.warn("UpdatesSection: last publication date unknown, home page updates left as they were")
-      return
-    }
-    const updates = this.updatesSince(publishedAt)
-    this.save(this.render(updates, publishedAt))
-  }
-
-  /**
-   * When the live site was published, as Netlify says.
-   */
-  protected async lastPublication(): Promise<Date | undefined> {
-    const {netlifySiteId, netlifyToken} = this.options
-    if (!netlifySiteId || !netlifyToken) {
-      return undefined
-    }
-    try {
-      const response = await fetch(`https://api.netlify.com/api/v1/sites/${netlifySiteId}`,
-        {headers: {Authorization: `Bearer ${netlifyToken}`}})
-      if (!response.ok) {
-        console.warn("UpdatesSection: Netlify answered", response.status)
-        return undefined
-      }
-      const site = await response.json()
-      const published = site.published_deploy?.published_at
-      return published ? new Date(published) : undefined
-    } catch (e) {
-      console.warn("UpdatesSection: could not reach Netlify", (e as Error).message)
-      return undefined
-    }
+  write(): void {
+    this.save(this.render(this.lastDays()))
   }
 
   protected git(...args: string[]): string {
     return execFileSync("git", args, {encoding: "utf-8", maxBuffer: 64 * 1024 * 1024})
   }
 
-  protected updatesSince(publishedAt: Date): PageUpdate[] {
-    const since = publishedAt.toISOString()
-    const added = new Set<string>()
-    const changed = new Set<string>()
-    const log = this.git("log", `--since=${since}`, "--name-status", "--format=", "--", "*.html")
-    for (const line of log.split("\n")) {
-      const [status, file, renamedTo] = line.split("\t")
-      if (!status) {
-        continue
+  protected today(): string {
+    return new Date().toLocaleDateString("sv-SE")  // YYYY-MM-DD, local
+  }
+
+  /**
+   * The pages changed on each of the last days, most recent day and page first.
+   */
+  protected lastDays(): Map<string, string[]> {
+    const days = this.options.days ?? 3
+    const byDay = new Map<string, string[]>()
+    const add = (day: string, file: string) => {
+      if (!existsSync(file) || !this.isContent(file)) {
+        return
       }
-      const name = status.startsWith("R") ? renamedTo : file
-      if (status.startsWith("A") || status.startsWith("R")) {
-        added.add(name)
+      const files = byDay.get(day) ?? []
+      if (!files.includes(file)) {
+        files.push(file)
       }
-      changed.add(name)
+      byDay.set(day, files)
     }
     const status = this.git("status", "--porcelain", "--untracked-files=all", "--", "*.html")
     for (const line of status.split("\n")) {
-      const code = line.substring(0, 2)
       const file = line.substring(3).replace(/^"|"$/g, "")
-      if (!file) {
-        continue
+      if (file) {
+        add(this.today(), file)
       }
-      if (code === "??" || code.includes("A")) {
-        added.add(file)
-      }
-      changed.add(file)
     }
-    const updates: PageUpdate[] = []
-    for (const file of changed) {
-      if (!existsSync(file) || !this.isContent(file)) {
-        continue
+    // Enough history to find the days, whatever the number of commits a day.
+    const log = this.git("log", "-n", "500", "--name-only", "--date=short", "--format=@%ad", "--", "*.html")
+    let day = ""
+    for (const line of log.split("\n")) {
+      if (line.startsWith("@")) {
+        day = line.substring(1)
+        if (!byDay.has(day) && byDay.size >= days) {
+          break
+        }
+      } else if (line) {
+        add(day, line)
       }
-      const mtimeMs = statSync(file).mtimeMs
-      if (mtimeMs <= publishedAt.getTime()) {
-        continue
-      }
-      const isNew = added.has(file) || !existsSync(path.join(this.options.outDir, file))
-      updates.push({file, isNew, mtimeMs})
     }
-    return updates.sort((a, b) => b.mtimeMs - a.mtimeMs)
+    const sorted = [...byDay.keys()].sort().reverse().slice(0, days)
+    return new Map(sorted.map(d => [d, byDay.get(d)!]))
   }
 
   protected isContent(file: string): boolean {
@@ -220,55 +163,18 @@ export class UpdatesSection {
     return "/" + (path.basename(file) === "index.html" ? path.dirname(file) + "/" : file)
   }
 
-  protected section(file: string): string | undefined {
-    return sectionLabels[file.split("/")[0]]
-  }
-
-  /**
-   * One list, most recent first: a new page is told apart by a "nouvelle page" mark rather than by a list of its own,
-   * so that the count is said once, in the sentence that introduces the list.
-   */
-  protected renderList(updates: PageUpdate[]): string {
-    const max = this.options.maxPerList ?? 40
-    const items = updates.slice(0, max).map(update => {
-      const section = this.section(update.file)
-      const labels = [update.isNew ? "nouvelle page" : undefined, section].filter(Boolean).join(", ")
-      const label = labels ? ` <span class="updates-section">${labels}</span>` : ""
-      return `      <li><a href="${this.url(update.file)}">${this.title(update.file)}</a>${label}</li>`
+  protected render(byDay: Map<string, string[]>): string {
+    const max = this.options.maxPerDay ?? 30
+    const items = [...byDay].map(([day, files]) => {
+      const links = files.slice(0, max).map(file => `<a href="${this.url(file)}">${this.title(file)}</a>`)
+      const more = files.length > max ? ` et ${files.length - max} autres pages` : ""
+      return `    <li><time data-context="none">${day}</time>&nbsp;: ${links.join(", ")}${more}.</li>`
     })
-    const more = updates.length > max ? `\n    <p>… et ${updates.length - max} autres pages.</p>` : ""
-    return `
-    <ul>
-${items.join("\n")}
-    </ul>${more}`
-  }
-
-  /**
-   * "2 nouvelles pages et 8 mises à jour", "8 mises à jour", "1 nouvelle page"…
-   */
-  protected count(created: number, modified: number): string {
-    const parts: string[] = []
-    if (created > 0) {
-      parts.push(created > 1 ? `${created} nouvelles pages` : "1 nouvelle page")
-    }
-    if (modified > 0) {
-      parts.push(modified > 1 ? `${modified} mises à jour` : "1 mise à jour")
-    }
-    return parts.join(" et ")
-  }
-
-  protected render(updates: PageUpdate[], publishedAt: Date): string {
-    const date = publishedAt.toISOString().substring(0, 10)
-    const since = `depuis la précédente publication du site, le <time data-context="none">${date}</time>`
-    const created = updates.filter(update => update.isNew).length
-    const intro = updates.length > 0
-      ? `${this.count(created, updates.length - created)} ${since}&nbsp;:`
-      : `Aucune page modifiée ${since}.`
     return `<section class="updates">
   <h2>Mises à jour</h2>
-  <p>${intro}</p>
-  <div class="updates-lists">${updates.length > 0 ? this.renderList(updates) : ""}
-  </div>
+  <ul>
+${items.join("\n")}
+  </ul>
 </section>
 `
   }

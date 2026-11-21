@@ -14,20 +14,13 @@
   .contents {
     margin-top: 1em;
   }
-  .updates-lists {
-    columns: 20em auto;
-  }
-  .updates-lists ul {
-    margin-top: 0;
-  }
-  .updates-section {
-    font-size: smaller;
-    opacity: 0.7;
+  .columns .updates {
+    column-span: all;
   }
 </style>
 <!--#include virtual="/header-end.html" -->
-<!--#include virtual="/updates.html" -->
 <div class="columns">
+  <!--#include virtual="/updates.html" -->
   <section>
     <h2><a href="time">Chronologie</a></h2>
     <p><span class="count">${timeFilesCount}</span> pages de faits étudiés par ce site. La plupart des autres sections

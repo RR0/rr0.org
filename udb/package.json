@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
-    "vite": "^6.2.2"
+    "vite": "^6.4.6"
   },
   "exports": "./index.js",
   "private": true

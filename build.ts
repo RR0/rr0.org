@@ -9,7 +9,6 @@ import {
   CodeReplacerFactory,
   DescriptionReplaceCommand,
   IndexedReplacerFactory,
-  LanguageReplaceCommand,
   PlaceReplacerFactory,
   RR0CaseMapping,
   rr0DefaultCopyright,
@@ -197,7 +196,6 @@ getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileN
     new RR0Mapping({read: ["fetch"], write: ["backup"]})
   ]
   const pageReplacers = [new BaseReplaceCommand("/"),
-    new LanguageReplaceCommand(),
     new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
     new StringEchoVarReplaceCommand(),
     new AngularExpressionReplaceCommand(),

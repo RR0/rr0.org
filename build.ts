@@ -28,6 +28,7 @@ import {
   StringEchoVarReplaceCommand
 } from "ssg-api"
 import { getRR0Options } from "./RR0Options"
+import { UpdatesSection } from "./UpdatesSection"
 
 interface CMSGeneratorArgs {
   /**
@@ -77,9 +78,7 @@ const cliContents = args.contents
 console.debug("contents", cliContents)
 
 const mandatoryRoots = ["index.html", "people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
-const contentRoots = (cliContents
-  ? cliContents
-  : [
+const siteContentRoots = [
     "croyance/**/*.html",
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
     "time/**/*.html",
@@ -93,7 +92,8 @@ const contentRoots = (cliContents
     "tech/**/*.html",
     "udb/*.html",
     "js/**/*.html"
-  ]).concat(mandatoryRoots)
+  ]
+const contentRoots = (cliContents ? cliContents : siteContentRoots).concat(mandatoryRoots)
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg : [
   // Netlify reads _headers from the DEPLOYED directory, never from the clone — which is the whole
@@ -173,6 +173,12 @@ const directoryPages = [
   "people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"
 ]
 getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileName, directoryOptions}) => {
+  // The home page's first section: what changed since the live site was published.
+  await new UpdatesSection({
+    fragmentFile: "updates.html", includers: ["index.html"], outDir,
+    contentRoots: siteContentRoots, excluded: ["time/1/9/7/7/Poher_Matrice/app/dist"],
+    netlifySiteId: "89e010f5-aeca-4ea8-ba90-828553499998", netlifyToken: process.env.NETLIFY_PAT
+  }).write()
   const changedCopies = await filesToCopy(copies)
   const mappings: RR0CaseMapping<any>[] = [
     new RR0Mapping({read: ["fetch"], write: ["backup"]})

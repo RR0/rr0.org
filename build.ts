@@ -1,5 +1,5 @@
 import { FileContents } from "@javarome/fileutil"
-import { existsSync, readdirSync, renameSync, statSync } from "node:fs"
+import { existsSync, readdirSync, renameSync, statSync, writeFileSync } from "node:fs"
 import path from "node:path"
 import { glob } from "glob"
 import {
@@ -61,6 +61,11 @@ interface CMSGeneratorArgs {
    * Force re-generation even if file has not changed.
    */
   force?: string
+
+  /**
+   * "false" to leave the home page's "Mises à jour" section as it is (not regenerated). Default: regenerated.
+   */
+  updates?: string
 }
 
 console.time("ssg")
@@ -174,11 +179,19 @@ const directoryPages = [
 ]
 getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileName, directoryOptions}) => {
   // The home page's first section: what changed since the live site was published.
-  await new UpdatesSection({
-    fragmentFile: "updates.html", includers: ["index.html"], outDir,
-    contentRoots: siteContentRoots, excluded: ["time/1/9/7/7/Poher_Matrice/app/dist"],
-    netlifySiteId: "89e010f5-aeca-4ea8-ba90-828553499998", netlifyToken: process.env.NETLIFY_PAT
-  }).write()
+  const updatesFragment = "updates.html"
+  if (args.updates === "false") {
+    console.log("UpdatesSection: skipped (--updates false), home page updates left as they were")
+    if (!existsSync(updatesFragment)) {
+      writeFileSync(updatesFragment, "")  // The home page includes it.
+    }
+  } else {
+    await new UpdatesSection({
+      fragmentFile: updatesFragment, includers: ["index.html"], outDir,
+      contentRoots: siteContentRoots, excluded: ["time/1/9/7/7/Poher_Matrice/app/dist"],
+      netlifySiteId: "89e010f5-aeca-4ea8-ba90-828553499998", netlifyToken: process.env.NETLIFY_PAT
+    }).write()
+  }
   const changedCopies = await filesToCopy(copies)
   const mappings: RR0CaseMapping<any>[] = [
     new RR0Mapping({read: ["fetch"], write: ["backup"]})

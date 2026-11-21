@@ -224,35 +224,50 @@ export class UpdatesSection {
     return sectionLabels[file.split("/")[0]]
   }
 
-  protected renderList(heading: string, updates: PageUpdate[]): string {
-    if (updates.length <= 0) {
-      return ""
-    }
+  /**
+   * One list, most recent first: a new page is told apart by a "nouvelle page" mark rather than by a list of its own,
+   * so that the count is said once, in the sentence that introduces the list.
+   */
+  protected renderList(updates: PageUpdate[]): string {
     const max = this.options.maxPerList ?? 40
     const items = updates.slice(0, max).map(update => {
       const section = this.section(update.file)
-      const label = section ? ` <span class="updates-section">${section}</span>` : ""
+      const labels = [update.isNew ? "nouvelle page" : undefined, section].filter(Boolean).join(", ")
+      const label = labels ? ` <span class="updates-section">${labels}</span>` : ""
       return `      <li><a href="${this.url(update.file)}">${this.title(update.file)}</a>${label}</li>`
     })
     const more = updates.length > max ? `\n    <p>… et ${updates.length - max} autres pages.</p>` : ""
     return `
-    <h3>${heading} (${updates.length})</h3>
     <ul>
 ${items.join("\n")}
     </ul>${more}`
   }
 
+  /**
+   * "2 nouvelles pages et 8 mises à jour", "8 mises à jour", "1 nouvelle page"…
+   */
+  protected count(created: number, modified: number): string {
+    const parts: string[] = []
+    if (created > 0) {
+      parts.push(created > 1 ? `${created} nouvelles pages` : "1 nouvelle page")
+    }
+    if (modified > 0) {
+      parts.push(modified > 1 ? `${modified} mises à jour` : "1 mise à jour")
+    }
+    return parts.join(" et ")
+  }
+
   protected render(updates: PageUpdate[], publishedAt: Date): string {
     const date = publishedAt.toISOString().substring(0, 10)
-    const created = updates.filter(update => update.isNew)
-    const modified = updates.filter(update => !update.isNew)
-    const body = updates.length > 0
-      ? this.renderList("Nouvelles pages", created) + this.renderList("Pages mises à jour", modified)
-      : `\n    <p>Aucune page modifiée depuis la précédente publication.</p>`
+    const since = `depuis la précédente publication du site, le <time data-context="none">${date}</time>`
+    const created = updates.filter(update => update.isNew).length
+    const intro = updates.length > 0
+      ? `${this.count(created, updates.length - created)} ${since}&nbsp;:`
+      : `Aucune page modifiée ${since}.`
     return `<section class="updates">
   <h2>Mises à jour</h2>
-  <p>Depuis la précédente publication du site, le <time data-context="none">${date}</time>&nbsp;:</p>
-  <div class="updates-lists">${body}
+  <p>${intro}</p>
+  <div class="updates-lists">${updates.length > 0 ? this.renderList(updates) : ""}
   </div>
 </section>
 `

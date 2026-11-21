@@ -11,9 +11,10 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "/Users/javarome/p
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
 const UFO = process.env.SITE || "https://ufoathome.org"
-const edit = file => `${UFO}/edit/index.html?file=${encodeURIComponent((process.env.DATA ?? "") + "/demo-data/" + file + ".json")}`
-// The recordings' own address: ufoathome.org's, even when the player is a local build (DATA), so that no shot shows localhost.
-const DATA = process.env.DATA ?? ""
+// The recordings' whole address (a bare path is refused): ufoathome.org's, even when the player is a local build, so that no shot shows localhost.
+const DATA = process.env.DATA || "https://ufoathome.org"
+// The editor in the app (/app/), whose editor has the whole width (see article-2-shots.mjs).
+const edit = file => `${UFO}/app/?mode=edit&file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}`
 const play = (file, extra = "") => `${UFO}/play/index.html?file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}${extra}`
 
 /** Runs in the page: every element matching `f`, through shadow roots. */
@@ -31,6 +32,13 @@ async function openGroup(page, id) {
     }
     const tab = deep(document, e => e.getAttribute("aria-controls") === id)[0]
     if (tab && tab.getAttribute("aria-expanded") !== "true") tab.click()
+    await new Promise(r => setTimeout(r, 800))
+    // Every section is shown folded to its title (since 0.194): those of the group are unfolded, nested ones too, by their titles.
+    const panel = deep(document, e => e.id === id && e.getBoundingClientRect().width > 0)[0]
+    for (let pass = 0; panel && pass < 3; pass++) {
+      for (const title of deep(panel, e => e.matches(".form-section[data-foldable]:not([data-unfolded]) > .section-title"))) title.click()
+      await new Promise(r => setTimeout(r, 300))
+    }
   }, { id, DEEP })
   await page.waitForTimeout(2000)
 }
@@ -96,6 +104,8 @@ const SHOTS = [
   },
   {
     name: "files", url: edit("case-silly-le-long"), async take(page) {
+      await page.setViewportSize({ width: 1600, height: 1500 })
+      await page.waitForTimeout(1500)
       await openGroup(page, "group-file")
       const options = await page.evaluate(({ DEEP }) => {
         eval(DEEP + "window.__deep = deep")

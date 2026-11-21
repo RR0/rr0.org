@@ -67,6 +67,8 @@ Bodies are tested the hard way: placed in the scene, they cast shadows, the grou
 ![The McMinnville player comparing the 2013 reading (a model at the end of a 70 cm thread under the power line) with the account, the shape of the account drawn as a dashed outline](img2/compare.png)
 *McMinnville (1950), compared with the 2013 reading by Cousyn, Louange and Quick: the account’s shape as a dashed outline, beside the model on its thread.*
 
+A reading is never shown at its worst. Its most favorable configuration is searched for within what the account allows (the Sun’s heights over the days it allows, the side the light comes from) and it is measured there. What it was tested against is kept with it as findings, each one holding, failing or untested, so that a reading that fails stays in the case and shows why. And since every value it was free to choose is a way to make it fit, the margin it has on each is measured too: a likeness bought with many free values proves little.
+
 The witness’s own reading lives in their recording. **Someone else’s reading is not part of the account**: it is another observation, the one that took place as its author holds it, with its own recording, its date, its author, and the observation it reads. This keeps an investigator’s conclusion from silently overwriting what the witness said.
 
 ## Decor, and the sky’s own events
@@ -80,15 +82,21 @@ Some things are neither decor nor interpretation: a laser beam, a rocket launch,
 
 ## Where each value comes from
 
-This may be the most important part of the model. **Any value of a recording can carry its basis**, among four:
+This may be the most important part of the model. Any value of a recording can carry its basis, among six, from the strongest:
 
+- **established**: settled away from the account and from the reconstruction: a document, a register, a survey, a third party’s measurement;
 - **measured**: read off an instrument, by the witness or an investigator (a clock, a compass, an arm’s-length gauge, a theodolite on site);
 - **stated**: the witness said it (the default, so that a plain value means what it always meant);
 - **derived**: worked out from what the witness said plus something checkable (a road’s width, a map, a measured drawing), with the working written down;
-- **assumed**: chosen so that the reconstruction has a value at all, on nothing the witness said.
+- **assumed**: chosen so that the reconstruction has a value at all, on nothing the witness said;
+- **fitted**: moved, within what is known, to see whether a hypothesis can be made to fit.
+
+The two ends were asked for in a review of the tool by an experienced investigator. What is established is the one thing a reconstruction can fairly be judged against, since it owes nothing to either. What is fitted is a knob: the more of them a reading turns, the easier a likeness is to obtain, and the less that likeness proves. Nothing is ever tested against a fitted value.
 
 ![The basis window of a value of the Silly-le-Long recording: "How this value was obtained", basis derived, and its rationale: the GEIPAN simulation's displayed speeds, the reconstitution's speed times its correction factor](img2/basis.png)
 *The van’s speeds are not what the driver said: they are derived from the GEIPAN’s own simulation, and the rationale says how, with a page reference.*
+
+A basis says what kind of thing a value rests on; a source says which thing, the one somebody would go and look at: the passage of an interview where the witness said it, a document and its page, the picture of the recording it was measured on, or the tool it was measured with. A guess names none, which is exactly what “assumed” already says.
 
 The list of assumed values is the list of what to [go back to the witness](https://medium.com/@rr0/what-the-witness-said-and-where-it-shows-0193b90beeea) or the file for. And a basis expires: when someone types over an assumed value, it no longer claims to be a guess.
 
@@ -135,7 +143,7 @@ The model of UFO@home tries to make a reconstruction **say what it claims, and o
 - a **case** lists events (observations, interpretations, interviews) instead of merging them;
 - one **recording per witness**, and someone else’s reading is another recording, never an edit of the account;
 - the **phenomenon** is stated in angles, as it reached the eye, and **bodies** in metres are claims tested from the witness’s place;
-- every value can carry its **basis** (measured, stated, derived, assumed) and its **approximation**, and absent is not zero;
+- every value can carry its basis (from established to fitted) and its **approximation**, and absent is not zero;
 - the **known errors** of witnesses are part of the model, with the status of their evidence, and they bound which candidates are reachable;
 - **assessments** are delegated to the published methods, each saying where its answers come from;
 - **privacy** is a property of the files, not a promise of a server, since there is none.

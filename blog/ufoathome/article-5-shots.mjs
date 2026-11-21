@@ -11,7 +11,10 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "/Users/javarome/p
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
 const SITE = process.env.SITE || "https://ufoathome.org"
-const EDIT = `${SITE}/edit/index.html?file=/demo-data/observer-mission-viejo.json`
+// In the app (/app/), whose editor has the whole width, as wide editors are laid out since 0.197.
+// A recording is named by its whole address (a bare path is refused since 0.184): ufoathome.org's, even for a local build.
+const DATA = process.env.DATA || "https://ufoathome.org"
+const EDIT = `${SITE}/app/?mode=edit&file=${encodeURIComponent(DATA + "/demo-data/observer-mission-viejo.json")}`
 
 /** Defines window.__deep(root, test): every element passing `test`, through shadow roots. */
 const DEEP = () => {
@@ -22,9 +25,9 @@ const DEEP = () => {
 }
 
 /** Opens the event of the case of that kind, then (optionally) a group of its editor; a group tab toggles. */
-async function open(page, kind, group) {
+async function open(page, kind, group, section) {
   await page.evaluate(DEEP)
-  await page.evaluate(async ({ kind, group }) => {
+  await page.evaluate(async ({ kind, group, section }) => {
     const card = window.__deep(document, e => e.matches(`.event-card[data-kind=${kind}]`))[0]
     card?.querySelector(".event-open")?.click()
     await new Promise(r => setTimeout(r, 3500))
@@ -32,7 +35,16 @@ async function open(page, kind, group) {
     const tab = window.__deep(document, e => e.getAttribute("aria-controls") === group && e.getBoundingClientRect().width > 0)[0]
     if (tab && tab.getAttribute("aria-expanded") !== "true" && tab.getAttribute("aria-selected") !== "true") tab.click()
     await new Promise(r => setTimeout(r, 1500))
-  }, { kind, group })
+    // Every section is shown folded to its title (since 0.194): those of the group are unfolded, nested ones too, by their titles.
+    const panel = window.__deep(document, e => e.id === group && e.getBoundingClientRect().width > 0)[0]
+    for (let pass = 0; panel && pass < 3; pass++) {
+      for (const title of window.__deep(panel, e => e.matches(".form-section[data-foldable]:not([data-unfolded]) > .section-title"))) title.click()
+      await new Promise(r => setTimeout(r, 300))
+    }
+    // Wide, a group shows one of its sections at a time, picked in the index beside it.
+    const link = section && window.__deep(document, e => e.matches(".section-link") && e.getBoundingClientRect().width > 0 && e.getAttribute("title") === section)[0]
+    if (link && link.getAttribute("aria-current") !== "true") { link.click(); await new Promise(r => setTimeout(r, 1200)) }
+  }, { kind, group, section })
 }
 
 /** The box of the first element passing `test` (a function source run in the page), in page coordinates, grown by `pad`. */
@@ -92,7 +104,7 @@ const SHOTS = [
 const launcher = join(tmpdir(), "chrome-en.sh")
 writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
 const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
-const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1500 }, deviceScaleFactor: 1.5 })
+const context = await browser.newContext({ locale: "en-US", viewport: { width: 1600, height: 1500 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {
     if (wanted.length && !wanted.includes(shot.name)) continue

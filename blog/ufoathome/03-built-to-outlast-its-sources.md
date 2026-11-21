@@ -25,10 +25,10 @@ A reconstruction has to be **seen** to be discussed: in an investigator’s repo
 
 ```html
 <script type="module" src="https://ufoathome.org/lib/rr0-sighting.mjs"></script>
-<rr0-sighting src="https://ufoathome.org/demo-data/case-cussac.json"></rr0-sighting>
+<rr0-case src="https://ufoathome.org/demo-data/case-cussac.json"></rr0-case>
 ```
 
-Paste them into any HTML page and the plateau of Cussac appears, with the sphere leaving it. For your own case, src is the address of its file.
+Paste them into any HTML page and the case of Cussac appears: its two witnesses, and the plateau with the sphere leaving it. For your own case, src is the address of its file; for a single observation, \<rr0-sighting> plays its recording alone.
 
 That is how the case files of [RR0](https://rr0.org/) show theirs: a static site, with nothing to build and no framework. The recording stays at its author’s address, on their host, under their name, and a link to the player opens it in the reader’s language (English, French, Spanish or Italian today).
 
@@ -39,10 +39,11 @@ The elements are [Web Components](https://developer.mozilla.org/en-US/docs/Web/A
 - **there is nothing to keep up with**: [no framework](https://medium.com/@javarome/design-noframework-bbc00a02d9b3) version to match, so nobody’s next major release can make them obsolete;
 - **their insides are their own**: each keeps its markup and styles in a [shadow root](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot), so the host page’s CSS cannot break them, and they cannot break the page. The interview is the exception, on purpose: it draws in the page, so that the page’s own styles reach its text and links.
 
-There are six of them, three to show and three to edit:
+There are seven of them, four to show and three to edit:
 
 - the **scene** (the phenomenon in the real sky, weather and ground),
 - the **sighting** (the scene plus who saw it, the metadata and the sharing),
+- the **case** (a case’s chronology, and whichever of its events is being read: an observation in the sighting, an interview in its reader),
 - the **interview** (a transcript read as a dialogue, whose passages lead to the moments of the observation they tell of),
 - the **sighting editor**, the **case editor** and the **interview editor**.
 
@@ -62,7 +63,7 @@ The second is that **a second source can be added without touching the rest**. T
 - the relief from the French IGN’s LiDAR HD and RGE ALTI in France, and from AWS Terrain Tiles elsewhere;
 - the aerial imagery from the IGN, [EOX Sentinel-2 cloudless](https://s2maps.eu/) or Esri World Imagery;
 - the buildings from the IGN’s LiDAR and topographic database, or from OpenStreetMap;
-- the place names from [Nominatim](https://nominatim.org/), the air traffic from [adsb.lol](https://adsb.lol/), the night sky’s brightness from the World Atlas of artificial sky brightness.
+- the place names from [Nominatim](https://nominatim.org/), the air traffic from [adsb.lol](https://adsb.lol/) or from [Flightradar24](https://fr24api.flightradar24.com/) with the reader’s own key, the night sky’s brightness from the World Atlas of artificial sky brightness.
 
 Some registries have a single entry, on purpose: the seam is in place before it is needed. The [assessment methods](https://medium.com/@rr0/what-a-ufo-reconstruction-states-and-on-what-d4cf4c133274) are a registry too, and so is the [language model that can draft a recording](https://medium.com/@rr0/ai-writes-the-account-never-the-sky-9e435229eb92).
 
@@ -71,6 +72,8 @@ A few rules go with them, which the site states for every source:
 - **a source is read only when it is needed**: services are called only for a recording that needs them, and never for a date before their record begins;
 - **measured beats modeled, and modeled beats assumed**: a brightness is a published observation when one exists, and a formula fills in only what nobody measured;
 - **the limits are stated**: before 1940 for the weather, before 1957 for satellites, before February 2021 for individual satellite passes.
+
+And a source no longer has to be part of UFO@home to be offered. A module is a small file at an address, its manifest: tiles of imagery or relief, 3D models, and, if need be, a script that adds a source, a kind of sky event or a kind of reading at any of the tool’s extension points. Anybody can add one from the editor, and a recording names those it was made with, so that it is drawn the same wherever it is opened; a reader gets what a manifest states, never a script they did not add themselves ([How to write one](https://ufoathome.org/docs/modules/)*).*
 
 ## Assets: what may disappear is hosted
 
@@ -94,9 +97,7 @@ A recording with its snapshots plays without asking any third party for anything
 
 ## Versions, of the format and of the player
 
-The file format has a **version** of its own, distinct from the tool’s: it only changes the day a field changes its meaning or its shape. Each version has its published schema, a file of an older version is converted as it is read, and a file of a version newer than the player is refused with a message, rather than played as something it does not say.
-
-The player follows each release by default, so a page embedding a reconstruction gets every fix. An author who wants to keep exactly the rendering they checked can **pin the version**: the script then comes from the package as published on npm, served by [jsDelivr](https://www.jsdelivr.com/), which keeps every version.
+The file format has a **version** of its own, distinct from the tool’s: it only changes the day a field changes its meaning or its shape. Each version has its published schemaThe player follows each release by default, so a page embedding a reconstruction gets every fix. An author who wants to keep exactly the rendering they checked can **pin the version**: the script then comes from the package as published on npm, served by [jsDelivr](https://www.jsdelivr.com/), which keeps every version.
 
 ![The share dialog of the player: Link or Embed, what to share and where it opens, options (start time, summary chips, map, moments, comparison), the two lines of code pointing at a pinned version on jsDelivr, and a checked "Pin version" box](img3/share.png)
 *The share dialog, with “Pin version” ticked: the embed code now points at one published version of the player.*
@@ -115,5 +116,5 @@ UFO@home is built so that a reconstruction outlives both the tool’s own histor
 - **providers**: every source is a visible, credited choice, and a new one can be added without touching the rest;
 - **assets**: what may disappear is copied, credited and hosted;
 - **snapshots**: a recording can carry what its sources answered, and play the same years later;
-- **versions**: of the format, read forward and refused when too new, and of the player, which can be pinned;
+- **versions**: of the format, each with its schema, and of the player, which can be pinned to the format it was shared with;
 - **offline**: installable, and usable in the field.

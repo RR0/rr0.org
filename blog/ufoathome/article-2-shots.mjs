@@ -11,8 +11,12 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "/Users/javarome/p
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
 const SITE = process.env.SITE || "https://ufoathome.org"
-const edit = file => `/edit/index.html?file=/demo-data/${file}.json`
-const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent("/demo-data/" + file + ".json")}${extra}`
+// A recording is named by its whole address (a bare path is refused since 0.184): ufoathome.org's, even for a local build.
+const DATA = process.env.DATA || "https://ufoathome.org"
+const editPage = file => `/edit/index.html?file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}`
+// The app (/app/), whose editor has the whole width: from 820 px an observation shows the index of its sections beside them.
+const edit = file => `/app/?mode=edit&file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}`
+const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}${extra}`
 
 /** Opens a group of the observation editor by the panel it controls, and frames that panel. */
 // The case editor lists its events; an observation's editor, and its group tabs, only show once one is opened. A tab toggles its group.
@@ -26,40 +30,65 @@ const clickTab = (page, id) => page.evaluate(async (id) => {
   }
   const tab = deep(document, e => e.getAttribute("aria-controls") === id)[0]
   if (tab && tab.getAttribute("aria-expanded") !== "true") tab.click()
+  await new Promise(r => setTimeout(r, 800))
+  // Every section is shown folded to its title (since 0.194): those of the group are unfolded, nested ones too, by their titles.
+  const panel = deep(document, e => e.id === id && e.getBoundingClientRect().width > 0)[0]
+  for (let pass = 0; panel && pass < 3; pass++) {
+    for (const title of deep(panel, e => e.matches(".form-section[data-foldable]:not([data-unfolded]) > .section-title"))) title.click()
+    await new Promise(r => setTimeout(r, 300))
+  }
 }, id)
-const group = (id) => async page => {
+/** In a wide editor (since 0.197), picks the part or section of the open group its index names, as a click on it does. */
+const pick = (page, title) => page.evaluate(async (title) => {
+  const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
+  const link = deep(document, e => e.matches(".section-link") && e.getBoundingClientRect().width > 0 && e.getAttribute("title") === title)[0]
+  if (link && link.getAttribute("aria-current") !== "true") link.click()
+  await new Promise(r => setTimeout(r, 1200))
+}, title)
+/** The box of the open group, under the render (the index of its sections stands beside the render, out of the frame), in page coordinates. */
+const groupBox = (page, id) => page.evaluate((id) => {
+  const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
+  const panel = deep(document, e => e.id === id && e.getBoundingClientRect().width > 0)[0]
+  const p = panel.getBoundingClientRect()
+  // The panel is as tall as the column it stands in: down to what it shows, no further; from just under the picture above it.
+  const b = Math.max(...deep(panel, e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 }).map(e => e.getBoundingClientRect().bottom))
+  return { x: p.x + scrollX, y: p.y + scrollY + 8, width: p.width, height: b - p.y + 8 }
+}, id)
+const group = (id, part) => async page => {
   await clickTab(page, id)
+  if (part) await pick(page, part)
   await page.waitForTimeout(1500)
-  const panel = page.locator(`#${id}:visible`).first()
-  await panel.scrollIntoViewIfNeeded()
+  await page.locator(`#${id}:visible`).first().scrollIntoViewIfNeeded()
   await page.waitForTimeout(500)
-  return { locator: panel }
+  return { clip: await groupBox(page, id) }
 }
 
 const SHOTS = [
   {
-    name: "case-editor", url: edit("case-socorro"), async take(page) {
+    name: "case-editor", url: editPage("case-socorro"), async take(page) {
       return { locator: page.locator("rr0-case-editor").first() }
     }
   },
   { name: "witness", url: edit("case-silly-le-long"), take: group("group-observer") },
-  { name: "timeline", url: edit("case-socorro"), take: group("group-temporal") },
+  { name: "timeline", url: edit("case-socorro"), take: group("group-temporal", "Period") },
   {
     // Down to the legs' turning rate, whose "assumed" mark the caption points at: the group is taller than the window, so the page is.
     name: "phenomenon", url: edit("case-valensole"), async take(page) {
-      await page.setViewportSize({ width: 1200, height: 2600 })
+      await page.setViewportSize({ width: 1600, height: 2600 })
       await clickTab(page, "group-shape")
+      await pick(page, "Bodies")
       await page.waitForTimeout(2000)
       const panel = page.locator("#group-shape:visible").first()
       await panel.scrollIntoViewIfNeeded()
       await page.waitForTimeout(500)
-      const top = await panel.boundingBox()
+      const box = await groupBox(page, "group-shape")
+      const top = { x: box.x, y: box.y - await page.evaluate(() => scrollY), width: box.width }
       const rate = page.getByText("Turns a second", { exact: false }).first()
       const row = await rate.evaluate(e => { const r = (e.closest("label, .field, div") ?? e).getBoundingClientRect(); return { y: r.y, b: r.bottom } })
       return { clip: { x: top.x, y: top.y, width: top.width, height: row.b - top.y + 16 }, inView: true }
     }
   },
-  { name: "phenomenon-2d", url: edit("case-socorro"), take: group("group-shape") },
+  { name: "phenomenon-2d", url: edit("case-socorro"), take: group("group-shape", "Shapes") },
   ...["silly-le-long", "socorro", "chiles-whitted"].map(c => ({
     name: `candidates-${c}`, url: edit(`case-${c}`), async take(page) {
       await clickTab(page, "group-observation")
@@ -87,7 +116,15 @@ const SHOTS = [
       for (const id of tabs) {
         await clickTab(page, id)
         await page.waitForTimeout(1200)
-        const found = await page.evaluate((panelId) => {
+        // Wide, a group shows one of its sections at a time: each in turn.
+        const titles = await page.evaluate(() => {
+          const deep = (root, f, acc = []) => { root.querySelectorAll("*").forEach(e => { if (f(e)) acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, f, acc) }); return acc }
+          return deep(document, e => e.matches(".section-link[data-section]") && e.getBoundingClientRect().width > 0).map(e => e.getAttribute("title"))
+        })
+        let found = false
+        for (const title of titles.length ? titles : [undefined]) {
+        if (title) await pick(page, title)
+        found = await page.evaluate((panelId) => {
           const deep = (root, acc = []) => { root.querySelectorAll("*").forEach(e => { if (e.tagName === "RR0-INPUT-BASIS") acc.push(e); if (e.shadowRoot) deep(e.shadowRoot, acc) }); return acc }
           const panel = document.querySelector(`#${panelId}`) || [...document.querySelectorAll("*")].map(e => e.shadowRoot?.getElementById(panelId)).find(Boolean)
           const pill = deep(panel || document).find(p => p.entry && p.entry.basis !== "stated" && p.getBoundingClientRect().width > 0)
@@ -96,6 +133,8 @@ const SHOTS = [
           pill.setAttribute("data-shot", "1")
           return true
         }, id)
+        if (found) break
+        }
         if (found) break
       }
       const pill = page.locator("rr0-input-basis[data-shot]").first()
@@ -129,7 +168,7 @@ const SHOTS = [
   {
     name: "compare", url: play("case-mcminnville", "&t=2"), player: true, async take(page) {
       // A case is read in <rr0-case>: the 2013 study is one of its readings, opened from its history in a player of its own.
-      await page.locator("rr0-case .event[data-kind=reading]").filter({ hasText: "2013" }).first().locator("button.event-open").click()
+      await page.locator("rr0-case .event-card[data-kind=reading]").filter({ hasText: "70 cm" }).first().locator("button.event-open").click()
       await page.waitForTimeout(5000)
       const player = page.locator("rr0-sighting").last()
       await player.scrollIntoViewIfNeeded()
@@ -150,7 +189,7 @@ const SHOTS = [
 const launcher = join(tmpdir(), "chromium-en.sh")
 writeFileSync(launcher, `#!/bin/sh\nexec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -AppleLanguages "(en-US)" -AppleLocale en_US "$@"\n`, { mode: 0o755 })
 const browser = await chromium.launch({ headless: false, executablePath: launcher, args: ["--lang=en-US"] })
-const context = await browser.newContext({ locale: "en-US", viewport: { width: 1200, height: 1700 }, deviceScaleFactor: 1.5 })
+const context = await browser.newContext({ locale: "en-US", viewport: { width: 1600, height: 1700 }, deviceScaleFactor: 1.5 })
 try {
   for (const shot of SHOTS) {
     if (wanted.length && !wanted.includes(shot.name)) continue

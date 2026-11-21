@@ -10,8 +10,10 @@ const { chromium } = require("/Users/javarome/project/@javarome/thesteps2/node_m
 const [outDir, ...wanted] = process.argv.slice(2)
 mkdirSync(outDir, { recursive: true })
 const SITE = process.env.SITE || "https://ufoathome.org"
+// A recording is named by its whole address (a bare path is refused since 0.184): ufoathome.org's, even for a local build.
+const DATA = process.env.DATA || "https://ufoathome.org"
 
-const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent("/demo-data/" + file + ".json")}${extra}`
+const play = (file, extra = "") => `/play/index.html?file=${encodeURIComponent(DATA + "/demo-data/" + file + ".json")}${extra}`
 
 /** name, url, what to do before the shot, how long to let it play, what to frame. */
 const SHOTS = [
@@ -27,7 +29,7 @@ const SHOTS = [
   { name: "cussac-photo", url: play("observer-cussac", "&labels=0&t=30"), wait: 10000, frame: "canvas" },
   { name: "socorro-1", url: play("case-socorro", "&t=8"), interpretation: 1, wait: 6000, pause: true, frame: "canvas" },
   { name: "socorro-2", url: play("case-socorro", "&t=8"), interpretation: 2, wait: 6000, pause: true, frame: "canvas" },
-  { name: "editor", url: "/edit/index.html?file=/demo-data/case-socorro.json", wait: 9000, frame: "page" },
+  { name: "editor", url: `/edit/index.html?file=${encodeURIComponent(DATA + "/demo-data/case-socorro.json")}`, wait: 9000, frame: "page" },
 ]
 
 // The installed Chrome, not Playwright's old Chromium (124), which knows no anchor positioning; native fields in English too (see
@@ -56,7 +58,7 @@ try {
       }
       if (shot.interpretation !== undefined) {
         // A case is read in <rr0-case>: a reading is one of its events, opened from its history, not picked in the player's menu.
-        const readings = page.locator("rr0-case li.event[data-kind=reading]")
+        const readings = page.locator("rr0-case li.event-card[data-kind=reading]")
         if (await readings.count() > 0) {
           await readings.nth(shot.interpretation - 1).locator("button.event-open").click()
           await page.waitForTimeout(3000)

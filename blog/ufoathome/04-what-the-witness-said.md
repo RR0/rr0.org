@@ -48,7 +48,7 @@ The other way round, each moment of the observation lists the passages of the ca
 ![The moments of the observation in the editor: moment A, and under it two passages of the interview, at 00:00.5 and 00:05.0, each a quotation of Q. B. linking back to the interview](img4/moment-passages.png)
 *Under the moments of the observation, the passages of the interview that tell of them, each a link back to the turn.*
 
-The same pair exists outside the editor. A page can show an interview with the \<rr0-interview> element next to a reconstruction: a passage followed to its moment then shows the observation there, at that moment, in the same page.
+The same pair exists outside the editor. The case reader lists a case’s interviews beside its observations: a passage followed to its moment opens the observation there, and while a replay runs, the dialogue open beside it shows the passage that tells of where it stands. A page can also show an interview alone, with the \<rr0-interview> element.
 
 ## The interview as a source of the observation
 
@@ -56,6 +56,8 @@ There is a third link, maybe the most important one. An interview is not only *a
 
 ![The basis window of the heading of the witness's gaze: basis "stated", and the rationale "call of 2026-10-13: 'je regardais [...] est, sud-est, mais légèrement' (the written reply said west-south-west; his friend was the one looking west)"](img4/value-from-interview.png)
 *The heading the witness was looking towards, as given in the interview, and why it differs from the written reply.*
+
+A value can also point at the passage itself: its source names the interview and the turn of speech, so that a reader goes from the heading to the very words in one click, the way a turn of the transcript goes to its moment.
 
 This is where an interview earns its keep. In writing, Q. B. had said they were looking west-south-west; asked about it on the call, they answered east-south-east, and explained that the friend with them was the one looking west. In writing, the whole sighting had lasted six seconds at most; on the call, “four seconds from the zenith”, “4.5, 5 seconds at most” in all. Both values in the recording are the interview’s, and both say so. The interview itself is listed among the recording’s sources, next to the messages of the mailing list.
 
@@ -76,6 +78,8 @@ Whole turns taken out show as a single gap, with no speaker named, since the gap
 *A whole turn taken out: a gap, its time, and its reason.*
 
 The editor does this on the transcript itself: a selection of text can be taken out with its reason, a whole turn too (“Take all out”), and a passage removed during the session can be restored. First names can also be replaced by a marker throughout, as they are in Saint-Lô.
+
+An interview is also how a witness answers a reconstruction: shown it, they say what is right and what is not. A later edit would then quietly make their answer about something that no longer exists. So the author can seal the reconstruction the witness was shown, and carry on with a clone of it: the sealed one takes no edit, says so on its card, and stays what the interview answered.
 
 ## Who approved it
 

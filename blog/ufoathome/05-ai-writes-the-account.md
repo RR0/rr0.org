@@ -13,7 +13,7 @@ series: "UFO@home (5/5)"
 *How UFO@home uses AI, and why it is optional*
 
 ![The drafting panel of the editor: the account of a witness in their own words, "Drafted by Claude", fields for the author's own API key and workspace, the model, and a "Generate reconstruction" button](img5/drafting-panel.png)
-*Mission Viejo (California), 2026: an account posted on X, in the witness’s own words, ready to be drafted into a recording. The key is the author’s own, and stays in their browser.*
+*Mission Viejo (California), 2026: an account posted on X, in the witness’s own words, ready to be drafted into a recording. The key is the author’s own, and is never stored.*
 
 [UFO@home](https://ufoathome.org/) is a tool that [replays a UFO sighting](https://medium.com/@rr0/replaying-the-sky-of-a-ufo-sighting-d51db4e2742c) against the real sky of its date and place. This article answers the question everybody asks first: what about AI?
 
@@ -47,7 +47,7 @@ When a case already has its documents (a report, a questionnaire, a statement, s
 The assistant knows nothing about the case but what it is given, and nothing about the [format](https://ufoathome.org/docs/format) but what the documentation says. So it has to be asked for the discipline an investigator would keep:
 
 ![The "Create an observation" page, section "With an AI assistant, from the case file", and the prompt it suggests: state only what the documents support, mark what was worked out or chosen, angles only, one recording per witness, models from the catalogue, a summary, and the contradictions and questions to put back to the witness](img5/create-with-ai.png)
-*What to ask of an assistant: the same rules a careful investigator follows, [written as a prompt](https://ufoathome.org/docs/create/index_fr.html#2-with-an-ai-assistant-from-the-case-file).*
+*What to ask of an assistant: the same rules a careful investigator follows, [written as a prompt](https://ufoathome.org/docs/create/#2-with-an-ai-assistant-from-the-case-file).*
 
 Two lines of that prompt matter most. **“State only what the documents support”**, with every value worked out marked as derived, with its working, and every value chosen marked as assumed. And **“list the contradictions between the documents, and the questions to put back to the witness or the investigator”**: an assistant is good at noticing that a report says north-east and a sketch says east, and it should say so rather than pick one.
 
@@ -59,7 +59,7 @@ Does it work? On a case of the GEIPAN, the French official UFO office, an assist
 
 A witness who only has their own account can draft from it inside the editor: type it in the Summary group, choose what drafts it (Claude today, with the author’s own API key and the model of their choice), and the editor drafts the rest of the recording from it (first picture of this article). The draft is a **proposal** that the author edits, never a result.
 
-Nothing goes through ufoathome.org: the text is sent from the browser to the chosen model, with the author’s key, only when they ask. The key is kept in the browser only if they tick “Remember on this device”, and forgotten as soon as they untick it.
+Nothing goes through ufoathome.org: the text is sent from the browser to the chosen model, with the author’s key, only when they ask. The key is never stored: it is held in the page’s memory, and gone when the page is reloaded. A module loaded from an address runs in the same page, and a key kept in the browser’s storage would be within its reach.
 
 ## Checking what it wrote
 

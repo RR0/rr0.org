@@ -290,6 +290,54 @@
     {
       "type": "event",
       "eventType": "sighting",
+      "interpretationOf": "w5-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Fils de la Vierge, au vent archivé : Frenchman Flat, 15 octobre au matin",
+        "en": "Gossamer in the archived wind: Frenchman Flat, morning of October 15"
+      },
+      "url": "interpretation-western-us-event-scenario-w5-5-gossamer-frenchman-15.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Fils de la Vierge, au vent archivé : la route de Groom Lake, 16 octobre au matin",
+        "en": "Gossamer in the archived wind: Groom Lake Road, morning of October 16"
+      },
+      "url": "interpretation-western-us-event-scenario-w5-5-gossamer-groom-16.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w5-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Fils de la Vierge, au vent archivé : la route de Groom Lake, 15 octobre au matin",
+        "en": "Gossamer in the archived wind: Groom Lake Road, morning of October 15"
+      },
+      "url": "interpretation-western-us-event-scenario-w5-5-gossamer-groom-15.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
       "id": "w1-1",
       "time": "2023-10-15 18:58~",
       "title": "Témoin 1, la boule lumineuse (vers 19:00)",
@@ -458,6 +506,54 @@
     {
       "type": "event",
       "eventType": "sighting",
+      "interpretationOf": "w1-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Fils de la Vierge, au vent archivé : Frenchman Flat, 15 octobre au matin",
+        "en": "Gossamer in the archived wind: Frenchman Flat, morning of October 15"
+      },
+      "url": "interpretation-western-us-event-scenario-w1-5-gossamer-frenchman-15.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Fils de la Vierge, au vent archivé : la route de Groom Lake, 16 octobre au matin",
+        "en": "Gossamer in the archived wind: Groom Lake Road, morning of October 16"
+      },
+      "url": "interpretation-western-us-event-scenario-w1-5-gossamer-groom-16.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w1-5",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Fils de la Vierge, au vent archivé : la route de Groom Lake, 15 octobre au matin",
+        "en": "Gossamer in the archived wind: Groom Lake Road, morning of October 15"
+      },
+      "url": "interpretation-western-us-event-scenario-w1-5-gossamer-groom-15.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
       "interpretationOf": "w4-1",
       "by": [
         {
@@ -518,6 +614,86 @@
         "en": "Triangulation: one source for witnesses 2 and 3, 9.4 km up"
       },
       "url": "interpretation-western-us-event-w3-1-triangulation.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Lanternes célestes, au vent archivé : Desert Valley, 14 octobre",
+        "en": "Sky lanterns in the archived wind: Desert Valley, October 14"
+      },
+      "url": "interpretation-western-us-event-scenario-w3-1-lanterns-alamo-14.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Lanternes célestes, au vent archivé : Desert Valley, 15 octobre",
+        "en": "Sky lanterns in the archived wind: Desert Valley, October 15"
+      },
+      "url": "interpretation-western-us-event-scenario-w3-1-lanterns-alamo-15.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Lanternes célestes, au vent archivé : Pahranagat, 14 octobre",
+        "en": "Sky lanterns in the archived wind: Pahranagat, October 14"
+      },
+      "url": "interpretation-western-us-event-scenario-w3-1-lanterns-pahranagat-14.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Lanternes célestes, au vent archivé : Pahranagat, 15 octobre",
+        "en": "Sky lanterns in the archived wind: Pahranagat, October 15"
+      },
+      "url": "interpretation-western-us-event-scenario-w3-1-lanterns-pahranagat-15.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "w3-1",
+      "by": [
+        {
+          "title": "RR0"
+        }
+      ],
+      "time": "2026-11-21",
+      "title": {
+        "fr": "Lanternes célestes, dans le vent qu'il leur faudrait (ajusté)",
+        "en": "Sky lanterns, in the wind they would need (fitted)"
+      },
+      "url": "interpretation-western-us-event-scenario-w3-1-lanterns-fitted-wind.json"
     }
   ]
 }

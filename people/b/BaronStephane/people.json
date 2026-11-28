@@ -1,0 +1,33 @@
+{
+  "lastName": "Baron",
+  "firstNames": [
+    "Stéphane",
+    "Christian"
+  ],
+  "url": "https://www.facebook.com/p/St%C3%A9phane-C-Baron-Auteur-61596265025147/",
+  "occupations": [
+    "ufologist",
+    "engineer",
+    "writer"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1972-03",
+      "place": "Saint-Nazaire",
+      "sources": [
+        {
+          "title": "The UAP Show ACTU - Retour en Magonie... avec Stéphane BARON",
+          "publication": {
+            "publisher": "The UAP Show",
+            "time": "2026-11-19"
+          },
+          "url": "https://www.youtube.com/watch?v=yY-ck3HhQUI"
+        }
+      ]
+    }
+  ]
+}

@@ -134,7 +134,7 @@ const copies = copiesArg ? copiesArg : [
   "science/crypto/ufo/*.mjs", "science/crypto/ufo/*.js", "science/crypto/ufo/*.bin", "science/crypto/ufo/*.ogg", "science/crypto/ufo/*.wav", "science/crypto/ufo/enquete/dossier/**/sighting.json",
   "science/crypto/ufo/enquete/dossier/**/observer-*.json", "science/crypto/ufo/enquete/dossier/**/interpretation-*.json","science/crypto/ufo/enquete/dossier/**/case.json",
   // The annexes a recording keeps its frozen relief, imagery and map in, named relative to it.
-  "science/crypto/ufo/enquete/dossier/**/*.zip",
+  "science/crypto/ufo/enquete/dossier/**/*.zip", "science/crypto/ufo/enquete/dossier/**/*.decor.json",
   // The interview files <rr0-interview> reads, beside the page that shows them.
   "**/interview*.json",
   "nav.js", "tag/**/*.mjs"

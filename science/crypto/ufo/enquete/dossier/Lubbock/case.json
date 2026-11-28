@@ -4,5 +4,135 @@
     "hynek": "NL"
   },
   "image": "/science/crypto/ufo/enquete/dossier/Lubbock/Lubbock_3.jpg",
-  "conclusion": "misinterpretation"
+  "conclusion": "misinterpretation",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "robinson",
+      "time": "1951-08-25 21:20",
+      "title": "W. I. Robinson",
+      "url": "observer-lubbock-robinson.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "oberg",
+      "time": "1951-08-25 21:20",
+      "title": "A. G. Oberg",
+      "url": "observer-lubbock-oberg.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "ducker",
+      "time": "1951-08-25 21:20",
+      "title": "W. L. Ducker",
+      "url": "observer-lubbock-ducker.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "george",
+      "time": "1951-08-25 21:20",
+      "title": "E. L. George",
+      "url": "observer-lubbock-george.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "robinson",
+      "title": {
+        "en": "Twenty ducks in a wide V, 40 m up, lit from below by the boulevard's mercury-vapour lamps (the Air Force's conclusion)",
+        "fr": "Vingt canards en V très ouvert, à 40 m, éclairés par en dessous par les lampes à vapeur de mercure du boulevard (conclusion de l'Air Force)",
+        "es": "Veinte patos en una V muy abierta, a 40 m, iluminados desde abajo por las lámparas de vapor de mercurio del bulevar (conclusión de la Air Force)",
+        "it": "Venti anatre in una V molto aperta, a 40 m, illuminate dal basso dalle lampade a vapori di mercurio del viale (conclusione della Air Force)"
+      },
+      "url": "interpretation-lubbock-robinson-ducks.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "robinson",
+      "title": {
+        "en": "Twenty plovers in a ragged front, 38 m up, their white bellies lit by the boulevard's mercury-vapour lamps (Ruppelt's lead at Lamesa)",
+        "fr": "Vingt pluviers en front irrégulier, à 38 m, leur ventre blanc éclairé par les lampes à vapeur de mercure du boulevard (la piste de Ruppelt à Lamesa)",
+        "es": "Veinte chorlitos en un frente irregular, a 38 m, el vientre blanco iluminado por las lámparas de vapor de mercurio del bulevar (la pista de Ruppelt en Lamesa)",
+        "it": "Venti pivieri in un fronte irregolare, a 38 m, il ventre bianco illuminato dalle lampade a vapori di mercurio del viale (la pista di Ruppelt a Lamesa)"
+      },
+      "url": "interpretation-lubbock-robinson-plovers.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "oberg",
+      "title": {
+        "en": "Twenty ducks in a wide V, 40 m up, lit from below by the boulevard's mercury-vapour lamps (the Air Force's conclusion)",
+        "fr": "Vingt canards en V très ouvert, à 40 m, éclairés par en dessous par les lampes à vapeur de mercure du boulevard (conclusion de l'Air Force)",
+        "es": "Veinte patos en una V muy abierta, a 40 m, iluminados desde abajo por las lámparas de vapor de mercurio del bulevar (conclusión de la Air Force)",
+        "it": "Venti anatre in una V molto aperta, a 40 m, illuminate dal basso dalle lampade a vapori di mercurio del viale (conclusione della Air Force)"
+      },
+      "url": "interpretation-lubbock-oberg-ducks.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "oberg",
+      "title": {
+        "en": "Twenty plovers in a ragged front, 38 m up, their white bellies lit by the boulevard's mercury-vapour lamps (Ruppelt's lead at Lamesa)",
+        "fr": "Vingt pluviers en front irrégulier, à 38 m, leur ventre blanc éclairé par les lampes à vapeur de mercure du boulevard (la piste de Ruppelt à Lamesa)",
+        "es": "Veinte chorlitos en un frente irregular, a 38 m, el vientre blanco iluminado por las lámparas de vapor de mercurio del bulevar (la pista de Ruppelt en Lamesa)",
+        "it": "Venti pivieri in un fronte irregolare, a 38 m, il ventre bianco illuminato dalle lampade a vapori di mercurio del viale (la pista di Ruppelt a Lamesa)"
+      },
+      "url": "interpretation-lubbock-oberg-plovers.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "ducker",
+      "title": {
+        "en": "Twenty ducks in a wide V, 40 m up, lit from below by the boulevard's mercury-vapour lamps (the Air Force's conclusion)",
+        "fr": "Vingt canards en V très ouvert, à 40 m, éclairés par en dessous par les lampes à vapeur de mercure du boulevard (conclusion de l'Air Force)",
+        "es": "Veinte patos en una V muy abierta, a 40 m, iluminados desde abajo por las lámparas de vapor de mercurio del bulevar (conclusión de la Air Force)",
+        "it": "Venti anatre in una V molto aperta, a 40 m, illuminate dal basso dalle lampade a vapori di mercurio del viale (conclusione della Air Force)"
+      },
+      "url": "interpretation-lubbock-ducker-ducks.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "ducker",
+      "title": {
+        "en": "Twenty plovers in a ragged front, 38 m up, their white bellies lit by the boulevard's mercury-vapour lamps (Ruppelt's lead at Lamesa)",
+        "fr": "Vingt pluviers en front irrégulier, à 38 m, leur ventre blanc éclairé par les lampes à vapeur de mercure du boulevard (la piste de Ruppelt à Lamesa)",
+        "es": "Veinte chorlitos en un frente irregular, a 38 m, el vientre blanco iluminado por las lámparas de vapor de mercurio del bulevar (la pista de Ruppelt en Lamesa)",
+        "it": "Venti pivieri in un fronte irregolare, a 38 m, il ventre bianco illuminato dalle lampade a vapori di mercurio del viale (la pista di Ruppelt a Lamesa)"
+      },
+      "url": "interpretation-lubbock-ducker-plovers.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "george",
+      "title": {
+        "en": "Twenty ducks in a wide V, 40 m up, lit from below by the boulevard's mercury-vapour lamps (the Air Force's conclusion)",
+        "fr": "Vingt canards en V très ouvert, à 40 m, éclairés par en dessous par les lampes à vapeur de mercure du boulevard (conclusion de l'Air Force)",
+        "es": "Veinte patos en una V muy abierta, a 40 m, iluminados desde abajo por las lámparas de vapor de mercurio del bulevar (conclusión de la Air Force)",
+        "it": "Venti anatre in una V molto aperta, a 40 m, illuminate dal basso dalle lampade a vapori di mercurio del viale (conclusione della Air Force)"
+      },
+      "url": "interpretation-lubbock-george-ducks.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "george",
+      "title": {
+        "en": "Twenty plovers in a ragged front, 38 m up, their white bellies lit by the boulevard's mercury-vapour lamps (Ruppelt's lead at Lamesa)",
+        "fr": "Vingt pluviers en front irrégulier, à 38 m, leur ventre blanc éclairé par les lampes à vapeur de mercure du boulevard (la piste de Ruppelt à Lamesa)",
+        "es": "Veinte chorlitos en un frente irregular, a 38 m, el vientre blanco iluminado por las lámparas de vapor de mercurio del bulevar (la pista de Ruppelt en Lamesa)",
+        "it": "Venti pivieri in un fronte irregolare, a 38 m, il ventre bianco illuminato dalle lampade a vapori di mercurio del viale (la pista di Ruppelt a Lamesa)"
+      },
+      "url": "interpretation-lubbock-george-plovers.json"
+    }
+  ]
 }

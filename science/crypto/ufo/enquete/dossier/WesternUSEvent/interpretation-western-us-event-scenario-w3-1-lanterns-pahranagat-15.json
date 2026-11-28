@@ -612,6 +612,10 @@
      "timescaleS": 10
     }
    }
-  ]
+  ],
+  "scenario": {
+   "id": "pahranagat@2023-10-15T19:00",
+   "of": "interpretation-western-us-event-scenario-w3-1-lanterns-alamo-14.json"
+  }
  }
 }

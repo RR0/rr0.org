@@ -851,8 +851,13 @@
        "rollDeg": 35
       }
      }
-    ]
+    ],
+    "drifting": true
    }
-  ]
+  ],
+  "scenario": {
+   "id": "groom@2023-10-16T05:30",
+   "of": "interpretation-western-us-event-w1-5-gossamer.json"
+  }
  }
 }

@@ -851,9 +851,14 @@
        "rollDeg": 35
       }
      }
-    ]
+    ],
+    "drifting": true
    }
-  ]
+  ],
+  "scenario": {
+   "id": "own@2023-10-15T05:30",
+   "of": "interpretation-western-us-event-w1-5-gossamer.json"
+  }
  },
  "image": "https://ufoathome.org/demo-data/share/western-us-event-w1-5.jpg",
  "snapshots": {

@@ -1977,7 +1977,8 @@
        "rollDeg": -35
       }
      }
-    ]
+    ],
+    "drifting": true
    },
    {
     "id": "gossamer-glint-1",
@@ -2508,7 +2509,8 @@
        "luminanceCdM2": 40
       }
      }
-    ]
+    ],
+    "drifting": true
    },
    {
     "id": "gossamer-glint-2",
@@ -3039,7 +3041,8 @@
        "luminanceCdM2": 40
       }
      }
-    ]
+    ],
+    "drifting": true
    },
    {
     "id": "gossamer-glint-3",
@@ -3570,7 +3573,8 @@
        "luminanceCdM2": 40
       }
      }
-    ]
+    ],
+    "drifting": true
    },
    {
     "id": "gossamer-glint-4",
@@ -4101,7 +4105,8 @@
        "luminanceCdM2": 40
       }
      }
-    ]
+    ],
+    "drifting": true
    }
   ]
  },

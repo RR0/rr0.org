@@ -851,7 +851,8 @@
        "rollDeg": 35
       }
      }
-    ]
+    ],
+    "drifting": true
    }
   ]
  },

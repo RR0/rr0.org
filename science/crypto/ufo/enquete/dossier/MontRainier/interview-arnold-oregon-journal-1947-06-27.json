@@ -1,0 +1,100 @@
+{
+ "version": 1,
+ "id": "interview-arnold-oregon-journal-1947-06-27",
+ "language": "en",
+ "title": {
+  "en": "The Oregon Journal's account",
+  "fr": "Le compte rendu de l'Oregon Journal"
+ },
+ "time": "1947-06-27",
+ "medium": "in-person",
+ "interviewOf": "arnold",
+ "summary": {
+  "en": "A reporter's account of his telling: the objects \"weaving and ducking in and out\", as if \"rocking\".",
+  "fr": "Le compte rendu d'un journaliste de ce qu'il a raconté : les objets « louvoyant et plongeant », comme s'ils « se balançaient »."
+ },
+ "speakers": {
+  "journal": {
+   "role": "journalist",
+   "title": {
+    "en": "Oregon Journal",
+    "fr": "Oregon Journal"
+   }
+  },
+  "arnold": {
+   "role": "witness",
+   "by": {
+    "people": "ArnoldKennethE"
+   },
+   "title": {
+    "en": "Kenneth Arnold",
+    "fr": "Kenneth Arnold"
+   },
+   "of": "arnold"
+  }
+ },
+ "transcription": {
+  "method": "manual",
+  "note": "As rr0.org holds it: https://rr0.org/time/1/9/4/7/06/27/ArnoldInsistsTaleOfFlyingObjectsOK_OregonJournal/"
+ },
+ "segments": [
+  {
+   "speaker": "journal",
+   "text": "PENDLETON, June 27 (AP)? Kenneth Arnold, a veteran pilot and fire control engineer, Thursday clung stoutly to his story that he saw nine shiny crescent-shaped planes or pilotless missiles flying in formation at a speed of at least 1,200 miles per hour over the Mt. Rainier region."
+  },
+  {
+   "speaker": "journal",
+   "text": "“It's God's truth? I will swear it on a Bible. I saw them and I clocked them. They traveled 48 to 50 miles in 1 minute and 42 seconds.”"
+  },
+  {
+   "speaker": "journal",
+   "text": "(A plane traveling 48 miles in 1 minute and 42 seconds would be moving at a speed of 1,692 miles per hour.)"
+  },
+  {
+   "speaker": "journal",
+   "text": "Arnold said he saw the objects flying in “weaving formation” in a line at 10,000 feet as he piloted his own small private plane over Mineral, Wash. He said he flew at a right angle to the line of flashing objects."
+  },
+  {
+   "speaker": "journal",
+   "text": "When he landed at Pendleton, in route to Boise Idaho, Arnold told his story and stuck to it."
+  },
+  {
+   "speaker": "journal",
+   "text": "“Some of the pilots thought it over and said it was possible. Some of them guessed that I had seen some secret guided missiles. People began asking me if I thought they were missiles sent over the North Pole. I don't know what they were, but I know this? I saw them.”"
+  },
+  {
+   "speaker": "journal",
+   "text": "Arnold, general manager and owner of the Great Western Fire Control Company, said he first saw the objects when they flashed in the sun low over the slopes of Mt. Rainier."
+  },
+  {
+   "speaker": "journal",
+   "text": "“Then I saw them, weaving and ducking in and out as they came south not more than 500 feet over the plateau. They looked like they were rocking. I looked for the tails but suddenly realized they didn't have any. They were half-moon shaped, oval in front and convex in the rear. I was in a beautiful position to watch them. I thought they might be jet planes, and I clocked them. Then when I saw they had no tails and I realized how fast they were going, I knew they were like nothing I had ever heard of before. There were no bulges or cowlings; they looked like a big flat disk. They were larger than the ordinary jet plane but slightly smaller than a DC4, if you don't count the rear fuselage.”",
+   "refs": [
+    {
+     "sighting": "arnold",
+     "at": 80,
+     "range": [
+      18,
+      37
+     ]
+    },
+    {
+     "sighting": "arnold",
+     "at": 80,
+     "range": [
+      136,
+      143
+     ]
+    }
+   ]
+  },
+  {
+   "speaker": "journal",
+   "text": "Arnold said that the objects waived “like the tail of a Chinese kite.”"
+  },
+  {
+   "speaker": "journal",
+   "text": "“They hugged the horseback between Mt. Rainier and Mt. Adams, and the flashing they made in the sun reminded me of the reflection of a great mirror.”"
+  }
+ ]
+}

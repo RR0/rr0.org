@@ -4,5 +4,141 @@
   "classification": {
     "hynek": "DD"
   },
-  "image": "/science/crypto/ufo/enquete/dossier/MontRainier/arnold.jpg"
+  "image": "/science/crypto/ufo/enquete/dossier/MontRainier/arnold.jpg",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "arnold",
+      "time": "1947-06-24 14:58",
+      "title": "Kenneth Arnold",
+      "url": "observer-arnold.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "id": "arnold-1960s",
+      "time": "1947-06-24 14:58",
+      "title": {
+        "en": "Kenneth Arnold, as he drew them in the 1960s",
+        "fr": "Kenneth Arnold, tels qu'il les dessina dans les années 1960"
+      },
+      "url": "observer-arnold-1960s.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "arnold",
+      "title": {
+        "en": "A chain of nine American white pelicans, 5340 m from him, flapping and gliding",
+        "fr": "Une chaîne de neuf pélicans d'Amérique, à 5340 m de lui, battant des ailes et planant"
+      },
+      "url": "interpretation-mont-rainier-pelicans.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "arnold",
+      "title": {
+        "en": "Nine craft some 60 m across, as large as the Army Air Force's analysts worked out acuity needs (140 to 280 feet at 20 to 25 miles)",
+        "fr": "Neuf engins d'environ 60 m, aussi grands que l'acuité l'exige selon les analystes de l'Army Air Force (140 à 280 pieds à 20 à 25 miles)"
+      },
+      "url": "interpretation-mont-rainier-aaf.json"
+    },
+    {
+      "type": "event",
+      "eventType": "interview",
+      "id": "interview-arnold-radio-1947-06-25",
+      "interviewOf": "arnold",
+      "time": "1947-06-25",
+      "medium": "other",
+      "title": {
+        "en": "Radio interview with Kenneth Arnold",
+        "fr": "Interview radio de Kenneth Arnold"
+      },
+      "summary": {
+        "en": "The day after, in a radio studio: his flight, the chain of nine \"like the tail of a Chinese kite\" across Mount Rainier, the timing between Rainier and Adams, \"like a pie plate that was cut in half with a sort of a convex triangle in the rear\", seen plainly only when they tipped and the Sun flashed on them.",
+        "fr": "Le lendemain, dans un studio de radio : son vol, la chaîne de neuf « comme la queue d'un cerf-volant chinois » devant le mont Rainier, le chronométrage entre Rainier et Adams, « comme une assiette à tarte coupée en deux avec une sorte de triangle convexe à l'arrière », vus nettement seulement quand ils basculaient et que le Soleil les faisait étinceler."
+      },
+      "url": "interview-arnold-radio-1947-06-25.json"
+    },
+    {
+      "type": "event",
+      "eventType": "interview",
+      "id": "interview-arnold-east-oregonian-1947-06-26",
+      "interviewOf": "arnold",
+      "time": "1947-06-26",
+      "medium": "in-person",
+      "title": {
+        "en": "Bill Bequette's account in the East Oregonian",
+        "fr": "Le compte rendu de Bill Bequette dans l'East Oregonian"
+      },
+      "summary": {
+        "en": "The reporter who met him in Pendleton tells what he said: the flashes \"as if someone had started an arc light\", the weaving like a Chinese kite's tail.",
+        "fr": "Le journaliste qui l'a rencontré à Pendleton rapporte ce qu'il a dit : les éclats « comme si quelqu'un avait allumé un arc électrique », l'ondulation comme la queue d'un cerf-volant chinois."
+      },
+      "url": "interview-arnold-east-oregonian-1947-06-26.json"
+    },
+    {
+      "type": "event",
+      "eventType": "interview",
+      "id": "interview-arnold-oregon-journal-1947-06-27",
+      "interviewOf": "arnold",
+      "time": "1947-06-27",
+      "medium": "in-person",
+      "title": {
+        "en": "The Oregon Journal's account",
+        "fr": "Le compte rendu de l'Oregon Journal"
+      },
+      "summary": {
+        "en": "A reporter's account of his telling: the objects \"weaving and ducking in and out\", as if \"rocking\".",
+        "fr": "Le compte rendu d'un journaliste de ce qu'il a raconté : les objets « louvoyant et plongeant », comme s'ils « se balançaient »."
+      },
+      "url": "interview-arnold-oregon-journal-1947-06-27.json"
+    },
+    {
+      "type": "event",
+      "eventType": "interview",
+      "id": "interview-arnold-aaf-1947-07",
+      "interviewOf": "arnold",
+      "time": "1947-07-12",
+      "medium": "letter",
+      "title": {
+        "en": "Kenneth Arnold's report to the Army Air Forces",
+        "fr": "Le rapport de Kenneth Arnold aux Army Air Forces"
+      },
+      "summary": {
+        "en": "His own written account, two weeks after: the flight at 9,200 feet, the flash on his airplane, the chain of nine at about 9,500 feet, the DC-4 for scale, the clocking from Rainier to Adams in 1 min 42 s, \"just a black thin line\" when level, \"Mirror Bright\".",
+        "fr": "Son propre récit écrit, deux semaines après : le vol à 9 200 pieds, l'éclair sur son avion, la chaîne de neuf vers 9 500 pieds, le DC-4 pour l'échelle, le chronométrage du Rainier à l'Adams en 1 min 42 s, « just a black thin line » quand ils volaient à plat, « Mirror Bright »."
+      },
+      "url": "interview-arnold-aaf-1947-07.json"
+    },
+    {
+      "type": "event",
+      "eventType": "interview",
+      "id": "interview-arnold-book-1952",
+      "interviewOf": "arnold",
+      "time": "1952",
+      "medium": "other",
+      "title": {
+        "en": "The Coming of the Saucers (Kenneth Arnold and Ray Palmer)",
+        "fr": "The Coming of the Saucers (Kenneth Arnold et Ray Palmer)"
+      },
+      "summary": {
+        "en": "His telling of it five years after, in the book he wrote with Ray Palmer: a larger gap between the first four and the last five, the leader higher than the last, wings tipping alternately and blue-white flashes, his clock perhaps on Mountain time.",
+        "fr": "Son récit cinq ans après, dans le livre écrit avec Ray Palmer : un écart plus grand entre les quatre premiers et les cinq derniers, le premier plus haut que le dernier, des ailes basculant alternativement et des éclats bleu-blanc, son horloge peut-être à l'heure des Rocheuses."
+      },
+      "url": "interview-arnold-book-1952.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "interpretationOf": "arnold-1960s",
+      "title": {
+        "en": "A chain of nine American white pelicans, 5340 m from him, flapping and gliding",
+        "fr": "Une chaîne de neuf pélicans d'Amérique, à 5340 m de lui, battant des ailes et planant"
+      },
+      "url": "interpretation-mont-rainier-1960s-pelicans.json"
+    }
+  ]
 }

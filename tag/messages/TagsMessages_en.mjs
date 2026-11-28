@@ -24,6 +24,7 @@ export const tagsMessages_en = {
     politics: "Politics",
     aviation: "Aviation",
     paleontology: "Paleontology",
-    meteorology: "Meteorology"
+    meteorology: "Meteorology",
+    cryptozoology: "Cryptozoology"
   }
 }
